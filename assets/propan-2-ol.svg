@@ -1,0 +1,45 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='440px' height='220px' viewBox='0 0 440 220'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4; 1 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s).</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='440.0' height='220.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 138.8,184.2 L 220.0,137.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 220.0,137.4 L 220.0,54.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 220.0,137.4 L 301.2,184.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='atom-2' d='M 212.8 43.7
+Q 212.8 40.0, 214.7 37.9
+Q 216.5 35.8, 220.0 35.8
+Q 223.5 35.8, 225.3 37.9
+Q 227.2 40.0, 227.2 43.7
+Q 227.2 47.5, 225.3 49.6
+Q 223.4 51.8, 220.0 51.8
+Q 216.6 51.8, 214.7 49.6
+Q 212.8 47.5, 212.8 43.7
+M 220.0 50.0
+Q 222.4 50.0, 223.7 48.4
+Q 224.9 46.8, 224.9 43.7
+Q 224.9 40.6, 223.7 39.1
+Q 222.4 37.5, 220.0 37.5
+Q 217.6 37.5, 216.3 39.1
+Q 215.1 40.6, 215.1 43.7
+Q 215.1 46.8, 216.3 48.4
+Q 217.6 50.0, 220.0 50.0
+' fill='#000000'/>
+<path class='atom-2' d='M 229.6 35.9
+L 231.7 35.9
+L 231.7 42.6
+L 239.7 42.6
+L 239.7 35.9
+L 241.8 35.9
+L 241.8 51.5
+L 239.7 51.5
+L 239.7 44.3
+L 231.7 44.3
+L 231.7 51.5
+L 229.6 51.5
+L 229.6 35.9
+' fill='#000000'/>
+</svg>

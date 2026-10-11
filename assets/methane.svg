@@ -1,0 +1,57 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='440px' height='220px' viewBox='0 0 440 220'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers label atoms for this description only. Carbon 1: ; 4 attached hydrogen(s).</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='440.0' height='220.0' x='0.0' y='0.0'> </rect>
+<path class='atom-0' d='M 201.4 106.2
+Q 201.4 102.3, 203.2 100.3
+Q 205.0 98.2, 208.4 98.2
+Q 211.7 98.2, 213.4 100.5
+L 211.9 101.7
+Q 210.7 100.0, 208.4 100.0
+Q 206.1 100.0, 204.8 101.6
+Q 203.6 103.2, 203.6 106.2
+Q 203.6 109.3, 204.9 110.8
+Q 206.2 112.4, 208.7 112.4
+Q 210.4 112.4, 212.4 111.4
+L 213.0 113.0
+Q 212.2 113.6, 211.0 113.9
+Q 209.7 114.2, 208.4 114.2
+Q 205.0 114.2, 203.2 112.1
+Q 201.4 110.0, 201.4 106.2
+' fill='#000000'/>
+<path class='atom-0' d='M 215.5 98.4
+L 217.6 98.4
+L 217.6 105.0
+L 225.5 105.0
+L 225.5 98.4
+L 227.6 98.4
+L 227.6 114.0
+L 225.5 114.0
+L 225.5 106.8
+L 217.6 106.8
+L 217.6 114.0
+L 215.5 114.0
+L 215.5 98.4
+' fill='#000000'/>
+<path class='atom-0' d='M 237.4 118.2
+L 238.6 118.2
+L 238.6 119.4
+L 237.4 119.4
+L 237.4 121.8
+L 236.0 121.8
+L 236.0 119.4
+L 230.7 119.4
+L 230.7 118.5
+L 235.2 111.5
+L 237.4 111.5
+L 237.4 118.2
+M 232.4 118.2
+L 236.0 118.2
+L 236.0 112.4
+L 232.4 118.2
+' fill='#000000'/>
+</svg>

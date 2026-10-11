@@ -1,0 +1,45 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='440px' height='220px' viewBox='0 0 440 220'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3; 2 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s).</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='440.0' height='220.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 83.8,142.1 L 209.1,69.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 209.1,69.8 L 322.6,135.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 202.9,73.4 L 209.1,69.8 L 214.8,73.0' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='atom-2' d='M 327.3 142.2
+Q 327.3 138.4, 329.2 136.3
+Q 331.0 134.3, 334.5 134.3
+Q 337.9 134.3, 339.8 136.3
+Q 341.6 138.4, 341.6 142.2
+Q 341.6 146.0, 339.8 148.1
+Q 337.9 150.2, 334.5 150.2
+Q 331.0 150.2, 329.2 148.1
+Q 327.3 146.0, 327.3 142.2
+M 334.5 148.5
+Q 336.9 148.5, 338.1 146.9
+Q 339.4 145.3, 339.4 142.2
+Q 339.4 139.1, 338.1 137.6
+Q 336.9 136.0, 334.5 136.0
+Q 332.1 136.0, 330.8 137.6
+Q 329.5 139.1, 329.5 142.2
+Q 329.5 145.3, 330.8 146.9
+Q 332.1 148.5, 334.5 148.5
+' fill='#000000'/>
+<path class='atom-2' d='M 344.1 134.4
+L 346.2 134.4
+L 346.2 141.1
+L 354.1 141.1
+L 354.1 134.4
+L 356.2 134.4
+L 356.2 150.0
+L 354.1 150.0
+L 354.1 142.8
+L 346.2 142.8
+L 346.2 150.0
+L 344.1 150.0
+L 344.1 134.4
+' fill='#000000'/>
+</svg>
