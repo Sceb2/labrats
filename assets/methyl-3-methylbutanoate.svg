@@ -1,0 +1,57 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='480px' height='240px' viewBox='0 0 480 240'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7; 3 attached hydrogens.</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='480.0' height='240.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 72.0,58.4 L 138.8,98.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 138.8,98.2 L 137.8,175.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 138.8,98.2 L 206.6,60.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-3 atom-4' d='M 206.6,60.2 L 273.4,100.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 267.6,96.5 L 266.7,165.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 279.3,96.7 L 278.3,165.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-4 atom-6' d='M 273.4,100.0 L 330.2,68.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-6 atom-6 atom-7' d='M 352.2,68.6 L 408.0,101.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 203.2,62.1 L 206.6,60.2 L 209.9,62.2' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 270.1,98.0 L 273.4,100.0 L 276.2,98.4' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='atom-5' d='M 263.9 177.7
+Q 263.9 173.3, 266.1 170.9
+Q 268.3 168.4, 272.4 168.4
+Q 276.4 168.4, 278.6 170.9
+Q 280.8 173.3, 280.8 177.7
+Q 280.8 182.2, 278.6 184.8
+Q 276.4 187.3, 272.4 187.3
+Q 268.3 187.3, 266.1 184.8
+Q 263.9 182.2, 263.9 177.7
+M 272.4 185.2
+Q 275.2 185.2, 276.7 183.3
+Q 278.2 181.4, 278.2 177.7
+Q 278.2 174.1, 276.7 172.3
+Q 275.2 170.5, 272.4 170.5
+Q 269.5 170.5, 268.0 172.3
+Q 266.5 174.1, 266.5 177.7
+Q 266.5 181.5, 268.0 183.3
+Q 269.5 185.2, 272.4 185.2
+' fill='#000000'/>
+<path class='atom-6' d='M 332.8 62.1
+Q 332.8 57.7, 334.9 55.2
+Q 337.1 52.7, 341.2 52.7
+Q 345.3 52.7, 347.5 55.2
+Q 349.7 57.7, 349.7 62.1
+Q 349.7 66.5, 347.5 69.1
+Q 345.2 71.6, 341.2 71.6
+Q 337.2 71.6, 334.9 69.1
+Q 332.8 66.6, 332.8 62.1
+M 341.2 69.5
+Q 344.0 69.5, 345.5 67.7
+Q 347.1 65.8, 347.1 62.1
+Q 347.1 58.5, 345.5 56.6
+Q 344.0 54.8, 341.2 54.8
+Q 338.4 54.8, 336.9 56.6
+Q 335.4 58.4, 335.4 62.1
+Q 335.4 65.8, 336.9 67.7
+Q 338.4 69.5, 341.2 69.5
+' fill='#000000'/>
+</svg>

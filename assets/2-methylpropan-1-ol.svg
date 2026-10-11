@@ -1,0 +1,47 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='480px' height='240px' viewBox='0 0 480 240'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to O 5; 2 attached hydrogens. O 5: single bond to C 4; 1 attached hydrogens.</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='480.0' height='240.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 81.6,36.0 L 178.6,92.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 178.6,92.0 L 178.6,204.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 178.6,92.0 L 275.6,36.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-3 atom-4' d='M 275.6,36.0 L 360.5,85.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 270.8,38.8 L 275.6,36.0 L 279.9,38.4' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='atom-4' d='M 364.2 92.1
+Q 364.2 87.6, 366.4 85.2
+Q 368.6 82.7, 372.6 82.7
+Q 376.7 82.7, 378.9 85.2
+Q 381.1 87.6, 381.1 92.1
+Q 381.1 96.5, 378.9 99.1
+Q 376.7 101.6, 372.6 101.6
+Q 368.6 101.6, 366.4 99.1
+Q 364.2 96.6, 364.2 92.1
+M 372.6 99.5
+Q 375.4 99.5, 376.9 97.6
+Q 378.5 95.7, 378.5 92.1
+Q 378.5 88.4, 376.9 86.6
+Q 375.4 84.8, 372.6 84.8
+Q 369.8 84.8, 368.3 86.6
+Q 366.8 88.4, 366.8 92.1
+Q 366.8 95.8, 368.3 97.6
+Q 369.8 99.5, 372.6 99.5
+' fill='#000000'/>
+<path class='atom-4' d='M 383.9 82.9
+L 386.4 82.9
+L 386.4 90.7
+L 395.9 90.7
+L 395.9 82.9
+L 398.4 82.9
+L 398.4 101.3
+L 395.9 101.3
+L 395.9 92.8
+L 386.4 92.8
+L 386.4 101.3
+L 383.9 101.3
+L 383.9 82.9
+' fill='#000000'/>
+</svg>
