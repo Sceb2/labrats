@@ -1,0 +1,1587 @@
+{
+  "meta": {
+    "title": "OCR A Organic Chemistry Revision",
+    "specification": "OCR Chemistry A H432, Version 3.1 (May 2026)",
+    "bankVersion": "stage1-pilot-1.0",
+    "scoringVersion": "1"
+  },
+  "topics": [
+    {
+      "id": "basic",
+      "module": "Module 4",
+      "label": "4.1.1 Basic concepts and nomenclature"
+    },
+    {
+      "id": "alkenes",
+      "module": "Module 4",
+      "label": "4.1.3 Alkenes"
+    },
+    {
+      "id": "alcohols",
+      "module": "Module 4",
+      "label": "4.2.1 Alcohols"
+    },
+    {
+      "id": "haloalkanes",
+      "module": "Module 4",
+      "label": "4.2.2 Haloalkanes"
+    },
+    {
+      "id": "synthesis4",
+      "module": "Module 4",
+      "label": "4.2.3 Organic synthesis"
+    },
+    {
+      "id": "aromatics",
+      "module": "Module 6",
+      "label": "6.1.1 Aromatic compounds"
+    },
+    {
+      "id": "carbonyls",
+      "module": "Module 6",
+      "label": "6.1.2 Carbonyl compounds"
+    },
+    {
+      "id": "acids",
+      "module": "Module 6",
+      "label": "6.1.3 Carboxylic acids and esters"
+    },
+    {
+      "id": "nitrogen",
+      "module": "Module 6",
+      "label": "6.2.2 Amines"
+    },
+    {
+      "id": "ccbond",
+      "module": "Module 6",
+      "label": "6.2.4 Carbon–carbon bond formation"
+    }
+  ],
+  "vocabulary": {
+    "reagents": {
+      "dichromate-acid": {
+        "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺",
+        "aliases": [
+          "acidified potassium dichromate(VI)",
+          "K2Cr2O7/H+",
+          "K₂Cr₂O₇/H⁺",
+          "K2Cr2O7/H2SO4"
+        ]
+      },
+      "aqueous-hydroxide": {
+        "label": "Aqueous hydroxide — OH⁻(aq)",
+        "aliases": [
+          "aqueous NaOH",
+          "sodium hydroxide solution",
+          "OH-(aq)"
+        ]
+      }
+    },
+    "mechanisms": {
+      "electrophilic-addition": [
+        "electrophilic addition"
+      ],
+      "nucleophilic-substitution": [
+        "nucleophilic substitution"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "RC01",
+      "type": "reagents",
+      "prerequisites": [
+        "alcohols"
+      ],
+      "specRefs": [
+        "4.2.1(c)"
+      ],
+      "difficulty": 1,
+      "objective": "Control oxidation product",
+      "prompt": "Select the reagent and heating method for propan-1-ol → propanal.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC01-o0",
+          "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺; warm and distil"
+        },
+        {
+          "id": "RC01-o1",
+          "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺; heat under reflux"
+        },
+        {
+          "id": "RC01-o2",
+          "label": "Aqueous sodium hydroxide; heat under reflux"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Distil the aldehyde as it forms to limit further oxidation.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "RC02",
+      "type": "reagents",
+      "prerequisites": [
+        "alcohols"
+      ],
+      "specRefs": [
+        "4.2.1(c)"
+      ],
+      "difficulty": 1,
+      "objective": "Oxidise to carboxylic acid",
+      "prompt": "Select the reagent and heating method for ethanol → ethanoic acid.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC02-o0",
+          "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺; heat under reflux"
+        },
+        {
+          "id": "RC02-o1",
+          "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺; distil immediately"
+        },
+        {
+          "id": "RC02-o2",
+          "label": "H₂/Ni; heat"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Reflux with excess oxidising agent allows complete oxidation.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "RC03",
+      "type": "reagents",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(a)"
+      ],
+      "difficulty": 1,
+      "objective": "Hydrolyse a haloalkane",
+      "prompt": "Select the reagent and heating method for 1-bromopropane → propan-1-ol.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC03-o0",
+          "label": "Aqueous sodium hydroxide; heat under reflux"
+        },
+        {
+          "id": "RC03-o1",
+          "label": "Ethanolic potassium hydroxide; heat under reflux"
+        },
+        {
+          "id": "RC03-o2",
+          "label": "Concentrated sulfuric acid; heat"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Aqueous OH⁻ acts as the nucleophile; ethanolic alkali favours elimination.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "RC04",
+      "type": "reagents",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(f)"
+      ],
+      "difficulty": 1,
+      "objective": "Hydrate an alkene",
+      "prompt": "Select the reagent and catalyst for ethene → ethanol.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC04-o0",
+          "label": "Steam; phosphoric(V) acid catalyst"
+        },
+        {
+          "id": "RC04-o1",
+          "label": "Water; sodium hydroxide"
+        },
+        {
+          "id": "RC04-o2",
+          "label": "Hydrogen; nickel catalyst"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Steam adds across C=C using an acid catalyst such as H₃PO₄.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "RC05",
+      "type": "reagents",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(b)"
+      ],
+      "difficulty": 2,
+      "objective": "Reduce a ketone",
+      "prompt": "Select the reagent for propanone → propan-2-ol.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC05-o0",
+          "label": "Sodium tetrahydridoborate(III) — NaBH₄"
+        },
+        {
+          "id": "RC05-o1",
+          "label": "Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺"
+        },
+        {
+          "id": "RC05-o2",
+          "label": "2,4-DNPH"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "NaBH₄ reduces the C=O group to an alcohol.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "RC06",
+      "type": "reagents",
+      "prerequisites": [
+        "ccbond",
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "6.2.4(b)"
+      ],
+      "difficulty": 2,
+      "objective": "Extend a carbon chain",
+      "prompt": "Select the reagent and solvent for bromoethane → propanenitrile.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "RC06-o0",
+          "label": "Potassium cyanide — KCN; ethanol; heat under reflux"
+        },
+        {
+          "id": "RC06-o1",
+          "label": "Potassium cyanide — KCN; water at room temperature"
+        },
+        {
+          "id": "RC06-o2",
+          "label": "Ammonia; ethanol; heat in a sealed tube"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "CN⁻ substitutes for Br and adds one carbon; OCR specifies CN⁻ with ethanol.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS01",
+      "type": "multistep",
+      "prerequisites": [
+        "alcohols"
+      ],
+      "specRefs": [
+        "4.2.1(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Two-stage oxidation",
+      "prompt": "Choose the correctly completed route: ethanol → ethanal → ethanoic acid.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS01-o0",
+          "label": "1 K₂Cr₂O₇/H⁺, distil; 2 K₂Cr₂O₇/H⁺, reflux"
+        },
+        {
+          "id": "MS01-o1",
+          "label": "1 K₂Cr₂O₇/H⁺, reflux; 2 NaBH₄"
+        },
+        {
+          "id": "MS01-o2",
+          "label": "1 H₂/Ni; 2 K₂Cr₂O₇/H⁺, distil"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Controlled oxidation gives ethanal; further oxidation under reflux gives ethanoic acid.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS02",
+      "type": "multistep",
+      "prerequisites": [
+        "alkenes",
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.1.3(f)",
+        "4.2.2(a)"
+      ],
+      "difficulty": 2,
+      "objective": "Link addition and substitution",
+      "prompt": "Choose the route: ethene → bromoethane → ethanol.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS02-o0",
+          "label": "1 HBr; 2 aqueous NaOH, reflux"
+        },
+        {
+          "id": "MS02-o1",
+          "label": "1 Br₂; 2 ethanolic KOH, reflux"
+        },
+        {
+          "id": "MS02-o2",
+          "label": "1 steam/H₃PO₄; 2 HBr"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "HBr adds to ethene; aqueous OH⁻ then substitutes Br.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS03",
+      "type": "multistep",
+      "prerequisites": [
+        "haloalkanes",
+        "ccbond"
+      ],
+      "specRefs": [
+        "6.2.4(b-c)"
+      ],
+      "difficulty": 2,
+      "objective": "Extend and hydrolyse",
+      "prompt": "Choose the route: bromoethane → propanenitrile → propanoic acid.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS03-o0",
+          "label": "1 KCN in ethanol, reflux; 2 dilute acid, reflux"
+        },
+        {
+          "id": "MS03-o1",
+          "label": "1 aqueous NaOH, reflux; 2 K₂Cr₂O₇/H⁺, distil"
+        },
+        {
+          "id": "MS03-o2",
+          "label": "1 NH₃ in ethanol; 2 NaBH₄"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "CN⁻ extends the chain; acid hydrolysis of the nitrile forms the acid.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS04",
+      "type": "multistep",
+      "prerequisites": [
+        "carbonyls",
+        "ccbond"
+      ],
+      "specRefs": [
+        "6.1.2(b-c)",
+        "6.2.4(b)"
+      ],
+      "difficulty": 3,
+      "objective": "Use HCN then reduction",
+      "prompt": "Choose the route: ethanal → 2-hydroxypropanenitrile → propane-1,2-diamine is NOT intended. Which first step makes the hydroxynitrile?",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS04-o0",
+          "label": "NaCN(aq)/H⁺(aq)"
+        },
+        {
+          "id": "MS04-o1",
+          "label": "KCN in ethanol under reflux"
+        },
+        {
+          "id": "MS04-o2",
+          "label": "NaBH₄"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "CN⁻ adds to C=O, then the intermediate is protonated.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS05",
+      "type": "multistep",
+      "prerequisites": [
+        "alkenes",
+        "alcohols"
+      ],
+      "specRefs": [
+        "4.1.3(f)",
+        "4.2.1(d)"
+      ],
+      "difficulty": 2,
+      "objective": "Reversible functional-group route",
+      "prompt": "Choose the route: propene → propan-2-ol → propene.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS05-o0",
+          "label": "1 steam/H₃PO₄; 2 concentrated H₃PO₄, heat"
+        },
+        {
+          "id": "MS05-o1",
+          "label": "1 HBr; 2 aqueous NaOH"
+        },
+        {
+          "id": "MS05-o2",
+          "label": "1 H₂/Ni; 2 K₂Cr₂O₇/H⁺"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Hydration forms an alcohol; acid-catalysed dehydration reforms an alkene.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MS06",
+      "type": "multistep",
+      "prerequisites": [
+        "carbonyls",
+        "alcohols"
+      ],
+      "specRefs": [
+        "6.1.2(b)",
+        "4.2.1(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Interconvert carbonyl and alcohol",
+      "prompt": "Choose the route: propanone → propan-2-ol → propanone.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MS06-o0",
+          "label": "1 NaBH₄; 2 K₂Cr₂O₇/H⁺, reflux"
+        },
+        {
+          "id": "MS06-o1",
+          "label": "1 K₂Cr₂O₇/H⁺; 2 NaBH₄"
+        },
+        {
+          "id": "MS06-o2",
+          "label": "1 HCN; 2 dilute acid"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Reduction gives the secondary alcohol; oxidation returns the ketone.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI01",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(h)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify a specified mechanism",
+      "prompt": "Ethene reacts with HBr to form bromoethane.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI01-o0",
+          "label": "Electrophilic addition"
+        },
+        {
+          "id": "MI01-o1",
+          "label": "Nucleophilic substitution"
+        },
+        {
+          "id": "MI01-o2",
+          "label": "Electrophilic substitution"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is electrophilic addition; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI02",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(c)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify a specified mechanism",
+      "prompt": "1-bromopropane reacts with aqueous OH⁻ to form propan-1-ol.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI02-o0",
+          "label": "Nucleophilic substitution"
+        },
+        {
+          "id": "MI02-o1",
+          "label": "Electrophilic addition"
+        },
+        {
+          "id": "MI02-o2",
+          "label": "Elimination"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is nucleophilic substitution; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI03",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify a specified mechanism",
+      "prompt": "Ethanal reacts with CN⁻ then H⁺ to form a hydroxynitrile.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI03-o0",
+          "label": "Nucleophilic addition"
+        },
+        {
+          "id": "MI03-o1",
+          "label": "Nucleophilic substitution"
+        },
+        {
+          "id": "MI03-o2",
+          "label": "Electrophilic addition"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is nucleophilic addition; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI04",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "aromatics"
+      ],
+      "specRefs": [
+        "6.1.1(e)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify a specified mechanism",
+      "prompt": "Benzene reacts with NO₂⁺ to form nitrobenzene.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI04-o0",
+          "label": "Electrophilic substitution"
+        },
+        {
+          "id": "MI04-o1",
+          "label": "Electrophilic addition"
+        },
+        {
+          "id": "MI04-o2",
+          "label": "Nucleophilic substitution"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is electrophilic substitution; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI05",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(h)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify a specified mechanism",
+      "prompt": "Propene reacts with Br₂ to form 1,2-dibromopropane.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI05-o0",
+          "label": "Electrophilic addition"
+        },
+        {
+          "id": "MI05-o1",
+          "label": "Radical substitution"
+        },
+        {
+          "id": "MI05-o2",
+          "label": "Nucleophilic addition"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is electrophilic addition; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MI06",
+      "type": "mechanism-id",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify a specified mechanism",
+      "prompt": "Propanone reacts with H⁻ from NaBH₄, followed by protonation.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MI06-o0",
+          "label": "Nucleophilic addition"
+        },
+        {
+          "id": "MI06-o1",
+          "label": "Elimination"
+        },
+        {
+          "id": "MI06-o2",
+          "label": "Electrophilic substitution"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The reaction is nucleophilic addition; this is a mechanism name, not merely a reaction description.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC01",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(h)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "First arrow when ethene reacts with HBr",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC01-o0",
+          "label": "π bond → H atom"
+        },
+        {
+          "id": "MC01-o1",
+          "label": "H–Br bond → H atom"
+        },
+        {
+          "id": "MC01-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The electron pair in the π bond forms a bond to electrophilic H.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC02",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(h)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "Bond-breaking arrow in HBr during electrophilic addition",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC02-o0",
+          "label": "H–Br bond → Br atom"
+        },
+        {
+          "id": "MC02-o1",
+          "label": "Br lone pair → H atom"
+        },
+        {
+          "id": "MC02-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The bonding pair moves to Br, forming Br⁻.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC03",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "First arrow in hydrolysis of bromoethane by OH⁻",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC03-o0",
+          "label": "O lone pair/negative charge → carbon bonded to Br"
+        },
+        {
+          "id": "MC03-o1",
+          "label": "C–Br bond → carbon"
+        },
+        {
+          "id": "MC03-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The nucleophile donates an electron pair to the δ⁺ carbon.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC04",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "Leaving-group arrow in hydrolysis of bromoethane",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC04-o0",
+          "label": "C–Br bond → Br atom"
+        },
+        {
+          "id": "MC04-o1",
+          "label": "Br lone pair → carbon"
+        },
+        {
+          "id": "MC04-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The C–Br bonding pair leaves with bromine.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC05",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "First arrow when H⁻ attacks ethanal",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC05-o0",
+          "label": "H⁻ lone pair/negative charge → carbonyl carbon"
+        },
+        {
+          "id": "MC05-o1",
+          "label": "C=O bond → carbonyl carbon"
+        },
+        {
+          "id": "MC05-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "Hydride donates its pair to the δ⁺ carbonyl carbon.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "MC06",
+      "type": "mechanism-completion",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(c)"
+      ],
+      "difficulty": 2,
+      "objective": "Place a curly arrow by chemical anchors",
+      "prompt": "Second simultaneous arrow during nucleophilic attack on C=O",
+      "diagram": "",
+      "options": [
+        {
+          "id": "MC06-o0",
+          "label": "C=O π bond → oxygen atom"
+        },
+        {
+          "id": "MC06-o1",
+          "label": "O lone pair → carbonyl carbon"
+        },
+        {
+          "id": "MC06-o2",
+          "label": "Electron source and destination reversed"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The π electrons move to oxygen; reversing this arrow is chemically wrong.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE01",
+      "type": "sites",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(g-h)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In ethene + HBr, select the electron-pair donating site.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE01-o0",
+          "label": "C=C π bond"
+        },
+        {
+          "id": "SE01-o1",
+          "label": "H atom in HBr"
+        },
+        {
+          "id": "SE01-o2",
+          "label": "Br atom in HBr"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE02",
+      "type": "sites",
+      "prerequisites": [
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.3(g-h)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In ethene + HBr, select the electron-pair accepting atom in the first step.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE02-o0",
+          "label": "H atom in HBr"
+        },
+        {
+          "id": "SE02-o1",
+          "label": "Br atom in HBr"
+        },
+        {
+          "id": "SE02-o2",
+          "label": "either carbon without reference to the π bond"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE03",
+      "type": "sites",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(b-c)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In OH⁻ + CH₃CH₂Br, select the electron-pair donating site.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE03-o0",
+          "label": "O atom/lone pair on OH⁻"
+        },
+        {
+          "id": "SE03-o1",
+          "label": "Br atom"
+        },
+        {
+          "id": "SE03-o2",
+          "label": "C–C bond"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE04",
+      "type": "sites",
+      "prerequisites": [
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.2.2(c)"
+      ],
+      "difficulty": 1,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In OH⁻ + CH₃CH₂Br, select the electron-pair accepting atom.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE04-o0",
+          "label": "Carbon bonded to Br"
+        },
+        {
+          "id": "SE04-o1",
+          "label": "Br atom"
+        },
+        {
+          "id": "SE04-o2",
+          "label": "oxygen atom"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE05",
+      "type": "sites",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(b-c)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In CN⁻ addition to ethanal, select the electron-pair accepting atom.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE05-o0",
+          "label": "Carbonyl carbon"
+        },
+        {
+          "id": "SE05-o1",
+          "label": "Carbonyl oxygen"
+        },
+        {
+          "id": "SE05-o2",
+          "label": "N atom of CN⁻"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "SE06",
+      "type": "sites",
+      "prerequisites": [
+        "carbonyls"
+      ],
+      "specRefs": [
+        "6.1.2(b-c)"
+      ],
+      "difficulty": 2,
+      "objective": "Identify nucleophilic/electrophilic sites",
+      "prompt": "In CN⁻ addition to ethanal, select the electron-pair donating site.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "SE06-o0",
+          "label": "Carbon atom/lone pair of CN⁻"
+        },
+        {
+          "id": "SE06-o1",
+          "label": "Carbonyl oxygen"
+        },
+        {
+          "id": "SE06-o2",
+          "label": "H atom of CHO"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The selected site is defined by the available electron pair, charge or bond polarity.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM01",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic"
+      ],
+      "specRefs": [
+        "4.1.1(a)"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃CH₂CH₂OH.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM01-o0",
+          "label": "propan-1-ol"
+        },
+        {
+          "id": "NM01-o1",
+          "label": "propan-2-ol"
+        },
+        {
+          "id": "NM01-o2",
+          "label": "propanal"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is propan-1-ol.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM02",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(a)",
+        "4.1.3"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃CH=CH₂.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM02-o0",
+          "label": "propene"
+        },
+        {
+          "id": "NM02-o1",
+          "label": "propane"
+        },
+        {
+          "id": "NM02-o2",
+          "label": "prop-1-yne"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is propene.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM03",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(a)",
+        "6.1.2"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃COCH₃.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM03-o0",
+          "label": "propanone"
+        },
+        {
+          "id": "NM03-o1",
+          "label": "propanal"
+        },
+        {
+          "id": "NM03-o2",
+          "label": "propan-2-ol"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is propanone.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM04",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic",
+        "haloalkanes"
+      ],
+      "specRefs": [
+        "4.1.1(a)",
+        "4.2.2"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃CHBrCH₃.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM04-o0",
+          "label": "2-bromopropane"
+        },
+        {
+          "id": "NM04-o1",
+          "label": "1-bromopropane"
+        },
+        {
+          "id": "NM04-o2",
+          "label": "bromopropane"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is 2-bromopropane.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM05",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic",
+        "acids"
+      ],
+      "specRefs": [
+        "4.1.1(a)",
+        "6.1.3"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃CH₂COOH.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM05-o0",
+          "label": "propanoic acid"
+        },
+        {
+          "id": "NM05-o1",
+          "label": "propanal"
+        },
+        {
+          "id": "NM05-o2",
+          "label": "propyl ethanoate"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is propanoic acid.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    },
+    {
+      "id": "NM06",
+      "type": "nomenclature",
+      "prerequisites": [
+        "basic",
+        "ccbond"
+      ],
+      "specRefs": [
+        "4.1.1(a)",
+        "6.2.4"
+      ],
+      "difficulty": 1,
+      "objective": "Apply systematic nomenclature",
+      "prompt": "Select the systematic name for CH₃CH₂CN.",
+      "diagram": "",
+      "options": [
+        {
+          "id": "NM06-o0",
+          "label": "propanenitrile"
+        },
+        {
+          "id": "NM06-o1",
+          "label": "ethanenitrile"
+        },
+        {
+          "id": "NM06-o2",
+          "label": "propylamine"
+        }
+      ],
+      "answers": [
+        0
+      ],
+      "components": [
+        {
+          "id": "main",
+          "label": "Select one answer",
+          "essential": true
+        }
+      ],
+      "feedback": "The correct systematic name is propanenitrile.",
+      "source": "OCR H432 specification v3.1 (May 2026)",
+      "status": "teacher-review-required"
+    }
+  ]
+}
