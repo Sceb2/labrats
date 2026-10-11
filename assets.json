@@ -484,230 +484,1473 @@
   },
   "MC01-step": {
     "path": "assets/MC01-step.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃–CH₂–Br. Carbon and halogen have adjacent δ+ and δ− labels.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC01-complete": {
     "path": "assets/MC01-complete.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−. Completed electron movements and resulting species: CH₃–CH₂–OH + Br⁻",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃–CH₂–Br. Carbon and halogen have adjacent δ+ and δ− labels. Completed arrows and species after this step: CH₃CH₂OH + Br⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC02-step": {
     "path": "assets/MC02-step.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃CH₂–CH₂–Cl. Carbon and halogen have adjacent δ+ and δ− labels.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC02-complete": {
     "path": "assets/MC02-complete.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−. Completed electron movements and resulting species: C₂H₅–CH₂–OH + Cl⁻",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃CH₂–CH₂–Cl. Carbon and halogen have adjacent δ+ and δ− labels. Completed arrows and species after this step: CH₃CH₂CH₂OH + Cl⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC03-step": {
     "path": "assets/MC03-step.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside H–CH₂–I. Carbon and halogen have adjacent δ+ and δ− labels.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC03-complete": {
     "path": "assets/MC03-complete.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−. Completed electron movements and resulting species: H–CH₂–OH + I⁻",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside H–CH₂–I. Carbon and halogen have adjacent δ+ and δ− labels. Completed arrows and species after this step: CH₃OH + I⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC04-step": {
     "path": "assets/MC04-step.svg",
-    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "description": "Ethene beside H–Br. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC04-complete": {
     "path": "assets/MC04-complete.svg",
-    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−. Completed electron movements and resulting species: Intermediate: CH₃–CH₂⁺ + Br⁻",
+    "description": "Ethene beside H–Br. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible. Completed arrows and species after this step: CH₃CH₂⁺ + Br⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC05-step": {
     "path": "assets/MC05-step.svg",
-    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−.",
+    "description": "Propene beside H–Cl. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC05-complete": {
     "path": "assets/MC05-complete.svg",
-    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−. Completed electron movements and resulting species: Intermediate: CH₃–CH₂⁺ + Cl⁻",
+    "description": "Propene beside H–Cl. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible. Completed arrows and species after this step: (CH₃)₂CH⁺ + Cl⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC06-step": {
     "path": "assets/MC06-step.svg",
-    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon.",
+    "description": "Bromide with an adjacent lone pair and formal negative charge, beside an ethyl carbocation. The positively charged carbon has three single bonds.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 65,
+        "y": 184,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 124,
+        "y": 158,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "positive-charge",
+        "x": 490,
+        "y": 155,
+        "atomX": 465,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC06-complete": {
     "path": "assets/MC06-complete.svg",
-    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon. Completed electron movements and resulting species: CH₃–CH₂–Br",
+    "description": "Bromide with an adjacent lone pair and formal negative charge, beside an ethyl carbocation. The positively charged carbon has three single bonds. Completed arrows and species after this step: CH₃CH₂Br",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 65,
+        "y": 184,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 124,
+        "y": 158,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "positive-charge",
+        "x": 490,
+        "y": 155,
+        "atomX": 465,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC07-step": {
     "path": "assets/MC07-step.svg",
-    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−.",
+    "description": "Hydride beside ethanal. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 112,
+        "y": 164,
+        "atomX": 90,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC07-complete": {
     "path": "assets/MC07-complete.svg",
-    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−. Completed electron movements and resulting species: CH₃–C(H)(O⁻)–H",
+    "description": "Hydride beside ethanal. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O. Completed arrows and species after this step: CH₃CH₂O⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 112,
+        "y": 164,
+        "atomX": 90,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC08-step": {
     "path": "assets/MC08-step.svg",
-    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−.",
+    "description": "Cyanide, with an adjacent carbon lone pair, beside propanone. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 116,
+        "y": 164,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 124,
+        "y": 190,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC08-complete": {
     "path": "assets/MC08-complete.svg",
-    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Completed electron movements and resulting species: CH₃–C(CH₃)(O⁻)–C≡N",
+    "description": "Cyanide, with an adjacent carbon lone pair, beside propanone. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O. Completed arrows and species after this step: (CH₃)₂C(C≡N)–O⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 116,
+        "y": 164,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 124,
+        "y": 190,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC09-step": {
     "path": "assets/MC09-step.svg",
-    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H.",
+    "description": "A propanone-derived cyanohydrin alkoxide with its negative charge and lone pair adjacent to oxygen, beside H–O–H. The alkoxide carbon is bonded to two methyl groups, nitrile carbon and oxygen.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 311,
+        "y": 158,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 320,
+        "y": 184,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "MC09-complete": {
     "path": "assets/MC09-complete.svg",
-    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H. Completed electron movements and resulting species: (CH₃)₂C(OH)–C≡N + OH⁻",
+    "description": "A propanone-derived cyanohydrin alkoxide with its negative charge and lone pair adjacent to oxygen, beside H–O–H. The alkoxide carbon is bonded to two methyl groups, nitrile carbon and oxygen. Completed arrows and species after this step: (CH₃)₂C(OH)–C≡N + OH⁻",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 311,
+        "y": 158,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 320,
+        "y": 184,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST01-sites": {
     "path": "assets/ST01-sites.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃–CH₂–Br. Carbon and halogen have adjacent δ+ and δ− labels. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 62,
+        "y": 184,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 111,
+        "y": 159,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST02-sites": {
     "path": "assets/ST02-sites.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−. Additional sites shown for comparison.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃–CH₂–Br. Carbon and halogen have adjacent δ+ and δ− labels. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 37,
+        "y": 184,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 86,
+        "y": 159,
+        "atomX": 65,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 532,
+        "y": 184,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST03-sites": {
     "path": "assets/ST03-sites.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−. Additional sites shown for comparison.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside CH₃CH₂–CH₂–Cl. Carbon and halogen have adjacent δ+ and δ− labels. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 62,
+        "y": 184,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 111,
+        "y": 159,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST04-sites": {
     "path": "assets/ST04-sites.svg",
-    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−. Additional sites shown for comparison.",
+    "description": "Hydroxide O–H, with one assessed lone pair adjacent to O and a formal negative charge, beside H–CH₂–I. Carbon and halogen have adjacent δ+ and δ− labels. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 62,
+        "y": 184,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 111,
+        "y": 159,
+        "atomX": 90,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 347,
+        "y": 156,
+        "atomX": 320,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 528,
+        "y": 156,
+        "atomX": 500,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 527,
+        "y": 256,
+        "atomX": 500,
+        "atomY": 281,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST05-sites": {
     "path": "assets/ST05-sites.svg",
-    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "description": "Ethene beside H–Br. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST06-sites": {
     "path": "assets/ST06-sites.svg",
-    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "description": "Ethene beside H–Br. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST07-sites": {
     "path": "assets/ST07-sites.svg",
-    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−.",
+    "description": "Propene beside H–Cl. The H and halogen carry adjacent δ+ and δ− labels. Both bonds of C=C are visible. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "partial-positive",
+        "x": 443,
+        "y": 154,
+        "atomX": 420,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 565,
+        "y": 154,
+        "atomX": 545,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST08-sites": {
     "path": "assets/ST08-sites.svg",
-    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon.",
+    "description": "Bromide with an adjacent lone pair and formal negative charge, beside an ethyl carbocation. The positively charged carbon has three single bonds. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "lone-pair",
+        "x": 65,
+        "y": 184,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "negative-charge",
+        "x": 124,
+        "y": 158,
+        "atomX": 100,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "positive-charge",
+        "x": 490,
+        "y": 155,
+        "atomX": 465,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST09-sites": {
     "path": "assets/ST09-sites.svg",
-    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−.",
+    "description": "Hydride beside ethanal. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 112,
+        "y": 164,
+        "atomX": 90,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST10-sites": {
     "path": "assets/ST10-sites.svg",
-    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Additional sites shown for comparison.",
+    "description": "Cyanide, with an adjacent carbon lone pair, beside propanone. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 116,
+        "y": 164,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 124,
+        "y": 190,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 345,
+        "y": 100,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST11-sites": {
     "path": "assets/ST11-sites.svg",
-    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Additional sites shown for comparison.",
+    "description": "Cyanide, with an adjacent carbon lone pair, beside propanone. The formal negative charge is beside the nucleophile; carbonyl δ+ and δ− labels are adjacent to C and O. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 116,
+        "y": 164,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-positive",
+        "x": 343,
+        "y": 173,
+        "atomX": 315,
+        "atomY": 190,
+        "maxDistance": 45
+      },
+      {
+        "kind": "partial-negative",
+        "x": 343,
+        "y": 85,
+        "atomX": 315,
+        "atomY": 100,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 124,
+        "y": 190,
+        "atomX": 95,
+        "atomY": 190,
+        "maxDistance": 45
+      }
+    ]
   },
   "ST12-sites": {
     "path": "assets/ST12-sites.svg",
-    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H.",
+    "description": "A propanone-derived cyanohydrin alkoxide with its negative charge and lone pair adjacent to oxygen, beside H–O–H. The alkoxide carbon is bonded to two methyl groups, nitrile carbon and oxygen. Additional explicitly labelled sites are offered for comparison where required.",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Redrawn with adjacent lone pairs, formal charges and dipoles; atom/charge conservation and anchor endpoints author checked. Teacher review remains required.",
+    "annotationChecks": [
+      {
+        "kind": "negative-charge",
+        "x": 311,
+        "y": 158,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      },
+      {
+        "kind": "lone-pair",
+        "x": 320,
+        "y": 184,
+        "atomX": 290,
+        "atomY": 184,
+        "maxDistance": 45
+      }
+    ]
   },
-  "ER01-student": {
-    "path": "assets/ER01-student.svg",
-    "description": "The student drew carbon → hydroxide oxygen. Diagram intentionally contains a chemical error.",
+  "pentan-1-ol": {
+    "path": "assets/pentan-1-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to O 6; 2 attached hydrogens. O 6: single bond to C 5; 1 attached hydrogens.",
+    "smiles": "CCCCCO",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER02-student": {
-    "path": "assets/ER02-student.svg",
-    "description": "The leaving-group arrow starts at carbon, not the C–Cl bond pair. Diagram intentionally contains a chemical error.",
+  "pentan-2-ol": {
+    "path": "assets/pentan-2-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to O 5, single bond to C 6; 1 attached hydrogens. O 5: single bond to C 4; 1 attached hydrogens. C 6: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CCCC(O)C",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER03-student": {
-    "path": "assets/ER03-student.svg",
-    "description": "The student sent H–Br electrons to hydrogen. Diagram intentionally contains a chemical error.",
+  "hexan-3-ol": {
+    "path": "assets/hexan-3-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to O 4, single bond to C 5; 1 attached hydrogens. O 4: single bond to C 3; 1 attached hydrogens. C 5: single bond to C 3, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, single bond to C 7; 2 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CCC(O)CCC",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER04-student": {
-    "path": "assets/ER04-student.svg",
-    "description": "The student started the addition arrow at hydrogen. Diagram intentionally contains a chemical error.",
+  "2-methylpropan-1-ol": {
+    "path": "assets/2-methylpropan-1-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to O 5; 2 attached hydrogens. O 5: single bond to C 4; 1 attached hydrogens.",
+    "smiles": "CC(C)CO",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER05-student": {
-    "path": "assets/ER05-student.svg",
-    "description": "The student pointed the hydride arrow at carbonyl oxygen. Diagram intentionally contains a chemical error.",
+  "2-2-dimethylpropan-1-ol": {
+    "path": "assets/2-2-dimethylpropan-1-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4, single bond to C 5; 0 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2; 3 attached hydrogens. C 5: single bond to C 2, single bond to O 6; 2 attached hydrogens. O 6: single bond to C 5; 1 attached hydrogens.",
+    "smiles": "CC(C)(C)CO",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER06-student": {
-    "path": "assets/ER06-student.svg",
-    "description": "The student sent C=O electrons to carbon instead of oxygen. Diagram intentionally contains a chemical error.",
+  "3-methylpentan-2-ol": {
+    "path": "assets/3-methylpentan-2-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to O 3, single bond to C 4; 1 attached hydrogens. O 3: single bond to C 2; 1 attached hydrogens. C 4: single bond to C 2, single bond to C 5, single bond to C 6; 1 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens. C 6: single bond to C 4, single bond to C 7; 2 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CC(O)C(C)CC",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER07-student": {
-    "path": "assets/ER07-student.svg",
-    "description": "The first arrow O⁻ → water H is shown, but the water O–H bond does not break. Diagram intentionally contains a chemical error.",
+  "2-3-dimethylbutane": {
+    "path": "assets/2-3-dimethylbutane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5, single bond to C 6; 1 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens. C 6: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CC(C)C(C)C",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
-  "ER08-student": {
-    "path": "assets/ER08-student.svg",
-    "description": "The student labels the intermediate oxygen O, although it has one single bond and no H.",
+  "3-ethylpentane": {
+    "path": "assets/3-ethylpentane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 6; 1 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens. C 6: single bond to C 3, single bond to C 7; 2 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CCC(CC)CC",
     "status": "teacher-review-required",
-    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-2-dimethylbutane": {
+    "path": "assets/2-2-dimethylbutane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4, single bond to C 5; 0 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2; 3 attached hydrogens. C 5: single bond to C 2, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CC(C)(C)CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylhexane": {
+    "path": "assets/3-methylhexane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, single bond to C 7; 2 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CCC(C)CCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pent-1-ene": {
+    "path": "assets/pent-1-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, double bond to C 5; 1 attached hydrogens. C 5: double bond to C 4; 2 attached hydrogens.",
+    "smiles": "CCCC=C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "hex-2-ene": {
+    "path": "assets/hex-2-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to C 3; 1 attached hydrogens. C 3: double bond to C 2, single bond to C 4; 1 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CC=CCCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylbut-1-ene": {
+    "path": "assets/2-methylbut-1-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: double bond to C 2; 2 attached hydrogens. C 2: double bond to C 1, single bond to C 3, single bond to C 4; 0 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "C=C(C)CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylpent-1-ene": {
+    "path": "assets/3-methylpent-1-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: double bond to C 2; 2 attached hydrogens. C 2: double bond to C 1, single bond to C 3; 1 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "C=CC(C)CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "E-pent-2-ene": {
+    "path": "assets/E-pent-2-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to C 3; 1 attached hydrogens. C 3: double bond to C 2, single bond to C 4; 1 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "C/C=C/CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "Z-hex-3-ene": {
+    "path": "assets/Z-hex-3-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, double bond to C 4; 1 attached hydrogens. C 4: double bond to C 3, single bond to C 5; 1 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CC/C=C\\CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "1-chlorobutane": {
+    "path": "assets/1-chlorobutane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to Cl 5; 2 attached hydrogens. Cl 5: single bond to C 4; 0 attached hydrogens.",
+    "smiles": "CCCCCl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-bromopentane": {
+    "path": "assets/2-bromopentane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to Br 5, single bond to C 6; 1 attached hydrogens. Br 5: single bond to C 4; 0 attached hydrogens. C 6: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CCCC(Br)C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "1-bromo-2-methylpropane": {
+    "path": "assets/1-bromo-2-methylpropane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to Br 5; 2 attached hydrogens. Br 5: single bond to C 4; 0 attached hydrogens.",
+    "smiles": "CC(C)CBr",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-3-dichlorobutane": {
+    "path": "assets/2-3-dichlorobutane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to Cl 3, single bond to C 4; 1 attached hydrogens. Cl 3: single bond to C 2; 0 attached hydrogens. C 4: single bond to C 2, single bond to Cl 5, single bond to C 6; 1 attached hydrogens. Cl 5: single bond to C 4; 0 attached hydrogens. C 6: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CC(Cl)C(Cl)C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentanal": {
+    "path": "assets/pentanal.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6; 1 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCCCC=O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylbutanal": {
+    "path": "assets/2-methylbutanal.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6; 1 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCC(C)C=O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentan-3-one": {
+    "path": "assets/pentan-3-one.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, double bond to O 4, single bond to C 5; 0 attached hydrogens. O 4: double bond to C 3; 0 attached hydrogens. C 5: single bond to C 3, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CCC(=O)CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "4-methylpentan-2-one": {
+    "path": "assets/4-methylpentan-2-one.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to O 3, single bond to C 4; 0 attached hydrogens. O 3: double bond to C 2; 0 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6, single bond to C 7; 1 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens. C 7: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CC(=O)CC(C)C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylbutanoic-acid": {
+    "path": "assets/3-methylbutanoic-acid.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5; 1 attached hydrogens.",
+    "smiles": "CC(C)CC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-hydroxypropanoic-acid": {
+    "path": "assets/2-hydroxypropanoic-acid.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to O 3, single bond to C 4; 1 attached hydrogens. O 3: single bond to C 2; 1 attached hydrogens. C 4: single bond to C 2, double bond to O 5, single bond to O 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. O 6: single bond to C 4; 1 attached hydrogens.",
+    "smiles": "CC(O)C(=O)O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylpropanenitrile": {
+    "path": "assets/2-methylpropanenitrile.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, triple bond to N 5; 0 attached hydrogens. N 5: triple bond to C 4; 0 attached hydrogens.",
+    "smiles": "CC(C)C#N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "methyl-butanoate": {
+    "path": "assets/methyl-butanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, double bond to O 5, single bond to O 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. O 6: single bond to C 4, single bond to C 7; 0 attached hydrogens. C 7: single bond to O 6; 3 attached hydrogens.",
+    "smiles": "CCCC(=O)OC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "propyl-ethanoate": {
+    "path": "assets/propyl-ethanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to O 3, single bond to O 4; 0 attached hydrogens. O 3: double bond to C 2; 0 attached hydrogens. O 4: single bond to C 2, single bond to C 5; 0 attached hydrogens. C 5: single bond to O 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, single bond to C 7; 2 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CC(=O)OCCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "ethyl-2-methylpropanoate": {
+    "path": "assets/ethyl-2-methylpropanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, double bond to O 5, single bond to O 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. O 6: single bond to C 4, single bond to C 7; 0 attached hydrogens. C 7: single bond to O 6, single bond to C 8; 2 attached hydrogens. C 8: single bond to C 7; 3 attached hydrogens.",
+    "smiles": "CC(C)C(=O)OCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "propanamide": {
+    "path": "assets/propanamide.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, double bond to O 4, single bond to N 5; 0 attached hydrogens. O 4: double bond to C 3; 0 attached hydrogens. N 5: single bond to C 3; 2 attached hydrogens.",
+    "smiles": "CCC(=O)N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "butan-1-amine": {
+    "path": "assets/butan-1-amine.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to N 5; 2 attached hydrogens. N 5: single bond to C 4; 2 attached hydrogens.",
+    "smiles": "CCCCN",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "1-4-dibromobenzene": {
+    "path": "assets/1-4-dibromobenzene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. Br 1: single bond to C 2; 0 attached hydrogens. C 2: single bond to Br 1, aromatic bond to C 3, aromatic bond to C 8; 0 attached hydrogens. C 3: aromatic bond to C 2, aromatic bond to C 4; 1 attached hydrogens. C 4: aromatic bond to C 3, aromatic bond to C 5; 1 attached hydrogens. C 5: aromatic bond to C 4, single bond to Br 6, aromatic bond to C 7; 0 attached hydrogens. Br 6: single bond to C 5; 0 attached hydrogens. C 7: aromatic bond to C 5, aromatic bond to C 8; 1 attached hydrogens. C 8: aromatic bond to C 7, aromatic bond to C 2; 1 attached hydrogens.",
+    "smiles": "Brc1ccc(Br)cc1",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentan-3-ol": {
+    "path": "assets/pentan-3-ol.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to O 4, single bond to C 5; 1 attached hydrogens. O 4: single bond to C 3; 1 attached hydrogens. C 5: single bond to C 3, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "smiles": "CCC(O)CC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylbutanenitrile": {
+    "path": "assets/3-methylbutanenitrile.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, triple bond to N 6; 0 attached hydrogens. N 6: triple bond to C 5; 0 attached hydrogens.",
+    "smiles": "CC(C)CC#N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "4-methylnitrobenzene": {
+    "path": "assets/4-methylnitrobenzene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, aromatic bond to C 3, aromatic bond to C 10; 0 attached hydrogens. C 3: aromatic bond to C 2, aromatic bond to C 4; 1 attached hydrogens. C 4: aromatic bond to C 3, aromatic bond to C 5; 1 attached hydrogens. C 5: aromatic bond to C 4, single bond to N 6, aromatic bond to C 9; 0 attached hydrogens. N 6: single bond to C 5, double bond to O 7, single bond to O 8; 0 attached hydrogens; charge +1. O 7: double bond to N 6; 0 attached hydrogens. O 8: single bond to N 6; 0 attached hydrogens; charge -1. C 9: aromatic bond to C 5, aromatic bond to C 10; 1 attached hydrogens. C 10: aromatic bond to C 9, aromatic bond to C 2; 1 attached hydrogens.",
+    "smiles": "Cc1ccc([N+](=O)[O-])cc1",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "4-methylphenylamine": {
+    "path": "assets/4-methylphenylamine.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, aromatic bond to C 3, aromatic bond to C 8; 0 attached hydrogens. C 3: aromatic bond to C 2, aromatic bond to C 4; 1 attached hydrogens. C 4: aromatic bond to C 3, aromatic bond to C 5; 1 attached hydrogens. C 5: aromatic bond to C 4, single bond to N 6, aromatic bond to C 7; 0 attached hydrogens. N 6: single bond to C 5; 2 attached hydrogens. C 7: aromatic bond to C 5, aromatic bond to C 8; 1 attached hydrogens. C 8: aromatic bond to C 7, aromatic bond to C 2; 1 attached hydrogens.",
+    "smiles": "Cc1ccc(N)cc1",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "sodium-butanoate": {
+    "path": "assets/sodium-butanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, double bond to O 5, single bond to O 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. O 6: single bond to C 4; 0 attached hydrogens; charge -1. Na 7: ; 0 attached hydrogens; charge +1.",
+    "smiles": "CCCC(=O)[O-].[Na+]",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentane": {
+    "path": "assets/pentane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CCCCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentanenitrile": {
+    "path": "assets/pentanenitrile.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, triple bond to N 6; 0 attached hydrogens. N 6: triple bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCCCC#N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentanoyl-chloride": {
+    "path": "assets/pentanoyl-chloride.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to Cl 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. Cl 7: single bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCCCC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "ethyl-pentanoate": {
+    "path": "assets/ethyl-pentanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7, single bond to C 9; 2 attached hydrogens. C 9: single bond to C 8; 3 attached hydrogens.",
+    "smiles": "CCCCC(=O)OCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylbutanoyl-chloride": {
+    "path": "assets/3-methylbutanoyl-chloride.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to Cl 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. Cl 7: single bond to C 5; 0 attached hydrogens.",
+    "smiles": "CC(C)CC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "methyl-3-methylbutanoate": {
+    "path": "assets/methyl-3-methylbutanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7; 3 attached hydrogens.",
+    "smiles": "CC(C)CC(=O)OC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentanamide": {
+    "path": "assets/pentanamide.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to N 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. N 7: single bond to C 5; 2 attached hydrogens.",
+    "smiles": "CCCCC(=O)N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylpropanal": {
+    "path": "assets/2-methylpropanal.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, double bond to O 5; 1 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens.",
+    "smiles": "CC(C)C=O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylpropanoyl-chloride": {
+    "path": "assets/2-methylpropanoyl-chloride.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, double bond to O 5, single bond to Cl 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. Cl 6: single bond to C 4; 0 attached hydrogens.",
+    "smiles": "CC(C)C(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "N-ethyl-2-methylpropanamide": {
+    "path": "assets/N-ethyl-2-methylpropanamide.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to N 3; 2 attached hydrogens. N 3: single bond to C 2, single bond to C 4; 1 attached hydrogens. C 4: single bond to N 3, double bond to O 5, single bond to C 6; 0 attached hydrogens. O 5: double bond to C 4; 0 attached hydrogens. C 6: single bond to C 4, single bond to C 7, single bond to C 8; 1 attached hydrogens. C 7: single bond to C 6; 3 attached hydrogens. C 8: single bond to C 6; 3 attached hydrogens.",
+    "smiles": "CCNC(=O)C(C)C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pent-2-ene": {
+    "path": "assets/pent-2-ene.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to C 3; 1 attached hydrogens. C 3: double bond to C 2, single bond to C 4; 1 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens.",
+    "smiles": "CC=CCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "pentan-1-amine": {
+    "path": "assets/pentan-1-amine.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to N 6; 2 attached hydrogens. N 6: single bond to C 5; 2 attached hydrogens.",
+    "smiles": "CCCCCN",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "N-pentylethanamide": {
+    "path": "assets/N-pentylethanamide.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to N 6; 2 attached hydrogens. N 6: single bond to C 5, single bond to C 7; 1 attached hydrogens. C 7: single bond to N 6, double bond to O 8, single bond to C 9; 0 attached hydrogens. O 8: double bond to C 7; 0 attached hydrogens. C 9: single bond to C 7; 3 attached hydrogens.",
+    "smiles": "CCCCCNC(=O)C",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylbutanal": {
+    "path": "assets/3-methylbutanal.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6; 1 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens.",
+    "smiles": "CC(C)CC=O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "ethyl-3-methylbutanoate": {
+    "path": "assets/ethyl-3-methylbutanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7, single bond to C 9; 2 attached hydrogens. C 9: single bond to C 8; 3 attached hydrogens.",
+    "smiles": "CC(C)CC(=O)OCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "1-bromopentane": {
+    "path": "assets/1-bromopentane.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to Br 6; 2 attached hydrogens. Br 6: single bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCCCCBr",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "hexanenitrile": {
+    "path": "assets/hexanenitrile.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, triple bond to N 7; 0 attached hydrogens. N 7: triple bond to C 6; 0 attached hydrogens.",
+    "smiles": "CCCCCC#N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "hexanoic-acid": {
+    "path": "assets/hexanoic-acid.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, double bond to O 7, single bond to O 8; 0 attached hydrogens. O 7: double bond to C 6; 0 attached hydrogens. O 8: single bond to C 6; 1 attached hydrogens.",
+    "smiles": "CCCCCC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "hexanoyl-chloride": {
+    "path": "assets/hexanoyl-chloride.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, double bond to O 7, single bond to Cl 8; 0 attached hydrogens. O 7: double bond to C 6; 0 attached hydrogens. Cl 8: single bond to C 6; 0 attached hydrogens.",
+    "smiles": "CCCCCC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "propyl-hexanoate": {
+    "path": "assets/propyl-hexanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5, double bond to O 7, single bond to O 8; 0 attached hydrogens. O 7: double bond to C 6; 0 attached hydrogens. O 8: single bond to C 6, single bond to C 9; 0 attached hydrogens. C 9: single bond to O 8, single bond to C 10; 2 attached hydrogens. C 10: single bond to C 9, single bond to C 11; 2 attached hydrogens. C 11: single bond to C 10; 3 attached hydrogens.",
+    "smiles": "CCCCCC(=O)OCCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "3-methylbutan-1-amine": {
+    "path": "assets/3-methylbutan-1-amine.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3, single bond to C 4; 1 attached hydrogens. C 3: single bond to C 2; 3 attached hydrogens. C 4: single bond to C 2, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, single bond to N 6; 2 attached hydrogens. N 6: single bond to C 5; 2 attached hydrogens.",
+    "smiles": "CC(C)CCN",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "methyl-pentanoate": {
+    "path": "assets/methyl-pentanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4; 2 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7; 3 attached hydrogens.",
+    "smiles": "CCCCC(=O)OC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylbutanoic-acid": {
+    "path": "assets/2-methylbutanoic-acid.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5; 1 attached hydrogens.",
+    "smiles": "CCC(C)C(=O)O",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylbutanoyl-chloride": {
+    "path": "assets/2-methylbutanoyl-chloride.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6, single bond to Cl 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. Cl 7: single bond to C 5; 0 attached hydrogens.",
+    "smiles": "CCC(C)C(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "methyl-2-methylbutanoate": {
+    "path": "assets/methyl-2-methylbutanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7; 3 attached hydrogens.",
+    "smiles": "CCC(C)C(=O)OC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "2-methylbutanamide": {
+    "path": "assets/2-methylbutanamide.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6, single bond to N 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. N 7: single bond to C 5; 2 attached hydrogens.",
+    "smiles": "CCC(C)C(=O)N",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "ethyl-2-methylbutanoate": {
+    "path": "assets/ethyl-2-methylbutanoate.svg",
+    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, single bond to C 4, single bond to C 5; 1 attached hydrogens. C 4: single bond to C 3; 3 attached hydrogens. C 5: single bond to C 3, double bond to O 6, single bond to O 7; 0 attached hydrogens. O 6: double bond to C 5; 0 attached hydrogens. O 7: single bond to C 5, single bond to C 8; 0 attached hydrogens. C 8: single bond to O 7, single bond to C 9; 2 attached hydrogens. C 9: single bond to C 8; 3 attached hydrogens.",
+    "smiles": "CCC(C)C(=O)OCC",
+    "status": "teacher-review-required",
+    "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   }
 }
