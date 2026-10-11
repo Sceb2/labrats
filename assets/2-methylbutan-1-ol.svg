@@ -1,0 +1,49 @@
+<svg role="img" aria-labelledby="title desc" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='440px' height='220px' viewBox='0 0 440 220'><title id="title">Organic structure</title><desc id="desc">Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4, single bond to carbon 5; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s). Carbon 5: single bond to carbon 3, single bond to oxygen 6; 2 attached hydrogen(s). Oxygen 6: single bond to carbon 5; 1 attached hydrogen(s).</desc>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='440.0' height='220.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 354.4,42.8 L 313.4,113.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 313.4,113.9 L 231.3,113.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 231.3,113.9 L 190.2,185.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-2 atom-4' d='M 231.3,113.9 L 190.2,42.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-4 atom-5' d='M 190.2,42.8 L 117.9,42.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 315.4,110.4 L 313.4,113.9 L 309.3,113.9' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 192.3,46.4 L 190.2,42.8 L 186.6,42.8' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='atom-5' d='M 85.6 35.1
+L 87.7 35.1
+L 87.7 41.7
+L 95.6 41.7
+L 95.6 35.1
+L 97.7 35.1
+L 97.7 50.7
+L 95.6 50.7
+L 95.6 43.5
+L 87.7 43.5
+L 87.7 50.7
+L 85.6 50.7
+L 85.6 35.1
+' fill='#000000'/>
+<path class='atom-5' d='M 100.9 42.9
+Q 100.9 39.1, 102.8 37.0
+Q 104.6 34.9, 108.1 34.9
+Q 111.5 34.9, 113.4 37.0
+Q 115.2 39.1, 115.2 42.9
+Q 115.2 46.6, 113.4 48.8
+Q 111.5 50.9, 108.1 50.9
+Q 104.7 50.9, 102.8 48.8
+Q 100.9 46.7, 100.9 42.9
+M 108.1 49.2
+Q 110.5 49.2, 111.7 47.6
+Q 113.0 46.0, 113.0 42.9
+Q 113.0 39.8, 111.7 38.3
+Q 110.5 36.7, 108.1 36.7
+Q 105.7 36.7, 104.4 38.2
+Q 103.1 39.8, 103.1 42.9
+Q 103.1 46.0, 104.4 47.6
+Q 105.7 49.2, 108.1 49.2
+' fill='#000000'/>
+</svg>
