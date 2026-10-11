@@ -1,0 +1,713 @@
+{
+  "ethane": {
+    "path": "assets/ethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1; 3 attached hydrogen(s).",
+    "smiles": "CC",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propane": {
+    "path": "assets/propane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2; 3 attached hydrogen(s).",
+    "smiles": "CCC",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "methane": {
+    "path": "assets/methane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: ; 4 attached hydrogen(s).",
+    "smiles": "C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethene": {
+    "path": "assets/ethene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: double bond to carbon 2; 2 attached hydrogen(s). Carbon 2: double bond to carbon 1; 2 attached hydrogen(s).",
+    "smiles": "C=C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propene": {
+    "path": "assets/propene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2; 2 attached hydrogen(s).",
+    "smiles": "CC=C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "but-1-ene": {
+    "path": "assets/but-1-ene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, double bond to carbon 4; 1 attached hydrogen(s). Carbon 4: double bond to carbon 3; 2 attached hydrogen(s).",
+    "smiles": "CCC=C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "but-2-ene": {
+    "path": "assets/but-2-ene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2, single bond to carbon 4; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "CC=CC",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanol": {
+    "path": "assets/ethanol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3; 2 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "CCO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propan-1-ol": {
+    "path": "assets/propan-1-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to oxygen 4; 2 attached hydrogen(s). Oxygen 4: single bond to carbon 3; 1 attached hydrogen(s).",
+    "smiles": "CCCO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propan-2-ol": {
+    "path": "assets/propan-2-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4; 1 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s).",
+    "smiles": "CC(O)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butan-1-ol": {
+    "path": "assets/butan-1-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, single bond to oxygen 5; 2 attached hydrogen(s). Oxygen 5: single bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "CCCCO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butan-2-ol": {
+    "path": "assets/butan-2-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to oxygen 4, single bond to carbon 5; 1 attached hydrogen(s). Oxygen 4: single bond to carbon 3; 1 attached hydrogen(s). Carbon 5: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "CCC(O)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "tert-butanol": {
+    "path": "assets/tert-butanol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4, single bond to carbon 5; 0 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s). Carbon 5: single bond to carbon 2; 3 attached hydrogen(s).",
+    "smiles": "CC(O)(C)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanal": {
+    "path": "assets/ethanal.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3; 1 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s).",
+    "smiles": "CC=O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanal": {
+    "path": "assets/propanal.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, double bond to oxygen 4; 1 attached hydrogen(s). Oxygen 4: double bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CCC=O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butanal": {
+    "path": "assets/butanal.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, double bond to oxygen 5; 1 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CCCC=O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanone": {
+    "path": "assets/propanone.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to carbon 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s).",
+    "smiles": "CC(=O)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butanone": {
+    "path": "assets/butanone.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, double bond to oxygen 4, single bond to carbon 5; 0 attached hydrogen(s). Oxygen 4: double bond to carbon 3; 0 attached hydrogen(s). Carbon 5: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "CCC(=O)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanoic-acid": {
+    "path": "assets/ethanoic-acid.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to oxygen 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Oxygen 4: single bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "CC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanoic-acid": {
+    "path": "assets/propanoic-acid.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, double bond to oxygen 4, single bond to oxygen 5; 0 attached hydrogen(s). Oxygen 4: double bond to carbon 3; 0 attached hydrogen(s). Oxygen 5: single bond to carbon 3; 1 attached hydrogen(s).",
+    "smiles": "CCC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butanoic-acid": {
+    "path": "assets/butanoic-acid.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, double bond to oxygen 5, single bond to oxygen 6; 0 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s). Oxygen 6: single bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "CCCC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "pentanoic-acid": {
+    "path": "assets/pentanoic-acid.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, single bond to carbon 5; 2 attached hydrogen(s). Carbon 5: single bond to carbon 4, double bond to oxygen 6, single bond to oxygen 7; 0 attached hydrogen(s). Oxygen 6: double bond to carbon 5; 0 attached hydrogen(s). Oxygen 7: single bond to carbon 5; 1 attached hydrogen(s).",
+    "smiles": "CCCCC(=O)O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "bromoethane": {
+    "path": "assets/bromoethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to bromine 3; 2 attached hydrogen(s). Bromine 3: single bond to carbon 2; 0 attached hydrogen(s).",
+    "smiles": "CCBr",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-bromopropane": {
+    "path": "assets/1-bromopropane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to bromine 4; 2 attached hydrogen(s). Bromine 4: single bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CCCBr",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-bromopropane": {
+    "path": "assets/2-bromopropane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to bromine 3, single bond to carbon 4; 1 attached hydrogen(s). Bromine 3: single bond to carbon 2; 0 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s).",
+    "smiles": "CC(Br)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-chloropropane": {
+    "path": "assets/1-chloropropane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to chlorine 4; 2 attached hydrogen(s). Chlorine 4: single bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CCCCl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "iodomethane": {
+    "path": "assets/iodomethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to iodine 2; 3 attached hydrogen(s). Iodine 2: single bond to carbon 1; 0 attached hydrogen(s).",
+    "smiles": "CI",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "chloroethane": {
+    "path": "assets/chloroethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to chlorine 3; 2 attached hydrogen(s). Chlorine 3: single bond to carbon 2; 0 attached hydrogen(s).",
+    "smiles": "CCCl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-bromobutane": {
+    "path": "assets/1-bromobutane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, single bond to bromine 5; 2 attached hydrogen(s). Bromine 5: single bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CCCCBr",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-bromobutane": {
+    "path": "assets/2-bromobutane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to bromine 4, single bond to carbon 5; 1 attached hydrogen(s). Bromine 4: single bond to carbon 3; 0 attached hydrogen(s). Carbon 5: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "CCC(Br)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "dibromoethane": {
+    "path": "assets/dibromoethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Bromine 1: single bond to carbon 2; 0 attached hydrogen(s). Carbon 2: single bond to bromine 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to bromine 4; 2 attached hydrogen(s). Bromine 4: single bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "BrCCBr",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "tribromophenol": {
+    "path": "assets/tribromophenol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Oxygen 1: single bond to carbon 2; 1 attached hydrogen(s). Carbon 2: single bond to oxygen 1, aromatic bond to carbon 3, aromatic bond to carbon 9; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, single bond to bromine 4, aromatic bond to carbon 5; 0 attached hydrogen(s). Bromine 4: single bond to carbon 3; 0 attached hydrogen(s). Carbon 5: aromatic bond to carbon 3, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, single bond to bromine 7, aromatic bond to carbon 8; 0 attached hydrogen(s). Bromine 7: single bond to carbon 6; 0 attached hydrogen(s). Carbon 8: aromatic bond to carbon 6, aromatic bond to carbon 9; 1 attached hydrogen(s). Carbon 9: aromatic bond to carbon 8, single bond to bromine 10, aromatic bond to carbon 2; 0 attached hydrogen(s). Bromine 10: single bond to carbon 9; 0 attached hydrogen(s).",
+    "smiles": "Oc1c(Br)cc(Br)cc1Br",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanenitrile": {
+    "path": "assets/propanenitrile.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, triple bond to nitrogen 4; 0 attached hydrogen(s). Nitrogen 4: triple bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CCC#N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butanenitrile": {
+    "path": "assets/butanenitrile.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, triple bond to nitrogen 5; 0 attached hydrogen(s). Nitrogen 5: triple bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CCCC#N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanenitrile": {
+    "path": "assets/ethanenitrile.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, triple bond to nitrogen 3; 0 attached hydrogen(s). Nitrogen 3: triple bond to carbon 2; 0 attached hydrogen(s).",
+    "smiles": "CC#N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanamine": {
+    "path": "assets/ethanamine.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to nitrogen 3; 2 attached hydrogen(s). Nitrogen 3: single bond to carbon 2; 2 attached hydrogen(s).",
+    "smiles": "CCN",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanamine": {
+    "path": "assets/propanamine.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to nitrogen 4; 2 attached hydrogen(s). Nitrogen 4: single bond to carbon 3; 2 attached hydrogen(s).",
+    "smiles": "CCCN",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanoyl-chloride": {
+    "path": "assets/ethanoyl-chloride.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to chlorine 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Chlorine 4: single bond to carbon 2; 0 attached hydrogen(s).",
+    "smiles": "CC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "propanoyl-chloride": {
+    "path": "assets/propanoyl-chloride.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, double bond to oxygen 4, single bond to chlorine 5; 0 attached hydrogen(s). Oxygen 4: double bond to carbon 3; 0 attached hydrogen(s). Chlorine 5: single bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CCC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethyl-ethanoate": {
+    "path": "assets/ethyl-ethanoate.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3; 2 attached hydrogen(s). Oxygen 3: single bond to carbon 2, single bond to carbon 4; 0 attached hydrogen(s). Carbon 4: single bond to oxygen 3, double bond to oxygen 5, single bond to carbon 6; 0 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s). Carbon 6: single bond to carbon 4; 3 attached hydrogen(s).",
+    "smiles": "CCOC(=O)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "methyl-propanoate": {
+    "path": "assets/methyl-propanoate.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to oxygen 2; 3 attached hydrogen(s). Oxygen 2: single bond to carbon 1, single bond to carbon 3; 0 attached hydrogen(s). Carbon 3: single bond to oxygen 2, double bond to oxygen 4, single bond to carbon 5; 0 attached hydrogen(s). Oxygen 4: double bond to carbon 3; 0 attached hydrogen(s). Carbon 5: single bond to carbon 3, single bond to carbon 6; 2 attached hydrogen(s). Carbon 6: single bond to carbon 5; 3 attached hydrogen(s).",
+    "smiles": "COC(=O)CC",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethanamide": {
+    "path": "assets/ethanamide.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to nitrogen 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Nitrogen 4: single bond to carbon 2; 2 attached hydrogen(s).",
+    "smiles": "CC(=O)N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "benzene": {
+    "path": "assets/benzene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: aromatic bond to carbon 2, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 2: aromatic bond to carbon 1, aromatic bond to carbon 3; 1 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 1; 1 attached hydrogen(s).",
+    "smiles": "c1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "bromobenzene": {
+    "path": "assets/bromobenzene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Bromine 1: single bond to carbon 2; 0 attached hydrogen(s). Carbon 2: single bond to bromine 1, aromatic bond to carbon 3, aromatic bond to carbon 7; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "Brc1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "chlorobenzene": {
+    "path": "assets/chlorobenzene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Chlorine 1: single bond to carbon 2; 0 attached hydrogen(s). Carbon 2: single bond to chlorine 1, aromatic bond to carbon 3, aromatic bond to carbon 7; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "Clc1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "nitrobenzene": {
+    "path": "assets/nitrobenzene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Oxygen 1: single bond to nitrogen 2; 0 attached hydrogen(s); formal charge -1. Nitrogen 2: single bond to oxygen 1, double bond to oxygen 3, single bond to carbon 4; 0 attached hydrogen(s); formal charge +1. Oxygen 3: double bond to nitrogen 2; 0 attached hydrogen(s). Carbon 4: single bond to nitrogen 2, aromatic bond to carbon 5, aromatic bond to carbon 9; 0 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 8; 1 attached hydrogen(s). Carbon 8: aromatic bond to carbon 7, aromatic bond to carbon 9; 1 attached hydrogen(s). Carbon 9: aromatic bond to carbon 8, aromatic bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "[O-][N+](=O)c1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "phenylamine": {
+    "path": "assets/phenylamine.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Nitrogen 1: single bond to carbon 2; 2 attached hydrogen(s). Carbon 2: single bond to nitrogen 1, aromatic bond to carbon 3, aromatic bond to carbon 7; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "Nc1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "phenol": {
+    "path": "assets/phenol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Oxygen 1: single bond to carbon 2; 1 attached hydrogen(s). Carbon 2: single bond to oxygen 1, aromatic bond to carbon 3, aromatic bond to carbon 7; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "Oc1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "phenoxide": {
+    "path": "assets/phenoxide.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Oxygen 1: single bond to carbon 2; 0 attached hydrogen(s); formal charge -1. Carbon 2: single bond to oxygen 1, aromatic bond to carbon 3, aromatic bond to carbon 7; 0 attached hydrogen(s). Carbon 3: aromatic bond to carbon 2, aromatic bond to carbon 4; 1 attached hydrogen(s). Carbon 4: aromatic bond to carbon 3, aromatic bond to carbon 5; 1 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 2; 1 attached hydrogen(s).",
+    "smiles": "[O-]c1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "sodium-ethanoate": {
+    "path": "assets/sodium-ethanoate.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to oxygen 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Oxygen 4: single bond to carbon 2; 0 attached hydrogen(s); formal charge -1. Na 5: ; 0 attached hydrogen(s); formal charge +1.",
+    "smiles": "CC(=O)[O-].[Na+]",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "hydroxynitrile-ethanal": {
+    "path": "assets/hydroxynitrile-ethanal.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4; 1 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2, triple bond to nitrogen 5; 0 attached hydrogen(s). Nitrogen 5: triple bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CC(O)C#N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "hydroxynitrile-propanone": {
+    "path": "assets/hydroxynitrile-propanone.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4, single bond to carbon 5; 0 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2; 3 attached hydrogen(s). Carbon 5: single bond to carbon 2, triple bond to nitrogen 6; 0 attached hydrogen(s). Nitrogen 6: triple bond to carbon 5; 0 attached hydrogen(s).",
+    "smiles": "CC(O)(C)C#N",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-methylbutan-1-ol": {
+    "path": "assets/2-methylbutan-1-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4, single bond to carbon 5; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s). Carbon 5: single bond to carbon 3, single bond to oxygen 6; 2 attached hydrogen(s). Oxygen 6: single bond to carbon 5; 1 attached hydrogen(s).",
+    "smiles": "CCC(C)CO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "3-methylbutan-1-ol": {
+    "path": "assets/3-methylbutan-1-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3, single bond to carbon 4; 1 attached hydrogen(s). Carbon 3: single bond to carbon 2; 3 attached hydrogen(s). Carbon 4: single bond to carbon 2, single bond to carbon 5; 2 attached hydrogen(s). Carbon 5: single bond to carbon 4, single bond to oxygen 6; 2 attached hydrogen(s). Oxygen 6: single bond to carbon 5; 1 attached hydrogen(s).",
+    "smiles": "CC(C)CCO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-methylpentane": {
+    "path": "assets/2-methylpentane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, single bond to carbon 5, single bond to carbon 6; 1 attached hydrogen(s). Carbon 5: single bond to carbon 4; 3 attached hydrogen(s). Carbon 6: single bond to carbon 4; 3 attached hydrogen(s).",
+    "smiles": "CCCC(C)C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-chlorobutan-1-ol": {
+    "path": "assets/2-chlorobutan-1-ol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to chlorine 4, single bond to carbon 5; 1 attached hydrogen(s). Chlorine 4: single bond to carbon 3; 0 attached hydrogen(s). Carbon 5: single bond to carbon 3, single bond to oxygen 6; 2 attached hydrogen(s). Oxygen 6: single bond to carbon 5; 1 attached hydrogen(s).",
+    "smiles": "CCC(Cl)CO",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "2-methylpropanoic-acid": {
+    "path": "assets/2-methylpropanoic-acid.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3, single bond to carbon 4; 1 attached hydrogen(s). Carbon 3: single bond to carbon 2; 3 attached hydrogen(s). Carbon 4: single bond to carbon 2, double bond to oxygen 5, single bond to oxygen 6; 0 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s). Oxygen 6: single bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "CC(C)C(=O)O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "3-methylbut-1-ene": {
+    "path": "assets/3-methylbut-1-ene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3, single bond to carbon 4; 1 attached hydrogen(s). Carbon 3: single bond to carbon 2; 3 attached hydrogen(s). Carbon 4: single bond to carbon 2, double bond to carbon 5; 1 attached hydrogen(s). Carbon 5: double bond to carbon 4; 2 attached hydrogen(s).",
+    "smiles": "CC(C)C=C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-2-dibromopropane": {
+    "path": "assets/1-2-dibromopropane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to bromine 3, single bond to carbon 4; 1 attached hydrogen(s). Bromine 3: single bond to carbon 2; 0 attached hydrogen(s). Carbon 4: single bond to carbon 2, single bond to bromine 5; 2 attached hydrogen(s). Bromine 5: single bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CC(Br)CBr",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "E-but-2-ene": {
+    "path": "assets/E-but-2-ene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2, single bond to carbon 4; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "C/C=C/C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "Z-but-2-ene": {
+    "path": "assets/Z-but-2-ene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2, single bond to carbon 4; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s).",
+    "smiles": "C/C=C\\C",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-3-dinitrobenzene": {
+    "path": "assets/1-3-dinitrobenzene.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Oxygen 1: single bond to nitrogen 2; 0 attached hydrogen(s); formal charge -1. Nitrogen 2: single bond to oxygen 1, double bond to oxygen 3, single bond to carbon 4; 0 attached hydrogen(s); formal charge +1. Oxygen 3: double bond to nitrogen 2; 0 attached hydrogen(s). Carbon 4: single bond to nitrogen 2, aromatic bond to carbon 5, aromatic bond to carbon 12; 0 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 8; 1 attached hydrogen(s). Carbon 8: aromatic bond to carbon 7, single bond to nitrogen 9, aromatic bond to carbon 12; 0 attached hydrogen(s). Nitrogen 9: single bond to carbon 8, single bond to oxygen 10, double bond to oxygen 11; 0 attached hydrogen(s); formal charge +1. Oxygen 10: single bond to nitrogen 9; 0 attached hydrogen(s); formal charge -1. Oxygen 11: double bond to nitrogen 9; 0 attached hydrogen(s). Carbon 12: aromatic bond to carbon 8, aromatic bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "[O-][N+](=O)c1cccc([N+]([O-])=O)c1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "N-methylethanamide": {
+    "path": "assets/N-methylethanamide.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to nitrogen 2; 3 attached hydrogen(s). Nitrogen 2: single bond to carbon 1, single bond to carbon 3; 1 attached hydrogen(s). Carbon 3: single bond to nitrogen 2, single bond to carbon 4, double bond to oxygen 5; 0 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s). Oxygen 5: double bond to carbon 3; 0 attached hydrogen(s).",
+    "smiles": "CNC(C)=O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "hydroxy-propanal": {
+    "path": "assets/hydroxy-propanal.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4; 1 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2, double bond to oxygen 5; 1 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CC(O)C=O",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "acetophenone": {
+    "path": "assets/acetophenone.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to oxygen 3, single bond to carbon 4; 0 attached hydrogen(s). Oxygen 3: double bond to carbon 2; 0 attached hydrogen(s). Carbon 4: single bond to carbon 2, aromatic bond to carbon 5, aromatic bond to carbon 9; 0 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 8; 1 attached hydrogen(s). Carbon 8: aromatic bond to carbon 7, aromatic bond to carbon 9; 1 attached hydrogen(s). Carbon 9: aromatic bond to carbon 8, aromatic bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "CC(=O)c1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "1-phenylethanol": {
+    "path": "assets/1-phenylethanol.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to oxygen 3, single bond to carbon 4; 1 attached hydrogen(s). Oxygen 3: single bond to carbon 2; 1 attached hydrogen(s). Carbon 4: single bond to carbon 2, aromatic bond to carbon 5, aromatic bond to carbon 9; 0 attached hydrogen(s). Carbon 5: aromatic bond to carbon 4, aromatic bond to carbon 6; 1 attached hydrogen(s). Carbon 6: aromatic bond to carbon 5, aromatic bond to carbon 7; 1 attached hydrogen(s). Carbon 7: aromatic bond to carbon 6, aromatic bond to carbon 8; 1 attached hydrogen(s). Carbon 8: aromatic bond to carbon 7, aromatic bond to carbon 9; 1 attached hydrogen(s). Carbon 9: aromatic bond to carbon 8, aromatic bond to carbon 4; 1 attached hydrogen(s).",
+    "smiles": "CC(O)c1ccccc1",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "butanoyl-chloride": {
+    "path": "assets/butanoyl-chloride.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, double bond to oxygen 5, single bond to chlorine 6; 0 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s). Chlorine 6: single bond to carbon 4; 0 attached hydrogen(s).",
+    "smiles": "CCCC(=O)Cl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "ethyl-butanoate": {
+    "path": "assets/ethyl-butanoate.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, single bond to carbon 3; 2 attached hydrogen(s). Carbon 3: single bond to carbon 2, single bond to carbon 4; 2 attached hydrogen(s). Carbon 4: single bond to carbon 3, double bond to oxygen 5, single bond to oxygen 6; 0 attached hydrogen(s). Oxygen 5: double bond to carbon 4; 0 attached hydrogen(s). Oxygen 6: single bond to carbon 4, single bond to carbon 7; 0 attached hydrogen(s). Carbon 7: single bond to oxygen 6, single bond to carbon 8; 2 attached hydrogen(s). Carbon 8: single bond to carbon 7; 3 attached hydrogen(s).",
+    "smiles": "CCCC(=O)OCC",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "chloromethane": {
+    "path": "assets/chloromethane.svg",
+    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to chlorine 2; 3 attached hydrogen(s). Chlorine 2: single bond to carbon 1; 0 attached hydrogen(s).",
+    "smiles": "CCl",
+    "status": "teacher-review-required",
+    "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
+  },
+  "MC01-step": {
+    "path": "assets/MC01-step.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC01-complete": {
+    "path": "assets/MC01-complete.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−. Completed electron movements and resulting species: CH₃–CH₂–OH + Br⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC02-step": {
+    "path": "assets/MC02-step.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC02-complete": {
+    "path": "assets/MC02-complete.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−. Completed electron movements and resulting species: C₂H₅–CH₂–OH + Cl⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC03-step": {
+    "path": "assets/MC03-step.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC03-complete": {
+    "path": "assets/MC03-complete.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−. Completed electron movements and resulting species: H–CH₂–OH + I⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC04-step": {
+    "path": "assets/MC04-step.svg",
+    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC04-complete": {
+    "path": "assets/MC04-complete.svg",
+    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−. Completed electron movements and resulting species: Intermediate: CH₃–CH₂⁺ + Br⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC05-step": {
+    "path": "assets/MC05-step.svg",
+    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC05-complete": {
+    "path": "assets/MC05-complete.svg",
+    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−. Completed electron movements and resulting species: Intermediate: CH₃–CH₂⁺ + Cl⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC06-step": {
+    "path": "assets/MC06-step.svg",
+    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC06-complete": {
+    "path": "assets/MC06-complete.svg",
+    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon. Completed electron movements and resulting species: CH₃–CH₂–Br",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC07-step": {
+    "path": "assets/MC07-step.svg",
+    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC07-complete": {
+    "path": "assets/MC07-complete.svg",
+    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−. Completed electron movements and resulting species: CH₃–C(H)(O⁻)–H",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC08-step": {
+    "path": "assets/MC08-step.svg",
+    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC08-complete": {
+    "path": "assets/MC08-complete.svg",
+    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Completed electron movements and resulting species: CH₃–C(CH₃)(O⁻)–C≡N",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC09-step": {
+    "path": "assets/MC09-step.svg",
+    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "MC09-complete": {
+    "path": "assets/MC09-complete.svg",
+    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H. Completed electron movements and resulting species: (CH₃)₂C(OH)–C≡N + OH⁻",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST01-sites": {
+    "path": "assets/ST01-sites.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST02-sites": {
+    "path": "assets/ST02-sites.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside CH₃–CH₂–Br; the carbon attached to Br is δ+ and Br is δ−. Additional sites shown for comparison.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST03-sites": {
+    "path": "assets/ST03-sites.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside C₂H₅–CH₂–Cl; the carbon attached to Cl is δ+ and Cl is δ−. Additional sites shown for comparison.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST04-sites": {
+    "path": "assets/ST04-sites.svg",
+    "description": "Hydroxide O–H with a negative charge and oxygen lone pair, beside H–CH₂–I; the carbon attached to I is δ+ and I is δ−. Additional sites shown for comparison.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST05-sites": {
+    "path": "assets/ST05-sites.svg",
+    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST06-sites": {
+    "path": "assets/ST06-sites.svg",
+    "description": "An alkene CH₂=CH₂ beside H–Br; H is δ+ and Br is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST07-sites": {
+    "path": "assets/ST07-sites.svg",
+    "description": "An alkene CH₂=CHCH₃ beside H–Cl; H is δ+ and Cl is δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST08-sites": {
+    "path": "assets/ST08-sites.svg",
+    "description": "Br⁻ with a lone pair beside CH₃–CH₂⁺, with the positive charge on the end carbon.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST09-sites": {
+    "path": "assets/ST09-sites.svg",
+    "description": "H⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and H. Carbon is δ+ and oxygen δ−.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST10-sites": {
+    "path": "assets/ST10-sites.svg",
+    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Additional sites shown for comparison.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST11-sites": {
+    "path": "assets/ST11-sites.svg",
+    "description": "CN⁻ beside a carbonyl C=O. Carbonyl carbon is also bonded to CH₃ and CH₃. Carbon is δ+ and oxygen δ−. Additional sites shown for comparison.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ST12-sites": {
+    "path": "assets/ST12-sites.svg",
+    "description": "(CH₃)₂C(C≡N)–O⁻ with an oxygen lone pair, beside H–O–H.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER01-student": {
+    "path": "assets/ER01-student.svg",
+    "description": "The student drew carbon → hydroxide oxygen. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER02-student": {
+    "path": "assets/ER02-student.svg",
+    "description": "The leaving-group arrow starts at carbon, not the C–Cl bond pair. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER03-student": {
+    "path": "assets/ER03-student.svg",
+    "description": "The student sent H–Br electrons to hydrogen. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER04-student": {
+    "path": "assets/ER04-student.svg",
+    "description": "The student started the addition arrow at hydrogen. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER05-student": {
+    "path": "assets/ER05-student.svg",
+    "description": "The student pointed the hydride arrow at carbonyl oxygen. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER06-student": {
+    "path": "assets/ER06-student.svg",
+    "description": "The student sent C=O electrons to carbon instead of oxygen. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER07-student": {
+    "path": "assets/ER07-student.svg",
+    "description": "The first arrow O⁻ → water H is shown, but the water O–H bond does not break. Diagram intentionally contains a chemical error.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  },
+  "ER08-student": {
+    "path": "assets/ER08-student.svg",
+    "description": "The student labels the intermediate oxygen O, although it has one single bond and no H.",
+    "status": "teacher-review-required",
+    "review": "Manual drawing: check formal/partial charges, valence, conservation and electron movement."
+  }
+}

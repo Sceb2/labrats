@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Hosted automated page passes 143 checks",
+    "pass": true
+  },
+  {
+    "name": "All-topic selection gives 98 eligible questions",
+    "pass": true
+  },
+  {
+    "name": "Correct component marking and immutable first attempt on retry",
+    "pass": true
+  },
+  {
+    "name": "Arrow selectors draw two accepted curved arrows",
+    "pass": true
+  },
+  {
+    "name": "Arrow pointer controls, undo and clear work",
+    "pass": true
+  },
+  {
+    "name": "Two synthesis panels retain separate responses; no early answer disclosure",
+    "pass": true
+  },
+  {
+    "name": "Site diagram click matches labelled selector",
+    "pass": true
+  },
+  {
+    "name": "Product diagrams are four distinct selectable structures",
+    "pass": true
+  },
+  {
+    "name": "Reveal then retry never creates a first-attempt score",
+    "pass": true
+  },
+  {
+    "name": "Completed sessions can be revisited and mistakes form a queue",
+    "pass": true
+  },
+  {
+    "name": "Challenge gives no answer feedback until end; duplicate refresh submission blocked",
+    "pass": true
+  },
+  {
+    "name": "Background/expired challenge resumes at real end timestamp",
+    "pass": true
+  },
+  {
+    "name": "Unattempted answer revealed from summary protects future first marks",
+    "pass": true
+  },
+  {
+    "name": "Teacher preview filters, accepted answers and downloadable editor work",
+    "pass": true
+  },
+  {
+    "name": "Blocked localStorage does not prevent practice",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow across ALL question screens at 320px / 360px and 200%-equivalent 640px viewport",
+    "pass": true
+  },
+  {
+    "name": "Mobile site buttons and keyboard selectors perform same mechanism task",
+    "pass": true
+  },
+  {
+    "name": "200% CSS zoom leaves representative task controls usable without overflow",
+    "pass": true
+  },
+  {
+    "name": "No unhandled browser JavaScript errors",
+    "pass": true
+  }
+]

@@ -1,36 +1,56 @@
-# OCR A Organic Chemistry Revision — Stage 1 pilot
+# OCR A organic chemistry revision — Version 0.2
+
+A replacement for the supplied Stage 1 pilot. Plain HTML, CSS, JavaScript, JSON and SVG; runs directly on GitHub Pages. No build step, framework, account, backend, database or paid service.
+
+## Replace the existing GitHub Pages files
+
+1. Download a backup of your repository: **Code → Download ZIP**.
+2. Unzip this replacement ZIP. Open the `ocr-organic-revision-v0.2` folder.
+3. In your GitHub repository, open the folder that currently contains the site's `index.html`. Keep this location: it may be the root or `docs`, depending on your existing Pages setting.
+4. Choose **Add file → Upload files**. Upload the replacement root files and the `tests` and `docs` folders to this location. Do not upload the outer folder as another level, and do not upload the ZIP itself. GitHub limits each web upload to 100 files.
+5. Create/open an `assets` folder at the same level as `index.html`. If needed, use **Add file → Create new file**, name it `assets/README.md`, enter “Chemistry diagram assets”, and commit. Inside `assets`, upload the 107 SVG files in two batches (for example, 80 then 27).
+6. Commit the upload with a message such as `Update organic revision to v0.2`. Replace files when prompted. Leave unrelated repository files and any custom `CNAME` file in place.
+7. Your existing **Settings → Pages** branch/folder can stay the same. Wait for the Pages deployment check to finish, then refresh your published URL. If old content appears, use Ctrl+F5.
+8. Open `tests.html` at the same published location. Expect **143/143** software checks. Open `teacher.html` to inspect chemistry before classroom use.
+
+No terminal is needed for uploading, editing normal question records or running the hosted checks. A double-clicked local `index.html` cannot load JSON in most browsers; use GitHub Pages. Developers can use any static HTTP server for local testing.
 
 ## What is included
-A mobile-first static website with 36 original pilot questions: six each for reagents and conditions, multi-step synthesis, mechanism identification, mechanism completion, nucleophilic/electrophilic sites, and nomenclature. Content is separate in `questions.json`.
 
-Authority used: OCR Chemistry A H432 specification, Version 3.1 (May 2026). The OCR 2017 reaction-pathways resource was used only as a pathway starting point. Every item is labelled `teacher-review-required` because software validation cannot replace chemistry review.
+- **98 original question records**: 16 reagents/conditions, 12 two-to-four-step routes, 14 identification tasks (12 named mechanisms + 2 explicitly separated reaction descriptions), 12 completion tasks, 12 sites, 16 names, 8 products and 8 errors.
+- Nine anchored curved-arrow tasks, plus three introductory completion/equation scaffolds. Desktop diagram buttons, large mobile site buttons, and origin/destination selectors all use the same chemical IDs.
+- Independent component and pathway-step marks, complete alternative methods, equivalence vocabulary, shuffled stable answer IDs and optional details that do not earn or cost marks.
+- Untimed practice, a first-attempt mistake queue, retries, reveal protection, completed-session review, and 5/10-minute personal challenges.
+- Teacher filtering, answer/asset inspection, JSON record editing, vocabulary/topic editing, import/export and validation.
+- A shared pure marking engine, a hosted test page, Node tests and optional Playwright browser tests.
 
-## Run on your computer
-1. Unzip the folder.
-2. Open Terminal/Command Prompt in the folder.
-3. Run `python -m http.server 8000` (on Windows, `py -m http.server 8000` may be needed).
-4. Visit `http://localhost:8000`.
+## Source and chemistry-review status
 
-Do not double-click `index.html`: browsers often block loading `questions.json` from a local file.
+Authority: **Cambridge OCR Chemistry A H432 specification, Version 3.1 (May 2026)**. Downloaded and read from the official OCR URL on **11 October 2026**. The supplied ZIP contained no specification attachment; the current official document was used instead. See `docs/SOURCES.md` for the precise record and SHA-256 fingerprint.
 
-## Static hosting
-- **GitHub Pages:** create a repository, upload these files to its root, then Settings → Pages → Deploy from branch → `main` / root.
-- **Netlify Drop:** drag the unzipped folder to https://app.netlify.com/drop.
-- **Microsoft 365/SharePoint:** modern SharePoint pages do not normally run arbitrary JavaScript uploads directly. Host on GitHub Pages/Netlify and add it as a link; embedding may be restricted by your organisation.
+All 98 questions are **teacher-review-required**. Content has been checked against the stated source and for common ambiguities during development, but no generated question has been assigned teacher approval. The “Teacher-approved only” filter is therefore initially empty. This is a focused bank, not complete H432 organic coverage.
 
-No build step, backend, student account or paid API is required.
+See `COVERAGE.md`, `docs/QUESTION_COVERAGE.csv`, `docs/AMBIGUITY_REPORT.md` and `TEACHER_REVIEW.md`. Software checks do not establish chemical accuracy or teaching quality.
 
-## Updating questions
-Edit `questions.json` in a text editor. Copy an existing item of the same `type`, give it a new stable `id`, and update prerequisites, exact specification references, options, answer index, feedback and status. `answers:[0]` means the first stored option is correct; displayed options are shuffled with their correctness attached, so position does not affect marking. Keep every prerequisite topic needed to answer and to reject distractors.
+## Use with students
 
-For an equivalent reagent, add its wording to the vocabulary alias array under the same stable chemical ID. The current pilot uses structured selection rather than typed answers, so equivalent labels are consolidated into one option, e.g. “Acidified potassium dichromate(VI) — K₂Cr₂O₇/H⁺”.
+1. Select **Basic concepts and nomenclature** plus every completed topic needed for the chosen questions. Structural literacy is an explicit prerequisite throughout.
+2. Select question types and difficulty. The count updates using **all** prerequisites, not any one matching topic.
+3. Start normal practice, or review partially correct/incorrect first attempts.
+4. For synthesis, open each numbered arrow and fill its separate answer panel. Submit the whole route together; later answers are not disclosed during entry.
+5. For mechanisms, select a source then a destination, or use the labelled selectors. Undo/clear as needed. Exact curve shape and arrow order are not marked.
+6. Reveal or retry when needed. These cannot increase first-attempt accuracy. The summary reports first-submission results, with unattempted answers only revealed on request.
 
-## Known limitations
-- The Stage 1 bank is a manageable pilot, not complete H432 organic coverage.
-- Mechanism completion assesses chemically anchored source→destination choices rather than free curved-arrow drawing. This is the accessible introductory scaffold requested; free SVG arrow placement is a Stage 2 enhancement.
-- Structure displays use condensed formulae in this pilot rather than a complete reviewed SVG asset library.
-- Multi-step questions currently select complete valid routes. Per-arrow independent panels are a Stage 2 enhancement.
-- Mistakes are summarised, but a dedicated mistake-only queue is not yet implemented.
-- All chemistry items need teacher approval before high-stakes use.
+## Personal challenges
 
-See `TEACHER_REVIEW.md`, `COVERAGE.md`, and `tests.html`.
+Untimed practice remains the default. Before starting a 5/10-minute challenge, the page explains that partial marks count, speed gives no bonus and feedback appears after the challenge. Accuracy is marks earned divided by marks available on submitted questions. Ties are broken by marks earned. Unsubmitted questions are reported separately. A queue is shuffled once and has no repeats.
+
+Personal bests only compare identical topic/type/difficulty/status selections, duration and bank/scoring versions. The deadline uses `Date.now()` timestamps; refresh and backgrounding do not restart it. A session also ends if its queue is exhausted.
+
+## Maintenance and technical details
+
+See `docs/MAINTENANCE.md` for complete examples. In the hosted teacher editor, apply edits, validate, download `questions.json`, then upload it to the same GitHub location. Nothing is silently written to GitHub. Editing bumps the bank version so incompatible stored scores are safely reset.
+
+`questions.json` owns topics, vocabulary, exact references and questions. `assets.json` links separate SVGs. `core.js` owns scoring/filtering/storage rules, `ui.js` shared display, `app.js` student flow, and `teacher.js` teacher tools. Existing URLs and minimal static hosting remain practical.
+
+Progress is local to a browser, with at most 12 completed sessions retained. It does not sync across devices. Stage 1 scores cannot be fairly compared with component marking and use different storage keys. No leaderboard or passwords are included; all public repository content, including answers, can be inspected.

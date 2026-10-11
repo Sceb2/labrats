@@ -1,0 +1,5 @@
+FAIL: unmodified original tests.html JavaScript has Invalid or unexpected token; browser remains at Running….
+
+Original checks executed with ONLY quoted-newline syntax repaired in memory:
+PASS
+36 unique questions; 6 per type; prerequisites/spec refs/options/answers present; dichromate aliases verified.
