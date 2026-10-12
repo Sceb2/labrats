@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "OCR A Organic Chemistry Revision",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "bankVersion": "0.3.1-pathways-2026-10-11",
     "scoringVersion": "2",
     "specification": "Cambridge OCR Chemistry A H432 Version 3.1 (May 2026)",
@@ -3653,7 +3653,7 @@
       "id": "RC01",
       "type": "reagents",
       "title": "Control primary alcohol oxidation",
-      "prompt": "Select oxidising agent, heating / collection method. ",
+      "prompt": "Select the oxidising agent and collection method that convert the alcohol into the aldehyde shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -3762,7 +3762,7 @@
       "id": "RC02",
       "type": "reagents",
       "title": "Oxidise a primary alcohol fully",
-      "prompt": "Select oxidising agent, heating method. ",
+      "prompt": "Select the oxidising agent and heating method that convert the alcohol into the carboxylic acid shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -3871,7 +3871,7 @@
       "id": "RC03",
       "type": "reagents",
       "title": "Hydrolyse a primary haloalkane",
-      "prompt": "Select the hydroxide reagent including its aqueous conditions. Heating and apparatus are not assessed.",
+      "prompt": "Select the reagent and aqueous conditions that convert the haloalkane into the alcohol shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -3959,7 +3959,7 @@
       "id": "RC04",
       "type": "reagents",
       "title": "Hydrate an alkene",
-      "prompt": "Select reagent, catalyst. Use the direct industrial catalytic hydration route.",
+      "prompt": "Select the reagent and catalyst for direct industrial hydration of the alkene shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -4074,7 +4074,7 @@
       "id": "RC05",
       "type": "reagents",
       "title": "Reduce a ketone",
-      "prompt": "Select reducing agent. ",
+      "prompt": "Select the reducing agent that converts the ketone into the alcohol shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -4162,7 +4162,7 @@
       "id": "RC06",
       "type": "reagents",
       "title": "Extend a haloalkane carbon chain",
-      "prompt": "Select nucleophilic reagent, solvent. ",
+      "prompt": "Select the nucleophilic reagent and solvent that convert the haloalkane into the nitrile shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4266,7 +4266,7 @@
       "id": "RC07",
       "type": "reagents",
       "title": "Oxidise a secondary alcohol",
-      "prompt": "The alcohol is heated under reflux. Select the oxidising agent; the heating method is already supplied.",
+      "prompt": "Select the oxidising agent for the displayed alcohol reaction carried out under reflux.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -4354,7 +4354,7 @@
       "id": "RC08",
       "type": "reagents",
       "title": "Dehydrate an alcohol",
-      "prompt": "Select acid catalyst, heating condition. ",
+      "prompt": "Select the acid catalyst and heating condition that convert the alcohol into the alkene shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4470,7 +4470,7 @@
       "id": "RC09",
       "type": "reagents",
       "title": "Nitrate benzene",
-      "prompt": "Select nitrating reagent, acid catalyst. ",
+      "prompt": "Select the nitrating reagent and acid catalyst that convert benzene into nitrobenzene.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4577,7 +4577,7 @@
       "id": "RC10",
       "type": "reagents",
       "title": "Brominate benzene",
-      "prompt": "Select halogen, halogen carrier. ",
+      "prompt": "Select the halogen and halogen carrier that convert benzene into bromobenzene.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4706,7 +4706,7 @@
       "id": "RC11",
       "type": "reagents",
       "title": "Prepare a primary amine",
-      "prompt": "Select the reagent used in excess and its solvent. The target is the primary amine; heating and numerical conditions are not assessed.",
+      "prompt": "Select the reagent used in excess and its solvent to form the primary amine shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4810,7 +4810,7 @@
       "id": "RC12",
       "type": "reagents",
       "title": "Reduce a nitroarene",
-      "prompt": "Select reducing reagent combination. Alkaline work-up to isolate the free amine is already supplied.",
+      "prompt": "Select the reducing reagents to form the aromatic amine shown, assuming alkaline work-up is already supplied.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4899,7 +4899,7 @@
       "id": "RC13",
       "type": "reagents",
       "title": "Make an acyl chloride",
-      "prompt": "Select reagent. ",
+      "prompt": "Select the reagent that converts the carboxylic acid into the acyl chloride shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -4987,7 +4987,7 @@
       "id": "RC14",
       "type": "reagents",
       "title": "Esterify ethanol",
-      "prompt": "Use the carboxylic-acid esterification route. Select the carboxylic acid and acid catalyst; heating is not assessed.",
+      "prompt": "Select the carboxylic acid and acid catalyst that esterify ethanol to give the product shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -5095,7 +5095,7 @@
       "id": "RC15",
       "type": "reagents",
       "title": "Hydrolyse an ester to a salt",
-      "prompt": "Select hydrolysis reagent, heating method. The target is sodium ethanoate. Ethanol is the coproduct.",
+      "prompt": "Select the hydrolysis reagent and heating method that produce sodium ethanoate and ethanol from the ester shown.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -5203,7 +5203,7 @@
       "id": "RC16",
       "type": "reagents",
       "title": "Choose a complete supplied method",
-      "prompt": "Select catalyst, laboratory procedure. Supplied protocols: A — heat liquid ethanol with phosphoric acid. B — pass ethanol vapour over hot solid aluminium oxide. Select one complete stated protocol; do not mix them.",
+      "prompt": "Choose the catalyst and procedure for one complete supplied dehydration method: heat liquid ethanol with H₃PO₄ or pass ethanol vapour over hot Al₂O₃.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -5337,7 +5337,7 @@
       "id": "MS01",
       "type": "multistep",
       "title": "Alcohol → aldehyde → acid",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -5542,7 +5542,7 @@
       "id": "MS02",
       "type": "multistep",
       "title": "Addition followed by hydrolysis",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -5713,7 +5713,7 @@
       "id": "MS03",
       "type": "multistep",
       "title": "One-carbon extension to an acid",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -5921,7 +5921,7 @@
       "id": "MS04",
       "type": "multistep",
       "title": "One-carbon extension to an amine",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -6137,7 +6137,7 @@
       "id": "MS05",
       "type": "multistep",
       "title": "Alkene → alcohol → aldehyde",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -6357,7 +6357,7 @@
       "id": "MS06",
       "type": "multistep",
       "title": "Carbonyl → alcohol → alkene",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates. The final diagram is one alkene in a possible product mixture; stereochemistry is not assessed.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions, ignoring stereochemistry.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -6557,7 +6557,7 @@
       "id": "MS07",
       "type": "multistep",
       "title": "Benzene → nitroarene → amine",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -6748,7 +6748,7 @@
       "id": "MS08",
       "type": "multistep",
       "title": "Haloalkane → alcohol → acid → acyl chloride",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -6996,7 +6996,7 @@
       "id": "MS09",
       "type": "multistep",
       "title": "Alcohol to amide through acyl chloride",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -7248,7 +7248,7 @@
       "id": "MS10",
       "type": "multistep",
       "title": "Hydrolysis, oxidation and esterification",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -7523,7 +7523,7 @@
       "id": "MS11",
       "type": "multistep",
       "title": "Aromatic C–C formation then reduction",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -7727,7 +7727,7 @@
       "id": "MS12",
       "type": "multistep",
       "title": "Four-step route to a longer-chain ester",
-      "prompt": "For each numbered arrow, select the requested components. Follow the displayed intermediates.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents and conditions.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -8048,7 +8048,7 @@
       "id": "MI01",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: HBr.",
+      "prompt": "Identify the mechanism for the reaction shown using HBr.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8138,7 +8138,7 @@
       "id": "MI02",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: aqueous hydroxide.",
+      "prompt": "Identify the mechanism for the reaction shown using aqueous hydroxide.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8228,7 +8228,7 @@
       "id": "MI03",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: NaBH₄, then water.",
+      "prompt": "Identify the mechanism for the reaction shown using NaBH₄ followed by water.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8318,7 +8318,7 @@
       "id": "MI04",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: NaCN(aq)/H⁺(aq).",
+      "prompt": "Identify the mechanism for the reaction shown using NaCN(aq)/H⁺(aq).",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8410,7 +8410,7 @@
       "id": "MI05",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: concentrated HNO₃ and concentrated H₂SO₄.",
+      "prompt": "Identify the mechanism for the reaction shown using concentrated HNO₃ and concentrated H₂SO₄.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8500,7 +8500,7 @@
       "id": "MI06",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: Br₂/FeBr₃.",
+      "prompt": "Identify the mechanism for the reaction shown using Br₂/FeBr₃.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8590,7 +8590,7 @@
       "id": "MI07",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: Cl₂/UV: initiation Cl₂ → 2Cl•.",
+      "prompt": "Identify the mechanism for the reaction shown, where Cl₂ → 2Cl• under UV light.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8680,7 +8680,7 @@
       "id": "MI08",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: CN⁻ in ethanol.",
+      "prompt": "Identify the mechanism for the reaction shown using CN⁻ in ethanol.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -8771,7 +8771,7 @@
       "id": "MI09",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Select the reaction description (drawing this mechanism is not required). Reagents / information: hot H₃PO₄.",
+      "prompt": "Select the reaction family for the transformation shown using hot H₃PO₄.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -8859,7 +8859,7 @@
       "id": "MI10",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the named reaction family; no mechanism drawing is being assessed. Reagents / information: NaBr/H₂SO₄.",
+      "prompt": "Select the reaction family for the transformation shown using NaBr/H₂SO₄.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -8947,7 +8947,7 @@
       "id": "MI11",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: NaBH₄, water protonation.",
+      "prompt": "Identify the mechanism for the reaction shown using NaBH₄ followed by protonation with water.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9037,7 +9037,7 @@
       "id": "MI12",
       "type": "mechanism-id",
       "title": "Distinguish reaction families",
-      "prompt": "Identify the mechanism family. Reagents / information: bromine water: three ring H atoms are replaced.",
+      "prompt": "Identify the mechanism when bromine water replaces three ring hydrogen atoms in the compound shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9128,7 +9128,7 @@
       "id": "MC01",
       "type": "mechanism-completion",
       "title": "Primary bromoethane hydrolysis",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete the displayed hydrolysis step by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9277,7 +9277,7 @@
       "id": "MC02",
       "type": "mechanism-completion",
       "title": "Primary chloropropane hydrolysis",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete the displayed hydrolysis step by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9426,7 +9426,7 @@
       "id": "MC03",
       "type": "mechanism-completion",
       "title": "Methyl iodide hydrolysis",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete the displayed hydrolysis step by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9575,7 +9575,7 @@
       "id": "MC04",
       "type": "mechanism-completion",
       "title": "Ethene + HBr: first step",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete the first step of HBr addition by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9723,7 +9723,7 @@
       "id": "MC05",
       "type": "mechanism-completion",
       "title": "Propene + HCl: major-route first step",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete the first step leading to the major HCl-addition product by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -9872,7 +9872,7 @@
       "id": "MC06",
       "type": "mechanism-completion",
       "title": "Bromide attack on ethyl carbocation",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete bromide attack on the carbocation shown by adding the required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10011,7 +10011,7 @@
       "id": "MC07",
       "type": "mechanism-completion",
       "title": "Ethanal + hydride: addition step",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete hydride addition to the carbonyl group shown by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10150,7 +10150,7 @@
       "id": "MC08",
       "type": "mechanism-completion",
       "title": "Propanone + cyanide: addition step",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete cyanide addition to the carbonyl group shown by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10301,7 +10301,7 @@
       "id": "MC09",
       "type": "mechanism-completion",
       "title": "Protonate a hydroxynitrile intermediate",
-      "prompt": "Click an electron source, then its destination to draw an arrow. You can use the numbered diagram points or labelled buttons. Add every arrow needed for this displayed step, then submit. Do not include later steps.",
+      "prompt": "Complete protonation of the intermediate with water by adding every required electron-pair arrow.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10451,7 +10451,7 @@
       "id": "MC10",
       "type": "mechanism-completion",
       "title": "Radical propagation equations",
-      "prompt": "Select the propagation equation that regenerates Cl• after the methyl radical has formed.",
+      "prompt": "Select a valid propagation step in the formation of this product.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10467,7 +10467,7 @@
       "components": [
         {
           "id": "movement",
-          "label": "Complete electron movement / equation",
+          "label": "Propagation step",
           "options": [
             "MC10-o0",
             "MC10-o1",
@@ -10535,7 +10535,7 @@
       "id": "MC11",
       "type": "mechanism-completion",
       "title": "Complete aromatic rearomatisation",
-      "prompt": "After benzene attacks NO₂⁺, the attacked ring carbon bears H and NO₂. Select the electron movement that restores the delocalised ring.",
+      "prompt": "Select the electron movement that restores ring delocalisation after benzene attacks NO₂⁺.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10552,7 +10552,7 @@
       "components": [
         {
           "id": "movement",
-          "label": "Complete electron movement / equation",
+          "label": "Electron movement",
           "options": [
             "MC11-o0",
             "MC11-o1",
@@ -10620,7 +10620,7 @@
       "id": "MC12",
       "type": "mechanism-completion",
       "title": "Hydride intermediate protonation",
-      "prompt": "Ethoxide CH₃CH₂O⁻ is the intermediate after hydride addition to ethanal. Select a complete protonation step using water.",
+      "prompt": "Select the electron-pair movements that protonate CH₃CH₂O⁻ with water to form ethanol.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -10636,7 +10636,7 @@
       "components": [
         {
           "id": "movement",
-          "label": "Complete electron movement / equation",
+          "label": "Electron-pair movements",
           "options": [
             "MC12-o0",
             "MC12-o1",
@@ -12087,7 +12087,7 @@
       "id": "NM01",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12153,7 +12153,7 @@
       "id": "NM02",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12219,7 +12219,7 @@
       "id": "NM03",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12285,7 +12285,7 @@
       "id": "NM04",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12351,7 +12351,7 @@
       "id": "NM05",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12417,7 +12417,7 @@
       "id": "NM06",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -12483,7 +12483,7 @@
       "id": "NM07",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12549,7 +12549,7 @@
       "id": "NM08",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic"
@@ -12614,7 +12614,7 @@
       "id": "NM09",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12681,7 +12681,7 @@
       "id": "NM10",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12747,7 +12747,7 @@
       "id": "NM11",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12813,7 +12813,7 @@
       "id": "NM12",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12879,7 +12879,7 @@
       "id": "NM13",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -12945,7 +12945,7 @@
       "id": "NM14",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name. Use E/Z notation, rather than cis/trans.",
+      "prompt": "Select the IUPAC name of the displayed compound, including E/Z notation.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13012,7 +13012,7 @@
       "id": "NM15",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13079,7 +13079,7 @@
       "id": "NM16",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select its systematic IUPAC name.",
+      "prompt": "Select the IUPAC name of the displayed compound.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13146,7 +13146,7 @@
       "id": "PP01",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. HBr; no peroxide / radical conditions. Select the major constitutional product, ignoring optical isomers.",
+      "prompt": "Select the major constitutional product of addition of HBr to the alkene shown under ionic conditions, ignoring optical isomers.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13236,7 +13236,7 @@
       "id": "PP02",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Br₂ addition (organic solvent; focus on organic product).",
+      "prompt": "Select the organic product when Br₂ adds to the alkene shown in an organic solvent.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13325,7 +13325,7 @@
       "id": "PP03",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Potassium dichromate(VI) acidified with sulfuric acid — K₂Cr₂O₇/H₂SO₄; heat under reflux.",
+      "prompt": "Select the organic product when the compound shown is heated under reflux with K₂Cr₂O₇/H₂SO₄.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13414,7 +13414,7 @@
       "id": "PP04",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. K₂Cr₂O₇ acidified with aqueous H₂SO₄ under normal alcohol-oxidation conditions. Choose the organic species that remains.",
+      "prompt": "Select the organic compound remaining after treatment with K₂Cr₂O₇/H₂SO₄ under normal alcohol-oxidation conditions.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13502,7 +13502,7 @@
       "id": "PP05",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. NaCN(aq)/H⁺(aq); select connectivity, with stereochemistry not assessed.",
+      "prompt": "Select the product structure formed using NaCN(aq)/H⁺(aq), ignoring stereochemistry.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -13593,7 +13593,7 @@
       "id": "PP06",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Hot aqueous NaOH; identify the acid-derived product. Ethanol is also produced.",
+      "prompt": "Select the acid-derived product of hydrolysis with hot aqueous NaOH, with ethanol formed as the other product.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13682,7 +13682,7 @@
       "id": "PP07",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Excess bromine water at room temperature; no halogen carrier.",
+      "prompt": "Select the organic product formed using excess bromine water at room temperature without a halogen carrier.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13771,7 +13771,7 @@
       "id": "PP08",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Excess NH₃; focus on the organic product.",
+      "prompt": "Select the organic product formed when the compound shown reacts with excess NH₃.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13862,7 +13862,7 @@
       "id": "MI13",
       "type": "mechanism-id",
       "title": "Classify reaction mechanism",
-      "prompt": "Propane reacts with Br₂ under UV. The displayed compound is one product in a mixture, not the unique product. Identify the mechanism family.",
+      "prompt": "Identify the mechanism that forms the displayed product when propane reacts with Br₂ under UV light.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -13953,7 +13953,7 @@
       "id": "MI14",
       "type": "mechanism-id",
       "title": "Classify reaction mechanism",
-      "prompt": "The alkene reacts with HBr under ordinary ionic addition conditions. The shown product is the major constitutional product; optical isomers are not distinguished. Identify the mechanism family.",
+      "prompt": "Identify the mechanism that forms the displayed major constitutional product when the alkene reacts with HBr under ionic conditions.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14044,7 +14044,7 @@
       "id": "NM17",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -14110,7 +14110,7 @@
       "id": "NM18",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -14176,7 +14176,7 @@
       "id": "NM19",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14242,7 +14242,7 @@
       "id": "NM20",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14308,7 +14308,7 @@
       "id": "NM21",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14374,7 +14374,7 @@
       "id": "NM22",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14440,7 +14440,7 @@
       "id": "NM23",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic"
@@ -14505,7 +14505,7 @@
       "id": "NM24",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic"
@@ -14570,7 +14570,7 @@
       "id": "NM25",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic"
@@ -14635,7 +14635,7 @@
       "id": "NM26",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic"
@@ -14700,7 +14700,7 @@
       "id": "NM27",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -14766,7 +14766,7 @@
       "id": "NM28",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14832,7 +14832,7 @@
       "id": "NM29",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14898,7 +14898,7 @@
       "id": "NM30",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -14964,7 +14964,7 @@
       "id": "NM31",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Use E/Z notation.",
+      "prompt": "Select the IUPAC name of the displayed compound, including E/Z notation.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15031,7 +15031,7 @@
       "id": "NM32",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Use E/Z notation.",
+      "prompt": "Select the IUPAC name of the displayed compound, including E/Z notation.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15098,7 +15098,7 @@
       "id": "NM33",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -15164,7 +15164,7 @@
       "id": "NM34",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15230,7 +15230,7 @@
       "id": "NM35",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15296,7 +15296,7 @@
       "id": "NM36",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15362,7 +15362,7 @@
       "id": "NM37",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -15428,7 +15428,7 @@
       "id": "NM38",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15494,7 +15494,7 @@
       "id": "NM39",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15560,7 +15560,7 @@
       "id": "NM40",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15626,7 +15626,7 @@
       "id": "NM41",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15692,7 +15692,7 @@
       "id": "NM42",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -15758,7 +15758,7 @@
       "id": "NM43",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15824,7 +15824,7 @@
       "id": "NM44",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -15890,7 +15890,7 @@
       "id": "NM45",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -15956,7 +15956,7 @@
       "id": "NM46",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16022,7 +16022,7 @@
       "id": "NM47",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16088,7 +16088,7 @@
       "id": "NM48",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16154,7 +16154,7 @@
       "id": "NM49",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16220,7 +16220,7 @@
       "id": "NM50",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16287,7 +16287,7 @@
       "id": "NM51",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16353,7 +16353,7 @@
       "id": "NM52",
       "type": "nomenclature",
       "title": "Name the displayed structure",
-      "prompt": "Select the systematic IUPAC name. Stereochemistry is not assessed.",
+      "prompt": "Select the IUPAC name of the displayed compound, without stereochemical descriptors.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16420,7 +16420,7 @@
       "id": "RC17",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select oxidising agent, heating / collection method. ",
+      "prompt": "Select the oxidising agent and collection method that convert the alcohol into the aldehyde shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16529,7 +16529,7 @@
       "id": "RC18",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select oxidising agent, heating method. ",
+      "prompt": "Select the oxidising agent and heating method that convert the alcohol into the carboxylic acid shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16638,7 +16638,7 @@
       "id": "RC19",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select the hydroxide reagent including its aqueous conditions. Heating and apparatus are not assessed.",
+      "prompt": "Select the reagent and aqueous conditions that convert the haloalkane into the alcohol shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16726,7 +16726,7 @@
       "id": "RC20",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select reducing agent. ",
+      "prompt": "Select the reducing agent that converts the ketone into the alcohol shown.",
       "difficulty": "Foundation recall",
       "prerequisites": [
         "basic",
@@ -16814,7 +16814,7 @@
       "id": "RC21",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select nucleophilic reagent, solvent. ",
+      "prompt": "Select the nucleophilic reagent and solvent that convert the haloalkane into the nitrile shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -16918,7 +16918,7 @@
       "id": "RC22",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select reagent. ",
+      "prompt": "Select the reagent that converts the carboxylic acid into the acyl chloride shown.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17006,7 +17006,7 @@
       "id": "RC23",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select the reducing reagent combination. Alkaline work-up to isolate the free aromatic amine is already supplied.",
+      "prompt": "Select the reducing reagents to form the aromatic amine shown, assuming alkaline work-up is already supplied.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17095,7 +17095,7 @@
       "id": "RC24",
       "type": "reagents",
       "title": "Select a method for this transformation",
-      "prompt": "Select the hydrolysis reagent and heating method. The target is sodium butanoate; methanol is the coproduct.",
+      "prompt": "Select the hydrolysis reagent and heating method that produce sodium butanoate and methanol from the ester shown.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -17203,7 +17203,7 @@
       "id": "PP09",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. NaBH₄, followed by water protonation. Select connectivity only.",
+      "prompt": "Select the product structure formed using NaBH₄ followed by water, ignoring stereochemistry.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17291,7 +17291,7 @@
       "id": "PP10",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Excess potassium dichromate(VI) acidified with sulfuric acid — K₂Cr₂O₇/H₂SO₄; heat under reflux.",
+      "prompt": "Select the organic product when the compound shown is heated under reflux with excess K₂Cr₂O₇/H₂SO₄.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17379,7 +17379,7 @@
       "id": "PP11",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. NaCN or KCN in ethanol; heat.",
+      "prompt": "Select the organic product formed when the haloalkane shown is heated with NaCN or KCN in ethanol.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17469,7 +17469,7 @@
       "id": "PP12",
       "type": "product",
       "title": "Predict the organic product",
-      "prompt": "Select the product structure. Excess methanol; identify the organic ester.",
+      "prompt": "Select the organic ester formed when the compound shown reacts with excess methanol.",
       "difficulty": "Standard application",
       "prerequisites": [
         "basic",
@@ -17558,7 +17558,7 @@
       "id": "MS13",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -17935,7 +17935,7 @@
       "id": "MS14",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -18312,7 +18312,7 @@
       "id": "MS15",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -18687,7 +18687,7 @@
       "id": "MS16",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -19063,7 +19063,7 @@
       "id": "MS17",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route. For the dehydration product, assess connectivity only: pent-2-ene can be an E/Z mixture.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures, ignoring stereochemistry.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -19391,7 +19391,7 @@
       "id": "MS18",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -19708,7 +19708,7 @@
       "id": "MS19",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -20023,7 +20023,7 @@
       "id": "MS20",
       "type": "multistep",
       "title": "Extended synthesis pathway",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. Follow this fixed sequence, rather than proposing another route.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -20400,7 +20400,7 @@
       "id": "MS21",
       "type": "multistep",
       "title": "Complete a branched synthesis network",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. The branches are separate transformations from the indicated compounds.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -20855,7 +20855,7 @@
       "id": "MS22",
       "type": "multistep",
       "title": "Complete a branched synthesis network",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. The branches are separate transformations from the indicated compounds.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -21310,7 +21310,7 @@
       "id": "MS23",
       "type": "multistep",
       "title": "Complete a branched synthesis network",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. The branches are separate transformations from the indicated compounds.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
@@ -21724,7 +21724,7 @@
       "id": "MS24",
       "type": "multistep",
       "title": "Complete a branched synthesis network",
-      "prompt": "Complete every numbered arrow and any missing intermediate structure. Select an arrow to open its panel; submit all steps together. The branches are separate transformations from the indicated compounds.",
+      "prompt": "Complete every numbered step of the synthesis pathway by selecting its requested reagents, conditions and missing structures.",
       "difficulty": "Synoptic/challenging",
       "prerequisites": [
         "basic",
