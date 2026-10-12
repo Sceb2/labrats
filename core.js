@@ -5,6 +5,18 @@ const TYPES=['reagents','multistep','mechanism-id','mechanism-completion','sites
 const DIFFICULTIES=['Foundation recall','Standard application','Synoptic/challenging'];
 const clone=x=>JSON.parse(JSON.stringify(x));
 function shuffle(a,rng=Math.random){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+// Select whole questions without repeats. Prefer exactly 20 marks; a larger
+// synthesis question permits up to 23. Small pools remain shorter.
+function practiceSet(questions,rng=Math.random){
+ const pool=shuffle([...new Map(questions.map(q=>[q.id,q])).values()],rng);
+ const states=new Map([['0:0',{total:0,large:false,questions:[]}]]);
+ for(const q of pool){if(!Number.isInteger(q.maxMark)||q.maxMark<1||q.maxMark>23)continue;
+  for(const s of [...states.values()]){const total=s.total+q.maxMark;if(total>23)continue;const large=s.large||(q.type==='multistep'&&q.maxMark>=5),key=total+':'+Number(large);if(!states.has(key))states.set(key,{total,large,questions:[...s.questions,q]})}
+ }
+ const allowed=[...states.values()].filter(s=>s.total>0&&(s.total<=20||s.large));
+ allowed.sort((a,b)=>Math.abs(a.total-20)-Math.abs(b.total-20)||a.total-b.total);
+ return allowed[0]?.questions||[];
+}
 function identity(bank,id){return bank.vocabulary[id]?.chemicalId||id}
 function aliasId(bank,label){const n=s=>s.trim().toLowerCase();return Object.values(bank.vocabulary).find(v=>[v.label,...v.aliases].some(a=>n(a)===n(label)))?.chemicalId||null}
 function eligible(bank,topics,types,difficulties,statuses=['draft','teacher-review-required','teacher-approved']){return bank.questions.filter(q=>q.enabled!==false&&q.prerequisites.every(t=>topics.includes(t))&&types.includes(q.type)&&difficulties.includes(q.difficulty)&&statuses.includes(q.status))}
@@ -47,5 +59,5 @@ function validate(bank){const errors=[],warnings=[];const fail=(id,msg)=>errors.
  }
  return {errors,warnings,counts:Object.fromEntries(TYPES.map(t=>[t,bank.questions.filter(q=>q.type===t).length]))};
 }
-return {TYPES,DIFFICULTIES,clone,shuffle,identity,aliasId,eligible,mark,markComponents,markArrows,progressEvent,outcome,accuracy,configId,remaining,safeStorage,restoreProgress,validate};
+return {TYPES,DIFFICULTIES,clone,shuffle,practiceSet,identity,aliasId,eligible,mark,markComponents,markArrows,progressEvent,outcome,accuracy,configId,remaining,safeStorage,restoreProgress,validate};
 });
