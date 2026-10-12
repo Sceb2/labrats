@@ -72,8 +72,8 @@ label.control,legend{font-size:1.08rem}
 @media(max-width:800px){
  .student-app .sidebar{display:block;position:static;height:0;padding:0;background:transparent}
  .student-app .side-brand,.student-app .side-footer{display:none}
- .student-app .side-nav{position:fixed;inset:auto 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:4px;background:var(--nav);border-top:1px solid #526b73;padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));z-index:30}
- .student-app .side-link{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center;gap:4px;padding:6px 2px;min-height:56px;min-width:0;font-size:.8rem;line-height:1.2;white-space:nowrap}
+ .student-app .side-nav{position:fixed;inset:auto 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;background:var(--nav);border-top:1px solid #526b73;padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));z-index:30}
+ .student-app .side-link{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center;gap:4px;padding:6px 2px;min-height:60px;min-width:44px;font-size:.875rem;line-height:1.25;white-space:normal}
  .student-app .side-link svg{display:block;width:20px;height:20px}
  .student-app .side-link:focus-visible{outline:3px solid #fff;outline-offset:-3px}
  .student-app .workspace{padding-bottom:var(--mobile-nav-space,88px)}
@@ -106,3 +106,21 @@ label.control,legend{font-size:1.08rem}
 .student-app .task-help-content{padding:0 4px 12px;overflow-wrap:anywhere}
 .student-app .task-help-content p,.student-app .task-help-content li{font-size:1rem;font-weight:400;line-height:1.55;margin:8px 0}
 .student-app .task-help-content ol{padding-left:24px}
+
+/* Compact question shell across all seven task families. */
+.student-app .legacy-question{background:transparent;border:0;border-radius:0;padding:0}
+.student-app .legacy-question h1{font-size:1.7rem;margin:14px 0}
+.student-app .synthesis-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px;margin:24px 0}
+.student-app .synthesis-actions>*{flex:0 1 auto}
+.student-app .synthesis-actions #submit{min-width:160px}
+.student-app .synthesis-actions #exit{order:-1;margin-right:auto;background:transparent;color:#52655f}
+@media(max-width:800px){
+ html{scroll-padding-bottom:var(--mobile-nav-space,100px)}
+ .student-app .side-link span{display:block;max-width:100%;overflow-wrap:anywhere;text-align:center}
+ .student-app .legacy-question h1,.student-app .synthesis-screen h1{font-size:1.25rem;line-height:1.35;margin:12px 0}
+ .student-app .practice-topline .breadcrumb{min-width:0;overflow-wrap:anywhere}
+ .student-app .question-title-row{gap:8px;flex-wrap:wrap}
+ .student-app .synthesis-actions>*{flex:1 1 100%;width:100%}
+ .student-app .synthesis-actions #exit{order:2;margin-right:0}
+ .student-app :is(#fb,#step-panel,.task-help){scroll-margin-bottom:var(--mobile-nav-space,100px)}
+}
