@@ -124,3 +124,5 @@ label.control,legend{font-size:1.08rem}
  .student-app .synthesis-actions #exit{order:2;margin-right:0}
  .student-app :is(#fb,#step-panel,.task-help){scroll-margin-bottom:var(--mobile-nav-space,100px)}
 }
+
+.topic-text{min-width:0}.topic-count{display:block;font-size:.875rem;line-height:1.45;color:#52655f;margin-top:3px;font-weight:400}.topic-count-note{font-size:.875rem}.recent-mistakes{list-style:none;padding:0;margin:16px 0 24px}.recent-mistakes li{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #d8dfd8}.recent-mistakes li div{min-width:0}.recent-mistakes li span{display:block;color:#52655f;font-size:.875rem;margin-top:4px}.recent-mistakes .btn{flex:none}.progress-page section{margin-bottom:28px}@media(max-width:540px){.recent-mistakes li{align-items:flex-start;flex-direction:column;gap:10px}.recent-mistakes .btn{width:100%}}
