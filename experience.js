@@ -11,5 +11,6 @@
  function messagePicker(rng=Math.random){const bags={},last={};return category=>{const source=messages[category]||messages.incorrect;if(!bags[category]?.length){const bag=[...source];for(let i=bag.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]]}if(bag[bag.length-1]===last[category])[bag[0],bag[bag.length-1]]=[bag[bag.length-1],bag[0]];bags[category]=bag}return last[category]=bags[category].pop()}}
  function perfectSession(session,bank){return !!session.finished&&session.mode!=='preview'&&session.ids.length>0&&session.ids.every(id=>{const q=bank.questions.find(q=>q.id===id),a=session.attempts[id];return !!q&&!!a?.first&&!a.revealed&&a.result?.complete===true&&a.result.score===q.maxMark&&a.result.max===q.maxMark})}
  function category(result,previous){return result.score===result.max?(previous&&(previous.revealed||previous.first?.score<previous.first?.max||previous.correctAfterRetry)?'retry':'correct'):result.score>0?'partial':'incorrect'}
- return {messages,messagePicker,perfectSession,category};
+ function fullMarkSubmission(result,mode,{submitted=false,revealed=false}={}){return submitted&&!revealed&&mode!=='challenge'&&result.max>0&&result.complete===true&&result.score===result.max}
+ return {messages,messagePicker,perfectSession,category,fullMarkSubmission};
 });

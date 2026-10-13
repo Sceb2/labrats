@@ -57,13 +57,23 @@ function routeEnds(q,i){const nodes=routeNodes(q),step=q.steps[i];return q.layou
 function stepFill(step){const essential=step.components.filter(c=>c.essential),response=S.response[step.id]||{},filled=essential.filter(c=>!!response[c.id]).length;return {filled,total:essential.length,text:filled===essential.length?'Filled in':filled?'Partly filled':'Not started'}}
 function routeGuide(q){return `<aside class="route-guide" aria-label="How to complete this pathway"><h2>How to complete this pathway</h2><ul><li><strong>Compound boxes</strong> show the starting material, intermediates and products. A dashed box is a missing structure to identify in its step panel.</li><li><strong>Numbered arrows are reaction steps.</strong> Select a step to open its answer panel below the pathway.</li><li><strong>Fill in every step, then submit once.</strong> Your selections are saved as you switch panels. “Filled in” means an answer is selected, not that it is correct.</li></ul><p id="route-progress" class="route-progress" role="status"></p></aside>`}
 function routeNode(p,completed){const hidden=p.hidden&&!completed,heading=`<div class="compound-heading">Compound ${U.esc(p.tag)}</div>`;const fig=hidden?`<figure class="chem unknown-structure"><div class="unknown-box" role="img" aria-label="Missing structure ${U.esc(p.letter)}">${U.esc(p.letter)}<span>Structure to identify</span></div><figcaption>${U.esc(p.caption)}</figcaption></figure>`:U.image(S.bank,p.asset,p.caption);return `<div class="compound-box">${heading}${fig}</div>`}
-function routeButton(q,i,completed){const [a,b]=routeEnds(q,i),fill=stepFill(q.steps[i]);return `<button type="button" class="route-arrow btn secondary" data-step="${i}" aria-controls="step-panel" aria-expanded="false" aria-label="Step ${i+1}: Compound ${U.esc(a.tag)} to Compound ${U.esc(b.tag)}. Open answers." ${completed?'disabled':''}><strong>Step ${i+1} <span aria-hidden="true">→</span></strong><span class="route-connection">${U.esc(a.tag)} → ${U.esc(b.tag)}</span><span class="route-action">${completed?'Submitted':'Open answers'}</span>${completed?'':`<span class="route-fill">${fill.text}</span>`}</button>`}
+function routeButton(q,i,completed){
+ const [a,b]=routeEnds(q,i),fill=stepFill(q.steps[i]);return `<button type="button" class="route-arrow btn secondary" data-step="${i}" aria-controls="step-panel" aria-expanded="false" aria-label="Step ${i+1}: Compound ${U.esc(a.tag)} to Compound ${U.esc(b.tag)}. ${completed?'Submitted.':'Open answers.'}" ${completed?'disabled':''}><strong>Step ${i+1} · ${U.esc(a.tag)} → ${U.esc(b.tag)}</strong><span class="route-action sr-only">${completed?'Submitted':'Open answers'}</span>${completed?'':`<span class="route-fill">${fill.text}</span>`}</button>`;
+}
+
 function pathway(q,completed=false){
  const nodes=routeNodes(q);
  if(q.layout!=='network')return `<div class="pathway ${completed?'completed':''}">${nodes.map((p,i)=>`${routeNode(p,completed)}${i<q.steps.length?routeButton(q,i,completed):''}`).join('')}</div>`;
- const edges=q.steps.map((step,i)=>{const [a,b]=routeEnds(q,i);return {a,b,i,x:(a.x+b.x)/2,y:(a.y+b.y)/2}});
- return `<div class="network ${completed?'completed':''}"><div class="network-diagram"><svg viewBox="0 0 600 600" aria-hidden="true"><defs><marker id="routehead${completed?'done':''}" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#17212b"/></marker></defs>${edges.map(e=>`<path d="M${e.a.x} ${e.a.y+90} L${e.b.x} ${e.b.y-40}" fill="none" stroke="#17212b" stroke-width="2" marker-end="url(#routehead${completed?'done':''})"/>`).join('')}</svg>${nodes.map(n=>`<div class="network-node" style="left:${100*n.x/600}%;top:${100*(n.y+25)/600}%">${routeNode(n,completed)}</div>`).join('')}${edges.map(e=>`<div class="network-arrow" style="left:${100*e.x/600}%;top:${100*(e.y+25)/600}%">${routeButton(q,e.i,completed)}</div>`).join('')}</div><div class="network-mobile">${edges.map(e=>`<div class="network-edge"><h3>Step ${e.i+1}: Compound ${U.esc(e.a.tag)} → Compound ${U.esc(e.b.tag)}</h3>${routeNode(e.a,completed)}${routeButton(q,e.i,completed)}${routeNode(e.b,completed)}</div>`).join('')}</div></div>`
+ const visited=new Set();
+ function branch(id){
+  const node=nodes.find(n=>n.id===id);if(visited.has(id))return `<p class="shared-compound">Continues at Compound ${U.esc(node.tag)}</p>`;visited.add(id);
+  const outgoing=q.steps.map((s,i)=>({s,i})).filter(({s})=>s.startNode===id);
+  return `<section class="chemical-branch" aria-label="Compound ${U.esc(node.tag)} and its reactions"><div class="branch-compound" data-route-node="${U.esc(id)}">${routeNode(node,completed)}</div>${outgoing.length?`<div class="branch-children">${outgoing.map(({s,i})=>`<div class="chemical-branch-edge" data-route-edge="${i}">${routeButton(q,i,completed)}${branch(s.endNode)}</div>`).join('')}</div>`:''}</section>`;
+ }
+ const start=nodes.find(n=>!q.steps.some(s=>s.endNode===n.id));
+ return `<div class="chemical-network ${completed?'completed':''}" role="group" aria-label="Complete branched synthesis pathway">${branch(start.id)}</div>`;
 }
+
 function refreshRouteState(q){document.querySelectorAll('#task [data-step]').forEach(el=>{const i=Number(el.dataset.step),active=i===S.activeStep,fill=stepFill(q.steps[i]);el.setAttribute('aria-expanded',String(active));if(active)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');el.classList.toggle('selected-step',active);el.querySelector('.route-action').textContent=active?'Editing this step':'Open answers';el.querySelector('.route-fill').textContent=fill.text});const n=q.steps.filter(s=>stepFill(s).filled===stepFill(s).total).length;$('#route-progress').textContent=`${n} / ${q.steps.length} steps filled in`}
 function reportQuestionControls(q){return `<details class="question-report"><summary>Report question</summary><p>Question code: <strong>${U.esc(q.id)}</strong>. Describe the issue, then open an email draft. You can attach your own screenshot in the email app.</p><label for="report-issue">What looks wrong?</label><textarea id="report-issue" rows="3" maxlength="600" placeholder="Describe the science, diagram or marking problem…"></textarea><div class="row"><a class="btn secondary" id="report-email">Open email draft</a><button type="button" class="btn secondary" id="copy-report">Copy report</button></div><p id="report-recipient" class="muted"></p><label for="report-preview">Report text</label><textarea id="report-preview" rows="7" readonly></textarea><p id="report-status" role="status"></p></details>`}
 function questionReportText(q,issue=''){
@@ -83,14 +93,13 @@ function renderQuestion(keepResponse=false){
  setNavigation('practice');document.body.dataset.screen='question';
  if(S.session.mode==='challenge'&&C.remaining(S.session.end)===0)return finish();if(S.session.i>=S.session.ids.length)return finish();
  const q=current();if(!keepResponse){S.response={};S.orders={};S.marked=false;S.result=null;S.source=null;S.activeStep=0}S.locked=false;
- app().innerHTML=`<article class="card question-screen ${q.type==='multistep'?'synthesis-screen':''}"><div class="question-chrome"><div id="clean-question-header">${questionHeader()}</div>${sessionMenu(q)}</div><h1>${U.esc(U.typeLabel(q.type))}</h1>${taskInstructions(q)}<div class="question-context">${U.questionIntro(S.bank,q)}</div><div id="task"></div><div id="fb"></div><div class="action-row action-dock"><div class="secondary-actions">${S.session.mode!=='challenge'?'<button class="btn text-button" id="reveal">Reveal answer<span>No marks awarded</span></button>':''}</div><button class="btn" id="submit">${S.session.mode==='challenge'?'Submit answer':'Check answer'}</button></div><p class="sr-only" id="answer-status" role="status" aria-atomic="true"></p></article>`;
+ app().innerHTML=`<article class="card question-screen ${q.type==='multistep'?'synthesis-screen':''}"><div class="question-chrome"><div id="clean-question-header">${questionHeader()}</div>${sessionMenu(q)}</div><h1>${U.esc(U.typeLabel(q.type))}</h1>${taskInstructions(q)}<div class="question-context">${U.questionIntro(S.bank,q)}</div><div id="task"></div><div id="fb"></div><div class="action-row answer-actions"><div class="secondary-actions">${S.session.mode!=='challenge'?'<button class="btn text-button" id="reveal">Reveal answer<span>No marks awarded</span></button>':''}</div><button class="btn" id="submit">${S.session.mode==='challenge'?'Submit answer':q.type==='multistep'?'Check all steps':'Check answer'}</button></div><p class="sr-only" id="answer-status" role="status" aria-atomic="true"></p></article>`;
  if(q.type==='multistep'){
-  $('#task').innerHTML=`<div class="synthesis-workspace"><section class="pathway-area" aria-label="Synthesis pathway"><div class="pathway-caption"><h2>Reaction pathway</h2><span id="route-progress" role="status"></span></div>${compactRoute(q)}<details class="full-pathway" id="full-pathway"><summary>View full pathway</summary>${pathway(q)}</details></section><section id="step-panel" tabindex="-1" aria-labelledby="step-heading"></section></div>`;bindSteps(q);
+  $('#task').innerHTML=`<div class="synthesis-workspace"><section class="pathway-area" id="full-pathway" aria-labelledby="pathway-heading"><div class="pathway-caption"><h2 id="pathway-heading">Reaction pathway</h2><span id="route-progress" role="status"></span></div>${pathway(q)}</section><section id="step-panel" tabindex="-1" aria-labelledby="step-heading"></section></div>`;bindSteps(q);
  }else if(q.interaction==='arrows'){$('#task').innerHTML=arrowsControls(q);bindArrows(q)}
  else if(q.interaction==='site'){$('#task').innerHTML=drawMechanism(q)+controls(q,S.response);bindComponents();document.querySelectorAll('[data-anchor]').forEach(el=>el.onclick=()=>{S.response.site=q.site.optionByAnchor[el.dataset.anchor];$('[data-component="site"]').value=S.response.site;document.querySelectorAll('[data-anchor]').forEach(a=>a.setAttribute('aria-pressed',String(a.dataset.anchor===el.dataset.anchor)));save()})}
  else{$('#task').innerHTML=controls(q,S.response);bindComponents()}
- bindQuestionReport(q);$('#submit').onclick=submit;$('#reveal')&&($('#reveal').onclick=reveal);$('#exit').onclick=()=>finish();if($('#change-topics'))$('#change-topics').onclick=home;
- document.querySelectorAll('[data-session-nav]').forEach(el=>el.onclick=()=>el.dataset.sessionNav==='mistakes'?showMistakeOverview():showProgress());$('#question-effects').onchange=e=>{celebrationEffects=e.target.checked;storage.set('ocrOrgCelebrationsV1',celebrationEffects);clearEffects()};
+ bindQuestionReport(q);$('#submit').onclick=submit;$('#reveal')&&($('#reveal').onclick=reveal);mountSessionControls();bindSessionActions();$('#question-effects').onchange=e=>{celebrationEffects=e.target.checked;storage.set('ocrOrgCelebrationsV1',celebrationEffects);clearEffects()};
  document.querySelector('.session-menu').addEventListener('keydown',e=>{if(e.key==='Escape'){e.currentTarget.open=false;e.currentTarget.querySelector('summary').focus()}});
  save();resizeActions();U.focusHeading();if(S.session.mode==='challenge'){if(S.session.attempts[q.id]){S.marked=true;disableTask();challengeFeedback()}tick()}
 }
@@ -98,7 +107,7 @@ function renderQuestion(keepResponse=false){
 function bindSteps(q){document.querySelectorAll('#task [data-step]').forEach(el=>el.onclick=()=>{S.activeStep=Number(el.dataset.step);showStep(q);save();focusStepPanel()});showStep(q)}
 function showStep(q){
  const step=q.steps[S.activeStep],[a,b]=routeEnds(q,S.activeStep);$('#step-panel').innerHTML=`<div class="step-panel-top"><h2 id="step-heading">Step ${S.activeStep+1} of ${q.steps.length} · ${U.esc(a.tag)} → ${U.esc(b.tag)}</h2><span>${step.components.filter(c=>c.essential).reduce((n,c)=>n+c.marks,0)} marks</span></div><div class="step-compounds">${routeNode(a,false)}<span class="step-reaction-arrow" aria-label="reacts to give">→</span>${routeNode(b,false)}</div>${controls(step,S.response[step.id]||{},step.id+'.')}<nav class="step-navigation" aria-label="Reaction step navigation"><button type="button" class="btn text-button" id="previous-step" ${S.activeStep===0?'disabled':''}>Previous step</button><button type="button" class="btn secondary" id="next-step" ${S.activeStep===q.steps.length-1?'disabled':''}>Next step</button><button type="button" class="btn text-button" id="back-pathway">View full pathway</button></nav>`;
- refreshRouteState(q);bindComponents();for(const [id,delta]of [['previous-step',-1],['next-step',1]])$('#'+id).onclick=()=>{S.activeStep+=delta;showStep(q);save();focusStepPanel()};$('#back-pathway').onclick=()=>{const full=$('#full-pathway');full.open=true;full.querySelector('summary').focus();full.scrollIntoView({block:'start'})};
+ refreshRouteState(q);bindComponents();for(const [id,delta]of [['previous-step',-1],['next-step',1]])$('#'+id).onclick=()=>{S.activeStep+=delta;showStep(q);save();focusStepPanel()};$('#back-pathway').textContent='Back to pathway';$('#back-pathway').onclick=()=>{const arrow=$('#full-pathway .selected-step');arrow?.focus({preventScroll:true});arrow?.scrollIntoView({block:'center',behavior:'auto'})};
 }
 
 function focusStepPanel(){const panel=$('#step-panel');panel.focus({preventScroll:true});panel.scrollIntoView({block:'nearest',behavior:'auto'})}
@@ -119,7 +128,7 @@ function displayFeedback(q,result,revealed=false,options={}){
  $('#next').onclick=next;$('#retry').onclick=()=>renderQuestion();updateQuestionHeader();
  const text=revealed?'Answer revealed. No first-attempt marks awarded.':`${result.score===result.max?'Correct':result.score?'Partly correct':'Not yet correct'}. ${result.score} of ${result.max} marks.`;
  $('#answer-status').textContent=text;resizeActions();if(!revealed)showEncouragement(q,result,options.category||ChemExperience.category(result,S.progress.records[q.id]),!!options.animate);
- const reviewHeading=$('#fb .feedback-heading h2');reviewHeading.tabIndex=-1;reviewHeading.focus({preventScroll:true});$('#fb').scrollIntoView({block:'start',behavior:'auto'});save();
+ const reviewHeading=$('#fb .feedback-heading h2');reviewHeading.tabIndex=-1;reviewHeading.focus({preventScroll:true});$('#fb').scrollIntoView({block:'start',behavior:'auto'});save();if(celebrationEffects&&ChemExperience.fullMarkSubmission(result,S.session.mode,{submitted:!!options.animate,revealed}))shootingStar();
 }
 
 function reveal(){if(S.marked)return;const q=current();S.marked=true;record(q,null,'reveal');const r=C.mark(q,S.response,S.bank);disableTask();displayFeedback(q,r,true)}
@@ -137,7 +146,7 @@ function summary(s,revisit=false){
 }
 
 function setNavigation(view){
- clearEffects();if(view==='topics')view='practice';S.view=view;document.body.dataset.screen=view;document.body.dataset.view=view;
+ clearEffects();clearSessionControls();if(view==='topics')view='practice';S.view=view;document.body.dataset.screen=view;document.body.dataset.view=view;
  document.querySelectorAll('[data-nav]').forEach(el=>{const challenge=S.session?.mode==='challenge'&&!S.session.finished;el.disabled=challenge&&el.dataset.nav!=='practice';el.title=el.disabled?'Finish the challenge before opening this section':'';const active=el.dataset.nav===view;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});
 }
 
@@ -182,18 +191,12 @@ const pickMessage=ChemExperience.messagePicker(),celebratedSessions=new Set();
 let effectTimer=null,effectAnimations=[],actionObserver=null;
 
 function sessionMenu(q){
- const challenge=S.session.mode==='challenge';return `<details class="session-menu"><summary>Session menu</summary><div class="session-menu-panel"><p class="menu-score">${challenge?'Feedback at the end':`Score so far: ${sessionStats(S.session).earned} / ${sessionMarks(S.session)} marks`}</p>${challenge?'':`<button class="btn text-button" id="change-topics">Change topics</button><button class="btn text-button" data-session-nav="mistakes">Mistakes</button><button class="btn text-button" data-session-nav="progress">Progress</button>`}<button class="btn text-button" id="exit">Finish session</button><label class="topic"><input type="checkbox" id="question-effects" ${celebrationEffects?'checked':''}><span>Celebration effects</span></label>${reportQuestionControls(q)}</div></details>`;
-}
-function compactRoute(q){
- const nodes=routeNodes(q),network=q.layout==='network';
- if(!network)return `<div class="route-overview linear-overview" aria-label="Pathway overview">${nodes.map((n,i)=>`<span class="overview-node">${U.esc(n.tag)}${n.hidden?' ?':''}</span>${i<q.steps.length?`<button class="overview-step" type="button" data-step="${i}" aria-controls="step-panel" aria-label="Step ${i+1}: ${U.esc(n.tag)} to ${U.esc(nodes[i+1].tag)}"><strong>${i+1} →</strong><span class="route-action sr-only">Open answers</span><span class="route-fill sr-only"></span></button>`:''}`).join('')}</div>`;
- const positions=new Map(nodes.map(n=>[n.id,{x:n.x,y:n.y}]));
- return `<div class="route-overview branch-overview" role="group" aria-label="Branched pathway overview"><svg viewBox="0 0 600 600" role="img" aria-label="Connections: ${q.steps.map((s,i)=>`step ${i+1}, ${s.startNode} to ${s.endNode}`).join('; ')}">${q.steps.map(s=>{const a=positions.get(s.startNode),b=positions.get(s.endNode);return `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/>`}).join('')}</svg>${nodes.map(n=>`<span class="overview-node" style="left:${n.x/6}%;top:${n.y/6}%">${U.esc(n.tag)}${n.hidden?' ?':''}</span>`).join('')}${q.steps.map((s,i)=>{const a=positions.get(s.startNode),b=positions.get(s.endNode);return `<button class="overview-step" type="button" data-step="${i}" style="left:${(a.x+b.x)/12}%;top:${(a.y+b.y)/12}%" aria-controls="step-panel" aria-label="Step ${i+1}: ${U.esc(s.startNode)} to ${U.esc(s.endNode)}"><strong>${i+1} ↓</strong><span class="route-action sr-only">Open answers</span><span class="route-fill sr-only"></span></button>`}).join('')}</div>`;
+ const challenge=S.session.mode==='challenge';return `<details class="session-menu"><summary>Session menu</summary><div class="session-menu-panel"><p class="menu-score">${challenge?'Feedback at the end':`Score so far: ${sessionStats(S.session).earned} / ${sessionMarks(S.session)} marks`}</p>${challenge?'':`<button class="btn text-button" id="change-topics" data-session-action="topics">Change topics</button><button class="btn text-button" data-session-nav="mistakes" data-session-action="mistakes">Mistakes</button><button class="btn text-button" data-session-nav="progress" data-session-action="progress">Progress</button>`}<button class="btn text-button" id="exit" data-session-action="finish">Finish session</button><label class="topic"><input type="checkbox" id="question-effects" ${celebrationEffects?'checked':''}><span>Celebration effects</span></label>${reportQuestionControls(q)}</div></details>`;
 }
 function challengeFeedback(){
  $('#task').hidden=true;$('.action-row').innerHTML=`<button class="btn" id="next">${S.session.i===S.session.ids.length-1?'View summary':'Next question'}</button>`;$('#fb').innerHTML='<p class="submission-saved">Submission saved. Feedback appears at the end of the challenge.</p>';$('#next').onclick=next;$('#answer-status').textContent='Submission saved. Feedback at the end.';updateQuestionHeader();resizeActions();
 }
-function clearEffects(){clearTimeout(effectTimer);effectTimer=null;effectAnimations.forEach(a=>a.cancel());effectAnimations=[];document.querySelectorAll('.confetti-layer').forEach(el=>el.remove())}
+function clearEffects(){clearTimeout(effectTimer);effectTimer=null;effectAnimations.forEach(a=>a.cancel());effectAnimations=[];document.querySelectorAll('.confetti-layer,.shooting-star-layer').forEach(el=>el.remove())}
 function reducedMotion(){return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false}
 function showEncouragement(q,result,category,animate){
  const host=$('#encouragement');if(!host)return;
@@ -210,11 +213,49 @@ function celebrateSession(){
  if(!reducedMotion())effectTimer=setTimeout(clearEffects,3000);
 }
 function resizeActions(){
- actionObserver?.disconnect();const dock=document.querySelector('.action-dock');const measure=()=>{document.documentElement.style.setProperty('--action-height',(dock?.offsetHeight||0)+'px');const keyboard=window.visualViewport&&window.innerHeight-window.visualViewport.height>160;document.body.classList.toggle('keyboard-open',!!keyboard)};
- measure();if(dock&&window.ResizeObserver){actionObserver=new ResizeObserver(measure);actionObserver.observe(dock)};
+ actionObserver?.disconnect();const dock=document.querySelector('.action-dock'),bar=document.querySelector('.mobile-session-controls');
+ const measure=()=>{const vv=window.visualViewport,gap=vv?Math.max(0,window.innerHeight-vv.height-vv.offsetTop):0,keyboard=!!vv&&vv.scale<=1.05&&gap>160&&/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName);document.documentElement.style.setProperty('--action-height',(dock?.offsetHeight||0)+'px');document.documentElement.style.setProperty('--session-bar-space',(bar?.offsetHeight||0)+'px');document.documentElement.style.setProperty('--session-keyboard-inset',(bar&&keyboard?gap:0)+'px');document.body.classList.toggle('keyboard-open',keyboard)};
+ measure();if(window.ResizeObserver){actionObserver=new ResizeObserver(measure);if(dock)actionObserver.observe(dock);if(bar)actionObserver.observe(bar)};
 }
 window.visualViewport?.addEventListener('resize',resizeActions);
+window.visualViewport?.addEventListener('scroll',resizeActions);
+window.addEventListener('resize',resizeActions);
+document.addEventListener('focusin',()=>{resizeActions();requestAnimationFrame(ensureFocusedVisible)});
+document.addEventListener('focusout',()=>requestAnimationFrame(resizeActions));
 window.matchMedia?.('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{clearEffects();if(reducedMotion()&&document.querySelector('.perfect-celebration'))celebrateSession()});
+
+
+function clearSessionControls(){
+ document.querySelector('.mobile-session-controls')?.remove();document.documentElement.style.setProperty('--session-bar-space','0px');document.documentElement.style.setProperty('--session-keyboard-inset','0px');
+}
+function mountSessionControls(){
+ clearSessionControls();const challenge=S.session.mode==='challenge';
+ document.body.insertAdjacentHTML('beforeend',`<nav class="mobile-session-controls" aria-label="Session controls"><button type="button" class="session-control" id="mobile-change-topics" data-session-action="topics" ${challenge?'disabled aria-describedby="mobile-challenge-help"':''}>Change Topics</button><button type="button" class="session-control" id="mobile-mistakes" data-session-action="mistakes" ${challenge?'disabled aria-describedby="mobile-challenge-help"':''}>Mistakes</button><button type="button" class="session-control finish-control" id="mobile-finish-session" data-session-action="finish">Finish Session</button>${challenge?'<p id="mobile-challenge-help">Topics and mistakes unlock when the challenge ends.</p>':''}</nav>`);
+}
+function performSessionAction(action){
+ if(S.session?.mode==='challenge'&&!S.session.finished&&action!=='finish')return;
+ if(action==='topics')home();else if(action==='mistakes')showMistakeOverview();else if(action==='progress')showProgress();else if(action==='finish')finish();
+}
+function bindSessionActions(){
+ document.querySelectorAll('[data-session-action]').forEach(button=>button.onclick=()=>performSessionAction(button.dataset.sessionAction));
+}
+function ensureFocusedVisible(){
+ const target=document.activeElement,bar=document.querySelector('.mobile-session-controls');if(!bar?.offsetHeight||!target?.matches('button,input,textarea,select,summary')||bar.contains(target))return;
+ const bounds=target.getBoundingClientRect(),barTop=bar.getBoundingClientRect().top;
+ if(bounds.bottom>barTop-12)window.scrollBy({top:Math.ceil(bounds.bottom-barTop+12),behavior:'auto'});
+}
+function shootingStar(){
+ // The success panel already supplies a static symbol and message when motion is reduced.
+ if(!celebrationEffects||reducedMotion())return;clearEffects();
+ const layer=document.createElement('div'),star=document.createElement('div');layer.className='shooting-star-layer';layer.setAttribute('aria-hidden','true');star.className='shooting-star';
+ star.innerHTML='<span class="shooting-star-trail"></span><span class="shooting-star-head">★</span>';layer.append(star);document.body.append(layer);
+ const vv=window.visualViewport,width=vv?.width||window.innerWidth,height=vv?.height||window.innerHeight;
+ layer.style.top=(vv?.offsetTop||0)+'px';layer.style.left=(vv?.offsetLeft||0)+'px';layer.style.width=width+'px';layer.style.height=height+'px';
+ const from=`translate(-90px,${Math.round(height*.18)}px) rotate(15deg)`,to=`translate(${width+90}px,${Math.round(height*.42)}px) rotate(15deg)`;
+ if(star.animate)effectAnimations.push(star.animate([{transform:from,opacity:0},{transform:`translate(0px,${Math.round(height*.21)}px) rotate(15deg)`,opacity:1,offset:.12},{transform:`translate(${Math.round(width*.9)}px,${Math.round(height*.4)}px) rotate(15deg)`,opacity:1,offset:.86},{transform:to,opacity:0}],{duration:3000,easing:'ease-in-out',fill:'both'}));
+ else{star.style.setProperty('--star-from',from);star.style.setProperty('--star-to',to);star.classList.add('shooting-star-css')}
+ effectTimer=setTimeout(clearEffects,3100);
+}
 
 initialiseNavigation();
 const bottomNav=document.querySelector('.side-nav');

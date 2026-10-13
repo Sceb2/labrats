@@ -17,3 +17,36 @@
 
 main h1:focus,.feedback-heading h2:focus{outline:none}
 html{scroll-padding-bottom:calc(var(--action-height) + var(--mobile-nav-space) + 20px)}.review-context{margin:0}.review-context summary{font-weight:500}
+/* v1.2: only mobile session navigation persists during answering. */
+:root{--session-bar-space:0px;--session-keyboard-inset:0px;--finish:#663653}
+.answer-actions{position:static;display:grid;gap:12px;align-items:center;margin:28px 0 20px;padding:18px 0;border-top:1px solid var(--rule);background:transparent}
+.answer-actions>.btn{width:100%;min-height:56px;font-size:1.12rem}
+.student-app[data-screen=question] .workspace,.student-app[data-screen=feedback] .workspace{padding-bottom:calc(var(--session-bar-space) + var(--session-keyboard-inset))}
+.mobile-session-controls{position:fixed;left:0;right:0;bottom:var(--session-keyboard-inset);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:8px;padding:10px max(10px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));border-top:1px solid var(--rule);background:#fff;z-index:40}
+.session-control{min-height:54px;min-width:44px;border:1px solid var(--accent);border-radius:6px;background:var(--soft);color:var(--accent);padding:10px 5px;font:650 .94rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:normal;overflow-wrap:normal}
+.session-control.finish-control{background:var(--finish);color:#fff;border-color:var(--finish)}
+.session-control:disabled{color:#59685f;background:#e9eeeb;border-color:#c9d5cc}
+.mobile-session-controls p{grid-column:1/-1;margin:0;color:var(--muted);font-size:.875rem;line-height:1.4;text-align:center}
+html{scroll-padding-bottom:calc(max(var(--mobile-nav-space),var(--session-bar-space)) + var(--session-keyboard-inset) + 20px)}
+button,a,summary,input,select,textarea{scroll-margin-bottom:calc(max(var(--mobile-nav-space),var(--session-bar-space)) + var(--session-keyboard-inset) + 20px)}
+.pathway-area{position:static}.synthesis-workspace{display:block}.pathway{padding:18px 0;gap:18px}.pathway>.compound-box{max-width:440px}.pathway .chem img{max-height:260px}
+.pathway-area>.pathway-caption{border-bottom:1px solid var(--rule);padding-bottom:12px}
+.chemical-network{margin:18px 0}.chemical-branch{min-width:0}.branch-compound{max-width:440px;margin:auto}.branch-children{display:grid;grid-template-columns:1fr;gap:22px;margin-top:14px;padding-left:14px;border-left:2px solid #afc2b6}
+.chemical-branch-edge{min-width:0}.chemical-branch-edge>.route-arrow{display:flex;flex-direction:column;align-items:center;gap:3px;width:max-content;max-width:100%;margin:0 auto 14px}.chemical-branch-edge>.route-arrow strong{font-size:.94rem}.chemical-network .chem{padding:4px}.chemical-network .chem img{max-height:240px}.chemical-network .unknown-box{min-height:130px}
+.route-arrow .route-action{display:none}.route-arrow .route-fill{font-size:.875rem}.route-arrow.selected-step{border:2px solid var(--accent);background:var(--soft)}
+.step-panel-top{border-top:1px solid var(--rule);padding-top:24px;margin-top:24px}.step-compounds{margin-bottom:24px}
+.shooting-star-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:45;contain:strict}
+.shooting-star{position:absolute;left:0;top:0;width:90px;height:42px;pointer-events:none;transform-origin:70px 21px}
+.shooting-star-head{position:absolute;right:0;top:-3px;color:#a77917;font:40px/1 Georgia,serif;filter:drop-shadow(0 0 3px #d6b56080)}
+.shooting-star-trail{position:absolute;right:22px;top:17px;width:70px;height:5px;background:linear-gradient(90deg,transparent,#759b8a66,#b6861ca6);border-radius:50%}
+.shooting-star-css{animation:shooting-star-flight 3s ease-in-out both}
+@keyframes shooting-star-flight{0%{transform:var(--star-from);opacity:0}12%,80%{opacity:1}100%{transform:var(--star-to);opacity:0}}
+@media(min-width:600px){.answer-actions{grid-template-columns:minmax(0,1fr) minmax(220px,auto)}.branch-children{grid-template-columns:repeat(2,minmax(0,1fr));padding-left:0;border-left:0;gap:24px}.branch-children .branch-children{grid-template-columns:1fr;border-left:2px solid #afc2b6;padding-left:12px}.chemical-branch-edge>.route-arrow{min-height:54px}.chemical-network .chem img{max-height:260px}}
+@media(min-width:900px){.mobile-session-controls{display:none}.student-app[data-screen=question] .workspace,.student-app[data-screen=feedback] .workspace{padding-bottom:0}.synthesis-workspace{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:30px}.pathway-area{position:static}.pathway-caption{display:block}.pathway-caption span{display:block;margin-top:8px}.step-panel-top{border-top:0;padding-top:0;margin-top:0}.synthesis-workspace .step-compounds{display:none}.branch-children{grid-template-columns:1fr;border-left:2px solid #afc2b6;padding-left:14px}.branch-children .branch-children{padding-left:12px}.pathway .route-arrow{max-width:100%}.step-navigation .btn{font-size:.94rem}.step-navigation #next-step{margin-left:0}.step-navigation #previous-step,.step-navigation #next-step{flex:1 1 100%}}
+@media(min-width:1200px){.chemical-network>.chemical-branch>.branch-children{grid-template-columns:repeat(2,minmax(0,1fr));border-left:0;padding-left:0;gap:18px}}
+@media(max-width:380px){.mobile-session-controls{gap:6px;padding-left:8px;padding-right:8px}.session-control{font-size:.875rem;min-height:56px;padding:9px 4px}.branch-children{padding-left:8px}}
+@media(max-height:650px){.mobile-session-controls{position:fixed}.pathway-area{position:static}}
+@media(prefers-reduced-motion:reduce){.shooting-star-layer{display:none}.shooting-star-css{animation:none!important}}
+@media print{.mobile-session-controls,.shooting-star-layer{display:none!important}.answer-actions{display:none}.student-app[data-screen=question] .workspace,.student-app[data-screen=feedback] .workspace{padding-bottom:0}}
+@media(min-width:900px){.synthesis-workspace .product-grid{grid-template-columns:1fr}}
+@media(min-width:1200px){.chemical-network>.chemical-branch>.branch-children{position:relative;border-top:2px solid #afc2b6;padding-top:16px}.chemical-network>.chemical-branch>.branch-children::before{content:'';position:absolute;top:-16px;left:50%;height:16px;border-left:2px solid #afc2b6}.chemical-network>.chemical-branch>.branch-children>.chemical-branch-edge{position:relative}.chemical-network>.chemical-branch>.branch-children>.chemical-branch-edge::before{content:'';position:absolute;top:-16px;left:50%;height:16px;border-left:2px solid #afc2b6}}
