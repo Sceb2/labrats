@@ -1,3 +1,10 @@
+# Release metadata for this version
+
+After editing any bank or site file, regenerate release metadata with the ZIP's
+`python3 DEVELOPMENT/prepare-release.py`, then upload the complete site together.
+Uploading only a changed bank will trigger the mixed-release protection. The teacher
+editor remains available, but its downloaded JSON also needs this preparation step.
+
 # Teacher maintenance — no terminal for normal edits
 
 ## The normal workflow

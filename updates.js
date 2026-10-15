@@ -1,7 +1,7 @@
 /* Release checks use fresh metadata, never clear browser storage or reload without a click. */
 (function(){
  'use strict';
- const build=window.CHEM_BUILD||{},offline=!!window.CHEM_OFFLINE||location.protocol==='file:'||!!window.CHEM_PREVIEW_ID;
+ const build=window.REVISION_BUILD||window.CHEM_BUILD||window.AAQ_BUILD||{},offline=!!window.CHEM_OFFLINE||!!window.AAQ_EMBEDDED||location.protocol==='file:'||!!window.CHEM_PREVIEW_ID;
  let checking=null,lastCheck=0,latest=null,dismissed='',initialGate=false;
  const status=()=>document.getElementById('release-check-status');
  function statusText(text){if(status())status().textContent=text}
@@ -10,7 +10,7 @@
  function latestURL(release){const url=new URL(location.href);url.searchParams.set('app',release?.id||build.id||'latest');url.searchParams.set('_refresh',Date.now());return url.href}
  function removeNotice(){document.getElementById('release-notice')?.remove()}
  function updateNow(release,button,message){
-  const event=new Event('chem:before-update',{cancelable:true});
+  const event=new Event('revision:before-update',{cancelable:true});
   if(!window.dispatchEvent(event)){message.textContent='Your browser could not save your work. Keep this page open and update after you have finished.';return}
   button.disabled=true;button.textContent='Opening latest version…';location.replace(latestURL(release));
  }
@@ -53,5 +53,7 @@
  window.addEventListener('pageshow',()=>check());
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)check()});
  window.addEventListener('focus',()=>check());window.addEventListener('online',()=>check({force:true}));
- window.ChemUpdates={check,beforeBankLoad,blockForMismatch,build,offline};
+ const api={check,beforeBankLoad,blockForMismatch,build,offline};window.RevisionUpdates=api;window.ChemUpdates=api;
+ // Check while studying as well as when returning to the tab. Never reload automatically.
+ if(!offline){const interval=setInterval(()=>{if(!document.hidden)check()},60000);window.addEventListener('pagehide',()=>clearInterval(interval),{once:true});}
 })();

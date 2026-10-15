@@ -114,3 +114,14 @@ button,a,summary,input,select,textarea{scroll-margin-bottom:calc(max(var(--mobil
 /* Release prompts are separate from question rendering and never capture answers. */
 .release-footer{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;font-size:.875rem}.release-footer .btn{min-height:44px;font-size:.875rem}.release-notice{position:fixed;z-index:1100;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 24px));max-height:80dvh;overflow:auto;padding:20px;background:#f0f6f1;color:#172d3a;border:2px solid #14563e;border-radius:8px;box-shadow:0 8px 30px #172d3a40}.release-notice h2,.release-gate h2{margin:0 0 10px;font-size:1.5rem}.release-notice p,.release-gate p{margin:8px 0;line-height:1.5}.release-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.release-actions .btn{min-height:48px}.release-message:empty{display:none}.release-gate{max-width:700px;margin:20px auto}.release-message{font-weight:600}.release-notice [hidden]{display:none!important}
 @media print{.release-notice,.release-footer{display:none!important}}
+
+/* Shared reporting and completed-answer review. */
+.question-report-footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule)}
+.report-toggle{min-height:44px}.question-report-footer [hidden]{display:none!important}
+#question-report-panel{padding-top:18px;max-width:100%;overflow-wrap:anywhere}
+#question-report-panel h2{margin:0 0 12px}#question-report-panel p{max-width:70ch}
+#question-report-panel label{display:block;margin:16px 0 8px;font-weight:600}
+#question-report-panel textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;resize:vertical;padding:12px;border:1px solid var(--rule);border-radius:4px;font:inherit;line-height:1.5;min-height:96px;background:var(--panel,#fff);color:var(--ink)}
+#report-preview{font-size:.9rem!important;min-height:210px!important}.report-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.report-actions .btn{min-height:44px}#report-status:empty{display:none}
+
+.answer-review-disclosure{margin:16px 0}.answer-review-disclosure>summary{min-height:44px;padding:12px 0;cursor:pointer}.answer-review-disclosure:not([open])>#task{display:none}.answer-review-disclosure #task{margin-top:14px}
