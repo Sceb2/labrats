@@ -10,6 +10,15 @@ const U={
  assetLink(bank,id){const data=window.CHEM_OFFLINE_ASSETS?.[id];if(!data)return bank.assets[id]?.path;window.CHEM_OFFLINE_LINKS??={};return window.CHEM_OFFLINE_LINKS[id]??=URL.createObjectURL(new Blob([Uint8Array.from(atob(data.split(',')[1]),c=>c.charCodeAt(0))],{type:'image/svg+xml'}))},
  image(bank,id,caption=''){const a=bank.assets[id];if(!a)return '<p>Missing diagram: '+U.esc(id)+'</p>';return `<figure class="chem"><img src="${U.esc(U.assetPath(bank,id))}" alt="${U.esc(a.description)}">${caption?`<figcaption>${U.esc(caption)}</figcaption>`:''}</figure>`},
  accepted(bank,unit){return unit.validMethods.map((m,i)=>`<section class="accepted-method">${unit.validMethods.length>1?`<h3>Accepted method ${i+1}</h3>`:''}<dl>${unit.components.map(c=>`<div><dt>${U.esc(c.label)}${c.essential?'':' · optional'}</dt><dd>${(m.answers[c.id]||[]).map(id=>U.answerValue(bank,id)).join(' <span class="answer-or">or</span> ')||'Not required'}</dd></div>`).join('')}</dl></section>`).join('')},
+ modelAnswer(bank,q){
+  let body='<section class="answer-review model-answer" aria-label="Model answer"><header class="feedback-heading"><h2>Model answer</h2><p>Not scored</p></header><p class="reveal-notice">Viewing this answer does not award first-attempt marks.</p>';
+  if(q.type==='multistep')body+=q.steps.map((step,i)=>`<section class="step-review"><h3>Step ${i+1}</h3>${U.accepted(bank,step)}<p>${U.esc(step.feedback)}</p></section>`).join('');
+  else if(q.interaction==='arrows')body+=U.image(bank,q.mechanism.completedAsset,'Completed displayed step')+`<dl class="model-arrows">${q.mechanism.requiredArrows.map(a=>`<div><dt>${U.esc(a.label)}</dt><dd>Start: ${a.sources.map(id=>U.esc(q.mechanism.anchors.find(x=>x.id===id).label)).join(' or ')} → End: ${a.destinations.map(id=>U.esc(q.mechanism.anchors.find(x=>x.id===id).label)).join(' or ')}</dd></div>`).join('')}</dl>`;
+  else body+=U.accepted(bank,q);
+  body+=`<p class="feedback-explanation">${U.esc(q.feedback)}</p>`;
+  if(q.completedAsset)body+=U.image(bank,q.completedAsset,'Completed step');
+  return body+'</section>';
+ },
  answerValue(bank,id){const v=bank.vocabulary[id];return v?.asset?U.image(bank,v.asset,v.label):U.esc(U.label(bank,id))},
  componentReview(bank,unit,result,response={}){
   return `<div class="component-review">${result.details.map(d=>`<div class="mark-row ${!d.essential?'optional':d.ok?'right':'wrong'}"><span class="mark-symbol" aria-hidden="true">${!d.essential?'–':d.ok?'✓':'×'}</span><div><h3>${U.esc(d.label)}</h3>${!d.essential?'<p>Optional · no mark required</p>':d.ok?`<div>${U.answerValue(bank,d.selected)} <span class="mark-label">Correct · ${d.score}/${d.max}</span></div>`:`<div class="your-answer">Your answer: ${d.selected?U.answerValue(bank,d.selected):'Not selected'}</div><div class="correction"><strong>Use:</strong> ${d.expected.map(id=>U.answerValue(bank,id)).join(' <span class="answer-or">or</span> ')} <span class="mark-label">${d.score}/${d.max}</span></div>`}</div></div>`).join('')}</div>`;
