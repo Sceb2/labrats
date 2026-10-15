@@ -48,11 +48,37 @@ function drawMechanism(q,readonly=false){
  const position=(a,i)=>({x:a.labelX??55+i*490/Math.max(1,anchors.length-1),y:a.labelY??37});
  return `<div class="mechanism-canvas">${U.image(S.bank,m.asset)}<svg class="anchor-guides" viewBox="0 0 600 320" aria-hidden="true">${anchors.map((a,i)=>{const p=position(a,i);return `<line x1="${p.x}" y1="${p.y+16}" x2="${a.x}" y2="${a.y}"/><circle cx="${a.x}" cy="${a.y}" r="4"/>`}).join('')}</svg>${anchors.map((a,i)=>{const p=position(a,i);return `<button class="anchor" type="button" data-anchor="${a.id}" style="left:${100*p.x/600}%;top:${100*p.y/320}%" aria-label="${i+1} — ${U.esc(a.label)} (${a.kind})" ${readonly?'disabled':''}>${i+1}</button><span class="anchor-marker" style="left:${100*p.x/600}%;top:${100*p.y/320}%" aria-hidden="true">${i+1}</span>`}).join('')}<svg class="arrow-layer" viewBox="0 0 600 320" aria-hidden="true"><defs><marker id="drawhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f766e"/></marker></defs><g id="student-arrows"></g></svg></div><div class="site-buttons grid">${anchors.map((a,i)=>`<button type="button" class="btn secondary" data-anchor="${a.id}" ${readonly?'disabled':''}>${i+1} — ${U.esc(a.label)}</button>`).join('')}</div>`
 }
-function arrowsControls(q){return `<p id="arrow-status" class="interaction-status" role="status">Choose an electron source, then its destination.</p>${drawMechanism(q)}<div class="mechanism-tools"><button type="button" class="btn text-button" id="undo">Undo last arrow</button><details><summary>Arrow tools</summary><button type="button" class="btn text-button" id="cancel-source">Cancel source selection</button><button type="button" class="btn text-button" id="clear-arrows">Clear arrows</button></details></div><ol id="arrow-list" aria-label="Placed electron arrows"></ol>`}
+function arrowsControls(q){if(q.mechanism.destinationOnly)return destinationControls(q);return `<p id="arrow-status" class="interaction-status" role="status">Choose an electron source, then its destination.</p>${drawMechanism(q)}<div class="mechanism-tools"><button type="button" class="btn text-button" id="undo">Undo last arrow</button><details><summary>Arrow tools</summary><button type="button" class="btn text-button" id="cancel-source">Cancel source selection</button><button type="button" class="btn text-button" id="clear-arrows">Clear arrows</button></details></div><ol id="arrow-list" aria-label="Placed electron arrows"></ol>`}
 
 function refreshArrows(q){const an=q.mechanism.anchors;$('#student-arrows').innerHTML=(S.response.arrows||[]).map(p=>{const a=an.find(a=>a.id===p.from),b=an.find(a=>a.id===p.to);return a&&b?`<path d="${U.arrowPath(a.x,a.y,b.x,b.y)}" fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#drawhead)"/>`:''}).join('');$('#arrow-list').innerHTML=(S.response.arrows||[]).map(p=>`<li>${U.esc(an.find(a=>a.id===p.from)?.label)} → ${U.esc(an.find(a=>a.id===p.to)?.label)}</li>`).join('');document.querySelectorAll('[data-anchor]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.anchor===S.source)))}
 function addArrow(q,from,to){if(from===to){$('#arrow-status').textContent='Use two distinct sites. The source is still selected.';return}S.response.arrows??=[];if(S.response.arrows.some(p=>p.from===from&&p.to===to)){S.source=null;refreshArrows(q);$('#arrow-status').textContent='That arrow is already present. Choose a new source.';return}S.response.arrows.push({from,to});clearSubmissionWarning();S.source=null;refreshArrows(q);save();$('#arrow-status').textContent='Arrow added. Choose another source, or submit.'}
-function bindArrows(q){refreshArrows(q);document.querySelectorAll('[data-anchor]').forEach(el=>el.onclick=()=>{if(S.marked)return;if(!S.source){S.source=el.dataset.anchor;$('#arrow-status').textContent='Source: '+q.mechanism.anchors.find(a=>a.id===S.source).label+'. Now choose a destination.';refreshArrows(q)}else addArrow(q,S.source,el.dataset.anchor)});$('#cancel-source').onclick=()=>{S.source=null;refreshArrows(q);$('#arrow-status').textContent='Source selection cancelled. Choose an electron source.'};$('#undo').onclick=()=>{clearSubmissionWarning();S.response.arrows?.pop();S.source=null;refreshArrows(q);save();$('#arrow-status').textContent='Last arrow removed.'};$('#clear-arrows').onclick=()=>{clearSubmissionWarning();S.response.arrows=[];S.source=null;refreshArrows(q);save();$('#arrow-status').textContent='Arrows cleared.'}}
+function bindArrows(q){if(q.mechanism.destinationOnly){bindDestinations(q);return}refreshArrows(q);document.querySelectorAll('[data-anchor]').forEach(el=>el.onclick=()=>{if(S.marked)return;if(!S.source){S.source=el.dataset.anchor;$('#arrow-status').textContent='Source: '+q.mechanism.anchors.find(a=>a.id===S.source).label+'. Now choose a destination.';refreshArrows(q)}else addArrow(q,S.source,el.dataset.anchor)});$('#cancel-source').onclick=()=>{S.source=null;refreshArrows(q);$('#arrow-status').textContent='Source selection cancelled. Choose an electron source.'};$('#undo').onclick=()=>{clearSubmissionWarning();S.response.arrows?.pop();S.source=null;refreshArrows(q);save();$('#arrow-status').textContent='Last arrow removed.'};$('#clear-arrows').onclick=()=>{clearSubmissionWarning();S.response.arrows=[];S.source=null;refreshArrows(q);save();$('#arrow-status').textContent='Arrows cleared.'}}
+// Destination-only questions retain the shared arrow marking and saved-response format.
+function destinationAtoms(q){return order(q.id+'.destinations',q.mechanism.anchors.filter(a=>a.kind==='atom').map(a=>a.id)).map(id=>q.mechanism.anchors.find(a=>a.id===id))}
+function destinationControls(q){
+ const m=q.mechanism,atoms=destinationAtoms(q),source=m.anchors.find(a=>a.id===m.fixedSource);
+ return `<p id="arrow-status" class="interaction-status" role="status">Start supplied: ${U.esc(source.label)}. Choose one numbered atom for the arrowhead.</p><div class="mechanism-canvas endpoint-canvas">${U.image(S.bank,m.asset)}<svg class="endpoint-guides" viewBox="0 0 600 360" aria-hidden="true">${atoms.map(a=>`<line x1="${a.labelX}" y1="${a.labelY}" x2="${a.x}" y2="${a.y}"/>`).join('')}</svg>${atoms.map((a,i)=>`<button type="button" class="endpoint-marker" data-destination="${a.id}" style="left:${100*a.labelX/600}%;top:${100*a.labelY/360}%" aria-label="Atom ${i+1}: ${U.esc(a.label)}" aria-pressed="false">${i+1}</button>`).join('')}<svg class="arrow-layer" viewBox="0 0 600 360" aria-hidden="true"><defs><marker id="endpoint-head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#14563e"/></marker></defs><g id="endpoint-student-arrow"></g></svg></div><button type="button" class="btn text-button" id="enlarge-endpoint">Enlarge diagram</button><p class="destination-help" id="destination-help">Choose on the diagram or use the matching buttons. A highlight means selected; it does not mean correct.</p><div class="site-buttons destination-options" role="group" aria-label="Choose the atom where the missing arrow ends" aria-describedby="destination-help">${atoms.map((a,i)=>`<button type="button" class="btn secondary" data-destination="${a.id}" aria-pressed="false"><strong>${i+1}</strong><span>${U.esc(a.label)}</span></button>`).join('')}</div><div class="mechanism-tools"><button type="button" class="btn text-button" id="clear-destination">Clear selection</button></div><ol id="arrow-list" aria-label="Selected electron arrow"></ol>`;
+}
+function refreshDestinations(q){
+ const m=q.mechanism,source=m.anchors.find(a=>a.id===m.fixedSource),selected=S.response.arrows?.[0],target=m.anchors.find(a=>a.id===selected?.to);
+ const d=target?U.arrowPath(source.x,source.y,target.x,target.y):'';
+ $('#endpoint-student-arrow').innerHTML=target?`<path d="${U.esc(d)}" fill="none" stroke="#14563e" stroke-width="3" marker-end="url(#endpoint-head)"/>`:'';
+ document.querySelectorAll('#task [data-destination]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.destination===target?.id)));
+ $('#arrow-list').innerHTML=target?`<li>${U.esc(source.label)} → ${U.esc(target.label)}</li>`:'';
+ $('#arrow-status').textContent=target?'Selected: '+target.label+'. Check your answer when ready.':'Start supplied: '+source.label+'. Choose one numbered atom for the arrowhead.';
+}
+function bindDestinations(q){
+ refreshDestinations(q);
+ document.querySelectorAll('#task [data-destination]').forEach(el=>el.onclick=()=>{if(S.marked)return;S.response.arrows=[{from:q.mechanism.fixedSource,to:el.dataset.destination}];S.source=null;clearSubmissionWarning();refreshDestinations(q);save()});
+ $('#clear-destination').onclick=()=>{S.response.arrows=[];clearSubmissionWarning();refreshDestinations(q);save()};
+ $('#enlarge-endpoint').onclick=()=>{
+  const dialog=document.createElement('dialog');dialog.className='endpoint-zoom';dialog.setAttribute('aria-label','Enlarged mechanism diagram');
+  const copy=$('.endpoint-canvas').cloneNode(true);copy.querySelectorAll('button').forEach(button=>{const marker=document.createElement('span');marker.className='endpoint-marker';marker.style.cssText=button.style.cssText;marker.textContent=button.textContent;marker.setAttribute('aria-hidden','true');if(button.getAttribute('aria-pressed')==='true')marker.classList.add('selected');button.replaceWith(marker)});
+  copy.querySelector('#endpoint-head').id='endpoint-zoom-head';copy.querySelector('#endpoint-student-arrow').id='endpoint-zoom-arrow';copy.querySelectorAll('[marker-end]').forEach(el=>el.setAttribute('marker-end','url(#endpoint-zoom-head)'));
+  dialog.innerHTML='<button type="button" class="btn secondary" autofocus>Close diagram</button><p>Scroll across to inspect the diagram. Close it to choose your atom.</p><div class="endpoint-zoom-scroll" tabindex="0" role="region" aria-label="Scrollable enlarged mechanism diagram"></div>';dialog.querySelector('.endpoint-zoom-scroll').append(copy);document.body.append(dialog);dialog.querySelector('button').onclick=()=>dialog.close();dialog.addEventListener('close',()=>{dialog.remove();$('#enlarge-endpoint')?.focus()},{once:true});dialog.showModal();
+ };
+}
+
 function routeNodes(q){return (q.layout==='network'?q.nodes:q.pathway).map((p,i)=>({...p,tag:q.layout==='network'?(p.id==='start'?'Start':p.id):(i===0?'Start':i===q.pathway.length-1?'Target':p.letter||'I'+i)}))}
 function routeEnds(q,i){const nodes=routeNodes(q),step=q.steps[i];return q.layout==='network'?[nodes.find(n=>n.id===step.startNode),nodes.find(n=>n.id===step.endNode)]:[nodes[i],nodes[i+1]]}
 function stepFill(step){const essential=step.components.filter(c=>c.essential),response=S.response[step.id]||{},filled=essential.filter(c=>!!response[c.id]).length;return {filled,total:essential.length,text:filled===essential.length?'Filled in':filled?'Partly filled':'Not started'}}
@@ -203,7 +229,7 @@ function initialiseNavigation(){document.querySelectorAll('[data-nav]').forEach(
 const setupDisclosures={};
 let celebrationEffects=storage.get('ocrOrgCelebrationsV1',true)!==false;
 let celebrationSound=storage.get('ocrOrgCelebrationSoundV1',false)===true;
-const pickMessage=ChemExperience.messagePicker(),pickEffect=ChemExperience.effectPicker(),celebratedSessions=new Set();
+const pickMessage=ChemExperience.messagePicker(),celebratedSessions=new Set();
 let effectTimer=null,effectAnimations=[],actionObserver=null,partyAudio=null,effectRun=0;
 
 function sessionMenu(q){
@@ -213,8 +239,6 @@ function challengeFeedback(){
  $('#task').hidden=true;$('.action-row').innerHTML=`<button class="btn" id="next">${S.session.i===S.session.ids.length-1?'View summary':'Next question'}</button>`;$('#fb').innerHTML='<p class="submission-saved">Submission saved. Feedback appears at the end of the challenge.</p>';$('#next').onclick=next;$('#answer-status').textContent='Submission saved. Feedback at the end.';updateQuestionHeader();resizeActions();
 }
 function trophySVG(){return '<svg viewBox="0 0 120 140" aria-hidden="true" focusable="false"><path d="M27 20H10v19c0 19 12 31 31 34M93 20h17v19c0 19-12 31-31 34" fill="none" stroke="#a77917" stroke-width="9"/><path d="M25 10h70v35c0 29-15 44-35 44S25 74 25 45Z" fill="#e3b649" stroke="#a77917" stroke-width="3"/><path d="M33 17h12v31c0 13 3 23 10 30-14-7-22-18-22-34Z" fill="#fff0ac"/><path d="M54 88h12v24H54Z" fill="#b6861c"/><path d="M42 109h36l9 16H33Z" fill="#d9ab38" stroke="#a77917" stroke-width="3"/><rect x="25" y="125" width="70" height="10" rx="3" fill="#14563e"/><text x="60" y="61" fill="#172d3a" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="35">1</text></svg>'}
-function thumbSVG(){return '<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M37 43 52 18c4-7 13-4 13 4v18h14c8 0 11 6 9 13L78 80c-1 4-5 6-9 6H39Z" fill="#e3b649" stroke="#14563e" stroke-width="4" stroke-linejoin="round"/><rect x="15" y="43" width="23" height="45" rx="5" fill="#14563e"/><path d="M60 48h16M59 59h15M56 70h15" stroke="#a77917" stroke-width="3" stroke-linecap="round"/></svg>'}
-function blowerSVG(){return '<svg viewBox="0 0 180 90" aria-hidden="true" focusable="false"><path d="M12 57 72 33v40Z" fill="#14563e" stroke="#172d3a" stroke-width="3"/><path d="m35 48 12 18M51 41l14 29" stroke="#e3b649" stroke-width="7"/><path class="blower-paper" d="M74 53h71c24 0 25-36 5-36-12 0-17 13-7 17" fill="none" stroke="#d9ab38" stroke-width="12" stroke-linecap="round"/><path d="M8 54h16v9H8Z" fill="#172d3a"/></svg>'}
 function celebrationSoundControl(id){return `<label class="topic"><input type="checkbox" id="${id}" ${celebrationSound?'checked':''}><span>Party-blower sound<span class="topic-code">Perfect sessions only · off by default.</span></span></label>`}
 function bindCelebrationSound(id){const control=document.getElementById(id);if(control)control.onchange=e=>{celebrationSound=e.target.checked;storage.set('ocrOrgCelebrationSoundV1',celebrationSound);if(!celebrationSound)stopPartySound()}}
 function stopPartySound(){if(partyAudio){partyAudio.pause();try{partyAudio.currentTime=0}catch{}}}
@@ -223,7 +247,7 @@ function playPartySound(){
  if(!partyAudio){partyAudio=new Audio(window.CHEM_PARTY_SOUND||'assets/audio/party-blowers.wav?v=20261013-v1.3');partyAudio.preload='auto';partyAudio.volume=.45}
  const run=effectRun;try{partyAudio.currentTime=0;const playing=partyAudio.play();playing?.then(()=>{if(run!==effectRun||!celebrationSound||!celebrationEffects||document.hidden)stopPartySound()}).catch(()=>{})}catch{}
 }
-function clearEffects(){effectRun++;clearTimeout(effectTimer);effectTimer=null;effectAnimations.forEach(a=>a.cancel());effectAnimations=[];document.querySelectorAll('.confetti-layer,.shooting-star-layer,.celebration-layer').forEach(el=>el.remove());stopPartySound()}
+function clearEffects(){ChemEffects.clear();effectRun++;clearTimeout(effectTimer);effectTimer=null;effectAnimations.forEach(a=>a.cancel());effectAnimations=[];document.querySelectorAll('.confetti-layer,.shooting-star-layer,.celebration-layer').forEach(el=>el.remove());stopPartySound()}
 function reducedMotion(){return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false}
 function showEncouragement(q,result,category,animate){
  const host=$('#encouragement');if(!host)return;
@@ -232,55 +256,14 @@ function showEncouragement(q,result,category,animate){
  host.querySelector('button').onclick=()=>{host.replaceChildren();$('#next')?.focus({preventScroll:true})};
  if(animate&&celebrationEffects&&!reducedMotion())host.querySelector('aside').classList.add('encouragement-enter');
 }
-function effectViewport(classes){
- const layer=document.createElement('div');layer.className='celebration-layer '+classes;layer.setAttribute('aria-hidden','true');document.body.append(layer);
- const vv=window.visualViewport,width=vv?.width||innerWidth,height=vv?.height||innerHeight;
- Object.assign(layer.style,{top:(vv?.offsetTop||0)+'px',left:(vv?.offsetLeft||0)+'px',width:width+'px',height:height+'px'});
- return {layer,width,height};
-}
-function animateEffect(element,keyframes,options,cssClass){
- if(element.animate){try{const animation=element.animate(keyframes,options);effectAnimations.push(animation);return animation}catch{}}
- if(cssClass)element.classList.add(cssClass);return null;
-}
-function addConfetti(layer,height,duration){
- const colors=['#14563e','#b6861c','#759b8a','#172d3a'];
- for(let i=0;i<56;i++){
-  const bit=document.createElement('span');bit.className='confetti-piece';bit.style.left=(Math.random()*100)+'%';bit.style.background=colors[i%colors.length];layer.append(bit);
-  const drift=(Math.random()-.5)*160,distance=height+100,delay=Math.random()*180;
-  bit.style.setProperty('--confetti-drift',drift+'px');bit.style.setProperty('--confetti-distance',distance+'px');bit.style.setProperty('--confetti-duration',duration+'ms');bit.style.setProperty('--confetti-delay',delay+'ms');
-  animateEffect(bit,[{transform:'translateY(-18px) rotate(0deg)',opacity:1},{transform:`translate(${drift*.8}px,${distance*.8}px) rotate(520deg)`,opacity:1,offset:.7},{transform:`translate(${drift}px,${distance}px) rotate(650deg)`,opacity:0}],{duration,delay,easing:'ease-in',fill:'both'},'confetti-css');
- }
-}
-function questionConfetti(){
- if(!celebrationEffects||reducedMotion())return;clearEffects();const {layer,height}=effectViewport('confetti-layer question-confetti');addConfetti(layer,height,2900);effectTimer=setTimeout(clearEffects,3200);
-}
-function thumbsUp(){
- if(!celebrationEffects||reducedMotion())return;clearEffects();const {layer}=effectViewport('question-success-effect thumbs-up-layer');
- const symbol=document.createElement('div');symbol.className='question-effect-symbol thumbs-up';symbol.innerHTML=thumbSVG();layer.append(symbol);
- // Two finite back-and-forth cycles: upright → 180 degrees → upright.
- animateEffect(symbol,[{transform:'rotate(0deg)'},{transform:'rotate(180deg)',offset:.5},{transform:'rotate(0deg)'}],{duration:1450,iterations:2,easing:'ease-in-out',fill:'both'},'thumbs-up-css');
- animateEffect(layer,[{opacity:0},{opacity:1,offset:.08},{opacity:1,offset:.75},{opacity:0}],{duration:3300,fill:'both'},'question-effect-fade');effectTimer=setTimeout(clearEffects,3400);
-}
-function growingStar(){
- if(!celebrationEffects||reducedMotion())return;clearEffects();const {layer,width,height}=effectViewport('question-success-effect growing-star-layer');
- const symbol=document.createElement('div');symbol.className='growing-star';symbol.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m50 4 14 29 32 5-23 23 5 32-28-15-28 15 5-32L4 38l32-5Z" fill="#e3b649" fill-opacity=".14" stroke="#b6861c" stroke-opacity=".65" stroke-width="1.5"/></svg>';layer.append(symbol);
- const scale=Math.ceil(Math.hypot(width,height)/28);symbol.style.setProperty('--star-expand',scale);
- animateEffect(symbol,[{transform:'scale(.35)',opacity:0},{transform:'scale(1)',opacity:1,offset:.15},{transform:`scale(${scale})`,opacity:0}],{duration:3200,easing:'ease-in',fill:'both'},'growing-star-css');effectTimer=setTimeout(clearEffects,3300);
-}
 function celebrateQuestion(result){
- if(!celebrationEffects)return;const type=ChemExperience.questionCelebration(result,S.session.mode,{submitted:true,revealed:false});if(!type)return;
- const effect=type==='confetti'?'confetti':pickEffect();if(reducedMotion())return;
- if(effect==='confetti')questionConfetti();else if(effect==='thumbs-up')thumbsUp();else if(effect==='growing-star')growingStar();else shootingStar();
+ if(!celebrationEffects||!ChemExperience.fullMarkSubmission(result,S.session.mode,{submitted:true,revealed:false}))return;
+ clearEffects();ChemEffects.setPreferences(celebrationEffects,false);ChemEffects.question(result.score,result.max);
 }
 function celebrateSession({sound=false}={}){
  if(!celebrationEffects)return;clearEffects();
- if(!reducedMotion()){
-  const {layer,height}=effectViewport('confetti-layer perfect-session-effects');addConfetti(layer,height,3900);
-  const trophy=document.createElement('div');trophy.className='session-trophy';trophy.innerHTML=trophySVG();layer.append(trophy);
-  for(const side of ['left','right']){const blower=document.createElement('div');blower.className='party-blower '+side;blower.innerHTML=blowerSVG();layer.append(blower);const paper=blower.querySelector('.blower-paper');animateEffect(paper,[{transform:'scaleX(.15)'},{transform:'scaleX(1)',offset:.35},{transform:'scaleX(1)',offset:.65},{transform:'scaleX(.15)'}],{duration:1400,iterations:2,easing:'ease-in-out',fill:'both'},'blower-unroll-css')}
-  animateEffect(layer,[{opacity:0},{opacity:1,offset:.08},{opacity:1,offset:.52},{opacity:0}],{duration:4200,easing:'ease-out',fill:'both'},'perfect-effect-fade');
- }
- if(sound)playPartySound();if(!reducedMotion()||(sound&&celebrationSound))effectTimer=setTimeout(clearEffects,4400);
+ ChemEffects.setPreferences(celebrationEffects,false);ChemEffects.session();
+ if(sound)playPartySound();if(!reducedMotion()||(sound&&celebrationSound))effectTimer=setTimeout(clearEffects,5400);
 }
 
 function resizeActions(){
@@ -317,17 +300,10 @@ function ensureFocusedVisible(){
  const bounds=target.getBoundingClientRect(),barTop=bar.getBoundingClientRect().top;
  if(bounds.bottom>barTop-12)window.scrollBy({top:Math.ceil(bounds.bottom-barTop+12),behavior:'auto'});
 }
-function shootingStar(){
- if(!celebrationEffects||reducedMotion())return;clearEffects();
- const {layer,width,height}=effectViewport('shooting-star-layer'),star=document.createElement('div');star.className='shooting-star';star.innerHTML='<span class="shooting-star-trail"></span><span class="shooting-star-head">★</span>';layer.append(star);
- const from=`translate(-90px,${Math.round(height*.18)}px) rotate(15deg)`,to=`translate(${width+90}px,${Math.round(height*.42)}px) rotate(15deg)`;
- star.style.setProperty('--star-from',from);star.style.setProperty('--star-to',to);
- animateEffect(star,[{transform:from,opacity:0},{transform:`translate(0px,${Math.round(height*.21)}px) rotate(15deg)`,opacity:1,offset:.12},{transform:`translate(${Math.round(width*.9)}px,${Math.round(height*.4)}px) rotate(15deg)`,opacity:1,offset:.86},{transform:to,opacity:0}],{duration:3000,easing:'ease-in-out',fill:'both'},'shooting-star-css');effectTimer=setTimeout(clearEffects,3100);
-}
 
 initialiseNavigation();
 const bottomNav=document.querySelector('.side-nav');
 if(bottomNav){const reserve=()=>document.documentElement.style.setProperty('--mobile-nav-space',(bottomNav.offsetHeight+18)+'px');reserve();if(window.ResizeObserver)new ResizeObserver(reserve).observe(bottomNav);window.addEventListener('resize',reserve)}
 
 window.addEventListener('visibilitychange',tick);window.addEventListener('focus',tick);
-U.load().then(b=>{S.bank=b;const check=C.validate(b);if(check.errors.length)throw Error('Invalid question bank: '+check.errors.join('; '));const p=storage.get('ocrOrgPrefsV2',{});S.topics=(p.topics||[]).filter(id=>b.topics.some(t=>t.id===id));for(const key of ['types','difficulty','statuses'])if(Array.isArray(p[key])&&key!=='statuses')S[key]=p[key];const saved=storage.get('ocrOrgProgressV2',null);S.progress=C.restoreProgress(saved,b);const active=storage.get('ocrOrgActiveV2',null);const oldPractice=active?.mode==='practice'&&active.practicePolicy!=='practice-20-v1';if(active&&!oldPractice&&active.config.includes(b.meta.bankVersion)&&JSON.parse(active.config).scoringVersion===b.meta.scoringVersion&&active.ids.every(id=>b.questions.some(q=>q.id===id&&q.enabled!==false))){S.session=active;S.response=active.response||{};const ui=active.ui||{};S.orders=ui.orders||{};S.activeStep=ui.activeStep||0;S.marked=!!ui.marked;S.result=ui.result||null;S.source=ui.source||null;delete S.session.response;delete S.session.ui;if(ui.view&&ui.view!=='practice'&&active.mode!=='challenge'){if(ui.view==='mistakes')showMistakeOverview();else if(ui.view==='progress')showProgress();else home()}else if(active.mode==='challenge'&&C.remaining(active.end)===0)finish();else resumePractice()}else{home();if(oldPractice){const notice=document.createElement('p');notice.className='notice';notice.textContent='Random practice now uses sessions of about 20 marks. Start a new session below; your first-attempt progress has been kept.';app().prepend(notice)}if(S.progress.reset){const notice=document.createElement('p');notice.className='notice';notice.textContent='The question bank or scoring rules have changed. Incompatible old progress has been cleared safely.';app().prepend(notice)}}const preview=new URLSearchParams(location.search).get('preview');if(preview&&!active){const q=b.questions.find(q=>q.id===preview&&(q.enabled!==false||window.CHEM_PREVIEW_ID));if(q){S.topics=q.prerequisites;start('preview',[q])}}save()}).catch(e=>{app().innerHTML=`<div class="card"><h1>Question bank could not load</h1><p>${U.esc(e.message)}</p><p>Use the hosted GitHub Pages site. A double-clicked local file cannot fetch its question bank. See README.md. </p></div>`});
+U.load().then(b=>{S.bank=b;const check=C.validate(b);if(check.errors.length)throw Error('Invalid question bank: '+check.errors.join('; '));const p=storage.get('ocrOrgPrefsV2',{});S.topics=(p.topics||[]).filter(id=>b.topics.some(t=>t.id===id));for(const key of ['types','difficulty','statuses'])if(Array.isArray(p[key])&&key!=='statuses')S[key]=p[key];const saved=storage.get('ocrOrgProgressV2',null);S.progress=C.restoreProgress(saved,b);const active=storage.get('ocrOrgActiveV2',null);const oldPractice=active?.mode==='practice'&&active.practicePolicy!=='practice-20-v1';if(active&&!oldPractice&&C.compatibleBankVersion(JSON.parse(active.config).bankVersion,b)&&JSON.parse(active.config).scoringVersion===b.meta.scoringVersion&&active.ids.every(id=>b.questions.some(q=>q.id===id&&q.enabled!==false))){S.session=active;S.response=active.response||{};const ui=active.ui||{};S.orders=ui.orders||{};S.activeStep=ui.activeStep||0;S.marked=!!ui.marked;S.result=ui.result||null;S.source=ui.source||null;delete S.session.response;delete S.session.ui;if(ui.view&&ui.view!=='practice'&&active.mode!=='challenge'){if(ui.view==='mistakes')showMistakeOverview();else if(ui.view==='progress')showProgress();else home()}else if(active.mode==='challenge'&&C.remaining(active.end)===0)finish();else resumePractice()}else{home();if(oldPractice){const notice=document.createElement('p');notice.className='notice';notice.textContent='Random practice now uses sessions of about 20 marks. Start a new session below; your first-attempt progress has been kept.';app().prepend(notice)}if(S.progress.reset){const notice=document.createElement('p');notice.className='notice';notice.textContent='The question bank or scoring rules have changed. Incompatible old progress has been cleared safely.';app().prepend(notice)}}const preview=new URLSearchParams(location.search).get('preview');if(preview&&!active){const q=b.questions.find(q=>q.id===preview&&(q.enabled!==false||window.CHEM_PREVIEW_ID));if(q){S.topics=q.prerequisites;start('preview',[q])}}save()}).catch(e=>{app().innerHTML=`<div class="card"><h1>Question bank could not load</h1><p>${U.esc(e.message)}</p><p>Use the hosted GitHub Pages site. A double-clicked local file cannot fetch its question bank. See README.md. </p></div>`});

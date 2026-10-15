@@ -1,20 +1,23 @@
 {
   "meta": {
     "title": "OCR A Organic Chemistry Revision",
-    "version": "5.0",
-    "bankVersion": "v5-204-questions-2026-10-12",
+    "version": "6.0",
+    "bankVersion": "v6-216-questions-2026-10-15",
     "scoringVersion": "2",
     "specification": "Cambridge OCR Chemistry A H432 Version 3.1 (May 2026)",
-    "sourceAccessDate": "2026-10-11",
+    "sourceAccessDate": "2026-10-15",
     "sourceUrl": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
-    "reviewNotice": "204 questions are enabled for student practice by default; teacher chemistry-review status remains separate from publication permission.",
+    "reviewNotice": "216 questions are enabled for student practice by default; teacher chemistry-review status remains separate from publication permission.",
     "pathwaySource": {
       "id": "ocr-pathways-v1-2017",
       "url": "https://www.ocr.org.uk/images/359182-organic-synthesis-reaction-pathways.pdf",
       "version": "Version 1, © OCR 2017",
       "accessed": "2026-10-11",
       "sha256": "d2a4070fcbb445f5718f079932cca9580f43df5a11fdb326362836ef09fe0043"
-    }
+    },
+    "compatibleBankVersions": [
+      "v5-204-questions-2026-10-12"
+    ]
   },
   "topics": [
     {
@@ -28323,6 +28326,1806 @@
           "caption": "Final product"
         }
       ]
+    },
+    {
+      "id": "MC13",
+      "type": "mechanism-completion",
+      "title": "Benzene nitration: missing attack arrow",
+      "prompt": "Complete the missing arrow in the nitration step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "MC13-step",
+        "MC13-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The arrow ends at the nitrogen of the separate NO₂⁺ ion. The ring electron pair forms a C–N bond; the supplied N=O arrow moves a π pair onto oxygen.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC13-step",
+        "completedAsset": "MC13-complete",
+        "destinationOnly": true,
+        "fixedSource": "ring-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M208 151 Q305 62 426 163",
+        "anchors": [
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 170,
+            "y": 100,
+            "labelX": 170.0,
+            "labelY": 69.6
+          },
+          {
+            "id": "ring-2",
+            "label": "Ring carbon at upper-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 140.0,
+            "labelX": 265.6,
+            "labelY": 124.8
+          },
+          {
+            "id": "ring-3",
+            "label": "Ring carbon at lower-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 220.0,
+            "labelX": 265.6,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 170,
+            "y": 260,
+            "labelX": 170.0,
+            "labelY": 290.4
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 220.0,
+            "labelX": 74.4,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-6",
+            "label": "Ring carbon at upper-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 140.0,
+            "labelX": 74.4,
+            "labelY": 124.8
+          },
+          {
+            "id": "ring-pair",
+            "label": "Marked electron pair in the ring π system",
+            "kind": "bond-pair",
+            "x": 208,
+            "y": 151
+          },
+          {
+            "id": "incoming-n",
+            "label": "Nitrogen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 440,
+            "y": 170,
+            "labelX": 505,
+            "labelY": 145
+          },
+          {
+            "id": "incoming-o1",
+            "label": "Upper oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 395,
+            "y": 90,
+            "labelX": 350,
+            "labelY": 60
+          },
+          {
+            "id": "incoming-o2",
+            "label": "Lower oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 485,
+            "y": 250,
+            "labelX": 535,
+            "labelY": 285
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "ring-pair"
+            ],
+            "destinations": [
+              "incoming-n"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 9,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC14",
+      "type": "mechanism-completion",
+      "title": "Nitration: remove the ring proton",
+      "prompt": "Complete the missing arrow in the final substitution step. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "MC14-step",
+        "MC14-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The HSO₄⁻ oxygen takes the hydrogen attached to the ring carbon bearing NO₂. Together with the supplied C–H arrow, this restores the ring π system and regenerates H₂SO₄.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC14-step",
+        "completedAsset": "MC14-complete",
+        "destinationOnly": true,
+        "fixedSource": "base-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M422 180 Q365 118 317 176",
+        "anchors": [
+          {
+            "id": "attached-n",
+            "label": "Nitrogen attached to the ring",
+            "kind": "atom",
+            "x": 315,
+            "y": 90,
+            "labelX": 270,
+            "labelY": 50
+          },
+          {
+            "id": "attached-o",
+            "label": "Upper oxygen of the attached nitro group",
+            "kind": "atom",
+            "x": 355,
+            "y": 43,
+            "labelX": 410,
+            "labelY": 45
+          },
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 170,
+            "y": 100,
+            "labelX": 170.0,
+            "labelY": 69.6
+          },
+          {
+            "id": "ring-3",
+            "label": "Ring carbon at lower-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 220.0,
+            "labelX": 270,
+            "labelY": 270
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 170,
+            "y": 260,
+            "labelX": 170.0,
+            "labelY": 290.4
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 220.0,
+            "labelX": 74.4,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-h",
+            "label": "Hydrogen bonded to the ring carbon bearing the new group",
+            "kind": "atom",
+            "x": 305,
+            "y": 180,
+            "labelX": 320,
+            "labelY": 219
+          },
+          {
+            "id": "base-o",
+            "label": "Left oxygen of HSO₄⁻",
+            "kind": "atom",
+            "x": 446,
+            "y": 180,
+            "labelX": 446,
+            "labelY": 222
+          },
+          {
+            "id": "sulfur",
+            "label": "Sulfur of HSO₄⁻",
+            "kind": "atom",
+            "x": 500,
+            "y": 180,
+            "labelX": 500,
+            "labelY": 215
+          },
+          {
+            "id": "base-h",
+            "label": "Hydrogen of HSO₄⁻",
+            "kind": "atom",
+            "x": 582,
+            "y": 180,
+            "labelX": 575,
+            "labelY": 222
+          },
+          {
+            "id": "base-pair",
+            "label": "Lone pair on the left oxygen of HSO₄⁻",
+            "kind": "lone-pair",
+            "x": 422,
+            "y": 180
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "base-pair"
+            ],
+            "destinations": [
+              "ring-h"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 10,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC15",
+      "type": "mechanism-completion",
+      "title": "Methylbenzene nitration: missing attack arrow",
+      "prompt": "Complete the missing arrow in the nitration step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "MC15-step",
+        "MC15-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The arrow ends at the nitrogen of the separate NO₂⁺ ion. The ring electron pair forms a C–N bond; the supplied N=O arrow moves a π pair onto oxygen.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC15-step",
+        "completedAsset": "MC15-complete",
+        "destinationOnly": true,
+        "fixedSource": "ring-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M208 151 Q305 62 426 163",
+        "anchors": [
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 170,
+            "y": 100,
+            "labelX": 170.0,
+            "labelY": 69.6
+          },
+          {
+            "id": "ring-2",
+            "label": "Ring carbon at upper-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 140.0,
+            "labelX": 265.6,
+            "labelY": 124.8
+          },
+          {
+            "id": "ring-3",
+            "label": "Ring carbon at lower-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 220.0,
+            "labelX": 265.6,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 170,
+            "y": 260,
+            "labelX": 110,
+            "labelY": 285
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 220.0,
+            "labelX": 74.4,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-6",
+            "label": "Ring carbon at upper-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 140.0,
+            "labelX": 74.4,
+            "labelY": 124.8
+          },
+          {
+            "id": "methyl",
+            "label": "Carbon of the methyl group",
+            "kind": "atom",
+            "x": 170,
+            "y": 306,
+            "labelX": 235,
+            "labelY": 306
+          },
+          {
+            "id": "ring-pair",
+            "label": "Marked electron pair in the ring π system",
+            "kind": "bond-pair",
+            "x": 208,
+            "y": 151
+          },
+          {
+            "id": "incoming-n",
+            "label": "Nitrogen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 440,
+            "y": 170,
+            "labelX": 505,
+            "labelY": 145
+          },
+          {
+            "id": "incoming-o1",
+            "label": "Upper oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 395,
+            "y": 90,
+            "labelX": 350,
+            "labelY": 60
+          },
+          {
+            "id": "incoming-o2",
+            "label": "Lower oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 485,
+            "y": 250,
+            "labelX": 535,
+            "labelY": 285
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "ring-pair"
+            ],
+            "destinations": [
+              "incoming-n"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 10,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC16",
+      "type": "mechanism-completion",
+      "title": "Benzene bromination: missing attack arrow",
+      "prompt": "Complete the missing arrow in the ring-bromination step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "MC16-step",
+        "MC16-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The ring electron pair goes to Br⁺, forming the new C–Br bond. The hydrogen is removed in the later substitution stage.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC16-step",
+        "completedAsset": "MC16-complete",
+        "destinationOnly": true,
+        "fixedSource": "ring-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M208 151 Q315 64 429 173",
+        "anchors": [
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 170,
+            "y": 100,
+            "labelX": 170.0,
+            "labelY": 69.6
+          },
+          {
+            "id": "ring-2",
+            "label": "Ring carbon at upper-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 140.0,
+            "labelX": 265.6,
+            "labelY": 124.8
+          },
+          {
+            "id": "ring-3",
+            "label": "Ring carbon at lower-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 220.0,
+            "labelX": 265.6,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 170,
+            "y": 260,
+            "labelX": 170.0,
+            "labelY": 290.4
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 220.0,
+            "labelX": 74.4,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-6",
+            "label": "Ring carbon at upper-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 140.0,
+            "labelX": 74.4,
+            "labelY": 124.8
+          },
+          {
+            "id": "br",
+            "label": "Bromine in the separate ion",
+            "kind": "atom",
+            "x": 445,
+            "y": 180,
+            "labelX": 493,
+            "labelY": 208
+          },
+          {
+            "id": "ring-pair",
+            "label": "Marked electron pair in the ring π system",
+            "kind": "bond-pair",
+            "x": 208,
+            "y": 151
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "ring-pair"
+            ],
+            "destinations": [
+              "br"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 7,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC17",
+      "type": "mechanism-completion",
+      "title": "Bromination: remove the ring proton",
+      "prompt": "Complete the missing arrow in the final substitution step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "MC17-step",
+        "MC17-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The separate Br⁻ takes the hydrogen on the ring carbon bearing the new Br group. The supplied C–H arrow restores the π system; HBr forms.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC17-step",
+        "completedAsset": "MC17-complete",
+        "destinationOnly": true,
+        "fixedSource": "base-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M438 180 Q365 118 317 176",
+        "anchors": [
+          {
+            "id": "attached-br",
+            "label": "Bromine attached to the ring",
+            "kind": "atom",
+            "x": 320,
+            "y": 95,
+            "labelX": 350,
+            "labelY": 66
+          },
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 170,
+            "y": 100,
+            "labelX": 170.0,
+            "labelY": 69.6
+          },
+          {
+            "id": "ring-3",
+            "label": "Ring carbon at lower-right",
+            "kind": "atom",
+            "x": 239.3,
+            "y": 220.0,
+            "labelX": 270,
+            "labelY": 270
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 170,
+            "y": 260,
+            "labelX": 170.0,
+            "labelY": 290.4
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 100.7,
+            "y": 220.0,
+            "labelX": 74.4,
+            "labelY": 235.2
+          },
+          {
+            "id": "ring-h",
+            "label": "Hydrogen bonded to the ring carbon bearing the new group",
+            "kind": "atom",
+            "x": 305,
+            "y": 180,
+            "labelX": 320,
+            "labelY": 219
+          },
+          {
+            "id": "base-br",
+            "label": "Bromine in the separate Br⁻ ion",
+            "kind": "atom",
+            "x": 470,
+            "y": 180,
+            "labelX": 510,
+            "labelY": 215
+          },
+          {
+            "id": "base-pair",
+            "label": "Lone pair on the separate Br⁻ ion",
+            "kind": "lone-pair",
+            "x": 438,
+            "y": 180
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "base-pair"
+            ],
+            "destinations": [
+              "ring-h"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 7,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC18",
+      "type": "mechanism-completion",
+      "title": "Nitrobenzene nitration: which nitrogen?",
+      "prompt": "Complete the missing arrow for further nitration of the ring. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Synoptic/challenging",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.1(e)",
+        "6.1.1(k)"
+      ],
+      "assetRefs": [
+        "MC18-step",
+        "MC18-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "Choose the nitrogen in the separate NO₂⁺ ion, not the nitrogen already attached to the ring. This forms a new C–N bond; the existing nitro group stays attached.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC18-step",
+        "completedAsset": "MC18-complete",
+        "destinationOnly": true,
+        "fixedSource": "ring-pair",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M108 150 Q260 -12 456 163",
+        "anchors": [
+          {
+            "id": "ring-1",
+            "label": "Ring carbon at top",
+            "kind": "atom",
+            "x": 145,
+            "y": 108,
+            "labelX": 145.0,
+            "labelY": 79.2
+          },
+          {
+            "id": "ring-4",
+            "label": "Ring carbon at bottom",
+            "kind": "atom",
+            "x": 145,
+            "y": 252,
+            "labelX": 145.0,
+            "labelY": 280.8
+          },
+          {
+            "id": "ring-5",
+            "label": "Ring carbon at lower-left",
+            "kind": "atom",
+            "x": 82.6,
+            "y": 216.0,
+            "labelX": 51.5,
+            "labelY": 230.4
+          },
+          {
+            "id": "existing-n",
+            "label": "Nitrogen already bonded to the ring",
+            "kind": "atom",
+            "x": 293,
+            "y": 144,
+            "labelX": 272,
+            "labelY": 102
+          },
+          {
+            "id": "existing-o1",
+            "label": "Upper oxygen of the group already on the ring",
+            "kind": "atom",
+            "x": 331,
+            "y": 83,
+            "labelX": 350,
+            "labelY": 40
+          },
+          {
+            "id": "existing-o2",
+            "label": "Lower oxygen of the group already on the ring",
+            "kind": "atom",
+            "x": 343,
+            "y": 193,
+            "labelX": 366,
+            "labelY": 225
+          },
+          {
+            "id": "incoming-n",
+            "label": "Nitrogen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 470,
+            "y": 170,
+            "labelX": 535,
+            "labelY": 145
+          },
+          {
+            "id": "incoming-o1",
+            "label": "Upper oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 425,
+            "y": 90,
+            "labelX": 435,
+            "labelY": 40
+          },
+          {
+            "id": "incoming-o2",
+            "label": "Lower oxygen in the separate O=N=O ion",
+            "kind": "atom",
+            "x": 515,
+            "y": 250,
+            "labelX": 550,
+            "labelY": 285
+          },
+          {
+            "id": "ring-pair",
+            "label": "Marked electron pair in the ring π system",
+            "kind": "bond-pair",
+            "x": 108,
+            "y": 150
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "ring-pair"
+            ],
+            "destinations": [
+              "incoming-n"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 9,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC19",
+      "type": "mechanism-completion",
+      "title": "Propanal reduction: missing attack arrow",
+      "prompt": "Complete the missing arrow in the addition step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "MC19-step",
+        "MC19-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The electron pair from H⁻ goes to the carbonyl carbon, forming a C–H bond. The supplied C=O arrow moves a π pair onto oxygen, forming the O⁻ intermediate.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC19-step",
+        "completedAsset": "MC19-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M89 121 Q215 30 315 184",
+        "anchors": [
+          {
+            "id": "carbonyl-c",
+            "label": "Carbon of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 190,
+            "labelX": 350,
+            "labelY": 225
+          },
+          {
+            "id": "carbonyl-o",
+            "label": "Oxygen of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 95,
+            "labelX": 400,
+            "labelY": 55
+          },
+          {
+            "id": "alpha-c",
+            "label": "Carbon of CH₂ beside C=O",
+            "kind": "atom",
+            "x": 235,
+            "y": 238,
+            "labelX": 239,
+            "labelY": 277
+          },
+          {
+            "id": "end-c",
+            "label": "Carbon of terminal CH₃",
+            "kind": "atom",
+            "x": 145,
+            "y": 238,
+            "labelX": 135,
+            "labelY": 277
+          },
+          {
+            "id": "aldehyde-h",
+            "label": "Hydrogen bonded to the C=O carbon",
+            "kind": "atom",
+            "x": 425,
+            "y": 238,
+            "labelX": 454,
+            "labelY": 267
+          },
+          {
+            "id": "h-ion",
+            "label": "Hydrogen in the separate H⁻ ion",
+            "kind": "atom",
+            "x": 65,
+            "y": 145,
+            "labelX": 46,
+            "labelY": 184
+          },
+          {
+            "id": "source",
+            "label": "Negative charge on the separate H⁻ ion",
+            "kind": "negative-charge",
+            "x": 89,
+            "y": 121
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "carbonyl-c"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 6,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC20",
+      "type": "mechanism-completion",
+      "title": "Butan-2-one reduction: missing attack arrow",
+      "prompt": "Complete the missing arrow in the addition step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "MC20-step",
+        "MC20-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The electron pair from H⁻ goes to the carbonyl carbon, forming a C–H bond. The supplied C=O arrow moves a π pair onto oxygen, forming the O⁻ intermediate.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC20-step",
+        "completedAsset": "MC20-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M89 121 Q215 30 315 184",
+        "anchors": [
+          {
+            "id": "carbonyl-c",
+            "label": "Carbon of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 190,
+            "labelX": 350,
+            "labelY": 225
+          },
+          {
+            "id": "carbonyl-o",
+            "label": "Oxygen of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 95,
+            "labelX": 400,
+            "labelY": 55
+          },
+          {
+            "id": "left-c",
+            "label": "Carbon of the left alkyl group",
+            "kind": "atom",
+            "x": 235,
+            "y": 238,
+            "labelX": 230,
+            "labelY": 277
+          },
+          {
+            "id": "right-c",
+            "label": "Carbon of the right alkyl group",
+            "kind": "atom",
+            "x": 425,
+            "y": 238,
+            "labelX": 415,
+            "labelY": 277
+          },
+          {
+            "id": "terminal-c",
+            "label": "Carbon of terminal CH₃ on the right",
+            "kind": "atom",
+            "x": 520,
+            "y": 238,
+            "labelX": 536,
+            "labelY": 277
+          },
+          {
+            "id": "h-ion",
+            "label": "Hydrogen in the separate H⁻ ion",
+            "kind": "atom",
+            "x": 65,
+            "y": 145,
+            "labelX": 46,
+            "labelY": 184
+          },
+          {
+            "id": "source",
+            "label": "Negative charge on the separate H⁻ ion",
+            "kind": "negative-charge",
+            "x": 89,
+            "y": 121
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "carbonyl-c"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 6,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC21",
+      "type": "mechanism-completion",
+      "title": "Benzaldehyde + cyanide: missing attack arrow",
+      "prompt": "Complete the missing arrow in the addition step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls",
+        "ccbond",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)",
+        "6.2.4(b)(ii)"
+      ],
+      "assetRefs": [
+        "MC21-step",
+        "MC21-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The carbon lone pair in CN⁻ goes to the carbonyl carbon, forming a C–C bond. It does not attack the carbonyl oxygen or a carbon in the rest of the molecule.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC21-step",
+        "completedAsset": "MC21-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M133 104 Q215 30 315 184",
+        "anchors": [
+          {
+            "id": "carbonyl-c",
+            "label": "Carbon of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 190,
+            "labelX": 350,
+            "labelY": 225
+          },
+          {
+            "id": "carbonyl-o",
+            "label": "Oxygen of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 95,
+            "labelX": 400,
+            "labelY": 55
+          },
+          {
+            "id": "phenyl-1",
+            "label": "Phenyl-ring carbon at top",
+            "kind": "atom",
+            "x": 190,
+            "y": 178,
+            "labelX": 190.0,
+            "labelY": 152.0
+          },
+          {
+            "id": "phenyl-4",
+            "label": "Phenyl-ring carbon at bottom",
+            "kind": "atom",
+            "x": 190,
+            "y": 302,
+            "labelX": 190.0,
+            "labelY": 328.0
+          },
+          {
+            "id": "phenyl-5",
+            "label": "Phenyl-ring carbon at lower-left",
+            "kind": "atom",
+            "x": 136.3,
+            "y": 271.0,
+            "labelX": 110.5,
+            "labelY": 284.0
+          },
+          {
+            "id": "aldehyde-h",
+            "label": "Hydrogen bonded to the C=O carbon",
+            "kind": "atom",
+            "x": 428,
+            "y": 238,
+            "labelX": 456,
+            "labelY": 271
+          },
+          {
+            "id": "cn-n",
+            "label": "Nitrogen in the separate C≡N ion",
+            "kind": "atom",
+            "x": 42,
+            "y": 104,
+            "labelX": 24,
+            "labelY": 144
+          },
+          {
+            "id": "cn-c",
+            "label": "Carbon in the separate C≡N ion",
+            "kind": "atom",
+            "x": 105,
+            "y": 104,
+            "labelX": 103,
+            "labelY": 144
+          },
+          {
+            "id": "source",
+            "label": "Carbon lone pair of the separate CN⁻ ion",
+            "kind": "lone-pair",
+            "x": 133,
+            "y": 104
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "carbonyl-c"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 8,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC22",
+      "type": "mechanism-completion",
+      "title": "Butan-2-one + cyanide: missing attack arrow",
+      "prompt": "Complete the missing arrow in the addition step shown. Its start is marked in green; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls",
+        "ccbond"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)",
+        "6.2.4(b)(ii)"
+      ],
+      "assetRefs": [
+        "MC22-step",
+        "MC22-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The carbon lone pair in CN⁻ goes to the carbonyl carbon, forming a C–C bond. It does not attack the carbonyl oxygen or a carbon in the rest of the molecule.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC22-step",
+        "completedAsset": "MC22-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M133 104 Q215 30 315 184",
+        "anchors": [
+          {
+            "id": "carbonyl-c",
+            "label": "Carbon of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 190,
+            "labelX": 350,
+            "labelY": 225
+          },
+          {
+            "id": "carbonyl-o",
+            "label": "Oxygen of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 95,
+            "labelX": 400,
+            "labelY": 55
+          },
+          {
+            "id": "left-c",
+            "label": "Carbon of the left alkyl group",
+            "kind": "atom",
+            "x": 235,
+            "y": 238,
+            "labelX": 230,
+            "labelY": 277
+          },
+          {
+            "id": "right-c",
+            "label": "Carbon of the right alkyl group",
+            "kind": "atom",
+            "x": 425,
+            "y": 238,
+            "labelX": 415,
+            "labelY": 277
+          },
+          {
+            "id": "terminal-c",
+            "label": "Carbon of terminal CH₃ on the right",
+            "kind": "atom",
+            "x": 520,
+            "y": 238,
+            "labelX": 536,
+            "labelY": 277
+          },
+          {
+            "id": "cn-n",
+            "label": "Nitrogen in the separate C≡N ion",
+            "kind": "atom",
+            "x": 42,
+            "y": 104,
+            "labelX": 24,
+            "labelY": 144
+          },
+          {
+            "id": "cn-c",
+            "label": "Carbon in the separate C≡N ion",
+            "kind": "atom",
+            "x": 105,
+            "y": 104,
+            "labelX": 103,
+            "labelY": 144
+          },
+          {
+            "id": "source",
+            "label": "Carbon lone pair of the separate CN⁻ ion",
+            "kind": "lone-pair",
+            "x": 133,
+            "y": 104
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "carbonyl-c"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 7,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC23",
+      "type": "mechanism-completion",
+      "title": "Propanone reduction: complete the arrow pair",
+      "prompt": "One arrow is already drawn for this addition step. The missing arrow starts at the green marker; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "MC23-step",
+        "MC23-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The C=O π electron pair moves onto oxygen as the new C–H bond forms. This avoids five bonds around carbon and gives the O⁻ intermediate.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC23-step",
+        "completedAsset": "MC23-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M334 139 Q402 132 337 108",
+        "anchors": [
+          {
+            "id": "carbonyl-c",
+            "label": "Carbon of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 190,
+            "labelX": 350,
+            "labelY": 225
+          },
+          {
+            "id": "carbonyl-o",
+            "label": "Oxygen of the C=O group",
+            "kind": "atom",
+            "x": 330,
+            "y": 95,
+            "labelX": 400,
+            "labelY": 55
+          },
+          {
+            "id": "left-c",
+            "label": "Carbon of the left alkyl group",
+            "kind": "atom",
+            "x": 235,
+            "y": 238,
+            "labelX": 230,
+            "labelY": 277
+          },
+          {
+            "id": "right-c",
+            "label": "Carbon of the right alkyl group",
+            "kind": "atom",
+            "x": 425,
+            "y": 238,
+            "labelX": 415,
+            "labelY": 277
+          },
+          {
+            "id": "methyl-h",
+            "label": "Displayed hydrogen on the left CH₂ group",
+            "kind": "atom",
+            "x": 160,
+            "y": 269,
+            "labelX": 131,
+            "labelY": 296
+          },
+          {
+            "id": "h-ion",
+            "label": "Hydrogen in the separate H⁻ ion",
+            "kind": "atom",
+            "x": 65,
+            "y": 145,
+            "labelX": 46,
+            "labelY": 184
+          },
+          {
+            "id": "source",
+            "label": "Marked C=O π electron pair",
+            "kind": "bond-pair",
+            "x": 334,
+            "y": 139
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "carbonyl-o"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 6,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
+    },
+    {
+      "id": "MC24",
+      "type": "mechanism-completion",
+      "title": "Protonation after butan-2-one reduction",
+      "prompt": "Complete the arrow pair shown for protonation. The missing arrow starts at the green marker; select the atom where it should end.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "MC24-step",
+        "MC24-complete"
+      ],
+      "components": [],
+      "validMethods": [],
+      "maxMark": 1,
+      "feedback": "The organic O⁻ takes the left hydrogen of water. The supplied arrow already shows that O–H bond breaking back to water’s oxygen. Together the arrows form butan-2-ol and OH⁻. The upper water hydrogen would require a different bond-breaking arrow.",
+      "misconceptions": {},
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-15"
+      },
+      "status": "teacher-review-required",
+      "requirement": "mechanism-draw-required",
+      "reviewNotes": "New single-arrow destination task. Source is supplied; student selects exactly one atom from at least six. Original questions are unchanged. Chemistry and diagram self-checked against cited OCR scope; teacher review remains pending.",
+      "ambiguity": {
+        "issue": "A chosen destination must complete the specified arrow, rather than any possible arrow in the overall mechanism.",
+        "resolution": "A fixed source and already supplied companion arrows make the intended electron movement explicit. Atom labels describe position/connectivity without naming a chemical role.",
+        "teacherJudgementNeeded": true
+      },
+      "interaction": "arrows",
+      "mechanism": {
+        "asset": "MC24-step",
+        "completedAsset": "MC24-complete",
+        "destinationOnly": true,
+        "fixedSource": "source",
+        "viewBox": [
+          600,
+          360
+        ],
+        "completedPath": "M346 100 Q390 25 437 89",
+        "anchors": [
+          {
+            "id": "center-c",
+            "label": "Carbon bonded to O⁻",
+            "kind": "atom",
+            "x": 320,
+            "y": 190,
+            "labelX": 295,
+            "labelY": 222
+          },
+          {
+            "id": "alkoxide-o",
+            "label": "Oxygen of the organic intermediate",
+            "kind": "atom",
+            "x": 320,
+            "y": 100,
+            "labelX": 290,
+            "labelY": 70
+          },
+          {
+            "id": "left-c",
+            "label": "Carbon of the left CH₃ group",
+            "kind": "atom",
+            "x": 222,
+            "y": 244,
+            "labelX": 202,
+            "labelY": 282
+          },
+          {
+            "id": "right-c",
+            "label": "Carbon of CH₂ on the right",
+            "kind": "atom",
+            "x": 420,
+            "y": 244,
+            "labelX": 416,
+            "labelY": 285
+          },
+          {
+            "id": "end-c",
+            "label": "Carbon of terminal CH₃ on the right",
+            "kind": "atom",
+            "x": 518,
+            "y": 274,
+            "labelX": 548,
+            "labelY": 304
+          },
+          {
+            "id": "central-h",
+            "label": "Hydrogen on the carbon bonded to O⁻",
+            "kind": "atom",
+            "x": 390,
+            "y": 162,
+            "labelX": 415,
+            "labelY": 130
+          },
+          {
+            "id": "water-o",
+            "label": "Oxygen of water",
+            "kind": "atom",
+            "x": 520,
+            "y": 95,
+            "labelX": 551,
+            "labelY": 146
+          },
+          {
+            "id": "water-h1",
+            "label": "Left hydrogen of water",
+            "kind": "atom",
+            "x": 449,
+            "y": 95,
+            "labelX": 410,
+            "labelY": 50
+          },
+          {
+            "id": "water-h2",
+            "label": "Upper hydrogen of water",
+            "kind": "atom",
+            "x": 560,
+            "y": 37,
+            "labelX": 575,
+            "labelY": 80
+          },
+          {
+            "id": "source",
+            "label": "Lone pair on the organic intermediate oxygen",
+            "kind": "lone-pair",
+            "x": 346,
+            "y": 100
+          }
+        ],
+        "requiredArrows": [
+          {
+            "id": "missing-arrow",
+            "label": "Missing electron-pair arrow",
+            "sources": [
+              "source"
+            ],
+            "destinations": [
+              "water-h1"
+            ]
+          }
+        ],
+        "reviewChecks": {
+          "valency": "Expanded bonds, charges and companion arrows checked; no pentavalent nitrogen or carbon in the resulting electron movement.",
+          "singleArrow": "Only the missing arrow is scored. Grey supplied arrows are not additional student answers.",
+          "destinations": 9,
+          "accessibility": "Neutral atom labels plus a full structural description; neither identifies the correct destination before marking."
+        }
+      },
+      "enabled": true
     }
   ]
 }

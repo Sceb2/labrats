@@ -414,14 +414,14 @@
   },
   "E-but-2-ene": {
     "path": "assets/E-but-2-ene.svg",
-    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2, single bond to carbon 4; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s).",
+    "description": "Four-carbon chain with a double bond between the middle two carbons. Each double-bonded carbon is attached to one methyl group and one hydrogen. The two methyl groups lie on opposite sides of the double bond.",
     "smiles": "C/C=C/C",
     "status": "teacher-review-required",
     "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
   },
   "Z-but-2-ene": {
     "path": "assets/Z-but-2-ene.svg",
-    "description": "Connectivity description; numbers label atoms for this description only. Carbon 1: single bond to carbon 2; 3 attached hydrogen(s). Carbon 2: single bond to carbon 1, double bond to carbon 3; 1 attached hydrogen(s). Carbon 3: double bond to carbon 2, single bond to carbon 4; 1 attached hydrogen(s). Carbon 4: single bond to carbon 3; 3 attached hydrogen(s).",
+    "description": "Four-carbon chain with a double bond between the middle two carbons. Each double-bonded carbon is attached to one methyl group and one hydrogen. The two methyl groups lie on the same side of the double bond.",
     "smiles": "C/C=C\\C",
     "status": "teacher-review-required",
     "review": "Connectivity and valence parsed; manual chemistry and accessible-description review still required."
@@ -1598,14 +1598,14 @@
   },
   "E-pent-2-ene": {
     "path": "assets/E-pent-2-ene.svg",
-    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, double bond to C 3; 1 attached hydrogens. C 3: double bond to C 2, single bond to C 4; 1 attached hydrogens. C 4: single bond to C 3, single bond to C 5; 2 attached hydrogens. C 5: single bond to C 4; 3 attached hydrogens.",
+    "description": "Five-carbon chain with a double bond between carbons 2 and 3. Carbon 2 is attached to a methyl group and a hydrogen; carbon 3 is attached to an ethyl group and a hydrogen. The methyl and ethyl groups lie on opposite sides of the double bond.",
     "smiles": "C/C=C/CC",
     "status": "teacher-review-required",
     "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
   },
   "Z-hex-3-ene": {
     "path": "assets/Z-hex-3-ene.svg",
-    "description": "Connectivity description; numbers identify atoms in this description only. C 1: single bond to C 2; 3 attached hydrogens. C 2: single bond to C 1, single bond to C 3; 2 attached hydrogens. C 3: single bond to C 2, double bond to C 4; 1 attached hydrogens. C 4: double bond to C 3, single bond to C 5; 1 attached hydrogens. C 5: single bond to C 4, single bond to C 6; 2 attached hydrogens. C 6: single bond to C 5; 3 attached hydrogens.",
+    "description": "Six-carbon chain with a double bond between carbons 3 and 4. Each double-bonded carbon is attached to one ethyl group and one hydrogen. The two ethyl groups lie on the same side of the double bond.",
     "smiles": "CC/C=C\\CC",
     "status": "teacher-review-required",
     "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
@@ -1952,5 +1952,149 @@
     "smiles": "CCC(C)C(=O)OCC",
     "status": "teacher-review-required",
     "review": "Original structural layout; connectivity parsed and author checked naming/functional groups. Teacher chemistry review remains separate."
+  },
+  "MC13-step": {
+    "path": "assets/MC13-step.svg",
+    "description": "Benzene is drawn as a hexagonal ring with an inner delocalisation circle; unshown ring hydrogens are implicit. The green start marker identifies marked electron pair in the ring π system. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC13-complete": {
+    "path": "assets/MC13-complete.svg",
+    "description": "Benzene is drawn as a hexagonal ring with an inner delocalisation circle; unshown ring hydrogens are implicit. The green start marker identifies marked electron pair in the ring π system. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. Completed arrow: Marked electron pair in the ring π system → Nitrogen in the separate O=N=O ion.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC15-step": {
+    "path": "assets/MC15-step.svg",
+    "description": "Methylbenzene is drawn as a hexagonal ring with an inner delocalisation circle; unshown ring hydrogens are implicit. The green start marker identifies marked electron pair in the ring π system. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC15-complete": {
+    "path": "assets/MC15-complete.svg",
+    "description": "Methylbenzene is drawn as a hexagonal ring with an inner delocalisation circle; unshown ring hydrogens are implicit. The green start marker identifies marked electron pair in the ring π system. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. Completed arrow: Marked electron pair in the ring π system → Nitrogen in the separate O=N=O ion.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC14-step": {
+    "path": "assets/MC14-step.svg",
+    "description": "The upper-right ring carbon has two ring bonds, a bond to H and a bond to N⁺(=O)–O⁻. The adjacent lower-right ring carbon bears +; two other ring double bonds are shown. A grey arrow from the upper-right C–H bond points into the adjacent ring bond. The green start marker identifies lone pair on the left oxygen of hso₄⁻. HSO₄⁻ is shown with one S–O⁻ bond, one S–OH bond and two S=O bonds. The marked lone pair belongs to its negatively charged oxygen. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC14-complete": {
+    "path": "assets/MC14-complete.svg",
+    "description": "The upper-right ring carbon has two ring bonds, a bond to H and a bond to N⁺(=O)–O⁻. The adjacent lower-right ring carbon bears +; two other ring double bonds are shown. A grey arrow from the upper-right C–H bond points into the adjacent ring bond. The green start marker identifies lone pair on the left oxygen of hso₄⁻. HSO₄⁻ is shown with one S–O⁻ bond, one S–OH bond and two S=O bonds. The marked lone pair belongs to its negatively charged oxygen. Completed arrow: Lone pair on the left oxygen of HSO₄⁻ → Hydrogen bonded to the ring carbon bearing the new group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC16-step": {
+    "path": "assets/MC16-step.svg",
+    "description": "The green start marker identifies marked electron pair in the ring π system. Benzene has an inner delocalisation circle. A separate Br⁺ ion is shown, using the simplified halogen electrophile allowed for this mechanism. Ring hydrogens are implicit. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC16-complete": {
+    "path": "assets/MC16-complete.svg",
+    "description": "The green start marker identifies marked electron pair in the ring π system. Benzene has an inner delocalisation circle. A separate Br⁺ ion is shown, using the simplified halogen electrophile allowed for this mechanism. Ring hydrogens are implicit. Completed arrow: Marked electron pair in the ring π system → Bromine in the separate ion.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC17-step": {
+    "path": "assets/MC17-step.svg",
+    "description": "The upper-right ring carbon has two ring bonds, a bond to H and a bond to Br. The adjacent lower-right ring carbon bears +; two other ring double bonds are shown. A grey arrow from the upper-right C–H bond points into the adjacent ring bond. The green start marker identifies lone pair on the separate br⁻ ion. A separate Br⁻ ion is provided as the proton acceptor in this simplified final stage; its marked lone pair is shown. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC17-complete": {
+    "path": "assets/MC17-complete.svg",
+    "description": "The upper-right ring carbon has two ring bonds, a bond to H and a bond to Br. The adjacent lower-right ring carbon bears +; two other ring double bonds are shown. A grey arrow from the upper-right C–H bond points into the adjacent ring bond. The green start marker identifies lone pair on the separate br⁻ ion. A separate Br⁻ ion is provided as the proton acceptor in this simplified final stage; its marked lone pair is shown. Completed arrow: Lone pair on the separate Br⁻ ion → Hydrogen bonded to the ring carbon bearing the new group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC18-step": {
+    "path": "assets/MC18-step.svg",
+    "description": "Nitrobenzene has a ring bonded to N⁺(=O)–O⁻; this existing nitro group is separate from the incoming O=N⁺=O ion. Ring hydrogens are implicit. The question fixes the electron source and does not assess directing positions. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. The green start marker identifies marked electron pair in the ring π system. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC18-complete": {
+    "path": "assets/MC18-complete.svg",
+    "description": "Nitrobenzene has a ring bonded to N⁺(=O)–O⁻; this existing nitro group is separate from the incoming O=N⁺=O ion. Ring hydrogens are implicit. The question fixes the electron source and does not assess directing positions. The separate ion is linear O=N⁺=O. A grey arrow already goes from its lower N=O bond to that oxygen. The green start marker identifies marked electron pair in the ring π system. Completed arrow: Marked electron pair in the ring π system → Nitrogen in the separate O=N=O ion.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC19-step": {
+    "path": "assets/MC19-step.svg",
+    "description": "H⁻ is shown separately. Propanal is CH₃–CH₂–C(=O)–H. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies negative charge on the separate h⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC19-complete": {
+    "path": "assets/MC19-complete.svg",
+    "description": "H⁻ is shown separately. Propanal is CH₃–CH₂–C(=O)–H. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies negative charge on the separate h⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. Completed arrow: Negative charge on the separate H⁻ ion → Carbon of the C=O group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC20-step": {
+    "path": "assets/MC20-step.svg",
+    "description": "H⁻ is shown separately. Butan-2-one is CH₃–C(=O)–CH₂–CH₃. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies negative charge on the separate h⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC20-complete": {
+    "path": "assets/MC20-complete.svg",
+    "description": "H⁻ is shown separately. Butan-2-one is CH₃–C(=O)–CH₂–CH₃. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies negative charge on the separate h⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. Completed arrow: Negative charge on the separate H⁻ ion → Carbon of the C=O group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC21-step": {
+    "path": "assets/MC21-step.svg",
+    "description": "The separate CN⁻ ion is drawn N≡C⁻ with a lone pair on carbon. Benzaldehyde has a phenyl ring bonded to C(=O)–H. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies carbon lone pair of the separate cn⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC21-complete": {
+    "path": "assets/MC21-complete.svg",
+    "description": "The separate CN⁻ ion is drawn N≡C⁻ with a lone pair on carbon. Benzaldehyde has a phenyl ring bonded to C(=O)–H. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies carbon lone pair of the separate cn⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. Completed arrow: Carbon lone pair of the separate CN⁻ ion → Carbon of the C=O group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC22-step": {
+    "path": "assets/MC22-step.svg",
+    "description": "The separate CN⁻ ion is drawn N≡C⁻ with a lone pair on carbon. Butan-2-one is CH₃–C(=O)–CH₂–CH₃. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies carbon lone pair of the separate cn⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC22-complete": {
+    "path": "assets/MC22-complete.svg",
+    "description": "The separate CN⁻ ion is drawn N≡C⁻ with a lone pair on carbon. Butan-2-one is CH₃–C(=O)–CH₂–CH₃. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies carbon lone pair of the separate cn⁻ ion. A grey arrow from the C=O π bond to its oxygen is already drawn. Complete the other arrow in this same addition step. Completed arrow: Carbon lone pair of the separate CN⁻ ion → Carbon of the C=O group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC23-step": {
+    "path": "assets/MC23-step.svg",
+    "description": "H⁻ is shown separately. Propanone is shown as H–CH₂–C(=O)–CH₃; the separate H on the left is one methyl hydrogen. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies marked c=o π electron pair. A grey arrow from H⁻ to the carbonyl carbon is already drawn. Complete its paired electron movement; these arrows belong to the same addition step. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC23-complete": {
+    "path": "assets/MC23-complete.svg",
+    "description": "H⁻ is shown separately. Propanone is shown as H–CH₂–C(=O)–CH₃; the separate H on the left is one methyl hydrogen. The carbonyl carbon has δ+ and its oxygen has δ−. Black atom and bond labels remain visible. The green start marker identifies marked c=o π electron pair. A grey arrow from H⁻ to the carbonyl carbon is already drawn. Complete its paired electron movement; these arrows belong to the same addition step. Completed arrow: Marked C=O π electron pair → Oxygen of the C=O group.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC24-step": {
+    "path": "assets/MC24-step.svg",
+    "description": "The green start marker identifies lone pair on the organic intermediate oxygen. The organic ion is CH₃–CH(O⁻)–CH₂–CH₃, the intermediate after butan-2-one reduction. Its oxygen has a shown lone pair and negative charge. Water is H(left)–O–H(upper). A grey arrow from the left O–H bond returns that bond pair to the water oxygen. Complete the same arrow pair; the already drawn bond-breaking arrow fixes which water hydrogen is transferred. The missing arrow starts at the green marker. All numbered destinations are atoms; choose one.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "MC24-complete": {
+    "path": "assets/MC24-complete.svg",
+    "description": "The green start marker identifies lone pair on the organic intermediate oxygen. The organic ion is CH₃–CH(O⁻)–CH₂–CH₃, the intermediate after butan-2-one reduction. Its oxygen has a shown lone pair and negative charge. Water is H(left)–O–H(upper). A grey arrow from the left O–H bond returns that bond pair to the water oxygen. Complete the same arrow pair; the already drawn bond-breaking arrow fixes which water hydrogen is transferred. Completed arrow: Lone pair on the organic intermediate oxygen → Left hydrogen of water.",
+    "status": "teacher-review-required",
+    "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
   }
 }
