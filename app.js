@@ -3,9 +3,10 @@ const C=ChemCore,$=s=>document.querySelector(s),app=()=>$('#app');
 let nativeStorage;try{nativeStorage=window.localStorage}catch{nativeStorage={getItem(){throw Error('blocked')},setItem(){throw Error('blocked')}}}
 const storage=C.safeStorage(nativeStorage);
 const S={suspended:null,view:'topics',bank:null,topics:[],types:[...C.TYPES],difficulty:[...C.DIFFICULTIES],statuses:['draft','teacher-review-required','teacher-approved'],progress:null,session:null,response:{},marked:false,result:null,orders:{},activeStep:0,source:null,timer:null,locked:false};
+window.addEventListener('chem:before-update',event=>{if(S.bank&&S.progress&&!save())event.preventDefault()});
 function snapshotPractice(){return {session:C.clone(S.session),response:C.clone(S.response),orders:C.clone(S.orders),activeStep:S.activeStep,marked:S.marked,result:C.clone(S.result),source:S.source}}
 function suspendPractice(){if(S.session&&!S.session.finished)S.suspended=snapshotPractice()}
-function save(){storage.set('ocrOrgPrefsV2',{topics:S.topics,types:S.types,difficulty:S.difficulty,statuses:S.statuses});if(!storage.set('ocrOrgProgressV2',S.progress))$('#storage-note').textContent=' Storage is unavailable; this visit still works.';const draft=S.session&&!S.session.finished?snapshotPractice():S.suspended;if(draft&&!draft.session.finished)storage.set('ocrOrgActiveV2',{...draft.session,response:draft.response,ui:{orders:draft.orders,activeStep:draft.activeStep,marked:draft.marked,result:draft.result,source:draft.source,view:S.view}});else storage.remove('ocrOrgActiveV2')}
+function save(){const prefsSaved=storage.set('ocrOrgPrefsV2',{topics:S.topics,types:S.types,difficulty:S.difficulty,statuses:S.statuses});const progressSaved=storage.set('ocrOrgProgressV2',S.progress);if(!progressSaved)$('#storage-note').textContent=' Storage is unavailable; this visit still works.';const draft=S.session&&!S.session.finished?snapshotPractice():S.suspended;let draftSaved=true;if(draft&&!draft.session.finished)draftSaved=storage.set('ocrOrgActiveV2',{...draft.session,response:draft.response,ui:{orders:draft.orders,activeStep:draft.activeStep,marked:draft.marked,result:draft.result,source:draft.source,view:S.view}});else storage.remove('ocrOrgActiveV2');return prefsSaved&&progressSaved&&draftSaved}
 function eligible(){return C.eligible(S.bank,S.topics,S.types,S.difficulty,S.statuses)}
 function stopTimer(){clearInterval(S.timer);S.timer=null}
 function goHome(){if(S.session&&!S.session.finished){if(S.session.mode==='challenge')finish();else finish(false)}home()}
@@ -244,7 +245,7 @@ function bindCelebrationSound(id){const control=document.getElementById(id);if(c
 function stopPartySound(){if(partyAudio){partyAudio.pause();try{partyAudio.currentTime=0}catch{}}}
 function playPartySound(){
  if(!celebrationEffects||!celebrationSound||document.hidden)return;
- if(!partyAudio){partyAudio=new Audio(window.CHEM_PARTY_SOUND||'assets/audio/party-blowers.wav?v=20261013-v1.3');partyAudio.preload='auto';partyAudio.volume=.45}
+ if(!partyAudio){partyAudio=new Audio(window.CHEM_PARTY_SOUND||'assets/audio/party-blowers.wav?v='+encodeURIComponent(window.CHEM_BUILD?.id||'20261013-v1.3'));partyAudio.preload='auto';partyAudio.volume=.45}
  const run=effectRun;try{partyAudio.currentTime=0;const playing=partyAudio.play();playing?.then(()=>{if(run!==effectRun||!celebrationSound||!celebrationEffects||document.hidden)stopPartySound()}).catch(()=>{})}catch{}
 }
 function clearEffects(){ChemEffects.clear();effectRun++;clearTimeout(effectTimer);effectTimer=null;effectAnimations.forEach(a=>a.cancel());effectAnimations=[];document.querySelectorAll('.confetti-layer,.shooting-star-layer,.celebration-layer').forEach(el=>el.remove());stopPartySound()}

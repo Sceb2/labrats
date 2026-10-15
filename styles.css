@@ -110,3 +110,7 @@ button,a,summary,input,select,textarea{scroll-margin-bottom:calc(max(var(--mobil
 @media(max-width:360px){.destination-options .btn{font-size:.875rem;gap:7px;padding:8px}.endpoint-marker{width:25px;height:25px;font-size:12px}}
 
 .endpoint-guides{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.endpoint-guides line{stroke:#738c7c;stroke-width:1;stroke-dasharray:2 3;opacity:.75}
+
+/* Release prompts are separate from question rendering and never capture answers. */
+.release-footer{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;font-size:.875rem}.release-footer .btn{min-height:44px;font-size:.875rem}.release-notice{position:fixed;z-index:1100;top:max(12px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 24px));max-height:80dvh;overflow:auto;padding:20px;background:#f0f6f1;color:#172d3a;border:2px solid #14563e;border-radius:8px;box-shadow:0 8px 30px #172d3a40}.release-notice h2,.release-gate h2{margin:0 0 10px;font-size:1.5rem}.release-notice p,.release-gate p{margin:8px 0;line-height:1.5}.release-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.release-actions .btn{min-height:48px}.release-message:empty{display:none}.release-gate{max-width:700px;margin:20px auto}.release-message{font-weight:600}.release-notice [hidden]{display:none!important}
+@media print{.release-notice,.release-footer{display:none!important}}

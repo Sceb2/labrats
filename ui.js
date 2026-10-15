@@ -6,8 +6,8 @@ const U={
  arrowPath(x,y,X,Y){return Math.abs(X-x)<60&&Math.abs(Y-y)>=40?`M${x} ${y} Q${Math.max(x,X)+80} ${(y+Y)/2} ${X} ${Y}`:`M${x} ${y} Q${(x+X)/2} ${Math.min(y,Y)-85} ${X} ${Y}`},
  esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))},
  label(bank,id){return bank.vocabulary[id]?.label||id},
- assetPath(bank,id){return window.CHEM_OFFLINE_ASSETS?.[id]||bank.assets[id]?.path},
- assetLink(bank,id){const data=window.CHEM_OFFLINE_ASSETS?.[id];if(!data)return bank.assets[id]?.path;window.CHEM_OFFLINE_LINKS??={};return window.CHEM_OFFLINE_LINKS[id]??=URL.createObjectURL(new Blob([Uint8Array.from(atob(data.split(',')[1]),c=>c.charCodeAt(0))],{type:'image/svg+xml'}))},
+ assetPath(bank,id){const data=window.CHEM_OFFLINE_ASSETS?.[id];if(data)return data;const path=bank.assets[id]?.path;return path&&window.CHEM_BUILD?.id?path+'?v='+encodeURIComponent(window.CHEM_BUILD.id):path},
+ assetLink(bank,id){const data=window.CHEM_OFFLINE_ASSETS?.[id];if(!data)return U.assetPath(bank,id);window.CHEM_OFFLINE_LINKS??={};return window.CHEM_OFFLINE_LINKS[id]??=URL.createObjectURL(new Blob([Uint8Array.from(atob(data.split(',')[1]),c=>c.charCodeAt(0))],{type:'image/svg+xml'}))},
  image(bank,id,caption=''){const a=bank.assets[id];if(!a)return '<p>Missing diagram: '+U.esc(id)+'</p>';return `<figure class="chem"><img src="${U.esc(U.assetPath(bank,id))}" alt="${U.esc(a.description)}">${caption?`<figcaption>${U.esc(caption)}</figcaption>`:''}</figure>`},
  accepted(bank,unit){return unit.validMethods.map((m,i)=>`<section class="accepted-method">${unit.validMethods.length>1?`<h3>Accepted method ${i+1}</h3>`:''}<dl>${unit.components.map(c=>`<div><dt>${U.esc(c.label)}${c.essential?'':' · optional'}</dt><dd>${(m.answers[c.id]||[]).map(id=>U.answerValue(bank,id)).join(' <span class="answer-or">or</span> ')||'Not required'}</dd></div>`).join('')}</dl></section>`).join('')},
  modelAnswer(bank,q){
@@ -57,7 +57,21 @@ const U={
   return body+'</section>';
  },
  questionIntro(bank,q){if(q.display)return `<div class="transformation">${U.image(bank,q.display.start,'Starting compound')}<span aria-label="reacts to give">→</span>${U.image(bank,q.display.end,'Target product')}</div>`;if(q.structure)return U.image(bank,q.structure,'Displayed structure');if(q.interaction==='scaffold')return U.image(bank,q.assetRefs[0],'Structure relevant to the displayed step');return ''},
- async load(){const [b,a]=await Promise.all([fetch('questions.json').then(r=>{if(!r.ok)throw Error('bank');return r.json()}),fetch('assets.json').then(r=>{if(!r.ok)throw Error('assets');return r.json()})]);b.assets=a;return b},
+ async load(){
+  await window.ChemUpdates?.beforeBankLoad();
+  const build=window.CHEM_BUILD||{};
+  async function read(name,hash){
+   const url=new URL(name,location.href);if(build.id)url.searchParams.set('v',build.id);
+   let response;try{response=await fetch(url,{cache:'no-store'})}catch{response=await fetch(url,{cache:'force-cache'})}
+   if(!response.ok)throw Error('Could not load '+name+' (HTTP '+response.status+').');
+   const text=await response.text();
+   if(hash&&window.crypto?.subtle){const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));const actual=[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');if(actual!==hash){if(window.ChemUpdates)return window.ChemUpdates.blockForMismatch();throw Error('Page and question data are from different releases. Open a fresh copy.')}}
+   return JSON.parse(text);
+  }
+  const [b,a]=await Promise.all([read('questions.json',build.questionsSha256),read('assets.json',build.assetsSha256)]);
+  if(build.bankVersion&&b.meta.bankVersion!==build.bankVersion){if(window.ChemUpdates)return window.ChemUpdates.blockForMismatch();throw Error('Page and question bank are from different releases. Open a fresh copy.')}
+  b.assets=a;return b;
+ },
  focusHeading(){const h=document.querySelector('main h1');if(h){h.tabIndex=-1;h.focus({preventScroll:true})}},
  download(name,value){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)+'\n'],{type:'application/json'}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 };
