@@ -1,32 +1,24 @@
-OCR ORGANIC CHEMISTRY v1.7
-Repository: https://github.com/Sceb2/ocr-organic-revision
-216 questions.
+# OCR Chemistry revision — v1.8
 
+216 questions. This folder is the complete GitHub Pages site. Upload its contents
+at the existing publishing root, replacing matching files and including the new
+review.js, learning-resources.js and learning-resources.json.
 
-This folder is the complete GitHub Pages site. Upload its contents at the existing publishing root.
+Mistakes lists all outstanding incorrect/partial questions. Review Question opens
+one question; Review All Incorrect Questions opens the full backlog. Full marks
+clear a mistake; a later wrong answer reopens it. Revealing or skipping does not
+clear it. First-attempt scores remain unchanged. Compatible v1.7 progress migrates
+automatically; historical errors are conservatively imported for one fresh review.
 
-SHARED CHANGES
-1. Compact feedback: submitted answer controls and the original diagram can be reopened
-   from closed review panels. Fully correct marking detail is also collapsed. Physics
-   retains its direct, error-carried-forward and self-assessed mark distinctions.
-2. Matching celebration tiers: restrained comet/orbit for 1–2 marks, starburst/ribbons
-   for 3–4, trophy for 5 or more, and the larger perfect-session finale. Reduced-motion
-   settings and the effects preference are respected. Sound remains opt-in.
-3. A visible Report question button beneath each question. Create draft and Copy draft
-   include the question, current answer, marking and optional description. Nothing is
-   sent automatically. Chemistry's draft also handles arrows and synthesis steps.
-   Challenge reports withhold marking until the challenge ends.
-4. Matching update notices: checks on opening, returning to the tab, reconnecting,
-   every minute while visible, and the Check for updates button. Update now verifies
-   that current work was saved before refreshing. A failed save keeps the page open.
-   Release IDs refresh script/style URLs; data hashes prevent mixing a stale page
-   with a different bank. No update clears progress or automatically reloads a tab.
+learning-resources.json is the single resource source: reusable videos/links,
+reusable packs, question-specific assignments, and topic/type fallbacks.
+All current questions have a video and revision links. Videos load only when the
+student chooses Load video. Their external availability cannot be guaranteed.
 
-The question banks, marking rules, bank/scoring versions and browser storage keys
-are unchanged. Physics retains its 110 questions and Chemistry its current 216.
-The earlier Physics topics-page changes are included: sound only in Session menu,
-no teacher-preview wording, three unit headings, and the flat Waves topic list.
-Hints in Physics retain their existing celebration rule. Chemistry retains its
-course-specific difficulty filters, mechanism tasks and timed challenge.
+Existing timed challenges, reports, celebrations, reduced-motion handling, marking
+and update checking are preserved. Progress remains in local browser storage.
+No accounts or cloud saving are included. Keep the same site URL and avoid clearing
+browser storage. The assets and question bank are unchanged from v1.7.
 
-See START-HERE.txt in the ZIP for upload and release preparation instructions.
+The release's outer folder includes RELEASE-NOTES.md, RESOURCE-GUIDE.md,
+RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.

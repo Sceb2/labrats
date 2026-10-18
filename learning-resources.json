@@ -1,0 +1,1654 @@
+{
+  "schema": 1,
+  "updated": "2026-10-18",
+  "description": "Central OCR A Chemistry support catalogue. Edit this file to maintain resources and question assignments. Pack IDs are reusable; exact question assignments override type and topic fallbacks.",
+  "resources": {
+    "ocr-specification": {
+      "kind": "link",
+      "title": "OCR Chemistry A specification",
+      "provider": "OCR",
+      "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+      "checkedDate": "2026-10-18"
+    },
+    "ocr-pathways": {
+      "kind": "link",
+      "title": "OCR organic synthesis reaction pathways",
+      "provider": "OCR",
+      "url": "https://www.ocr.org.uk/images/359182-organic-synthesis-reaction-pathways.pdf",
+      "checkedDate": "2026-10-18"
+    },
+    "pmt-module-4": {
+      "kind": "link",
+      "title": "OCR A Module 4: revision notes and exam questions",
+      "provider": "Physics & Maths Tutor",
+      "url": "https://www.physicsandmathstutor.com/chemistry-revision/a-level-ocr-a/module-4/",
+      "checkedDate": "2026-10-18"
+    },
+    "pmt-module-6": {
+      "kind": "link",
+      "title": "OCR A Module 6: revision notes and exam questions",
+      "provider": "Physics & Maths Tutor",
+      "url": "https://www.physicsandmathstutor.com/chemistry-revision/a-level-ocr-a/module-6/",
+      "checkedDate": "2026-10-18"
+    },
+    "chemguide-basic": {
+      "kind": "link",
+      "title": "Naming and drawing organic molecules",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/basicorg/convmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-alkanes": {
+      "kind": "link",
+      "title": "Free-radical substitution",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/mechanisms/frmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-alkenes": {
+      "kind": "link",
+      "title": "Electrophilic addition",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/mechanisms/eladdmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-alcohols": {
+      "kind": "link",
+      "title": "Oxidation of alcohols: distillation and reflux",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/organicprops/alcohols/oxidation.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-haloalkanes": {
+      "kind": "link",
+      "title": "Nucleophilic substitution",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/mechanisms/nucsubmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-aromatics": {
+      "kind": "link",
+      "title": "Electrophilic substitution",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/mechanisms/elsubmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-carbonyls": {
+      "kind": "link",
+      "title": "Nucleophilic addition",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/mechanisms/nucaddmenu.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-dehydration": {
+      "kind": "link",
+      "title": "Dehydration of alcohols",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/organicprops/alcohols/dehydration.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "chemguide-advanced-naming": {
+      "kind": "link",
+      "title": "Naming acids, esters, acyl chlorides, amides, nitriles and amines",
+      "provider": "Chemguide",
+      "url": "https://www.chemguide.co.uk/basicorg/conventions/names2.html",
+      "checkedDate": "2026-10-18",
+      "note": "Read the sections relevant to your OCR question."
+    },
+    "video-40wnvuG8uQg": {
+      "kind": "video",
+      "videoId": "40wnvuG8uQg",
+      "title": "Nomenclature 1 - Naming Organic Molecules (alkanes)",
+      "provider": "MaChemGuy",
+      "durationSeconds": 392,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-mD2lg85i7Y0": {
+      "kind": "video",
+      "videoId": "mD2lg85i7Y0",
+      "title": "Organic Formulae",
+      "provider": "MaChemGuy",
+      "durationSeconds": 308,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-7k9UwilnhGw": {
+      "kind": "video",
+      "videoId": "7k9UwilnhGw",
+      "title": "Radical Substitution Mechanism",
+      "provider": "MaChemGuy",
+      "durationSeconds": 513,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-alkanes",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-8zPV_dYrvf4": {
+      "kind": "video",
+      "videoId": "8zPV_dYrvf4",
+      "title": "Reaction of alkenes introduction",
+      "provider": "MaChemGuy",
+      "durationSeconds": 263,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-alkenes",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-FZ7TXNImYMU": {
+      "kind": "video",
+      "videoId": "FZ7TXNImYMU",
+      "title": "Electrophilic Addition 1",
+      "provider": "MaChemGuy",
+      "durationSeconds": 526,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-alkenes",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-TcKSLpBe9z4": {
+      "kind": "video",
+      "videoId": "TcKSLpBe9z4",
+      "title": "Quick Revision - Alcohols (reactions)",
+      "provider": "MaChemGuy",
+      "durationSeconds": 575,
+      "sourceUrl": "https://www.youtube.com/watch?v=TcKSLpBe9z4",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-ujJutNEs2Ww": {
+      "kind": "video",
+      "videoId": "ujJutNEs2Ww",
+      "title": "Hydrolysis of Halogenoalkanes",
+      "provider": "MaChemGuy",
+      "durationSeconds": 466,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-haloalkanes",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-qhqpZ4SX98s": {
+      "kind": "video",
+      "videoId": "qhqpZ4SX98s",
+      "title": "Synthetic routes 1",
+      "provider": "MaChemGuy",
+      "durationSeconds": 498,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/organic-synthesis",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-DKQg8zunRaM": {
+      "kind": "video",
+      "videoId": "DKQg8zunRaM",
+      "title": "Synthetic Routes 2",
+      "provider": "MaChemGuy",
+      "durationSeconds": 425,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/organic-synthesis",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-NFLt4ZXr3UY": {
+      "kind": "video",
+      "videoId": "NFLt4ZXr3UY",
+      "title": "Quick Revision - Electrophilic substitution",
+      "provider": "MaChemGuy",
+      "durationSeconds": 279,
+      "sourceUrl": "https://www.youtube.com/watch?v=NFLt4ZXr3UY",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-K6SNxePSlKE": {
+      "kind": "video",
+      "videoId": "K6SNxePSlKE",
+      "title": "Friedel-Crafts Reactions of Benzene",
+      "provider": "MaChemGuy",
+      "durationSeconds": 394,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/aromatic-compounds",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-sxjuBj6vrsU": {
+      "kind": "video",
+      "videoId": "sxjuBj6vrsU",
+      "title": "Nucleophilic Addition Mechanism for the Reduction of Carbonyls",
+      "provider": "MaChemGuy",
+      "durationSeconds": 333,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carbonyl-compounds",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-oui5g4ycd6M": {
+      "kind": "video",
+      "videoId": "oui5g4ycd6M",
+      "title": "An Introduction to Carbonyl Compounds",
+      "provider": "MaChemGuy",
+      "durationSeconds": 583,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carbonyl-compounds",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-Sur_cc86rXc": {
+      "kind": "video",
+      "videoId": "Sur_cc86rXc",
+      "title": "Acyl(Acid) Chlorides Intro",
+      "provider": "MaChemGuy",
+      "durationSeconds": 278,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carboxylic-acids-and-esters",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-sOpFD1rHtZ4": {
+      "kind": "video",
+      "videoId": "sOpFD1rHtZ4",
+      "title": "Reactions of Acyl Chlorides",
+      "provider": "MaChemGuy",
+      "durationSeconds": 461,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carboxylic-acids-and-esters",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-iMHRf83TZTo": {
+      "kind": "video",
+      "videoId": "iMHRf83TZTo",
+      "title": "Hydrolysis of Esters",
+      "provider": "MaChemGuy",
+      "durationSeconds": 405,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carboxylic-acids-and-esters",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-utgie69C83c": {
+      "kind": "video",
+      "videoId": "utgie69C83c",
+      "title": "Esters 2020",
+      "provider": "MaChemGuy",
+      "durationSeconds": 598,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/carboxylic-acids-and-esters",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-kMDI4_0WedU": {
+      "kind": "video",
+      "videoId": "kMDI4_0WedU",
+      "title": "Quick Revision - Amines",
+      "provider": "MaChemGuy",
+      "durationSeconds": 487,
+      "sourceUrl": "https://www.youtube.com/watch?v=kMDI4_0WedU",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-K5HGwCHNjRk": {
+      "kind": "video",
+      "videoId": "K5HGwCHNjRk",
+      "title": "Amides",
+      "provider": "MaChemGuy",
+      "durationSeconds": 460,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/amino-acids-amides-chirality",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-ZEQXf4hxFso": {
+      "kind": "video",
+      "videoId": "ZEQXf4hxFso",
+      "title": "Quick Revision - Nitriles and hydroxynitriles",
+      "provider": "MaChemGuy",
+      "durationSeconds": 445,
+      "sourceUrl": "https://www.youtube.com/watch?v=ZEQXf4hxFso",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-5mgU4G6fm-Q": {
+      "kind": "video",
+      "videoId": "5mgU4G6fm-Q",
+      "title": "Quick Revision - Organic reaction pathways (aliphatic)",
+      "provider": "MaChemGuy",
+      "durationSeconds": 302,
+      "sourceUrl": "https://www.youtube.com/watch?v=5mgU4G6fm-Q",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-a4eVQUZBixs": {
+      "kind": "video",
+      "videoId": "a4eVQUZBixs",
+      "title": "Nomenclature 2 - Naming Alkenes",
+      "provider": "MaChemGuy",
+      "durationSeconds": 200,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-rvbnHgQrvcA": {
+      "kind": "video",
+      "videoId": "rvbnHgQrvcA",
+      "title": "Nomenclature 3 - Naming Alcohols",
+      "provider": "MaChemGuy",
+      "durationSeconds": 540,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-v4TDZLPitCA": {
+      "kind": "video",
+      "videoId": "v4TDZLPitCA",
+      "title": "Nomenclature 5 - Naming Aldehydes",
+      "provider": "MaChemGuy",
+      "durationSeconds": 301,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-7BoIaKjEFZY": {
+      "kind": "video",
+      "videoId": "7BoIaKjEFZY",
+      "title": "Nomenclature 6 - Naming Ketones",
+      "provider": "MaChemGuy",
+      "durationSeconds": 313,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-EyrYj4jRjRs": {
+      "kind": "video",
+      "videoId": "EyrYj4jRjRs",
+      "title": "Nomenclature 7 - Naming Carboxylic Acids",
+      "provider": "MaChemGuy",
+      "durationSeconds": 214,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/basic-concepts-of-organic-chemistry",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-wu3hJeb5Jr0": {
+      "kind": "video",
+      "videoId": "wu3hJeb5Jr0",
+      "title": "A LEVEL CHEMISTRY - Naming Aromatic Compounds",
+      "provider": "MaChemGuy",
+      "durationSeconds": 509,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/aromatic-compounds",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-BpkwtPhJyxM": {
+      "kind": "video",
+      "videoId": "BpkwtPhJyxM",
+      "title": "Electrophilic Addition 2",
+      "provider": "MaChemGuy",
+      "durationSeconds": 142,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-alkenes",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-6blGTgFQ49Q": {
+      "kind": "video",
+      "videoId": "6blGTgFQ49Q",
+      "title": "Dehydration of Alcohols",
+      "provider": "MaChemGuy",
+      "durationSeconds": 590,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-1/the-alcohols",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-KZhxI_i8jcE": {
+      "kind": "video",
+      "videoId": "KZhxI_i8jcE",
+      "title": "Nomenclature 8 - Naming Esters",
+      "provider": "MaChemGuy",
+      "durationSeconds": 202,
+      "sourceUrl": "https://www.youtube.com/watch?v=KZhxI_i8jcE",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-KW8IPSYTq08": {
+      "kind": "video",
+      "videoId": "KW8IPSYTq08",
+      "title": "Naming Amines for A-level Chemistry using IUPAC rules",
+      "provider": "Mr Murray-Green Chemistry Tutorials",
+      "durationSeconds": 577,
+      "sourceUrl": "https://www.youtube.com/watch?v=KW8IPSYTq08",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-2Zrw14UyVas": {
+      "kind": "video",
+      "videoId": "2Zrw14UyVas",
+      "title": "Naming AMIDES for A level Chemistry",
+      "provider": "Mr Murray-Green Chemistry Tutorials",
+      "durationSeconds": 333,
+      "sourceUrl": "https://www.youtube.com/watch?v=2Zrw14UyVas",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-LAKo_odYCac": {
+      "kind": "video",
+      "videoId": "LAKo_odYCac",
+      "title": "Quick Revision - Esters",
+      "provider": "MaChemGuy",
+      "durationSeconds": 358,
+      "sourceUrl": "https://www.youtube.com/watch?v=LAKo_odYCac",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    },
+    "video-Fp8chF1DTR4": {
+      "kind": "video",
+      "videoId": "Fp8chF1DTR4",
+      "title": "Naming Haloalkanes",
+      "provider": "Keipert Labs",
+      "durationSeconds": 504,
+      "sourceUrl": "https://www.youtube.com/watch?v=Fp8chF1DTR4",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true,
+      "note": "General IUPAC naming tutorial; applies to OCR A nomenclature."
+    },
+    "video-Mr4Gn2OtJpo": {
+      "kind": "video",
+      "videoId": "Mr4Gn2OtJpo",
+      "title": "Phenols 2",
+      "provider": "MaChemGuy",
+      "durationSeconds": 449,
+      "sourceUrl": "https://sites.google.com/view/machemguyocra/teaching-videos-year-2/aromatic-compounds",
+      "checkedDate": "2026-10-18",
+      "embeddingAllowedAtCheck": true
+    }
+  },
+  "packs": {
+    "basic": {
+      "title": "4.1.1 Basic concepts and nomenclature",
+      "primary": "video-40wnvuG8uQg",
+      "videos": [
+        "video-mD2lg85i7Y0"
+      ],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "alkanes": {
+      "title": "4.1.2 Alkane reactions",
+      "primary": "video-7k9UwilnhGw",
+      "videos": [],
+      "links": [
+        "chemguide-alkanes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "alkenes": {
+      "title": "4.1.3 Alkenes",
+      "primary": "video-8zPV_dYrvf4",
+      "videos": [
+        "video-FZ7TXNImYMU"
+      ],
+      "links": [
+        "chemguide-alkenes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "alcohols": {
+      "title": "4.2.1 Alcohols",
+      "primary": "video-TcKSLpBe9z4",
+      "videos": [],
+      "links": [
+        "chemguide-alcohols",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "haloalkanes": {
+      "title": "4.2.2 Haloalkanes",
+      "primary": "video-ujJutNEs2Ww",
+      "videos": [],
+      "links": [
+        "chemguide-haloalkanes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "synthesis4": {
+      "title": "4.2.3 Organic synthesis",
+      "primary": "video-qhqpZ4SX98s",
+      "videos": [
+        "video-DKQg8zunRaM"
+      ],
+      "links": [
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "aromatics": {
+      "title": "6.1.1 Aromatic compounds",
+      "primary": "video-NFLt4ZXr3UY",
+      "videos": [
+        "video-K6SNxePSlKE"
+      ],
+      "links": [
+        "chemguide-aromatics",
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "carbonyls": {
+      "title": "6.1.2 Carbonyl compounds",
+      "primary": "video-sxjuBj6vrsU",
+      "videos": [
+        "video-oui5g4ycd6M"
+      ],
+      "links": [
+        "chemguide-carbonyls",
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "acids": {
+      "title": "6.1.3 Acids, esters and acyl chlorides",
+      "primary": "video-Sur_cc86rXc",
+      "videos": [
+        "video-sOpFD1rHtZ4",
+        "video-iMHRf83TZTo",
+        "video-utgie69C83c"
+      ],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nitrogen": {
+      "title": "6.2.1 Amines / 6.2.2 Amides",
+      "primary": "video-kMDI4_0WedU",
+      "videos": [
+        "video-K5HGwCHNjRk"
+      ],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "ccbond": {
+      "title": "6.2.4 Carbon–carbon bond formation",
+      "primary": "video-ZEQXf4hxFso",
+      "videos": [
+        "video-K6SNxePSlKE"
+      ],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "synthesis6": {
+      "title": "6.2.5 Organic synthesis",
+      "primary": "video-5mgU4G6fm-Q",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nomenclature-basic": {
+      "title": "Naming basic",
+      "primary": "video-40wnvuG8uQg",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-alkenes": {
+      "title": "Naming alkenes",
+      "primary": "video-a4eVQUZBixs",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-alcohols": {
+      "title": "Naming alcohols",
+      "primary": "video-rvbnHgQrvcA",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-aldehydes": {
+      "title": "Naming aldehydes",
+      "primary": "video-v4TDZLPitCA",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-ketones": {
+      "title": "Naming ketones",
+      "primary": "video-7BoIaKjEFZY",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-acids": {
+      "title": "Naming acids",
+      "primary": "video-EyrYj4jRjRs",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-aromatics": {
+      "title": "Naming aromatics",
+      "primary": "video-wu3hJeb5Jr0",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "mechanism-radical-substitution": {
+      "title": "Radical substitution",
+      "primary": "video-7k9UwilnhGw",
+      "videos": [],
+      "links": [
+        "chemguide-alkanes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "mechanism-electrophilic-addition": {
+      "title": "Electrophilic addition",
+      "primary": "video-FZ7TXNImYMU",
+      "videos": [
+        "video-BpkwtPhJyxM"
+      ],
+      "links": [
+        "chemguide-alkenes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "mechanism-nucleophilic-substitution": {
+      "title": "Nucleophilic substitution",
+      "primary": "video-ujJutNEs2Ww",
+      "videos": [],
+      "links": [
+        "chemguide-haloalkanes",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "mechanism-nucleophilic-addition": {
+      "title": "Nucleophilic addition",
+      "primary": "video-sxjuBj6vrsU",
+      "videos": [],
+      "links": [
+        "chemguide-carbonyls",
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "mechanism-electrophilic-substitution": {
+      "title": "Electrophilic substitution",
+      "primary": "video-NFLt4ZXr3UY",
+      "videos": [],
+      "links": [
+        "chemguide-aromatics",
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "mechanism-elimination": {
+      "title": "Elimination",
+      "primary": "video-6blGTgFQ49Q",
+      "videos": [],
+      "links": [
+        "chemguide-dehydration",
+        "pmt-module-4",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "acyl-chlorides": {
+      "title": "Reactions of acyl chlorides",
+      "primary": "video-sOpFD1rHtZ4",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nitriles-hydroxynitriles": {
+      "title": "Nitriles and hydroxynitriles",
+      "primary": "video-ZEQXf4hxFso",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nomenclature-esters": {
+      "title": "Naming esters",
+      "primary": "video-KZhxI_i8jcE",
+      "videos": [],
+      "links": [
+        "chemguide-advanced-naming",
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-amines": {
+      "title": "Naming amines",
+      "primary": "video-KW8IPSYTq08",
+      "videos": [],
+      "links": [
+        "chemguide-advanced-naming",
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-amides": {
+      "title": "Naming amides",
+      "primary": "video-2Zrw14UyVas",
+      "videos": [],
+      "links": [
+        "chemguide-advanced-naming",
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "esters": {
+      "title": "Esters and esterification",
+      "primary": "video-LAKo_odYCac",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nomenclature-haloalkanes": {
+      "title": "Naming haloalkanes",
+      "primary": "video-Fp8chF1DTR4",
+      "videos": [],
+      "links": [
+        "chemguide-basic",
+        "pmt-module-4",
+        "ocr-specification"
+      ]
+    },
+    "ester-hydrolysis": {
+      "title": "Hydrolysis of esters",
+      "primary": "video-iMHRf83TZTo",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "phenols": {
+      "title": "Reactions of phenols",
+      "primary": "video-Mr4Gn2OtJpo",
+      "videos": [],
+      "links": [
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    },
+    "nomenclature-nitriles": {
+      "title": "Naming nitriles",
+      "primary": "video-ZEQXf4hxFso",
+      "videos": [],
+      "links": [
+        "chemguide-advanced-naming",
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "nomenclature-acyl-chlorides": {
+      "title": "Naming acyl chlorides",
+      "primary": "video-Sur_cc86rXc",
+      "videos": [],
+      "links": [
+        "chemguide-advanced-naming",
+        "chemguide-basic",
+        "pmt-module-6",
+        "ocr-specification"
+      ]
+    },
+    "friedel-crafts": {
+      "title": "Friedel–Crafts acylation",
+      "primary": "video-K6SNxePSlKE",
+      "videos": [],
+      "links": [
+        "chemguide-aromatics",
+        "pmt-module-6",
+        "ocr-specification",
+        "ocr-pathways"
+      ]
+    }
+  },
+  "defaults": [
+    "basic"
+  ],
+  "byTopic": {
+    "basic": [
+      "basic"
+    ],
+    "alkanes": [
+      "alkanes"
+    ],
+    "alkenes": [
+      "alkenes"
+    ],
+    "alcohols": [
+      "alcohols"
+    ],
+    "haloalkanes": [
+      "haloalkanes"
+    ],
+    "synthesis4": [
+      "synthesis4"
+    ],
+    "aromatics": [
+      "aromatics"
+    ],
+    "carbonyls": [
+      "carbonyls"
+    ],
+    "acids": [
+      "acids"
+    ],
+    "nitrogen": [
+      "nitrogen"
+    ],
+    "ccbond": [
+      "ccbond"
+    ],
+    "synthesis6": [
+      "synthesis6"
+    ]
+  },
+  "byType": {
+    "nomenclature": [
+      "nomenclature-basic"
+    ]
+  },
+  "byQuestion": {
+    "RC01": [
+      "alcohols"
+    ],
+    "RC02": [
+      "alcohols"
+    ],
+    "RC03": [
+      "haloalkanes"
+    ],
+    "RC04": [
+      "alkenes"
+    ],
+    "RC05": [
+      "carbonyls"
+    ],
+    "RC06": [
+      "nitriles-hydroxynitriles"
+    ],
+    "RC07": [
+      "alcohols"
+    ],
+    "RC08": [
+      "mechanism-elimination"
+    ],
+    "RC09": [
+      "aromatics"
+    ],
+    "RC10": [
+      "aromatics"
+    ],
+    "RC11": [
+      "nitrogen"
+    ],
+    "RC12": [
+      "nitrogen"
+    ],
+    "RC13": [
+      "acyl-chlorides"
+    ],
+    "RC14": [
+      "esters"
+    ],
+    "RC15": [
+      "ester-hydrolysis"
+    ],
+    "RC16": [
+      "mechanism-elimination"
+    ],
+    "MS01": [
+      "synthesis6",
+      "alcohols",
+      "carbonyls"
+    ],
+    "MS02": [
+      "synthesis4",
+      "alkenes",
+      "haloalkanes"
+    ],
+    "MS03": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond"
+    ],
+    "MS04": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "nitrogen"
+    ],
+    "MS05": [
+      "synthesis4",
+      "alkenes",
+      "alcohols"
+    ],
+    "MS06": [
+      "synthesis6",
+      "carbonyls",
+      "alcohols"
+    ],
+    "MS07": [
+      "synthesis6",
+      "aromatics",
+      "nitrogen"
+    ],
+    "MS08": [
+      "synthesis6",
+      "haloalkanes",
+      "alcohols",
+      "acids"
+    ],
+    "MS09": [
+      "synthesis6",
+      "alcohols",
+      "acids",
+      "nitrogen"
+    ],
+    "MS10": [
+      "synthesis6",
+      "haloalkanes",
+      "alcohols",
+      "acids"
+    ],
+    "MS11": [
+      "friedel-crafts",
+      "carbonyls",
+      "synthesis6"
+    ],
+    "MS12": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids",
+      "alcohols"
+    ],
+    "MI01": [
+      "mechanism-electrophilic-addition"
+    ],
+    "MI02": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MI03": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MI04": [
+      "nitriles-hydroxynitriles",
+      "mechanism-nucleophilic-addition"
+    ],
+    "MI05": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MI06": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MI07": [
+      "mechanism-radical-substitution"
+    ],
+    "MI08": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MI09": [
+      "mechanism-elimination"
+    ],
+    "MI10": [
+      "alcohols"
+    ],
+    "MI11": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MI12": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC01": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MC02": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MC03": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MC04": [
+      "mechanism-electrophilic-addition"
+    ],
+    "MC05": [
+      "mechanism-electrophilic-addition"
+    ],
+    "MC06": [
+      "mechanism-electrophilic-addition"
+    ],
+    "MC07": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MC08": [
+      "nitriles-hydroxynitriles"
+    ],
+    "MC09": [
+      "nitriles-hydroxynitriles"
+    ],
+    "MC10": [
+      "mechanism-radical-substitution"
+    ],
+    "MC11": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC12": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "ST01": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "ST02": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "ST03": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "ST04": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "ST05": [
+      "mechanism-electrophilic-addition"
+    ],
+    "ST06": [
+      "mechanism-electrophilic-addition"
+    ],
+    "ST07": [
+      "mechanism-electrophilic-addition"
+    ],
+    "ST08": [
+      "mechanism-electrophilic-addition"
+    ],
+    "ST09": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "ST10": [
+      "nitriles-hydroxynitriles"
+    ],
+    "ST11": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "ST12": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "NM01": [
+      "nomenclature-alcohols"
+    ],
+    "NM02": [
+      "nomenclature-alkenes"
+    ],
+    "NM03": [
+      "nomenclature-ketones"
+    ],
+    "NM04": [
+      "nomenclature-haloalkanes"
+    ],
+    "NM05": [
+      "nomenclature-acids"
+    ],
+    "NM06": [
+      "nomenclature-nitriles"
+    ],
+    "NM07": [
+      "nomenclature-alcohols"
+    ],
+    "NM08": [
+      "nomenclature-basic"
+    ],
+    "NM09": [
+      "nomenclature-alcohols"
+    ],
+    "NM10": [
+      "nomenclature-esters"
+    ],
+    "NM11": [
+      "nomenclature-esters"
+    ],
+    "NM12": [
+      "nomenclature-acids"
+    ],
+    "NM13": [
+      "nomenclature-alkenes"
+    ],
+    "NM14": [
+      "nomenclature-alkenes"
+    ],
+    "NM15": [
+      "nomenclature-aromatics"
+    ],
+    "NM16": [
+      "nomenclature-amides"
+    ],
+    "PP01": [
+      "alkenes"
+    ],
+    "PP02": [
+      "alkenes"
+    ],
+    "PP03": [
+      "alcohols"
+    ],
+    "PP04": [
+      "alcohols"
+    ],
+    "PP05": [
+      "nitriles-hydroxynitriles"
+    ],
+    "PP06": [
+      "ester-hydrolysis"
+    ],
+    "PP07": [
+      "phenols"
+    ],
+    "PP08": [
+      "acyl-chlorides"
+    ],
+    "MI13": [
+      "mechanism-radical-substitution"
+    ],
+    "MI14": [
+      "mechanism-electrophilic-addition"
+    ],
+    "NM17": [
+      "nomenclature-alcohols"
+    ],
+    "NM18": [
+      "nomenclature-alcohols"
+    ],
+    "NM19": [
+      "nomenclature-alcohols"
+    ],
+    "NM20": [
+      "nomenclature-alcohols"
+    ],
+    "NM21": [
+      "nomenclature-alcohols"
+    ],
+    "NM22": [
+      "nomenclature-alcohols"
+    ],
+    "NM23": [
+      "nomenclature-basic"
+    ],
+    "NM24": [
+      "nomenclature-basic"
+    ],
+    "NM25": [
+      "nomenclature-basic"
+    ],
+    "NM26": [
+      "nomenclature-basic"
+    ],
+    "NM27": [
+      "nomenclature-alkenes"
+    ],
+    "NM28": [
+      "nomenclature-alkenes"
+    ],
+    "NM29": [
+      "nomenclature-alkenes"
+    ],
+    "NM30": [
+      "nomenclature-alkenes"
+    ],
+    "NM31": [
+      "nomenclature-alkenes"
+    ],
+    "NM32": [
+      "nomenclature-alkenes"
+    ],
+    "NM33": [
+      "nomenclature-haloalkanes"
+    ],
+    "NM34": [
+      "nomenclature-haloalkanes"
+    ],
+    "NM35": [
+      "nomenclature-haloalkanes"
+    ],
+    "NM36": [
+      "nomenclature-haloalkanes"
+    ],
+    "NM37": [
+      "nomenclature-aldehydes"
+    ],
+    "NM38": [
+      "nomenclature-aldehydes"
+    ],
+    "NM39": [
+      "nomenclature-ketones"
+    ],
+    "NM40": [
+      "nomenclature-ketones"
+    ],
+    "NM41": [
+      "nomenclature-aldehydes"
+    ],
+    "NM42": [
+      "nomenclature-acids"
+    ],
+    "NM43": [
+      "nomenclature-acids"
+    ],
+    "NM44": [
+      "nomenclature-acids"
+    ],
+    "NM45": [
+      "nomenclature-nitriles"
+    ],
+    "NM46": [
+      "nomenclature-nitriles"
+    ],
+    "NM47": [
+      "nomenclature-esters"
+    ],
+    "NM48": [
+      "nomenclature-esters"
+    ],
+    "NM49": [
+      "nomenclature-esters"
+    ],
+    "NM50": [
+      "nomenclature-amides"
+    ],
+    "NM51": [
+      "nomenclature-amines"
+    ],
+    "NM52": [
+      "nomenclature-aromatics"
+    ],
+    "RC17": [
+      "alcohols"
+    ],
+    "RC18": [
+      "alcohols"
+    ],
+    "RC19": [
+      "haloalkanes"
+    ],
+    "RC20": [
+      "carbonyls"
+    ],
+    "RC21": [
+      "nitriles-hydroxynitriles"
+    ],
+    "RC22": [
+      "acyl-chlorides"
+    ],
+    "RC23": [
+      "nitrogen"
+    ],
+    "RC24": [
+      "ester-hydrolysis"
+    ],
+    "PP09": [
+      "carbonyls"
+    ],
+    "PP10": [
+      "carbonyls"
+    ],
+    "PP11": [
+      "nitriles-hydroxynitriles"
+    ],
+    "PP12": [
+      "acyl-chlorides"
+    ],
+    "MS13": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids"
+    ],
+    "MS14": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids"
+    ],
+    "MS15": [
+      "synthesis6",
+      "alcohols",
+      "carbonyls",
+      "acids",
+      "nitrogen"
+    ],
+    "MS16": [
+      "synthesis6",
+      "alcohols",
+      "carbonyls",
+      "acids",
+      "nitrogen"
+    ],
+    "MS17": [
+      "synthesis6",
+      "carbonyls",
+      "alcohols",
+      "alkenes"
+    ],
+    "MS18": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "nitrogen",
+      "acids"
+    ],
+    "MS19": [
+      "synthesis6",
+      "alcohols",
+      "carbonyls",
+      "acids"
+    ],
+    "MS20": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids"
+    ],
+    "MS21": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids",
+      "nitrogen"
+    ],
+    "MS22": [
+      "synthesis6",
+      "haloalkanes",
+      "ccbond",
+      "acids",
+      "nitrogen"
+    ],
+    "MS23": [
+      "synthesis6",
+      "acids",
+      "alcohols",
+      "nitrogen"
+    ],
+    "MS24": [
+      "synthesis6",
+      "acids",
+      "alcohols",
+      "nitrogen"
+    ],
+    "RC25": [
+      "alkanes"
+    ],
+    "RC26": [
+      "alkanes"
+    ],
+    "RC27": [
+      "alkenes"
+    ],
+    "RC28": [
+      "alkenes"
+    ],
+    "RC29": [
+      "alkenes"
+    ],
+    "RC30": [
+      "alcohols"
+    ],
+    "RC31": [
+      "alcohols"
+    ],
+    "RC32": [
+      "alcohols"
+    ],
+    "RC33": [
+      "alcohols"
+    ],
+    "RC34": [
+      "haloalkanes"
+    ],
+    "RC35": [
+      "haloalkanes"
+    ],
+    "RC36": [
+      "nitriles-hydroxynitriles"
+    ],
+    "RC37": [
+      "nitrogen"
+    ],
+    "RC38": [
+      "nitriles-hydroxynitriles"
+    ],
+    "RC39": [
+      "carbonyls"
+    ],
+    "RC40": [
+      "carbonyls"
+    ],
+    "RC41": [
+      "acyl-chlorides"
+    ],
+    "RC42": [
+      "acyl-chlorides"
+    ],
+    "RC43": [
+      "ester-hydrolysis"
+    ],
+    "RC44": [
+      "friedel-crafts"
+    ],
+    "RC45": [
+      "alkenes"
+    ],
+    "RC46": [
+      "nitriles-hydroxynitriles"
+    ],
+    "RC47": [
+      "alcohols"
+    ],
+    "PP13": [
+      "alkanes"
+    ],
+    "PP14": [
+      "alcohols"
+    ],
+    "PP15": [
+      "haloalkanes"
+    ],
+    "PP16": [
+      "nitrogen"
+    ],
+    "PP17": [
+      "nitriles-hydroxynitriles"
+    ],
+    "PP18": [
+      "carbonyls"
+    ],
+    "PP19": [
+      "acyl-chlorides"
+    ],
+    "PP20": [
+      "acyl-chlorides"
+    ],
+    "PP21": [
+      "phenols"
+    ],
+    "PP22": [
+      "nitrogen"
+    ],
+    "PP23": [
+      "alkenes"
+    ],
+    "MI15": [
+      "mechanism-radical-substitution"
+    ],
+    "MI16": [
+      "mechanism-electrophilic-addition"
+    ],
+    "MI17": [
+      "mechanism-nucleophilic-substitution"
+    ],
+    "MI18": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MI19": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "NM53": [
+      "nomenclature-alcohols"
+    ],
+    "NM54": [
+      "nomenclature-amines"
+    ],
+    "NM55": [
+      "nomenclature-acyl-chlorides"
+    ],
+    "NM56": [
+      "nomenclature-amides"
+    ],
+    "RC48": [
+      "haloalkanes"
+    ],
+    "PP24": [
+      "alkenes"
+    ],
+    "NM57": [
+      "nomenclature-basic"
+    ],
+    "NM58": [
+      "nomenclature-basic"
+    ],
+    "MS25": [
+      "synthesis4",
+      "alkenes",
+      "haloalkanes"
+    ],
+    "MS26": [
+      "synthesis4",
+      "alcohols",
+      "alkenes"
+    ],
+    "MS27": [
+      "synthesis6",
+      "haloalkanes",
+      "alcohols",
+      "carbonyls"
+    ],
+    "MS28": [
+      "synthesis6",
+      "ccbond",
+      "acids",
+      "nitrogen"
+    ],
+    "MS29": [
+      "synthesis6",
+      "carbonyls",
+      "acids"
+    ],
+    "MS30": [
+      "synthesis6",
+      "carbonyls",
+      "alcohols"
+    ],
+    "MS31": [
+      "synthesis6",
+      "haloalkanes",
+      "alcohols",
+      "acids"
+    ],
+    "MC13": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC14": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC15": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC16": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC17": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC18": [
+      "mechanism-electrophilic-substitution"
+    ],
+    "MC19": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MC20": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MC21": [
+      "nitriles-hydroxynitriles"
+    ],
+    "MC22": [
+      "nitriles-hydroxynitriles"
+    ],
+    "MC23": [
+      "mechanism-nucleophilic-addition"
+    ],
+    "MC24": [
+      "mechanism-nucleophilic-addition"
+    ]
+  }
+}
