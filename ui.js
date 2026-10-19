@@ -50,7 +50,7 @@ const U={
    const specific=result.details.filter(d=>d.essential&&!d.ok&&d.selected).map(d=>q.misconceptions[d.selected]||bank.vocabulary[d.selected]?.misconception).filter(s=>s&&!/^Check (the|this)|^Consider the|^Compare the/.test(s));
    body+=`<p class="feedback-explanation">${U.esc(q.feedback)}</p>`;
    const additional=[...new Set(specific)].filter(s=>s!==q.feedback);if(additional.length)body+=`<details class="marking-detail"><summary>Why my answer was wrong</summary>${additional.map(s=>`<p>${U.esc(s)}</p>`).join('')}</details>`;
-   if(correct)body+=`<details class="marking-detail"><summary>View marking detail</summary>${U.componentReview(bank,q,result,response)}</details>`;
+   if(correct)body+=U.componentReview(bank,q,result,response);
    body+=`<details class="marking-detail"><summary>All accepted answers</summary>${U.accepted(bank,q)}</details>`;
   }
   if(q.completedAsset)body+=U.image(bank,q.completedAsset,'Corrected completed step');
