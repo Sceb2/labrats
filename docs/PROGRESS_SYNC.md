@@ -125,6 +125,39 @@ does not deploy the full practice site. Managed cloud Chromium blocks `file:`;
 automated checks serve the exact download over HTTP with real local Auth, and
 also test blocked storage. Direct downloaded-file opening remains a manual check.
 
-The hosted backend check and full signed-in practice on a development deployment
-are required before publishing. Do not merge to the publishing branch as a way
-to perform the first hosted test.
+### Full practice preview
+
+`npm run build` also produces `student-site-preview.html`, a single download of
+the full development practice website, sign-in, question bank, diagrams and
+sound. Download it with GitHub's **Download raw file** button, open in Chrome or
+Edge, sign in with a fictional account and choose **Open practice preview**.
+Use normal topic selection and practice; question-level marks, mistakes and
+reveal/retry metadata save through the same sync module as the publishing site.
+The initial sign-in and practice views share one Auth module, including its
+memory fallback if downloaded-file storage is unavailable.
+
+Check a few answered/revealed questions, sign out and back in, and verify Progress
+and Mistakes. To check offline practice, open a session while online, disconnect,
+answer a question, confirm the waiting message, reconnect and wait until saved.
+Do not close the tab with waiting attempts. Sign out and choose browser-only
+practice to check guest operation. Use a second fictional account or browser to
+check account separation; do not use real student data yet.
+
+The preview embeds exact production app sources without rewriting their logic;
+its wrapper supplies local assets/config and routes sign-in/sign-out inside the
+download. The desktop/mobile app, scoring and saving use the branch's sources.
+Release polling is disabled for the frozen preview; full-bank design-demo
+controls are hidden. Videos still contact YouTube only when Load video is
+chosen, and external learning links work normally. The preview CSP permits only
+hashed scripts, embedded images/audio, this Supabase project and opted-in video
+frames. It does not publish the website or replace final hosting-origin checks.
+
+Automated full-preview checks cover real local Auth, normal topic-based practice,
+diagrams, offline uploads, restoration from a separate browser with blocked tab
+storage, account switching, guest history and absence of responses in storage or
+uploads. As with the smaller pilots, the exact download is served over HTTP in
+managed Chromium; downloaded-file opening is a manual check.
+
+The hosted backend check and full signed-in practice preview must pass before
+publishing. Do not merge to the publishing branch as a way to perform the first
+hosted test. Check the final hosting origin before inviting real students.

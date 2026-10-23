@@ -52,7 +52,9 @@ async function main() {
     run(['network', 'create', network]);
     console.log('Starting disposable PostgreSQL, Supabase Auth and PostgREST.');
     const db = start('db', {POSTGRES_PASSWORD: password});
-    await waitFor(() => spawnSync('docker', ['exec', db, 'pg_isready', '-U', 'postgres'], {stdio: 'ignore'}).status === 0, 'PostgreSQL');
+    // The image first starts a temporary Unix-socket-only initialization server.
+    // Wait for the final TCP listener so setup cannot race that server's shutdown.
+    await waitFor(() => spawnSync('docker', ['exec', db, 'pg_isready', '-h', '127.0.0.1', '-U', 'postgres'], {stdio: 'ignore'}).status === 0, 'PostgreSQL');
     run(['exec', '-i', db, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], {input: `
       create role anon nologin noinherit;
       create role authenticated nologin noinherit;
@@ -117,7 +119,7 @@ async function main() {
     restPort = portFor(rest, 3000);
     await waitFor(async () => { try { return (await fetch(`${url}/rest/v1/`)).ok; } catch { return false; } }, 'PostgREST');
     const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role')};
-    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs']) {
+    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);
