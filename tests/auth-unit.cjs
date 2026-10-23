@@ -7,10 +7,46 @@ const path = require('node:path');
 const {studentEmail, validatePassword, validatePublicConfig} = require('../src/student-identity.cjs');
 const {generateUsername, generatePassword} = require('../scripts/account-service.cjs');
 const {args, privateOutput} = require('../scripts/student-accounts.cjs');
+const {createUsernamePicker, createAvailableStudent, capacity} = require('../src/student-usernames.cjs');
+const words = require('../docs/username-wordlist-draft.json');
 
 test('student identity accepts generated usernames only and never accepts a real email', () => {
   assert.equal(studentEmail(' STUDENT-abc234def567 '), 'student-abc234def567@students.invalid');
-  for (const input of ['person@school.example', '../student-abc234def567', 'admin', 'student-abcd']) assert.throws(() => studentEmail(input));
+  assert.equal(studentEmail(' BRAVE-OTTER '), 'brave-otter@students.invalid');
+  assert.equal(studentEmail('adventurous-hummingbird'), 'adventurous-hummingbird@students.invalid');
+  for (const input of ['person@school.example', '../student-abc234def567', 'admin', 'student-abcd123', 'brave--otter', 'brave otter', 'a-otter', 'a'.repeat(21)+'-otter']) assert.throws(() => studentEmail(input));
+});
+test('reviewed vocabulary covers every pair once per batch and excludes rejected adjectives', () => {
+  assert.equal(words.adjectives.length, 128); assert.equal(words.animals.length, 128);
+  assert.equal(new Set(words.adjectives).size, 128); assert.equal(new Set(words.animals).size, 128);
+  for (const word of [...words.adjectives, ...words.animals]) assert.match(word, /^[a-z]{2,20}$/);
+  for (const word of ['blooming','cherry','furry']) assert.equal(words.adjectives.includes(word), false);
+  const next = createUsernamePicker(), names = new Set();
+  for (let i = 0; i < capacity; i++) {
+    const username = next(), [adjective, animal] = username.split('-');
+    assert.ok(words.adjectives.includes(adjective)); assert.ok(words.animals.includes(animal));
+    studentEmail(username); names.add(username);
+  }
+  assert.equal(names.size, 16384); assert.throws(next, /All username combinations/);
+});
+test('occupied Auth names are skipped; unknown failures stop without another account creation', async () => {
+  const candidates = ['brave-otter','crisp-goat','silky-owl'], calls = [];
+  const admin = {auth:{admin:{createUser:async input => {
+    calls.push(input.email);
+    return calls.length < 3 ? {error:{code:calls.length === 1 ? 'email_exists' : 'user_already_exists'}}
+      : {data:{user:{id:'new-account'}},error:null};
+  }}}};
+  const result = await createAvailableStudent(admin, () => candidates.shift(), 'private-password');
+  assert.equal(result.username, 'silky-owl'); assert.equal(result.user.id, 'new-account');
+  assert.deepEqual(calls, ['brave-otter@students.invalid','crisp-goat@students.invalid','silky-owl@students.invalid']);
+  let attempts = 0;
+  admin.auth.admin.createUser = async () => { attempts++; return {error:{code:'unexpected_failure'}}; };
+  await assert.rejects(createAvailableStudent(admin, () => 'brave-otter', 'private-password'), {code:'unexpected_failure'});
+  assert.equal(attempts, 1);
+  attempts = 0;
+  admin.auth.admin.createUser = async () => { attempts++; return {error:{code:'email_exists'}}; };
+  await assert.rejects(createAvailableStudent(admin, createUsernamePicker(), 'private-password'), /No available username/);
+  assert.equal(attempts, 128);
 });
 test('credentials use cryptographic generation and satisfy account rules', () => {
   const usernames = new Set(), passwords = new Set();

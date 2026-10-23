@@ -10,6 +10,8 @@ development project. The staff migration/function need their own hosted check.
 - Administrators invite teachers; public registration remains disabled.
 - Staff sign in with email/password, choose their own initial password, create
   classes, and generate batches of 1–100 random student usernames/passwords.
+  New usernames use the reviewed `adjective-animal` vocabulary, for example
+  `brave-otter`; previously issued `student-…` usernames continue to work.
 - Students supply no real name, email, phone, birthday or selected answers.
   Synthetic `@students.invalid` Auth identifiers are generated internally.
 - Administrators assign teachers and existing students to classes, allowing one
@@ -35,6 +37,31 @@ In the development Supabase project, SQL Editor → **New query**, copy the enti
 and `commit;`, and Run. Do not rerun migrations 001–003. Migration 004 also closes
 the staff password gate for existing staff permissions; a trusted operator must
 ensure a staff account's own initial password change has completed.
+
+## Update an existing prototype to friendly usernames
+
+If migrations 001–004 and the staff service are already installed:
+
+1. SQL Editor → **New query**. Paste the entire
+   `supabase/migrations/202610230005_friendly_student_usernames.sql`, from
+   `begin;` through `commit;`, and Run. Do not append it to an old query or rerun
+   migrations 001–004. This broadens the username constraint without changing
+   existing accounts, results or permissions.
+2. Edge Functions → **staff-management** → code editor. Replace the contents of
+   its existing **index.ts** with the updated generated
+   `supabase/functions/staff-management/index.ts` and deploy the update. Keep the
+   function name and Verify JWT setting described below. No new file or function
+   is required.
+3. Download fresh copies of `student-site-preview.html` and `staff-preview.html`.
+   Previously downloaded student previews only recognise the old username format.
+4. Generate two fictional students in a test class. Confirm the names look like
+   `adjective-animal`, then sign in through the refreshed student preview, choose
+   a password, submit an answer, and check the teacher's report/reset workflow.
+   Also sign in once using an existing `student-…` account.
+
+See [the reviewed vocabulary](USERNAME_WORDLIST_DRAFT.md) for the 16,384 possible
+pairs and collision handling. Existing accounts are not renamed or recreated.
+For a fresh project, apply all five migrations in filename order.
 
 ## Deploy the staff service
 

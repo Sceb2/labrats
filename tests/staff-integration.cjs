@@ -51,6 +51,9 @@ test('staff prototype enforces invitations, class scope, private provisioning an
   await t.test('batch credentials are private, bounded and idempotent',async()=>{
    const request=randomUUID(),result=await api(teacher,'create_students',{class_id:firstClass,count:2},request);
    assert.equal(result.status,200,JSON.stringify(result.body));assert.equal(result.body.complete,true);credentials=result.body.credentials;assert.equal(credentials.length,2);
+   const words=require('../docs/username-wordlist-draft.json');
+   assert.equal(new Set(credentials.map(c=>c.username)).size,2);
+   for(const {username} of credentials){const [adjective,animal]=username.split('-');assert.ok(words.adjectives.includes(adjective));assert.ok(words.animals.includes(animal));}
    const rows=ok(await root.from('account_profiles').select('*').in('username',credentials.map(c=>c.username)));users.push(...rows.map(row=>row.user_id));studentId=rows.find(row=>row.username===credentials[0].username).user_id;
    for(const row of rows){assert.equal(row.role,'student');assert.equal(row.must_change_password,true);}
    assert.equal((await api(teacher,'create_students',{class_id:firstClass,count:2},request)).status,409);

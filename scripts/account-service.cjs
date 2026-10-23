@@ -1,15 +1,13 @@
 'use strict';
-const {randomInt, randomBytes} = require('node:crypto');
+const {randomBytes} = require('node:crypto');
 const {studentEmail} = require('../src/student-identity.cjs');
-const alphabet = 'abcdefghjkmnpqrstuvwxyz23456789';
-function generateUsername() {
-  return 'student-' + Array.from({length: 12}, () => alphabet[randomInt(alphabet.length)]).join('');
-}
+const {generateUsername} = require('../src/student-usernames.cjs');
 function generatePassword() { return randomBytes(18).toString('base64url'); }
 function check(result, message) { if (result.error) throw new Error(message); return result.data; }
 async function provisionStudent(admin, {username, password, classId}) {
-  const {user} = check(await admin.auth.admin.createUser({email: studentEmail(username), password,
-    email_confirm: true}), 'Could not create student in Auth.');
+  const created = await admin.auth.admin.createUser({email: studentEmail(username), password, email_confirm: true});
+  if (created.error) throw Object.assign(new Error('Could not create student in Auth.'), {code: created.error.code});
+  const {user} = created.data;
   try {
     check(await admin.from('account_profiles').insert({user_id: user.id, role: 'student', username,
       must_change_password: true}), 'Could not create student profile.');

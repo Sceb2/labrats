@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const {createClient} = require('@supabase/supabase-js');
 const {generateUsername, generatePassword, provisionStudent, resetStudent} = require('../scripts/account-service.cjs');
 const {studentEmail} = require('../src/student-identity.cjs');
+const {createAvailableStudent} = require('../src/student-usernames.cjs');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
@@ -20,7 +21,8 @@ const ok = result => {assert.equal(result.error, null, result.error?.message); r
 
 test('real Auth, password lifecycle, account isolation and class access', async t => {
   const ids = [], classIds = [];
-  const students = [0, 1].map(() => ({username: generateUsername(), password: generatePassword()}));
+  // Exercise old and new identifiers through the same real password/reset/RLS flow.
+  const students = ['student-abc234def567', 'adventurous-hummingbird'].map(username => ({username, password: generatePassword()}));
   const clients = [client(), client()];
   let teacher, outsider;
   try {
@@ -29,6 +31,29 @@ test('real Auth, password lifecycle, account isolation and class access', async 
       classIds.push(cls.id);
       ids.push(await provisionStudent(admin, {...students[i], classId: cls.id}));
     }
+    await t.test('occupied names and concurrent creation cannot reuse an existing student identity', async () => {
+      const candidate = generateUsername(), replacement = generateUsername(), password = generatePassword();
+      const sequences = [[students[0].username, candidate, replacement], [students[0].username, candidate, replacement]];
+      const attempts = await Promise.allSettled(sequences.map(sequence => createAvailableStudent(admin, () => sequence.shift(), password)));
+      const results = attempts.filter(result => result.status === 'fulfilled').map(result => result.value);
+      ids.push(...results.map(result => result.user.id));
+      assert.ok(results.length >= 1); assert.equal(new Set(results.map(result => result.username)).size, results.length);
+      // GoTrue may report a racing unique violation as a generic 500 instead
+      // of email_exists. Stop safely in that case; never guess that it failed.
+      for (const result of attempts.filter(result => result.status === 'rejected')) assert.equal(result.reason.status, 500);
+      const stored = ok(await admin.auth.admin.listUsers({page:1,perPage:1000})).users
+        .filter(user => [studentEmail(candidate),studentEmail(replacement)].includes(user.email));
+      assert.equal(stored.length, results.length);
+      for (const name of [candidate,replacement]) assert.ok(stored.filter(user => user.email === studentEmail(name)).length <= 1);
+      if (results.length === 1) {
+        const retry = [candidate,replacement];
+        const recovered = await createAvailableStudent(admin, () => retry.shift(), password);
+        ids.push(recovered.user.id); assert.equal(recovered.username, replacement);
+      }
+      assert.equal(ok(await admin.auth.admin.getUserById(ids[0])).user.email, studentEmail(students[0].username));
+      ok(await clients[0].auth.signInWithPassword({email:studentEmail(students[0].username),password:students[0].password}));
+      await clients[0].auth.signOut();
+    });
     await t.test('public signup is disabled', async () => {
       const result = await client().auth.signUp({email: studentEmail(generateUsername()), password: generatePassword()});
       assert.ok(result.error); assert.equal(result.data.user, null);

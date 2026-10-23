@@ -4,13 +4,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {createClient} = require('@supabase/supabase-js');
-const {generateUsername, generatePassword, provisionStudent, resetStudent} = require('./account-service.cjs');
+const {generatePassword, provisionStudent, resetStudent} = require('./account-service.cjs');
+const {createUsernamePicker, isUsernameConflict} = require('../src/student-usernames.cjs');
 const {normalizeUsername, studentEmail} = require('../src/student-identity.cjs');
 const root = path.resolve(__dirname, '..');
 const commands = `Usage:
   npm run accounts -- create-class --label "Year 12 chemistry"
   npm run accounts -- create-students --class CLASS_UUID --count 5 --out /private/path/students.csv
-  npm run accounts -- reset-student --username student-xxxxxxxxxxxx --out /private/path/reset.csv
+  npm run accounts -- reset-student --username brave-otter --out /private/path/reset.csv
 Requires SUPABASE_URL and SUPABASE_SECRET_KEY in the process environment.
 Credential output must be outside this checkout and any other served/public folder.
 Teacher-facing controls are available in staff.html; see docs/STAFF_PROTOTYPE.md.`;
@@ -66,8 +67,9 @@ async function main(argv) {
     if (error) throw new Error('Class does not exist or is inaccessible.');
   }
   const output = privateOutput(options.out);
+  const nextUsername = createUsernamePicker();
   const rows = Array.from({length: command === 'create-students' ? +options.count : 1}, () => ({
-    username: command === 'reset-student' ? options.username : generateUsername(),
+    username: command === 'reset-student' ? options.username : nextUsername(),
     password: generatePassword(), state: 'pending'
   }));
   function save() {
@@ -80,8 +82,16 @@ async function main(argv) {
     save();
     for (const row of rows) {
       try {
-        if (command === 'create-students') await provisionStudent(admin, {...row, classId: options.class});
-        else await resetStudent(admin, row.username, row.password);
+        if (command === 'create-students') {
+          for (let attempt = 0; ; attempt++) {
+            try { await provisionStudent(admin, {...row, classId: options.class}); break; }
+            catch (error) {
+              if (!isUsernameConflict(error) || attempt >= 127) throw error;
+              row.username = nextUsername();
+              save(); // Save the replacement credentials before any Auth mutation.
+            }
+          }
+        } else await resetStudent(admin, row.username, row.password);
         row.state = 'ready'; succeeded++;
       } catch (error) { row.state = 'failed'; console.error(error.message); }
       save();

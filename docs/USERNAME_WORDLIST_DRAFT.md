@@ -1,6 +1,6 @@
-# Draft student username word lists
+# Reviewed student username word lists
 
-For review before implementation. New usernames would use `adjective-animal`,
+Approved for the prototype after the school review. New usernames use `adjective-animal`,
 for example `marvellous-goat`, `funky-chicken` or `cosmic-otter`. Any adjective
 can pair with any animal. UK spellings are used.
 
@@ -9,13 +9,14 @@ There are **128 adjectives × 128 animals = 16,384 distinct combinations**: over
 combinations would remain if none were reused. Expanding either list can add
 capacity without renaming existing accounts.
 
-The future generator must check school-wide uniqueness and select another pair
-when a name is already taken. Random draws alone do not guarantee uniqueness.
+The generator selects another pair when Auth reports a name is already taken.
+Auth also prevents concurrent requests from assigning the same identity.
+Random draws alone do not guarantee uniqueness.
 Usernames remain identifiers; passwords provide sign-in protection.
 
-The lists below are proposals for school review, including possible unintended
-combinations or nicknames. All words use lowercase ASCII letters and have no
-spaces or hyphens within a word.
+These are the reviewed lists, with blooming, cherry and furry replaced by brave,
+crisp and silky. All words use lowercase ASCII letters and have no spaces or
+hyphens within a word. Further school review can still remove unwanted pairings.
 
 | Adjectives | Animal nouns |
 | --- | --- |
@@ -56,6 +57,18 @@ Machine-readable versions: [JSON](username-wordlist-draft.json) and
 [CSV](username-wordlist-draft.csv). The CSV has one category/word per row for
 reviewing in a spreadsheet.
 
-This draft does not change the generator, existing accounts, passwords or
-progress. Enabling the format will require compatible account validation and a
-new database migration; existing `student-…` usernames must remain valid.
+The server generator uses this JSON file as the single vocabulary source. Apply
+migration 005 before deploying the updated staff function, and download refreshed
+student previews to sign in with the new format. Existing `student-…` usernames,
+passwords and progress remain valid. No existing account is renamed.
+
+Each batch samples pairs without replacement and skips Auth email conflicts.
+The Auth email unique constraint arbitrates concurrent requests. A racing
+conflict can return a generic Auth error; this stops the batch safely. Unexpected
+failures are not retried because account creation may already have succeeded.
+A maximum of 128 occupied candidates is tried per student; if none is available,
+the batch stops with the completed credentials and a warning. This keeps service
+calls bounded as the vocabulary nears capacity. Expand the lists before that
+point; 16,384 combinations is capacity, not a promise to fill every last slot in
+a single request. The trusted operator CLI also retries known name conflicts and
+writes replacement credentials to its private file before creating the account.

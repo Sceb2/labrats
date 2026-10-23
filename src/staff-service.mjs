@@ -1,5 +1,7 @@
 // Shared by the Supabase Edge Function and the disposable local integration server.
 // This module is server-only. Never import it into a browser bundle.
+import usernames from './student-usernames.cjs';
+const {createUsernamePicker, createAvailableStudent} = usernames;
 const uuid = /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
 const alphabet = 'abcdefghjkmnpqrstuvwxyz23456789';
 function randomText(length, chars = alphabet) {
@@ -77,12 +79,12 @@ export function makeStaffHandler({createClient, supabaseUrl, publishableKey, sec
         } catch (error) {await admin.auth.admin.deleteUser(invited.id); throw error;}
       }
       if (input.action === 'create_students') {
-        const credentials = [];
+        const credentials = [], nextUsername = createUsernamePicker();
         for (let index = 0; index < input.count; index++) {
           try {
             check(await admin.rpc('staff_authorize', {...scope, action: 'create_students', target}));
-            const username = 'student-' + randomText(12), temporary_password = password();
-            const {user: student} = check(await admin.auth.admin.createUser({email: username + '@students.invalid', password: temporary_password, email_confirm: true}));
+            const temporary_password = password();
+            const {username, user: student} = await createAvailableStudent(admin, nextUsername, temporary_password);
             try {check(await admin.rpc('staff_provision_student', {...scope, target_class: target, student: student.id, username}));}
             catch (error) {await admin.auth.admin.deleteUser(student.id); throw error;}
             credentials.push({username, temporary_password});

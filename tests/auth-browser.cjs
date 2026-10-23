@@ -16,7 +16,8 @@ const root = path.resolve(__dirname, '..');
 
 test('student browser login lifecycle and existing practice', async t => {
   const admin = createClient(url, secret, {auth: {persistSession: false, autoRefreshToken: false}});
-  const username = generateUsername(), password = generatePassword();
+  // Longer than the previous 20-character input limit.
+  const username = 'adventurous-hummingbird', password = generatePassword();
   const userId = await provisionStudent(admin, {username, password});
   let pilotDocument;
   // Serve at a subpath like GitHub Pages. Only the local test configuration and CSP origin differ.

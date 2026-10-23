@@ -1,5 +1,7 @@
 'use strict';
-const USERNAME = /^student-[a-z2-9]{12}$/;
+// Keep previously issued usernames valid; vocabulary membership is enforced
+// by the server generator, so approved lists can expand without login changes.
+const USERNAME = /^(?:student-[a-z2-9]{12}|[a-z]{2,20}-[a-z]{2,20})$/;
 function normalizeUsername(value) { return String(value || '').trim().toLowerCase(); }
 function studentEmail(value) {
   const username = normalizeUsername(value);
