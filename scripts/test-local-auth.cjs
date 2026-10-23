@@ -110,14 +110,14 @@ async function main() {
         'select coalesce(nullif(current_setting(''request.jwt.claims'', true), '''')::jsonb, ''{}''::jsonb)';
     `});
     run(['exec', '-i', db, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], {
-      input: fs.readFileSync(path.join(root, 'supabase/migrations/202610230001_student_accounts.sql'), 'utf8')
+      input: fs.readdirSync(path.join(root,'supabase/migrations')).filter(name=>name.endsWith('.sql')).sort().map(name=>fs.readFileSync(path.join(root,'supabase/migrations',name),'utf8')).join('\n')
     });
     const rest = start('rest', {PGRST_DB_URI: `postgres://authenticator:${password}@db:5432/postgres`,
       PGRST_DB_SCHEMAS: 'public', PGRST_DB_ANON_ROLE: 'anon', PGRST_JWT_SECRET: secret}, 3000);
     restPort = portFor(rest, 3000);
     await waitFor(async () => { try { return (await fetch(`${url}/rest/v1/`)).ok; } catch { return false; } }, 'PostgREST');
     const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role')};
-    for (const file of ['tests/auth-integration.cjs', 'tests/auth-browser.cjs']) {
+    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);

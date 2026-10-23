@@ -24,7 +24,10 @@ Passwords are handled by Supabase Auth, never by our database tables.
 - A link from existing practice to student sign-in. Practice remains available
   without an account and uses the existing local browser storage.
 
-**Not yet implemented:** progress syncing, answer-history upload, A–E ratings,
+Progress syncing has since been added on this branch; see [PROGRESS_SYNC.md](PROGRESS_SYNC.md)
+for its two additional SQL queries, privacy model, tests and pilot limitations.
+
+**Not yet implemented:** A–E ratings,
 adaptive sessions, teacher invitation screens, teacher-facing batch/reset UI,
 retention automation or importing browser history. The public `teacher.html`
 remains a question-bank editor, not a protected account-management dashboard.
@@ -158,9 +161,9 @@ Develop and review on `feature/student-logins`; do not merge into the Pages
 publishing branch or change Pages settings until the hosted pilot is validated.
 No changes to the existing question bank, scoring, browser progress keys or
 adaptive selection are included. Existing students receive no changes until the
-new website files are deliberately deployed. The account page explicitly says
-that progress is still browser-only, and never silently associates old progress
-with a login.
+new website files are deliberately deployed. The account page explains that new
+signed-in results sync, and never silently associates old browser-only progress
+with a login. Account mode does not persist raw answers or session playback.
 
 No private credentials or credential exports belong in the published site.
 Supabase Auth still processes pseudonymous identifiers, password hashes, session

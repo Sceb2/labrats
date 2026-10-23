@@ -1,8 +1,8 @@
 'use strict';
-const {createClient, processLock} = require('@supabase/supabase-js');
-const {studentEmail, validatePassword, validatePublicConfig} = require('./student-identity.cjs');
+const {openAccountClient} = require('./account-client.cjs');
+const {studentEmail, validatePassword} = require('./student-identity.cjs');
 const $ = selector => document.querySelector(selector);
-let client, sessionKey, memory = new Map();
+let client, accountConnection;
 let busy = false;
 function status(message, error = false) {
   $('#auth-status').textContent = message;
@@ -14,12 +14,6 @@ function setBusy(value) {
   $('#login-form').setAttribute('aria-busy', String(value));
   $('#password-form').setAttribute('aria-busy', String(value));
 }
-// Per-tab storage; never read or rewrite legacy revision progress in localStorage.
-const storage = {
-  getItem(key) { try { return sessionStorage.getItem(key) ?? memory.get(key) ?? null; } catch { return memory.get(key) ?? null; } },
-  setItem(key, value) { memory.set(key, value); try { sessionStorage.setItem(key, value); } catch {} },
-  removeItem(key) { memory.delete(key); try { sessionStorage.removeItem(key); } catch {} }
-};
 function signedOut() {
   $('#login-form').hidden = false;
   $('#account-panel').hidden = true;
@@ -28,31 +22,21 @@ function signedOut() {
   $('#account-name').textContent = '';
 }
 async function account() {
-  // getUser verifies the token with Auth, rather than trusting a stored session.
-  const {data: {user}, error} = await client.auth.getUser();
-  if (error || !user) throw new Error('Your session could not be verified. Please sign in again.');
-  const {data: profile, error: profileError} = await client.from('account_profiles')
-    .select('username,role,active,must_change_password').eq('user_id', user.id).single();
-  if (profileError) throw new Error('Your school account is not available yet. Ask your teacher to check it.');
+  let profile;
+  try {profile = await accountConnection.profile();} catch {throw new Error('Your school account is not available yet. Ask your teacher to check it.');}
   if (!profile.active || profile.role !== 'student') throw new Error('This account cannot use student sign-in. Ask your teacher for help.');
   $('#login-form').hidden = true;
   $('#account-panel').hidden = false;
   $('#account-name').textContent = profile.username;
   $('#account-message').textContent = profile.must_change_password
     ? 'Choose your own password before using your account. Do not reuse your temporary password.'
-    : 'You are signed in. Revision progress is not yet saved to your account.';
+    : 'You are signed in. Practice saves new results to your account; existing browser-only history stays separate.';
   $('#password-heading').textContent = profile.must_change_password ? 'Choose your own password' : 'Change password';
   $('#continue-practice').hidden = profile.must_change_password;
   return profile;
 }
-async function clearSession() {
-  try { await client.auth.signOut({scope: 'local'}); }
-  finally {
-    // A network failure must not leave credentials in this tab's storage.
-    client.auth.stopAutoRefresh();
-    for (const key of [sessionKey, `${sessionKey}-user`, `${sessionKey}-code-verifier`]) storage.removeItem(key);
-    signedOut();
-  }
+async function clearSession(discardLearning = true) {
+  try {await accountConnection.signOut({discardLearning});} finally {signedOut();}
 }
 function authError(error) {
   if (error?.status === 429 || error?.code === 'over_request_rate_limit') return 'Too many attempts. Wait a few minutes before trying again.';
@@ -60,14 +44,7 @@ function authError(error) {
   return 'Sign-in was unsuccessful. Check your username and password, or ask your teacher for help.';
 }
 async function boot() {
-  const response = await fetch('auth-config.json', {cache: 'no-store'});
-  if (!response.ok) throw new Error('Sign-in is not configured yet. Browser-only practice is still available.');
-  const {url, key} = validatePublicConfig(await response.json());
-  sessionKey = `ocr-student-auth-v1-${new URL(url).host}`;
-  client = createClient(url, key, {auth: {storage, storageKey: sessionKey, persistSession: true,
-    // Storage is tab-local; serialize Auth in this tab without requiring origin-scoped Web Locks.
-    autoRefreshToken: true, detectSessionInUrl: false, lock: processLock},
-    global: {fetch: (input, init) => fetch(input, {...init, signal: init?.signal || AbortSignal.timeout(15000)})}});
+  accountConnection = await openAccountClient(); client = accountConnection.client;
   $('#login-form').addEventListener('submit', async event => {
     event.preventDefault(); if (busy) return;
     let email;
@@ -82,7 +59,7 @@ async function boot() {
         const profile = await account();
         status(profile.must_change_password ? 'Signed in. Please choose your own password.' : 'Signed in.');
         (profile.must_change_password ? $('#new-password') : $('#account-name')).focus();
-      } catch (error) { await clearSession(); status(error.message, true); }
+      } catch (error) { await clearSession(false); status(error.message, true); }
     } catch { status('Unable to reach sign-in. Check your connection and try again.', true); }
     finally { setBusy(false); }
   });
@@ -109,6 +86,8 @@ async function boot() {
   });
   $('#sign-out').addEventListener('click', async () => {
     if (busy) return;
+    const pending = accountConnection.pendingCount();
+    if (pending && !window.confirm(`${pending} attempts have not synced. Signing out will discard them. Sign out anyway?`)) return;
     setBusy(true); status('Signing out…');
     try { await clearSession(); status('Signed out of this tab.'); }
     catch { status('Signed out of this tab. The server could not be reached.'); }
@@ -121,7 +100,7 @@ async function boot() {
   const {data: {session}} = await client.auth.getSession();
   if (session) {
     try { await account(); status('Sign-in restored for this tab.'); }
-    catch (error) { await clearSession(); status(error.message, true); }
+    catch (error) { await clearSession(false); status(error.message, true); }
   } else { signedOut(); status('Ready to sign in.'); }
 }
 boot().catch(() => { status('Sign-in is unavailable. Please try again later. Browser-only practice is still available.', true); });

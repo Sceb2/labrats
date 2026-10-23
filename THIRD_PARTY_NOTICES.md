@@ -1,6 +1,6 @@
 # Third-party notices
 
-The generated student-login.js bundles the following packages.
+The generated student-login.js, progress-sync.js and login pilot bundle the following packages.
 
 ## @supabase/auth-js 2.108.2
 

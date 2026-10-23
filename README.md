@@ -17,22 +17,28 @@ student chooses Load video. Their external availability cannot be guaranteed.
 
 Existing timed challenges, reports, celebrations, reduced-motion handling, marking
 and update checking are preserved. Progress remains in local browser storage.
-No accounts or cloud saving are included. Keep the same site URL and avoid clearing
-browser storage. The assets and question bank are unchanged from v1.7.
+Browser-only practice keeps progress locally. The development branch also includes
+an optional account pilot, described below. Keep the same site URL and avoid
+clearing browser storage. The assets and question bank are unchanged from v1.7.
 
 The release's outer folder includes RELEASE-NOTES.md, RESOURCE-GUIDE.md,
 RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.
 
 ## Student login development
 
-The separate `student-login.html` page adds the first Supabase account milestone.
-Browser-only practice and existing local progress remain available; account
-progress syncing and adaptive practice are later milestones.
+The separate `student-login.html` page provides Supabase student sign-in. New
+signed-in practice attempts sync as metadata without selected answers or free
+text, with an offline queue and separate guest history. Adaptive practice and
+teacher-facing account/reporting screens remain later milestones.
+
+See [progress sync setup](docs/PROGRESS_SYNC.md) for the two additional database
+queries required after the original account migration. Do not deploy the branch
+before applying them and validating hosted signed-in practice.
 
 See [student login setup and deployment](docs/STUDENT_LOGINS.md) for the database
 migration, private account-provisioning commands, security model and pilot steps.
 Never put administrator keys or credential exports in this repository.
 
-Developer checks: `npm ci`, `npm run build:auth`, `npm test`.
+Developer checks: `npm ci`, `npm run build`, `npm test`.
 With Docker and Chromium available, `npm run test:auth-local` tests real local
 Supabase Auth, database access policies and browser login flows.

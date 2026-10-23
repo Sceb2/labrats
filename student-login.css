@@ -9,3 +9,5 @@
 .login-card #auth-status[data-error="true"] { color: #922b21; }
 .login-actions { margin-top: 1.5rem; }
 .login-card button:disabled { opacity: .65; cursor: wait; }
+.account-sync-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; padding: .8rem 1rem; background: #edf5f0; color: #19323f; border-bottom: 1px solid #b8cdbf; }
+.account-sync-bar [role="status"] { flex: 1 1 14rem; overflow-wrap: anywhere; }
