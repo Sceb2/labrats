@@ -1,5 +1,5 @@
 'use strict';
-const {randomBytes} = require('node:crypto');
+const {randomBytes, randomUUID} = require('node:crypto');
 const {studentEmail} = require('../src/student-identity.cjs');
 const {generateUsername} = require('../src/student-usernames.cjs');
 function generatePassword() { return randomBytes(18).toString('base64url'); }
@@ -23,11 +23,14 @@ async function provisionStudent(admin, {username, password, classId}) {
 async function resetStudent(admin, username, password) {
   const profile = check(await admin.from('account_profiles').select('user_id').eq('username', username)
     .eq('role', 'student').single(), 'Student account not found.');
-  check(await admin.rpc('prepare_student_password_reset', {target: profile.user_id}), 'Could not lock student account for reset.');
+  const scope={target:profile.user_id,operation:randomUUID()};
+  const prepared=await admin.rpc('operator_prepare_student_reset',scope);
+  check(prepared, prepared.error?.code==='55006'
+    ? 'Another reset is in progress. Wait two minutes before retrying.'
+    : 'Could not lock student account for reset. Check migration 006 and the current operator tool.');
   check(await admin.auth.admin.updateUserById(profile.user_id, {password}),
     'Password reset failed. Account remains disabled; retry the reset.');
-  check(await admin.from('account_profiles').update({active: true, must_change_password: true})
-    .eq('user_id', profile.user_id), 'Account remains disabled; retry the reset.');
+  check(await admin.rpc('operator_finish_student_reset',scope), 'Account remains disabled; retry the reset after two minutes.');
   return profile.user_id;
 }
 module.exports = {generateUsername, generatePassword, provisionStudent, resetStudent};

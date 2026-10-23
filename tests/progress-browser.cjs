@@ -1,6 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),http=require('node:http');
 const fs=require('node:fs/promises'),path=require('node:path');
+const {randomUUID}=require('node:crypto');
 const {chromium}=require('playwright'),{createClient}=require('@supabase/supabase-js');
 const {generateUsername,generatePassword,provisionStudent}=require('../scripts/account-service.cjs');
 const bank=require('../questions.json');
@@ -99,7 +100,7 @@ test('account practice queues metadata, converges across devices and isolates sh
       assert.equal(await page.evaluate(()=>S.progress.records.RC01.first.score),1);
     });
     await check('revoking an account session hides cached account results until sign-in',async()=>{
-      const reset=await admin.rpc('prepare_student_password_reset',{target:ids[0]});assert.equal(reset.error,null);
+      const reset=await admin.rpc('operator_prepare_student_reset',{target:ids[0],operation:randomUUID()});assert.equal(reset.error,null);
       await page.evaluate(()=>window.dispatchEvent(new Event('online')));await status(page,'Sign in again');
       assert.equal(await page.locator('main').isVisible(),false);
       await page.reload();await page.waitForSelector('#app h1');

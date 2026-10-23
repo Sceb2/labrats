@@ -7,7 +7,7 @@ const files=['app.js','core.js','ui.js','styles.css','experience.js','effects.js
   'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
   'staff.js','staff.html','staff.css'];
 const fingerprint=createHash('sha256');for(const file of files)fingerprint.update(file).update(file.endsWith('.html')?read(file).toString().replace(/\?v=r-[a-zA-Z0-9-]+/g,''):read(file));
-const id='r-'+fingerprint.digest('hex').slice(0,20), label='1.11.0-prototype';
+const id='r-'+fingerprint.digest('hex').slice(0,20), label='1.11.1-prototype';
 const build={schema:1,id,label,bankVersion:JSON.parse(read('questions.json')).meta.bankVersion,
   questionsSha256:sha(read('questions.json')),assetsSha256:sha(read('assets.json')),resourcesSha256:sha(read('learning-resources.json'))};
 let html=read('index.html').toString();

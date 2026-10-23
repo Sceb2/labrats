@@ -126,14 +126,19 @@ async function main() {
       create or replace function auth.jwt() returns jsonb language sql stable as
         'select coalesce(nullif(current_setting(''request.jwt.claims'', true), '''')::jsonb, ''{}''::jsonb)';
     `});
-    run(['exec', '-i', db, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], {
-      input: fs.readdirSync(path.join(root,'supabase/migrations')).filter(name=>name.endsWith('.sql')).sort().map(name=>fs.readFileSync(path.join(root,'supabase/migrations',name),'utf8')).join('\n')
-    });
+    const migrationRoot=path.join(root,'supabase/migrations');
+    for(const migration of fs.readdirSync(migrationRoot).filter(name=>name.endsWith('.sql')).sort()){
+      const upgrade=migration.startsWith('202610230006_')?require('../tests/reset-upgrade-fixture.cjs')(run,db):null;
+      try{
+        run(['exec','-i',db,'psql','-U','postgres','-v','ON_ERROR_STOP=1'],{input:fs.readFileSync(path.join(migrationRoot,migration),'utf8')});
+        if(upgrade){upgrade.check();console.log('Migration 006 preserved an existing profile, class, learning history and pending reset.');}
+      }finally{upgrade?.cleanup();}
+    }
     const rest = start('rest', {PGRST_DB_URI: `postgres://authenticator:${password}@db:5432/postgres`,
       PGRST_DB_SCHEMAS: 'public', PGRST_DB_ANON_ROLE: 'anon', PGRST_JWT_SECRET: secret}, 3000);
     restPort = portFor(rest, 3000);
     await waitFor(async () => { try { return (await fetch(`${url}/rest/v1/`)).ok; } catch { return false; } }, 'PostgREST');
-    const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role')};
+    const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role'),SUPABASE_TEST_DB_CONTAINER:db};
     if(process.env.OCR_DENO_EXECUTABLE){
       const reservation=http.createServer();await new Promise(resolve=>reservation.listen(0,'127.0.0.1',resolve));
       const edgePort=reservation.address().port;await new Promise(resolve=>reservation.close(resolve));
@@ -148,7 +153,7 @@ async function main() {
       env.SUPABASE_TEST_STAFF_SERVICE_URL=`http://127.0.0.1:${edgePort}`;
       console.log('Staff API integration checks will use the generated bundle in native Deno.');
     }
-    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/staff-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs', 'tests/staff-browser.cjs']) {
+    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/staff-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs', 'tests/staff-browser.cjs','tests/prototype-regressions.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);

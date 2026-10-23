@@ -8,12 +8,25 @@ function mergeEvents(...groups) {
   return [...byId.values()].sort((a,b) => Date.parse(a.attempted_at) - Date.parse(b.attempted_at) || a.encounter_id.localeCompare(b.encounter_id) || a.sequence - b.sequence || a.event_id.localeCompare(b.event_id));
 }
 function recordsFor(events, bank) {
-  const records = {}, ids = new Set(bank.questions.map(q => q.id));
+  const records = {}, ids = new Set(bank.questions.map(q => q.id)), encounters = new Map();
   for (const event of mergeEvents(events)) {
     if (!ids.has(event.question_id) || !C.compatibleBankVersion(event.bank_version, bank) || event.scoring_version !== bank.meta.scoringVersion) continue;
     const result = event.kind === 'submit' ? {score: event.earned_marks, max: event.maximum_marks} : null;
-    records[event.question_id] = C.progressEvent(records[event.question_id], event.kind, result);
-    Review.apply(records[event.question_id], event.kind, result, Date.parse(event.attempted_at));
+    const record = records[event.question_id] ??= {first:null,correctAfterRetry:false,revealed:false,attempts:0};
+    const key = event.question_id + ':' + event.encounter_id;
+    const encounter = encounters.get(key) || {revealed:false,submitted:false};
+    if (event.kind === 'reveal') {record.revealed = true; encounter.revealed = true;}
+    if (result) {
+      record.attempts++;
+      const assisted = event.is_retry || event.answer_revealed || encounter.revealed || encounter.submitted;
+      if (!record.first && !assisted) record.first = {score:result.score,max:result.max,
+        outcome:result.score === result.max ? 'correct' : result.score > 0 ? 'partial' : 'incorrect'};
+      else if (assisted && result.score === result.max && record.first?.outcome !== 'correct') record.correctAfterRetry = true;
+      encounter.submitted = true;
+      record.revealed ||= event.answer_revealed;
+    }
+    encounters.set(key, encounter);
+    Review.apply(record, event.kind, result, Date.parse(event.attempted_at));
   }
   return records;
 }

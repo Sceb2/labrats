@@ -7,10 +7,11 @@ const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const date = value => value ? new Date(value).toLocaleString('en-GB') : 'Not yet';
 let connection, profile, bank, classes=[], memberships=[], students=[], staff=[], selectedClass='', busy=false, credentials=[];
+let scopeSignature='', scopeGeneration=0, verifying=false;
 function status(text,error=false){$('#staff-status').textContent=text;$('#staff-status').dataset.error=String(error);}
 function clearPrivate(){credentials=[];$('#private-output-content').replaceChildren();$('#private-output').hidden=true;$('#download-credentials').hidden=true;}
-function loggedOut(){profile=null;classes=[];memberships=[];students=[];staff=[];clearPrivate();$('#staff-tools').replaceChildren();$('#staff-account').hidden=true;$('#staff-login').hidden=false;$('#staff-password').value='';$('#staff-invite-code').value='';$('#staff-password-form').reset();}
-async function work(action){if(busy)return;busy=true;document.querySelectorAll('button').forEach(button=>button.disabled=true);try{await action();}catch(error){status(error.message||'The operation could not finish.',true);}finally{busy=false;document.querySelectorAll('button').forEach(button=>button.disabled=false);}}
+function loggedOut(){scopeGeneration++;scopeSignature='';profile=null;classes=[];memberships=[];students=[];staff=[];clearPrivate();$('#staff-tools').replaceChildren();$('#staff-account').hidden=true;$('#staff-login').hidden=false;$('#staff-password').value='';$('#staff-invite-code').value='';$('#staff-password-form').reset();}
+async function work(action){if(busy)return;scopeGeneration++;busy=true;document.querySelectorAll('button').forEach(button=>button.disabled=true);try{await action();}catch(error){status(error.message||'The operation could not finish.',true);}finally{busy=false;document.querySelectorAll('button').forEach(button=>button.disabled=false);}}
 function checked(result){if(result.error)throw new Error(result.error.code==='42501'?'Your staff session cannot perform this action.':result.error.message);return result.data;}
 async function account(){
   profile=await connection.profile();
@@ -22,10 +23,14 @@ async function account(){
   checked(await connection.client.rpc('staff_context'));return true;
 }
 async function rows(table,order,filter){const found=[];for(let offset=0;;offset+=500){let query=connection.client.from(table).select('*').order(order).range(offset,offset+499);if(table==='class_students')query=query.order('class_id');if(filter)query=filter(query);const data=checked(await query);found.push(...data);if(data.length<500)return found;}}
+const readScope=()=>Promise.all([rows('school_classes','id'),rows('class_students','student_id'),rows('account_profiles','user_id',q=>q.eq('role','student'))]);
+const signature=scope=>JSON.stringify([profile.user_id,profile.role,scope[0].map(c=>[c.id,c.label]),scope[1].map(m=>[m.class_id,m.student_id]),scope[2].map(s=>s.user_id)]);
+function applyScope(scope){[classes,memberships,students]=scope;scopeSignature=signature(scope);if(!classes.some(c=>c.id===selectedClass))selectedClass=classes[0]?.id||'';}
 async function load(){
+  scopeGeneration++;
   status('Loading your classes…');
   try{if(!await account())return;}catch(error){loggedOut();throw error;}
-  [classes,memberships,students]=await Promise.all([rows('school_classes','id'),rows('class_students','student_id'),rows('account_profiles','user_id',q=>q.eq('role','student'))]);
+  applyScope(await readScope());
   staff=profile.role==='admin'?checked(await connection.client.rpc('staff_directory')):[];
   if(!classes.some(c=>c.id===selectedClass))selectedClass=classes[0]?.id||'';
   render();status('Staff tools ready. Student results are shown only for your permitted classes.');
@@ -89,7 +94,22 @@ async function boot(){
   $('#dismiss-credentials').onclick=clearPrivate;
   $('#download-credentials').onclick=()=>{if(!credentials.length)return;const text='username,temporary_password\n'+credentials.map(row=>row.username+','+row.temporary_password).join('\n')+'\n';const address=URL.createObjectURL(new Blob([text],{type:'text/csv'})),link=document.createElement('a');link.href=address;link.download='private-student-logins.csv';link.click();setTimeout(()=>URL.revokeObjectURL(address),1000);};
   window.addEventListener('pagehide',clearPrivate);
-  const verify=async()=>{if(!profile||busy)return;try{await account();}catch{loggedOut();status('Your staff session ended. Sign in again.',true);}};
+  const verify=async()=>{
+    if(!profile||busy||verifying)return;
+    verifying=true;const generation=scopeGeneration;
+    try{
+      if(!await account()){clearPrivate();return;}
+      const scope=await readScope();
+      if(busy||generation!==scopeGeneration)return;
+      if(signature(scope)!==scopeSignature){
+        clearPrivate();applyScope(scope);
+        staff=profile.role==='admin'?checked(await connection.client.rpc('staff_directory')):[];
+        if(busy||generation!==scopeGeneration)return;
+        render();status('Class access updated. Previous reports and private details have been cleared.');
+      }
+    }catch{if(generation===scopeGeneration){loggedOut();status('Your staff session could not be checked. Sign in again.',true);}}
+    finally{verifying=false;}
+  };
   setInterval(verify,30000);window.addEventListener('focus',verify);window.addEventListener('online',verify);
   const {data:{session}}=await connection.client.auth.getSession();
   if(session){try{await load();}catch{await connection.signOut();loggedOut();status('Sign in again to use staff tools.');}}else status('Ready for invited staff sign-in.');

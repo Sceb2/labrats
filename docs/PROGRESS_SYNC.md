@@ -82,6 +82,27 @@ are now included; see [ADAPTIVE_PRACTICE.md](ADAPTIVE_PRACTICE.md) and
 automated retention remain deferred. Use fictional data until the school's
 retention policy and production arrangements are configured.
 
+## Rejected attempts and reporting fixes
+
+The refreshed prototype separates definite validation failures from retryable
+network/authentication failures. A failed batch is split to identify rejected
+records; other valid events can still save, with the same event IDs and duplicate
+protection. Rejected metadata stays in this account's tab under **Review unsaved
+attempts**, with a reason, retry action and confirmed discard action. No selected
+answers or free text are added. The app never reports all progress saved while
+rejected attempts remain, and sign-out/navigation warnings include them.
+
+Correcting a device clock cannot change an already-recorded timestamp. The UI
+explains how to discard only that unsaved attempt and practise the question again
+in a new session. Unknown failures remain in the normal queue; they are not
+silently discarded or treated as definite rejection. Permission/session failures
+require reauthentication and hide the review details.
+
+First unaided marks are now projected from per-encounter reveal/retry metadata.
+An earlier reveal remains visible in history but cannot prevent a later fresh,
+unaided submission from establishing a first unaided mark. Earlier first unaided
+marks remain unchanged. Adaptive evidence already uses those encounter flags.
+
 ## Developer checks and release
 
 ```sh

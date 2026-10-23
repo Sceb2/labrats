@@ -51,7 +51,7 @@ async function openAccountClient({audience = 'student'} = {}) {
       for (const name of [sessionKey, `${sessionKey}-user`, `${sessionKey}-code-verifier`]) tabStorage.removeItem(name);
     }
   }
-  const pendingCount = () => {const key=prefix+read(profileKey)?.user_id;return (read(key+':pending')||read(key)?.pending||[]).length;};
+  const pendingCount = () => {const key=prefix+read(profileKey)?.user_id;return (read(key+':pending')||read(key)?.pending||[]).length+(read(key+':rejected')||[]).length;};
   return {client, url, key, sessionKey, prefix, read, storage: tabStorage, profile, cachedProfile: () => read(profileKey), signOut, pendingCount};
 }
 module.exports = {openAccountClient};

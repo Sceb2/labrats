@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const {randomUUID} = require('node:crypto');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('../src/learning-events.cjs');
 const bank = require('../questions.json'), q = bank.questions[0];
+const {rejectionReason} = require('../src/sync-rejections.cjs');
 test('event history retains only metadata, never selected answers or response text', () => {
   const session = {mode: 'practice'}, result = {score: 1, max: 2, details: [{selected: 'secret answer'}]};
   const event = makeEvent(bank,q,session,'submit',result,randomUUID);
@@ -40,4 +41,22 @@ test('different bank/scoring versions cannot contaminate the current progress pr
   const event = makeEvent(bank,q,{mode:'practice'},'submit',{score:2},randomUUID);
   assert.deepEqual(recordsFor([{...event,scoring_version:'unsupported'}],bank),{});
   assert.deepEqual(recordsFor([{...event,bank_version:'unsupported'}],bank),{});
+});
+test('a reveal does not prevent the first unaided mark in a later encounter', () => {
+  const firstSession={mode:'practice'}, reveal=makeEvent(bank,q,firstSession,'reveal',null,randomUUID);
+  const fresh=makeEvent(bank,q,{mode:'practice'},'submit',{score:1},randomUUID);
+  fresh.attempted_at=new Date(Date.parse(reveal.attempted_at)+1000).toISOString();
+  const record=recordsFor([fresh,reveal,reveal],bank)[q.id];
+  assert.deepEqual(record.first,{score:1,max:q.maxMark,outcome:'partial'});
+  assert.equal(record.revealed,true);assert.equal(record.correctAfterRetry,false);
+  const assisted=makeEvent(bank,q,firstSession,'submit',{score:q.maxMark},randomUUID);
+  assisted.attempted_at=new Date(Date.parse(reveal.attempted_at)+500).toISOString();
+  assert.equal(recordsFor([assisted,reveal],bank)[q.id].first,null);
+  assert.equal(recordsFor([assisted,reveal,fresh],bank)[q.id].first.score,1);
+});
+test('only definite validation failures are classified for unsaved-attempt review', () => {
+  assert.equal(rejectionReason({code:'P0001',message:'Check the device clock'}),'clock');
+  assert.equal(rejectionReason({code:'P0001',message:'Unknown question version or maximum mark'}),'version');
+  assert.equal(rejectionReason({code:'23514'}),'invalid');
+  for(const error of [{code:'42501'},{code:'PGRST202'},{code:'P0001',message:'Unexpected database failure'},{status:503},{name:'AuthRetryableFetchError'}])assert.equal(rejectionReason(error),null);
 });

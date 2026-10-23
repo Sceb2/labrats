@@ -1,9 +1,11 @@
 # School revision tool: prototype review for the DPO
 
 Status: fictional-data prototype on `feature/student-logins`. The live publishing
-branch has not been updated. This describes the implementation at commit
-`19b2832` and the development-project checks reported by the school during setup.
-Production arrangements and school approval remain outstanding.
+branch has not been updated. This describes the prototype including migration
+006 and the fixes following the review of `d9edfc0`. Development-project checks
+reported by the school apply to migrations 001–005; migration 006 and the
+refreshed previews still need their hosted check. Production arrangements and
+school approval remain outstanding.
 
 ## Purpose and proposed use
 
@@ -34,6 +36,8 @@ access and retention arrangements.
 | Staff email address, Auth credentials/session records, role and profile timestamps/state | Supabase Auth and profiles; administrator-invited staff sign-in and access management. |
 | Privileged action metadata: staff actor, request ID, action, target identifier and timestamp | Supabase application audit table; duplicate-operation protection, rate limiting and operational review. No passwords, invitation codes or answer contents are included in this table. |
 | Draft retention period and update time; temporary reset coordination identifiers/timestamps | Supabase application tables; proposed school policy and safe concurrent password resets. The retention value does not schedule deletion. |
+| Optional question-report drafts, containing the student’s selected answer, marking details and any issue text; screenshots may be added by the sender | Page memory and, only if the student chooses, clipboard/email software and the recipient’s mailbox. This is separate from the account learning API; email may identify the sender. School approval, privacy information and mailbox/export retention need to cover this route. |
+| Optional YouTube videos and external revision links | Loading an embedded video contacts YouTube’s privacy-enhanced embed host; opening an external link contacts that provider. Providers can receive IP/device/request information. No Supabase account token or student username is deliberately included in these URLs. Provider processing still needs school review. |
 | IP addresses, request/device information and security/operational records collected by providers | Provider-managed systems. Exact fields, retention, access and processing locations require confirmation with the hosting and Supabase arrangements. |
 
 The signed-in learning API does not accept or retain students' selected answers
@@ -76,6 +80,13 @@ Guest progress remains separately in browser storage and is not imported into
 accounts automatically. The account learning API excludes raw answer contents;
 guest storage is a separate, pre-existing browser-only mode.
 
+Videos make no request until the student chooses **Load video** or opens the
+YouTube link. Privacy-enhanced embedding does not mean no personal data is
+processed. **Report this question** can create an email draft containing the
+answer and marking details, or copy it to the clipboard. Nothing is emailed
+automatically. These optional features need a school decision even though the
+account learning API excludes answer contents.
+
 Offline attempts queue until connection returns, with a visible waiting-to-save
 message. Keep the tab open until syncing completes: closing it or losing browser
 storage can lose unsaved work. Sign-out clears that account's local session and
@@ -83,6 +94,19 @@ caches and warns before discarding waiting attempts. Browser restoration or tab
 duplication can preserve tab storage, so closing a tab is not a substitute for
 signing out on a shared device. An offline page cannot immediately receive a
 remote revocation; server permission checks apply when requests resume.
+
+Teacher permissions and class memberships are rechecked every 30 seconds while
+online and on focus/reconnection, outside a running staff action. A scope change
+clears the open report and private credentials and refreshes the permitted
+roster. This cannot recall data already viewed, copied or downloaded.
+
+A definite validation failure is kept as metadata in a separate tab-local list
+under **Review unsaved attempts**. It does not block other valid attempts. The
+student can retry those records after the cause is resolved or explicitly
+confirm discarding only those unsaved records. Device-clock errors include
+guidance to check the clock and answer again in a new session. Rejected records
+are excluded from progress/ratings until accepted; sign-out warns about them.
+Permission checks hide the review details while reauthentication is required.
 
 The project dashboard identifies the **primary database as Ireland**. This does
 not establish that all Auth, Edge Function, logging, backup, support or other
@@ -127,8 +151,15 @@ PostgREST, including the generated Edge Function running in Deno. They cover
 account isolation, RLS, password/session gates, offline syncing, duplicate events,
 teacher scope, private invitations, concurrent creation/reset behavior, deletion,
 and the administrator–teacher–student browser workflow. All 244 existing software
-checks and 16 auth/progress/adaptive unit tests also passed. These checks are not
+checks and 18 auth/progress/adaptive unit tests also passed. These checks are not
 an independent penetration test or an assessment of chemistry accuracy.
+
+Regression checks now cover class removal clearing an open report, a rejected
+clock event alongside a valid upload, rejected-event recovery and authentication
+gates, unaided reporting after an earlier reveal, and shared staff/operator
+reset leases. A populated migration-005 fixture checks that migration 006
+preserves its account, class membership, learning history and pending reset.
+Hosted verification of these fixes remains outstanding.
 
 The school user reported successful development-project checks for migrations
 001–005 and the updated account service, new adjective–animal accounts, existing
@@ -144,6 +175,8 @@ separate from the automated local evidence.
    basis, student/parent/staff privacy information and whether a DPIA is required.
 2. Review processor terms, subprocessors, hosting, processing regions and any
    international transfer arrangements; database region alone is insufficient.
+   Include opted-in YouTube/revision providers and user-initiated email reports
+   in that review, and decide whether these features should be available.
 3. Agree retention and implement the corresponding deletion process, including
    Auth, audit/operational data, backups, exports and the school's username mapping.
 4. Set production hosting/origins and test the deployed site on school devices

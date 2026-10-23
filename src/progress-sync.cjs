@@ -2,6 +2,7 @@
 const {openAccountClient} = require('./account-client.cjs');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('./learning-events.cjs');
 const Adaptive = require('./adaptive.cjs');
+const {rejectionReason, descriptions} = require('./sync-rejections.cjs');
 
 async function open(bank, onRecords = () => {}, {
   navigate = path => location.replace(new URL(path, location.href)),
@@ -31,6 +32,11 @@ async function open(bank, onRecords = () => {}, {
   const cacheKey = connection.prefix + owner.user_id;
   const cached = connection.read(cacheKey) || {};
   let history = mergeEvents(cached.history), pending = mergeEvents(connection.read(cacheKey+':pending')||cached.pending), closed = false, running = false;
+  let rejected = (connection.read(cacheKey+':rejected') || []).filter(item => item?.event && Object.hasOwn(descriptions,item.reason))
+    .map(item => ({event:metadata(item.event),reason:item.reason}));
+  const rejectedIds=new Set(rejected.map(item=>item.event.event_id));
+  pending=pending.filter(event=>!rejectedIds.has(event.event_id));
+  const unsavedCount=()=>pending.length+rejected.length;
   let message = '', timer;
   const bar = document.createElement('aside'); bar.id = 'account-sync-bar'; bar.className = 'account-sync-bar';
   const identity = document.createElement('strong'); identity.textContent = owner.username;
@@ -38,18 +44,49 @@ async function open(bank, onRecords = () => {}, {
   const retry = document.createElement('button'); retry.type = 'button'; retry.className = 'btn text-button'; retry.textContent = 'Retry sync'; retry.id = 'retry-progress-sync';
   const logout = document.createElement('button'); logout.type = 'button'; logout.className = 'btn text-button'; logout.textContent = 'Sign out'; logout.id = 'practice-sign-out';
   const login=document.createElement('a');login.href=loginUrl;login.textContent='Sign in again';login.hidden=true;
-  bar.append(identity, state, login, retry, logout); (document.querySelector('.workspace') || document.body).prepend(bar);
+  const attention=document.createElement('details');attention.id='sync-attention';attention.hidden=true;
+  const summary=document.createElement('summary'),explanation=document.createElement('p'),list=document.createElement('ul');
+  explanation.textContent='These attempts have not saved. Other valid attempts can still sync. Keep this tab open until you resolve them.';
+  const retryRejected=document.createElement('button');retryRejected.type='button';retryRejected.className='btn text-button';retryRejected.id='retry-rejected-attempts';retryRejected.textContent='Retry these attempts';
+  const discardRejected=document.createElement('button');discardRejected.type='button';discardRejected.className='btn text-button';discardRejected.id='discard-rejected-attempts';discardRejected.textContent='Discard these unsaved attempts';
+  attention.append(summary,explanation,list,retryRejected,discardRejected);
+  bar.append(identity, state, login, retry, logout, attention); (document.querySelector('.workspace') || document.body).prepend(bar);
   function publish() {
     if (closed) return;
     // Prioritize durable pending metadata over the replaceable remote-history cache.
+    // Store rejected metadata before removing it from the pending queue.
+    if(!connection.storage.setItem(cacheKey+':rejected',JSON.stringify(rejected))){
+      connection.storage.removeItem(cacheKey);
+      connection.storage.setItem(cacheKey+':rejected',JSON.stringify(rejected));
+    }
     if(!connection.storage.setItem(cacheKey+':pending',JSON.stringify(pending))){
       connection.storage.removeItem(cacheKey);
       connection.storage.setItem(cacheKey+':pending',JSON.stringify(pending));
     }
     connection.storage.setItem(cacheKey, JSON.stringify({history}));
     onRecords(recordsFor(mergeEvents(history, pending), bank));
-    state.textContent = message || (pending.length ? `${pending.length} attempt${pending.length === 1 ? '' : 's'} waiting to save. Keep this tab open.` : 'All progress saved to your account.');
+    const rejectedMessage=rejected.length?`${rejected.length} attempt${rejected.length===1?' needs':'s need'} attention.${login.hidden?' Open Review unsaved attempts.':' They are kept for this account.'}`:'';
+    state.textContent = [message || (pending.length ? `${pending.length} attempt${pending.length === 1 ? '' : 's'} waiting to save. Keep this tab open.` : rejected.length?'':'All progress saved to your account.'),rejectedMessage].filter(Boolean).join(' ');
     retry.hidden = !pending.length && !message; retry.disabled = running;
+    attention.hidden=!rejected.length||!login.hidden;summary.textContent=`Review unsaved attempts (${rejected.length})`;
+    list.replaceChildren(...rejected.map(item=>{const row=document.createElement('li');row.textContent=`${item.event.question_id} · ${new Date(item.event.attempted_at).toLocaleString()} · ${descriptions[item.reason]}`;return row;}));
+    retryRejected.disabled=discardRejected.disabled=running;
+  }
+  async function upload(batch) {
+    if(closed||!batch.length)return;
+    const result=await client.rpc('sync_learning_attempts',{events:batch,expected_student:owner.user_id});
+    if(closed)return;
+    if(result.error){
+      const reason=rejectionReason(result.error);
+      if(!reason)throw result.error;
+      if(batch.length>1){const middle=Math.floor(batch.length/2);await upload(batch.slice(0,middle));await upload(batch.slice(middle));return;}
+      const event=metadata(batch[0]);
+      rejected=rejected.filter(item=>item.event.event_id!==event.event_id).concat({event,reason});
+      pending=pending.filter(item=>item.event_id!==event.event_id);publish();return;
+    }
+    const acknowledged=new Set(result.data);
+    if(batch.some(event=>!acknowledged.has(event.event_id)))throw new Error('Incomplete acknowledgement.');
+    history=mergeEvents(history,batch);pending=pending.filter(event=>!acknowledged.has(event.event_id));publish();
   }
   async function pull() {
     const remote = [];
@@ -72,13 +109,7 @@ async function open(bank, onRecords = () => {}, {
       if (!checked.active || checked.must_change_password || checked.role !== 'student') throw new Error('account');
       stage='sync';login.hidden=true;const main=document.querySelector('main');if(main)main.hidden=false;
       while (!closed && pending.length) {
-        const batch = pending.slice(0, 100);
-        const result = await client.rpc('sync_learning_attempts', {events: batch, expected_student: owner.user_id});
-        if (result.error) throw result.error;
-        const acknowledged = new Set(result.data);
-        if (batch.some(event => !acknowledged.has(event.event_id))) throw new Error('Incomplete acknowledgement.');
-        if (closed) return;
-        history = mergeEvents(history, batch); pending = pending.filter(event => !acknowledged.has(event.event_id)); publish();
+        await upload(pending.slice(0,100));
       }
       if (!closed) await pull();
       message = '';
@@ -90,13 +121,21 @@ async function open(bank, onRecords = () => {}, {
         : `Unable to sync · ${pending.length} attempts waiting. Check your connection or ask your teacher.`;
     } finally {running = false; publish();}
   }
-  const unload = event => {if (!closed && pending.length) {event.preventDefault(); event.returnValue = '';}};
+  const unload = event => {if (!closed && unsavedCount()) {event.preventDefault(); event.returnValue = '';}};
   window.addEventListener('beforeunload', unload);
   window.addEventListener('online', flush); window.addEventListener('offline', flush);
   retry.onclick = flush;
+  retryRejected.onclick=()=>{
+    if(running||closed)return;
+    pending=mergeEvents(pending,rejected.map(item=>item.event));rejected=[];message='';publish();void flush();
+  };
+  discardRejected.onclick=()=>{
+    if(running||closed||!window.confirm(`Discard ${rejected.length} rejected unsaved attempts? Saved results and other waiting attempts will be kept.`))return;
+    rejected=[];message='';publish();
+  };
   logout.onclick = async () => {
     if(closed)return;
-    if (pending.length && !window.confirm(`${pending.length} attempts have not synced. Signing out will discard those waiting attempts. Sign out anyway?`)) return;
+    if (unsavedCount() && !window.confirm(`${unsavedCount()} attempts have not synced. Signing out will discard those unsaved attempts. Sign out anyway?`)) return;
     closed = true; clearInterval(timer); window.removeEventListener('beforeunload', unload);
     logout.disabled=true;retry.disabled=true;state.textContent='Signing out…';
     const main=document.querySelector('main');if(main)main.hidden=true;

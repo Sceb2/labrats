@@ -114,12 +114,15 @@ could already have been created. Do not create duplicate accounts blindly.
 Failed profile/class creation attempts delete the incomplete Auth user; a failed
 cleanup reports its UUID for operator repair.
 
-A reset locks the account and revokes sessions before changing the password. If
-it fails, the account stays disabled; retry the reset with a fresh output filename.
-A successful operator reset reactivates the student. Supabase's password-change
-trigger clears the flag during the password update, then the operator explicitly
-restores the flag before reactivating. Existing session JWTs cannot read tables
-after their corresponding Auth session has been revoked.
+Migration 006 makes staff and operator resets share a two-minute, operation-owned
+lease. A reset disables the account, sets the password-change gate and revokes
+sessions before replacing the password. Completion removes only its own lease,
+revokes sessions again, then reactivates with the gate still set. The recipient’s
+own password change can then clear it. A failure leaves the account disabled;
+retry after two minutes with a fresh private output filename. An active staff
+reset cannot be bypassed by the operator tool. Update the checkout before using
+the CLI: the older unleased reset RPC now fails with an explicit update message.
+Existing session JWTs cannot read tables after their Auth session is revoked.
 
 Only a real password change in Auth clears the first-login gate. User-editable
 metadata is never trusted for roles or this flag. Future learning-data policies

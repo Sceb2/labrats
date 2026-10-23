@@ -64,7 +64,30 @@ If migrations 001–004 and the staff service are already installed:
 
 See [the reviewed vocabulary](USERNAME_WORDLIST_DRAFT.md) for the 16,384 possible
 pairs and collision handling. Existing accounts are not renamed or recreated.
-For a fresh project, apply all five migrations in filename order.
+For a fresh project, apply all six migrations in filename order.
+
+## Apply the review fixes (migration 006)
+
+After migrations 001–005, use SQL Editor → **New query** and run the entire
+`supabase/migrations/202610230006_shared_password_reset_leases.sql`, including
+`begin;` and `commit;`. Do not rerun the earlier migrations. Existing account
+identifiers, passwords, class memberships and learning history are preserved.
+Existing pending reset leases are preserved; interrupted resets can be retried
+after their two-minute lease expires. The updated operator tool must be used
+with this migration; old unleased reset calls fail clearly.
+
+Download fresh `staff-preview.html` and `student-site-preview.html` files. No
+Edge Function redeployment is required for these review fixes: the existing
+staff RPC signatures are preserved and its generated server bundle is unchanged.
+The refreshed frontend and SQL provide the changes.
+
+Hosted checks: remove an assigned class while its teacher has a report open,
+then focus the teacher window; the report and roster must clear. Reassign the
+class and confirm reports return. Test a normal student reset, new password
+choice and preserved marks. Reveal a previously unattempted question, then in a
+new session submit it without help; its first unaided mark should appear in the
+teacher report. A displayed rejected attempt must not block other valid saves.
+Automated local checks cover these cases; the hosted update remains to be run.
 
 ## Deploy the staff service
 
@@ -173,6 +196,11 @@ and its password-change flag remains set during the Auth password replacement;
 sessions are deleted both before and after. Failure leaves it disabled. Retry a
 failed reset after two minutes with an authorized staff account. A teacher reset
 affects that student's one account across all of their classes.
+
+Online staff verification now refreshes class/student scope every 30 seconds and
+on focus/reconnection. Scope changes clear the current report and private details;
+account revocation clears the staff page. Checks pause during an active staff
+action. Offline pages and already exported/copied data cannot be recalled.
 
 Staff reads use the caller's RLS permissions; service-role operations recheck live
 staff sessions and scope at each privileged step. User-editable Auth metadata does
