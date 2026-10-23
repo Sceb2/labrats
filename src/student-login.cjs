@@ -1,5 +1,5 @@
 'use strict';
-const {createClient} = require('@supabase/supabase-js');
+const {createClient, processLock} = require('@supabase/supabase-js');
 const {studentEmail, validatePassword, validatePublicConfig} = require('./student-identity.cjs');
 const $ = selector => document.querySelector(selector);
 let client, sessionKey, memory = new Map();
@@ -65,7 +65,8 @@ async function boot() {
   const {url, key} = validatePublicConfig(await response.json());
   sessionKey = `ocr-student-auth-v1-${new URL(url).host}`;
   client = createClient(url, key, {auth: {storage, storageKey: sessionKey, persistSession: true,
-    autoRefreshToken: true, detectSessionInUrl: false},
+    // Storage is tab-local; serialize Auth in this tab without requiring origin-scoped Web Locks.
+    autoRefreshToken: true, detectSessionInUrl: false, lock: processLock},
     global: {fetch: (input, init) => fetch(input, {...init, signal: init?.signal || AbortSignal.timeout(15000)})}});
   $('#login-form').addEventListener('submit', async event => {
     event.preventDefault(); if (busy) return;

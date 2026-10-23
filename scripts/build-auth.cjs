@@ -19,3 +19,4 @@ for (const name of packages.sort()) {
   notices += `\n## ${name} ${pkg.version}\n\n\`\`\`text\n${fs.readFileSync(path.join(directory, license), 'utf8').replace(/\r\n/g, '\n').trim()}\n\`\`\`\n`;
 }
 fs.writeFileSync('THIRD_PARTY_NOTICES.md', notices);
+require('./build-login-pilot.cjs').buildLoginPilot();

@@ -4,9 +4,11 @@ const assert = require('node:assert/strict');
 const http = require('node:http');
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const os = require('node:os');
 const {chromium} = require('playwright');
 const {createClient} = require('@supabase/supabase-js');
 const {generateUsername, generatePassword, provisionStudent} = require('../scripts/account-service.cjs');
+const {buildLoginPilot} = require('../scripts/build-login-pilot.cjs');
 const url = process.env.SUPABASE_TEST_URL;
 if (!url || !['127.0.0.1', 'localhost'].includes(new URL(url).hostname)) throw new Error('Use the disposable local test stack.');
 const key = process.env.SUPABASE_TEST_ANON_KEY, secret = process.env.SUPABASE_TEST_SERVICE_KEY;
@@ -16,12 +18,17 @@ test('student browser login lifecycle and existing practice', async t => {
   const admin = createClient(url, secret, {auth: {persistSession: false, autoRefreshToken: false}});
   const username = generateUsername(), password = generatePassword();
   const userId = await provisionStudent(admin, {username, password});
+  let pilotDocument;
   // Serve at a subpath like GitHub Pages. Only the local test configuration and CSP origin differ.
   const server = http.createServer(async (req, res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
       if (!pathname.startsWith('/revision/')) {res.writeHead(404); res.end(); return;}
       const relative = pathname.slice('/revision/'.length) || 'index.html';
+      if (relative === 'standalone-pilot.html' && pilotDocument) {
+        res.setHeader('Content-Type', 'text/html');
+        res.end(pilotDocument); return;
+      }
       const file = path.resolve(root, relative);
       if (!file.startsWith(root + path.sep) || relative.startsWith('.') || !/\.(html|js|css|json|svg|wav)$/.test(file)) {res.writeHead(404); res.end(); return;}
       let body;
@@ -112,6 +119,46 @@ test('student browser login lifecycle and existing practice', async t => {
       await page.route('**/auth-config.json', route => route.fulfill({contentType: 'application/json', body: JSON.stringify({supabaseUrl: url, publishableKey: 'sb_secret_do-not-use'})}));
       await page.reload(); await visibleText('#auth-status', /Sign-in is unavailable/);
       assert.equal(await page.locator('#login-form').isVisible(), false); await page.unroute('**/auth-config.json');
+    });
+    await check('standalone pilot works with real Auth, blocked storage and no neighbouring assets', async () => {
+      const folder = await fs.mkdtemp(path.join(os.tmpdir(), 'ocr-login-file-'));
+      const login = {username: generateUsername(), password: generatePassword()};
+      const id = await provisionStudent(admin, login);
+      const pilot = await browser.newPage(); pilot.setDefaultTimeout(15000);
+      const requests = []; pilot.on('request', req => requests.push(req.url()));
+      pilot.on('pageerror', error => errors.push(error.message));
+      try {
+        const filename = path.join(folder, 'student-login-pilot.html');
+        buildLoginPilot({supabaseUrl: url, publishableKey: key}, filename);
+        // Managed cloud Chromium blocks file: and srcdoc navigation. Test the exact
+        // generated document over HTTP; opening the downloaded file remains a manual check.
+        pilotDocument = await fs.readFile(filename, 'utf8');
+        await pilot.addInitScript(() => {
+          Object.defineProperty(window, 'sessionStorage', {get() {throw new Error('Storage unavailable');}});
+          Object.defineProperty(navigator, 'locks', {get() {throw new DOMException('Opaque origin', 'SecurityError');}});
+        });
+        await pilot.goto(base + 'standalone-pilot.html');
+        await pilot.waitForSelector('#login-form:not([hidden])');
+        await pilot.locator('#username').fill(login.username); await pilot.locator('#password').fill(login.password);
+        await pilot.locator('#login-form button').click(); await pilot.waitForSelector('#account-panel:not([hidden])');
+        assert.match(await pilot.locator('#account-message').innerText(), /Choose your own password/);
+        const changed = generatePassword().slice(0, 10);
+        await pilot.locator('#new-password').fill(changed); await pilot.locator('#confirm-password').fill(changed);
+        await pilot.locator('#password-form button').click();
+        await pilot.waitForFunction(() => document.querySelector('#auth-status').textContent.includes('Password saved'));
+        await pilot.locator('#sign-out').click(); await pilot.waitForSelector('#login-form:not([hidden])');
+        await pilot.locator('#password').fill(changed); await pilot.locator('#login-form button').click();
+        await pilot.waitForSelector('#account-panel:not([hidden])');
+        assert.match(await pilot.locator('#account-message').innerText(), /You are signed in/);
+        assert.equal(await pilot.locator('a[href="index.html"]').count(), 0);
+        assert.equal(requests.some(request => request.includes('auth-config.json')), false);
+        assert.ok(requests.every(request => request === base + 'standalone-pilot.html' || request.startsWith(url + '/')));
+        await pilot.locator('#sign-out').click();
+      } finally {
+        await pilot.close(); await admin.auth.admin.deleteUser(id);
+        pilotDocument = null;
+        await fs.rm(folder, {recursive: true, force: true});
+      }
     });
     await check('existing hosted suite and browser-only marking continue to work', async () => {
       const original = await browser.newPage();
