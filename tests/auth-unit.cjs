@@ -23,6 +23,8 @@ test('credentials use cryptographic generation and satisfy account rules', () =>
 });
 test('password length permits passphrases and rejects short or excessive passwords', () => {
   validatePassword('four unrelated words here');
+  validatePassword('x'.repeat(10));
+  assert.throws(() => validatePassword('x'.repeat(9)));
   assert.throws(() => validatePassword('short'));
   assert.throws(() => validatePassword('x'.repeat(73)));
   assert.throws(() => validatePassword('🔒'.repeat(20)));

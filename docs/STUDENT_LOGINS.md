@@ -49,7 +49,7 @@ using a Content Security Policy; update its project hostname if changing project
    provider enabled: the username UI maps to generated internal addresses. No
    Microsoft provider, student email delivery, or email verification is needed;
    accounts are created by the trusted operator and marked confirmed.
-3. In Auth's password settings, set the minimum to **12 characters**. Keep secure
+3. In Auth's password settings, set the minimum to **10 characters**. Keep secure
    password changes enabled if offered; an older session may need the student to
    sign out and sign in again before changing their password. Email-based recovery
    is not supported for students. Do not enable student email-change or password

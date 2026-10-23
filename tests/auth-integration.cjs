@@ -56,7 +56,10 @@ test('real Auth, password lifecycle, account isolation and class access', async 
       assert.equal(p.role, 'student'); assert.equal(p.must_change_password, true);
     });
     await t.test('real password change clears the gate; class access remains isolated', async () => {
-      students[0].newPassword = generatePassword();
+      const tooShort = await clients[0].auth.updateUser({password: generatePassword().slice(0, 9)});
+      assert.ok(tooShort.error);
+      assert.equal(ok(await clients[0].from('account_profiles').select('*').single()).must_change_password, true);
+      students[0].newPassword = generatePassword().slice(0, 10);
       ok(await clients[0].auth.updateUser({password: students[0].newPassword}));
       assert.equal(ok(await clients[0].from('account_profiles').select('*').single()).must_change_password, false);
       assert.deepEqual(ok(await clients[0].from('school_classes').select('id')).map(x => x.id), [classIds[0]]);

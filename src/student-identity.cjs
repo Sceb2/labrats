@@ -7,7 +7,7 @@ function studentEmail(value) {
   return `${username}@students.invalid`;
 }
 function validatePassword(password) {
-  if (typeof password !== 'string' || password.length < 12) throw new Error('Use at least 12 characters. A few unrelated words work well.');
+  if (typeof password !== 'string' || password.length < 10) throw new Error('Use at least 10 characters. A few unrelated words work well.');
   // Auth uses bcrypt; never silently accept a password beyond its 72-byte boundary.
   if (new TextEncoder().encode(password).length > 72) throw new Error('That password is too long. Please use a shorter passphrase.');
 }

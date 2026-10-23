@@ -74,7 +74,7 @@ test('student browser login lifecycle and existing practice', async t => {
       assert.equal(await page.evaluate(() => Object.keys(localStorage).some(k => k.startsWith('ocr-student-auth'))), false);
     });
     await check('password confirmation and first-login change are enforced', async () => {
-      const next = generatePassword();
+      const next = generatePassword().slice(0, 10);
       await page.locator('#new-password').fill(next); await page.locator('#confirm-password').fill(next + 'x');
       await page.locator('#password-form button').click(); await visibleText('#auth-status', /do not match/);
       await page.locator('#confirm-password').fill(next); await page.locator('#password-form button').click();
