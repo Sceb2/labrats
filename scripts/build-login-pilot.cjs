@@ -21,7 +21,7 @@ function buildLoginPilot(config = JSON.parse(read('auth-config.json')), output =
     .replace(/<link rel="stylesheet" href="styles\.css(?:\?v=[^"]*)?">\s*<link rel="stylesheet" href="student-login\.css(?:\?v=[^"]*)?">/, () => `<style>${css}</style>`)
     .replace('<a href="index.html">Continue browser-only practice</a>', '<span>Fictional account test · Your live revision website is unchanged</span>')
     .replace('<h1 id="login-heading">Student sign in</h1>', '<h1 id="login-heading">Test student sign in</h1>')
-    .replace('<a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue browser-only practice</a>', '<p id="continue-practice" hidden>Login test complete. Sign out, then return to your usual revision website to practise.</p>')
+    .replace('<a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue to practice</a>', '<p id="continue-practice" hidden>Login test complete. Sign out, then return to your usual revision website to practise.</p>')
     .replace(/<script src="student-login\.js(?:\?v=[^"]*)?" defer><\/script>/, () => `<script>${script}</script>`);
   if (html.includes('href="index.html"') || html.includes('src="student-login.js"') || html.includes('<link rel="stylesheet"')) throw new Error('Pilot must not depend on neighbouring website files.');
   const notices = read('THIRD_PARTY_NOTICES.md').replace(/[&<>]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;'}[c]));

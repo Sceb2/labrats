@@ -18,6 +18,9 @@ function signedOut() {
   $('#login-form').hidden = false;
   $('#account-panel').hidden = true;
   $('#password-form').reset();
+  $('#password-form').hidden = true;
+  $('#change-password-toggle').hidden = true;
+  $('#change-password-toggle').setAttribute('aria-expanded', 'false');
   $('#password').value = '';
   $('#account-name').textContent = '';
 }
@@ -32,6 +35,9 @@ async function account() {
     ? 'Choose your own password before using your account. Do not reuse your temporary password.'
     : 'You are signed in. Practice saves new results to your account; existing browser-only history stays separate.';
   $('#password-heading').textContent = profile.must_change_password ? 'Choose your own password' : 'Change password';
+  $('#password-form').hidden = !profile.must_change_password;
+  $('#change-password-toggle').hidden = profile.must_change_password;
+  $('#change-password-toggle').setAttribute('aria-expanded', 'false');
   $('#continue-practice').hidden = profile.must_change_password;
   return profile;
 }
@@ -45,6 +51,14 @@ function authError(error) {
 }
 async function boot() {
   accountConnection = await openAccountClient(); client = accountConnection.client;
+  $('#change-password-toggle').addEventListener('click', () => {
+    if (busy) return;
+    const form = $('#password-form');
+    form.hidden = !form.hidden;
+    $('#change-password-toggle').setAttribute('aria-expanded', String(!form.hidden));
+    if (form.hidden) form.reset();
+    else $('#new-password').focus();
+  });
   $('#login-form').addEventListener('submit', async event => {
     event.preventDefault(); if (busy) return;
     let email;
@@ -81,6 +95,7 @@ async function boot() {
       const profile = await account();
       if (profile.must_change_password) throw new Error('Your password changed, but account setup is incomplete. Ask your teacher for help.');
       status('Password saved. Keep it private.');
+      $('#account-name').focus();
     } catch (error) { status(error.message || 'Password update failed. Please try again.', true); }
     finally { setBusy(false); }
   });

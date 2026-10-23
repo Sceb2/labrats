@@ -76,6 +76,8 @@ test('student browser login lifecycle and existing practice', async t => {
       await page.locator('#password').fill(password); await page.locator('#login-form button').click();
       await page.waitForSelector('#account-panel:not([hidden])');
       assert.equal(await page.locator('#continue-practice').isVisible(), false);
+      assert.equal(await page.locator('#password-form').isVisible(), true);
+      assert.equal(await page.locator('#change-password-toggle').isVisible(), false);
       assert.match(await page.locator('#account-message').innerText(), /Choose your own password/);
       assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('ocrOrgProgressV2')).existing), 'keep this progress');
       assert.equal(await page.evaluate(() => Object.keys(localStorage).some(k => k.startsWith('ocr-student-auth'))), false);
@@ -87,13 +89,38 @@ test('student browser login lifecycle and existing practice', async t => {
       await page.locator('#confirm-password').fill(next); await page.locator('#password-form button').click();
       await visibleText('#auth-status', /Password saved/);
       assert.equal(await page.locator('#continue-practice').isVisible(), true);
+      assert.equal(await page.locator('#password-form').isVisible(), false);
       const {data, error} = await admin.from('account_profiles').select('must_change_password').eq('user_id', userId).single();
       assert.equal(error, null); assert.equal(data.must_change_password, false);
     });
     await check('session restores on reload and expires independently in another tab', async () => {
       await page.reload(); await visibleText('#auth-status', /Sign-in restored/);
+      assert.equal(await page.locator('#password-form').isVisible(), false);
+      assert.equal(await page.locator('#continue-practice').isVisible(), true);
       const other = await context.newPage(); await other.goto(base + 'student-login.html');
       await other.waitForSelector('#login-form:not([hidden])'); assert.equal(await other.locator('#account-panel').isVisible(), false); await other.close();
+    });
+    await check('returning students continue without a password change and can opt in to changing it', async () => {
+      await page.locator('#change-password-toggle').click();
+      await page.locator('#new-password').fill('Unsubmitted-new-password');
+      await page.locator('#change-password-toggle').click();
+      assert.equal(await page.locator('#password-form').isVisible(), false);
+      assert.equal(await page.locator('#new-password').inputValue(), '');
+      assert.equal(await page.locator('#continue-practice').isVisible(), true);
+      await page.locator('#change-password-toggle').click();
+      const changed = generatePassword().slice(0, 10);
+      await page.locator('#new-password').fill(changed);
+      await page.locator('#confirm-password').fill(changed);
+      await page.locator('#password-form button').click(); await visibleText('#auth-status', /Password saved/);
+      assert.equal(await page.locator('#password-form').isVisible(), false);
+      assert.equal(await page.locator('#continue-practice').isVisible(), true);
+      await page.locator('#sign-out').click(); await ready();
+      await page.locator('#username').fill(username); await page.locator('#password').fill(changed);
+      await page.locator('#login-form button').click(); await page.waitForSelector('#account-panel:not([hidden])');
+      assert.equal(await page.locator('#password-form').isVisible(), false);
+      assert.equal(await page.locator('#continue-practice').isVisible(), true);
+      const {data, error} = await admin.from('account_profiles').select('must_change_password').eq('user_id', userId).single();
+      assert.equal(error, null); assert.equal(data.must_change_password, false);
     });
     await check('expired access credentials refresh through real Supabase Auth', async () => {
       await page.evaluate(() => {

@@ -6,8 +6,8 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://ojhckvbekzudphkjeofw.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student sign in · Organic chemistry</title>
-  <link rel="stylesheet" href="styles.css?v=r-0b9707124adaac8391a1">
-  <link rel="stylesheet" href="student-login.css?v=r-0b9707124adaac8391a1">
+  <link rel="stylesheet" href="styles.css?v=r-7dc55077d6bb142622fb">
+  <link rel="stylesheet" href="student-login.css?v=r-7dc55077d6bb142622fb">
 </head>
 <body class="login-page">
   <a class="skip" href="#main">Skip to content</a>
@@ -29,18 +29,19 @@
       <section id="account-panel" hidden>
         <h2 id="account-name" tabindex="-1"></h2>
         <p id="account-message"></p>
-        <form id="password-form">
+        <button id="change-password-toggle" class="btn secondary" type="button" aria-controls="password-form" aria-expanded="false" hidden>Change password (optional)</button>
+        <form id="password-form" hidden>
           <h3 id="password-heading">Change password</h3>
           <p id="password-help">Use at least 10 characters. A few unrelated words work well.</p>
           <label class="control" for="new-password">New password<input id="new-password" type="password" autocomplete="new-password" minlength="10" maxlength="72" aria-describedby="password-help" required></label>
           <label class="control" for="confirm-password">Repeat new password<input id="confirm-password" type="password" autocomplete="new-password" minlength="10" maxlength="72" required></label>
           <button class="btn" type="submit">Save password</button>
         </form>
-        <div class="row login-actions"><a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue browser-only practice</a><button id="sign-out" class="btn secondary" type="button">Sign out</button></div>
+        <div class="row login-actions"><a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue to practice</a><button id="sign-out" class="btn secondary" type="button">Sign out</button></div>
       </section>
     </section>
   </main>
   <footer>Accounts are provided by your school. Keep your password private.</footer>
-  <script src="student-login.js?v=r-0b9707124adaac8391a1" defer></script>
+  <script src="student-login.js?v=r-7dc55077d6bb142622fb" defer></script>
 </body>
 </html>

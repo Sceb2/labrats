@@ -44,7 +44,7 @@ function buildProgressPilot(config = JSON.parse(read('auth-config.json')), outpu
     .replace('<a href="index.html">Continue browser-only practice</a>', '<span>Fictional student progress test</span>')
     .replace('<h1 id="login-heading">Student sign in</h1>', '<h1 id="login-heading">Test student sign in</h1>')
     .replace('Account pilot: signed-in practice saves new results to your account. Existing browser-only history stays separate and is not imported.', 'Fictional accounts only: sign in to test progress saving. Your live revision website is unchanged.')
-    .replace('<a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue browser-only practice</a>', '<a id="continue-practice" class="btn secondary" href="#progress-pilot" hidden>Open progress test</a>')
+    .replace('<a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue to practice</a>', '<a id="continue-practice" class="btn secondary" href="#progress-pilot" hidden>Open progress test</a>')
     .replace('</main>', () => `${test}\n</main>`)
     .replace(/<script src="student-login\.js(?:\?v=[^"]*)?" defer><\/script>/, () => `<script>${script}</script>`);
   if (html.includes('href="index.html"') || /<script src=|<link rel="stylesheet"/.test(html)) throw new Error('Progress pilot must be self-contained.');
