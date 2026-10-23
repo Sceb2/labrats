@@ -2,7 +2,10 @@
 const {openAccountClient} = require('./account-client.cjs');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('./learning-events.cjs');
 
-async function open(bank, onRecords = () => {}) {
+async function open(bank, onRecords = () => {}, {
+  navigate = path => location.replace(new URL(path, location.href)),
+  loginUrl = 'student-login.html'
+} = {}) {
   let connection;
   try {connection = await openAccountClient();} catch {return null;}
   const {client} = connection;
@@ -33,7 +36,7 @@ async function open(bank, onRecords = () => {}) {
   const state = document.createElement('span'); state.id = 'account-sync-status'; state.setAttribute('role','status');
   const retry = document.createElement('button'); retry.type = 'button'; retry.className = 'btn text-button'; retry.textContent = 'Retry sync'; retry.id = 'retry-progress-sync';
   const logout = document.createElement('button'); logout.type = 'button'; logout.className = 'btn text-button'; logout.textContent = 'Sign out'; logout.id = 'practice-sign-out';
-  const login=document.createElement('a');login.href='student-login.html';login.textContent='Sign in again';login.hidden=true;
+  const login=document.createElement('a');login.href=loginUrl;login.textContent='Sign in again';login.hidden=true;
   bar.append(identity, state, login, retry, logout); (document.querySelector('.workspace') || document.body).prepend(bar);
   function publish() {
     if (closed) return;
@@ -64,7 +67,7 @@ async function open(bank, onRecords = () => {}) {
     let stage='account';
     try {
       const checked = await connection.profile();
-      if (checked.user_id !== owner.user_id) {closed = true; clearInterval(timer); location.replace(new URL('index.html',location.href)); return;}
+      if (checked.user_id !== owner.user_id) {closed = true; clearInterval(timer); navigate('index.html'); return;}
       if (!checked.active || checked.must_change_password || checked.role !== 'student') throw new Error('account');
       stage='sync';login.hidden=true;const main=document.querySelector('main');if(main)main.hidden=false;
       while (!closed && pending.length) {
@@ -97,7 +100,7 @@ async function open(bank, onRecords = () => {}) {
     logout.disabled=true;retry.disabled=true;state.textContent='Signing out…';
     const main=document.querySelector('main');if(main)main.hidden=true;
     window.removeEventListener('online', flush); window.removeEventListener('offline', flush);
-    try {await connection.signOut();} finally {location.replace(new URL('index.html',location.href));}
+    try {await connection.signOut();} finally {navigate('index.html');}
   };
   const scopedStorage = {
     get(key, fallback) {

@@ -105,6 +105,26 @@ from silently missing the new account-saving hooks.
 The initial question catalogue was generated with
 `node scripts/build-question-catalog.cjs`. Future bank changes need a **new**
 catalogue migration retaining old versions; do not rewrite an applied migration.
-Hosted verification still requires the two new SQL queries and testing signed-in
-practice on a development deployment. Do not merge to the publishing branch as
-a way to perform the first hosted test.
+### Downloadable hosted-backend check
+
+After applying the two queries, download `student-progress-pilot.html` from the
+development branch using GitHub's **Download raw file** button. Open it in a
+normal Chrome/Edge window and sign in with a fictional student account. Choose
+**Open progress test**, answer the single RC01 question, and wait for **All
+progress saved to your account**. Sign out, sign back in and open the test again:
+the first unaided mark and number of submissions must return from Supabase.
+Opening the same download on another device with that login checks account sync
+without sharing browser storage. Disconnecting the network after opening the
+test checks the waiting queue; reconnect before signing out or closing the tab.
+
+The download uses the real login, marking and sync modules, shares their memory
+fallback, embeds public configuration and question data, and needs no neighbouring
+files/server. Its only network requests are Auth/API calls to the configured
+project. It stores real test results for RC01; use a fictional account only. It
+does not deploy the full practice site. Managed cloud Chromium blocks `file:`;
+automated checks serve the exact download over HTTP with real local Auth, and
+also test blocked storage. Direct downloaded-file opening remains a manual check.
+
+The hosted backend check and full signed-in practice on a development deployment
+are required before publishing. Do not merge to the publishing branch as a way
+to perform the first hosted test.

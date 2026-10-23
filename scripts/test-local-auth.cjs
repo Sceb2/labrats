@@ -117,7 +117,7 @@ async function main() {
     restPort = portFor(rest, 3000);
     await waitFor(async () => { try { return (await fetch(`${url}/rest/v1/`)).ok; } catch { return false; } }, 'PostgREST');
     const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role')};
-    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs']) {
+    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);
