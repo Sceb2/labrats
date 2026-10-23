@@ -1,0 +1,21 @@
+{
+  "name": "ocr-organic-revision",
+  "version": "1.9.1",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs",
+    "build:auth": "node scripts/build-auth.cjs",
+    "test:auth": "node --test tests/auth-integration.cjs",
+    "test:auth-browser": "node --test tests/auth-browser.cjs",
+    "test:auth-local": "node scripts/test-local-auth.cjs",
+    "accounts": "node scripts/student-accounts.cjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.108.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1"
+  }
+}

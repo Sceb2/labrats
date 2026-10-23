@@ -1,0 +1,156 @@
+# Student login pilot
+
+This is the first account milestone for one school. Students use random usernames,
+without providing real names, email addresses, dates of birth or phone numbers.
+Supabase Auth stores a generated address such as
+`student-abc234def567@students.invalid` to support its email/password API. This is
+an internal identifier on a reserved, non-deliverable domain, not a student's email.
+Passwords are handled by Supabase Auth, never by our database tables.
+
+## What is implemented
+
+- `student-login.html`: username/password sign-in, first-login password change,
+  subsequent password changes, session restoration and sign-out.
+- Session credentials stay in sessionStorage for the tab, with memory fallback if
+  storage is blocked. Sign out on shared devices; browser tab restoration and
+  duplicated tabs can preserve sessionStorage. Do not treat closing a tab as a
+  guaranteed security boundary.
+- Account roles and class memberships with explicit grants and Row Level Security.
+  Students cannot read other students' profiles or change roles/memberships.
+  Teachers can read their students' profiles; unassigned teachers cannot.
+- A server-maintained last-login timestamp, rather than a browser-supplied date.
+- Private operator commands for batch accounts and password resets. A reset
+  revokes previous sessions and restores the first-login password requirement.
+- A link from existing practice to student sign-in. Practice remains available
+  without an account and uses the existing local browser storage.
+
+**Not yet implemented:** progress syncing, answer-history upload, A–E ratings,
+adaptive sessions, teacher invitation screens, teacher-facing batch/reset UI,
+retention automation or importing browser history. The public `teacher.html`
+remains a question-bank editor, not a protected account-management dashboard.
+Do not distribute real student accounts until the next stages and the school's
+data-protection review are complete.
+
+## Apply to the development Supabase project
+
+The included `auth-config.json` contains only the public Project URL and
+publishable key supplied for the development project in Ireland. Those are
+expected to be visible to browsers. Never replace the public key with a secret
+or legacy `service_role` key. The account page also restricts outbound requests
+using a Content Security Policy; update its project hostname if changing projects.
+
+1. In Supabase **SQL Editor**, open a new query and run the complete file
+   `supabase/migrations/202610230001_student_accounts.sql`. This creates tables,
+   policies, and triggers on `auth.users`; it neither creates students nor changes
+   the question bank. It is a versioned, one-time migration. Do not run it twice
+   or manually drop tables to resolve an error. If the query fails, its transaction
+   rolls back; record the error without sharing credentials.
+2. Keep public sign-ups and anonymous sign-in **disabled**. Leave the email/password
+   provider enabled: the username UI maps to generated internal addresses. No
+   Microsoft provider, student email delivery, or email verification is needed;
+   accounts are created by the trusted operator and marked confirmed.
+3. In Auth's password settings, set the minimum to **12 characters**. Keep secure
+   password changes enabled if offered; an older session may need the student to
+   sign out and sign in again before changing their password. Email-based recovery
+   is not supported for students. Do not enable student email-change or password
+   notification mail to these generated addresses.
+4. Keep the Data API enabled, automatic new-table exposure disabled, and automatic
+   RLS enabled. The migration explicitly grants the four intended tables' read
+   privileges and service-only reset function. Never add a policy granting
+   unrestricted access merely to silence an error.
+5. Use the operator commands below to create a **fictional** class and a few test
+   students. Test before deploying the branch. No administrator key is required in
+   the website, repository, or chat.
+
+Auth rate limits are shared by public IP. Pilot with a classroom's shared network
+before rollout and size the sign-in limit appropriately; do not disable limits.
+Hosted Supabase gateway configuration and platform-managed Auth triggers may
+differ from the disposable local stack and still require a hosted smoke test.
+
+## Private operator commands
+
+Use Node 22 or newer on a trusted administrator machine and run `npm ci` in this
+checkout. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` in that shell using your
+approved secret mechanism. The latter is a Supabase **secret key**, or legacy
+`service_role` key. Never enter it as a command argument, commit it, put it in a
+file under a served directory, or send it in chat. Do not use these commands on an
+untrusted/shared student machine. They have administrative access to the project.
+
+```sh
+npm run accounts -- create-class --label "Fictional pilot class"
+# Use the UUID returned by create-class:
+npm run accounts -- create-students --class CLASS_UUID --count 3 --out /PRIVATE/OUTSIDE/WEBSITE/pilot.csv
+npm run accounts -- reset-student --username student-xxxxxxxxxxxx --out /PRIVATE/OUTSIDE/WEBSITE/reset.csv
+```
+
+Replace the paths with private locations outside every website directory.
+The tool refuses an output file inside the checkout, existing files and symlinks,
+and creates the credential file with mode 0600. It never prints passwords.
+On Windows, use a private folder with appropriate NTFS permissions as POSIX file
+modes alone do not enforce equivalent access restrictions.
+
+The CSV contains plaintext **temporary passwords**, so distribute each student's
+details privately and delete the file afterwards. It records `pending`, `ready`,
+or `failed` per account, preserving generated details before network requests.
+After an interruption, inspect account state before retrying: a `pending` row
+could already have been created. Do not create duplicate accounts blindly.
+Failed profile/class creation attempts delete the incomplete Auth user; a failed
+cleanup reports its UUID for operator repair.
+
+A reset locks the account and revokes sessions before changing the password. If
+it fails, the account stays disabled; retry the reset with a fresh output filename.
+A successful operator reset reactivates the student. Supabase's password-change
+trigger clears the flag during the password update, then the operator explicitly
+restores the flag before reactivating. Existing session JWTs cannot read tables
+after their corresponding Auth session has been revoked.
+
+Only a real password change in Auth clears the first-login gate. User-editable
+metadata is never trusted for roles or this flag. Future learning-data policies
+must also require an active account, live Auth session and a cleared password
+gate; use the same tested rules rather than trusting the login page alone.
+
+## Development and tests
+
+```sh
+npm ci
+npm run build:auth
+npm test
+npm run test:auth-local
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+`student-login.js` is a committed, generated browser bundle. Rebuild it after
+editing `src/` or updating dependencies, and commit the bundle, lockfile and
+third-party notices together. GitHub Pages does not need an npm build to serve it.
+The site uses relative URLs, including under a GitHub Pages repository subpath.
+
+The local auth test command requires Docker, sufficient image storage, Node and
+Chromium (`/usr/bin/chromium`, or `CHROMIUM_EXECUTABLE`). It uses digest-pinned
+PostgreSQL 17, Supabase Auth and PostgREST images, runs the migration in a new
+database, and runs actual API and browser tests. The test-only HTTP gateway adds
+Supabase's URL prefixes. Local keys and accounts are randomly generated, never
+printed or committed, and the command removes its own containers and volumes on
+completion. A process killed before cleanup can leave containers named `ocr-*-…`;
+remove only that run's containers/network. Image downloads are retained for reuse.
+
+The standard Supabase CLI configuration is also included. Its full database image
+requires more space; the smaller disposable stack provides focused Auth/RLS tests.
+Neither path deploys to the hosted project. Direct API/browser test commands
+require local test variables and refuse a non-loopback project URL.
+
+## Deployment and student impact
+
+Develop and review on `feature/student-logins`; do not merge into the Pages
+publishing branch or change Pages settings until the hosted pilot is validated.
+No changes to the existing question bank, scoring, browser progress keys or
+adaptive selection are included. Existing students receive no changes until the
+new website files are deliberately deployed. The account page explicitly says
+that progress is still browser-only, and never silently associates old progress
+with a login.
+
+No private credentials or credential exports belong in the published site.
+Supabase Auth still processes pseudonymous identifiers, password hashes, session
+data, IP addresses and operational logs. These are personal data; this design
+does not make the service anonymous. Agree the school's retention/deletion rules,
+hosting and processor arrangements before real student use. Cascading profile
+and membership deletion is provided, but scheduled retention is a later milestone.

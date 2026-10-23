@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://ojhckvbekzudphkjeofw.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Student sign in · Organic chemistry</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="student-login.css">
+</head>
+<body class="login-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="brand">Organic chemistry</div><nav><a href="index.html">Continue browser-only practice</a></nav></header>
+  <main id="main" class="login-main">
+    <section class="card login-card" aria-labelledby="login-heading">
+      <h1 id="login-heading">Student sign in</h1>
+      <p>Use the username and password your teacher gave you. You don’t need an email address.</p>
+      <p class="login-notice">Account pilot: revision progress still stays in this browser. Signing in does not upload or import existing progress.</p>
+      <p id="auth-status" role="status" aria-live="polite">Checking sign-in settings…</p>
+      <noscript><p>JavaScript is needed to sign in. Browser-only practice is still available.</p></noscript>
+      <form id="login-form" hidden>
+        <label class="control" for="username">Student username<input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="20" placeholder="student-…"></label>
+        <label class="control" for="password">Password<input id="password" name="password" type="password" autocomplete="current-password" required maxlength="72"></label>
+        <button class="btn" type="submit">Sign in</button>
+        <p>Forgotten your password? Ask your teacher for a temporary replacement. There is no email reset.</p>
+        <p>Sign out when you finish, especially on a shared device. Sign-in is stored for this browser tab.</p>
+      </form>
+      <section id="account-panel" hidden>
+        <h2 id="account-name" tabindex="-1"></h2>
+        <p id="account-message"></p>
+        <form id="password-form">
+          <h3 id="password-heading">Change password</h3>
+          <p id="password-help">Use at least 12 characters. A few unrelated words work well.</p>
+          <label class="control" for="new-password">New password<input id="new-password" type="password" autocomplete="new-password" minlength="12" maxlength="72" aria-describedby="password-help" required></label>
+          <label class="control" for="confirm-password">Repeat new password<input id="confirm-password" type="password" autocomplete="new-password" minlength="12" maxlength="72" required></label>
+          <button class="btn" type="submit">Save password</button>
+        </form>
+        <div class="row login-actions"><a id="continue-practice" class="btn secondary" href="index.html" hidden>Continue browser-only practice</a><button id="sign-out" class="btn secondary" type="button">Sign out</button></div>
+      </section>
+    </section>
+  </main>
+  <footer>Accounts are provided by your school. Keep your password private.</footer>
+  <script src="student-login.js" defer></script>
+</body>
+</html>

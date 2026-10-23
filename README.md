@@ -22,3 +22,17 @@ browser storage. The assets and question bank are unchanged from v1.7.
 
 The release's outer folder includes RELEASE-NOTES.md, RESOURCE-GUIDE.md,
 RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.
+
+## Student login development
+
+The separate `student-login.html` page adds the first Supabase account milestone.
+Browser-only practice and existing local progress remain available; account
+progress syncing and adaptive practice are later milestones.
+
+See [student login setup and deployment](docs/STUDENT_LOGINS.md) for the database
+migration, private account-provisioning commands, security model and pilot steps.
+Never put administrator keys or credential exports in this repository.
+
+Developer checks: `npm ci`, `npm run build:auth`, `npm test`.
+With Docker and Chromium available, `npm run test:auth-local` tests real local
+Supabase Auth, database access policies and browser login flows.
