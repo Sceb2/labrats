@@ -2,8 +2,11 @@
 
 This is a fictional-data development prototype on `feature/student-logins`.
 Neither pushing this branch nor downloading a preview updates the live site.
-The first three migrations and student login were already tested in the hosted
-development project. The staff migration/function need their own hosted check.
+The user has reported successful hosted development-project checks for migrations
+001–005, account creation, sign-in, reporting, teacher assignment and resets,
+legacy usernames, and exclusion of an unassigned class/student. See the
+[DPO prototype review](DPO_PROTOTYPE_REVIEW.md) for evidence, data handling and
+remaining school decisions. Production hosting/origin validation remains separate.
 
 ## What works
 
