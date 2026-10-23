@@ -27,10 +27,12 @@ async function waitFor(check, label) {
   throw new Error(`${label} did not become ready within 60 seconds.`);
 }
 async function main() {
+  const {makeStaffHandler}=await import('../src/staff-service.mjs');
+  const {createClient}=require('@supabase/supabase-js');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ocr-local-auth-'));
   const suffix = randomBytes(5).toString('hex');
   const network = `ocr-auth-${suffix}`, names = [];
-  let gateway;
+  let gateway,edgeProcess;
   const secret = randomBytes(32).toString('hex'), password = randomBytes(24).toString('hex');
   const token = role => {
     const h = Buffer.from(JSON.stringify({alg: 'HS256', typ: 'JWT'})).toString('base64url');
@@ -69,12 +71,25 @@ async function main() {
     `});
     // Gateway adds the same URL prefixes used by the hosted API; services still verify real JWTs.
     let authPort, restPort;
-    gateway = http.createServer((req, res) => {
+    gateway = http.createServer(async (req, res) => {
       if (req.method === 'OPTIONS') {
         res.writeHead(204, {'access-control-allow-origin': '*',
           'access-control-allow-headers': req.headers['access-control-request-headers'] || 'authorization,apikey,content-type,x-client-info,x-supabase-api-version',
           'access-control-allow-methods': 'GET,POST,PUT,PATCH,DELETE,OPTIONS'});
         res.end(); return;
+      }
+      if(req.url==='/functions/v1/staff-management'){
+        try{
+          const origin=req.headers.origin;
+          let permitted=['null'];
+          if(origin){try{const address=new URL(origin);if(address.protocol==='http:'&&address.hostname==='127.0.0.1')permitted.push(origin);}catch{}}
+          const handler=makeStaffHandler({createClient,supabaseUrl:`http://127.0.0.1:${gateway.address().port}`,
+            publishableKey:token('anon'),secretKey:token('service_role'),allowedOrigins:permitted});
+          const chunks=[];let bytes=0;for await(const chunk of req){bytes+=chunk.length;if(bytes>4096){res.writeHead(413);res.end();return;}chunks.push(chunk);}
+          const response=await handler(new Request(`http://127.0.0.1${req.url}`,{method:req.method,headers:req.headers,
+            ...(req.method==='GET'||req.method==='HEAD'?{}:{body:Buffer.concat(chunks)})}));
+          res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));
+        }catch{res.writeHead(500);res.end('{"error":"Local staff service failed"}');}return;
       }
       const isAuth = req.url.startsWith('/auth/v1/'), isRest = req.url.startsWith('/rest/v1/');
       if (!isAuth && !isRest) { res.writeHead(404); res.end(); return; }
@@ -119,7 +134,21 @@ async function main() {
     restPort = portFor(rest, 3000);
     await waitFor(async () => { try { return (await fetch(`${url}/rest/v1/`)).ok; } catch { return false; } }, 'PostgREST');
     const env = {...process.env, SUPABASE_TEST_URL: url, SUPABASE_TEST_ANON_KEY: token('anon'), SUPABASE_TEST_SERVICE_KEY: token('service_role')};
-    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs']) {
+    if(process.env.OCR_DENO_EXECUTABLE){
+      const reservation=http.createServer();await new Promise(resolve=>reservation.listen(0,'127.0.0.1',resolve));
+      const edgePort=reservation.address().port;await new Promise(resolve=>reservation.close(resolve));
+      edgeProcess=spawn(process.env.OCR_DENO_EXECUTABLE,['run','--no-config','--no-prompt','--allow-env','--allow-net=127.0.0.1',
+        path.join(root,'supabase/functions/staff-management/index.ts')],{cwd:dir,env:{
+          SUPABASE_URL:url,SUPABASE_ANON_KEY:token('anon'),SUPABASE_SERVICE_ROLE_KEY:token('service_role'),
+          STAFF_BIND_HOST:'127.0.0.1',STAFF_EDGE_PORT:String(edgePort),STAFF_ALLOWED_ORIGINS:'null',
+          DENO_DIR:path.join(dir,'deno-cache'),DENO_NO_UPDATE_CHECK:'1',NO_COLOR:'1'},stdio:['ignore','ignore','pipe']});
+      let runtimeErrors='';edgeProcess.stderr.on('data',chunk=>{runtimeErrors+=chunk.toString();});
+      await waitFor(async()=>{if(edgeProcess.exitCode!==null)throw Error('Generated Deno function exited: '+runtimeErrors.slice(-1500));
+        try{return(await fetch(`http://127.0.0.1:${edgePort}/`)).status===405;}catch{return false;}},'Generated Deno Edge Function');
+      env.SUPABASE_TEST_STAFF_SERVICE_URL=`http://127.0.0.1:${edgePort}`;
+      console.log('Staff API integration checks will use the generated bundle in native Deno.');
+    }
+    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/staff-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs', 'tests/staff-browser.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);
@@ -135,6 +164,7 @@ async function main() {
     }
     throw error;
   } finally {
+    if(edgeProcess&&edgeProcess.exitCode===null){edgeProcess.kill();await new Promise(resolve=>edgeProcess.once('exit',resolve));}
     if (gateway) await new Promise(resolve => gateway.close(resolve));
     for (const name of names.reverse()) spawnSync('docker', ['rm', '-f', '-v', name], {stdio: 'ignore'});
     spawnSync('docker', ['network', 'rm', network], {stdio: 'ignore'});

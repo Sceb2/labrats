@@ -1,6 +1,7 @@
 'use strict';
 const {openAccountClient} = require('./account-client.cjs');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('./learning-events.cjs');
+const Adaptive = require('./adaptive.cjs');
 
 async function open(bank, onRecords = () => {}, {
   navigate = path => location.replace(new URL(path, location.href)),
@@ -118,9 +119,12 @@ async function open(bank, onRecords = () => {}, {
   // Start requests after the app has installed its account-scoped progress state.
   setTimeout(flush, 0);
   return {storage: scopedStorage, records: () => recordsFor(mergeEvents(history,pending), bank),
+    events: () => mergeEvents(history,pending),
     record(question, session, kind, result) {
       if (closed) return;
       pending = mergeEvents(pending, [makeEvent(bank, question, session, kind, result)]); message = ''; publish(); void flush();
     }, flush, owner};
 }
 window.RevisionSync = {open};
+window.RevisionAdaptive = {...Adaptive, appendGuest: (events,bank,question,session,kind,result) =>
+  mergeEvents(events,[makeEvent(bank,question,session,kind,result)])};

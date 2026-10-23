@@ -4,9 +4,10 @@ const read=name=>fs.readFileSync(name),sha=bytes=>createHash('sha256').update(by
 const old=JSON.parse(read('version.json'));
 const files=['app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
   'updates.js','learning-resources.js','questions.json','assets.json','learning-resources.json',
-  'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json'];
+  'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
+  'staff.js','staff.html','staff.css'];
 const fingerprint=createHash('sha256');for(const file of files)fingerprint.update(file).update(file.endsWith('.html')?read(file).toString().replace(/\?v=r-[a-zA-Z0-9-]+/g,''):read(file));
-const id='r-'+fingerprint.digest('hex').slice(0,20), label='1.10.0-pilot';
+const id='r-'+fingerprint.digest('hex').slice(0,20), label='1.11.0-prototype';
 const build={schema:1,id,label,bankVersion:JSON.parse(read('questions.json')).meta.bankVersion,
   questionsSha256:sha(read('questions.json')),assetsSha256:sha(read('assets.json')),resourcesSha256:sha(read('learning-resources.json'))};
 let html=read('index.html').toString();
@@ -22,4 +23,8 @@ let login=read('student-login.html').toString();
 login=login.replace(/(href="(?:styles|student-login)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
   .replace(/(src="student-login\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('student-login.html',login);
+let staff=read('staff.html').toString();
+staff=staff.replace(/(href="(?:styles|student-login|staff)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+  .replace(/(src="staff\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
+fs.writeFileSync('staff.html',staff);
 fs.writeFileSync('version.json',JSON.stringify(build,null,2)+'\n');

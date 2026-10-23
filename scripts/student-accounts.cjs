@@ -13,7 +13,7 @@ const commands = `Usage:
   npm run accounts -- reset-student --username student-xxxxxxxxxxxx --out /private/path/reset.csv
 Requires SUPABASE_URL and SUPABASE_SECRET_KEY in the process environment.
 Credential output must be outside this checkout and any other served/public folder.
-Teacher-facing account management will be implemented separately.`;
+Teacher-facing controls are available in staff.html; see docs/STAFF_PROTOTYPE.md.`;
 function args(argv) {
   const [command, ...rest] = argv;
   const allowed = {'create-class': ['label'], 'create-students': ['class', 'count', 'out'], 'reset-student': ['username', 'out']};

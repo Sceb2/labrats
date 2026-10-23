@@ -76,10 +76,11 @@ ordering; the server rejects implausible times and keeps a separate receipt time
 
 Question-level marks, retry/reveal history and mistakes follow the account across
 devices. Full session playback, unfinished answer drafts and challenge personal
-bests remain local to the current page visit. Importing old browser history,
-A–E scheduling, teacher-facing reports and automated retention/deletion are
-separate milestones. Use fictional data until the school's retention policy and
-production arrangements are configured.
+bests remain local to the current page visit. A–E scheduling and staff reports
+are now included; see [ADAPTIVE_PRACTICE.md](ADAPTIVE_PRACTICE.md) and
+[STAFF_PROTOTYPE.md](STAFF_PROTOTYPE.md). Importing old browser history and
+automated retention remain deferred. Use fictional data until the school's
+retention policy and production arrangements are configured.
 
 ## Developer checks and release
 

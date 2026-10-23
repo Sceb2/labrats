@@ -28,8 +28,15 @@ RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.
 
 The separate `student-login.html` page provides Supabase student sign-in. New
 signed-in practice attempts sync as metadata without selected answers or free
-text, with an offline queue and separate guest history. Adaptive practice and
-teacher-facing account/reporting screens remain later milestones.
+text, with an offline queue and separate guest history. Adaptive practice is now
+the default, with shared A–E revision guidance and an optional Random mode.
+
+`staff.html` adds invited staff sign-in, administrator/teacher account controls,
+classes, batch student credentials, resets and scoped progress reports. Download
+`staff-preview.html` and `student-site-preview.html` for fictional-data testing.
+See [staff prototype setup](docs/STAFF_PROTOTYPE.md) for the new migration, Edge
+Function deployment and first administrator setup, and
+[adaptive practice](docs/ADAPTIVE_PRACTICE.md) for the rating/scheduling rules.
 
 See [progress sync setup](docs/PROGRESS_SYNC.md) for the two additional database
 queries required after the original account migration. Do not deploy the branch

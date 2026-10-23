@@ -27,12 +27,12 @@ Passwords are handled by Supabase Auth, never by our database tables.
 Progress syncing has since been added on this branch; see [PROGRESS_SYNC.md](PROGRESS_SYNC.md)
 for its two additional SQL queries, privacy model, tests and pilot limitations.
 
-**Not yet implemented:** A–E ratings,
-adaptive sessions, teacher invitation screens, teacher-facing batch/reset UI,
-retention automation or importing browser history. The public `teacher.html`
-remains a question-bank editor, not a protected account-management dashboard.
-Do not distribute real student accounts until the next stages and the school's
-data-protection review are complete.
+A–E ratings, adaptive sessions and protected staff account/reporting tools are
+now implemented on this branch; see [STAFF_PROTOTYPE.md](STAFF_PROTOTYPE.md) and
+[ADAPTIVE_PRACTICE.md](ADAPTIVE_PRACTICE.md). Retention automation and importing
+browser history remain deferred. The public `teacher.html` remains a bank editor;
+protected staff tools are at `staff.html`. Use fictional accounts until hosted
+validation and the school's data-protection arrangements are complete.
 
 ## Apply to the development Supabase project
 
@@ -159,8 +159,8 @@ require local test variables and refuse a non-loopback project URL.
 
 Develop and review on `feature/student-logins`; do not merge into the Pages
 publishing branch or change Pages settings until the hosted pilot is validated.
-No changes to the existing question bank, scoring, browser progress keys or
-adaptive selection are included. Existing students receive no changes until the
+The existing question bank and marking rules are unchanged. Adaptive selection
+and A–E revision guidance are now part of the development prototype. Existing students receive no changes until the
 new website files are deliberately deployed. The account page explains that new
 signed-in results sync, and never silently associates old browser-only progress
 with a login. Account mode does not persist raw answers or session playback.

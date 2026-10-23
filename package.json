@@ -4,9 +4,9 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs",
+    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs tests/adaptive-unit.cjs",
     "build:auth": "node scripts/build-auth.cjs",
-    "build": "npm run build:auth && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs",
+    "build": "npm run build:auth && node scripts/build-staff.cjs && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs",
     "test:auth": "node --test tests/auth-integration.cjs",
     "test:auth-browser": "node --test tests/auth-browser.cjs",
     "test:auth-local": "node scripts/test-local-auth.cjs",

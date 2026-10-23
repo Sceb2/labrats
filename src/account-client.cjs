@@ -12,7 +12,8 @@ function keys() {
   try {Object.keys(sessionStorage).forEach(key => names.add(key));} catch {}
   return [...names];
 }
-async function openAccountClient() {
+async function openAccountClient({audience = 'student'} = {}) {
+  if (!['student', 'staff'].includes(audience)) throw new Error('Unknown sign-in audience.');
   const configCacheKey='ocr-public-auth-config-v1:'+new URL('auth-config.json',location.href).href;
   let config;
   try {
@@ -24,9 +25,9 @@ async function openAccountClient() {
   }
   const {url, key} = validatePublicConfig(config);
   tabStorage.setItem(configCacheKey, JSON.stringify(config));
-  const sessionKey = `ocr-student-auth-v1-${new URL(url).host}`;
-  const profileKey = `ocr-account-profile-${new URL(url).host}`;
-  const prefix = `ocr-learning-${new URL(url).host}-`;
+  const sessionKey = `ocr-${audience}-auth-v1-${new URL(url).host}`;
+  const profileKey = `ocr-${audience === 'staff' ? 'staff-' : ''}account-profile-${new URL(url).host}`;
+  const prefix = `ocr-${audience === 'staff' ? 'staff-cache' : 'learning'}-${new URL(url).host}-`;
   const client = createClient(url, key, {auth: {storage: tabStorage, storageKey: sessionKey,
     persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, lock: processLock},
     global: {fetch: (input, init) => fetch(input, {...init, signal: init?.signal || AbortSignal.timeout(15000)})}});
@@ -51,6 +52,6 @@ async function openAccountClient() {
     }
   }
   const pendingCount = () => {const key=prefix+read(profileKey)?.user_id;return (read(key+':pending')||read(key)?.pending||[]).length;};
-  return {client, sessionKey, prefix, read, storage: tabStorage, profile, cachedProfile: () => read(profileKey), signOut, pendingCount};
+  return {client, url, key, sessionKey, prefix, read, storage: tabStorage, profile, cachedProfile: () => read(profileKey), signOut, pendingCount};
 }
 module.exports = {openAccountClient};

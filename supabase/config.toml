@@ -55,3 +55,7 @@ enabled = false
 
 [analytics]
 enabled = false
+
+[functions.staff-management]
+# The handler verifies the caller using Auth and a live, authorized staff session.
+verify_jwt = false

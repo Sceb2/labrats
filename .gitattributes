@@ -3,3 +3,6 @@ student-login-pilot.html linguist-generated=true
 progress-sync.js linguist-generated=true
 student-progress-pilot.html linguist-generated=true
 student-site-preview.html linguist-generated=true
+staff.js linguist-generated=true
+staff-preview.html linguist-generated=true
+supabase/functions/staff-management/index.ts linguist-generated=true
