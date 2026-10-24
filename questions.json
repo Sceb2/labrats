@@ -3932,7 +3932,7 @@
     },
     "mp-hcn-m4-1": {
       "id": "mp-hcn-m4-1",
-      "label": "Product structure: HO–CH₂–C≡N.",
+      "label": "Displayed product (all atoms and bonds shown): HO–CH₂–C≡N.",
       "chemicalId": "mp-hcn-m4-1",
       "category": "mechanism-feature",
       "aliases": [],
@@ -3940,7 +3940,7 @@
     },
     "mp-hcn-m4-2": {
       "id": "mp-hcn-m4-2",
-      "label": "Product structure: HO–CH₂–N≡C.",
+      "label": "Displayed product (all atoms and bonds shown): HO–CH₂–N⁺≡C⁻.",
       "chemicalId": "mp-hcn-m4-2",
       "category": "mechanism-feature",
       "aliases": [],
@@ -3948,7 +3948,7 @@
     },
     "mp-hcn-m4-3": {
       "id": "mp-hcn-m4-3",
-      "label": "Product structure: H–C(=O)–C≡N.",
+      "label": "Displayed product (all atoms and bonds shown): H–C(=O)–C≡N.",
       "chemicalId": "mp-hcn-m4-3",
       "category": "mechanism-feature",
       "aliases": [],
@@ -3956,7 +3956,7 @@
     },
     "mp-hcn-m4-4": {
       "id": "mp-hcn-m4-4",
-      "label": "Product structure: CH₃–C≡N.",
+      "label": "Displayed product (all atoms and bonds shown): CH₃–C≡N.",
       "chemicalId": "mp-hcn-m4-4",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4060,7 +4060,7 @@
     },
     "mp-hbr-m4-1": {
       "id": "mp-hbr-m4-1",
-      "label": "Product structure: (CH₃)₃C–Br.",
+      "label": "Displayed product (all atoms and bonds shown): (CH₃)₃C–Br.",
       "chemicalId": "mp-hbr-m4-1",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4068,7 +4068,7 @@
     },
     "mp-hbr-m4-2": {
       "id": "mp-hbr-m4-2",
-      "label": "Product structure: (CH₃)₂CH–CH₂Br.",
+      "label": "Displayed product (all atoms and bonds shown): (CH₃)₂CH–CH₂Br.",
       "chemicalId": "mp-hbr-m4-2",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4076,7 +4076,7 @@
     },
     "mp-hbr-m4-3": {
       "id": "mp-hbr-m4-3",
-      "label": "Product structure: (CH₃)₃C–OH.",
+      "label": "Displayed product (all atoms and bonds shown): (CH₃)₃C–OH.",
       "chemicalId": "mp-hbr-m4-3",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4084,7 +4084,7 @@
     },
     "mp-hbr-m4-4": {
       "id": "mp-hbr-m4-4",
-      "label": "Product structure: CH₂=C(CH₃)₂.",
+      "label": "Displayed product (all atoms and bonds shown): CH₂=C(CH₃)₂.",
       "chemicalId": "mp-hbr-m4-4",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4156,7 +4156,7 @@
     },
     "mp-br2-m3-1": {
       "id": "mp-br2-m3-1",
-      "label": "Product structure: BrCH₂–CH₂Br.",
+      "label": "Displayed product (all atoms and bonds shown): BrCH₂–CH₂Br.",
       "chemicalId": "mp-br2-m3-1",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4164,7 +4164,7 @@
     },
     "mp-br2-m3-2": {
       "id": "mp-br2-m3-2",
-      "label": "Product structure: CH₃–CH₂Br.",
+      "label": "Displayed product (all atoms and bonds shown): CH₃–CH₂Br.",
       "chemicalId": "mp-br2-m3-2",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4172,7 +4172,7 @@
     },
     "mp-br2-m3-3": {
       "id": "mp-br2-m3-3",
-      "label": "Product structure: CH₃–CHBr₂.",
+      "label": "Displayed product (all atoms and bonds shown): CH₃–CHBr₂.",
       "chemicalId": "mp-br2-m3-3",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4180,7 +4180,7 @@
     },
     "mp-br2-m3-4": {
       "id": "mp-br2-m3-4",
-      "label": "Product structure: HO–CH₂–CH₂Br.",
+      "label": "Displayed product (all atoms and bonds shown): HO–CH₂–CH₂Br.",
       "chemicalId": "mp-br2-m3-4",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4284,7 +4284,7 @@
     },
     "mp-eas-m4-1": {
       "id": "mp-eas-m4-1",
-      "label": "Arrow from the C–H bond at the Cl-bearing carbon into the ring; charge and delocalisation omitted for this arrow-only choice.",
+      "label": "Aromatic intermediate with its partial π-system and formal + charge; arrow from the C–H bond at the Cl-bearing carbon into the ring.",
       "chemicalId": "mp-eas-m4-1",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4292,7 +4292,7 @@
     },
     "mp-eas-m4-2": {
       "id": "mp-eas-m4-2",
-      "label": "Arrow starts at H itself and goes into the ring; charge and delocalisation omitted.",
+      "label": "Aromatic intermediate with its partial π-system and formal + charge; arrow starts at H itself and goes into the ring.",
       "chemicalId": "mp-eas-m4-2",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4300,7 +4300,7 @@
     },
     "mp-eas-m4-3": {
       "id": "mp-eas-m4-3",
-      "label": "Arrow starts at the C–Cl bond and goes into the ring; charge and delocalisation omitted.",
+      "label": "Aromatic intermediate with its partial π-system and formal + charge; arrow starts at the C–Cl bond and goes into the ring.",
       "chemicalId": "mp-eas-m4-3",
       "category": "mechanism-feature",
       "aliases": [],
@@ -4308,7 +4308,7 @@
     },
     "mp-eas-m4-4": {
       "id": "mp-eas-m4-4",
-      "label": "Arrow from the ring towards the C–H bond; charge and delocalisation omitted.",
+      "label": "Aromatic intermediate with its partial π-system and formal + charge; arrow goes from the ring towards the C–H bond.",
       "chemicalId": "mp-eas-m4-4",
       "category": "mechanism-feature",
       "aliases": [],
@@ -32302,7 +32302,7 @@
         },
         {
           "id": "m3",
-          "label": "Choose the arenium-ion intermediate (partial-circle convention)",
+          "label": "Choose the aromatic intermediate (partial-circle convention)",
           "options": [
             "mp-eas-m3-1",
             "mp-eas-m3-2",
@@ -32595,8 +32595,8 @@
     {
       "id": "MC43",
       "type": "mechanism-completion",
-      "title": "Catalysed chlorination of benzene — arenium-ion intermediate",
-      "prompt": "Select the arenium-ion intermediate using the partial-circle convention.",
+      "title": "Catalysed chlorination of benzene — aromatic intermediate",
+      "prompt": "Select the aromatic intermediate using the partial-circle convention.",
       "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
       "difficulty": "Foundation recall",
       "prerequisites": [
@@ -32620,7 +32620,7 @@
       "components": [
         {
           "id": "m3",
-          "label": "Choose the arenium-ion intermediate (partial-circle convention)",
+          "label": "Choose the aromatic intermediate (partial-circle convention)",
           "options": [
             "mp-eas-m3-1",
             "mp-eas-m3-2",

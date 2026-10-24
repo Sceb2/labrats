@@ -2177,27 +2177,306 @@
   },
   "mp-hcn-m4-1": {
     "path": "assets/mechanism-markpoints/mp-hcn-m4-1.svg",
-    "description": "Product structure: HO–CH₂–C≡N.",
+    "description": "Displayed product (all atoms and bonds shown): HO–CH₂–C≡N.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 270,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "O",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 85,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 270,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 270,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 390,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "N",
+          "x": 510,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "order": 3
+        }
+      ]
+    }
   },
   "mp-hcn-m4-2": {
     "path": "assets/mechanism-markpoints/mp-hcn-m4-2.svg",
-    "description": "Product structure: HO–CH₂–N≡C.",
+    "description": "Displayed product (all atoms and bonds shown): HO–CH₂–N⁺≡C⁻.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 270,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "O",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 85,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 270,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 270,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "N",
+          "x": 390,
+          "y": 175,
+          "charge": 1
+        },
+        {
+          "element": "C",
+          "x": 510,
+          "y": 175,
+          "charge": -1
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "order": 3
+        }
+      ]
+    }
   },
   "mp-hcn-m4-3": {
     "path": "assets/mechanism-markpoints/mp-hcn-m4-3.svg",
-    "description": "Product structure: H–C(=O)–C≡N.",
+    "description": "Displayed product (all atoms and bonds shown): H–C(=O)–C≡N.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 210,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 90,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "O",
+          "x": 210,
+          "y": 65,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 350,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "N",
+          "x": 490,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 2
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "order": 3
+        }
+      ]
+    }
   },
   "mp-hcn-m4-4": {
     "path": "assets/mechanism-markpoints/mp-hcn-m4-4.svg",
-    "description": "Product structure: CH₃–C≡N.",
+    "description": "Displayed product (all atoms and bonds shown): CH₃–C≡N.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 240,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 100,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 240,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 240,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 370,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "N",
+          "x": 500,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "order": 3
+        }
+      ]
+    }
   },
   "mp-hbr-context": {
     "path": "assets/mechanism-markpoints/mp-hbr-context.svg",
@@ -2279,27 +2558,636 @@
   },
   "mp-hbr-m4-1": {
     "path": "assets/mechanism-markpoints/mp-hbr-m4-1.svg",
-    "description": "Product structure: (CH₃)₃C–Br.",
+    "description": "Displayed product (all atoms and bonds shown): (CH₃)₃C–Br.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 300,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 60,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 25,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 325,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 460,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 8,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 12,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 13,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-hbr-m4-2": {
     "path": "assets/mechanism-markpoints/mp-hbr-m4-2.svg",
-    "description": "Product structure: (CH₃)₂CH–CH₂Br.",
+    "description": "Displayed product (all atoms and bonds shown): (CH₃)₂CH–CH₂Br.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 300,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 60,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 25,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 440,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 440,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 440,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 540,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 8,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 10,
+          "order": 1
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "order": 1
+        },
+        {
+          "a": 10,
+          "b": 12,
+          "order": 1
+        },
+        {
+          "a": 10,
+          "b": 13,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-hbr-m4-3": {
     "path": "assets/mechanism-markpoints/mp-hbr-m4-3.svg",
-    "description": "Product structure: (CH₃)₃C–OH.",
+    "description": "Displayed product (all atoms and bonds shown): (CH₃)₃C–OH.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 300,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 60,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 25,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 325,
+          "charge": 0
+        },
+        {
+          "element": "O",
+          "x": 450,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 530,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "order": 1
+        },
+        {
+          "a": 5,
+          "b": 8,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "order": 1
+        },
+        {
+          "a": 9,
+          "b": 12,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 13,
+          "order": 1
+        },
+        {
+          "a": 13,
+          "b": 14,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-hbr-m4-4": {
     "path": "assets/mechanism-markpoints/mp-hbr-m4-4.svg",
-    "description": "Product structure: CH₂=C(CH₃)₂.",
+    "description": "Displayed product (all atoms and bonds shown): CH₂=C(CH₃)₂.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 300,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 160,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 160,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 75,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 25,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 300,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 300,
+          "y": 325,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 1,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "order": 2
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 8,
+          "b": 9,
+          "order": 1
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "order": 1
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-br2-context": {
     "path": "assets/mechanism-markpoints/mp-br2-context.svg",
@@ -2357,27 +3245,394 @@
   },
   "mp-br2-m3-1": {
     "path": "assets/mechanism-markpoints/mp-br2-m3-1.svg",
-    "description": "Product structure: BrCH₂–CH₂Br.",
+    "description": "Displayed product (all atoms and bonds shown): BrCH₂–CH₂Br.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 230,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 370,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 510,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 90,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-br2-m3-2": {
     "path": "assets/mechanism-markpoints/mp-br2-m3-2.svg",
-    "description": "Product structure: CH₃–CH₂Br.",
+    "description": "Displayed product (all atoms and bonds shown): CH₃–CH₂Br.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 230,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 370,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 510,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 90,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-br2-m3-3": {
     "path": "assets/mechanism-markpoints/mp-br2-m3-3.svg",
-    "description": "Product structure: CH₃–CHBr₂.",
+    "description": "Displayed product (all atoms and bonds shown): CH₃–CHBr₂.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 230,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 370,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 510,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 90,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-br2-m3-4": {
     "path": "assets/mechanism-markpoints/mp-br2-m3-4.svg",
-    "description": "Product structure: HO–CH₂–CH₂Br.",
+    "description": "Displayed product (all atoms and bonds shown): HO–CH₂–CH₂Br.",
     "status": "teacher-review-required",
-    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending.",
+    "displayedFormula": {
+      "atoms": [
+        {
+          "element": "C",
+          "x": 230,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "C",
+          "x": 370,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 230,
+          "y": 265,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 85,
+          "charge": 0
+        },
+        {
+          "element": "Br",
+          "x": 510,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 370,
+          "y": 275,
+          "charge": 0
+        },
+        {
+          "element": "O",
+          "x": 120,
+          "y": 175,
+          "charge": 0
+        },
+        {
+          "element": "H",
+          "x": 45,
+          "y": 175,
+          "charge": 0
+        }
+      ],
+      "bonds": [
+        {
+          "a": 0,
+          "b": 1,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "order": 1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "order": 1
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "order": 1
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "order": 1
+        }
+      ]
+    }
   },
   "mp-eas-context": {
     "path": "assets/mechanism-markpoints/mp-eas-context.svg",
@@ -2459,25 +3714,25 @@
   },
   "mp-eas-m4-1": {
     "path": "assets/mechanism-markpoints/mp-eas-m4-1.svg",
-    "description": "Arrow from the C–H bond at the Cl-bearing carbon into the ring; charge and delocalisation omitted for this arrow-only choice.",
+    "description": "Aromatic intermediate with its partial π-system and formal + charge; arrow from the C–H bond at the Cl-bearing carbon into the ring.",
     "status": "teacher-review-required",
     "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
   },
   "mp-eas-m4-2": {
     "path": "assets/mechanism-markpoints/mp-eas-m4-2.svg",
-    "description": "Arrow starts at H itself and goes into the ring; charge and delocalisation omitted.",
+    "description": "Aromatic intermediate with its partial π-system and formal + charge; arrow starts at H itself and goes into the ring.",
     "status": "teacher-review-required",
     "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
   },
   "mp-eas-m4-3": {
     "path": "assets/mechanism-markpoints/mp-eas-m4-3.svg",
-    "description": "Arrow starts at the C–Cl bond and goes into the ring; charge and delocalisation omitted.",
+    "description": "Aromatic intermediate with its partial π-system and formal + charge; arrow starts at the C–Cl bond and goes into the ring.",
     "status": "teacher-review-required",
     "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
   },
   "mp-eas-m4-4": {
     "path": "assets/mechanism-markpoints/mp-eas-m4-4.svg",
-    "description": "Arrow from the ring towards the C–H bond; charge and delocalisation omitted.",
+    "description": "Aromatic intermediate with its partial π-system and formal + charge; arrow goes from the ring towards the C–H bond.",
     "status": "teacher-review-required",
     "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
   }

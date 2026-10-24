@@ -93,12 +93,12 @@ Question paper: `676895-question-paper-synthesis-and-analytical-techniques.pdf`,
 **Conditions that affect interpretation:**
 
 - Electrophile generation AND catalyst regeneration earn ONE mark together, not one mark per equation.
-- The remaining marks are π-system attack, correct arenium ion, and C-H-to-ring arrow respectively.
+- The remaining marks are π-system attack, correct aromatic intermediate, and C-H-to-ring arrow respectively.
 - AlCl3, FeCl3 and other suitable halogen carriers are allowed by the source. The original question supplies AlCl3, and the focused question explicitly permits a consistent FeCl3 alternative.
 - The partial π-ring must extend over more than half the hexagon with its gap facing the attacked carbon; the positive sign may be anywhere inside the hexagon.
 - Source-specific positional guidance for substituted J is not transferred to the benzene analogue. The new item does not assess directing effects or regioselectivity.
 
-**Original-question adaptation:** Benzene replaces substituted arene J. The four marking groups are retained, but substituent-directed positions and side-chain chemistry are not assessed. Use the partial-circle arenium-ion convention to match this scheme.
+**Original-question adaptation:** Benzene replaces substituted arene J. The four marking groups are retained, but substituent-directed positions and side-chain chemistry are not assessed. Use the partial-circle aromatic intermediate convention to match this scheme.
 
 ## Original questions and answer guidance
 
@@ -347,7 +347,7 @@ Reaction: C6H6 + Cl2 → C6H5Cl + HCl; AlCl3 catalyst
 
 #### MP-EAS-ALL — Combined mechanism [4 marks]
 
-**Student prompt:** Benzene reacts with Cl2 in the presence of anhydrous AlCl3. Draw the electrophilic substitution mechanism, including the intermediate, charges and curly arrows. Give equations showing formation of the electrophile and regeneration of the catalyst. Show the organic product.
+**Student prompt:** Benzene reacts with Cl2 in the presence of AlCl3. Draw the electrophilic substitution mechanism, including the intermediate, charges and curly arrows. Give equations showing formation of the electrophile and regeneration of the catalyst. Show the organic product.
 
 **Answer and marking:**
 
@@ -390,9 +390,9 @@ Reaction: C6H6 + Cl2 → C6H5Cl + HCl; AlCl3 catalyst
 
 - **M2:** Arrow from Cl+ to the ring. Arrow from a C–H bond. Cl− used as the attacking species. The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source.
 
-#### MP-EAS-M3 — Arenium-ion intermediate [1 mark]
+#### MP-EAS-M3 — Aromatic intermediate [1 mark]
 
-**Student prompt:** Draw the arenium-ion intermediate immediately after benzene attacks Cl+. Use the partial-circle convention, showing the attached H and Cl, the remaining delocalisation and the charge.
+**Student prompt:** Draw the aromatic intermediate immediately after benzene attacks Cl+. Use the partial-circle convention, showing the attached H and Cl, the remaining delocalisation and the charge.
 
 **Answer and marking:**
 
@@ -405,7 +405,7 @@ Reaction: C6H6 + Cl2 → C6H5Cl + HCl; AlCl3 catalyst
 
 #### MP-EAS-M4 — Restoring the aromatic ring [1 mark]
 
-**Student prompt:** Starting from the arenium ion in benzene chlorination, show the curly arrow for restoration of aromaticity. Make the tail and head unambiguous and show the resulting organic product.
+**Student prompt:** Starting from the aromatic intermediate in benzene chlorination, show the curly arrow for restoration of aromaticity. Make the tail and head unambiguous and show the resulting organic product.
 
 **Answer and marking:**
 
@@ -443,7 +443,7 @@ Reaction: C6H6 + Cl2 → C6H5Cl + HCl; AlCl3 catalyst
 - The current arrow-only score cannot assess correct dipoles, intermediates, products or equation pairs. Full drawing answers in this pack need teacher/self marking. A future automatically marked adaptation can use whole-diagram choices or structured components, clearly labelled recognition practice.
 - For recognition items, each answer option for a grouped mark must contain all its requirements, or all its subcomponents must be correct before the single point is awarded. Do not allocate separate points to each arrow, dipole or equation.
 - Recognition scores are not equivalent to freely drawing mechanisms. Do not claim exact OCR examiner scoring, error-carried-forward judgement or full mechanism production from selected answers.
-- A combined recognition card must not reveal the answers to other parts through its intermediate, dipole or model-arrow diagrams. Show model answers only after submission/reveal; record reveal/retry attempts separately from first unaided performance.
+- Keep assessed starting dipoles and arrows out of the reactant context. The ring-restoration choices deliberately show the full aromatic intermediate, including its partial π-system and positive charge, to preserve chemical completeness; this supplies later-stage scaffolding in the combined card. Show model answers only after submission/reveal; record reveals and retries separately.
 - Use the existing site font, line weights, palette and question feedback structure for future assets. All new diagrams should be original, not crops of the uploaded papers. Prefer separate stage panels with short, uncrossed leader lines and responsive layouts.
 - An asterisk or other electron-source cue belongs in an explicitly supported learning mode. It gives away a source-identification answer and must not appear in an unaided assessment of the arrow source.
 - No student answers, identities or account data are stored by the standalone preview. It has no external scripts, network requests, analytics or persistence. No Supabase changes are needed to review this draft.

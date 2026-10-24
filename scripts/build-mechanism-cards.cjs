@@ -15,13 +15,12 @@ const arrow = d => `<path d="${d}" fill="none" stroke="${green}" stroke-width="3
 const pair = (x,y) => `<circle cx="${x}" cy="${y}" r="2.4"/><circle cx="${x+8}" cy="${y}" r="2.4"/>`;
 const double = (x1,y,x2) => line(x1,y-5,x2,y-5)+line(x1,y+5,x2,y+5);
 const tripleV = (x,y1,y2) => line(x-5,y1,x-5,y2)+line(x,y1,x,y2)+line(x+5,y1,x+5,y2);
-const formula = value => text(300,174,value,34);
 const note = value => text(300,325,value,16);
 const ring = (circle=true) => `<path d="M190 170 L230 100 L310 100 L350 170 L310 240 L230 240 Z" fill="none" stroke="${ink}" stroke-width="2.5"/>`+(circle?'<circle cx="270" cy="170" r="52" fill="none" stroke="#17212b" stroke-width="2.5"/>':'');
 function carbonyl(dipole=0,cn=false) {
   return text(300,168,'C')+text(430,168,'O')+double(322,159,405)+text(300,70,'H')+line(300,82,300,138)+text(210,225,'H')+line(226,213,283,172)
     +(dipole?text(326,126,dipole===1?'δ+':'δ−',20)+text(452,126,dipole===1?'δ−':'δ+',20):'')
-    +(cn?text(115,168,'C')+text(115,260,'N')+tripleV(115,182,233)+text(91,135,'−',23)+pair(141,155)+pair(84,248):'');
+    +(cn?text(115,168,'C')+text(115,260,'N')+tripleV(115,182,233)+text(91,152,'−',23)+pair(111,132)+pair(111,282):'');
 }
 function alkene(kind='hbr') {
   if(kind==='br2')return text(200,155,'CH₂')+text(390,155,'CH₂')+double(235,145,352);
@@ -38,19 +37,67 @@ function hbrIon(variant) {
 function brIon(variant) {
   return text(180,168,variant===1?'CH₃':'BrCH₂')+line(235,158,358,158)+text(400,168,'CH₂')+text(436,135,variant===2?'δ+':'+',21)+text(400,303,'Br')+text(425,277,'−',22)+pair(395,267)+arrow(variant===3?'M392 180 Q330 220 398 267':'M399 267 Q330 220 391 181');
 }
-function arenium(variant=0) {
+function aromaticIntermediate(variant=0) {
   const arc=variant===3?'M296 125 A52 52 0 1 0 296 215':'M244 125 A52 52 0 1 1 244 215';
-  return ring(variant===1)+line(181,161,118,110)+text(100,108,'H')+line(180,181,122,229)+text(100,250,'Cl')+(variant!==1?`<path d="${arc}" fill="none" stroke="${ink}" stroke-width="2.5"/>`:'')+(variant!==2?text(270,180,'+',26):'');
+  return ring(variant===1)+line(190,170,113,109)+text(100,108,'H')+line(190,170,116,230)+text(100,250,'Cl')+(variant!==1?`<path d="${arc}" fill="none" stroke="${ink}" stroke-width="2.5"/>`:'')+(variant!==2?text(270,180,'+',26):'');
+}
+// Every product choice explicitly shows every atom and bond, including C-H/O-H.
+function displayedProduct(family,variant,label) {
+  const atoms=[],bonds=[];
+  const atom=(element,x,y,charge=0)=>{atoms.push({element,x,y,charge});return atoms.length-1;};
+  const bond=(a,b,order=1)=>bonds.push({a,b,order});
+  const attach=(parent,element,x,y,order=1,charge=0)=>{const id=atom(element,x,y,charge);bond(parent,id,order);return id;};
+  const methyl=(x,y,hydrogens)=>{const c=atom('C',x,y);for(const [hx,hy]of hydrogens)attach(c,'H',hx,hy);return c;};
+  if(family==='HCN') {
+    if(variant<2){
+      const c=atom('C',270,175),o=attach(c,'O',160,175);attach(o,'H',85,175);attach(c,'H',270,75);attach(c,'H',270,275);
+      const next=attach(c,variant===0?'C':'N',390,175,1,variant===0?0:1);
+      attach(next,variant===0?'N':'C',510,175,3,variant===0?0:-1);
+    }else if(variant===2){
+      const c=atom('C',210,175);attach(c,'H',90,175);attach(c,'O',210,65,2);const next=attach(c,'C',350,175);attach(next,'N',490,175,3);
+    }else{
+      const c=methyl(240,175,[[100,175],[240,75],[240,275]]),next=attach(c,'C',370,175);attach(next,'N',500,175,3);
+    }
+  }else if(family==='HBR') {
+    const centre=atom('C',300,175);
+    const left=methyl(160,175,variant===3?[[160,85],[160,265]]:[[60,175],[160,85],[160,265]]);
+    bond(centre,left,variant===3?2:1);
+    const upper=methyl(300,75,[[230,75],[370,75],[300,25]]);bond(centre,upper);
+    if(variant===1){
+      attach(centre,'H',300,275);const right=attach(centre,'C',440,175);attach(right,'H',440,85);attach(right,'H',440,265);attach(right,'Br',540,175);
+    }else{
+      const lower=methyl(300,275,[[230,275],[370,275],[300,325]]);bond(centre,lower);
+      if(variant===0)attach(centre,'Br',460,175);
+      if(variant===2){const o=attach(centre,'O',450,175);attach(o,'H',530,175);}
+    }
+  }else if(family==='BR2') {
+    const left=atom('C',230,175),right=attach(left,'C',370,175);
+    attach(left,'H',230,85);attach(left,'H',230,265);attach(right,'H',370,85);
+    attach(right,'Br',510,175);attach(right,variant===2?'Br':'H',370,275);
+    if(variant===3){const o=attach(left,'O',120,175);attach(o,'H',45,175);}
+    else attach(left,variant===0?'Br':'H',90,175);
+  }else throw Error('Unknown displayed-product family');
+  for(const [i,a]of atoms.entries()){
+    const valence=bonds.filter(b=>b.a===i||b.b===i).reduce((sum,b)=>sum+b.order,0);
+    const expected=a.element==='C'&&a.charge===-1?3:a.element==='N'&&a.charge===1?4:{C:4,N:3,O:2,H:1,Br:1}[a.element];
+    assert.equal(valence,expected,`${family} product ${variant}: ${a.element} valence`);
+  }
+  const drawnBonds=bonds.map(b=>{
+    const a=atoms[b.a],z=atoms[b.b],dx=z.x-a.x,dy=z.y-a.y,length=Math.hypot(dx,dy),ux=dx/length,uy=dy/length;
+    return (b.order===1?[0]:b.order===2?[-4,4]:[-5,0,5]).map(offset=>line(a.x+14*ux-offset*uy,a.y+14*uy+offset*ux,z.x-14*ux-offset*uy,z.y-14*uy+offset*ux)).join('');
+  }).join('');
+  const body=drawnBonds+atoms.map(a=>text(a.x,a.y+9,a.element,26)+(a.charge?text(a.x+19,a.y-13,a.charge>0?'+':'−',19):'')).join('');
+  return {body,description:'Displayed product (all atoms and bonds shown): '+label+'.',displayedFormula:{atoms,bonds}};
 }
 const definitions = {
   HCN: {
     context: {body:carbonyl(0,true),description:'Methanal H₂C=O and a separate cyanide ion, carbon and nitrogen shown explicitly; no arrows or carbonyl dipole are supplied.'},
     groups: [
       {label:'Choose the cyanide attack arrow', accepted:[0], options:[
-        {body:carbonyl(0,true)+arrow('M145 155 Q210 65 282 151'),description:'Arrow from the cyanide carbon lone pair to the carbonyl carbon.'},
-        {body:carbonyl(0,true)+arrow('M88 248 Q230 300 288 177'),description:'Arrow from the cyanide nitrogen lone pair to the carbonyl carbon.'},
-        {body:carbonyl(0,true)+arrow('M282 151 Q210 65 147 155'),description:'Arrow from the carbonyl carbon towards the cyanide carbon lone pair.'},
-        {body:carbonyl(0,true)+arrow('M145 155 Q280 20 423 139'),description:'Arrow from the cyanide carbon lone pair to the carbonyl oxygen.'}
+        {body:carbonyl(0,true)+arrow('M115 132 C151 56 242 57 290 154'),description:'Arrow from the cyanide carbon lone pair to the carbonyl carbon.'},
+        {body:carbonyl(0,true)+arrow('M115 282 C210 330 395 270 304 177'),description:'Arrow from the cyanide nitrogen lone pair to the carbonyl carbon.'},
+        {body:carbonyl(0,true)+arrow('M290 154 C242 57 151 56 115 132'),description:'Arrow from the carbonyl carbon towards the cyanide carbon lone pair.'},
+        {body:carbonyl(0,true)+arrow('M115 132 C115 -20 418 -20 418 153'),description:'Arrow from the cyanide carbon lone pair to the carbonyl oxygen.'}
       ]},
       {label:'Choose the carbonyl dipole AND bond-opening arrow',accepted:[0],options:[0,1,2,3].map(v=>({body:carbonyl(v===2?2:v===3?0:1)+arrow(v===1?'M430 136 Q380 65 360 154':'M360 154 Q397 70 426 138'),description:[
         'Carbonyl Cδ+ and Oδ−; arrow from the C=O bond to oxygen.',
@@ -69,7 +116,7 @@ const definitions = {
           'Alkoxide −O–CH₂–C≡N; arrow from the nitrile nitrogen end towards H+.'
         ][v]
       }))},
-      {label:'Choose the organic product',accepted:[0],options:['HO–CH₂–C≡N','HO–CH₂–N≡C','H–C(=O)–C≡N','CH₃–C≡N'].map(value=>({body:formula(value),description:'Product structure: '+value+'.'}))},
+      {label:'Choose the organic product',accepted:[0],options:['HO–CH₂–C≡N','HO–CH₂–N⁺≡C⁻','H–C(=O)–C≡N','CH₃–C≡N'].map((value,i)=>displayedProduct('HCN',i,value))},
       {label:'Name the mechanism',accepted:[0],textOptions:['Nucleophilic addition','Nucleophilic substitution','Electrophilic addition','Electrophilic substitution']}
     ]
   },
@@ -87,7 +134,7 @@ const definitions = {
       {label:'Choose the major-route carbocation AND bromide attack arrow',accepted:[0],options:[0,1,2,3].map(v=>({body:hbrIon(v),description:[
         'Tertiary (CH₃)₃C+ with a formal positive charge; arrow from Br− lone pair to the charged carbon.', 'Primary (CH₃)₂CH–CH₂+; arrow from Br− lone pair to the charged carbon.', 'Tertiary carbon marked δ+ instead of formal +; arrow from Br− to that carbon.', 'Tertiary (CH₃)₃C+; arrow goes from the charged carbon towards Br−.'
       ][v]}))},
-      {label:'Choose the major organic product',accepted:[0],options:['(CH₃)₃C–Br','(CH₃)₂CH–CH₂Br','(CH₃)₃C–OH','CH₂=C(CH₃)₂'].map(value=>({body:formula(value),description:'Product structure: '+value+'.'}))}
+      {label:'Choose the major organic product',accepted:[0],options:['(CH₃)₃C–Br','(CH₃)₂CH–CH₂Br','(CH₃)₃C–OH','CH₂=C(CH₃)₂'].map((value,i)=>displayedProduct('HBR',i,value))}
     ]
   },
   BR2:{
@@ -99,11 +146,11 @@ const definitions = {
       {label:'Choose the open-chain intermediate AND bromide attack arrow',accepted:[0],options:[0,1,2,3].map(v=>({body:brIon(v),description:[
         'BrCH₂–CH₂+ with a formal charge and arrow from Br− lone pair to the charged carbon.', 'CH₃–CH₂+ with no bonded bromine; arrow from Br− to the charged carbon.', 'BrCH₂–CH₂δ+ using partial rather than formal charge; arrow from Br− to that carbon.', 'BrCH₂–CH₂+; arrow goes from the charged carbon towards Br−.'
       ][v]}))},
-      {label:'Choose the organic product',accepted:[0],options:['BrCH₂–CH₂Br','CH₃–CH₂Br','CH₃–CHBr₂','HO–CH₂–CH₂Br'].map(value=>({body:formula(value),description:'Product structure: '+value+'.'}))}
+      {label:'Choose the organic product',accepted:[0],options:['BrCH₂–CH₂Br','CH₃–CH₂Br','CH₃–CHBr₂','HO–CH₂–CH₂Br'].map((value,i)=>displayedProduct('BR2',i,value))}
     ]
   },
   EAS:{
-    context:{body:ring()+text(460,145,'Cl₂')+text(460,210,'AlCl₃',24)+note('Anhydrous halogen carrier'),description:'Benzene with its aromatic circle, chlorine Cl₂, and aluminium chloride AlCl₃ catalyst. No arrows or intermediate are shown.'},
+    context:{body:ring()+text(460,145,'Cl₂')+text(460,210,'AlCl₃',24)+note('Halogen carrier'),description:'Benzene with its aromatic circle, chlorine Cl₂, and aluminium chloride AlCl₃ catalyst. No arrows or intermediate are shown.'},
     groups:[
       {label:'Choose a complete pair: electrophile generation AND catalyst regeneration',accepted:[0,1],options:[
         {body:text(300,130,'Cl₂ + AlCl₃ → Cl⁺ + AlCl₄⁻',26)+text(300,210,'H⁺ + AlCl₄⁻ → AlCl₃ + HCl',26),description:'Equation pair: Cl₂ + AlCl₃ → Cl+ + AlCl₄−; H+ + AlCl₄− → AlCl₃ + HCl.'},
@@ -111,18 +158,18 @@ const definitions = {
         {body:text(300,130,'Cl₂ + AlCl₃ → Cl⁻ + AlCl₄⁺',26)+text(300,210,'H⁺ + AlCl₄⁻ → AlCl₃ + HCl',26),description:'Equation pair uses Cl− and AlCl₄+ in electrophile generation; its second equation uses H+ and AlCl₄− to regenerate AlCl₃.'},
         {body:text(300,130,'Cl₂ + AlCl₃ → Cl⁺ + AlCl₄⁻',26)+text(300,210,'AlCl₃ is consumed; no regeneration',23),description:'Electrophile generation equation followed by the claim that AlCl₃ is consumed without regeneration.'}
       ]},
-      {label:'Choose the arrow for electrophilic attack',accepted:[0],options:[0,1,2,3].map(v=>({body:ring()+text(470,175,v===3?'Cl⁻':'Cl⁺')+(v===2?line(132,170,174,170)+text(110,179,'H'):'')+arrow([
+      {label:'Choose the arrow for electrophilic attack',accepted:[0],options:[0,1,2,3].map(v=>({body:ring()+text(470,175,v===3?'Cl⁻':'Cl⁺')+(v===2?line(132,170,190,170)+text(110,179,'H'):'')+arrow([
         'M322 170 Q388 85 454 153','M454 153 Q388 85 322 170','M150 170 Q300 25 454 153','M322 170 Q388 85 454 153'
       ][v]),description:[
         'Arrow from the benzene π-circle to Cl+.', 'Arrow from Cl+ to the benzene π-circle.', 'Arrow from an explicit benzene C–H bond to Cl+.', 'Arrow from the benzene π-circle to Cl−.'
       ][v]}))},
-      {label:'Choose the arenium-ion intermediate (partial-circle convention)',accepted:[0],options:[0,1,2,3].map(v=>({body:arenium(v),description:[
+      {label:'Choose the aromatic intermediate (partial-circle convention)',accepted:[0],options:[0,1,2,3].map(v=>({body:aromaticIntermediate(v),description:[
         'H and Cl on the same ring carbon; inner partial circle covers more than half the ring with its gap towards that carbon; + inside the hexagon.', 'H and Cl on the same ring carbon; a complete aromatic circle and + remain inside the hexagon.', 'H and Cl on the same ring carbon and a partial circle with the gap towards that carbon, but no positive charge.', 'H and Cl on the same ring carbon; partial-circle gap faces the opposite side of the ring; + inside.'
       ][v]}))},
-      {label:'Choose the electron movement that restores aromaticity',accepted:[0],options:[0,1,2,3].map(v=>({body:ring(false)+line(181,161,118,110)+text(100,108,'H')+line(180,181,122,229)+text(100,250,'Cl')+arrow([
-        'M148 135 Q190 85 243 146','M101 108 Q170 60 243 146','M150 206 Q200 260 246 196','M243 146 Q190 85 148 135'
-      ][v])+note('Charge and delocalisation omitted in this arrow-only part.'),description:[
-        'Arrow from the C–H bond at the Cl-bearing carbon into the ring; charge and delocalisation omitted for this arrow-only choice.', 'Arrow starts at H itself and goes into the ring; charge and delocalisation omitted.', 'Arrow starts at the C–Cl bond and goes into the ring; charge and delocalisation omitted.', 'Arrow from the ring towards the C–H bond; charge and delocalisation omitted.'
+      {label:'Choose the electron movement that restores aromaticity',accepted:[0],options:[0,1,2,3].map(v=>({body:aromaticIntermediate()+arrow([
+        'M148 137 Q190 85 243 146','M101 108 Q170 60 243 146','M150 203 Q200 260 246 196','M243 146 Q190 85 148 137'
+      ][v]),description:[
+        'Aromatic intermediate with its partial π-system and formal + charge; arrow from the C–H bond at the Cl-bearing carbon into the ring.', 'Aromatic intermediate with its partial π-system and formal + charge; arrow starts at H itself and goes into the ring.', 'Aromatic intermediate with its partial π-system and formal + charge; arrow starts at the C–Cl bond and goes into the ring.', 'Aromatic intermediate with its partial π-system and formal + charge; arrow goes from the ring towards the C–H bond.'
       ][v]}))}
     ]
   }
@@ -132,6 +179,7 @@ function register(id, drawing, label) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" role="img" aria-labelledby="title"><title id="title">${esc(drawing.description)}</title><defs><marker id="head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="${green}"/></marker></defs><rect width="600" height="350" rx="12" fill="#fff"/><g font-family="Arial,Helvetica,sans-serif" fill="${ink}">${drawing.body}</g></svg>\n`;
   const filename = `assets/mechanism-markpoints/${id}.svg`;
   assets[id] = {path:filename,description:drawing.description,status:'teacher-review-required',review:'Original diagram; source-group mapping checked, teacher chemistry review pending.'};
+  if(drawing.displayedFormula)assets[id].displayedFormula=drawing.displayedFormula;
   outputs.set(filename,svg);
   if(label) bank.vocabulary[id]={id,label,chemicalId:id,category:'mechanism-feature',aliases:[],asset:id};
   return id;
@@ -169,7 +217,7 @@ for(const family of pack.families) {
       HCN:['Select the arrow showing cyanide attack on methanal.','Select the carbonyl dipole and bond-opening arrow for methanal. Both features are needed.','Select the intermediate and its protonation after cyanide adds to methanal. Either H⁺ or water is allowed.','Select the organic product when methanal reacts with HCN.','Name the mechanism when HCN reacts with methanal in the presence of CN−.'],
       HBR:['Select the first electron-pair arrow when 2-methylpropene reacts with HBr.','Select the H–Br dipole and bond-breaking arrow. Both features are needed.','Select the major-route carbocation and bromide attack after HBr reacts with 2-methylpropene.','Select the major product from electrophilic addition of HBr to 2-methylpropene.'],
       BR2:['Select the induced Br–Br dipole and BOTH first-stage arrows for bromine addition to ethene. All features together earn one mark.','Select the open-chain carbocation and bromide attack in addition of Br₂ to ethene.','Select the product when ethene reacts with Br₂.'],
-      EAS:['Select BOTH catalyst equations for benzene chlorination. Use a consistent AlCl₃ or FeCl₃ pair. The pair earns one mark.','Select the electron-pair arrow when benzene attacks Cl⁺.','Select the arenium-ion intermediate using the partial-circle convention.','Select the electron-pair movement that restores aromaticity after benzene attacks Cl⁺.']
+      EAS:['Select BOTH catalyst equations for benzene chlorination. Use a consistent AlCl₃ or FeCl₃ pair. The pair earns one mark.','Select the electron-pair arrow when benzene attacks Cl⁺.','Select the aromatic intermediate using the partial-circle convention.','Select the electron-pair movement that restores aromaticity after benzene attacks Cl⁺.']
     };
     const answers=Object.fromEntries(selected.map(part=>[part.component.id,part.answers]));
     const misconceptions=Object.fromEntries(selected.flatMap(part=>part.component.options.map(option=>[option,part.authored.feedback+' Check: '+part.authored.requirements.join(' ')])));

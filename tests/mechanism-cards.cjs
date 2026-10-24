@@ -57,6 +57,20 @@ test('H+ and water protonation, and complete Al/Fe catalyst pairs, are accepted'
   }
 });
 
+test('final organic products show every atom and bond with the expected product composition',()=>{
+  for(const [prefix,expected]of [['hcn-m4',{C:2,H:3,N:1,O:1}],['hbr-m4',{C:4,H:9,Br:1}],['br2-m3',{C:2,H:4,Br:2}]]){
+    for(let i=1;i<=4;i++){
+      const asset=bank.assets[`mp-${prefix}-${i}`],graph=asset.displayedFormula;
+      assert(graph?.atoms?.length&&graph.bonds.length,'A displayed formula must contain explicit atoms and bonds.');
+      assert(graph.atoms.every(atom=>['C','H','O','N','Br'].includes(atom.element)),'No condensed CH₂/CH₃/OH groups.');
+      if(i===1){
+        const counts={};for(const atom of graph.atoms)counts[atom.element]=(counts[atom.element]||0)+1;
+        assert.deepEqual(counts,expected);
+      }
+    }
+  }
+});
+
 test('retries and reveals do not inflate first-attempt marks for the new cards',()=>{
   const q=cards[0];
   let record=C.progressEvent(null,'submit',C.mark(q,{m1:perfect(q).m1},bank));

@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "id": "r-7dd73159bdc92b060472",
+  "id": "r-e997ee9a4432ab40b125",
   "label": "1.12.0-prototype",
   "bankVersion": "v7-236-questions-2026-10-24",
-  "questionsSha256": "d97dbbfdfa34edba4a230f8563a96a633f360e49f5f94e07f882a4c90074397c",
-  "assetsSha256": "8c4fb108ad559196cf2afaf60ca5296694d68e0fa07e9e6818bd2f726af4e3f5",
+  "questionsSha256": "6599f3abe092d1185349b877c532727e082c29de90c5c3f97e1ee2f0ee8b4011",
+  "assetsSha256": "a02d8e14f705d7e6e474f4de7ea2dabe5c947838ee7fe27387449b40c199670a",
   "resourcesSha256": "a56266be53c64fc27a388e41fe0a26c0280009ce4f88dc0553995c4cce837583"
 }

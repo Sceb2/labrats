@@ -8,6 +8,8 @@ Download [mechanism-cards-preview.html](../mechanism-cards-preview.html), save t
 
 Screenshots of the actual preview: [desktop](previews/mechanism-cards-desktop.png) and [mobile](previews/mechanism-cards-mobile.png). They show the bromine first-stage focused card; the interactive preview contains all twenty cards.
 
+Updated examples after chemistry review: [cyanide attack](previews/mechanism-cyanide-corrected.png), [restoring the aromatic ring](previews/aromatic-restoration-corrected.png), and [displayed organic products](previews/displayed-products.png).
+
 1. Choose a card from **Question to preview**, or use **Previous card / Next card**.
 2. Select a diagram for each part, and a mechanism name when requested.
 3. Use **Check answer** for the actual tool's automatic marking and feedback.
@@ -37,7 +39,7 @@ Examples:
 - Electrophile-generation **and** catalyst-regeneration equations are one group. A missing equation loses the group.
 - The protonation group accepts either the supplied H⁺ or water pathway; the catalyst group accepts either a complete AlCl₃/AlCl₄⁻ or FeCl₃/FeCl₄⁻ pair.
 
-These are **recognition exercises**. They assess selection of the source marking features, rather than unaided drawing. Each part is scored independently; they do not reproduce examiner error-carried-forward judgement. Selecting the wrong major-route carbocation does not change the correct-product option in the HBr card. The bromonium alternative is chemically valid and is not used as a wrong-answer distractor; the bromine prompt explicitly specifies the open-chain representation. The benzene analogue does not assess the source arene's positional restrictions. Correct charges/intermediates are not pre-filled into the reactant context, and the rearomatisation-arrow choices omit charge/delocalisation so they do not supply the arenium-ion answer.
+These are **recognition exercises**. They assess selection of the source marking features, rather than unaided drawing. Each part is scored independently; they do not reproduce examiner error-carried-forward judgement. Selecting the wrong major-route carbocation does not change the correct-product option in the HBr card. The bromonium alternative is chemically valid and is not used as a wrong-answer distractor; the bromine prompt explicitly specifies the open-chain representation. The benzene analogue does not assess the source arene's positional restrictions. The reactant context does not pre-fill the assessed charges or intermediate. All ring-restoration choices show the complete aromatic intermediate, including its partial π-system and positive charge. This supplies later-stage context in the combined card; its marks measure scaffolded recognition.
 
 The original source PDFs and scheme exceptions are recorded in the drawing-pack documentation. The source files informed the content; the new SVGs are original, not crops of OCR diagrams. Chemistry review is still pending, and passing software checks does not confer OCR approval or establish exam-equivalent performance.
 
@@ -63,9 +65,18 @@ node scripts/build-question-catalog.cjs --output supabase/migrations/20261024000
 
 Validation on 24 October 2026:
 
-- Build passed; 308/308 software checks and 26 unit tests passed.
+- Build passed; 308/308 software checks and 27 unit tests passed after the diagram corrections.
 - The Chromium preview test exercised all twenty cards through their real controls and feedback, full/partial marks, retry/reveal behaviour, diagram enlargement, SVG bounds, mobile layout, unchanged native browser storage, ephemeral results and absence of external network requests.
 - Dedicated marking tests verified every offered answer and distractor, grouped zero-credit cases, accepted alternatives, coverage, original-record integrity, progress compatibility, generated-file consistency and catalogue overwrite protection.
 - All 64 disposable local PostgreSQL/Auth/PostgREST integration and browser checks passed, including migration 007 and the generated Edge Function under native Deno. The populated migration-006 upgrade fixture also preserved existing account, class, history and pending-reset records. No hosted configuration or hosted account writes were used for these checks.
 
 An older browser-test expectation hard-coded `244/244` checks. Adding 64 SVGs increased the asset checks to 308, so that assertion now waits for a positive equal pass/total count instead. This changes the assertion, not the checks being run.
+
+## Corrections following chemistry review
+
+- The cyanide carbon and nitrogen lone pairs lie along the C≡N axis, outside their respective atoms. Attack-arrow tails and curves have been repositioned with them.
+- Wording throughout the new pack uses **aromatic intermediate** and **halogen carrier**.
+- All ring-restoration choices show the horseshoe partial π-system and formal positive charge. Bonds to H and Cl connect exactly to the ring vertex.
+- All twelve organic-product choices use displayed formulae with explicit atoms and bonds, including C–H and O–H bonds. The generator validates atom valences; tests also check the correct products' elemental compositions.
+
+These changes are in the generator and have been rebuilt into the SVGs, question bank and downloadable previews. They do not change the card IDs, mark-group allocations or accepted answer choices, and require no additional database migration. The dedicated preview remains temporary and account-free.
