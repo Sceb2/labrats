@@ -64,7 +64,7 @@ test('full downloadable preview runs normal practice, offline sync and account i
       records: {RC05: {first: {score: 1, max: 1, outcome: 'correct'}}}, sessions: [], bests: {}});
     await page.evaluate(value => localStorage.setItem('ocrOrgProgressV2', value), guest);
     await signIn(page, credentials[0]);
-    assert.equal(await page.evaluate(() => S.bank.questions.length), 216);
+    assert.equal(await page.evaluate(() => S.bank.questions.length), bank.questions.length);
     assert.deepEqual(await page.evaluate(() => Object.keys(S.progress.records)), []);
     await page.locator('[data-topic="alcohols"]').check();
     await page.locator('.practice-settings > summary').click();

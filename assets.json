@@ -2096,5 +2096,389 @@
     "description": "The green start marker identifies lone pair on the organic intermediate oxygen. The organic ion is CH₃–CH(O⁻)–CH₂–CH₃, the intermediate after butan-2-one reduction. Its oxygen has a shown lone pair and negative charge. Water is H(left)–O–H(upper). A grey arrow from the left O–H bond returns that bond pair to the water oxygen. Complete the same arrow pair; the already drawn bond-breaking arrow fixes which water hydrogen is transferred. Completed arrow: Lone pair on the organic intermediate oxygen → Left hydrogen of water.",
     "status": "teacher-review-required",
     "review": "Original vector diagram; structural, charge, arrow-source and atom-destination checks completed; teacher review pending."
+  },
+  "mp-hcn-context": {
+    "path": "assets/mechanism-markpoints/mp-hcn-context.svg",
+    "description": "Methanal H₂C=O and a separate cyanide ion, carbon and nitrogen shown explicitly; no arrows or carbonyl dipole are supplied.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m1-1": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m1-1.svg",
+    "description": "Arrow from the cyanide carbon lone pair to the carbonyl carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m1-2": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m1-2.svg",
+    "description": "Arrow from the cyanide nitrogen lone pair to the carbonyl carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m1-3": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m1-3.svg",
+    "description": "Arrow from the carbonyl carbon towards the cyanide carbon lone pair.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m1-4": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m1-4.svg",
+    "description": "Arrow from the cyanide carbon lone pair to the carbonyl oxygen.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m2-1": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m2-1.svg",
+    "description": "Carbonyl Cδ+ and Oδ−; arrow from the C=O bond to oxygen.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m2-2": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m2-2.svg",
+    "description": "Carbonyl Cδ+ and Oδ−; arrow from oxygen towards the C=O bond.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m2-3": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m2-3.svg",
+    "description": "Carbonyl Cδ− and Oδ+; arrow from the C=O bond to oxygen.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m2-4": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m2-4.svg",
+    "description": "No carbonyl dipole; arrow from the C=O bond to oxygen.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m3-1": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m3-1.svg",
+    "description": "Alkoxide −O–CH₂–C≡N with formal O−; arrow from its oxygen lone pair to H+.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m3-2": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m3-2.svg",
+    "description": "Alkoxide −O–CH₂–C≡N with formal O−; arrow from oxygen to H of water, with water O–H bond electrons returning to water oxygen.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m3-3": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m3-3.svg",
+    "description": "Intermediate has O+; arrow from its oxygen lone pair to H+.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m3-4": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m3-4.svg",
+    "description": "Alkoxide −O–CH₂–C≡N; arrow from the nitrile nitrogen end towards H+.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m4-1": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m4-1.svg",
+    "description": "Product structure: HO–CH₂–C≡N.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m4-2": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m4-2.svg",
+    "description": "Product structure: HO–CH₂–N≡C.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m4-3": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m4-3.svg",
+    "description": "Product structure: H–C(=O)–C≡N.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hcn-m4-4": {
+    "path": "assets/mechanism-markpoints/mp-hcn-m4-4.svg",
+    "description": "Product structure: CH₃–C≡N.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-context": {
+    "path": "assets/mechanism-markpoints/mp-hbr-context.svg",
+    "description": "2-Methylpropene CH₂=C(CH₃)₂ and separate hydrogen bromide H–Br; no dipole or arrows supplied.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m1-1": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m1-1.svg",
+    "description": "Arrow from the C=C bond to H of H–Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m1-2": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m1-2.svg",
+    "description": "Arrow from H of H–Br to the C=C bond.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m1-3": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m1-3.svg",
+    "description": "Arrow from the C=C bond to Br of H–Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m1-4": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m1-4.svg",
+    "description": "Arrow starting on the substituted carbon atom, rather than the C=C pair, and ending at H.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m2-1": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m2-1.svg",
+    "description": "Hδ+–Brδ−; arrow from the H–Br bond to Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m2-2": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m2-2.svg",
+    "description": "Hδ−–Brδ+; arrow from the H–Br bond to Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m2-3": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m2-3.svg",
+    "description": "Hδ+–Brδ−; arrow from Br towards the H–Br bond.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m2-4": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m2-4.svg",
+    "description": "H–Br without a dipole; arrow from the bond to Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m3-1": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m3-1.svg",
+    "description": "Tertiary (CH₃)₃C+ with a formal positive charge; arrow from Br− lone pair to the charged carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m3-2": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m3-2.svg",
+    "description": "Primary (CH₃)₂CH–CH₂+; arrow from Br− lone pair to the charged carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m3-3": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m3-3.svg",
+    "description": "Tertiary carbon marked δ+ instead of formal +; arrow from Br− to that carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m3-4": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m3-4.svg",
+    "description": "Tertiary (CH₃)₃C+; arrow goes from the charged carbon towards Br−.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m4-1": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m4-1.svg",
+    "description": "Product structure: (CH₃)₃C–Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m4-2": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m4-2.svg",
+    "description": "Product structure: (CH₃)₂CH–CH₂Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m4-3": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m4-3.svg",
+    "description": "Product structure: (CH₃)₃C–OH.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-hbr-m4-4": {
+    "path": "assets/mechanism-markpoints/mp-hbr-m4-4.svg",
+    "description": "Product structure: CH₂=C(CH₃)₂.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-context": {
+    "path": "assets/mechanism-markpoints/mp-br2-context.svg",
+    "description": "Ethene and separate bromine Br–Br; no induced dipole or arrows are supplied.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m1-1": {
+    "path": "assets/mechanism-markpoints/mp-br2-m1-1.svg",
+    "description": "Brδ+–Brδ−; arrow from C=C to Brδ+ and arrow from Br–Br bond to Brδ−.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m1-2": {
+    "path": "assets/mechanism-markpoints/mp-br2-m1-2.svg",
+    "description": "Both first-stage arrows are present, but Br–Br has no dipole.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m1-3": {
+    "path": "assets/mechanism-markpoints/mp-br2-m1-3.svg",
+    "description": "Brδ+–Brδ− and the Br–Br breaking arrow only; no C=C attack arrow.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m1-4": {
+    "path": "assets/mechanism-markpoints/mp-br2-m1-4.svg",
+    "description": "Brδ+–Brδ− and the C=C-to-Brδ+ arrow only; no Br–Br breaking arrow.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m2-1": {
+    "path": "assets/mechanism-markpoints/mp-br2-m2-1.svg",
+    "description": "BrCH₂–CH₂+ with a formal charge and arrow from Br− lone pair to the charged carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m2-2": {
+    "path": "assets/mechanism-markpoints/mp-br2-m2-2.svg",
+    "description": "CH₃–CH₂+ with no bonded bromine; arrow from Br− to the charged carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m2-3": {
+    "path": "assets/mechanism-markpoints/mp-br2-m2-3.svg",
+    "description": "BrCH₂–CH₂δ+ using partial rather than formal charge; arrow from Br− to that carbon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m2-4": {
+    "path": "assets/mechanism-markpoints/mp-br2-m2-4.svg",
+    "description": "BrCH₂–CH₂+; arrow goes from the charged carbon towards Br−.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m3-1": {
+    "path": "assets/mechanism-markpoints/mp-br2-m3-1.svg",
+    "description": "Product structure: BrCH₂–CH₂Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m3-2": {
+    "path": "assets/mechanism-markpoints/mp-br2-m3-2.svg",
+    "description": "Product structure: CH₃–CH₂Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m3-3": {
+    "path": "assets/mechanism-markpoints/mp-br2-m3-3.svg",
+    "description": "Product structure: CH₃–CHBr₂.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-br2-m3-4": {
+    "path": "assets/mechanism-markpoints/mp-br2-m3-4.svg",
+    "description": "Product structure: HO–CH₂–CH₂Br.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-context": {
+    "path": "assets/mechanism-markpoints/mp-eas-context.svg",
+    "description": "Benzene with its aromatic circle, chlorine Cl₂, and aluminium chloride AlCl₃ catalyst. No arrows or intermediate are shown.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m1-1": {
+    "path": "assets/mechanism-markpoints/mp-eas-m1-1.svg",
+    "description": "Equation pair: Cl₂ + AlCl₃ → Cl+ + AlCl₄−; H+ + AlCl₄− → AlCl₃ + HCl.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m1-2": {
+    "path": "assets/mechanism-markpoints/mp-eas-m1-2.svg",
+    "description": "Equation pair: Cl₂ + FeCl₃ → Cl+ + FeCl₄−; H+ + FeCl₄− → FeCl₃ + HCl.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m1-3": {
+    "path": "assets/mechanism-markpoints/mp-eas-m1-3.svg",
+    "description": "Equation pair uses Cl− and AlCl₄+ in electrophile generation; its second equation uses H+ and AlCl₄− to regenerate AlCl₃.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m1-4": {
+    "path": "assets/mechanism-markpoints/mp-eas-m1-4.svg",
+    "description": "Electrophile generation equation followed by the claim that AlCl₃ is consumed without regeneration.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m2-1": {
+    "path": "assets/mechanism-markpoints/mp-eas-m2-1.svg",
+    "description": "Arrow from the benzene π-circle to Cl+.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m2-2": {
+    "path": "assets/mechanism-markpoints/mp-eas-m2-2.svg",
+    "description": "Arrow from Cl+ to the benzene π-circle.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m2-3": {
+    "path": "assets/mechanism-markpoints/mp-eas-m2-3.svg",
+    "description": "Arrow from an explicit benzene C–H bond to Cl+.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m2-4": {
+    "path": "assets/mechanism-markpoints/mp-eas-m2-4.svg",
+    "description": "Arrow from the benzene π-circle to Cl−.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m3-1": {
+    "path": "assets/mechanism-markpoints/mp-eas-m3-1.svg",
+    "description": "H and Cl on the same ring carbon; inner partial circle covers more than half the ring with its gap towards that carbon; + inside the hexagon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m3-2": {
+    "path": "assets/mechanism-markpoints/mp-eas-m3-2.svg",
+    "description": "H and Cl on the same ring carbon; a complete aromatic circle and + remain inside the hexagon.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m3-3": {
+    "path": "assets/mechanism-markpoints/mp-eas-m3-3.svg",
+    "description": "H and Cl on the same ring carbon and a partial circle with the gap towards that carbon, but no positive charge.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m3-4": {
+    "path": "assets/mechanism-markpoints/mp-eas-m3-4.svg",
+    "description": "H and Cl on the same ring carbon; partial-circle gap faces the opposite side of the ring; + inside.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m4-1": {
+    "path": "assets/mechanism-markpoints/mp-eas-m4-1.svg",
+    "description": "Arrow from the C–H bond at the Cl-bearing carbon into the ring; charge and delocalisation omitted for this arrow-only choice.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m4-2": {
+    "path": "assets/mechanism-markpoints/mp-eas-m4-2.svg",
+    "description": "Arrow starts at H itself and goes into the ring; charge and delocalisation omitted.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m4-3": {
+    "path": "assets/mechanism-markpoints/mp-eas-m4-3.svg",
+    "description": "Arrow starts at the C–Cl bond and goes into the ring; charge and delocalisation omitted.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
+  },
+  "mp-eas-m4-4": {
+    "path": "assets/mechanism-markpoints/mp-eas-m4-4.svg",
+    "description": "Arrow from the ring towards the C–H bond; charge and delocalisation omitted.",
+    "status": "teacher-review-required",
+    "review": "Original diagram; source-group mapping checked, teacher chemistry review pending."
   }
 }

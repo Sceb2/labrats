@@ -8,6 +8,8 @@ Original practice questions informed by four questions in user-supplied OCR Chem
 
 Standalone drawing practice with teacher/self marking. Not imported into questions.json; not automatically scored by the revision tool.
 
+This document preserves the original drawing/self-marking draft. A separate auto-scored recognition adaptation is now available: see [the card preview guide](MECHANISM_CARD_PREVIEW.md). The drawing draft itself has not been imported as a freehand task.
+
 Open [the standalone review preview](../content-drafts/ocr-mechanism-review.html) in a browser, or inspect [the structured authoring data](../content-drafts/ocr-mechanism-markpoints.json). The preview can filter combined/focused cards and show or hide answer guidance. Draw on paper or a separate canvas; it does not capture answers or award marks.
 
 ## What the source schemes award

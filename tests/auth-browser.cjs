@@ -192,7 +192,10 @@ test('student browser login lifecycle and existing practice', async t => {
       const original = await browser.newPage();
       original.on('pageerror', e => errors.push(e.message));
       await original.goto(base + 'tests.html');
-      await original.waitForFunction(() => document.querySelector('#summary').textContent.includes('244/244'));
+      await original.waitForFunction(() => {
+        const counts=document.querySelector('#summary').textContent.match(/^(\d+)\/(\d+) software checks passed/);
+        return counts&&Number(counts[1])>0&&counts[1]===counts[2];
+      });
       assert.equal(await original.locator('.fail').count(), 0);
       await original.goto(base + 'index.html?preview=RC01');
       await original.locator('#reagent').selectOption('dichromate-acid'); await original.locator('#heating').selectOption('distil');

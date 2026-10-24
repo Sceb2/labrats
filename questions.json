@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "OCR A Organic Chemistry Revision",
-    "version": "6.0",
-    "bankVersion": "v6-216-questions-2026-10-15",
+    "version": "7.0",
+    "bankVersion": "v7-236-questions-2026-10-24",
     "scoringVersion": "2",
     "specification": "Cambridge OCR Chemistry A H432 Version 3.1 (May 2026)",
     "sourceAccessDate": "2026-10-15",
     "sourceUrl": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
-    "reviewNotice": "216 questions are enabled for student practice by default; teacher chemistry-review status remains separate from publication permission.",
+    "reviewNotice": "236 questions are enabled on the prototype branch, including 20 mechanism recognition cards awaiting teacher chemistry review. Publication requires separate review.",
     "pathwaySource": {
       "id": "ocr-pathways-v1-2017",
       "url": "https://www.ocr.org.uk/images/359182-organic-synthesis-reaction-pathways.pdf",
@@ -16,7 +16,8 @@
       "sha256": "d2a4070fcbb445f5718f079932cca9580f43df5a11fdb326362836ef09fe0043"
     },
     "compatibleBankVersions": [
-      "v5-204-questions-2026-10-12"
+      "v5-204-questions-2026-10-12",
+      "v6-216-questions-2026-10-15"
     ]
   },
   "topics": [
@@ -3832,6 +3833,486 @@
       "notation": "",
       "misconception": "Check the functional group, carbon skeleton and reaction context.",
       "asset": "propanoyl-chloride"
+    },
+    "mp-hcn-m1-1": {
+      "id": "mp-hcn-m1-1",
+      "label": "Arrow from the cyanide carbon lone pair to the carbonyl carbon.",
+      "chemicalId": "mp-hcn-m1-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m1-1"
+    },
+    "mp-hcn-m1-2": {
+      "id": "mp-hcn-m1-2",
+      "label": "Arrow from the cyanide nitrogen lone pair to the carbonyl carbon.",
+      "chemicalId": "mp-hcn-m1-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m1-2"
+    },
+    "mp-hcn-m1-3": {
+      "id": "mp-hcn-m1-3",
+      "label": "Arrow from the carbonyl carbon towards the cyanide carbon lone pair.",
+      "chemicalId": "mp-hcn-m1-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m1-3"
+    },
+    "mp-hcn-m1-4": {
+      "id": "mp-hcn-m1-4",
+      "label": "Arrow from the cyanide carbon lone pair to the carbonyl oxygen.",
+      "chemicalId": "mp-hcn-m1-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m1-4"
+    },
+    "mp-hcn-m2-1": {
+      "id": "mp-hcn-m2-1",
+      "label": "Carbonyl Cδ+ and Oδ−; arrow from the C=O bond to oxygen.",
+      "chemicalId": "mp-hcn-m2-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m2-1"
+    },
+    "mp-hcn-m2-2": {
+      "id": "mp-hcn-m2-2",
+      "label": "Carbonyl Cδ+ and Oδ−; arrow from oxygen towards the C=O bond.",
+      "chemicalId": "mp-hcn-m2-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m2-2"
+    },
+    "mp-hcn-m2-3": {
+      "id": "mp-hcn-m2-3",
+      "label": "Carbonyl Cδ− and Oδ+; arrow from the C=O bond to oxygen.",
+      "chemicalId": "mp-hcn-m2-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m2-3"
+    },
+    "mp-hcn-m2-4": {
+      "id": "mp-hcn-m2-4",
+      "label": "No carbonyl dipole; arrow from the C=O bond to oxygen.",
+      "chemicalId": "mp-hcn-m2-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m2-4"
+    },
+    "mp-hcn-m3-1": {
+      "id": "mp-hcn-m3-1",
+      "label": "Alkoxide −O–CH₂–C≡N with formal O−; arrow from its oxygen lone pair to H+.",
+      "chemicalId": "mp-hcn-m3-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m3-1"
+    },
+    "mp-hcn-m3-2": {
+      "id": "mp-hcn-m3-2",
+      "label": "Alkoxide −O–CH₂–C≡N with formal O−; arrow from oxygen to H of water, with water O–H bond electrons returning to water oxygen.",
+      "chemicalId": "mp-hcn-m3-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m3-2"
+    },
+    "mp-hcn-m3-3": {
+      "id": "mp-hcn-m3-3",
+      "label": "Intermediate has O+; arrow from its oxygen lone pair to H+.",
+      "chemicalId": "mp-hcn-m3-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m3-3"
+    },
+    "mp-hcn-m3-4": {
+      "id": "mp-hcn-m3-4",
+      "label": "Alkoxide −O–CH₂–C≡N; arrow from the nitrile nitrogen end towards H+.",
+      "chemicalId": "mp-hcn-m3-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m3-4"
+    },
+    "mp-hcn-m4-1": {
+      "id": "mp-hcn-m4-1",
+      "label": "Product structure: HO–CH₂–C≡N.",
+      "chemicalId": "mp-hcn-m4-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m4-1"
+    },
+    "mp-hcn-m4-2": {
+      "id": "mp-hcn-m4-2",
+      "label": "Product structure: HO–CH₂–N≡C.",
+      "chemicalId": "mp-hcn-m4-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m4-2"
+    },
+    "mp-hcn-m4-3": {
+      "id": "mp-hcn-m4-3",
+      "label": "Product structure: H–C(=O)–C≡N.",
+      "chemicalId": "mp-hcn-m4-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m4-3"
+    },
+    "mp-hcn-m4-4": {
+      "id": "mp-hcn-m4-4",
+      "label": "Product structure: CH₃–C≡N.",
+      "chemicalId": "mp-hcn-m4-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hcn-m4-4"
+    },
+    "mp-hbr-m1-1": {
+      "id": "mp-hbr-m1-1",
+      "label": "Arrow from the C=C bond to H of H–Br.",
+      "chemicalId": "mp-hbr-m1-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m1-1"
+    },
+    "mp-hbr-m1-2": {
+      "id": "mp-hbr-m1-2",
+      "label": "Arrow from H of H–Br to the C=C bond.",
+      "chemicalId": "mp-hbr-m1-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m1-2"
+    },
+    "mp-hbr-m1-3": {
+      "id": "mp-hbr-m1-3",
+      "label": "Arrow from the C=C bond to Br of H–Br.",
+      "chemicalId": "mp-hbr-m1-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m1-3"
+    },
+    "mp-hbr-m1-4": {
+      "id": "mp-hbr-m1-4",
+      "label": "Arrow starting on the substituted carbon atom, rather than the C=C pair, and ending at H.",
+      "chemicalId": "mp-hbr-m1-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m1-4"
+    },
+    "mp-hbr-m2-1": {
+      "id": "mp-hbr-m2-1",
+      "label": "Hδ+–Brδ−; arrow from the H–Br bond to Br.",
+      "chemicalId": "mp-hbr-m2-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m2-1"
+    },
+    "mp-hbr-m2-2": {
+      "id": "mp-hbr-m2-2",
+      "label": "Hδ−–Brδ+; arrow from the H–Br bond to Br.",
+      "chemicalId": "mp-hbr-m2-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m2-2"
+    },
+    "mp-hbr-m2-3": {
+      "id": "mp-hbr-m2-3",
+      "label": "Hδ+–Brδ−; arrow from Br towards the H–Br bond.",
+      "chemicalId": "mp-hbr-m2-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m2-3"
+    },
+    "mp-hbr-m2-4": {
+      "id": "mp-hbr-m2-4",
+      "label": "H–Br without a dipole; arrow from the bond to Br.",
+      "chemicalId": "mp-hbr-m2-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m2-4"
+    },
+    "mp-hbr-m3-1": {
+      "id": "mp-hbr-m3-1",
+      "label": "Tertiary (CH₃)₃C+ with a formal positive charge; arrow from Br− lone pair to the charged carbon.",
+      "chemicalId": "mp-hbr-m3-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m3-1"
+    },
+    "mp-hbr-m3-2": {
+      "id": "mp-hbr-m3-2",
+      "label": "Primary (CH₃)₂CH–CH₂+; arrow from Br− lone pair to the charged carbon.",
+      "chemicalId": "mp-hbr-m3-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m3-2"
+    },
+    "mp-hbr-m3-3": {
+      "id": "mp-hbr-m3-3",
+      "label": "Tertiary carbon marked δ+ instead of formal +; arrow from Br− to that carbon.",
+      "chemicalId": "mp-hbr-m3-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m3-3"
+    },
+    "mp-hbr-m3-4": {
+      "id": "mp-hbr-m3-4",
+      "label": "Tertiary (CH₃)₃C+; arrow goes from the charged carbon towards Br−.",
+      "chemicalId": "mp-hbr-m3-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m3-4"
+    },
+    "mp-hbr-m4-1": {
+      "id": "mp-hbr-m4-1",
+      "label": "Product structure: (CH₃)₃C–Br.",
+      "chemicalId": "mp-hbr-m4-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m4-1"
+    },
+    "mp-hbr-m4-2": {
+      "id": "mp-hbr-m4-2",
+      "label": "Product structure: (CH₃)₂CH–CH₂Br.",
+      "chemicalId": "mp-hbr-m4-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m4-2"
+    },
+    "mp-hbr-m4-3": {
+      "id": "mp-hbr-m4-3",
+      "label": "Product structure: (CH₃)₃C–OH.",
+      "chemicalId": "mp-hbr-m4-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m4-3"
+    },
+    "mp-hbr-m4-4": {
+      "id": "mp-hbr-m4-4",
+      "label": "Product structure: CH₂=C(CH₃)₂.",
+      "chemicalId": "mp-hbr-m4-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-hbr-m4-4"
+    },
+    "mp-br2-m1-1": {
+      "id": "mp-br2-m1-1",
+      "label": "Brδ+–Brδ−; arrow from C=C to Brδ+ and arrow from Br–Br bond to Brδ−.",
+      "chemicalId": "mp-br2-m1-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m1-1"
+    },
+    "mp-br2-m1-2": {
+      "id": "mp-br2-m1-2",
+      "label": "Both first-stage arrows are present, but Br–Br has no dipole.",
+      "chemicalId": "mp-br2-m1-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m1-2"
+    },
+    "mp-br2-m1-3": {
+      "id": "mp-br2-m1-3",
+      "label": "Brδ+–Brδ− and the Br–Br breaking arrow only; no C=C attack arrow.",
+      "chemicalId": "mp-br2-m1-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m1-3"
+    },
+    "mp-br2-m1-4": {
+      "id": "mp-br2-m1-4",
+      "label": "Brδ+–Brδ− and the C=C-to-Brδ+ arrow only; no Br–Br breaking arrow.",
+      "chemicalId": "mp-br2-m1-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m1-4"
+    },
+    "mp-br2-m2-1": {
+      "id": "mp-br2-m2-1",
+      "label": "BrCH₂–CH₂+ with a formal charge and arrow from Br− lone pair to the charged carbon.",
+      "chemicalId": "mp-br2-m2-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m2-1"
+    },
+    "mp-br2-m2-2": {
+      "id": "mp-br2-m2-2",
+      "label": "CH₃–CH₂+ with no bonded bromine; arrow from Br− to the charged carbon.",
+      "chemicalId": "mp-br2-m2-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m2-2"
+    },
+    "mp-br2-m2-3": {
+      "id": "mp-br2-m2-3",
+      "label": "BrCH₂–CH₂δ+ using partial rather than formal charge; arrow from Br− to that carbon.",
+      "chemicalId": "mp-br2-m2-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m2-3"
+    },
+    "mp-br2-m2-4": {
+      "id": "mp-br2-m2-4",
+      "label": "BrCH₂–CH₂+; arrow goes from the charged carbon towards Br−.",
+      "chemicalId": "mp-br2-m2-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m2-4"
+    },
+    "mp-br2-m3-1": {
+      "id": "mp-br2-m3-1",
+      "label": "Product structure: BrCH₂–CH₂Br.",
+      "chemicalId": "mp-br2-m3-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m3-1"
+    },
+    "mp-br2-m3-2": {
+      "id": "mp-br2-m3-2",
+      "label": "Product structure: CH₃–CH₂Br.",
+      "chemicalId": "mp-br2-m3-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m3-2"
+    },
+    "mp-br2-m3-3": {
+      "id": "mp-br2-m3-3",
+      "label": "Product structure: CH₃–CHBr₂.",
+      "chemicalId": "mp-br2-m3-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m3-3"
+    },
+    "mp-br2-m3-4": {
+      "id": "mp-br2-m3-4",
+      "label": "Product structure: HO–CH₂–CH₂Br.",
+      "chemicalId": "mp-br2-m3-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-br2-m3-4"
+    },
+    "mp-eas-m1-1": {
+      "id": "mp-eas-m1-1",
+      "label": "Equation pair: Cl₂ + AlCl₃ → Cl+ + AlCl₄−; H+ + AlCl₄− → AlCl₃ + HCl.",
+      "chemicalId": "mp-eas-m1-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m1-1"
+    },
+    "mp-eas-m1-2": {
+      "id": "mp-eas-m1-2",
+      "label": "Equation pair: Cl₂ + FeCl₃ → Cl+ + FeCl₄−; H+ + FeCl₄− → FeCl₃ + HCl.",
+      "chemicalId": "mp-eas-m1-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m1-2"
+    },
+    "mp-eas-m1-3": {
+      "id": "mp-eas-m1-3",
+      "label": "Equation pair uses Cl− and AlCl₄+ in electrophile generation; its second equation uses H+ and AlCl₄− to regenerate AlCl₃.",
+      "chemicalId": "mp-eas-m1-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m1-3"
+    },
+    "mp-eas-m1-4": {
+      "id": "mp-eas-m1-4",
+      "label": "Electrophile generation equation followed by the claim that AlCl₃ is consumed without regeneration.",
+      "chemicalId": "mp-eas-m1-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m1-4"
+    },
+    "mp-eas-m2-1": {
+      "id": "mp-eas-m2-1",
+      "label": "Arrow from the benzene π-circle to Cl+.",
+      "chemicalId": "mp-eas-m2-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m2-1"
+    },
+    "mp-eas-m2-2": {
+      "id": "mp-eas-m2-2",
+      "label": "Arrow from Cl+ to the benzene π-circle.",
+      "chemicalId": "mp-eas-m2-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m2-2"
+    },
+    "mp-eas-m2-3": {
+      "id": "mp-eas-m2-3",
+      "label": "Arrow from an explicit benzene C–H bond to Cl+.",
+      "chemicalId": "mp-eas-m2-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m2-3"
+    },
+    "mp-eas-m2-4": {
+      "id": "mp-eas-m2-4",
+      "label": "Arrow from the benzene π-circle to Cl−.",
+      "chemicalId": "mp-eas-m2-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m2-4"
+    },
+    "mp-eas-m3-1": {
+      "id": "mp-eas-m3-1",
+      "label": "H and Cl on the same ring carbon; inner partial circle covers more than half the ring with its gap towards that carbon; + inside the hexagon.",
+      "chemicalId": "mp-eas-m3-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m3-1"
+    },
+    "mp-eas-m3-2": {
+      "id": "mp-eas-m3-2",
+      "label": "H and Cl on the same ring carbon; a complete aromatic circle and + remain inside the hexagon.",
+      "chemicalId": "mp-eas-m3-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m3-2"
+    },
+    "mp-eas-m3-3": {
+      "id": "mp-eas-m3-3",
+      "label": "H and Cl on the same ring carbon and a partial circle with the gap towards that carbon, but no positive charge.",
+      "chemicalId": "mp-eas-m3-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m3-3"
+    },
+    "mp-eas-m3-4": {
+      "id": "mp-eas-m3-4",
+      "label": "H and Cl on the same ring carbon; partial-circle gap faces the opposite side of the ring; + inside.",
+      "chemicalId": "mp-eas-m3-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m3-4"
+    },
+    "mp-eas-m4-1": {
+      "id": "mp-eas-m4-1",
+      "label": "Arrow from the C–H bond at the Cl-bearing carbon into the ring; charge and delocalisation omitted for this arrow-only choice.",
+      "chemicalId": "mp-eas-m4-1",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m4-1"
+    },
+    "mp-eas-m4-2": {
+      "id": "mp-eas-m4-2",
+      "label": "Arrow starts at H itself and goes into the ring; charge and delocalisation omitted.",
+      "chemicalId": "mp-eas-m4-2",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m4-2"
+    },
+    "mp-eas-m4-3": {
+      "id": "mp-eas-m4-3",
+      "label": "Arrow starts at the C–Cl bond and goes into the ring; charge and delocalisation omitted.",
+      "chemicalId": "mp-eas-m4-3",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m4-3"
+    },
+    "mp-eas-m4-4": {
+      "id": "mp-eas-m4-4",
+      "label": "Arrow from the ring towards the C–H bond; charge and delocalisation omitted.",
+      "chemicalId": "mp-eas-m4-4",
+      "category": "mechanism-feature",
+      "aliases": [],
+      "asset": "mp-eas-m4-4"
     }
   },
   "specificationRefs": {
@@ -9415,7 +9896,7 @@
             "kind": "lone-pair",
             "x": 37,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -9424,7 +9905,7 @@
             "kind": "negative-charge",
             "x": 86,
             "y": 159,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -9433,7 +9914,7 @@
             "kind": "atom",
             "x": 65,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -9442,7 +9923,7 @@
             "kind": "atom",
             "x": 320,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -9451,7 +9932,7 @@
             "kind": "bond-pair",
             "x": 410,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -9460,7 +9941,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -9564,7 +10045,7 @@
             "kind": "lone-pair",
             "x": 37,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -9573,7 +10054,7 @@
             "kind": "negative-charge",
             "x": 86,
             "y": 159,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -9582,7 +10063,7 @@
             "kind": "atom",
             "x": 65,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -9591,7 +10072,7 @@
             "kind": "atom",
             "x": 320,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -9600,7 +10081,7 @@
             "kind": "bond-pair",
             "x": 410,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -9609,7 +10090,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -9713,7 +10194,7 @@
             "kind": "lone-pair",
             "x": 37,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -9722,7 +10203,7 @@
             "kind": "negative-charge",
             "x": 86,
             "y": 159,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -9731,7 +10212,7 @@
             "kind": "atom",
             "x": 65,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -9740,7 +10221,7 @@
             "kind": "atom",
             "x": 320,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -9749,7 +10230,7 @@
             "kind": "bond-pair",
             "x": 410,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -9758,7 +10239,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -9862,7 +10343,7 @@
             "kind": "atom",
             "x": 150,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -9871,7 +10352,7 @@
             "kind": "bond-pair",
             "x": 218,
             "y": 178,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -9880,7 +10361,7 @@
             "kind": "atom",
             "x": 285,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -9889,7 +10370,7 @@
             "kind": "atom",
             "x": 420,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -9898,7 +10379,7 @@
             "kind": "bond-pair",
             "x": 483,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -9907,7 +10388,7 @@
             "kind": "atom",
             "x": 545,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -10011,7 +10492,7 @@
             "kind": "atom",
             "x": 150,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -10020,7 +10501,7 @@
             "kind": "bond-pair",
             "x": 218,
             "y": 178,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -10029,7 +10510,7 @@
             "kind": "atom",
             "x": 285,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -10038,7 +10519,7 @@
             "kind": "atom",
             "x": 420,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -10047,7 +10528,7 @@
             "kind": "bond-pair",
             "x": 483,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -10056,7 +10537,7 @@
             "kind": "atom",
             "x": 545,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -10159,7 +10640,7 @@
             "kind": "lone-pair",
             "x": 65,
             "y": 184,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -10168,7 +10649,7 @@
             "kind": "negative-charge",
             "x": 124,
             "y": 158,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -10177,7 +10658,7 @@
             "kind": "atom",
             "x": 100,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -10186,7 +10667,7 @@
             "kind": "atom",
             "x": 465,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -10195,7 +10676,7 @@
             "kind": "positive-charge",
             "x": 490,
             "y": 155,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -10204,7 +10685,7 @@
             "kind": "bond-pair",
             "x": 418,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -10298,7 +10779,7 @@
             "kind": "negative-charge",
             "x": 112,
             "y": 164,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -10316,7 +10797,7 @@
             "kind": "atom",
             "x": 315,
             "y": 190,
-            "labelX": 300.0,
+            "labelX": 300,
             "labelY": 37
           },
           {
@@ -10334,7 +10815,7 @@
             "kind": "atom",
             "x": 315,
             "y": 100,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -10439,7 +10920,7 @@
             "kind": "negative-charge",
             "x": 116,
             "y": 164,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -10448,7 +10929,7 @@
             "kind": "atom",
             "x": 95,
             "y": 190,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -10457,7 +10938,7 @@
             "kind": "atom",
             "x": 315,
             "y": 190,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -10466,7 +10947,7 @@
             "kind": "bond-pair",
             "x": 321,
             "y": 145,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -10475,7 +10956,7 @@
             "kind": "atom",
             "x": 315,
             "y": 100,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -10484,7 +10965,7 @@
             "kind": "lone-pair",
             "x": 124,
             "y": 190,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -10589,7 +11070,7 @@
             "kind": "negative-charge",
             "x": 311,
             "y": 158,
-            "labelX": 55.0,
+            "labelX": 55,
             "labelY": 37
           },
           {
@@ -10598,7 +11079,7 @@
             "kind": "lone-pair",
             "x": 320,
             "y": 184,
-            "labelX": 153.0,
+            "labelX": 153,
             "labelY": 37
           },
           {
@@ -10607,7 +11088,7 @@
             "kind": "atom",
             "x": 290,
             "y": 184,
-            "labelX": 251.0,
+            "labelX": 251,
             "labelY": 37
           },
           {
@@ -10616,7 +11097,7 @@
             "kind": "atom",
             "x": 420,
             "y": 184,
-            "labelX": 349.0,
+            "labelX": 349,
             "labelY": 37
           },
           {
@@ -10625,7 +11106,7 @@
             "kind": "bond-pair",
             "x": 459,
             "y": 184,
-            "labelX": 447.0,
+            "labelX": 447,
             "labelY": 37
           },
           {
@@ -10634,7 +11115,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 545.0,
+            "labelX": 545,
             "labelY": 37
           }
         ],
@@ -11013,7 +11494,7 @@
             "kind": "atom",
             "x": 90,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11022,7 +11503,7 @@
             "kind": "atom",
             "x": 320,
             "y": 184,
-            "labelX": 300.0,
+            "labelX": 300,
             "labelY": 37
           },
           {
@@ -11031,7 +11512,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11131,7 +11612,7 @@
             "kind": "lone-pair",
             "x": 37,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11140,7 +11621,7 @@
             "kind": "lone-pair",
             "x": 532,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11239,7 +11720,7 @@
             "kind": "bond-pair",
             "x": 410,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11248,7 +11729,7 @@
             "kind": "bond-pair",
             "x": 276,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11348,7 +11829,7 @@
             "kind": "negative-charge",
             "x": 111,
             "y": 159,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11357,7 +11838,7 @@
             "kind": "negative-charge",
             "x": 527,
             "y": 256,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11456,7 +11937,7 @@
             "kind": "bond-pair",
             "x": 218,
             "y": 178,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11465,7 +11946,7 @@
             "kind": "bond-pair",
             "x": 483,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11569,7 +12050,7 @@
             "kind": "atom",
             "x": 150,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11596,7 +12077,7 @@
             "kind": "atom",
             "x": 545,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11701,7 +12182,7 @@
             "kind": "atom",
             "x": 150,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11728,7 +12209,7 @@
             "kind": "atom",
             "x": 545,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11829,7 +12310,7 @@
             "kind": "atom",
             "x": 100,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11838,7 +12319,7 @@
             "kind": "atom",
             "x": 465,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -11939,7 +12420,7 @@
             "kind": "atom",
             "x": 90,
             "y": 190,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -11948,7 +12429,7 @@
             "kind": "atom",
             "x": 315,
             "y": 190,
-            "labelX": 300.0,
+            "labelX": 300,
             "labelY": 37
           },
           {
@@ -11957,7 +12438,7 @@
             "kind": "atom",
             "x": 315,
             "y": 100,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -12058,7 +12539,7 @@
             "kind": "lone-pair",
             "x": 124,
             "y": 190,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -12067,7 +12548,7 @@
             "kind": "lone-pair",
             "x": 345,
             "y": 100,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -12166,7 +12647,7 @@
             "kind": "bond-pair",
             "x": 321,
             "y": 145,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -12175,7 +12656,7 @@
             "kind": "bond-pair",
             "x": 272,
             "y": 205,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -12276,7 +12757,7 @@
             "kind": "atom",
             "x": 290,
             "y": 184,
-            "labelX": 70.0,
+            "labelX": 70,
             "labelY": 37
           },
           {
@@ -12285,7 +12766,7 @@
             "kind": "atom",
             "x": 420,
             "y": 184,
-            "labelX": 300.0,
+            "labelX": 300,
             "labelY": 37
           },
           {
@@ -12294,7 +12775,7 @@
             "kind": "atom",
             "x": 500,
             "y": 184,
-            "labelX": 530.0,
+            "labelX": 530,
             "labelY": 37
           }
         ],
@@ -28383,7 +28864,7 @@
             "kind": "atom",
             "x": 170,
             "y": 100,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 69.6
           },
           {
@@ -28391,7 +28872,7 @@
             "label": "Ring carbon at upper-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 140.0,
+            "y": 140,
             "labelX": 265.6,
             "labelY": 124.8
           },
@@ -28400,7 +28881,7 @@
             "label": "Ring carbon at lower-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 220.0,
+            "y": 220,
             "labelX": 265.6,
             "labelY": 235.2
           },
@@ -28410,7 +28891,7 @@
             "kind": "atom",
             "x": 170,
             "y": 260,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 290.4
           },
           {
@@ -28418,7 +28899,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 220.0,
+            "y": 220,
             "labelX": 74.4,
             "labelY": 235.2
           },
@@ -28427,7 +28908,7 @@
             "label": "Ring carbon at upper-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 140.0,
+            "y": 140,
             "labelX": 74.4,
             "labelY": 124.8
           },
@@ -28561,7 +29042,7 @@
             "kind": "atom",
             "x": 170,
             "y": 100,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 69.6
           },
           {
@@ -28569,7 +29050,7 @@
             "label": "Ring carbon at lower-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 220.0,
+            "y": 220,
             "labelX": 270,
             "labelY": 270
           },
@@ -28579,7 +29060,7 @@
             "kind": "atom",
             "x": 170,
             "y": 260,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 290.4
           },
           {
@@ -28587,7 +29068,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 220.0,
+            "y": 220,
             "labelX": 74.4,
             "labelY": 235.2
           },
@@ -28712,7 +29193,7 @@
             "kind": "atom",
             "x": 170,
             "y": 100,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 69.6
           },
           {
@@ -28720,7 +29201,7 @@
             "label": "Ring carbon at upper-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 140.0,
+            "y": 140,
             "labelX": 265.6,
             "labelY": 124.8
           },
@@ -28729,7 +29210,7 @@
             "label": "Ring carbon at lower-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 220.0,
+            "y": 220,
             "labelX": 265.6,
             "labelY": 235.2
           },
@@ -28747,7 +29228,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 220.0,
+            "y": 220,
             "labelX": 74.4,
             "labelY": 235.2
           },
@@ -28756,7 +29237,7 @@
             "label": "Ring carbon at upper-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 140.0,
+            "y": 140,
             "labelX": 74.4,
             "labelY": 124.8
           },
@@ -28881,7 +29362,7 @@
             "kind": "atom",
             "x": 170,
             "y": 100,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 69.6
           },
           {
@@ -28889,7 +29370,7 @@
             "label": "Ring carbon at upper-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 140.0,
+            "y": 140,
             "labelX": 265.6,
             "labelY": 124.8
           },
@@ -28898,7 +29379,7 @@
             "label": "Ring carbon at lower-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 220.0,
+            "y": 220,
             "labelX": 265.6,
             "labelY": 235.2
           },
@@ -28908,7 +29389,7 @@
             "kind": "atom",
             "x": 170,
             "y": 260,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 290.4
           },
           {
@@ -28916,7 +29397,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 220.0,
+            "y": 220,
             "labelX": 74.4,
             "labelY": 235.2
           },
@@ -28925,7 +29406,7 @@
             "label": "Ring carbon at upper-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 140.0,
+            "y": 140,
             "labelX": 74.4,
             "labelY": 124.8
           },
@@ -29032,7 +29513,7 @@
             "kind": "atom",
             "x": 170,
             "y": 100,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 69.6
           },
           {
@@ -29040,7 +29521,7 @@
             "label": "Ring carbon at lower-right",
             "kind": "atom",
             "x": 239.3,
-            "y": 220.0,
+            "y": 220,
             "labelX": 270,
             "labelY": 270
           },
@@ -29050,7 +29531,7 @@
             "kind": "atom",
             "x": 170,
             "y": 260,
-            "labelX": 170.0,
+            "labelX": 170,
             "labelY": 290.4
           },
           {
@@ -29058,7 +29539,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 100.7,
-            "y": 220.0,
+            "y": 220,
             "labelX": 74.4,
             "labelY": 235.2
           },
@@ -29166,7 +29647,7 @@
             "kind": "atom",
             "x": 145,
             "y": 108,
-            "labelX": 145.0,
+            "labelX": 145,
             "labelY": 79.2
           },
           {
@@ -29175,7 +29656,7 @@
             "kind": "atom",
             "x": 145,
             "y": 252,
-            "labelX": 145.0,
+            "labelX": 145,
             "labelY": 280.8
           },
           {
@@ -29183,7 +29664,7 @@
             "label": "Ring carbon at lower-left",
             "kind": "atom",
             "x": 82.6,
-            "y": 216.0,
+            "y": 216,
             "labelX": 51.5,
             "labelY": 230.4
           },
@@ -29613,8 +30094,8 @@
             "kind": "atom",
             "x": 190,
             "y": 178,
-            "labelX": 190.0,
-            "labelY": 152.0
+            "labelX": 190,
+            "labelY": 152
           },
           {
             "id": "phenyl-4",
@@ -29622,17 +30103,17 @@
             "kind": "atom",
             "x": 190,
             "y": 302,
-            "labelX": 190.0,
-            "labelY": 328.0
+            "labelX": 190,
+            "labelY": 328
           },
           {
             "id": "phenyl-5",
             "label": "Phenyl-ring carbon at lower-left",
             "kind": "atom",
             "x": 136.3,
-            "y": 271.0,
+            "y": 271,
             "labelX": 110.5,
-            "labelY": 284.0
+            "labelY": 284
           },
           {
             "id": "aldehyde-h",
@@ -30126,6 +30607,2176 @@
         }
       },
       "enabled": true
+    },
+    {
+      "id": "MC25",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — mechanism features",
+      "prompt": "Methanal reacts with HCN in the presence of CN−. Select the mechanism features, product and mechanism name.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context",
+        "mp-hcn-m1-1",
+        "mp-hcn-m1-2",
+        "mp-hcn-m1-3",
+        "mp-hcn-m1-4",
+        "mp-hcn-m2-1",
+        "mp-hcn-m2-2",
+        "mp-hcn-m2-3",
+        "mp-hcn-m2-4",
+        "mp-hcn-m3-1",
+        "mp-hcn-m3-2",
+        "mp-hcn-m3-3",
+        "mp-hcn-m3-4",
+        "mp-hcn-m4-1",
+        "mp-hcn-m4-2",
+        "mp-hcn-m4-3",
+        "mp-hcn-m4-4"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the cyanide attack arrow",
+          "options": [
+            "mp-hcn-m1-1",
+            "mp-hcn-m1-2",
+            "mp-hcn-m1-3",
+            "mp-hcn-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m2",
+          "label": "Choose the carbonyl dipole AND bond-opening arrow",
+          "options": [
+            "mp-hcn-m2-1",
+            "mp-hcn-m2-2",
+            "mp-hcn-m2-3",
+            "mp-hcn-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m3",
+          "label": "Choose the intermediate AND protonation arrow (either proton source is allowed)",
+          "options": [
+            "mp-hcn-m3-1",
+            "mp-hcn-m3-2",
+            "mp-hcn-m3-3",
+            "mp-hcn-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m4",
+          "label": "Choose the organic product",
+          "options": [
+            "mp-hcn-m4-1",
+            "mp-hcn-m4-2",
+            "mp-hcn-m4-3",
+            "mp-hcn-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m5",
+          "label": "Name the mechanism",
+          "options": [
+            "nucleophilic-addition",
+            "nucleophilic-substitution",
+            "electrophilic-addition",
+            "electrophilic-substitution"
+          ],
+          "essential": true,
+          "marks": 1
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-hcn-m1-1"
+            ],
+            "m2": [
+              "mp-hcn-m2-1"
+            ],
+            "m3": [
+              "mp-hcn-m3-1",
+              "mp-hcn-m3-2"
+            ],
+            "m4": [
+              "mp-hcn-m4-1"
+            ],
+            "m5": [
+              "nucleophilic-addition"
+            ]
+          }
+        }
+      ],
+      "maxMark": 5,
+      "feedback": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. CN− is a nucleophile and adds across the carbonyl; no group is substituted. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hcn-m1-1": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-2": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-3": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-4": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m2-1": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-2": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-3": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-4": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m3-1": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-2": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-3": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-4": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m4-1": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-2": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-3": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-4": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "nucleophilic-addition": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "nucleophilic-substitution": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "electrophilic-addition": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "electrophilic-substitution": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "combined",
+        "groups": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC26",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — cyanide attack",
+      "prompt": "Select the arrow showing cyanide attack on methanal.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context",
+        "mp-hcn-m1-1",
+        "mp-hcn-m1-2",
+        "mp-hcn-m1-3",
+        "mp-hcn-m1-4"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the cyanide attack arrow",
+          "options": [
+            "mp-hcn-m1-1",
+            "mp-hcn-m1-2",
+            "mp-hcn-m1-3",
+            "mp-hcn-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-hcn-m1-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hcn-m1-1": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-2": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-3": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon.",
+        "mp-hcn-m1-4": "Cyanide donates through carbon to the electron-deficient carbonyl carbon. Check: Cyanide attacks through carbon, not nitrogen. The full-headed arrow starts at the carbon lone pair or negative charge on carbon and ends at the carbonyl carbon."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "focused",
+        "groups": [
+          "M1"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC27",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — carbonyl polarity and bond opening",
+      "prompt": "Select the carbonyl dipole and bond-opening arrow for methanal. Both features are needed.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context",
+        "mp-hcn-m2-1",
+        "mp-hcn-m2-2",
+        "mp-hcn-m2-3",
+        "mp-hcn-m2-4"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m2",
+          "label": "Choose the carbonyl dipole AND bond-opening arrow",
+          "options": [
+            "mp-hcn-m2-1",
+            "mp-hcn-m2-2",
+            "mp-hcn-m2-3",
+            "mp-hcn-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m2": [
+              "mp-hcn-m2-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hcn-m2-1": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-2": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-3": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen.",
+        "mp-hcn-m2-4": "The π pair moves to oxygen. Show the starting dipole as well; this is one combined mark. Check: Carbonyl carbon is δ+ and oxygen is δ−. A full-headed curly arrow goes from the C=O bond to oxygen."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "focused",
+        "groups": [
+          "M2"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC28",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — intermediate and protonation",
+      "prompt": "Select the intermediate and its protonation after cyanide adds to methanal. Either H⁺ or water is allowed.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context",
+        "mp-hcn-m3-1",
+        "mp-hcn-m3-2",
+        "mp-hcn-m3-3",
+        "mp-hcn-m3-4"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m3",
+          "label": "Choose the intermediate AND protonation arrow (either proton source is allowed)",
+          "options": [
+            "mp-hcn-m3-1",
+            "mp-hcn-m3-2",
+            "mp-hcn-m3-3",
+            "mp-hcn-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m3": [
+              "mp-hcn-m3-1",
+              "mp-hcn-m3-2"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hcn-m3-1": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-2": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-3": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water.",
+        "mp-hcn-m3-4": "The intermediate is an alkoxide. Its negatively charged oxygen donates a pair to a proton. Check: Correct alkoxide intermediate: −O–CH2–C≡N, with a single C–O bond and negative charge on O. A full-headed arrow starts at the O lone pair or O− charge and ends at H+ or a hydrogen of water."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "focused",
+        "groups": [
+          "M3"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC29",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — hydroxynitrile product",
+      "prompt": "Select the organic product when methanal reacts with HCN.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context",
+        "mp-hcn-m4-1",
+        "mp-hcn-m4-2",
+        "mp-hcn-m4-3",
+        "mp-hcn-m4-4"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m4",
+          "label": "Choose the organic product",
+          "options": [
+            "mp-hcn-m4-1",
+            "mp-hcn-m4-2",
+            "mp-hcn-m4-3",
+            "mp-hcn-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m4": [
+              "mp-hcn-m4-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hcn-m4-1": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-2": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-3": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon.",
+        "mp-hcn-m4-4": "Addition forms a hydroxynitrile and adds one carbon to the original carbonyl skeleton. Check: HO–CH2–C≡N, with the new C–C bond and OH on the former carbonyl carbon."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "focused",
+        "groups": [
+          "M4"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC30",
+      "type": "mechanism-completion",
+      "title": "HCN addition to methanal — mechanism name",
+      "prompt": "Name the mechanism when HCN reacts with methanal in the presence of CN−.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "carbonyls"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "6.1.2(c)"
+      ],
+      "assetRefs": [
+        "mp-hcn-context"
+      ],
+      "structure": "mp-hcn-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m5",
+          "label": "Name the mechanism",
+          "options": [
+            "nucleophilic-addition",
+            "nucleophilic-substitution",
+            "electrophilic-addition",
+            "electrophilic-substitution"
+          ],
+          "essential": true,
+          "marks": 1
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m5": [
+              "nucleophilic-addition"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "nucleophilic-addition": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "nucleophilic-substitution": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "electrophilic-addition": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition.",
+        "electrophilic-substitution": "CN− is a nucleophile and adds across the carbonyl; no group is substituted. Check: Nucleophilic addition."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HCN",
+        "sourceId": "OCR-2020-19ci",
+        "sourceQuestion": "19(c)(i)",
+        "sourceSchemePrintedPages": [
+          16
+        ],
+        "sourceSchemePdfPages": [
+          17
+        ],
+        "mode": "focused",
+        "groups": [
+          "M5"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC31",
+      "type": "mechanism-completion",
+      "title": "HBr addition to 2-methylpropene — mechanism features",
+      "prompt": "2-Methylpropene reacts with HBr. Select the mechanism features and major product.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)",
+        "4.1.3(i)"
+      ],
+      "assetRefs": [
+        "mp-hbr-context",
+        "mp-hbr-m1-1",
+        "mp-hbr-m1-2",
+        "mp-hbr-m1-3",
+        "mp-hbr-m1-4",
+        "mp-hbr-m2-1",
+        "mp-hbr-m2-2",
+        "mp-hbr-m2-3",
+        "mp-hbr-m2-4",
+        "mp-hbr-m3-1",
+        "mp-hbr-m3-2",
+        "mp-hbr-m3-3",
+        "mp-hbr-m3-4",
+        "mp-hbr-m4-1",
+        "mp-hbr-m4-2",
+        "mp-hbr-m4-3",
+        "mp-hbr-m4-4"
+      ],
+      "structure": "mp-hbr-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the alkene-to-electrophile arrow",
+          "options": [
+            "mp-hbr-m1-1",
+            "mp-hbr-m1-2",
+            "mp-hbr-m1-3",
+            "mp-hbr-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m2",
+          "label": "Choose the H–Br dipole AND bond-breaking arrow",
+          "options": [
+            "mp-hbr-m2-1",
+            "mp-hbr-m2-2",
+            "mp-hbr-m2-3",
+            "mp-hbr-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m3",
+          "label": "Choose the major-route carbocation AND bromide attack arrow",
+          "options": [
+            "mp-hbr-m3-1",
+            "mp-hbr-m3-2",
+            "mp-hbr-m3-3",
+            "mp-hbr-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m4",
+          "label": "Choose the major organic product",
+          "options": [
+            "mp-hbr-m4-1",
+            "mp-hbr-m4-2",
+            "mp-hbr-m4-3",
+            "mp-hbr-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-hbr-m1-1"
+            ],
+            "m2": [
+              "mp-hbr-m2-1"
+            ],
+            "m3": [
+              "mp-hbr-m3-1"
+            ],
+            "m4": [
+              "mp-hbr-m4-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 4,
+      "feedback": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Br takes the H–Br bond pair. The dipole and arrow form one marking group. The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hbr-m1-1": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-2": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-3": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-4": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m2-1": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-2": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-3": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-4": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m3-1": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-2": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-3": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-4": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m4-1": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-2": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-3": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-4": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HBR",
+        "sourceId": "OCR-2021-16bi",
+        "sourceQuestion": "16(b)(i)",
+        "sourceSchemePrintedPages": [
+          5,
+          6
+        ],
+        "sourceSchemePdfPages": [
+          6,
+          7
+        ],
+        "mode": "combined",
+        "groups": [
+          "M1",
+          "M2",
+          "M3",
+          "M4"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC32",
+      "type": "mechanism-completion",
+      "title": "HBr addition to 2-methylpropene — alkene attack on h",
+      "prompt": "Select the first electron-pair arrow when 2-methylpropene reacts with HBr.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)",
+        "4.1.3(i)"
+      ],
+      "assetRefs": [
+        "mp-hbr-context",
+        "mp-hbr-m1-1",
+        "mp-hbr-m1-2",
+        "mp-hbr-m1-3",
+        "mp-hbr-m1-4"
+      ],
+      "structure": "mp-hbr-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the alkene-to-electrophile arrow",
+          "options": [
+            "mp-hbr-m1-1",
+            "mp-hbr-m1-2",
+            "mp-hbr-m1-3",
+            "mp-hbr-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-hbr-m1-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hbr-m1-1": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-2": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-3": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond.",
+        "mp-hbr-m1-4": "The alkene π pair is the electron source; hydrogen is the electrophilic destination. Check: A full-headed arrow starts at the C=C bond and ends at H of H–Br. Do not add a partial charge to the starting C=C bond."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HBR",
+        "sourceId": "OCR-2021-16bi",
+        "sourceQuestion": "16(b)(i)",
+        "sourceSchemePrintedPages": [
+          5,
+          6
+        ],
+        "sourceSchemePdfPages": [
+          6,
+          7
+        ],
+        "mode": "focused",
+        "groups": [
+          "M1"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC33",
+      "type": "mechanism-completion",
+      "title": "HBr addition to 2-methylpropene — hbr polarity and bond breaking",
+      "prompt": "Select the H–Br dipole and bond-breaking arrow. Both features are needed.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)",
+        "4.1.3(i)"
+      ],
+      "assetRefs": [
+        "mp-hbr-context",
+        "mp-hbr-m2-1",
+        "mp-hbr-m2-2",
+        "mp-hbr-m2-3",
+        "mp-hbr-m2-4"
+      ],
+      "structure": "mp-hbr-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m2",
+          "label": "Choose the H–Br dipole AND bond-breaking arrow",
+          "options": [
+            "mp-hbr-m2-1",
+            "mp-hbr-m2-2",
+            "mp-hbr-m2-3",
+            "mp-hbr-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m2": [
+              "mp-hbr-m2-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hbr-m2-1": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-2": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-3": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br.",
+        "mp-hbr-m2-4": "Br takes the H–Br bond pair. The dipole and arrow form one marking group. Check: Hδ+–Brδ−. A full-headed arrow from the H–Br bond to Br."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HBR",
+        "sourceId": "OCR-2021-16bi",
+        "sourceQuestion": "16(b)(i)",
+        "sourceSchemePrintedPages": [
+          5,
+          6
+        ],
+        "sourceSchemePdfPages": [
+          6,
+          7
+        ],
+        "mode": "focused",
+        "groups": [
+          "M2"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC34",
+      "type": "mechanism-completion",
+      "title": "HBr addition to 2-methylpropene — major-route carbocation and br− attack",
+      "prompt": "Select the major-route carbocation and bromide attack after HBr reacts with 2-methylpropene.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)",
+        "4.1.3(i)"
+      ],
+      "assetRefs": [
+        "mp-hbr-context",
+        "mp-hbr-m3-1",
+        "mp-hbr-m3-2",
+        "mp-hbr-m3-3",
+        "mp-hbr-m3-4"
+      ],
+      "structure": "mp-hbr-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m3",
+          "label": "Choose the major-route carbocation AND bromide attack arrow",
+          "options": [
+            "mp-hbr-m3-1",
+            "mp-hbr-m3-2",
+            "mp-hbr-m3-3",
+            "mp-hbr-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m3": [
+              "mp-hbr-m3-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hbr-m3-1": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-2": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-3": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+.",
+        "mp-hbr-m3-4": "The major route forms the more stable tertiary carbocation. Bromide donates the pair that makes the new C–Br bond. Check: The tertiary carbocation (CH3)3C+ is drawn with a formal + charge at the central carbon. A full-headed arrow starts at a Br− lone pair or its negative charge and ends at that C+."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HBR",
+        "sourceId": "OCR-2021-16bi",
+        "sourceQuestion": "16(b)(i)",
+        "sourceSchemePrintedPages": [
+          5,
+          6
+        ],
+        "sourceSchemePdfPages": [
+          6,
+          7
+        ],
+        "mode": "focused",
+        "groups": [
+          "M3"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC35",
+      "type": "mechanism-completion",
+      "title": "HBr addition to 2-methylpropene — major organic product",
+      "prompt": "Select the major product from electrophilic addition of HBr to 2-methylpropene.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)",
+        "4.1.3(i)"
+      ],
+      "assetRefs": [
+        "mp-hbr-context",
+        "mp-hbr-m4-1",
+        "mp-hbr-m4-2",
+        "mp-hbr-m4-3",
+        "mp-hbr-m4-4"
+      ],
+      "structure": "mp-hbr-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m4",
+          "label": "Choose the major organic product",
+          "options": [
+            "mp-hbr-m4-1",
+            "mp-hbr-m4-2",
+            "mp-hbr-m4-3",
+            "mp-hbr-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m4": [
+              "mp-hbr-m4-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-hbr-m4-1": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-2": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-3": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane.",
+        "mp-hbr-m4-4": "Br is bonded to the carbon that carried the positive charge in the major-route intermediate. Check: (CH3)3C–Br, 2-bromo-2-methylpropane."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "HBR",
+        "sourceId": "OCR-2021-16bi",
+        "sourceQuestion": "16(b)(i)",
+        "sourceSchemePrintedPages": [
+          5,
+          6
+        ],
+        "sourceSchemePdfPages": [
+          6,
+          7
+        ],
+        "mode": "focused",
+        "groups": [
+          "M4"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC36",
+      "type": "mechanism-completion",
+      "title": "Bromine addition to ethene — mechanism features",
+      "prompt": "Ethene reacts with Br₂. Use the open-chain carbocation representation and select the mechanism features and product.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)"
+      ],
+      "assetRefs": [
+        "mp-br2-context",
+        "mp-br2-m1-1",
+        "mp-br2-m1-2",
+        "mp-br2-m1-3",
+        "mp-br2-m1-4",
+        "mp-br2-m2-1",
+        "mp-br2-m2-2",
+        "mp-br2-m2-3",
+        "mp-br2-m2-4",
+        "mp-br2-m3-1",
+        "mp-br2-m3-2",
+        "mp-br2-m3-3",
+        "mp-br2-m3-4"
+      ],
+      "structure": "mp-br2-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the induced dipole AND BOTH first-stage arrows",
+          "options": [
+            "mp-br2-m1-1",
+            "mp-br2-m1-2",
+            "mp-br2-m1-3",
+            "mp-br2-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m2",
+          "label": "Choose the open-chain intermediate AND bromide attack arrow",
+          "options": [
+            "mp-br2-m2-1",
+            "mp-br2-m2-2",
+            "mp-br2-m2-3",
+            "mp-br2-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m3",
+          "label": "Choose the organic product",
+          "options": [
+            "mp-br2-m3-1",
+            "mp-br2-m3-2",
+            "mp-br2-m3-3",
+            "mp-br2-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-br2-m1-1"
+            ],
+            "m2": [
+              "mp-br2-m2-1"
+            ],
+            "m3": [
+              "mp-br2-m3-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 3,
+      "feedback": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-br2-m1-1": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-2": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-3": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-4": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m2-1": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-2": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-3": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-4": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m3-1": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-2": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-3": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-4": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "BR2",
+        "sourceId": "OCR-2022-16aii",
+        "sourceQuestion": "16(a)(ii)",
+        "sourceSchemePrintedPages": [
+          10,
+          11,
+          12
+        ],
+        "sourceSchemePdfPages": [
+          11,
+          12,
+          13
+        ],
+        "mode": "combined",
+        "groups": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC37",
+      "type": "mechanism-completion",
+      "title": "Bromine addition to ethene — induced dipole and two first-stage arrows",
+      "prompt": "Select the induced Br–Br dipole and BOTH first-stage arrows for bromine addition to ethene. All features together earn one mark.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)"
+      ],
+      "assetRefs": [
+        "mp-br2-context",
+        "mp-br2-m1-1",
+        "mp-br2-m1-2",
+        "mp-br2-m1-3",
+        "mp-br2-m1-4"
+      ],
+      "structure": "mp-br2-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose the induced dipole AND BOTH first-stage arrows",
+          "options": [
+            "mp-br2-m1-1",
+            "mp-br2-m1-2",
+            "mp-br2-m1-3",
+            "mp-br2-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-br2-m1-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-br2-m1-1": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-2": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-3": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond.",
+        "mp-br2-m1-4": "The alkene polarises bromine. The dipole and both first-stage arrows together earn one mark. Check: A correctly oriented Brδ+–Brδ− induced dipole. A full-headed arrow from the C=C bond to the Brδ+ atom. A full-headed arrow from the Br–Br bond to Brδ−. Do not put a partial charge on the starting C=C bond."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "BR2",
+        "sourceId": "OCR-2022-16aii",
+        "sourceQuestion": "16(a)(ii)",
+        "sourceSchemePrintedPages": [
+          10,
+          11,
+          12
+        ],
+        "sourceSchemePdfPages": [
+          11,
+          12,
+          13
+        ],
+        "mode": "focused",
+        "groups": [
+          "M1"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC38",
+      "type": "mechanism-completion",
+      "title": "Bromine addition to ethene — intermediate and bromide attack",
+      "prompt": "Select the open-chain carbocation and bromide attack in addition of Br₂ to ethene.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)"
+      ],
+      "assetRefs": [
+        "mp-br2-context",
+        "mp-br2-m2-1",
+        "mp-br2-m2-2",
+        "mp-br2-m2-3",
+        "mp-br2-m2-4"
+      ],
+      "structure": "mp-br2-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m2",
+          "label": "Choose the open-chain intermediate AND bromide attack arrow",
+          "options": [
+            "mp-br2-m2-1",
+            "mp-br2-m2-2",
+            "mp-br2-m2-3",
+            "mp-br2-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m2": [
+              "mp-br2-m2-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-br2-m2-1": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-2": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-3": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+.",
+        "mp-br2-m2-4": "The first Br is already bonded. The second Br comes from bromide donating an electron pair to the carbocation. Check: BrCH2–CH2+ (or the reflected equivalent), with one attached Br and one formally positive carbon. A full-headed arrow from a Br− lone pair/negative charge to C+."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "BR2",
+        "sourceId": "OCR-2022-16aii",
+        "sourceQuestion": "16(a)(ii)",
+        "sourceSchemePrintedPages": [
+          10,
+          11,
+          12
+        ],
+        "sourceSchemePdfPages": [
+          11,
+          12,
+          13
+        ],
+        "mode": "focused",
+        "groups": [
+          "M2"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC39",
+      "type": "mechanism-completion",
+      "title": "Bromine addition to ethene — dibromoalkane product",
+      "prompt": "Select the product when ethene reacts with Br₂.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "alkenes"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "4.1.1(i)",
+        "4.1.3(h)"
+      ],
+      "assetRefs": [
+        "mp-br2-context",
+        "mp-br2-m3-1",
+        "mp-br2-m3-2",
+        "mp-br2-m3-3",
+        "mp-br2-m3-4"
+      ],
+      "structure": "mp-br2-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m3",
+          "label": "Choose the organic product",
+          "options": [
+            "mp-br2-m3-1",
+            "mp-br2-m3-2",
+            "mp-br2-m3-3",
+            "mp-br2-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m3": [
+              "mp-br2-m3-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-br2-m3-1": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-2": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-3": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane.",
+        "mp-br2-m3-4": "The double bond is replaced by a C–C single bond and one C–Br bond at each carbon. Check: BrCH2–CH2Br: 1,2-dibromoethane."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "BR2",
+        "sourceId": "OCR-2022-16aii",
+        "sourceQuestion": "16(a)(ii)",
+        "sourceSchemePrintedPages": [
+          10,
+          11,
+          12
+        ],
+        "sourceSchemePdfPages": [
+          11,
+          12,
+          13
+        ],
+        "mode": "focused",
+        "groups": [
+          "M3"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC40",
+      "type": "mechanism-completion",
+      "title": "Catalysed chlorination of benzene — mechanism features",
+      "prompt": "Benzene reacts with Cl₂ using a halogen carrier. Select the two catalyst equations and mechanism features. Either a consistent AlCl₃ or FeCl₃ pair is allowed.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Standard application",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "mp-eas-context",
+        "mp-eas-m1-1",
+        "mp-eas-m1-2",
+        "mp-eas-m1-3",
+        "mp-eas-m1-4",
+        "mp-eas-m2-1",
+        "mp-eas-m2-2",
+        "mp-eas-m2-3",
+        "mp-eas-m2-4",
+        "mp-eas-m3-1",
+        "mp-eas-m3-2",
+        "mp-eas-m3-3",
+        "mp-eas-m3-4",
+        "mp-eas-m4-1",
+        "mp-eas-m4-2",
+        "mp-eas-m4-3",
+        "mp-eas-m4-4"
+      ],
+      "structure": "mp-eas-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose a complete pair: electrophile generation AND catalyst regeneration",
+          "options": [
+            "mp-eas-m1-1",
+            "mp-eas-m1-2",
+            "mp-eas-m1-3",
+            "mp-eas-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m2",
+          "label": "Choose the arrow for electrophilic attack",
+          "options": [
+            "mp-eas-m2-1",
+            "mp-eas-m2-2",
+            "mp-eas-m2-3",
+            "mp-eas-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m3",
+          "label": "Choose the arenium-ion intermediate (partial-circle convention)",
+          "options": [
+            "mp-eas-m3-1",
+            "mp-eas-m3-2",
+            "mp-eas-m3-3",
+            "mp-eas-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        },
+        {
+          "id": "m4",
+          "label": "Choose the electron movement that restores aromaticity",
+          "options": [
+            "mp-eas-m4-1",
+            "mp-eas-m4-2",
+            "mp-eas-m4-3",
+            "mp-eas-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-eas-m1-1",
+              "mp-eas-m1-2"
+            ],
+            "m2": [
+              "mp-eas-m2-1"
+            ],
+            "m3": [
+              "mp-eas-m3-1"
+            ],
+            "m4": [
+              "mp-eas-m4-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 4,
+      "feedback": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-eas-m1-1": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-2": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-3": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-4": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m2-1": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-2": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-3": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-4": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m3-1": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-2": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-3": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-4": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m4-1": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-2": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-3": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-4": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "EAS",
+        "sourceId": "OCR-2022-20aiii",
+        "sourceQuestion": "20(a)(iii)",
+        "sourceSchemePrintedPages": [
+          29,
+          30
+        ],
+        "sourceSchemePdfPages": [
+          30,
+          31
+        ],
+        "mode": "combined",
+        "groups": [
+          "M1",
+          "M2",
+          "M3",
+          "M4"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC41",
+      "type": "mechanism-completion",
+      "title": "Catalysed chlorination of benzene — electrophile generation and catalyst regeneration",
+      "prompt": "Select BOTH catalyst equations for benzene chlorination. Use a consistent AlCl₃ or FeCl₃ pair. The pair earns one mark.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "mp-eas-context",
+        "mp-eas-m1-1",
+        "mp-eas-m1-2",
+        "mp-eas-m1-3",
+        "mp-eas-m1-4"
+      ],
+      "structure": "mp-eas-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m1",
+          "label": "Choose a complete pair: electrophile generation AND catalyst regeneration",
+          "options": [
+            "mp-eas-m1-1",
+            "mp-eas-m1-2",
+            "mp-eas-m1-3",
+            "mp-eas-m1-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m1": [
+              "mp-eas-m1-1",
+              "mp-eas-m1-2"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-eas-m1-1": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-2": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-3": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair.",
+        "mp-eas-m1-4": "The halogen carrier generates the electrophile and is regenerated. Both equations together earn one mark. Check: Cl2 + AlCl3 → Cl+ + AlCl4−. H+ + AlCl4− → AlCl3 + HCl. Alternatively, both corresponding FeCl3/FeCl4− equations are correct. Do not mix aluminium and iron species between the pair."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "EAS",
+        "sourceId": "OCR-2022-20aiii",
+        "sourceQuestion": "20(a)(iii)",
+        "sourceSchemePrintedPages": [
+          29,
+          30
+        ],
+        "sourceSchemePdfPages": [
+          30,
+          31
+        ],
+        "mode": "focused",
+        "groups": [
+          "M1"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC42",
+      "type": "mechanism-completion",
+      "title": "Catalysed chlorination of benzene — π-system attack",
+      "prompt": "Select the electron-pair arrow when benzene attacks Cl⁺.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "mp-eas-context",
+        "mp-eas-m2-1",
+        "mp-eas-m2-2",
+        "mp-eas-m2-3",
+        "mp-eas-m2-4"
+      ],
+      "structure": "mp-eas-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m2",
+          "label": "Choose the arrow for electrophilic attack",
+          "options": [
+            "mp-eas-m2-1",
+            "mp-eas-m2-2",
+            "mp-eas-m2-3",
+            "mp-eas-m2-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m2": [
+              "mp-eas-m2-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-eas-m2-1": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-2": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-3": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+.",
+        "mp-eas-m2-4": "The arene π electrons donate to the electrophile; the positive chlorine is the destination, not the source. Check: A full-headed arrow starts at the benzene π-system and ends at Cl+."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "EAS",
+        "sourceId": "OCR-2022-20aiii",
+        "sourceQuestion": "20(a)(iii)",
+        "sourceSchemePrintedPages": [
+          29,
+          30
+        ],
+        "sourceSchemePdfPages": [
+          30,
+          31
+        ],
+        "mode": "focused",
+        "groups": [
+          "M2"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC43",
+      "type": "mechanism-completion",
+      "title": "Catalysed chlorination of benzene — arenium-ion intermediate",
+      "prompt": "Select the arenium-ion intermediate using the partial-circle convention.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "mp-eas-context",
+        "mp-eas-m3-1",
+        "mp-eas-m3-2",
+        "mp-eas-m3-3",
+        "mp-eas-m3-4"
+      ],
+      "structure": "mp-eas-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m3",
+          "label": "Choose the arenium-ion intermediate (partial-circle convention)",
+          "options": [
+            "mp-eas-m3-1",
+            "mp-eas-m3-2",
+            "mp-eas-m3-3",
+            "mp-eas-m3-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m3": [
+              "mp-eas-m3-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-eas-m3-1": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-2": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-3": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent.",
+        "mp-eas-m3-4": "Attack temporarily breaks aromaticity. The attacked carbon retains H and gains Cl; the positive charge is delocalised over the remaining π-system. Check: H and Cl are attached to the same, attacked ring carbon. The inner partial π-ring extends over more than half the hexagon, with its gap facing that carbon. A formal + sign appears inside the ring; a full aromatic circle is absent."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "EAS",
+        "sourceId": "OCR-2022-20aiii",
+        "sourceQuestion": "20(a)(iii)",
+        "sourceSchemePrintedPages": [
+          29,
+          30
+        ],
+        "sourceSchemePdfPages": [
+          30,
+          31
+        ],
+        "mode": "focused",
+        "groups": [
+          "M3"
+        ],
+        "assessment": "structured-recognition"
+      }
+    },
+    {
+      "id": "MC44",
+      "type": "mechanism-completion",
+      "title": "Catalysed chlorination of benzene — restoring the aromatic ring",
+      "prompt": "Select the electron-pair movement that restores aromaticity after benzene attacks Cl⁺.",
+      "assessmentNotice": "Recognition practice · Choose one option for each part. All features within a part are needed for its single mark. Parts are marked independently.",
+      "difficulty": "Foundation recall",
+      "prerequisites": [
+        "basic",
+        "aromatics"
+      ],
+      "specRefs": [
+        "4.1.1(b)",
+        "4.1.1(h)",
+        "6.1.1(e)"
+      ],
+      "assetRefs": [
+        "mp-eas-context",
+        "mp-eas-m4-1",
+        "mp-eas-m4-2",
+        "mp-eas-m4-3",
+        "mp-eas-m4-4"
+      ],
+      "structure": "mp-eas-context",
+      "interaction": "scaffold",
+      "components": [
+        {
+          "id": "m4",
+          "label": "Choose the electron movement that restores aromaticity",
+          "options": [
+            "mp-eas-m4-1",
+            "mp-eas-m4-2",
+            "mp-eas-m4-3",
+            "mp-eas-m4-4"
+          ],
+          "essential": true,
+          "marks": 1,
+          "choiceLabel": "Diagram"
+        }
+      ],
+      "validMethods": [
+        {
+          "id": "recognition",
+          "answers": {
+            "m4": [
+              "mp-eas-m4-1"
+            ]
+          }
+        }
+      ],
+      "maxMark": 1,
+      "feedback": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Recognition practice: each complete feature group earns one mark. This is not freehand mechanism drawing or examiner error-carried-forward marking.",
+      "misconceptions": {
+        "mp-eas-m4-1": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-2": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-3": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system.",
+        "mp-eas-m4-4": "The C–H bond pair returns to the π-system as H+ is lost; the C–Cl bond remains. Check: A full-headed arrow starts at the C–H bond on the carbon bearing Cl and ends inside the ring to restore the π-system."
+      },
+      "source": {
+        "id": "ocr-spec-3.1",
+        "url": "https://www.ocr.org.uk/Images/171720-specification-accredited-a-level-gce-chemistry-a-h432.pdf",
+        "version": "3.1 (May 2026)",
+        "accessed": "2026-10-11"
+      },
+      "status": "teacher-review-required",
+      "enabled": true,
+      "requirement": "mechanism-recognition",
+      "reviewNotes": "Original diagram-selection adaptation of the reviewed source mark groups; teacher chemistry review is pending. No freehand drawing, directional stereochemistry or examiner ECF is scored.",
+      "ambiguity": {
+        "issue": "Recognition options scaffold the mechanism and cannot reproduce examiner ECF or freehand production.",
+        "resolution": "Each group is scored independently against its displayed choices. The bromine questions specify an open-chain route; the bromonium alternative is not labelled chemically wrong. Either H+ or water protonation and consistent Al/Fe catalyst pairs are accepted where offered.",
+        "teacherJudgementNeeded": true
+      },
+      "markPointPractice": {
+        "pack": "ocr-mechanism-markpoints-2026-10-24",
+        "family": "EAS",
+        "sourceId": "OCR-2022-20aiii",
+        "sourceQuestion": "20(a)(iii)",
+        "sourceSchemePrintedPages": [
+          29,
+          30
+        ],
+        "sourceSchemePdfPages": [
+          30,
+          31
+        ],
+        "mode": "focused",
+        "groups": [
+          "M4"
+        ],
+        "assessment": "structured-recognition"
+      }
     }
   ]
 }

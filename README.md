@@ -1,8 +1,10 @@
-# OCR Chemistry revision — v1.8
+# OCR Chemistry revision — review prototype
 
-216 questions. This folder is the complete GitHub Pages site. Upload its contents
-at the existing publishing root, replacing matching files and including the new
-review.js, learning-resources.js and learning-resources.json.
+236 questions on this review branch: the original 216 and 20 new automatically
+scored mechanism-recognition cards. The live site has not been updated.
+Download `mechanism-cards-preview.html` and open it in a browser to try all 20 new
+cards without sign-in or changes to saved progress. See the
+[preview and marking guide](docs/MECHANISM_CARD_PREVIEW.md).
 
 Mistakes lists all outstanding incorrect/partial questions. Review Question opens
 one question; Review All Incorrect Questions opens the full backlog. Full marks
@@ -19,7 +21,8 @@ Existing timed challenges, reports, celebrations, reduced-motion handling, marki
 and update checking are preserved. Progress remains in local browser storage.
 Browser-only practice keeps progress locally. The development branch also includes
 an optional account pilot, described below. Keep the same site URL and avoid
-clearing browser storage. The assets and question bank are unchanged from v1.7.
+clearing browser storage. This branch adds 64 original mechanism diagrams while
+preserving the original 216 question records and their marking.
 
 The release's outer folder includes RELEASE-NOTES.md, RESOURCE-GUIDE.md,
 RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.

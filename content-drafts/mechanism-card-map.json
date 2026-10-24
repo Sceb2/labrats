@@ -1,0 +1,124 @@
+{
+  "pack": "ocr-mechanism-markpoints-2026-10-24",
+  "bankVersion": "v7-236-questions-2026-10-24",
+  "questions": [
+    "MC25",
+    "MC26",
+    "MC27",
+    "MC28",
+    "MC29",
+    "MC30",
+    "MC31",
+    "MC32",
+    "MC33",
+    "MC34",
+    "MC35",
+    "MC36",
+    "MC37",
+    "MC38",
+    "MC39",
+    "MC40",
+    "MC41",
+    "MC42",
+    "MC43",
+    "MC44"
+  ],
+  "coverage": [
+    {
+      "sourceId": "OCR-2020-19ci",
+      "group": "M1",
+      "combined": "MC25",
+      "focused": "MC26"
+    },
+    {
+      "sourceId": "OCR-2020-19ci",
+      "group": "M2",
+      "combined": "MC25",
+      "focused": "MC27"
+    },
+    {
+      "sourceId": "OCR-2020-19ci",
+      "group": "M3",
+      "combined": "MC25",
+      "focused": "MC28"
+    },
+    {
+      "sourceId": "OCR-2020-19ci",
+      "group": "M4",
+      "combined": "MC25",
+      "focused": "MC29"
+    },
+    {
+      "sourceId": "OCR-2020-19ci",
+      "group": "M5",
+      "combined": "MC25",
+      "focused": "MC30"
+    },
+    {
+      "sourceId": "OCR-2021-16bi",
+      "group": "M1",
+      "combined": "MC31",
+      "focused": "MC32"
+    },
+    {
+      "sourceId": "OCR-2021-16bi",
+      "group": "M2",
+      "combined": "MC31",
+      "focused": "MC33"
+    },
+    {
+      "sourceId": "OCR-2021-16bi",
+      "group": "M3",
+      "combined": "MC31",
+      "focused": "MC34"
+    },
+    {
+      "sourceId": "OCR-2021-16bi",
+      "group": "M4",
+      "combined": "MC31",
+      "focused": "MC35"
+    },
+    {
+      "sourceId": "OCR-2022-16aii",
+      "group": "M1",
+      "combined": "MC36",
+      "focused": "MC37"
+    },
+    {
+      "sourceId": "OCR-2022-16aii",
+      "group": "M2",
+      "combined": "MC36",
+      "focused": "MC38"
+    },
+    {
+      "sourceId": "OCR-2022-16aii",
+      "group": "M3",
+      "combined": "MC36",
+      "focused": "MC39"
+    },
+    {
+      "sourceId": "OCR-2022-20aiii",
+      "group": "M1",
+      "combined": "MC40",
+      "focused": "MC41"
+    },
+    {
+      "sourceId": "OCR-2022-20aiii",
+      "group": "M2",
+      "combined": "MC40",
+      "focused": "MC42"
+    },
+    {
+      "sourceId": "OCR-2022-20aiii",
+      "group": "M3",
+      "combined": "MC40",
+      "focused": "MC43"
+    },
+    {
+      "sourceId": "OCR-2022-20aiii",
+      "group": "M4",
+      "combined": "MC40",
+      "focused": "MC44"
+    }
+  ]
+}
