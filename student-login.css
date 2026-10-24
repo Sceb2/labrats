@@ -13,3 +13,7 @@
 .account-sync-bar [role="status"] { flex: 1 1 14rem; overflow-wrap: anywhere; }
 .account-sync-bar #sync-attention { flex-basis: 100%; overflow-wrap: anywhere; }
 .account-sync-bar #sync-attention ul { padding-left: 1.5rem; }
+
+.rating-badge{font:inherit;font-weight:700;cursor:pointer;min-width:34px;min-height:34px;border:1px solid currentColor;border-radius:7px;display:inline-grid;place-items:center;padding:3px 8px}.rating-badge[data-grade="N"]{background:#e7edf2;color:#36516a}.rating-badge:focus-visible{outline:3px solid #a56816;outline-offset:3px}.rating-tooltip{position:fixed;z-index:100000;max-width:min(280px,calc(100vw - 16px));padding:12px 14px;border-radius:8px;background:#172d3a;color:white;font:15px/1.45 Arial,sans-serif;box-shadow:0 4px 20px #0003;pointer-events:none}.rating-tooltip[hidden]{display:none}
+
+@media(pointer:coarse){.rating-badge{min-height:44px;min-width:44px}}

@@ -153,7 +153,7 @@ async function main() {
       env.SUPABASE_TEST_STAFF_SERVICE_URL=`http://127.0.0.1:${edgePort}`;
       console.log('Staff API integration checks will use the generated bundle in native Deno.');
     }
-    for (const file of ['tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/staff-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs', 'tests/staff-browser.cjs','tests/prototype-regressions.cjs']) {
+    for (const file of ['tests/subjects-integration.cjs','tests/auth-integration.cjs', 'tests/progress-integration.cjs', 'tests/staff-integration.cjs', 'tests/auth-browser.cjs', 'tests/progress-browser.cjs', 'tests/progress-pilot-browser.cjs', 'tests/site-preview-browser.cjs', 'tests/staff-browser.cjs','tests/prototype-regressions.cjs']) {
       const code = await new Promise(resolve => {
         const child = spawn(process.execPath, ['--test', file], {cwd: root, env, stdio: 'inherit'});
         child.on('exit', resolve);

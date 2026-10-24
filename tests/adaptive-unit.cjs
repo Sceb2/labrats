@@ -5,6 +5,7 @@ const now=Date.parse('2026-10-23T12:00:00Z'),q=bank.questions[0];
 const event=(day,fraction=1,extra={})=>({event_id:'event-'+day,encounter_id:'encounter-'+day,sequence:1,question_id:q.id,bank_version:bank.meta.bankVersion,scoring_version:bank.meta.scoringVersion,kind:'submit',earned_marks:Math.round(q.maxMark*fraction),maximum_marks:q.maxMark,is_retry:false,answer_revealed:false,attempted_at:new Date(now-day*A.DAY).toISOString(),...extra});
 test('ratings credit partial unaided marks and require distributed evidence for A',()=>{
  assert.equal(A.ratings(bank,[],now)[q.id].isNew,true);
+ assert.equal(A.ratings(bank,[],now)[q.id].grade,'N');
  assert.equal(A.ratings(bank,[event(0)],now)[q.id].grade,'C');
  assert.equal(A.ratings(bank,[event(0,.5)],now)[q.id].grade,'C');
  assert.equal(A.ratings(bank,[event(0,0)],now)[q.id].grade,'E');

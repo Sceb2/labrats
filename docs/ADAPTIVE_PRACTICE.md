@@ -1,4 +1,4 @@
-# A–E adaptive-practice prototype
+# N and A–E adaptive-practice prototype
 
 Adaptive practice is the default within the student's chosen topics, question
 types and difficulty. Random practice remains selectable in Practice settings.
@@ -23,7 +23,12 @@ on one calendar day therefore cannot outweigh evidence distributed over days.
 Base thresholds are A ≥90%, B ≥75%, C ≥50%, D ≥25%, E below 25%. Confidence caps
 are C with evidence on one UTC date, B with two dates and A with three or more.
 These are dates, not a guarantee of 24 hours between attempts. A new question is
-shown explicitly as **E · new**, with no recorded score; it is not a failed answer.
+shown as **N**, with no recorded unaided score; it is not a failed answer. N has
+the same non-zero new-question selection weight as before. A reveal, hint or
+retry alone cannot supply unaided rating evidence.
+
+Student and staff badges share hover/focus/tap explanations. The full wording
+and subject separation are documented in [the subject-hub guide](SUBJECT_HUB.md).
 
 Time since the last unaided submission reduces retained performance exponentially,
 with a half-life of four times the base interval. The resulting grade can fall

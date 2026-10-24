@@ -60,7 +60,8 @@ test('online class removal clears reports and rejected clock events do not block
   const username=generateUsername(),studentPassword=generatePassword(),studentId=await provisionStudent(root,{username,password:generatePassword()});ids.push(studentId);
   ok(await root.auth.admin.updateUserById(studentId,{password:studentPassword}));
   const cls=ok(await root.from('school_classes').insert({label:'Fictional regression class'}).select('id').single());classes.push(cls.id);
-  ok(await root.from('class_students').insert({class_id:cls.id,student_id:studentId}));ok(await root.from('class_teachers').insert({class_id:cls.id,teacher_id:teacher.id}));
+  ok(await root.from('class_students').insert({class_id:cls.id,student_id:studentId}));ok(await root.from('staff_subjects').insert({teacher_id:teacher.id,subject_id:'chemistry'}));
+      ok(await root.from('class_teachers').insert({class_id:cls.id,teacher_id:teacher.id}));
   const learner=client(),teacherClient=client();clients.push(learner,teacherClient);
   ok(await learner.auth.signInWithPassword({email:studentEmail(username),password:studentPassword}));ok(await teacherClient.auth.signInWithPassword({email:teacherEmail,password:teacherPassword}));
   const revealedQuestion=bank.questions[1],reveal=makeEvent(bank,revealedQuestion,{mode:'practice'},'reveal',null,randomUUID);
@@ -95,7 +96,7 @@ test('online class removal clears reports and rejected clock events do not block
   assert.equal(await staffPage.locator('#student-report').innerText(),'');assert.equal(await staffPage.locator('#student-report').isVisible(),false);
   const page=await studentContext.newPage();page.setDefaultTimeout(15000);
   await page.goto(base+'/student-login.html');await page.locator('#username').fill(username);await page.locator('#password').fill(studentPassword);await page.locator('#login-form button').click();await page.waitForSelector('#continue-practice:not([hidden])');
-  await page.goto(base+'/index.html?preview=RC01');await page.waitForSelector('#submit');
+  await page.goto(base+'/chemistry.html?preview=RC01');await page.waitForSelector('#submit');
   const saved=()=>page.waitForFunction(()=>document.querySelector('#account-sync-status').textContent==='All progress saved to your account.');await saved();
   const answer=async()=>{await page.locator('#reagent').selectOption('dichromate-acid');await page.locator('#heating').selectOption('distil');await page.locator('#submit').click();};
   await studentContext.setOffline(true);await page.evaluate(()=>{globalThis.originalClock=Date.now;Date.now=()=>originalClock()-600000;});await answer();
@@ -121,7 +122,7 @@ test('online class removal clears reports and rejected clock events do not block
   await page.waitForSelector('#login-form:not([hidden])');await page.locator('#username').fill(username);await page.locator('#password').fill(replacement);await page.locator('#login-form button').click();
   await page.waitForSelector('#password-form:not([hidden])');const ownPassword=generatePassword();
   await page.locator('#new-password').fill(ownPassword);await page.locator('#confirm-password').fill(ownPassword);await page.locator('#password-form button').click();await page.waitForSelector('#continue-practice:not([hidden])');
-  await page.goto(base+'/index.html?preview=RC01');await page.waitForSelector('#submit');
+  await page.goto(base+'/chemistry.html?preview=RC01');await page.waitForSelector('#submit');
   await page.waitForFunction(()=>document.querySelector('#account-sync-status').textContent.startsWith('1 attempt needs attention'));
   await page.locator('#sync-attention > summary').click();
   page.once('dialog',dialog=>dialog.dismiss());await page.locator('#discard-rejected-attempts').click();assert.equal(await page.locator('#sync-attention').isVisible(),true);

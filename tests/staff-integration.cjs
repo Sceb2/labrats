@@ -36,6 +36,7 @@ test('staff prototype enforces invitations, class scope, private provisioning an
    assert.ok((await teacher.rpc('staff_context')).error);assert.ok((await teacher.rpc('staff_directory')).error);
    assert.ok((await client().auth.verifyOtp({token_hash:result.body.invitation_code,type:'recovery'})).error);
    ok(await teacher.auth.updateUser({password:generatePassword()}));assert.equal(ok(await teacher.rpc('staff_context')).role,'teacher');
+   ok(await admin.rpc('staff_manage',{action:'grant_subject',payload:{user_id:teacherId,subject_id:'chemistry'}}));
    ok(await admin.rpc('staff_manage',{action:'assign_teacher',payload:{class_id:firstClass,user_id:teacherId}}));
    const existing=await api(admin,'invite_teacher',{email});assert.notEqual(existing.status,200);
    assert.equal(ok(await root.from('account_profiles').select('role').eq('user_id',teacherId).single()).role,'teacher');
@@ -75,6 +76,7 @@ test('staff prototype enforces invitations, class scope, private provisioning an
   await t.test('shared account progress is visible only after administrator class assignment',async()=>{
    const email=generateUsername()+'@staff.invalid',password=generatePassword(),{user}=ok(await root.auth.admin.createUser({email,password,email_confirm:true}));users.push(user.id);
    ok(await root.from('account_profiles').insert({user_id:user.id,role:'teacher',must_change_password:false}));const other=client();ok(await other.auth.signInWithPassword({email,password}));
+   ok(await admin.rpc('staff_manage',{action:'grant_subject',payload:{user_id:user.id,subject_id:'chemistry'}}));
    ok(await admin.rpc('staff_manage',{action:'assign_teacher',payload:{class_id:otherClass,user_id:user.id}}));
    assert.equal(ok(await other.from('learning_attempts').select('*')).length,0);
    assert.equal((await api(other,'reset_student',{user_id:studentId})).status,403);

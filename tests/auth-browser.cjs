@@ -197,7 +197,7 @@ test('student browser login lifecycle and existing practice', async t => {
         return counts&&Number(counts[1])>0&&counts[1]===counts[2];
       });
       assert.equal(await original.locator('.fail').count(), 0);
-      await original.goto(base + 'index.html?preview=RC01');
+      await original.goto(base + 'chemistry.html?preview=RC01');
       await original.locator('#reagent').selectOption('dichromate-acid'); await original.locator('#heating').selectOption('distil');
       await original.locator('#submit').click(); assert.match(await original.locator('#fb').innerText(), /2\s*\/\s*2 marks/);
       await original.close(); assert.deepEqual(errors, []);

@@ -107,6 +107,7 @@ test('real Auth, password lifecycle, account isolation and class access', async 
         const c = client(); ok(await c.auth.signInWithPassword({email, password})); return {c, id: user.id};
       };
       teacher = await makeTeacher(); outsider = await makeTeacher();
+      ok(await admin.from('staff_subjects').insert({teacher_id:teacher.id,subject_id:'chemistry'}));
       ok(await admin.from('class_teachers').insert({class_id: classIds[0], teacher_id: teacher.id}));
       assert.equal(ok(await teacher.c.from('account_profiles').select('*').eq('role', 'student')).length, 1);
       assert.equal(ok(await outsider.c.from('account_profiles').select('*').eq('role', 'student')).length, 0);

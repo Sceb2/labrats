@@ -1,0 +1,1614 @@
+{
+  "meta": {
+    "subjectId": "applied-science",
+    "bankVersion": "applied-science-0.4.0",
+    "scoringVersion": "applied-1",
+    "compatibleBankVersions": []
+  },
+  "topics": [
+    {
+      "id": "WA01",
+      "label": "Types of Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA02",
+      "label": "Wave Properties",
+      "module": "Waves"
+    },
+    {
+      "id": "WA03",
+      "label": "Graphing Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA04",
+      "label": "Wave Speed",
+      "module": "Waves"
+    },
+    {
+      "id": "WA05",
+      "label": "Phase Difference",
+      "module": "Waves"
+    },
+    {
+      "id": "WA06",
+      "label": "Diffraction",
+      "module": "Waves"
+    },
+    {
+      "id": "WA07",
+      "label": "Emission Spectra",
+      "module": "Waves"
+    },
+    {
+      "id": "WA08",
+      "label": "Standing Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA09",
+      "label": "Harmonics",
+      "module": "Waves"
+    },
+    {
+      "id": "WA10",
+      "label": "Refraction",
+      "module": "Waves"
+    },
+    {
+      "id": "WA11",
+      "label": "Critical Angle and TIR",
+      "module": "Waves"
+    },
+    {
+      "id": "WA12",
+      "label": "Optical Fibres and Cladding",
+      "module": "Waves"
+    },
+    {
+      "id": "WA13",
+      "label": "Inverse Square Law",
+      "module": "Waves"
+    },
+    {
+      "id": "WA14",
+      "label": "Electromagnetic Spectrum",
+      "module": "Waves"
+    },
+    {
+      "id": "WA15",
+      "label": "Analogue and Digital Signals",
+      "module": "Waves"
+    },
+    {
+      "id": "WA16",
+      "label": "Communication Applications",
+      "module": "Waves"
+    },
+    {
+      "id": "FO01",
+      "label": "Motion Quantities and Units",
+      "module": "Forces"
+    },
+    {
+      "id": "FO02",
+      "label": "Speed and Average Speed",
+      "module": "Forces"
+    },
+    {
+      "id": "FO03",
+      "label": "Displacement-Time Graphs",
+      "module": "Forces"
+    },
+    {
+      "id": "FO04",
+      "label": "Velocity-Time Graphs and Acceleration",
+      "module": "Forces"
+    },
+    {
+      "id": "FO05",
+      "label": "Distance and Displacement from Graphs",
+      "module": "Forces"
+    },
+    {
+      "id": "FO06",
+      "label": "Motion Equations: Velocity and Average Velocity",
+      "module": "Forces"
+    },
+    {
+      "id": "FO07",
+      "label": "Motion Equations: Displacement",
+      "module": "Forces"
+    },
+    {
+      "id": "FO08",
+      "label": "Measuring Acceleration and Accelerometers",
+      "module": "Forces"
+    },
+    {
+      "id": "FO09",
+      "label": "Resultant Forces and Newton’s First Law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO10",
+      "label": "Mass, Weight and Inertia",
+      "module": "Forces"
+    },
+    {
+      "id": "FO11",
+      "label": "Friction and Its Measurement",
+      "module": "Forces"
+    },
+    {
+      "id": "FO12",
+      "label": "Newton’s Second Law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO13",
+      "label": "Momentum",
+      "module": "Forces"
+    },
+    {
+      "id": "FO14",
+      "label": "Force and Change in Momentum",
+      "module": "Forces"
+    },
+    {
+      "id": "FO15",
+      "label": "Safety and Impact Protection",
+      "module": "Forces"
+    },
+    {
+      "id": "FO16",
+      "label": "Newton’s Third Law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO17",
+      "label": "Drag and Terminal Velocity",
+      "module": "Forces"
+    },
+    {
+      "id": "EL01",
+      "label": "Circuit Symbols, Quantities and Units",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL02",
+      "label": "Connecting Circuits and Meters",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL03",
+      "label": "Resistance and V = IR",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL04",
+      "label": "Filament Lamps and Diodes",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL05",
+      "label": "Thermistors and LDRs",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL06",
+      "label": "Photodiodes and LEDs",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL07",
+      "label": "Electrical Power",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL08",
+      "label": "Electrical Energy",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL09",
+      "label": "Domestic Energy Use",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL10",
+      "label": "Fuses and Operating Current",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL11",
+      "label": "Energy Units and Temperature Scales",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL12",
+      "label": "Temperature Change and Change of State",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL13",
+      "label": "Specific Heat Capacity Calculations",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL14",
+      "label": "Measuring Specific Heat Capacity",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL15",
+      "label": "Specific Latent Heat Calculations",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL16",
+      "label": "Measuring Specific Latent Heat",
+      "module": "Electricity"
+    }
+  ],
+  "questions": [
+    {
+      "id": "W01@2",
+      "title": "Read a wave graph",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02",
+        "WA03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W01",
+      "contentVersion": 2
+    },
+    {
+      "id": "W02@2",
+      "title": "Describe a longitudinal wave",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W02",
+      "contentVersion": 2
+    },
+    {
+      "id": "W03@1",
+      "title": "Calculate an ultrasound wavelength",
+      "maxMark": 4,
+      "prerequisites": [
+        "WA02",
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W03",
+      "contentVersion": 1
+    },
+    {
+      "id": "W04@4",
+      "title": "Interpret two waves in phase",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W04",
+      "contentVersion": 4
+    },
+    {
+      "id": "W05@2",
+      "title": "Identify gases from emission spectra",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W05",
+      "contentVersion": 2
+    },
+    {
+      "id": "W06@2",
+      "title": "Read a standing-wave pattern in a pipe",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02",
+        "WA08",
+        "WA09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W06",
+      "contentVersion": 2
+    },
+    {
+      "id": "W07@1",
+      "title": "Calculate string tension and pitch",
+      "maxMark": 4,
+      "prerequisites": [
+        "WA02",
+        "WA04",
+        "WA08",
+        "WA09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W07",
+      "contentVersion": 1
+    },
+    {
+      "id": "W08@2",
+      "title": "Choose the refracted ray",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W08",
+      "contentVersion": 2
+    },
+    {
+      "id": "W09@1",
+      "title": "Calculate a critical angle",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA10",
+        "WA11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W09",
+      "contentVersion": 1
+    },
+    {
+      "id": "W10@3",
+      "title": "Recognise analogue and binary digital signals",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W10",
+      "contentVersion": 3
+    },
+    {
+      "id": "W11@1",
+      "title": "Apply the inverse-square law",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W11",
+      "contentVersion": 1
+    },
+    {
+      "id": "W12@2",
+      "title": "Compare communication methods using evidence",
+      "maxMark": 4,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W12",
+      "contentVersion": 2
+    },
+    {
+      "id": "W13@2",
+      "title": "Recall frequency and periodic time",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W13",
+      "contentVersion": 2
+    },
+    {
+      "id": "W14@2",
+      "title": "Recall amplitude and wavelength",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W14",
+      "contentVersion": 2
+    },
+    {
+      "id": "W15@2",
+      "title": "Recall the wave equation",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W15",
+      "contentVersion": 2
+    },
+    {
+      "id": "W16@2",
+      "title": "Recall a transverse-wave definition",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W16",
+      "contentVersion": 2
+    },
+    {
+      "id": "W17@2",
+      "title": "Recall coherence",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W17",
+      "contentVersion": 2
+    },
+    {
+      "id": "W18@2",
+      "title": "Recall the principle of superposition",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W18",
+      "contentVersion": 2
+    },
+    {
+      "id": "W19@3",
+      "title": "Recall a node in a standing wave",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W19",
+      "contentVersion": 3
+    },
+    {
+      "id": "W20@3",
+      "title": "Recall resonance in a string",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W20",
+      "contentVersion": 3
+    },
+    {
+      "id": "W21@2",
+      "title": "Recall the two conditions for TIR",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W21",
+      "contentVersion": 2
+    },
+    {
+      "id": "W22@2",
+      "title": "Recall analogue and digital signals",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W22",
+      "contentVersion": 2
+    },
+    {
+      "id": "W23@2",
+      "title": "Recall electromagnetic-wave speed",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W23",
+      "contentVersion": 2
+    },
+    {
+      "id": "W24@1",
+      "title": "Use two different wave graphs",
+      "maxMark": 4,
+      "prerequisites": [
+        "WA02",
+        "WA03",
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W24",
+      "contentVersion": 1
+    },
+    {
+      "id": "W25@2",
+      "title": "Compare transverse and longitudinal spring waves",
+      "maxMark": 4,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "written-self-assessment",
+      "enabled": true,
+      "originalId": "W25",
+      "contentVersion": 2
+    },
+    {
+      "id": "W26@1",
+      "title": "Order electromagnetic waves",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W26",
+      "contentVersion": 1
+    },
+    {
+      "id": "W27@1",
+      "title": "Explain transmission in an optical fibre",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA10",
+        "WA11",
+        "WA12"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W27",
+      "contentVersion": 1
+    },
+    {
+      "id": "W28@1",
+      "title": "Recall refraction",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W28",
+      "contentVersion": 1
+    },
+    {
+      "id": "W29@1",
+      "title": "Recall energy transfer by waves",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W29",
+      "contentVersion": 1
+    },
+    {
+      "id": "W30@1",
+      "title": "Recall which waves need a medium",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W30",
+      "contentVersion": 1
+    },
+    {
+      "id": "W31@2",
+      "title": "Explain the motion of a marker on a string",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA01"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W31",
+      "contentVersion": 2
+    },
+    {
+      "id": "W32@1",
+      "title": "Recall displacement and oscillation",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W32",
+      "contentVersion": 1
+    },
+    {
+      "id": "W33@1",
+      "title": "Recall units of wave quantities",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W33",
+      "contentVersion": 1
+    },
+    {
+      "id": "W34@1",
+      "title": "Determine frequency from oscillations",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W34",
+      "contentVersion": 1
+    },
+    {
+      "id": "W35@2",
+      "title": "Recall the meaning of a wave-time graph",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02",
+        "WA03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W35",
+      "contentVersion": 2
+    },
+    {
+      "id": "W36@1",
+      "title": "Recall how to obtain wavelength from a graph",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02",
+        "WA03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W36",
+      "contentVersion": 1
+    },
+    {
+      "id": "W37@1",
+      "title": "Read a period and calculate frequency",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA03",
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W37",
+      "contentVersion": 1
+    },
+    {
+      "id": "W38@1",
+      "title": "Read a spatial wave snapshot",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02",
+        "WA03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W38",
+      "contentVersion": 1
+    },
+    {
+      "id": "W39@1",
+      "title": "Compare two wave-time graphs",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02",
+        "WA03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W39",
+      "contentVersion": 1
+    },
+    {
+      "id": "W40@1",
+      "title": "Recall the reciprocal relationship",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W40",
+      "contentVersion": 1
+    },
+    {
+      "id": "W41@2",
+      "title": "Calculate a microwave wavelength",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W41",
+      "contentVersion": 2
+    },
+    {
+      "id": "W42@1",
+      "title": "Calculate the frequency of water waves",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W42",
+      "contentVersion": 1
+    },
+    {
+      "id": "W43@1",
+      "title": "Recall in-phase and antiphase relationships",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W43",
+      "contentVersion": 1
+    },
+    {
+      "id": "W44@1",
+      "title": "Read phase difference from wave traces",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02",
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W44",
+      "contentVersion": 1
+    },
+    {
+      "id": "W45@2",
+      "title": "Add signed wave displacements",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W45",
+      "contentVersion": 2
+    },
+    {
+      "id": "W46@1",
+      "title": "Explain incomplete destructive interference",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA05"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W46",
+      "contentVersion": 1
+    },
+    {
+      "id": "W47@1",
+      "title": "Recall diffraction",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W47",
+      "contentVersion": 1
+    },
+    {
+      "id": "W48@1",
+      "title": "Recall when diffraction is substantial",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W48",
+      "contentVersion": 1
+    },
+    {
+      "id": "W49@2",
+      "title": "Explain bright and dark regions",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA02",
+        "WA05",
+        "WA06"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W49",
+      "contentVersion": 2
+    },
+    {
+      "id": "W50@1",
+      "title": "Explain why a fringe pattern is unstable",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA05",
+        "WA06"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W50",
+      "contentVersion": 1
+    },
+    {
+      "id": "W51@1",
+      "title": "Recall the role of a diffraction grating",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W51",
+      "contentVersion": 1
+    },
+    {
+      "id": "W52@1",
+      "title": "Recall why gases produce line spectra",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W52",
+      "contentVersion": 1
+    },
+    {
+      "id": "W53@1",
+      "title": "Compare two electron transitions",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W53",
+      "contentVersion": 1
+    },
+    {
+      "id": "W54@2",
+      "title": "Interpret brighter emission lines",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA07"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W54",
+      "contentVersion": 2
+    },
+    {
+      "id": "W55@2",
+      "title": "Recall how a standing wave forms",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA05",
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W55",
+      "contentVersion": 2
+    },
+    {
+      "id": "W56@1",
+      "title": "Read nodes and antinodes on a string",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA02",
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W56",
+      "contentVersion": 1
+    },
+    {
+      "id": "W57@2",
+      "title": "Explain resonance in a driven string",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W57",
+      "contentVersion": 2
+    },
+    {
+      "id": "W58@1",
+      "title": "Recall the fundamental and open-pipe wavelength",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08",
+        "WA09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W58",
+      "contentVersion": 1
+    },
+    {
+      "id": "W59@2",
+      "title": "Recall node or antinodes at pipe ends",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08",
+        "WA09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W59",
+      "contentVersion": 2
+    },
+    {
+      "id": "W60@2",
+      "title": "Identify the next harmonic frequency",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08",
+        "WA09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W60",
+      "contentVersion": 2
+    },
+    {
+      "id": "W61@1",
+      "title": "Calculate wave speed from string mass",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA04",
+        "WA08",
+        "WA09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W61",
+      "contentVersion": 1
+    },
+    {
+      "id": "W62@1",
+      "title": "Calculate a closed-pipe fundamental",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA04",
+        "WA08",
+        "WA09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W62",
+      "contentVersion": 1
+    },
+    {
+      "id": "W63@1",
+      "title": "Recall refractive index and its unit",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W63",
+      "contentVersion": 1
+    },
+    {
+      "id": "W64@2",
+      "title": "Use refraction angles to calculate speed",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W64",
+      "contentVersion": 2
+    },
+    {
+      "id": "W65@1",
+      "title": "Recall the critical-angle boundary",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W65",
+      "contentVersion": 1
+    },
+    {
+      "id": "W66@1",
+      "title": "Compare rays at a glass-air boundary",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W66",
+      "contentVersion": 1
+    },
+    {
+      "id": "W67@1",
+      "title": "Recall optical-fibre applications",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W67",
+      "contentVersion": 1
+    },
+    {
+      "id": "W68@1",
+      "title": "Compare bare and clad optical-fibre boundaries",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA11",
+        "WA12"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W68",
+      "contentVersion": 1
+    },
+    {
+      "id": "W69@1",
+      "title": "Recall intensity and its unit",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W69",
+      "contentVersion": 1
+    },
+    {
+      "id": "W70@1",
+      "title": "Recall inverse-square behaviour",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W70",
+      "contentVersion": 1
+    },
+    {
+      "id": "W71@1",
+      "title": "Predict signal intensity and interpret a loss",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W71",
+      "contentVersion": 1
+    },
+    {
+      "id": "W72@2",
+      "title": "Interpret overlapping electromagnetic ranges",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA04",
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W72",
+      "contentVersion": 2
+    },
+    {
+      "id": "W73@1",
+      "title": "Recall binary-signal regeneration",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W73",
+      "contentVersion": 1
+    },
+    {
+      "id": "W74@1",
+      "title": "Recall satellite, GPS and mobile links",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W74",
+      "contentVersion": 1
+    },
+    {
+      "id": "W75@1",
+      "title": "Recall Bluetooth, infrared and Wi-Fi uses",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W75",
+      "contentVersion": 1
+    },
+    {
+      "id": "W76@1",
+      "title": "Calculate wave speed",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W76",
+      "contentVersion": 1
+    },
+    {
+      "id": "W77@1",
+      "title": "Calculate sound frequency",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W77",
+      "contentVersion": 1
+    },
+    {
+      "id": "W78@1",
+      "title": "Calculate a wavelength",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W78",
+      "contentVersion": 1
+    },
+    {
+      "id": "W79@1",
+      "title": "Calculate frequency from period",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W79",
+      "contentVersion": 1
+    },
+    {
+      "id": "W80@1",
+      "title": "Calculate periodic time",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W80",
+      "contentVersion": 1
+    },
+    {
+      "id": "W81@1",
+      "title": "Calculate oscillations per second",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W81",
+      "contentVersion": 1
+    },
+    {
+      "id": "W82@1",
+      "title": "Calculate time for one oscillation",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "W82",
+      "contentVersion": 1
+    },
+    {
+      "id": "W83@1",
+      "title": "Recall how to count oscillations",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W83",
+      "contentVersion": 1
+    },
+    {
+      "id": "W84@1",
+      "title": "Read phase difference from another wave pair",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W84",
+      "contentVersion": 1
+    },
+    {
+      "id": "W85@1",
+      "title": "Read phase difference from another wave pair",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W85",
+      "contentVersion": 1
+    },
+    {
+      "id": "W86@1",
+      "title": "Read phase difference from another wave pair",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W86",
+      "contentVersion": 1
+    },
+    {
+      "id": "W87@1",
+      "title": "Explain reinforcement of unequal waves",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W87",
+      "contentVersion": 1
+    },
+    {
+      "id": "W88@1",
+      "title": "Explain complete destructive interference",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA05"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W88",
+      "contentVersion": 1
+    },
+    {
+      "id": "W89@1",
+      "title": "Compare diffraction through different gaps",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W89",
+      "contentVersion": 1
+    },
+    {
+      "id": "W90@1",
+      "title": "Read another standing-wave string pattern",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W90",
+      "contentVersion": 1
+    },
+    {
+      "id": "W91@1",
+      "title": "Read another standing-wave string pattern",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W91",
+      "contentVersion": 1
+    },
+    {
+      "id": "W92@1",
+      "title": "Read another standing-wave string pattern",
+      "maxMark": 2,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W92",
+      "contentVersion": 1
+    },
+    {
+      "id": "W93@1",
+      "title": "Explain how a standing wave forms on a string",
+      "maxMark": 3,
+      "prerequisites": [
+        "WA08"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "W93",
+      "contentVersion": 1
+    },
+    {
+      "id": "W94@1",
+      "title": "Recall the nature of EM waves",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W94",
+      "contentVersion": 1
+    },
+    {
+      "id": "W95@1",
+      "title": "Recall EM transmission through space",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W95",
+      "contentVersion": 1
+    },
+    {
+      "id": "W96@1",
+      "title": "Recall the numerical speed of light",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W96",
+      "contentVersion": 1
+    },
+    {
+      "id": "W97@1",
+      "title": "Recall the longest EM wavelengths",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W97",
+      "contentVersion": 1
+    },
+    {
+      "id": "W98@1",
+      "title": "Recall the highest EM frequencies",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W98",
+      "contentVersion": 1
+    },
+    {
+      "id": "W99@1",
+      "title": "Recall a frequency-wavelength relationship",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W99",
+      "contentVersion": 1
+    },
+    {
+      "id": "W100@1",
+      "title": "Recall visible colour and frequency",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W100",
+      "contentVersion": 1
+    },
+    {
+      "id": "W101@1",
+      "title": "Recall infrared communication",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W101",
+      "contentVersion": 1
+    },
+    {
+      "id": "W102@1",
+      "title": "Recall satellite communication waves",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W102",
+      "contentVersion": 1
+    },
+    {
+      "id": "W103@1",
+      "title": "Recall the role of GPS",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W103",
+      "contentVersion": 1
+    },
+    {
+      "id": "W104@1",
+      "title": "Recall mobile-phone communication",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W104",
+      "contentVersion": 1
+    },
+    {
+      "id": "W105@1",
+      "title": "Recall Bluetooth communication",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W105",
+      "contentVersion": 1
+    },
+    {
+      "id": "W106@1",
+      "title": "Recall Wi-Fi communication",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W106",
+      "contentVersion": 1
+    },
+    {
+      "id": "W107@1",
+      "title": "Recall an infrared link limitation",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W107",
+      "contentVersion": 1
+    },
+    {
+      "id": "W108@1",
+      "title": "Recall satellite relay operation",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W108",
+      "contentVersion": 1
+    },
+    {
+      "id": "W109@1",
+      "title": "Recall overlapping EM regions",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W109",
+      "contentVersion": 1
+    },
+    {
+      "id": "W110@1",
+      "title": "Recall photon energy across the spectrum",
+      "maxMark": 1,
+      "prerequisites": [
+        "WA14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "W110",
+      "contentVersion": 1
+    }
+  ]
+}

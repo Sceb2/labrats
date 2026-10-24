@@ -1,5 +1,9 @@
 # School staff and adaptive-practice prototype
 
+For the combined development branch, see [the subject-hub guide](SUBJECT_HUB.md)
+for migrations 008–009, teacher subject grants, separate reports and the preview
+pack. The existing setup below remains the Chemistry baseline.
+
 This is a fictional-data development prototype on `feature/student-logins`.
 Neither pushing this branch nor downloading a preview updates the live site.
 The user has reported successful hosted development-project checks for migrations

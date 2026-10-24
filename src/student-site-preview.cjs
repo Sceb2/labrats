@@ -26,7 +26,7 @@ document.addEventListener('click', event => {
   const link = event.target.closest('a');
   if (!link || !started || link.closest('#preview-login')) return;
   const href = link.getAttribute('href');
-  if (href === 'student-login.html' || href === 'index.html') {
+  if (href?.startsWith('student-login.html') || href === 'index.html') {
     event.preventDefault();
     // A fresh page owns the next account. The real beforeunload handler warns
     // about any pending attempts before navigation.

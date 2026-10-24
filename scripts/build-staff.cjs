@@ -6,7 +6,7 @@ const hash=value=>createHash('sha256').update(value).digest('base64');
 function buildStaffPreview(config=JSON.parse(read('auth-config.json')),output=path.join(root,'staff-preview.html')){
   const {url,key}=validatePublicConfig(config),source=JSON.parse(read('questions.json'));
   const bank={meta:source.meta,topics:source.topics,questions:source.questions.map(({id,title,prerequisites,maxMark,enabled})=>({id,title,prerequisites,maxMark,enabled}))};
-  const files={'auth-config.json':JSON.stringify({supabaseUrl:url,publishableKey:key}),'questions.json':JSON.stringify(bank)};
+  const files={'auth-config.json':JSON.stringify({supabaseUrl:url,publishableKey:key}),'questions.json':JSON.stringify(bank),'applied-science/learning-bank.json':read('applied-science/learning-bank.json')};
   const script=`(() => {const files=${JSON.stringify(files).replace(/</g,'\\u003c')};const original=window.fetch.bind(window);window.fetch=(input,init)=>typeof input==='string'&&Object.hasOwn(files,input)?Promise.resolve(new Response(files[input],{headers:{'Content-Type':'application/json'}})):original(input,init);})();\n${read('staff.js')}`;
   const css=read('styles.css')+'\n'+read('student-login.css')+'\n'+read('staff.css');
   if(/<\/script/i.test(script)||/<\/style/i.test(css))throw Error('Unsafe preview inline asset.');

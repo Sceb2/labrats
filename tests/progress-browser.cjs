@@ -40,7 +40,7 @@ test('account practice queues metadata, converges across devices and isolates sh
       await p.goto(base+'student-login.html');await p.locator('#username').fill(credential.username);await p.locator('#password').fill(credential.password);
       await p.locator('#login-form button').click();await p.waitForSelector('#account-panel:not([hidden])');
     };
-    const question=async(p,id='RC01')=>{await p.goto(base+'index.html?preview='+id);await p.waitForSelector('#submit');await status(p,'All progress saved');};
+    const question=async(p,id='RC01')=>{await p.goto(base+'chemistry.html?preview='+id);await p.waitForSelector('#submit');await status(p,'All progress saved');};
     const answer=async(p,heating)=>{await p.locator('#reagent').selectOption('dichromate-acid');await p.locator('#heating').selectOption(heating);await p.locator('#submit').click();};
     const rows=async id=>{const r=await admin.from('learning_attempts').select('*').eq('student_id',id);assert.equal(r.error,null);return r.data;};
     let failed;
@@ -122,7 +122,7 @@ test('account practice queues metadata, converges across devices and isolates sh
       await page.locator('#reagent').selectOption('borohydride');await page.locator('#submit').click();await status(page,'Unable to sync');
       page.once('dialog',dialog=>{assert.match(dialog.message(),/have not synced/);void dialog.dismiss();});
       await page.locator('#practice-sign-out').click();assert.equal(await page.locator('#account-sync-bar').isVisible(),true);
-      page.once('dialog',dialog=>dialog.accept());await page.locator('#practice-sign-out').click();await page.waitForSelector('#all',{state:'attached'});
+      page.once('dialog',dialog=>dialog.accept());await page.locator('#practice-sign-out').click();await page.waitForSelector('.subject-card',{state:'attached'});
       assert.equal((await rows(ids[1])).length,0);
       assert.equal(await page.evaluate(()=>Object.keys(sessionStorage).some(key=>key.startsWith('ocr-learning-'))),false);
       assert.deepEqual(errors,[]);

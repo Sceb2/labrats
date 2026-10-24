@@ -62,6 +62,7 @@ test('learning data permissions, validation, deduplication and activity windows'
       assert.equal(ok(await c.from('learning_attempts').select('*')).length,0);
       const cls=ok(await admin.from('school_classes').insert({label:'Fictional sync class'}).select('id').single());classes.push(cls.id);
       ok(await admin.from('class_students').insert({class_id:cls.id,student_id:users[0]}));
+      ok(await admin.from('staff_subjects').insert({teacher_id:teacher.id,subject_id:'chemistry'}));
       ok(await admin.from('class_teachers').insert({class_id:cls.id,teacher_id:teacher.id}));
       assert.equal(ok(await c.from('learning_attempts').select('*')).length,5);
       assert.equal(ok(await c.rpc('student_activity_windows',{target:users[0]}))[0].correct_attempts,1);

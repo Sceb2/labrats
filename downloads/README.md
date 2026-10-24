@@ -1,5 +1,13 @@
 # Downloadable development previews
 
+## Combined subject prototype
+
+[Download the Chemistry + Applied Science preview ZIP](subject-hub-preview-2026-10-24.zip).
+
+This snapshot is from `feature/subject-hub`. Extract all files together, then open `subject-hub-preview.html`. It includes both subject previews, shared staff tools, mechanism cards and the database setup files. Guest practice works without database changes. See `START-HERE.txt` for account testing.
+
+## Earlier Chemistry-only prototype
+
 [Download the preview ZIP](student-logins-preview-486ad84.zip).
 
 This is a fixed snapshot of `feature/student-logins` at commit `486ad84`, including the corrected mechanism diagrams. Use GitHub’s **Download raw file** button on the ZIP page, then extract the ZIP and open `START-HERE.txt`.

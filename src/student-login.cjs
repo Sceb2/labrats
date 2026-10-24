@@ -1,6 +1,8 @@
 'use strict';
 const {openAccountClient} = require('./account-client.cjs');
 const {studentEmail, validatePassword} = require('./student-identity.cjs');
+const {selectedSubject}=require('./subjects.cjs');
+const selected=selectedSubject(window.OCR_PREVIEW_SUBJECT_ID?'?subject='+window.OCR_PREVIEW_SUBJECT_ID:undefined);
 const $ = selector => document.querySelector(selector);
 let client, accountConnection;
 let busy = false;
@@ -50,6 +52,11 @@ function authError(error) {
   return 'Sign-in was unsuccessful. Check your username and password, or ask your teacher for help.';
 }
 async function boot() {
+  const practiceTarget=window.OCR_PREVIEW_SUBJECT_URL||selected.practiceUrl;
+  const guestLink=document.querySelector('header a');if(guestLink)guestLink.href=practiceTarget;
+  $('#continue-practice').href=practiceTarget;
+  document.title='Student sign in · '+selected.label;
+  const brand=document.querySelector('.brand');if(brand)brand.textContent=selected.label;
   accountConnection = await openAccountClient(); client = accountConnection.client;
   $('#change-password-toggle').addEventListener('click', () => {
     if (busy) return;

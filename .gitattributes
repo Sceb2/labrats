@@ -9,3 +9,7 @@ supabase/functions/staff-management/index.ts linguist-generated=true
 mechanism-cards-preview.html linguist-generated=true
 content-drafts/mechanism-card-map.json linguist-generated=true
 assets/mechanism-markpoints/*.svg linguist-generated=true
+applied-app.js linguist-generated=true
+applied-science-preview.html linguist-generated=true
+subject-hub-preview.html linguist-generated=true
+applied-science/learning-bank.json linguist-generated=true

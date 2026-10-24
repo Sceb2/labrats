@@ -43,6 +43,7 @@ test('staff and learner previews complete the invitation, class, reporting and r
    await teacher.goto(base+'/staff.html');await teacher.locator('#staff-login details > summary').click();await teacher.locator('#staff-invite-code').fill(invitation);await teacher.locator('#staff-invite-form button').click();await teacher.waitForSelector('#staff-password-panel:not([hidden])');await savePassword(teacher);
    assert.equal(await teacher.locator('#class-picker').count(),0);assert.equal(await teacher.locator('#invite-teacher-form').count(),0);
    const directory=ok(await root.auth.admin.listUsers());teacherId=directory.users.find(u=>u.email===teacherEmail).id;users.push(teacherId);
+   await admin.locator('#subject-teacher').selectOption(teacherId);await admin.locator('#subject-access-form button').click();await ready(admin);
    await admin.locator('#assign-user').selectOption(teacherId);await admin.locator('#assign-member-form button').click();await ready(admin);
    await teacher.locator('#staff-refresh').click();await ready(teacher);assert.equal(await teacher.locator('#class-picker option').count(),1);
    assert.ok((await teacher.locator('#staff-tools').innerText()).includes(credential.username));

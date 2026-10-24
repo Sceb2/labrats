@@ -2,6 +2,8 @@
 const {openAccountClient} = require('./account-client.cjs');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('./learning-events.cjs');
 const Adaptive = require('./adaptive.cjs');
+const Badges = require('./rating-badges.cjs');
+Badges.installRatingTips();
 const {rejectionReason, descriptions} = require('./sync-rejections.cjs');
 
 async function open(bank, onRecords = () => {}, {
@@ -29,7 +31,8 @@ async function open(bank, onRecords = () => {}, {
   if (!owner || owner.role !== 'student' || !owner.active || owner.must_change_password) {
     throw new Error('Open Student sign in and choose your own password before saving account progress.');
   }
-  const cacheKey = connection.prefix + owner.user_id;
+  const subject=bank.meta.subjectId||'chemistry';
+  const cacheKey = connection.prefix + owner.user_id + (subject==='chemistry'?'':':'+subject);
   const cached = connection.read(cacheKey) || {};
   let history = mergeEvents(cached.history), pending = mergeEvents(connection.read(cacheKey+':pending')||cached.pending), closed = false, running = false;
   let rejected = (connection.read(cacheKey+':rejected') || []).filter(item => item?.event && Object.hasOwn(descriptions,item.reason))
@@ -91,7 +94,7 @@ async function open(bank, onRecords = () => {}, {
   async function pull() {
     const remote = [];
     for (let offset = 0;; offset += 500) {
-      const result = await client.from('learning_attempts').select('*').eq('student_id', owner.user_id)
+      const result = await client.from('learning_attempts').select('*').eq('student_id', owner.user_id).eq('subject_id',subject)
         .order('received_at').order('event_id').range(offset, offset + 499);
       if (result.error) throw result.error;
       remote.push(...result.data); if (result.data.length < 500) break;
@@ -135,7 +138,8 @@ async function open(bank, onRecords = () => {}, {
   };
   logout.onclick = async () => {
     if(closed)return;
-    if (unsavedCount() && !window.confirm(`${unsavedCount()} attempts have not synced. Signing out will discard those unsaved attempts. Sign out anyway?`)) return;
+    const waiting=Math.max(unsavedCount(),connection.pendingCount());
+    if (waiting && !window.confirm(`${waiting} attempts have not synced. Signing out will discard those unsaved attempts. Sign out anyway?`)) return;
     closed = true; clearInterval(timer); window.removeEventListener('beforeunload', unload);
     logout.disabled=true;retry.disabled=true;state.textContent='Signing out…';
     const main=document.querySelector('main');if(main)main.hidden=true;
@@ -165,5 +169,5 @@ async function open(bank, onRecords = () => {}, {
     }, flush, owner};
 }
 window.RevisionSync = {open};
-window.RevisionAdaptive = {...Adaptive, appendGuest: (events,bank,question,session,kind,result) =>
+window.RevisionAdaptive = {...Adaptive, ...Badges, appendGuest: (events,bank,question,session,kind,result) =>
   mergeEvents(events,[makeEvent(bank,question,session,kind,result)])};

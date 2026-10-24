@@ -1,54 +1,49 @@
-# OCR Chemistry revision — review prototype
+# School revision — subject-hub prototype
 
-236 questions on this review branch: the original 216 and 20 new automatically
-scored mechanism-recognition cards. The live site has not been updated.
-Download `mechanism-cards-preview.html` and open it in a browser to try all 20 new
-cards without sign-in or changes to saved progress. See the
-[preview and marking guide](docs/MECHANISM_CARD_PREVIEW.md).
+This development branch combines Chemistry and Applied Science behind a shared
+subject selector, school login and platform services. Both existing live sites
+remain separate and unchanged.
 
-Mistakes lists all outstanding incorrect/partial questions. Review Question opens
-one question; Review All Incorrect Questions opens the full backlog. Full marks
-clear a mistake; a later wrong answer reopens it. Revealing or skipping does not
-clear it. First-attempt scores remain unchanged. Compatible v1.7 progress migrates
-automatically; historical errors are conservatively imported for one fresh review.
+- **Chemistry:** 236 OCR A Level organic-chemistry questions at `chemistry.html`.
+- **Applied Science:** the existing 110 Pearson AAQ Unit 3 Waves questions at
+  `applied-science.html`, with their original calculations and self-assessment.
+- **Shared:** visual base style, Auth, metadata sync/offline queues, N/A–E ratings,
+  accessible grade tooltips, adaptive ordering, celebrations and staff dashboard.
+- **Separate:** banks, marking engines, progress, revision priorities, browser
+  preferences, account caches and teacher authority by class/subject.
 
-learning-resources.json is the single resource source: reusable videos/links,
-reusable packs, question-specific assignments, and topic/type fallbacks.
-All current questions have a video and revision links. Videos load only when the
-student chooses Load video. Their external availability cannot be guaranteed.
+Open `index.html` through a local static server, or download the preview pack and
+open `subject-hub-preview.html` after extracting all its files together.
+The standalone subject previews embed their banks and diagrams. Account features
+connect to the development Supabase project; guest practice needs no backend.
 
-Existing timed challenges, reports, celebrations, reduced-motion handling, marking
-and update checking are preserved. Progress remains in local browser storage.
-Browser-only practice keeps progress locally. The development branch also includes
-an optional account pilot, described below. Keep the same site URL and avoid
-clearing browser storage. This branch adds 64 original mechanism diagrams while
-preserving the original 216 question records and their marking.
+See [the subject-hub setup and review guide](docs/SUBJECT_HUB.md) for source
+provenance, tooltip wording, data handling and the exact database steps. Migrations
+008 and 009 are new and have not been applied to hosted Supabase. Apply 007 first
+if its Chemistry v7 catalogue is not yet installed. Existing projects must not
+rerun schema migrations 001–006.
 
-The release's outer folder includes RELEASE-NOTES.md, RESOURCE-GUIDE.md,
-RESOURCE-COVERAGE.csv, START-HERE.txt and developer checks.
+The staff dashboard grants teachers a subject before assigning them to its
+classes. Results for other subjects remain protected by server access policies,
+even where a student belongs to both. One student account can practise both.
 
-## Student login development
+Developer checks:
 
-The separate `student-login.html` page provides Supabase student sign-in. New
-signed-in practice attempts sync as metadata without selected answers or free
-text, with an offline queue and separate guest history. Adaptive practice is now
-the default, with shared A–E revision guidance and an optional Random mode.
+```sh
+npm ci
+npm run build
+npm test
+npm run test:mechanism-preview
+npm run test:auth-local
+```
 
-`staff.html` adds invited staff sign-in, administrator/teacher account controls,
-classes, batch student credentials, resets and scoped progress reports. Download
-`staff-preview.html` and `student-site-preview.html` for fictional-data testing.
-See [staff prototype setup](docs/STAFF_PROTOTYPE.md) for the new migration, Edge
-Function deployment and first administrator setup, and
-[adaptive practice](docs/ADAPTIVE_PRACTICE.md) for the rating/scheduling rules.
+The local integration suite uses Docker and Chromium with fictional data only.
+A trusted Deno executable can be selected using `OCR_DENO_EXECUTABLE`.
 
-See [progress sync setup](docs/PROGRESS_SYNC.md) for the two additional database
-queries required after the original account migration. Do not deploy the branch
-before applying them and validating hosted signed-in practice.
+Further details: [student accounts](docs/STUDENT_LOGINS.md),
+[staff tools](docs/STAFF_PROTOTYPE.md), [progress sync](docs/PROGRESS_SYNC.md),
+[adaptive practice](docs/ADAPTIVE_PRACTICE.md), and
+[mechanism-card review](docs/MECHANISM_CARD_PREVIEW.md).
 
-See [student login setup and deployment](docs/STUDENT_LOGINS.md) for the database
-migration, private account-provisioning commands, security model and pilot steps.
-Never put administrator keys or credential exports in this repository.
-
-Developer checks: `npm ci`, `npm run build`, `npm test`.
-With Docker and Chromium available, `npm run test:auth-local` tests real local
-Supabase Auth, database access policies and browser login flows.
+This is a review prototype. Passing software checks does not establish chemistry
+approval, a validated mastery score or readiness for real-student deployment.

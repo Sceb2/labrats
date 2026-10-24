@@ -21,7 +21,7 @@ function ratings(bank, events = [], now = Date.now()) {
   }
   return Object.fromEntries(bank.questions.map(q => {
     const attempts = evidence[q.id] || [];
-    if (!attempts.length) return [q.id,{grade:'E',isNew:true,accuracy:null,lastAt:null,dueAt:now,weight:4,evidenceDays:0}];
+    if (!attempts.length) return [q.id,{grade:'N',isNew:true,accuracy:null,lastAt:null,dueAt:now,weight:4,evidenceDays:0}];
     // Repeated practice on one day cannot outweigh distributed recall or grant A.
     const days = new Map();
     for (const attempt of attempts) {
@@ -48,13 +48,16 @@ function ratings(bank, events = [], now = Date.now()) {
     return [q.id,{grade,isNew:false,accuracy,lastAt,dueAt,weight,evidenceDays:days.size}];
   }));
 }
-function select(questions, ratingMap, random = Math.random) {
-  const ordered = questions.map(q => ({q,key:-Math.log(Math.max(Number.MIN_VALUE,Math.min(1,random())))/(ratingMap[q.id]?.weight||4)}))
+function weightedOrder(questions, ratingMap, random = Math.random) {
+  return questions.map(q => ({q,key:-Math.log(Math.max(Number.MIN_VALUE,Math.min(1,random())))/(ratingMap[q.id]?.weight||4)}))
     .sort((a,b)=>a.key-b.key||a.q.id.localeCompare(b.q.id)).map(entry=>entry.q);
+}
+function select(questions, ratingMap, random = Math.random) {
+  const ordered = weightedOrder(questions,ratingMap,random);
   // Preserve weighted order while reusing the tested whole-question mark budget.
   return C.practiceSet(ordered,()=>.999999999);
 }
 function priority(questions, ratingMap) {
   return [...questions].sort((a,b)=>(ratingMap[b.id]?.weight||4)-(ratingMap[a.id]?.weight||4)||a.id.localeCompare(b.id));
 }
-module.exports = {ratings,select,priority,intervals,DAY};
+module.exports = {ratings,select,weightedOrder,priority,intervals,DAY};
