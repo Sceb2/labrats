@@ -1,5 +1,9 @@
 # Downloadable development previews
 
+## Rat illustration placement gallery
+
+[Download the four-picture contextual gallery](labrats-rat-placement-previews-2026-10-25.zip). Extract the ZIP and open `index.html`. It contains mobile/desktop snapshots using the supplied Curiosity, Approval, Thoughtfulness and Celebration pictures, plus an illustration on/off comparison. These are separate previews; the working tool and unfinished logo are unchanged.
+
 ## Expanded feedback design C
 
 [Download the six-example feedback preview](labrats-feedback-c-preview-2026-10-25.zip). Extract it and open `feedback-preview.html`. It includes phone/desktop layouts and full marks, partial marks, an incorrect answer, a retry, a reveal and Applied Science method marks. These are separate design previews; they do not connect to Supabase or change the working tool.

@@ -1,0 +1,34 @@
+{
+  "note": "Preview-only placements. One static decorative illustration per page. Logo excluded. No account connections.",
+  "source": "User-uploaded Rat_Assets.zip",
+  "poses": [
+    {
+      "id": "curiosity",
+      "label": "Curiosity · choose topics",
+      "subject": "chemistry",
+      "why": "A small companion beside the topic heading, before practice begins.",
+      "sha256": "60be0b4bb8cf96ea8e1b20370660ab85ae2644e0919039076b6557a7aa335ff5"
+    },
+    {
+      "id": "approval",
+      "label": "Approval · correct answer",
+      "subject": "chemistry",
+      "why": "A quiet acknowledgement beside the score, once the answer is marked.",
+      "sha256": "babb70941cb56e61aa88dae45f95de34f8249f08559f4fbe45514af7b03557b9"
+    },
+    {
+      "id": "thoughtfulness",
+      "label": "Thoughtfulness · opened explanation",
+      "subject": "applied-science",
+      "why": "Inside the worked-answer disclosure, where a student is actively reviewing the method.",
+      "sha256": "4b88aeb4cc4ef440218c1ef1f0638839edf68ba8801b5d8b922ad77cbef1483e"
+    },
+    {
+      "id": "celebration",
+      "label": "Celebration · session milestone",
+      "subject": "chemistry",
+      "why": "Reserved for a completed perfect-session summary rather than repeated beside every mark.",
+      "sha256": "b175658a7b3cd9ae27280cc329f123ac66dcd0e763704440625e11d47e4eab04"
+    }
+  ]
+}
