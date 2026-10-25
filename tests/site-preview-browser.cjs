@@ -87,6 +87,12 @@ test('full downloadable preview runs normal practice, offline sync and account i
     const stored = await admin.from('learning_attempts').select('*').eq('student_id', ids[0]);
     assert.equal(stored.error, null); assert.equal(stored.data.length, 1);
     assert.equal(stored.data[0].session_mode, 'practice'); assert.equal(stored.data[0].earned_marks, question.maxMark);
+    assert.equal(await page.locator('#fb .feedback-heading h2').innerText(),`${question.maxMark} of ${question.maxMark} marks`);
+    assert.equal(await page.locator('#fb .feedback-points').getAttribute('open'),null);
+    await page.setViewportSize({width:390,height:844});await page.evaluate(()=>scrollTo(0,0));
+    await page.screenshot({path:'/tmp/labrats-abc-account-full.png',fullPage:true});
+    await page.setViewportSize({width:1280,height:900});
+
     await page.locator('#practice-sign-out').click();
     await page.waitForSelector('#login-form:not([hidden])');
     await signIn(page, credentials[0]);

@@ -64,7 +64,7 @@ function bindDisclosures(){
 function lessonRow(l){
  const direct=S.bank.questions.filter(q=>l.ids.includes(q.primaryLessonId)&&S.prefs.types.includes(q.interaction));
  const count=direct.length;
- return `<label class="lesson-row"><input type="checkbox" data-lesson="${esc(l.id)}" data-lesson-ids="${esc(JSON.stringify(l.ids))}"><span><strong class="topic-name">${esc(l.title)}</strong>${l.description?`<small>${esc(l.description)}</small>`:''}<small>${count?`${count} ${count===1?'question':'questions'}`:'No matching question types'}${direct.some(q=>q.requiredLessonIds.some(id=>!l.ids.includes(id)))?' · some need other topics':''}</small></span></label>`;
+ return `<label class="lesson-row"><input type="checkbox" data-lesson="${esc(l.id)}" data-lesson-ids="${esc(JSON.stringify(l.ids))}"><span class="topic-name">${esc(l.title)}</span><small class="topic-meta" title="Questions using this topic" aria-label="${count} questions using this topic">${count}</small></label>`;
 }
 function resumeActions(){
  let html='';
@@ -144,7 +144,7 @@ function openSingle(id,mode='review'){
 function resumeParked(){if(!S.parked)return;S.session=S.parked;S.parked=null;showQuestion();save();}
 function sessionMenu(){
  const s=sessionStats(S.session);
- return `<details class="session-menu"><summary>Session menu</summary><div class="session-menu-panel"><p class="small">${s.completedMarks}/${s.planned} available marks completed</p>${button('Change topics','menu-topics','btn text-button')}${button('Mistakes','menu-mistakes','btn text-button')}${button('Progress','menu-progress','btn text-button')}${button('Finish session','menu-finish','btn text-button')}<label class="topic"><input type="checkbox" id="session-sound-pref" ${S.prefs.sound?'checked':''}><span>Party-blower sound<span class="topic-code">Perfect sessions only · off by default.</span></span></label></div></details>`;
+ return `<details class="session-menu"><summary>Session menu</summary><div class="session-menu-panel"><p class="small">${s.completedMarks}/${s.planned} available marks completed</p>${button('Choose topics','menu-topics','btn text-button')}${button('Mistakes','menu-mistakes','btn text-button')}${button('Progress','menu-progress','btn text-button')}${button('Finish session','menu-finish','btn text-button')}<label class="topic"><input type="checkbox" id="session-sound-pref" ${S.prefs.sound?'checked':''}><span>Party-blower sound<span class="topic-code">Perfect sessions only · off by default.</span></span></label></div></details>`;
 }
 function tableMarkup(t){return `<table class="data-table"><thead><tr>${t.headers.map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(row=>`<tr>${row.map((c,i)=>i===0?`<th scope="row">${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;}
 function renderedParts(q,e){return e.mode==='final-answer'?[q.parts.find(p=>p.id===q.unscaffoldedFinalAnswerRoute.partId)]:q.parts;}
@@ -192,7 +192,7 @@ function showQuestion(){
  const q=current(),e=S.session.entries[q.id],stats=sessionStats(S.session);
  renderShell(e.phase==='answering'?'question':'feedback');
  const number=S.session.index+1;
- app().innerHTML=`<div class="question-toolbar"><button type="button" class="progress-trigger" id="question-navigator" aria-label="Open question navigator"><span class="progress-topline"><strong>Question ${number} of ${S.session.questions.length}</strong><span>View questions ▾</span></span><progress class="session-progress" max="${stats.planned}" value="${stats.completedMarks}" aria-label="Available marks completed"></progress><span class="workload-label">${stats.completedMarks}/${stats.planned} marks completed</span></button><div class="account-actions" data-account-actions>${button('Finish session','finish-session','btn finish-session')}</div></div>
+ app().innerHTML=`<div class="question-toolbar"><button type="button" class="progress-trigger" id="question-navigator" aria-label="Open question navigator"><span class="progress-topline"><strong>Question ${number} of ${S.session.questions.length}</strong><span aria-hidden="true">⌄</span></span><progress class="session-progress" max="${S.session.questions.length}" value="${number}" aria-label="Current question"></progress></button><div class="account-actions" data-account-actions>${button('Finish session','finish-session','btn finish-session')}</div></div>
  <p class="question-topic">${esc(titleFor(q.primaryLessonId))} ${gradeBadge(q)}</p><article class="card question-screen"><h1 id="question-heading"><span class="question-number">Q${number}</span><span>${esc(q.prompt)}</span></h1><p class="question-total">${q.maxMarks} ${q.maxMarks===1?'mark':'marks'}${S.session.mode==='review'?' · Question review':''}${S.session.mode==='retry'?' · Mistake review':''}</p>
  <div class="question-context">${q.dataTable?tableMarkup(q.dataTable):''}${q.asset?`<figure class="wave-figure"><img src="${esc(q.asset)}" alt="${esc(q.accessibleDescription)}"><div class="figure-actions">${button('Enlarge diagram','enlarge-diagram','btn text-button')}</div><details class="graph-data"><summary>Diagram description and data</summary><p>${esc(q.accessibleDescription)}</p></details></figure>`:''}</div>
  <div id="task">${q.interaction==='written-self-assessment'?`<label class="writing-label" for="written-response">Your answer</label><textarea class="written-response" id="written-response" maxlength="${q.selfAssessment.maxCharacters}" ${e.phase!=='answering'?'readonly':''}>${esc(e.writtenText)}</textarea>`:`${q.unscaffoldedFinalAnswerRoute?`<fieldset class="answer-part route-toggle"><legend>Answer method</legend><label><input type="radio" name="answer-mode" value="scaffold" ${e.mode==='scaffold'?'checked':''} ${e.phase!=='answering'?'disabled':''}>Use calculation steps</label><label><input type="radio" name="answer-mode" value="final-answer" ${e.mode==='final-answer'?'checked':''} ${e.phase!=='answering'?'disabled':''}>Enter a final answer</label></fieldset>`:''}${q.interaction==='answer-completion'?`<div class="answer-opening"><p class="small-note">Choose a sentence for each part to build your explanation.</p><p class="completed-answer" id="completion-preview">${completionPreview(q,e)}</p></div>`:''}${renderedParts(q,e).map(p=>partMarkup(q,p,e)).join('')}`}</div>
@@ -206,7 +206,8 @@ function showQuestion(){
  }else{
   showFeedback(q,e);
  }
- save();focusHeading('#question-heading');
+ if(e.phase==='feedback')RevisionFeedback.foldQuestion(document.querySelector('.question-screen'),$('#feedback'),['#question-heading','.question-total','.question-context','#task']);
+ save();focusHeading(e.phase==='answering'?'#question-heading':'#feedback h2');if(e.phase==='self-assess')$('#feedback').scrollIntoView({block:'start'});
 }
 function bindQuestionInputs(q,e){
  $$('[data-part]').forEach(input=>input.onchange=()=>{e.responses[input.dataset.part]=input.value;const p=$('#completion-preview');if(p)p.innerHTML=completionPreview(q,e);save();});
@@ -263,11 +264,23 @@ function showFeedback(q,e){
   };return;
  }
  const self=q.interaction==='written-self-assessment',r=e.result;
- const headline=revealed?'Answer revealed':self?`${r.selfAssessedMarks}/${q.maxMarks} self-assessed marks`:`${r.score}/${q.maxMarks} marks`;
- const breakdown=revealed?'No marks awarded.':self?'You awarded this score using the marking points.':`${r.directMarks} direct ${r.directMarks===1?'mark':'marks'}${r.ecfMarks?` + ${r.ecfMarks} method ${r.ecfMarks===1?'mark':'marks'} (error carried forward)`:''}${e.hintUsed?' · Hint used':''}`;
- const details=(r.parts||[]).map(result=>{const p=q.parts.find(p=>p.id===result.id),state=result.status==='direct'?'Correct':result.status==='ecf'?'Method mark awarded (error carried forward)':result.status==='unanswered'?'Not answered':result.status==='dependent'?'Linked mark not awarded':'Check this part';return `<div class="part-feedback ${result.status}"><h3>${esc(p.prompt)}</h3><p><strong>${state} · ${result.marks}/${p.marks}</strong></p>${result.status!=='direct'?`<p>${esc(result.feedback)}</p>${p.type==='numeric'?`<p>Correct value: <strong>${esc(correctPartText(p))}</strong></p>`:''}`:`<p>${esc(result.feedback)}</p>`}</div>`;}).join('');
- const detailsMarkup=r.score===q.maxMarks&&details?`<details class="marking-detail"><summary>View marking detail</summary>${details}</details>`:details;
- $('#feedback').innerHTML=`<div class="feedback-panel"><p class="feedback-score">${esc(headline)}</p><p class="feedback-breakdown">${esc(breakdown)}</p>${q.interaction==='answer-completion'?`<h2>Completed answer</h2><p>${esc(q.modelAnswer)}</p>`:''}${detailsMarkup}${!details&&!self&&!revealed?`<p>${esc(r.feedback||'')}</p>`:''}${(revealed&&q.interaction!=='answer-completion')||self?`<h2>${self?'Example answer':'Worked answer'}</h2><p>${esc(q.modelAnswer)}</p>${revealed?`<ul>${q.generalFeedback.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:''}`:q.interaction!=='answer-completion'?`<details class="model-answer"><summary>Worked answer</summary><p>${esc(q.modelAnswer)}</p></details>`:''}<div class="next-action">${revealed||!self&&r.score<q.maxMarks?button('Retry Question','retry-question','btn'):''}${button(S.session.index===S.session.questions.length-1?'View summary':'Next question','next-question')}</div></div>`;
+ const retry=S.session.mode==='retry',first=qRecord(q)?.first;
+ const initial=first&&!first.revealed?{score:first.result?.score,max:first.maxMarks}:null;
+ const attempt=RevisionFeedback.attemptNote({retry,assisted:e.hintUsed||!!first?.revealed,first:initial,revealed});
+ const breakdown=revealed?'Not scored':self?'You awarded this score using the marking points.':r.ecfMarks?`${r.directMarks} direct ${r.directMarks===1?'mark':'marks'} + ${r.ecfMarks} method ${r.ecfMarks===1?'mark':'marks'}`:undefined;
+ const detail=(r.parts||[]).map(result=>{
+  const p=q.parts.find(p=>p.id===result.id),raw=e.responses[p.id];
+  const selected=p.type==='choice'?p.options.find(o=>o.id===raw)?.text:raw&&typeof raw==='object'?`${raw.value} ${raw.unit??p.answer.unit}`:raw===undefined?'':`${raw} ${p.answer.unit}`;
+  const right=result.status==='direct',method=result.status==='ecf';
+  let body=`<p class="${right||method?'':'your-answer'}">${!right&&!method?'Your answer: ':''}${esc(selected||'Not answered')}</p>`;
+  if(method)body+=`<p>Method mark earned using your earlier value.</p>`;
+  else if(!right)body+=`<p class="correction">${esc(result.feedback)}</p>`;
+  if(p.type==='numeric'&&!right)body+=`<p class="correction"><strong>Correct value:</strong> ${esc(correctPartText(p))}</p>`;
+  return RevisionFeedback.point({title:p.prompt,score:result.marks,max:p.marks,kind:method?'method':right?'right':'wrong',body});
+ }).join('');
+ const points=r.score===q.maxMarks&&detail?`<details class="feedback-points"><summary>View marking points</summary>${detail}</details>`:detail;
+ const model=`<p>${esc(q.modelAnswer)}</p>${revealed?`<ul>${q.generalFeedback.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:''}`;
+ $('#feedback').innerHTML=`<div class="feedback-panel">${RevisionFeedback.header({score:self?r.selfAssessedMarks:r.score,max:q.maxMarks,revealed,retry,self,status:breakdown})}${attempt}${points}${!detail&&!self&&!revealed&&r.feedback?`<p class="feedback-explanation">${esc(r.feedback)}</p>`:''}${revealed?`<section class="feedback-model"><h3>Worked answer</h3>${model}</section>`:`<details class="feedback-help"><summary>${self?'Example answer':'Worked answer'}</summary>${model}</details>`}<div class="next-action">${revealed||!self&&r.score<q.maxMarks?button('Try again','retry-question','btn secondary'):''}${button(S.session.index===S.session.questions.length-1?'View summary':'Next question','next-question')}</div></div>`;
  $('#next-question').onclick=nextQuestion;if($('#retry-question'))$('#retry-question').onclick=()=>openSingle(q.id,'retry');
 }
 function nextQuestion(){if(S.session.index<S.session.questions.length-1){S.session.index++;showQuestion();}else finishSession();save();}
@@ -293,7 +306,7 @@ function showSummary(session){
 function showMistakes(){
  renderShell('mistakes');const eligible=eligibility(S.bank,S.prefs.lessons,{allowDrafts:true}).eligible,qs=eligible.filter(needsReview);
  const plan=calculatePlan(true);
- app().innerHTML=`<section class="card progress-page"><h1>Review mistakes</h1><p>${qs.length?`${qs.length} questions to revisit from your selected lessons.`:'No questions to revisit from your selected lessons yet.'}</p>${resumeActions()}${qs.length?`<ul class="recent-mistakes">${qs.map(q=>`<li><div><strong>${esc(q.title)}</strong><span>${esc(titleFor(q.primaryLessonId))}</span></div><button class="btn secondary" data-retry="${q.id}">Review Question</button></li>`).join('')}</ul><p class="small-note">Retries are recorded separately; first-attempt scores stay the same.</p>${plan.questionCount?button(`Practise these mistakes · ${plan.actualMarks} marks`,'start-mistakes'):''}`:''}<div class="account-actions" data-account-actions>${button('Choose topics','mistakes-topics','btn finish-session')}</div></section>`;
+ app().innerHTML=`<section class="card progress-page"><h1>Review mistakes</h1><p>${qs.length?`${qs.length} questions to revisit from your selected lessons.`:'No questions to revisit from your selected lessons yet.'}</p>${resumeActions()}${qs.length?`<ul class="recent-mistakes">${qs.map(q=>`<li><div><strong>${esc(q.title)}</strong><span>${esc(titleFor(q.primaryLessonId))}</span></div><button class="btn secondary" data-retry="${q.id}">Review question</button></li>`).join('')}</ul><p class="small-note">Retries are recorded separately; first-attempt scores stay the same.</p>${plan.questionCount?button(`Practise these mistakes · ${plan.actualMarks} marks`,'start-mistakes'):''}`:''}<div class="account-actions" data-account-actions>${button('Choose topics','mistakes-topics','btn finish-session')}</div></section>`;
  $$('[data-retry]').forEach(b=>b.onclick=()=>openSingle(b.dataset.retry,'retry'));if($('#start-mistakes'))$('#start-mistakes').onclick=()=>startPlan(plan,'retry');$('#mistakes-topics').onclick=showSetup;bindResume();save();focusHeading();
 }
 function progressTotals(strand){
@@ -321,7 +334,7 @@ function bindSessionMenu(){
 }
 const icon={topics:'<path d="M9 3h6M10 3v7l-5 9a1 1 0 0 0 1 2h12a1 1 0 0 0 1-2l-5-9V3M8 15h8"/>',mistakes:'<circle cx="12" cy="12" r="9"/><path d="m9 9 6 6m0-6-6 6"/>',finish:'<path d="M13 5H5v14h8M10 12h11m-4-4 4 4-4 4"/>'};
 function mountMobileControls(){
- $('#session-controls').innerHTML=`<nav class="mobile-session-controls" aria-label="Session controls">${[['topics','Change topics'],['mistakes','Mistakes'],['finish','Finish session']].map(([id,label])=>`<button type="button" class="session-control ${id==='finish'?'finish-control':''}" data-mobile="${id}"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${icon[id]}</svg><span>${label}</span></button>`).join('')}</nav>`;
+ $('#session-controls').innerHTML=`<nav class="mobile-session-controls" aria-label="Session controls">${[['topics','Choose topics'],['mistakes','Mistakes'],['finish','Finish session']].map(([id,label])=>`<button type="button" class="session-control ${id==='finish'?'finish-control':''}" data-mobile="${id}"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${icon[id]}</svg><span>${label}</span></button>`).join('')}</nav>`;
  $$('[data-mobile]').forEach(b=>b.onclick=()=>({topics:showSetup,mistakes:showMistakes,finish:finishSession})[b.dataset.mobile]());measureBars();
 }
 function measureBars(){
@@ -390,7 +403,7 @@ function openPreviewNavigator(){
  const e=S.session.entries[q.id],corrected=qRecord(q)?.corrected;
  const state=corrected?'Correct after retry':e.submission?.revealed?'Answer revealed':e.phase==='self-assess'?'Awaiting score':e.result?.score===q.maxMarks?'Correct':e.result?.score>0?'Partly correct':e.submission?'Needs review':Object.keys(e.responses).length||e.writtenText?'In progress':'Not answered';
  return `<button type="button" class="navigator-item ${state.startsWith('Correct')?'is-correct':e.submission?'needs-review':''}" data-jump="${i}" ${i===S.session.index?'aria-current="step"':''}><strong>${i+1}</strong><span>${state}</span></button>`;
- }).join('')}</div><details class="navigator-options"><summary>Session options</summary><div class="navigator-links">${button('Change topics','nav-topics','btn secondary')}${button('Mistakes','nav-mistakes','btn secondary')}${button('Progress','nav-progress','btn secondary')}</div><label class="topic"><input type="checkbox" id="nav-sound" ${S.prefs.sound?'checked':''}>Party-blower sound</label></details>`,()=>{
+ }).join('')}</div><details class="navigator-options"><summary>Session options</summary><div class="navigator-links">${button('Choose topics','nav-topics','btn secondary')}${button('Mistakes','nav-mistakes','btn secondary')}${button('Progress','nav-progress','btn secondary')}</div><label class="topic"><input type="checkbox" id="nav-sound" ${S.prefs.sound?'checked':''}>Party-blower sound</label></details>`,()=>{
  $$('[data-jump]').forEach(b=>b.onclick=()=>{save();S.session.index=Number(b.dataset.jump);closeDialog();showQuestion();});
  $('#nav-topics').onclick=()=>{closeDialog();showSetup();};$('#nav-mistakes').onclick=()=>{closeDialog();showMistakes();};$('#nav-progress').onclick=()=>{closeDialog();showProgress();};$('#nav-sound').onchange=e=>{S.prefs.sound=e.target.checked;updateEffects();save();};
  });

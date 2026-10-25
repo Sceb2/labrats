@@ -47,13 +47,13 @@ test('all 20 cards render and score through actual UI; preview isolates storage 
       assert.equal(await page.locator('#task [data-component]').count(),q.components.reduce((sum,c)=>sum+(bank.vocabulary[c.options[0]].asset?4:1),0));
       assert.equal(await page.locator('.model-answer').count(),0);
       await page.locator('#submit').click();
-      assert.equal(await page.locator('#fb .feedback-heading p').innerText(),`${q.maxMark} / ${q.maxMark} marks`);
+      assert.equal(await page.locator('#fb .feedback-heading h2').innerText(),`${q.maxMark} of ${q.maxMark} marks`);
     }
     // Clear only the in-memory preview records before checking first-attempt semantics.
     await page.locator('#preview-reset').click();
     const combined=bank.questions.find(q=>q.id==='MC25');
     await choose(combined,true);await page.locator('#submit').click();
-    assert.equal(await page.locator('#fb .feedback-heading p').innerText(),'4 / 5 marks');
+    assert.equal(await page.locator('#fb .feedback-heading h2').innerText(),'4 of 5 marks');
     await page.locator('#retry').click();
     const c=combined.components[0],right=combined.validMethods[0].answers[c.id][0];
     await page.locator(`input[data-component="${c.id}"][value="${right}"]`).check();

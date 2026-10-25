@@ -8,11 +8,11 @@ function buildStaffPreview(config=JSON.parse(read('auth-config.json')),output=pa
   const bank={meta:source.meta,topics:source.topics,questions:source.questions.map(({id,title,prerequisites,maxMark,enabled})=>({id,title,prerequisites,maxMark,enabled}))};
   const files={'auth-config.json':JSON.stringify({supabaseUrl:url,publishableKey:key}),'questions.json':JSON.stringify(bank),'applied-science/learning-bank.json':read('applied-science/learning-bank.json')};
   const script=`(() => {const files=${JSON.stringify(files).replace(/</g,'\\u003c')};const original=window.fetch.bind(window);window.fetch=(input,init)=>typeof input==='string'&&Object.hasOwn(files,input)?Promise.resolve(new Response(files[input],{headers:{'Content-Type':'application/json'}})):original(input,init);})();\n${read('staff.js')}`;
-  const css=read('styles.css')+'\n'+read('student-login.css')+'\n'+read('staff.css');
+  const css=read('styles.css')+'\n'+read('student-login.css')+'\n'+read('staff.css')+'\n'+read('design.css');
   if(/<\/script/i.test(script)||/<\/style/i.test(css))throw Error('Unsafe preview inline asset.');
   const policy=`default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; connect-src ${url}; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'`;
   const notices=read('THIRD_PARTY_NOTICES.md').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  let html=read('staff.html').replace('<meta name="referrer"',`<meta http-equiv="Content-Security-Policy" content="${policy}"><meta name="referrer"`)
+  let html=read('staff.html').replace(/<link rel="stylesheet" href="design\.css(?:\?v=[^"]*)?">/g,'').replace('<meta name="referrer"',`<meta http-equiv="Content-Security-Policy" content="${policy}"><meta name="referrer"`)
     .replace(/<link rel="stylesheet"[^>]*>/g,'').replace('</head>',()=>`<style>${css}</style></head>`)
     .replace('<a href="index.html">Student practice</a>','<span>Development staff preview</span>')
     .replace(/<script src="staff\.js(?:\?v=[^"]*)?" defer><\/script>/,()=>`<script>${script}</script>`)

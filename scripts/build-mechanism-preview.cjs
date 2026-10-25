@@ -17,7 +17,7 @@ window.CHEM_RESOURCE_DATA=${safe(JSON.parse(read('learning-resources.json')))};
 {const values=new Map();Object.defineProperty(window,'localStorage',{value:{getItem:key=>values.get(String(key))??null,setItem:(key,value)=>values.set(String(key),String(value)),removeItem:key=>values.delete(String(key)),clear:()=>values.clear()}});}
 {const files=${safe(files)};window.fetch=(input)=>{const url=new URL(typeof input==='string'||input instanceof URL?input:input.url,location.href);const name=url.pathname.split('/').pop();return Object.hasOwn(files,name)?Promise.resolve(new Response(files[name],{headers:{'Content-Type':'application/json'}})):Promise.reject(new Error('Offline preview: request unavailable'));};}
 `;
-  const modules=['updates.js','core.js','ui.js','experience.js','effects.js','review.js','learning-resources.js'].map(read);
+  const modules=['updates.js','core.js','feedback.js','ui.js','experience.js','effects.js','review.js','learning-resources.js'].map(read);
   const app=read('app.js');
   if(app.split('U.load().then(').length!==2)throw Error('App bootstrap changed; update preview adapter.');
   modules.push(app.replace('U.load().then(','window.CHEM_CARD_PREVIEW_READY=U.load().then('));
@@ -35,7 +35,7 @@ window.CHEM_CARD_PREVIEW_READY.then(()=>{
 }).catch(error=>{document.getElementById('preview-card-status').textContent=error.message;});
 `;
   const script=setup+'\n'+modules.join('\n;\n')+'\n;\n'+controls;
-  const css=read('styles.css')+`
+  const css=read('styles.css')+'\n'+read('design.css')+`
 .card-preview-tools{border:1px solid var(--rule);border-radius:12px;background:var(--paper);padding:20px;margin-bottom:24px}.card-preview-tools h1{font-size:1.4rem}.card-preview-tools label{display:block;font-weight:650}.card-preview-tools select{width:100%;max-width:100%;margin:8px 0 14px}.card-preview-buttons{display:flex;flex-wrap:wrap;gap:8px}.card-preview-tools p{font-size:.94rem}.card-preview-tools .preview-status{font-weight:650;color:var(--accent)}.preview-badge{color:var(--accent);font-weight:700}.sidebar .side-nav,.release-footer,.design-preview-tools{display:none!important}.product-option .chem img{max-height:235px}.product-option .chem{padding:0}#main{scroll-margin-top:12px}.card-preview-tools button{min-height:44px}@media(max-width:600px){.card-preview-tools{padding:14px}.card-preview-buttons .btn{flex:1 1 140px}}
 `;
   let body=read('chemistry.html').match(/<body\b[^>]*>([\s\S]*)<\/body>/i)[1].replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'');

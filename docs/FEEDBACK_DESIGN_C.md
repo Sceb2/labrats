@@ -1,5 +1,7 @@
 # Feedback design C — expanded previews
 
+**Historical preview:** C has now been implemented alongside A and B. See [the unified design guide](UNIFIED_DESIGN.md) for the working update.
+
 A and B are recorded as the preferred design direction. This change expands C for review; it does not apply any of the proposed redesigns to the student tool.
 
 Open [the interactive feedback preview](design/labrats-feedback-options.html). Choose one example, switch between Mobile and Desktop, or show all six. The preview is self-contained and never contacts Supabase or stores answers. The screenshots show proposed UI, not the current student feedback renderer.

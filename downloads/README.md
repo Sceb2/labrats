@@ -6,11 +6,13 @@
 
 ## Combined subject prototype
 
-[Download the latest LabRats preview and UI review ZIP](labrats-ui-review-2026-10-25.zip).
+[Download the latest LabRats working preview](labrats-unified-design-preview-2026-10-25.zip).
 
-This snapshot is from `LabRats-Online` and includes the lighter pink Sign Out control, reduced version/footer text, actual mobile screenshots and three separate design mockups. No new Supabase setup is needed for this UI update. Open `mobile-previews.html` for the comparison or `design-options.html` for the interactive mockups. Extract all files together, then open `subject-hub-preview.html`. It includes both subject previews, shared staff tools, mechanism cards and the database setup files. Guest practice works without database changes. See `START-HERE.txt` for account testing.
+This snapshot implements A, B and C across Chemistry and Applied Science, with shared styling for login and staff tools. Extract all files together, then open `subject-hub-preview.html`. Open `mobile-previews.html` for actual phone screenshots. No new Supabase setup is needed for this visual update. Read `START-HERE.txt` for existing account prerequisites.
 
-The [earlier 25 October interface snapshot](labrats-preview-2026-10-25.zip) and [24 October subject-hub snapshot](subject-hub-preview-2026-10-24.zip) is retained for reference.
+The [previous UI review pack](labrats-ui-review-2026-10-25.zip) retains the original mockups for comparison.
+
+The [earlier 25 October interface snapshot](labrats-preview-2026-10-25.zip) and [24 October subject-hub snapshot](subject-hub-preview-2026-10-24.zip) are retained for reference.
 
 ## Earlier Chemistry-only prototype
 

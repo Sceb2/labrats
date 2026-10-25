@@ -109,3 +109,7 @@ Sign Out now shares the main action group in each subject, beside Finish session
 The [design review](UI_DESIGN_REVIEW.md) records the online sources, findings and alternatives. [Mobile previews](design/labrats-mobile-previews.html) show actual fictional-account renders and the current subject page. [Visual options](design/labrats-ui-options.html) provide three separate mockups. No broader redesign or scoring changes have been applied.
 
 [Download the current working preview and review pack](../downloads/labrats-ui-review-2026-10-25.zip). No new database setup is needed for this UI update.
+
+## Unified visual design
+
+A, B and C are now applied across both subjects and shared account/staff pages. See [the implementation and validation guide](UNIFIED_DESIGN.md) and [current mobile screens](design/labrats-unified-mobile.html). This update needs no Supabase changes.

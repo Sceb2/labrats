@@ -1,5 +1,7 @@
 # LabRats UI review — 25 October 2026
 
+**Current status:** A, B and C have now been implemented. See [the unified design guide](UNIFIED_DESIGN.md) for the current tool; the mockups and recommendations below record the earlier review.
+
 The strongest risk is an inconsistent, assembled appearance. The green selected states, pink exit controls and chemistry diagrams already serve the product well. Keep those recognisable choices. A colour, font or border radius cannot establish AI authorship, and no student-perception study has been run. The recommendations below are a design review, not an “AI detector” result.
 
 ## Online sources checked
