@@ -23,10 +23,10 @@
   if(gate){const app=document.getElementById('app');if(app){app.replaceChildren(host)}else document.body.append(host)}else document.body.append(host);
   host.querySelector('#open-latest-version').onclick=()=>updateNow(release,host.querySelector('#open-latest-version'),host.querySelector('.release-message'));
   const dismiss=host.querySelector('#dismiss-release');if(dismiss)dismiss.onclick=()=>{dismissed=release.id;removeNotice()};
-  statusText('Version '+(build.label||'unknown')+' · update available');
+  statusText('Update available');
  }
- async function check({force=false,gate=false}={}){
-  if(offline){statusText('Offline preview · version '+(build.label||''));return {offline:true}}
+ async function check({force=false,gate=false,announce=false}={}){
+  if(offline){statusText('');return {offline:true}}
   if(checking)return checking;
   if(!force&&Date.now()-lastCheck<30000)return {latest,update:!!latest&&latest.id!==build.id};
   lastCheck=Date.now();checking=(async()=>{
@@ -35,9 +35,9 @@
     const response=await fetch(freshURL('version.json'),{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('Release check unavailable');
     const remote=await response.json();if(!valid(remote))throw Error('Invalid release metadata');latest=remote;
     const update=remote.id!==build.id;
-    if(update)showNotice(remote,gate||initialGate);else{if(!initialGate)removeNotice();statusText('Version '+build.label+' · up to date')}
+    if(update)showNotice(remote,gate||initialGate);else{if(!initialGate)removeNotice();statusText(announce?'Up to date.':'')}
     return {latest:remote,update};
-   }catch{statusText('Version '+(build.label||'unknown')+' · update check unavailable');return {unavailable:true}}
+   }catch{statusText(announce?'Update check unavailable.':'');return {unavailable:true}}
    finally{clearTimeout(timer);checking=null}
   })();return checking;
  }
@@ -48,7 +48,7 @@
   showNotice(remote,true);const text=document.querySelector('#release-notice .release-description');if(text)text.textContent='This page and the question files are from different releases. Open a fresh copy before continuing.';
   return new Promise(()=>{});
  }
- document.getElementById('check-for-updates')?.addEventListener('click',()=>{dismissed='';check({force:true,gate:initialGate})});
+ document.getElementById('check-for-updates')?.addEventListener('click',()=>{dismissed='';check({force:true,gate:initialGate,announce:true})});
  if(offline){const button=document.getElementById('check-for-updates');if(button)button.hidden=true}
  window.addEventListener('pageshow',()=>check());
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)check()});

@@ -45,7 +45,7 @@ async function open(bank, onRecords = () => {}, {
   const identity = document.createElement('strong'); identity.textContent = owner.username;
   const state = document.createElement('span'); state.id = 'account-sync-status'; state.setAttribute('role','status');
   const retry = document.createElement('button'); retry.type = 'button'; retry.className = 'btn text-button'; retry.textContent = 'Retry sync'; retry.id = 'retry-progress-sync';
-  const logout = document.createElement('button'); logout.type = 'button'; logout.className = 'btn text-button'; logout.textContent = 'Sign out'; logout.id = 'practice-sign-out';
+  const logout = document.createElement('button'); logout.type = 'button'; logout.className = 'btn account-sign-out'; logout.textContent = 'Sign Out'; logout.id = 'practice-sign-out';
   const login=document.createElement('a');login.href=loginUrl;login.textContent='Sign in again';login.hidden=true;
   const attention=document.createElement('details');attention.id='sync-attention';attention.hidden=true;
   const summary=document.createElement('summary'),explanation=document.createElement('p'),list=document.createElement('ul');
@@ -54,6 +54,14 @@ async function open(bank, onRecords = () => {}, {
   const discardRejected=document.createElement('button');discardRejected.type='button';discardRejected.className='btn text-button';discardRejected.id='discard-rejected-attempts';discardRejected.textContent='Discard these unsaved attempts';
   attention.append(summary,explanation,list,retryRejected,discardRejected);
   bar.append(identity, state, login, retry, logout, attention); (document.querySelector('.workspace') || document.body).prepend(bar);
+  function placeAccountAction() {
+    if (closed) return;
+    const slot=document.querySelector('#app [data-account-actions]');
+    const target=slot&&!slot.closest('[hidden]')?slot:bar;
+    if(logout.parentElement!==target)target.append(logout);
+  }
+  const actionObserver=new MutationObserver(placeAccountAction);
+  actionObserver.observe(document.querySelector('.workspace')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
   function publish() {
     if (closed) return;
     // Prioritize durable pending metadata over the replaceable remote-history cache.
@@ -140,7 +148,7 @@ async function open(bank, onRecords = () => {}, {
     if(closed)return;
     const waiting=Math.max(unsavedCount(),connection.pendingCount());
     if (waiting && !window.confirm(`${waiting} attempts have not synced. Signing out will discard those unsaved attempts. Sign out anyway?`)) return;
-    closed = true; clearInterval(timer); window.removeEventListener('beforeunload', unload);
+    closed = true; clearInterval(timer); actionObserver.disconnect(); window.removeEventListener('beforeunload', unload);
     logout.disabled=true;retry.disabled=true;state.textContent='Signing out…';
     const main=document.querySelector('main');if(main)main.hidden=true;
     window.removeEventListener('online', flush); window.removeEventListener('offline', flush);

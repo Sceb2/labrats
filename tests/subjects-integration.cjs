@@ -52,7 +52,7 @@ test('shared identities, server subject boundaries, subject reports and both stu
    const site=path.resolve(__dirname,'..');
    previewFolder=await fs.mkdtemp(path.join(os.tmpdir(),'ocr-applied-preview-'));const previewFile=path.join(previewFolder,'applied.html');
    buildSitePreview({supabaseUrl:url,publishableKey:key},previewFile,'applied-science');const preview=await fs.readFile(previewFile);
-   server=http.createServer(async(req,res)=>{try{const relative=decodeURIComponent(new URL(req.url,'http://x').pathname).slice(1)||'index.html',file=path.resolve(site,relative);if(!file.startsWith(site+path.sep)||relative.startsWith('.'))throw Error('Invalid path');let bytes=relative==='applied-preview.html'?preview:relative==='auth-config.json'?JSON.stringify({supabaseUrl:url,publishableKey:key}):await fs.readFile(file);if(relative==='student-login.html')bytes=bytes.toString().replace('https://ojhckvbekzudphkjeofw.supabase.co',url);res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.json':'application/json','.css':'text/css','.svg':'image/svg+xml','.wav':'audio/wav','.mjs':'text/javascript'})[path.extname(file)]||'text/plain');res.end(bytes);}catch{res.writeHead(404);res.end();}});
+   server=http.createServer(async(req,res)=>{try{const relative=decodeURIComponent(new URL(req.url,'http://x').pathname).slice(1)||'index.html',file=path.resolve(site,relative);if(!file.startsWith(site+path.sep)||relative.startsWith('.'))throw Error('Invalid path');let bytes=relative==='applied-preview.html'?preview:relative==='auth-config.json'?JSON.stringify({supabaseUrl:url,publishableKey:key}):await fs.readFile(file);if(relative==='student-login.html')bytes=bytes.toString().replace('https://ojhckvbekzudphkjeofw.supabase.co',url);res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.json':'application/json','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.wav':'audio/wav','.mjs':'text/javascript'})[path.extname(file)]||'text/plain');res.end(bytes);}catch{res.writeHead(404);res.end();}});
    await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const base=`http://127.0.0.1:${server.address().port}/`;
    browser=await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE||'/usr/bin/chromium',args:['--no-sandbox']});
    const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[],payloads=[],violations=[];
@@ -62,12 +62,46 @@ test('shared identities, server subject boundaries, subject reports and both stu
    await page.goto(base+'student-login.html?subject=chemistry');await page.locator('#username').fill(username);await page.locator('#password').fill(password);await page.locator('#login-form button').click();await page.waitForSelector('#account-panel:not([hidden])');
    await page.locator('#continue-practice').click();await page.waitForSelector('#practice');await page.waitForFunction(()=>document.querySelector('#account-sync-status')?.textContent==='All progress saved to your account.');
    assert.equal(await page.evaluate(()=>S.progress.records.RC01.first.score),2);
+   await page.waitForSelector('[data-account-actions] #practice-sign-out');
+   assert.equal(await page.locator('.side-nav a').count(),0,'Student sign-in must not remain in the subject menu');
+   assert.equal(await page.locator('.side-footer').innerText(),'v1.13.0');
+   assert.equal(await page.locator('#release-check-status').innerText(),'');
+   assert.equal(await page.locator('#progress-storage-note').count(),0);
+   assert.equal(await page.locator('#practice-sign-out').count(),1);
+   assert.equal(await page.locator('#account-sync-bar #practice-sign-out').count(),0);
+   await page.setViewportSize({width:390,height:844});
+   await page.screenshot({path:'/tmp/labrats-mobile-topics-account.png',fullPage:true});
+   await page.evaluate(()=>start('preview',[S.bank.questions.find(q=>q.id==='RC01')]));
+   await page.waitForSelector('.question-toolbar [data-account-actions] #practice-sign-out');
+   assert.equal(await page.locator('#practice-sign-out').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(242, 213, 223)');
+   assert.equal(await page.locator('#practice-sign-out').innerText(),'Sign Out');
+   for(const width of [320,390,430]){
+    await page.setViewportSize({width,height:844});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Account actions overflow at '+width);
+    const actions=await page.locator('.question-toolbar .account-actions').evaluate(el=>[...el.children].map(b=>{const r=b.getBoundingClientRect();return {y:r.y,h:r.height,right:r.right};}));
+    assert.equal(actions.length,2);assert.equal(actions[0].y,actions[1].y);assert(actions.every(a=>a.h>=44&&a.right<=width));
+   }
+   await page.setViewportSize({width:390,height:844});
+   await page.screenshot({path:'/tmp/labrats-mobile-chemistry-account.png',fullPage:true});
+   await page.evaluate(()=>finish());await page.waitForSelector('.summary-page [data-account-actions] #practice-sign-out');
+   await page.screenshot({path:'/tmp/labrats-mobile-summary-account.png',fullPage:true});
+   await page.evaluate(()=>showProgress());await page.waitForSelector('.progress-page [data-account-actions] #practice-sign-out');
+   await page.locator('[data-choose-topics]').click();await page.waitForSelector('.setup-page [data-account-actions] #practice-sign-out');
+   await page.setViewportSize({width:1280,height:900});
+
    await page.goto(base+'applied-science.html');await page.waitForSelector('#select-all');await page.waitForFunction(()=>document.querySelector('#account-sync-status')?.textContent==='All progress saved to your account.');
    assert.deepEqual(await page.evaluate(()=>Object.keys(window.AppliedPrototype.state.progress.records)),[applied.questions[0].id]);
    await page.evaluate(()=>window.AppliedPrototype.openQuestion('W02','practice'));const grade=page.locator('.question-topic .rating-badge');assert.equal(await grade.innerText(),'N');
    await grade.hover();await page.waitForSelector('#revision-rating-tooltip:not([hidden])');assert.match(await page.locator('#revision-rating-tooltip').innerText(),/No unaided scored attempt/);
    await page.keyboard.press('Escape');assert(await page.locator('#revision-rating-tooltip').isHidden());
    await grade.focus();assert(await page.locator('#revision-rating-tooltip').isVisible());await page.keyboard.press('Escape');
+   await page.setViewportSize({width:390,height:844});
+   await page.waitForSelector('.question-toolbar [data-account-actions] #practice-sign-out');
+   assert.equal(await page.locator('#practice-sign-out').count(),1);
+   assert.equal(await page.locator('.side-nav a').count(),0);
+   assert.equal(await page.locator('#release-check-status').innerText(),'');
+   await page.screenshot({path:'/tmp/labrats-mobile-applied-account.png',fullPage:true});
+
    await page.setViewportSize({width:390,height:844});await grade.click();assert(await page.locator('#revision-rating-tooltip').isVisible());await page.locator('#question-heading').click();assert(await page.locator('#revision-rating-tooltip').isHidden());
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    const q=source.questions.find(q=>q.id==='W02');for(const part of q.parts)await page.locator(`input[data-part="${part.id}"][value="${part.correctOptionId}"]`).check();await page.locator('#check-answer').click();

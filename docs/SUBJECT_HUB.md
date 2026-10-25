@@ -101,3 +101,11 @@ Catalogue generation is shared too. For a future bank update, generate a **new**
 Topic tiles are shorter, with checkboxes beside their labels and the existing green selected state. Select all / Clear topics are directly available without a disclosure. The setup-only pink Choose subject button is in the topic heading; it is absent during questions, reviews and progress. The session count and Start practice controls precede Practice settings in both subjects. Foundation behaviour and eligibility rules are unchanged; explanatory preview/setup text has been removed. Student Login uses the LabRats brand and retains operational errors and password-replacement help.
 
 [Download the current review ZIP](../downloads/labrats-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. This is a fixed snapshot; subsequent source builds do not update the ZIP automatically. This interface update changes no question content, grading, database schema or hosted Supabase settings.
+
+## Account controls and design review — 25 October 2026
+
+Sign Out now shares the main action group in each subject, beside Finish session, Choose subject or Choose topics. The single existing sign-out control is moved between rendered screens; its sync/discard safeguards are retained. It stays in the account bar if a sign-in error hides the main content. Guest sessions have no Sign Out button. The subject menu now contains only Practice, Mistakes and Progress. Student Login is available on the subject hub. Sidebar version metadata is reduced to `v1.13.0`; automatic footer chatter is removed while update checking, storage failures and pending-attempt warnings remain.
+
+The [design review](UI_DESIGN_REVIEW.md) records the online sources, findings and alternatives. [Mobile previews](design/labrats-mobile-previews.html) show actual fictional-account renders and the current subject page. [Visual options](design/labrats-ui-options.html) provide three separate mockups. No broader redesign or scoring changes have been applied.
+
+[Download the current working preview and review pack](../downloads/labrats-ui-review-2026-10-25.zip). No new database setup is needed for this UI update.

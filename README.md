@@ -12,7 +12,7 @@ remain separate and unchanged.
 - **Separate:** banks, marking engines, progress, revision priorities, browser
   preferences, account caches and teacher authority by class/subject.
 
-Open `index.html` through a local static server, or download the [latest preview pack](downloads/labrats-preview-2026-10-25.zip) and
+Open `index.html` through a local static server, or download the [latest preview pack](downloads/labrats-ui-review-2026-10-25.zip) and
 open `subject-hub-preview.html` after extracting all its files together.
 The standalone subject previews embed their banks and diagrams. Account features
 connect to the development Supabase project; guest practice needs no backend.
@@ -47,3 +47,5 @@ Further details: [student accounts](docs/STUDENT_LOGINS.md),
 
 This is a review prototype. Passing software checks does not establish chemistry
 approval, a validated mastery score or readiness for real-student deployment.
+
+The current [UI review](docs/UI_DESIGN_REVIEW.md) includes real mobile account previews and separate design mockups. This navigation/visual update requires no new Supabase migrations.

@@ -274,3 +274,12 @@ html{scroll-padding-bottom:25px}button,a,summary,input,select,textarea{scroll-ma
 .setup-page .setup-actions{position:static;margin:20px 0;border-radius:12px}
 @media(max-width:600px){.setup-heading{gap:12px}.setup-page .setup-heading h1{font-size:2rem}.module-section .checks{gap:10px}.module-section label.topic{min-height:64px;padding:12px;gap:10px}.module-section .topic-text{font-size:1rem}.module-section label.topic input{width:19px;height:19px}.setup-heading .choose-subject{font-size:.8rem;padding:10px 12px}}
 .selection-tools.row .btn{flex:0 0 auto}.setup-actions>.btn{width:100%}
+
+/* Shared account actions: keep the exit controls together at every screen size. */
+.account-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;flex:none}
+.btn.account-sign-out{background:#f2d5df;border:1px solid #dba9bb;color:#64243d;min-height:44px;padding:10px 14px;font-size:.85rem;line-height:1.4;border-radius:7px;font-weight:650;white-space:nowrap}
+.btn.account-sign-out:hover{background:#eac2d1;border-color:#bc7d94}
+.question-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}.question-toolbar #clean-question-header{width:100%}
+.setup-heading>.account-actions{margin-left:auto}.release-footer [role=status]:empty,#storage-note:empty{display:none}
+@media(max-width:600px){.account-actions{gap:7px}.btn.account-sign-out{padding:10px 12px;font-size:.76rem}.setup-heading>.account-actions{margin-left:0}.question-toolbar>.account-actions{justify-content:flex-end}.question-toolbar .progress-topline{flex-wrap:wrap}}
+@media(max-width:360px){.question-toolbar{grid-template-columns:1fr;gap:8px}.question-toolbar>.account-actions{justify-self:end}}
