@@ -2,9 +2,11 @@
 
 ## Combined subject prototype
 
-[Download the Chemistry + Applied Science preview ZIP](subject-hub-preview-2026-10-24.zip).
+[Download the latest LabRats preview ZIP](labrats-preview-2026-10-25.zip).
 
-This snapshot is from `feature/subject-hub`. Extract all files together, then open `subject-hub-preview.html`. It includes both subject previews, shared staff tools, mechanism cards and the database setup files. Guest practice works without database changes. See `START-HERE.txt` for account testing.
+This snapshot is from `LabRats-Online` and includes the compact topic controls, new subject illustrations and simplified Student Login. Extract all files together, then open `subject-hub-preview.html`. It includes both subject previews, shared staff tools, mechanism cards and the database setup files. Guest practice works without database changes. See `START-HERE.txt` for account testing.
+
+The [24 October subject-hub snapshot](subject-hub-preview-2026-10-24.zip) is retained for reference.
 
 ## Earlier Chemistry-only prototype
 

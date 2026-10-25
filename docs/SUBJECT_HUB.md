@@ -1,12 +1,12 @@
 # Shared Chemistry and Applied Science prototype
 
-Development branch: `feature/subject-hub`. The original Chemistry `main`, Applied Science `main`, and `feature/student-logins` branches are not changed by this work. No hosted Supabase migrations have been run.
+Development branch: `LabRats-Online` (renamed from `feature/subject-hub`). The original Chemistry `main`, Applied Science `main`, and `feature/student-logins` branches are not changed by this work. No hosted Supabase migrations have been run.
 
 Screenshots: [subject selector](previews/subject-hub.png), [Applied Science question](previews/applied-science.png), and [mobile grade tooltip](previews/grade-tooltip-mobile.png).
 
 ## What is shared
 
-The landing page (`index.html`) offers Applied Science and Chemistry with original subject icons. `chemistry.html` opens the existing 236-question Chemistry tool; `applied-science.html` opens the imported 110-question AAQ Applied Science Waves tool. Both use the shared visual stylesheet, student login, account client, metadata sync, adaptive rating/ordering, tooltip and celebration implementations. Subject-specific renderers and marking engines preserve their different question formats.
+The LabRats landing page (`index.html`) offers compact Applied Science and Chemistry buttons with newly generated transparent illustrations: a hand pouring into a test tube and an ethanol ball-and-stick model. `chemistry.html` opens the existing 236-question Chemistry tool; `applied-science.html` opens the imported 110-question AAQ Applied Science Waves tool. Both use the shared visual stylesheet, student login, account client, metadata sync, adaptive rating/ordering, tooltip and celebration implementations. Subject-specific renderers and marking engines preserve their different question formats.
 
 `subjects.json` registers the two subjects. Applied Science's separate `learning-bank.json` adapts its existing question metadata for shared services, without converting or replacing its questions. One school account works across both subjects in the same browser tab. Auth remains tab-scoped, as in the original prototype. Guest practice remains available separately.
 
@@ -95,3 +95,9 @@ The last command uses only a disposable local PostgreSQL/Auth/PostgREST stack, e
 Validated for this prototype: build, 308 Chemistry software checks, 33 unit tests, the mechanism-preview browser check and all 70 local backend/browser integration checks passed. The 109 automatically marked Applied Science questions accepted their authored answers, including enabled final-answer routes. These checks do not replace teacher content review or verify hosted configuration.
 
 Catalogue generation is shared too. For a future bank update, generate a **new** migration using `node scripts/build-question-catalog.cjs --subject applied-science --output supabase/migrations/NEW_TIMESTAMP_question_catalog.sql`. Use `--subject chemistry` for Chemistry (also the default). Existing migration files cannot be overwritten. The current 009 file can be verified with the same command and `--check`.
+
+## LabRats interface update — 25 October 2026
+
+Topic tiles are shorter, with checkboxes beside their labels and the existing green selected state. Select all / Clear topics are directly available without a disclosure. The setup-only pink Choose subject button is in the topic heading; it is absent during questions, reviews and progress. The session count and Start practice controls precede Practice settings in both subjects. Foundation behaviour and eligibility rules are unchanged; explanatory preview/setup text has been removed. Student Login uses the LabRats brand and retains operational errors and password-replacement help.
+
+[Download the current review ZIP](../downloads/labrats-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. This is a fixed snapshot; subsequent source builds do not update the ZIP automatically. This interface update changes no question content, grading, database schema or hosted Supabase settings.

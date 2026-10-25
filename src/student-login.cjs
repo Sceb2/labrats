@@ -55,8 +55,8 @@ async function boot() {
   const practiceTarget=window.OCR_PREVIEW_SUBJECT_URL||selected.practiceUrl;
   const guestLink=document.querySelector('header a');if(guestLink)guestLink.href=practiceTarget;
   $('#continue-practice').href=practiceTarget;
-  document.title='Student sign in · '+selected.label;
-  const brand=document.querySelector('.brand');if(brand)brand.textContent=selected.label;
+  document.title='Student Login · LabRats';
+  const brand=document.querySelector('.brand');if(brand)brand.textContent='LabRats';
   accountConnection = await openAccountClient(); client = accountConnection.client;
   $('#change-password-toggle').addEventListener('click', () => {
     if (busy) return;
@@ -123,6 +123,6 @@ async function boot() {
   if (session) {
     try { await account(); status('Sign-in restored for this tab.'); }
     catch (error) { await clearSession(false); status(error.message, true); }
-  } else { signedOut(); status('Ready to sign in.'); }
+  } else { signedOut(); status(''); }
 }
 boot().catch(() => { status('Sign-in is unavailable. Please try again later. Browser-only practice is still available.', true); });

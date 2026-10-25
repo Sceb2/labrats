@@ -263,3 +263,14 @@ html{scroll-padding-bottom:25px}button,a,summary,input,select,textarea{scroll-ma
 .rating-badge[data-grade=A]{background:#e2f4e7;color:#16582b}.rating-badge[data-grade=B]{background:#e1f2f5;color:#185766}.rating-badge[data-grade=C]{background:#fff4d3;color:#705300}.rating-badge[data-grade=D]{background:#ffeadb;color:#873e12}.rating-badge[data-grade=E]{background:#f9e3e3;color:#802c2c}
 /* Detailed mechanism choices can be opened at full size without selecting them. */
 .diagram-choice{min-width:0;display:flex;flex-direction:column;gap:4px}.diagram-choice>.product-option{flex:1}.diagram-zoom{display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px;color:var(--accent);text-underline-offset:3px}.diagram-zoom:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* LabRats: compact topic selection and a single setup-only subject switch. */
+.setup-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.setup-page .setup-heading h1{margin:0}.setup-heading .choose-subject{flex:none;text-decoration:none}
+.selection-tools.row{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 12px}
+.module-section label.topic{min-height:66px;padding:14px 18px;gap:13px;justify-content:flex-start;align-items:center;text-align:left}
+.module-section label.topic input{position:static;flex:none;width:21px;height:21px;margin:0}
+.module-section .topic-text{width:auto;min-width:0;text-align:left;font:400 1.15rem/1.3 Georgia,serif}
+.setup-page .setup-actions{position:static;margin:20px 0;border-radius:12px}
+@media(max-width:600px){.setup-heading{gap:12px}.setup-page .setup-heading h1{font-size:2rem}.module-section .checks{gap:10px}.module-section label.topic{min-height:64px;padding:12px;gap:10px}.module-section .topic-text{font-size:1rem}.module-section label.topic input{width:19px;height:19px}.setup-heading .choose-subject{font-size:.8rem;padding:10px 12px}}
+.selection-tools.row .btn{flex:0 0 auto}.setup-actions>.btn{width:100%}

@@ -5,7 +5,7 @@ const old=JSON.parse(read('version.json'));
 const files=['app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
   'updates.js','learning-resources.js','questions.json','assets.json','learning-resources.json',
   'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
-  'staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];
+  'index.html','assets/subjects/applied-science.png','assets/subjects/chemistry.png','staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];
 const fingerprint=createHash('sha256');for(const file of files)fingerprint.update(file).update(file.endsWith('.html')?read(file).toString().replace(/\?v=r-[a-zA-Z0-9-]+/g,'').replace(/window\.(?:CHEM_BUILD|AAQ_BUILD)=\{[^;]+\};/g,''):read(file));
 const id='r-'+fingerprint.digest('hex').slice(0,20), label='1.13.0-subject-prototype';
 const build={schema:1,id,label,bankVersion:JSON.parse(read('questions.json')).meta.bankVersion,

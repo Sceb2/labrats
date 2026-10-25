@@ -1,4 +1,4 @@
-# School revision — subject-hub prototype
+# LabRats — combined subject prototype
 
 This development branch combines Chemistry and Applied Science behind a shared
 subject selector, school login and platform services. Both existing live sites
@@ -12,7 +12,7 @@ remain separate and unchanged.
 - **Separate:** banks, marking engines, progress, revision priorities, browser
   preferences, account caches and teacher authority by class/subject.
 
-Open `index.html` through a local static server, or download the preview pack and
+Open `index.html` through a local static server, or download the [latest preview pack](downloads/labrats-preview-2026-10-25.zip) and
 open `subject-hub-preview.html` after extracting all its files together.
 The standalone subject previews embed their banks and diagrams. Account features
 connect to the development Supabase project; guest practice needs no backend.

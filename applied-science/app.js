@@ -74,18 +74,19 @@ function resumeActions(){
 }
 function showSetup(){
  renderShell('setup');
- app().innerHTML=`<section class="card setup-page"><header class="page-heading"><h1>Choose your topics</h1><p>Select topics you have studied.</p></header>
+ app().innerHTML=`<section class="card setup-page"><header class="page-heading setup-heading"><h1>Choose your topics</h1><a class="btn finish-session choose-subject" href="${window.OCR_SITE_PREVIEW?'subject-hub-preview.html':'index.html'}">Choose subject</a></header>
  <details class="module-section" ${disclosureAttrs('waves',true)}><summary><span>Waves</span><span class="module-selected" id="waves-selected"></span></summary>
  <div class="topic-tools">${button('Select all Waves','select-all','btn text-button')}${button('Clear selection','select-none','btn text-button')}</div>
  <div class="wave-topic-list">${wavesTopics().map(lessonRow).join('')}</div></details>
  <details class="module-section" ${disclosureAttrs('forces')}><summary><span>Forces</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
  <details class="module-section" ${disclosureAttrs('electricity-energy')}><summary><span>Electricity and Energy</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
+ <div class="setup-actions"> <div class="session-plan" id="session-plan" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
  <details class="practice-settings" ${disclosureAttrs('settings')}><summary>Practice settings</summary><label class="control">Practice mode<select id="practice-style"><option value="adaptive" ${S.prefs.practiceStyle!=='random'?'selected':''}>Adaptive practice (recommended)</option><option value="random" ${S.prefs.practiceStyle==='random'?'selected':''}>Random practice</option></select></label><p class="small-note">Weaker, new and due questions appear more often. N means no unaided scored attempt yet. Tap a rating to learn what it means.</p><h2>Question types</h2><div class="settings-options">${types.map(t=>`<label><input type="checkbox" data-type="${t}" ${S.prefs.types.includes(t)?'checked':''}>${labels[t]}</label>`).join('')}</div>
  <label class="topic"><input type="checkbox" id="effects-pref" ${S.prefs.celebrations?'checked':''}><span>Celebration effects<span class="topic-code">Reduced-motion preferences are respected.</span></span></label>
  <p class="small-note">Sessions target 20 available marks and an equal number of recall and application questions. Your selected lessons determine what is available.</p>
  <details ${disclosureAttrs('question-browser')}><summary>Question browser</summary><p class="small-note">Open an individual question without recording a practice score.</p><label for="review-question">Question</label><select class="review-select" id="review-question">${S.bank.questions.map(q=>`<option value="${q.id}">${esc(q.title)}</option>`).join('')}</select>${button('Open question','open-review','btn secondary')}<div class="celebration-preview-controls"><h3>Celebration previews</h3><label for="preview-celebration">Effect</label><select class="review-select" id="preview-celebration"><option value="random">Random question celebration</option><option value="comet">Comet parade</option><option value="starburst">Starburst spectacular</option><option value="ribbons">Ribbon carnival</option><option value="orbit">Orbiting stars</option><option value="trophy">Trophy triumph</option><option value="session">Perfect-session finale</option></select>${button('Play celebration','play-celebration','btn secondary')}<p id="celebration-preview-status" class="small-note" role="status"></p></div></details></details>
  <div id="missing-lessons"></div>
- <div class="setup-actions"> <div class="session-plan" id="session-plan" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
+
  <p class="small-note">${S.bank.summary.questionCount} questions · ${S.bank.summary.recallQuestions} recall and ${S.bank.summary.applicationQuestions} application.</p></section>`;
  bindDisclosures();
  syncTopicRows();

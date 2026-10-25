@@ -1,4 +1,4 @@
 [
-  {"id":"applied-science","label":"Applied Science","description":"Pearson AAQ · Unit 3 physics · Waves","practiceUrl":"applied-science.html","learningBankUrl":"applied-science/learning-bank.json","logo":"assets/subjects/applied-science.svg"},
-  {"id":"chemistry","label":"Chemistry","description":"OCR A Level · Organic chemistry","practiceUrl":"chemistry.html","learningBankUrl":"questions.json","logo":"assets/subjects/chemistry.svg"}
+  {"id":"applied-science","label":"Applied Science","description":"Pearson AAQ · Unit 3 physics · Waves","practiceUrl":"applied-science.html","learningBankUrl":"applied-science/learning-bank.json","logo":"assets/subjects/applied-science.png"},
+  {"id":"chemistry","label":"Chemistry","description":"OCR A Level · Organic chemistry","practiceUrl":"chemistry.html","learningBankUrl":"questions.json","logo":"assets/subjects/chemistry.png"}
 ]
