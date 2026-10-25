@@ -38,3 +38,7 @@ Direct access to some editorial websites/search pages was unavailable in this en
 Open [the self-contained visual options](design/labrats-ui-options.html). A is the recommended first change; B and C are alternatives for review, not a commitment to remove the current card layout or celebrations. The mockups use fictional illustrative counts and do not connect to Supabase. They are included in the downloadable review pack.
 
 Show the current hub and option A to a few students in alternating order. Ask which feels like the same tool as the question page, where they would tap next, and what looks unfinished. Do not lead with “which one looks AI-generated?” Record task success and concrete comments. Use that evidence to choose the next design pass.
+
+## Follow-up preference and feedback review
+
+A and B are now the user’s preferred direction. [Expanded C previews](FEEDBACK_DESIGN_C.md) cover full/partial/incorrect results, retries, reveals and Applied Science method marks. The wider redesign remains separate from the working student UI while feedback is reviewed.

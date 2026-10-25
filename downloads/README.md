@@ -1,5 +1,9 @@
 # Downloadable development previews
 
+## Expanded feedback design C
+
+[Download the six-example feedback preview](labrats-feedback-c-preview-2026-10-25.zip). Extract it and open `feedback-preview.html`. It includes phone/desktop layouts and full marks, partial marks, an incorrect answer, a retry, a reveal and Applied Science method marks. These are separate design previews; they do not connect to Supabase or change the working tool.
+
 ## Combined subject prototype
 
 [Download the latest LabRats preview and UI review ZIP](labrats-ui-review-2026-10-25.zip).

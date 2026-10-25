@@ -1,0 +1,18 @@
+{
+  "note": "Fictional design examples; scores verified by existing marking engines. Not live student data.",
+  "chemistryQuestion": "RC01",
+  "chemistryScores": {
+    "full": 2,
+    "partial": 1,
+    "wrong": 0,
+    "retry": 2,
+    "revealed": null
+  },
+  "appliedQuestion": "W03",
+  "appliedMarks": {
+    "direct": 1,
+    "method": 2,
+    "total": 3,
+    "maximum": 4
+  }
+}
