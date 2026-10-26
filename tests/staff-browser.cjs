@@ -55,6 +55,9 @@ test('staff and learner previews complete the invitation, class, reporting and r
    await student.locator('[data-topic="alcohols"]').check();await student.locator('.practice-settings > summary').click();assert.equal(await student.locator('#practice-style').inputValue(),'adaptive');
    for(const type of ['multistep','mechanism-id','mechanism-completion','sites','nomenclature','product'])await student.locator(`[data-type="${type}"]`).uncheck();
    await student.locator('#celebration-effects').uncheck();await student.locator('#practice').click();await student.waitForSelector('#submit');assert.equal(await student.evaluate(()=>S.session.selection),'adaptive');
+   // Compare both views at the same instant: a score on a grade threshold can
+   // decay across it between the student's render and the teacher's request.
+   const ratingAt=new Date();await student.clock.setFixedTime(ratingAt);await teacher.clock.setFixedTime(ratingAt);
    question=await student.evaluate(()=>current());
    for(const [index,component] of question.components.entries()){const answer=index===0?component.options.find(id=>!question.validMethods.some(m=>m.answers[component.id]?.includes(id))):question.validMethods[0].answers[component.id][0];await student.locator('#'+component.id).selectOption(answer);}
    await student.locator('#submit').click();await student.waitForFunction(()=>document.querySelector('#account-sync-status').textContent==='All progress saved to your account.');
@@ -64,6 +67,25 @@ test('staff and learner previews complete the invitation, class, reporting and r
    const row=teacher.locator('#student-report details tr').filter({hasText:question.id+' ·'});assert.equal(await row.locator('.rating-badge').getAttribute('data-grade'),grade);
    assert.ok((await teacher.locator('#student-report').innerText()).includes('0 correct'));
    assert.equal(await teacher.evaluate(()=>Object.values(sessionStorage).join('').includes('earned_marks')),false);
+  });
+  await check('background subject access changes reload the matching reporting catalogue',async()=>{
+   ok(await root.from('staff_subjects').insert({teacher_id:teacherId,subject_id:'applied-science'}));
+   const cls=ok(await root.from('school_classes').insert({label:'Fictional Applied Science class',subject_id:'applied-science'}).select('id').single()).id;classes.push(cls);
+   ok(await root.from('class_teachers').insert({class_id:cls,teacher_id:teacherId}));
+   ok(await root.from('class_students').insert({class_id:cls,student_id:studentId}));
+   // Match the effects of an administrator revoking the current Chemistry grant.
+   ok(await root.from('class_teachers').delete().eq('class_id',classes[0]).eq('teacher_id',teacherId));
+   ok(await root.from('staff_subjects').delete().eq('teacher_id',teacherId).eq('subject_id','chemistry'));
+   await teacher.evaluate(()=>window.dispatchEvent(new Event('focus')));
+   await teacher.waitForFunction(()=>document.querySelector('#staff-subject')?.value==='applied-science'&&document.querySelector('#staff-status').textContent.startsWith('Class access updated'));
+   assert.equal(await teacher.locator('#private-output').isVisible(),false);
+   await teacher.locator(`[data-report="${studentId}"]`).click();await teacher.waitForFunction(()=>document.querySelector('#staff-status').textContent==='Student progress loaded.');
+   await teacher.locator('#student-report details > summary').click();
+   const rows=teacher.locator('#student-report details tr');
+   assert.equal(await rows.count(),require('../applied-science/learning-bank.json').questions.filter(q=>q.enabled!==false).length+1);
+   assert.equal(await rows.filter({hasText:'RC01 ·'}).count(),0);
+   const appliedId=require('../applied-science/learning-bank.json').questions[0].id;
+   assert.equal(await rows.filter({hasText:appliedId+' ·'}).locator('.rating-badge').innerText(),'N');
   });
   await check('teacher resets the student account and the old learner session loses access',async()=>{
    await teacher.locator(`[data-reset="${studentId}"]`).click();await teacher.waitForFunction(()=>document.querySelector('#private-output-title').textContent==='Private temporary password');await ready(teacher);

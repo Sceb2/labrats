@@ -15,7 +15,7 @@ let storage=createStore(native,message=>{if($('#storage-note'))$('#storage-note'
 let accountSync=null,learning=null;
 const appliedBase=new URL('applied-science/',location.href);
 const ratingMap=()=>window.RevisionAdaptive.ratings(learning,accountSync?accountSync.events():(S.progress.adaptiveEvents||[]));
-const gradeBadge=q=>window.RevisionAdaptive.badgeHTML(ratingMap()[q.id+'@'+q.contentVersion].grade);
+const gradeBadge=(q,ratings=ratingMap())=>window.RevisionAdaptive.badgeHTML(ratings[q.id+'@'+q.contentVersion].grade);
 const titleFor=id=>wavesTopics().find(t=>t.ids.includes(id))?.title||S.map.lessons.find(l=>l.id===id)?.title||id;
 const qRecord=q=>S.progress.records[questionKey(q)];
 const hasActive=()=>S.session&&!S.session.finished;
@@ -314,11 +314,11 @@ function progressTotals(strand){
  return {attempted:records.length,total:qs.length,direct:records.reduce((n,a)=>n+(a.result?.directMarks||0),0),ecf:records.reduce((n,a)=>n+(a.result?.ecfMarks||0),0),max:records.reduce((n,a)=>n+a.maxMarks,0)};
 }
 function showProgress(){
- renderShell('progress');
+ renderShell('progress');const ratings=ratingMap();
  app().innerHTML=`<section class="card progress-page"><header class="page-heading setup-heading"><h1>Your progress</h1><div class="account-actions" data-account-actions>${button('Choose topics','progress-topics','btn finish-session')}</div></header><p>First attempts are kept separately from retries and revealed answers.</p>${resumeActions()}<div class="progress-strands">${['recall','application'].map(strand=>{const t=progressTotals(strand);return `<section><h2>${strand==='recall'?'Recall':'Application'}</h2><p><strong>${t.max?`${t.direct+t.ecf}/${t.max} automatic marks`:'Not yet attempted'}</strong></p><p class="small-note">${t.attempted}/${t.total} questions attempted</p><p class="small-note">${accountSync?'Synced totals; detailed method marks stay in the current session.':t.direct+' direct · '+t.ecf+' method marks'}</p></section>`;}).join('')}</div>
  <h2>By topic</h2><table class="data-table progress-table"><thead><tr><th scope="col">Topic</th><th scope="col">Automatic marks</th><th scope="col">Attempted</th></tr></thead><tbody>${wavesTopics().map(l=>{const qs=S.bank.questions.filter(q=>l.ids.includes(q.primaryLessonId)&&q.interaction!=='written-self-assessment'),as=qs.map(q=>qRecord(q)?.first).filter(a=>a&&!a.revealed);return `<tr><th scope="row">${esc(l.title)}</th><td>${as.reduce((n,a)=>n+(a.result?.score||0),0)}/${as.reduce((n,a)=>n+a.maxMarks,0)}</td><td>${as.length}/${qs.length}</td></tr>`;}).join('')}</tbody></table>
  <details><summary>Written self-assessment</summary>${S.bank.questions.filter(q=>q.interaction==='written-self-assessment').map(q=>{const r=qRecord(q);return `<p>${esc(q.title)}: ${r?.first?.revealed?'answer revealed':r?.first?`${r.first.result?.selfAssessedMarks}/${q.maxMarks} self-assessed`:'not yet self-assessed'}</p>`;}).join('')}</details>
- <details><summary>Question-by-question progress</summary>${S.bank.questions.map(q=>{const r=qRecord(q);return `<p class="small">${gradeBadge(q)} ${esc(q.title)}: ${!r?.first?'not attempted':r.first.revealed?'answer revealed':`${r.first.result?.score??0}/${q.maxMarks} first attempt`}${r?.corrected?' · corrected on retry':''}</p>`;}).join('')}</details>
+ <details><summary>Question-by-question progress</summary>${S.bank.questions.map(q=>{const r=qRecord(q);return `<p class="small">${gradeBadge(q,ratings)} ${esc(q.title)}: ${!r?.first?'not attempted':r.first.revealed?'answer revealed':`${r.first.result?.score??0}/${q.maxMarks} first attempt`}${r?.corrected?' · corrected on retry':''}</p>`;}).join('')}</details>
  ${S.progress.sessions.length?`<h2>Saved session reviews</h2><div class="grid">${S.progress.sessions.slice().reverse().map(s=>`<button class="btn secondary" data-session-id="${s.id}">${new Date(s.startedAt).toLocaleDateString('en-GB')} · ${s.actualMarks} marks · ${s.mode==='practice'?'practice':'question review'}</button>`).join('')}</div>`:''}
  <details><summary>Storage and progress</summary><p class="small">Progress belongs to this browser and device. Clearing site data removes it. Practice still works when saving is blocked.</p>${button('Download progress data','export-backup','btn secondary')}<p>${accountSync?'':button('Reset AAQ progress on this device','reset-progress','btn text-button')}</p></details></section>`;
  bindResume();$$('[data-session-id]').forEach(b=>b.onclick=()=>showSummary(S.progress.sessions.find(s=>s.id===b.dataset.sessionId)));

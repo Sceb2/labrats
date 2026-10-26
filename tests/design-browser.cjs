@@ -49,6 +49,16 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
  await page.evaluate(()=>window.AppliedPrototype.openQuestion('W02','practice'));await page.locator('#reveal-answer').click();assert.equal(await page.locator('#feedback .feedback-heading h2').innerText(),'Answer revealed');assert.equal(await page.locator('#feedback .feedback-heading p').innerText(),'Not scored');
  const written=applied.questions.find(q=>q.interaction==='written-self-assessment');await page.evaluate(id=>window.AppliedPrototype.openQuestion(id,'practice'),written.id);await page.locator('#written-response').fill('Fictional design test answer.');await page.locator('#check-answer').click();await page.locator('#self-score').fill('1');await page.locator('#save-self-score').click();assert.match(await page.locator('#feedback .feedback-heading h2').innerText(),/1 of \d+ self-assessed marks/);await shot('applied-self-mobile');
  });
+ await t.test('Applied Science progress uses one consistent rating snapshot for all cards',async()=>{
+ await page.goto(base+'applied-science.html');await page.waitForSelector('#app .setup-page, #app .question-screen');
+ const result=await page.evaluate(()=>{
+  const original=window.RevisionAdaptive.ratings;let calls=0;
+  window.RevisionAdaptive.ratings=(...args)=>{calls++;return original(...args);};
+  try{window.AppliedPrototype.showProgress();return {calls,cards:document.querySelectorAll('.progress-page .rating-badge').length};}
+  finally{window.RevisionAdaptive.ratings=original;}
+ });
+ assert.equal(result.cards,applied.questions.length);assert.equal(result.calls,1);
+ });
  await t.test('both standalone previews contain the complete shared renderer and styles with no external asset requests',async()=>{
  for(const [file,subject]of [['student-site-preview.html','chemistry'],['applied-science-preview.html','applied-science']]){
  await page.goto(base+file);await page.waitForSelector('#login-form:not([hidden])');await page.evaluate(()=>localStorage.clear());await page.locator('#preview-login header a').click();await page.waitForSelector('.setup-page');

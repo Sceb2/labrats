@@ -109,10 +109,13 @@ async function boot(){
       const scope=await readScope();
       if(busy||generation!==scopeGeneration)return;
       if(signature(scope)!==scopeSignature){
-        clearPrivate();applyScope(scope);
-        staff=profile.role==='admin'?checked(await connection.client.rpc('staff_directory')):[];
-        if(busy||generation!==scopeGeneration)return;
-        render();status('Class access updated. Previous reports and private details have been cleared.');
+        // Use the same subject/catalogue load as an explicit refresh. Clear the
+        // old controls before awaiting it so they cannot report with a stale bank.
+        clearPrivate();$('#staff-tools').replaceChildren();
+        await work(async()=>{
+          await load();
+          status('Class access updated. Previous reports and private details have been cleared.');
+        });
       }
     }catch{if(generation===scopeGeneration){loggedOut();status('Your staff session could not be checked. Sign in again.',true);}}
     finally{verifying=false;}
