@@ -1,4 +1,4 @@
-card_id,topic,front,back
+﻿card_id,topic,front,back
 organic-names-001,basic,Which class of organic compounds contains the –COOH group?,Carboxylic acids.
 organic-names-002,basic,Which class of organic compounds contains an –OH group bonded to a saturated carbon atom?,Alcohols.
 organic-names-003,basic,Which class of organic compounds contains the –C≡N group?,Nitriles. The carbon of the –C≡N group is bonded to the rest of the molecule.
@@ -6,9 +6,9 @@ organic-names-004,basic,Which class of organic compounds contains an –NH₂ gr
 organic-names-005,basic,What is the name of the –CH₃ group?,"Methyl. It is an alkyl substituent, rather than a functional group."
 organic-names-006,basic,What is the condensed structural formula of propane?,CH₃CH₂CH₃
 organic-names-007,basic,What is the molecular formula of an acyclic hexene with one C=C bond?,C₆H₁₂
-organic-names-008,basic,What naming suffix is used for a carboxylic acid?,"-oic acid
+organic-names-008,basic,What naming suffix is used for a carboxylic acid?,"Suffix: -oic acid
 Example: propanoic acid."
-organic-names-009,basic,What ending is used for the acid-derived part of an ester’s name?,"-oate
+organic-names-009,basic,What ending is used for the acid-derived part of an ester’s name?,"Suffix: -oate
 Example: ethyl propanoate. The alkyl group bonded to oxygen is named first."
 organic-names-010,basic,What prefix and suffix can be used for an alcohol group?,"Prefix: hydroxy-
 Suffix: -ol
@@ -21,9 +21,9 @@ Ketone: the carbonyl carbon is bonded to two carbon atoms, giving R–C(=O)–R�
 organic-names-014,basic,What is the functional group of an alkene?,"A carbon–carbon double bond, C=C."
 organic-names-015,basic,What type of carbon–carbon bonds are present in alkanes?,Single covalent bonds only.
 organic-names-016,basic,What functional group is shared by aldehydes and ketones?,"The carbonyl group, C=O."
-organic-names-017,basic,What naming suffix is used for a ketone?,"-one
+organic-names-017,basic,What naming suffix is used for a ketone?,"Suffix: -one
 Example: propanone."
-organic-names-018,basic,What naming suffix is used for an aldehyde?,"-al
+organic-names-018,basic,What naming suffix is used for an aldehyde?,"Suffix: -al
 Example: methanal."
 organic-names-019,basic,"In the ester name ethyl propanoate, which part identifies the carboxylic acid from which it is derived?","Propanoate identifies the acid-derived part; it is derived from propanoic acid.
 Ethyl identifies the alkyl group bonded to the ester oxygen."
@@ -38,7 +38,7 @@ Examples: methyl, –CH₃; ethyl, –CH₂CH₃."
 organic-names-027,basic,What is a haloalkane?,A compound derived from an alkane by replacing one or more hydrogen atoms with halogen atoms.
 organic-names-028,basic,Which class of organic compounds contains the –C(=O)Cl group?,Acyl chlorides. The chlorine atom is bonded directly to the carbonyl carbon.
 organic-names-029,basic,"What is the simplest saturated, acyclic hydrocarbon homologous series?",Alkanes.
-organic-names-030,basic,What naming ending is used for an acyl chloride?,"-oyl chloride
+organic-names-030,basic,What naming ending is used for an acyl chloride?,"Suffix: -oyl chloride
 Example: ethanoyl chloride."
 organic-names-031,basic,What is a general formula?,"An algebraic formula describing members of a homologous series.
 Example: CₙH₂ₙ₊₂ for acyclic alkanes."

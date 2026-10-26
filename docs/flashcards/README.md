@@ -9,10 +9,15 @@ review material for the proposed feature, not an implemented importer or publish
 - Proposed stable pack identifier: `organic-names-and-formulae`.
 - Cards: 34, numbered in the source's original order.
 - Existing topic: `basic`, 4.1.1 Basic concepts and nomenclature.
-- CSV: `organic-names-and-formulae.csv`, UTF-8, columns
+- CSV: `organic-names-and-formulae.csv`, UTF-8 with a BOM for Excel recognition, columns
   `card_id,topic,front,back`. Subject/pack are selected separately during import.
 - Multiline answers use standard quoted CSV fields; line count is not card count.
 - Formulae use plain Unicode text and do not depend on HTML interpretation.
+- For spreadsheet review, open `organic-names-and-formulae.xlsx`. All cells are
+  explicitly stored as text, with wrapped answers. Suffix definitions begin
+  `Suffix:`, so their leading minus signs are not interpreted as formulas in CSV.
+  The first export lacked the encoding marker and these labels; that export
+  could display garbled symbols and `#NAME?` errors when opened directly in Excel.
 
 This is a reviewed draft, not a verbatim transcription. All source entries have
 a corresponding card. The following substantive changes need the teacher's
@@ -56,6 +61,9 @@ yet been explicitly confirmed by the owner. No session logic is implemented here
 
 The CSV was read back with Python's standard CSV reader: 34 rows, unique stable
 IDs, four complete columns, valid existing topic IDs and preserved Unicode and
-multiline answers. No application code, question bank, progress or Supabase
+multiline answers. The corrected CSV includes an encoding marker and has no
+formula-triggering field prefixes. The XLSX was reopened to verify matching
+values and explicit text cell types; Microsoft Excel itself was not available
+for a visual check. No application code, question bank, progress or Supabase
 schema/data was changed. The CSV has not been tested through an importer because
 that feature does not exist yet. Teacher content approval remains outstanding.
