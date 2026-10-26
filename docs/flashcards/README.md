@@ -1,47 +1,46 @@
-# First flashcard sample: Organic names and formulae
+# Organic names and formulae: rewritten draft
 
-Prepared 26 October 2026 from the owner's pasted Quizlet terms and definitions.
-No Quizlet content was fetched: direct access was blocked. This folder contains
-review material for the proposed feature, not an implemented importer or published pack.
+Rewritten from the owner's original 34 pasted entries on 26 October 2026.
+This replaces the earlier draft rather than patching its wording. It is review
+material only: no pack has been published and no progress has been imported.
 
-- Subject: Chemistry (`chemistry`).
-- Pack: Organic names and formulae.
-- Proposed stable pack identifier: `organic-names-and-formulae`.
-- Cards: 34, numbered in the source's original order.
-- Existing topic: `basic`, 4.1.1 Basic concepts and nomenclature.
-- CSV: `organic-names-and-formulae.csv`, UTF-8 with a BOM for Excel recognition, columns
-  `card_id,topic,front,back`. Subject/pack are selected separately during import.
-- Multiline answers use standard quoted CSV fields; line count is not card count.
-- Formulae use plain Unicode text and do not depend on HTML interpretation.
-- For spreadsheet review, open `organic-names-and-formulae.xlsx`. All cells are
-  explicitly stored as text, with wrapped answers. Suffix definitions begin
-  `Suffix:`, so their leading minus signs are not interpreted as formulas in CSV.
-  The first export lacked the encoding marker and these labels; that export
-  could display garbled symbols and `#NAME?` errors when opened directly in Excel.
+- Subject: Chemistry.
+- Existing topic: basic (4.1.1 Basic concepts and nomenclature).
+- Cards: 33. The two original ester-suffix entries have been combined.
+- Identifiers: organic-basics-001 through organic-basics-033. These are fresh
+  draft identifiers, not an update intended to retain the previous draft's progress.
+- CSV columns: card_id,topic,front,back. Subject and pack are selected separately.
+- Use organic-names-and-formulae.xlsx for spreadsheet review, or
+  organic-names-and-formulae-review.md to read every question and answer without
+  a spreadsheet. The CSV is intended for the future importer.
 
-This is a reviewed draft, not a verbatim transcription. All source entries have
-a corresponding card. The following substantive changes need the teacher's
-review; smaller spelling, punctuation and capitalisation changes are omitted.
+## Content decisions
 
-| Card ID suffix | Change and reason |
-| --- | --- |
-| 001–004, 012, 028 | Distinguish a compound class (carboxylic acid/alcohol/nitrile/amine/ether/acyl chloride) from the name of a group. The alcohol prompt specifies saturated carbon; the –NH₂ prompt specifies a primary alkyl amine. |
-| 005 | Methyl is an alkyl substituent; do not teach it as a functional group. |
-| 007 | Specify acyclic hexene with one C=C bond for C₆H₁₂. |
-| 009, 019 | The source repeats ester suffix recall. Keep suffix recall in 009; use 019 to interpret the two parts of an ester name. An ester name needs an alkyl part, e.g. ethyl propanoate. This is an intentional prompt change. |
-| 010 | Explain when hydroxy- is used instead of the suffix -ol. Preserve the source's multiline answer as a quoted CSV field. |
-| 011 | Replace the incorrect ester notation R-COOC-R with R–C(=O)–O–R′. |
-| 013 | Define aldehydes and ketones by atoms bonded to the carbonyl carbon. This also handles methanal without relying on “end versus middle of a chain.” |
-| 021 | Include a common general formula, similar chemical properties and a CH₂ difference between successive homologues. |
-| 022 | A displayed formula shows all atoms and bonds; it does not necessarily show actual three-dimensional positions. |
-| 023–024 | The source's “smallest number” and “longest carbon chain” rules lack a context. Restrict these prompts to simple branched alkanes; use lowest locants at the first point of difference. Other functional groups need their own naming rules. |
-| 025–027 | Clarify R notation, derive an alkyl group by removing H from an alkane, and define haloalkanes by replacement of H with halogen. |
-| 029 | Replace the vague “simplest homologous series” prompt with a specific saturated, acyclic hydrocarbon classification. |
-| 031–034 | Tighten formula definitions, including atoms of each element and a structural-formula example. |
+The original learning points remain the starting point. Questions now ask for
+one clear piece of recall, with short answers and examples where useful.
 
-Keeping these cards under `basic` preserves the source pack's nomenclature
-purpose rather than requiring students to select later reaction topics simply
-to recall a group name. Reassignments remain a teacher content decision.
+- Distinguish a functional group from the compound class: the carboxylic acid,
+  amine and other classification prompts name the class explicitly.
+- Describe methyl as a substituent, not a functional group.
+- Correct the ester linkage to R-C(=O)-O-R', with its carbonyl bond explicit.
+- Define aldehydes and ketones by the atoms bonded to the carbonyl carbon.
+- Include the CH2 difference between successive members of a homologous series.
+- State that a displayed formula shows atoms and bonds, not actual spatial positions.
+- Restrict the original vague numbering/longest-chain questions to simple branched
+  alkanes. They are not universal naming rules for every functional group.
+- Replace the vague 'simplest homologous series' prompt with the definition of an alkane.
+- Define alkyl groups by removal of H from an alkane.
+
+## File compatibility
+
+All card fields use ASCII characters, avoiding the source of the previous
+chemical-symbol encoding problems. Formulae deliberately use plain authoring
+notation such as CH3CH2CH3, C6H12 and CnH(2n+2). They are not displayed formulae.
+There are no HTML tags or formatting instructions embedded in answers.
+
+The CSV has a UTF-8 encoding marker, standard quoted multiline fields and LF
+record endings. Answers describing suffixes start with words, not a minus sign.
+The workbook stores every cell explicitly as text. No cell contains a formula.
 
 ## Confirmed session requirement
 
@@ -57,13 +56,14 @@ The proposed interpretation of 20-card mode is 20 distinct initial cards (or all
 available if fewer), plus their permitted retries. This counting detail has not
 yet been explicitly confirmed by the owner. No session logic is implemented here.
 
-## Checks
+## Verification
 
-The CSV was read back with Python's standard CSV reader: 34 rows, unique stable
-IDs, four complete columns, valid existing topic IDs and preserved Unicode and
-multiline answers. The corrected CSV includes an encoding marker and has no
-formula-triggering field prefixes. The XLSX was reopened to verify matching
-values and explicit text cell types; Microsoft Excel itself was not available
-for a visual check. No application code, question bank, progress or Supabase
-schema/data was changed. The CSV has not been tested through an importer because
-that feature does not exist yet. Teacher content approval remains outstanding.
+Read the CSV back and checked all 33 unique IDs, complete columns, unique
+prompts, existing topic mapping, ASCII-only card content, multiline answers and
+absence of formula-triggering field prefixes. Reopened the workbook and checked
+that all values match the CSV and all cells have text types. Verified the ZIP's
+integrity and its contents against the source files.
+
+These checks verify the exported files, not a future importer or a visual run in
+Microsoft Excel. The pack remains a draft for teacher content review. No
+application code, live question bank, account records or Supabase schema changed.

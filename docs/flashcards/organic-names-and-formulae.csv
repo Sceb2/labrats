@@ -1,48 +1,45 @@
 ﻿card_id,topic,front,back
-organic-names-001,basic,Which class of organic compounds contains the –COOH group?,Carboxylic acids.
-organic-names-002,basic,Which class of organic compounds contains an –OH group bonded to a saturated carbon atom?,Alcohols.
-organic-names-003,basic,Which class of organic compounds contains the –C≡N group?,Nitriles. The carbon of the –C≡N group is bonded to the rest of the molecule.
-organic-names-004,basic,Which class of organic compounds contains an –NH₂ group bonded to an alkyl group?,Primary amines.
-organic-names-005,basic,What is the name of the –CH₃ group?,"Methyl. It is an alkyl substituent, rather than a functional group."
-organic-names-006,basic,What is the condensed structural formula of propane?,CH₃CH₂CH₃
-organic-names-007,basic,What is the molecular formula of an acyclic hexene with one C=C bond?,C₆H₁₂
-organic-names-008,basic,What naming suffix is used for a carboxylic acid?,"Suffix: -oic acid
-Example: propanoic acid."
-organic-names-009,basic,What ending is used for the acid-derived part of an ester’s name?,"Suffix: -oate
-Example: ethyl propanoate. The alkyl group bonded to oxygen is named first."
-organic-names-010,basic,What prefix and suffix can be used for an alcohol group?,"Prefix: hydroxy-
-Suffix: -ol
-Use hydroxy- when the –OH group is named as a substituent because a higher-priority group supplies the suffix."
-organic-names-011,basic,How is an ester linkage written using R-group notation?,"R–C(=O)–O–R′
-The carbonyl carbon is bonded directly to O–R′. The groups on the two sides need not be the same."
-organic-names-012,basic,Which class of organic compounds has the general structure R–O–R′?,Ethers.
-organic-names-013,basic,How does the bonding at the carbonyl group differ in an aldehyde and a ketone?,"Aldehyde: the carbonyl carbon is bonded to at least one hydrogen, giving a –CHO group.
-Ketone: the carbonyl carbon is bonded to two carbon atoms, giving R–C(=O)–R′."
-organic-names-014,basic,What is the functional group of an alkene?,"A carbon–carbon double bond, C=C."
-organic-names-015,basic,What type of carbon–carbon bonds are present in alkanes?,Single covalent bonds only.
-organic-names-016,basic,What functional group is shared by aldehydes and ketones?,"The carbonyl group, C=O."
-organic-names-017,basic,What naming suffix is used for a ketone?,"Suffix: -one
-Example: propanone."
-organic-names-018,basic,What naming suffix is used for an aldehyde?,"Suffix: -al
-Example: methanal."
-organic-names-019,basic,"In the ester name ethyl propanoate, which part identifies the carboxylic acid from which it is derived?","Propanoate identifies the acid-derived part; it is derived from propanoic acid.
-Ethyl identifies the alkyl group bonded to the ester oxygen."
-organic-names-020,basic,What is a functional group?,An atom or group of atoms responsible for the characteristic chemical reactions of an organic compound.
-organic-names-021,basic,What is a homologous series?,"A family of organic compounds with the same functional group and general formula, similar chemical properties, and successive members differing by CH₂."
-organic-names-022,basic,What does a displayed formula show?,All the atoms and all the bonds between them. It does not necessarily show the molecule’s actual three-dimensional shape.
-organic-names-023,basic,How do you choose the numbering direction for a simple branched alkane?,Number the parent chain to give substituents the lowest set of locants. Compare the possible sets at the first point of difference; do not simply choose the smallest total.
-organic-names-024,basic,How is the parent chain chosen when naming a simple branched alkane?,Choose the longest continuous carbon chain. Its number of carbon atoms determines the stem of the name.
-organic-names-025,basic,What does R represent in an organic formula?,"An unspecified organic group, usually an alkyl group. R and R′ can represent different groups."
-organic-names-026,basic,What is an alkyl group?,"A group formed by removing one hydrogen atom from an alkane.
-Examples: methyl, –CH₃; ethyl, –CH₂CH₃."
-organic-names-027,basic,What is a haloalkane?,A compound derived from an alkane by replacing one or more hydrogen atoms with halogen atoms.
-organic-names-028,basic,Which class of organic compounds contains the –C(=O)Cl group?,Acyl chlorides. The chlorine atom is bonded directly to the carbonyl carbon.
-organic-names-029,basic,"What is the simplest saturated, acyclic hydrocarbon homologous series?",Alkanes.
-organic-names-030,basic,What naming ending is used for an acyl chloride?,"Suffix: -oyl chloride
-Example: ethanoyl chloride."
-organic-names-031,basic,What is a general formula?,"An algebraic formula describing members of a homologous series.
-Example: CₙH₂ₙ₊₂ for acyclic alkanes."
-organic-names-032,basic,What is an empirical formula?,The simplest whole-number ratio of atoms of each element in a compound.
-organic-names-033,basic,What is a molecular formula?,The actual number of atoms of each element in one molecule.
-organic-names-034,basic,What is a structural formula?,"A formula showing the arrangement of atoms or groups in a molecule without displaying every bond.
-Example: CH₃CH₂CH₃ for propane."
+organic-basics-001,basic,Which homologous series has the functional group -COOH?,Carboxylic acids.
+organic-basics-002,basic,What is the functional group of an alcohol?,An -OH group bonded to a saturated carbon atom.
+organic-basics-003,basic,Which homologous series contains a carbon-nitrogen triple bond?,Nitriles. The carbon atom of the nitrile group is bonded to the rest of the molecule.
+organic-basics-004,basic,Which class of compounds includes molecules with an -NH2 group bonded to an alkyl group?,Primary amines.
+organic-basics-005,basic,What is the name of the -CH3 substituent?,Methyl.
+organic-basics-006,basic,What is the structural formula of propane?,CH3CH2CH3
+organic-basics-007,basic,What is the molecular formula of hex-1-ene?,C6H12
+organic-basics-008,basic,What suffix is used when naming a carboxylic acid?,"The suffix is -oic acid, as in ethanoic acid."
+organic-basics-009,basic,What ending is used for the acid-derived part of an ester name?,"The ending is -oate, as in ethyl ethanoate."
+organic-basics-010,basic,What suffix and prefix are used to name an -OH group?,"The suffix is -ol, as in ethanol.
+The prefix is hydroxy- when a higher-priority functional group determines the suffix."
+organic-basics-011,basic,How can the structure of an ester be written using R groups?,"R-C(=O)-O-R'
+R and R' represent organic groups that may be different. In a methanoate ester, the group attached to the carbonyl carbon is H instead of R."
+organic-basics-012,basic,What class of compounds has the structure R-O-R'?,Ethers.
+organic-basics-013,basic,What is the structural difference between an aldehyde and a ketone?,"An aldehyde has a carbonyl carbon bonded to at least one H atom: -CHO.
+A ketone has a carbonyl carbon bonded to two carbon atoms."
+organic-basics-014,basic,What is the functional group of an alkene?,"A carbon-carbon double bond, C=C."
+organic-basics-015,basic,What type of carbon-carbon bonds are present in an alkane?,Single covalent bonds only.
+organic-basics-016,basic,What group is present in both aldehydes and ketones?,"The carbonyl group, C=O."
+organic-basics-017,basic,What suffix is used when naming a ketone?,"The suffix is -one, as in propanone."
+organic-basics-018,basic,What suffix is used when naming an aldehyde?,"The suffix is -al, as in ethanal."
+organic-basics-019,basic,What is a functional group?,An atom or group of atoms responsible for the characteristic chemical reactions of an organic compound.
+organic-basics-020,basic,What is a homologous series?,"A family of organic compounds with the same functional group and general formula.
+Successive members differ by CH2 and have similar chemical properties."
+organic-basics-021,basic,What does a displayed formula show?,Every atom and every bond in a molecule.
+organic-basics-022,basic,How do you choose the numbering direction when naming a simple branched alkane?,"Number the parent chain to give the branches the lowest possible set of numbers.
+Compare the sets at the first point where they differ."
+organic-basics-023,basic,How do you choose the parent chain of a simple branched alkane?,"Choose the longest continuous carbon chain.
+The number of carbon atoms in that chain determines the stem of the name."
+organic-basics-024,basic,What does R represent in an organic formula?,"An unspecified organic group, usually an alkyl group.
+It is shorthand for part of the molecule."
+organic-basics-025,basic,What is an alkyl group?,"A group formed by removing one H atom from an alkane.
+For example, methane gives the methyl group, -CH3."
+organic-basics-026,basic,What is a haloalkane?,A compound formed when one or more H atoms in an alkane are replaced by halogen atoms.
+organic-basics-027,basic,Which homologous series has the functional group -C(=O)Cl?,Acyl chlorides.
+organic-basics-028,basic,What is an alkane?,"A saturated, acyclic hydrocarbon.
+It contains only carbon and hydrogen, with single bonds only."
+organic-basics-029,basic,What ending is used when naming an acyl chloride?,"The ending is -oyl chloride, as in ethanoyl chloride."
+organic-basics-030,basic,What is a general formula?,"An algebraic formula describing members of a homologous series.
+For example, the general formula of alkanes is CnH(2n+2)."
+organic-basics-031,basic,What is an empirical formula?,The simplest whole-number ratio of atoms of each element in a compound.
+organic-basics-032,basic,What is a molecular formula?,The actual number of atoms of each element in one molecule.
+organic-basics-033,basic,What does a structural formula show?,"The arrangement of atoms or groups in a molecule, without showing every bond.
+For example, CH3CH2OH is the structural formula of ethanol."
