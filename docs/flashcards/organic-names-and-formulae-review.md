@@ -1,6 +1,6 @@
-# Organic names and formulae: rewritten pack
+# Organic names and formulae: OCR-aligned draft
 
-33 cards. Plain-text formulae are intentional: CH3 means a carbon with three hydrogens; CnH(2n+2) means n carbons and 2n+2 hydrogens. This is an authoring notation, not a displayed formula.
+33 cards. Formulae use subscripts and condensed structural notation following OCR Chemistry A. See OCR_FORMULA_REVIEW.md for the source references.
 
 ## 1. Which homologous series has the functional group -COOH?
 
@@ -14,21 +14,21 @@ An -OH group bonded to a saturated carbon atom.
 
 Nitriles. The carbon atom of the nitrile group is bonded to the rest of the molecule.
 
-## 4. Which class of compounds includes molecules with an -NH2 group bonded to an alkyl group?
+## 4. Which class of compounds includes molecules with an -NH₂ group bonded to an alkyl group?
 
 Primary amines.
 
-## 5. What is the name of the -CH3 substituent?
+## 5. What is the name of the -CH₃ substituent?
 
 Methyl.
 
 ## 6. What is the structural formula of propane?
 
-CH3CH2CH3
+CH₃CH₂CH₃
 
 ## 7. What is the molecular formula of hex-1-ene?
 
-C6H12
+C₆H₁₂
 
 ## 8. What suffix is used when naming a carboxylic acid?
 
@@ -43,12 +43,12 @@ The ending is -oate, as in ethyl ethanoate.
 The suffix is -ol, as in ethanol.
 The prefix is hydroxy- when a higher-priority functional group determines the suffix.
 
-## 11. How can the structure of an ester be written using R groups?
+## 11. How is an ester written in structural formula notation using R groups?
 
-R-C(=O)-O-R'
-R and R' represent organic groups that may be different. In a methanoate ester, the group attached to the carbonyl carbon is H instead of R.
+RCOOR′
+R and R′ represent organic groups that may be different.
 
-## 12. What class of compounds has the structure R-O-R'?
+## 12. What class of compounds has the structure R–O–R′?
 
 Ethers.
 
@@ -83,12 +83,12 @@ An atom or group of atoms responsible for the characteristic chemical reactions 
 
 ## 20. What is a homologous series?
 
-A family of organic compounds with the same functional group and general formula.
-Successive members differ by CH2 and have similar chemical properties.
+A series of organic compounds having the same functional group, with each successive member differing by CH₂.
 
 ## 21. What does a displayed formula show?
 
-Every atom and every bond in a molecule.
+The relative positioning of atoms and the bonds between them.
+Every atom and every bond is shown.
 
 ## 22. How do you choose the numbering direction when naming a simple branched alkane?
 
@@ -102,19 +102,18 @@ The number of carbon atoms in that chain determines the stem of the name.
 
 ## 24. What does R represent in an organic formula?
 
-An unspecified organic group, usually an alkyl group.
-It is shorthand for part of the molecule.
+An alkyl group or another fragment of an organic compound that is not involved in the reaction.
 
 ## 25. What is an alkyl group?
 
 A group formed by removing one H atom from an alkane.
-For example, methane gives the methyl group, -CH3.
+For example, methane gives the methyl group, -CH₃.
 
 ## 26. What is a haloalkane?
 
 A compound formed when one or more H atoms in an alkane are replaced by halogen atoms.
 
-## 27. Which homologous series has the functional group -C(=O)Cl?
+## 27. Which homologous series has the functional group –COCl?
 
 Acyl chlorides.
 
@@ -129,8 +128,8 @@ The ending is -oyl chloride, as in ethanoyl chloride.
 
 ## 30. What is a general formula?
 
-An algebraic formula describing members of a homologous series.
-For example, the general formula of alkanes is CnH(2n+2).
+The simplest algebraic formula of a member of a homologous series.
+For alkanes: CₙH₂ₙ₊₂.
 
 ## 31. What is an empirical formula?
 
@@ -142,5 +141,5 @@ The actual number of atoms of each element in one molecule.
 
 ## 33. What does a structural formula show?
 
-The arrangement of atoms or groups in a molecule, without showing every bond.
-For example, CH3CH2OH is the structural formula of ethanol.
+The minimal detail that shows the arrangement of atoms in a molecule.
+For example, CH₃CH₂OH is the structural formula of ethanol.

@@ -2,17 +2,17 @@
 organic-basics-001,basic,Which homologous series has the functional group -COOH?,Carboxylic acids.
 organic-basics-002,basic,What is the functional group of an alcohol?,An -OH group bonded to a saturated carbon atom.
 organic-basics-003,basic,Which homologous series contains a carbon-nitrogen triple bond?,Nitriles. The carbon atom of the nitrile group is bonded to the rest of the molecule.
-organic-basics-004,basic,Which class of compounds includes molecules with an -NH2 group bonded to an alkyl group?,Primary amines.
-organic-basics-005,basic,What is the name of the -CH3 substituent?,Methyl.
-organic-basics-006,basic,What is the structural formula of propane?,CH3CH2CH3
-organic-basics-007,basic,What is the molecular formula of hex-1-ene?,C6H12
+organic-basics-004,basic,Which class of compounds includes molecules with an -NH₂ group bonded to an alkyl group?,Primary amines.
+organic-basics-005,basic,What is the name of the -CH₃ substituent?,Methyl.
+organic-basics-006,basic,What is the structural formula of propane?,CH₃CH₂CH₃
+organic-basics-007,basic,What is the molecular formula of hex-1-ene?,C₆H₁₂
 organic-basics-008,basic,What suffix is used when naming a carboxylic acid?,"The suffix is -oic acid, as in ethanoic acid."
 organic-basics-009,basic,What ending is used for the acid-derived part of an ester name?,"The ending is -oate, as in ethyl ethanoate."
 organic-basics-010,basic,What suffix and prefix are used to name an -OH group?,"The suffix is -ol, as in ethanol.
 The prefix is hydroxy- when a higher-priority functional group determines the suffix."
-organic-basics-011,basic,How can the structure of an ester be written using R groups?,"R-C(=O)-O-R'
-R and R' represent organic groups that may be different. In a methanoate ester, the group attached to the carbonyl carbon is H instead of R."
-organic-basics-012,basic,What class of compounds has the structure R-O-R'?,Ethers.
+organic-basics-011,basic,How is an ester written in structural formula notation using R groups?,"RCOOR′
+R and R′ represent organic groups that may be different."
+organic-basics-012,basic,What class of compounds has the structure R–O–R′?,Ethers.
 organic-basics-013,basic,What is the structural difference between an aldehyde and a ketone?,"An aldehyde has a carbonyl carbon bonded to at least one H atom: -CHO.
 A ketone has a carbonyl carbon bonded to two carbon atoms."
 organic-basics-014,basic,What is the functional group of an alkene?,"A carbon-carbon double bond, C=C."
@@ -21,25 +21,24 @@ organic-basics-016,basic,What group is present in both aldehydes and ketones?,"T
 organic-basics-017,basic,What suffix is used when naming a ketone?,"The suffix is -one, as in propanone."
 organic-basics-018,basic,What suffix is used when naming an aldehyde?,"The suffix is -al, as in ethanal."
 organic-basics-019,basic,What is a functional group?,An atom or group of atoms responsible for the characteristic chemical reactions of an organic compound.
-organic-basics-020,basic,What is a homologous series?,"A family of organic compounds with the same functional group and general formula.
-Successive members differ by CH2 and have similar chemical properties."
-organic-basics-021,basic,What does a displayed formula show?,Every atom and every bond in a molecule.
+organic-basics-020,basic,What is a homologous series?,"A series of organic compounds having the same functional group, with each successive member differing by CH₂."
+organic-basics-021,basic,What does a displayed formula show?,"The relative positioning of atoms and the bonds between them.
+Every atom and every bond is shown."
 organic-basics-022,basic,How do you choose the numbering direction when naming a simple branched alkane?,"Number the parent chain to give the branches the lowest possible set of numbers.
 Compare the sets at the first point where they differ."
 organic-basics-023,basic,How do you choose the parent chain of a simple branched alkane?,"Choose the longest continuous carbon chain.
 The number of carbon atoms in that chain determines the stem of the name."
-organic-basics-024,basic,What does R represent in an organic formula?,"An unspecified organic group, usually an alkyl group.
-It is shorthand for part of the molecule."
+organic-basics-024,basic,What does R represent in an organic formula?,An alkyl group or another fragment of an organic compound that is not involved in the reaction.
 organic-basics-025,basic,What is an alkyl group?,"A group formed by removing one H atom from an alkane.
-For example, methane gives the methyl group, -CH3."
+For example, methane gives the methyl group, -CH₃."
 organic-basics-026,basic,What is a haloalkane?,A compound formed when one or more H atoms in an alkane are replaced by halogen atoms.
-organic-basics-027,basic,Which homologous series has the functional group -C(=O)Cl?,Acyl chlorides.
+organic-basics-027,basic,Which homologous series has the functional group –COCl?,Acyl chlorides.
 organic-basics-028,basic,What is an alkane?,"A saturated, acyclic hydrocarbon.
 It contains only carbon and hydrogen, with single bonds only."
 organic-basics-029,basic,What ending is used when naming an acyl chloride?,"The ending is -oyl chloride, as in ethanoyl chloride."
-organic-basics-030,basic,What is a general formula?,"An algebraic formula describing members of a homologous series.
-For example, the general formula of alkanes is CnH(2n+2)."
+organic-basics-030,basic,What is a general formula?,"The simplest algebraic formula of a member of a homologous series.
+For alkanes: CₙH₂ₙ₊₂."
 organic-basics-031,basic,What is an empirical formula?,The simplest whole-number ratio of atoms of each element in a compound.
 organic-basics-032,basic,What is a molecular formula?,The actual number of atoms of each element in one molecule.
-organic-basics-033,basic,What does a structural formula show?,"The arrangement of atoms or groups in a molecule, without showing every bond.
-For example, CH3CH2OH is the structural formula of ethanol."
+organic-basics-033,basic,What does a structural formula show?,"The minimal detail that shows the arrangement of atoms in a molecule.
+For example, CH₃CH₂OH is the structural formula of ethanol."

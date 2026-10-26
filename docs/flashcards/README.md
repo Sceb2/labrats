@@ -1,8 +1,11 @@
-# Organic names and formulae: rewritten draft
+# Organic names and formulae: OCR-aligned draft
 
 Rewritten from the owner's original 34 pasted entries on 26 October 2026.
 This replaces the earlier draft rather than patching its wording. It is review
 material only: no pack has been published and no progress has been imported.
+The notation and formula definitions have now been checked against the supplied
+OCR specification, Version 3.1 (May 2026), and past papers. See
+[the source review](OCR_FORMULA_REVIEW.md).
 
 - Subject: Chemistry.
 - Existing topic: basic (4.1.1 Basic concepts and nomenclature).
@@ -22,10 +25,17 @@ one clear piece of recall, with short answers and examples where useful.
 - Distinguish a functional group from the compound class: the carboxylic acid,
   amine and other classification prompts name the class explicitly.
 - Describe methyl as a substituent, not a functional group.
-- Correct the ester linkage to R-C(=O)-O-R', with its carbonyl bond explicit.
+- Use RCOOR′ for an ester in condensed structural notation, following OCR's
+  explicit convention that the ester group is represented as COO.
 - Define aldehydes and ketones by the atoms bonded to the carbonyl carbon.
-- Include the CH2 difference between successive members of a homologous series.
-- State that a displayed formula shows atoms and bonds, not actual spatial positions.
+- Use OCR's homologous-series definition, including the CH₂ difference between
+  successive members.
+- Describe a displayed formula using the relative positioning of atoms and
+  the bonds between them; all atoms and bonds are shown.
+- Use OCR's minimal-detail description of a structural formula and retain
+  examples of formulae alongside definition cards.
+- Allow R to represent alkyl groups and other organic fragments not involved
+  in the reaction.
 - Restrict the original vague numbering/longest-chain questions to simple branched
   alkanes. They are not universal naming rules for every functional group.
 - Replace the vague 'simplest homologous series' prompt with the definition of an alkane.
@@ -33,10 +43,11 @@ one clear piece of recall, with short answers and examples where useful.
 
 ## File compatibility
 
-All card fields use ASCII characters, avoiding the source of the previous
-chemical-symbol encoding problems. Formulae deliberately use plain authoring
-notation such as CH3CH2CH3, C6H12 and CnH(2n+2). They are not displayed formulae.
-There are no HTML tags or formatting instructions embedded in answers.
+Formulae use Unicode subscripts, for example CH₃CH₂CH₃, C₆H₁₂ and CₙH₂ₙ₊₂.
+These are condensed structural, molecular and general formulae respectively,
+not displayed formulae. There are no HTML tags embedded in the CSV answers.
+Excel compatibility is handled by the file encoding and explicit workbook text
+cells, rather than removing chemical subscripts.
 
 The CSV has a UTF-8 encoding marker, standard quoted multiline fields and LF
 record endings. Answers describing suffixes start with words, not a minus sign.
@@ -59,7 +70,7 @@ yet been explicitly confirmed by the owner. No session logic is implemented here
 ## Verification
 
 Read the CSV back and checked all 33 unique IDs, complete columns, unique
-prompts, existing topic mapping, ASCII-only card content, multiline answers and
+prompts, existing topic mapping, correct formula strings, multiline answers and
 absence of formula-triggering field prefixes. Reopened the workbook and checked
 that all values match the CSV and all cells have text types. Verified the ZIP's
 integrity and its contents against the source files.
