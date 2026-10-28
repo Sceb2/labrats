@@ -1,0 +1,126 @@
+{
+  "chemistry": [
+    {
+      "id": "basic",
+      "module": "Module 4",
+      "label": "4.1.1 Basic concepts and nomenclature"
+    },
+    {
+      "id": "alkanes",
+      "module": "Module 4",
+      "label": "4.1.2 Alkane reactions"
+    },
+    {
+      "id": "alkenes",
+      "module": "Module 4",
+      "label": "4.1.3 Alkenes"
+    },
+    {
+      "id": "alcohols",
+      "module": "Module 4",
+      "label": "4.2.1 Alcohols"
+    },
+    {
+      "id": "haloalkanes",
+      "module": "Module 4",
+      "label": "4.2.2 Haloalkanes"
+    },
+    {
+      "id": "synthesis4",
+      "module": "Module 4",
+      "label": "4.2.3 Organic synthesis"
+    },
+    {
+      "id": "aromatics",
+      "module": "Module 6",
+      "label": "6.1.1 Aromatic compounds"
+    },
+    {
+      "id": "carbonyls",
+      "module": "Module 6",
+      "label": "6.1.2 Carbonyl compounds"
+    },
+    {
+      "id": "acids",
+      "module": "Module 6",
+      "label": "6.1.3 Acids, esters and acyl chlorides"
+    },
+    {
+      "id": "nitrogen",
+      "module": "Module 6",
+      "label": "6.2.1 Amines / 6.2.2 Amides"
+    },
+    {
+      "id": "ccbond",
+      "module": "Module 6",
+      "label": "6.2.4 Carbon\u2013carbon bond formation"
+    },
+    {
+      "id": "synthesis6",
+      "module": "Module 6",
+      "label": "6.2.5 Organic synthesis"
+    }
+  ],
+  "applied-science": [
+    {
+      "id": "WA01",
+      "label": "Types of Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA02",
+      "label": "Wave Properties",
+      "module": "Waves"
+    },
+    {
+      "id": "WA03",
+      "label": "Graphing Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA04",
+      "label": "Wave Speed",
+      "module": "Waves"
+    },
+    {
+      "id": "WA05",
+      "label": "Phase Difference",
+      "module": "Waves"
+    },
+    {
+      "id": "WA06",
+      "label": "Diffraction",
+      "module": "Waves"
+    },
+    {
+      "id": "WA07",
+      "label": "Emission Spectra",
+      "module": "Waves"
+    },
+    {
+      "id": "WA08",
+      "label": "Standing Waves",
+      "module": "Waves"
+    },
+    {
+      "id": "WA09",
+      "label": "Harmonics",
+      "module": "Waves"
+    },
+    {
+      "id": "WA12",
+      "label": "Optical Fibres",
+      "module": "Waves"
+    },
+    {
+      "id": "WA13",
+      "label": "Inverse Square Law",
+      "module": "Waves"
+    },
+    {
+      "id": "WA16",
+      "label": "Uses of Waves",
+      "module": "Waves"
+    }
+  ]
+}

@@ -104,6 +104,7 @@ function showSetup(){
 }
 function setLessons(ids){S.prefs.lessons=ids;S.seed=Date.now()>>>0;syncTopicRows();updatePlan();save();}
 function updatePlan(){
+ window.RevisionFlashcards?.mount('applied-science',S.prefs.lessons);
  S.plan=calculatePlan();const p=S.plan;
  const topics=wavesTopics(),selectedCount=topics.filter(t=>t.ids.every(id=>S.prefs.lessons.includes(id))).length,partialCount=topics.filter(t=>t.ids.some(id=>S.prefs.lessons.includes(id))&&!t.ids.every(id=>S.prefs.lessons.includes(id))).length;
  $('#waves-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
@@ -365,7 +366,7 @@ function validateBank(bank,map){
 }
 async function boot(){
  const {bank,map}=await loadContent();validateBank(bank,map);S.bank=bank;S.map=map;learning=learningBank(bank,map);
- accountSync=await window.RevisionSync.open(learning,()=>{if(S.progress)S.progress.records=nativeProgress(bank,learning,accountSync?.events()||[]).records;},{loginUrl:'student-login.html?subject=applied-science'});
+ accountSync=new URLSearchParams(location.search).get('guest')==='1'?null:await window.RevisionSync.open(learning,()=>{if(S.progress)S.progress.records=nativeProgress(bank,learning,accountSync?.events()||[]).records;},{loginUrl:'student-login.html?subject=applied-science'});
  if(accountSync){const scoped=accountSync.storage;storage={get:(key,fallback)=>key===KEYS.progress?nativeProgress(bank,learning,accountSync.events()):key===KEYS.prefs?scoped.get('ocrOrgPrefsV2',fallback):fallback,set:(key,value)=>key===KEYS.prefs?scoped.set('ocrOrgPrefsV2',value):true,raw:()=>({}),resetProgress:()=>{}};}
  S.assetCache={...window.APPLIED_ASSETS};
  S.reportEmail=reportRecipient(window.AAQ_REPORT_CONFIG?.email);
@@ -387,7 +388,7 @@ window.addEventListener('resize',measureBars);window.visualViewport?.addEventLis
 document.addEventListener('visibilitychange',()=>{if(document.hidden){window.AAQEffects?.clear();if(S.bank)save();}});
 document.addEventListener('focusin',event=>{if(!event.target.matches?.('input,select,textarea'))return;setTimeout(()=>event.target.isConnected&&event.target.scrollIntoView?.({block:'nearest',behavior:'instant'}),150);});
 window.APPLIED_READY=boot().catch(error=>{
- renderShell('setup');app().innerHTML=`<section class="card"><h1>The revision tool could not load</h1><p>${esc(error.message)}</p><p>Upload all files from UPLOAD-TO-GITHUB into the repository together, including the JSON files and assets folder.</p>${location.protocol==='file:'?'<p>For a double-click preview, open OPEN-PILOT.html. Use index.html on GitHub Pages.</p>':''}${button('Try loading again','reload-pilot')}</section>`;$('#reload-pilot').onclick=()=>location.reload();
+ renderShell('setup');app().innerHTML=`<section class="card"><h1>The revision tool could not load</h1><p>${esc(error.message)}</p><p>Upload all files from UPLOAD-TO-GITHUB into the repository together, including the JSON files and assets folder.</p>${location.protocol==='file:'?'<p>For a double-click preview, open OPEN-PILOT.html. Use index.html on GitHub Pages.</p>':''}<p><a href="applied-science.html?guest=1">Choose browser-only practice</a></p>${button('Try loading again','reload-pilot')}</section>`;$('#reload-pilot').onclick=()=>location.reload();
 });
 
 function bindPreviewToolbar(){

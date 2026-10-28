@@ -1,5 +1,10 @@
 # LabRats codebase review
 
+Local follow-up: the flashcard prototype addresses findings 1 (silent guest fallback)
+and 3 (asset hashing). Cross-mode pending queues also drain on reconnect. Full-history
+polling remains unchanged. See [FLASHCARDS.md](FLASHCARDS.md) for the local review
+status and verification; this original review remains a record of its baseline.
+
 Reviewed 26 October 2026. Baseline: `ef46e6382eeebcdb8744c66435f1d0e049b01ec5`
 on `LabRats-Online` in `Sceb2/ocr-organic-revision`. The checkout was clean and
 matched the remote branch at the start. No project-level `AGENTS.md` was present;

@@ -1,0 +1,271 @@
+{
+  "subject_id": "chemistry",
+  "topic_id": "basic",
+  "title": "Organic names and formulae",
+  "cards": [
+    {
+      "card_id": "organic-basics-001",
+      "topic_id": "basic",
+      "front": "Which homologous series has the functional group -COOH?",
+      "back": "Carboxylic acids.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-002",
+      "topic_id": "basic",
+      "front": "What is the functional group of an alcohol?",
+      "back": "An -OH group bonded to a saturated carbon atom.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-003",
+      "topic_id": "basic",
+      "front": "Which homologous series contains a carbon-nitrogen triple bond?",
+      "back": "Nitriles. The carbon atom of the nitrile group is bonded to the rest of the molecule.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-004",
+      "topic_id": "basic",
+      "front": "Which class of compounds includes molecules with an -NH₂ group bonded to an alkyl group?",
+      "back": "Primary amines.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-005",
+      "topic_id": "basic",
+      "front": "What is the name of the -CH₃ substituent?",
+      "back": "Methyl.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-006",
+      "topic_id": "basic",
+      "front": "What is the structural formula of propane?",
+      "back": "CH₃CH₂CH₃",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-007",
+      "topic_id": "basic",
+      "front": "What is the molecular formula of hex-1-ene?",
+      "back": "C₆H₁₂",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-008",
+      "topic_id": "basic",
+      "front": "What suffix is used when naming a carboxylic acid?",
+      "back": "The suffix is -oic acid, as in ethanoic acid.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-009",
+      "topic_id": "basic",
+      "front": "What ending is used for the acid-derived part of an ester name?",
+      "back": "The ending is -oate, as in ethyl ethanoate.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-010",
+      "topic_id": "basic",
+      "front": "What suffix and prefix are used to name an -OH group?",
+      "back": "The suffix is -ol, as in ethanol.\nThe prefix is hydroxy- when a higher-priority functional group determines the suffix.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-011",
+      "topic_id": "basic",
+      "front": "How is an ester written in structural formula notation using R groups?",
+      "back": "RCOOR′\nR and R′ represent organic groups that may be different.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-012",
+      "topic_id": "basic",
+      "front": "What class of compounds has the structure R–O–R′?",
+      "back": "Ethers.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-013",
+      "topic_id": "basic",
+      "front": "What is the structural difference between an aldehyde and a ketone?",
+      "back": "An aldehyde has a carbonyl carbon bonded to at least one H atom: -CHO.\nA ketone has a carbonyl carbon bonded to two carbon atoms.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-014",
+      "topic_id": "basic",
+      "front": "What is the functional group of an alkene?",
+      "back": "A carbon-carbon double bond, C=C.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-015",
+      "topic_id": "basic",
+      "front": "What type of carbon-carbon bonds are present in an alkane?",
+      "back": "Single covalent bonds only.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-016",
+      "topic_id": "basic",
+      "front": "What group is present in both aldehydes and ketones?",
+      "back": "The carbonyl group, C=O.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-017",
+      "topic_id": "basic",
+      "front": "What suffix is used when naming a ketone?",
+      "back": "The suffix is -one, as in propanone.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-018",
+      "topic_id": "basic",
+      "front": "What suffix is used when naming an aldehyde?",
+      "back": "The suffix is -al, as in ethanal.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-019",
+      "topic_id": "basic",
+      "front": "What is a functional group?",
+      "back": "An atom or group of atoms responsible for the characteristic chemical reactions of an organic compound.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-020",
+      "topic_id": "basic",
+      "front": "What is a homologous series?",
+      "back": "A series of organic compounds having the same functional group, with each successive member differing by CH₂.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-021",
+      "topic_id": "basic",
+      "front": "What does a displayed formula show?",
+      "back": "The relative positioning of atoms and the bonds between them.\nEvery atom and every bond is shown.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-022",
+      "topic_id": "basic",
+      "front": "How do you choose the numbering direction when naming a simple branched alkane?",
+      "back": "Number the parent chain to give the branches the lowest possible set of numbers.\nCompare the sets at the first point where they differ.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-023",
+      "topic_id": "basic",
+      "front": "How do you choose the parent chain of a simple branched alkane?",
+      "back": "Choose the longest continuous carbon chain.\nThe number of carbon atoms in that chain determines the stem of the name.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-024",
+      "topic_id": "basic",
+      "front": "What does R represent in an organic formula?",
+      "back": "An alkyl group or another fragment of an organic compound that is not involved in the reaction.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-025",
+      "topic_id": "basic",
+      "front": "What is an alkyl group?",
+      "back": "A group formed by removing one H atom from an alkane.\nFor example, methane gives the methyl group, -CH₃.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-026",
+      "topic_id": "basic",
+      "front": "What is a haloalkane?",
+      "back": "A compound formed when one or more H atoms in an alkane are replaced by halogen atoms.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-027",
+      "topic_id": "basic",
+      "front": "Which homologous series has the functional group –COCl?",
+      "back": "Acyl chlorides.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-028",
+      "topic_id": "basic",
+      "front": "What is an alkane?",
+      "back": "A saturated, acyclic hydrocarbon.\nIt contains only carbon and hydrogen, with single bonds only.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-029",
+      "topic_id": "basic",
+      "front": "What ending is used when naming an acyl chloride?",
+      "back": "The ending is -oyl chloride, as in ethanoyl chloride.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-030",
+      "topic_id": "basic",
+      "front": "What is a general formula?",
+      "back": "The simplest algebraic formula of a member of a homologous series.\nFor alkanes: CₙH₂ₙ₊₂.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-031",
+      "topic_id": "basic",
+      "front": "What is an empirical formula?",
+      "back": "The simplest whole-number ratio of atoms of each element in a compound.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-032",
+      "topic_id": "basic",
+      "front": "What is a molecular formula?",
+      "back": "The actual number of atoms of each element in one molecule.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    },
+    {
+      "card_id": "organic-basics-033",
+      "topic_id": "basic",
+      "front": "What does a structural formula show?",
+      "back": "The minimal detail that shows the arrangement of atoms in a molecule.\nFor example, CH₃CH₂OH is the structural formula of ethanol.",
+      "content_version": 1,
+      "pack_id": "11111111-2222-4333-8444-555555555555"
+    }
+  ]
+}

@@ -1,17 +1,21 @@
 'use strict';
+require('./flashcard-navigation.cjs');
 const {openAccountClient} = require('./account-client.cjs');
 const {metadata, mergeEvents, recordsFor, makeEvent} = require('./learning-events.cjs');
 const Adaptive = require('./adaptive.cjs');
 const Badges = require('./rating-badges.cjs');
 Badges.installRatingTips();
-const {rejectionReason, descriptions} = require('./sync-rejections.cjs');
+const {descriptions} = require('./sync-rejections.cjs');
+const {uploadBatch}=require('./sync-batch.cjs');
 
 async function open(bank, onRecords = () => {}, {
   navigate = path => location.replace(new URL(path, location.href)),
-  loginUrl = 'student-login.html'
+  loginUrl = 'student-login.html', learningKind = 'questions', connection: suppliedConnection
 } = {}) {
+  if(!['questions','flashcards'].includes(learningKind))throw Error('Unknown learning channel.');
+  const flashcards=learningKind==='flashcards';
   let connection;
-  try {connection = await openAccountClient();} catch {return null;}
+  try {connection = suppliedConnection || await openAccountClient();} catch {throw Error('Account settings could not be loaded. Retry, or explicitly choose browser-only practice.');}
   const {client} = connection;
   let owner = connection.cachedProfile();
   let session, sessionError;
@@ -32,7 +36,7 @@ async function open(bank, onRecords = () => {}, {
     throw new Error('Open Student sign in and choose your own password before saving account progress.');
   }
   const subject=bank.meta.subjectId||'chemistry';
-  const cacheKey = connection.prefix + owner.user_id + (subject==='chemistry'?'':':'+subject);
+  const cacheKey = connection.prefix + owner.user_id + (flashcards?':flashcards:'+subject:(subject==='chemistry'?'':':'+subject));
   const cached = connection.read(cacheKey) || {};
   let history = mergeEvents(cached.history), pending = mergeEvents(connection.read(cacheKey+':pending')||cached.pending), closed = false, running = false;
   let rejected = (connection.read(cacheKey+':rejected') || []).filter(item => item?.event && Object.hasOwn(descriptions,item.reason))
@@ -76,33 +80,39 @@ async function open(bank, onRecords = () => {}, {
     }
     connection.storage.setItem(cacheKey, JSON.stringify({history}));
     onRecords(recordsFor(mergeEvents(history, pending), bank));
+    const otherWaiting=Math.max(0,connection.pendingCount()-unsavedCount());
     const rejectedMessage=rejected.length?`${rejected.length} attempt${rejected.length===1?' needs':'s need'} attention.${login.hidden?' Open Review unsaved attempts.':' They are kept for this account.'}`:'';
-    state.textContent = [message || (pending.length ? `${pending.length} attempt${pending.length === 1 ? '' : 's'} waiting to save. Keep this tab open.` : rejected.length?'':'All progress saved to your account.'),rejectedMessage].filter(Boolean).join(' ');
+    state.textContent = [message || (pending.length ? `${pending.length} attempt${pending.length === 1 ? '' : 's'} waiting to save. Keep this tab open.` : rejected.length?'':otherWaiting?'This subject/mode is saved.':'All progress saved to your account.'),rejectedMessage,otherWaiting?`${otherWaiting} other attempts are waiting or need attention. Reopen their subject/mode to review.`:''].filter(Boolean).join(' ');
     retry.hidden = !pending.length && !message; retry.disabled = running;
     attention.hidden=!rejected.length||!login.hidden;summary.textContent=`Review unsaved attempts (${rejected.length})`;
     list.replaceChildren(...rejected.map(item=>{const row=document.createElement('li');row.textContent=`${item.event.question_id} · ${new Date(item.event.attempted_at).toLocaleString()} · ${descriptions[item.reason]}`;return row;}));
     retryRejected.disabled=discardRejected.disabled=running;
   }
   async function upload(batch) {
-    if(closed||!batch.length)return;
-    const result=await client.rpc('sync_learning_attempts',{events:batch,expected_student:owner.user_id});
-    if(closed)return;
-    if(result.error){
-      const reason=rejectionReason(result.error);
-      if(!reason)throw result.error;
-      if(batch.length>1){const middle=Math.floor(batch.length/2);await upload(batch.slice(0,middle));await upload(batch.slice(middle));return;}
-      const event=metadata(batch[0]);
-      rejected=rejected.filter(item=>item.event.event_id!==event.event_id).concat({event,reason});
-      pending=pending.filter(item=>item.event_id!==event.event_id);publish();return;
+    await uploadBatch({client,rpc:flashcards?'sync_flashcard_attempts':'sync_learning_attempts',owner:owner.user_id,batch,closed:()=>closed,
+      accepted:(saved,ids)=>{history=mergeEvents(history,saved);pending=pending.filter(event=>!ids.has(event.event_id));publish();},
+      rejected:(event,reason)=>{rejected=rejected.filter(item=>item.event.event_id!==event.event_id).concat({event,reason});pending=pending.filter(item=>item.event_id!==event.event_id);publish();}});
+  }
+  async function flushOtherQueues(){
+    for(const channel of connection.pendingQueues()){
+      if(closed||channel.cacheKey===cacheKey)continue;
+      let queue=mergeEvents(connection.read(channel.cacheKey+':pending')||[]);
+      let otherHistory=mergeEvents(connection.read(channel.cacheKey)?.history||[]);
+      let otherRejected=connection.read(channel.cacheKey+':rejected')||[];
+      const persist=()=>{
+        connection.storage.setItem(channel.cacheKey+':rejected',JSON.stringify(otherRejected));
+        connection.storage.setItem(channel.cacheKey+':pending',JSON.stringify(queue));
+        connection.storage.setItem(channel.cacheKey,JSON.stringify({history:otherHistory}));publish();
+      };
+      while(!closed&&queue.length)await uploadBatch({client,rpc:channel.flashcards?'sync_flashcard_attempts':'sync_learning_attempts',owner:owner.user_id,batch:queue.slice(0,100),closed:()=>closed,
+        accepted:(saved,ids)=>{otherHistory=mergeEvents(otherHistory,saved);queue=queue.filter(e=>!ids.has(e.event_id));persist();},
+        rejected:(event,reason)=>{otherRejected=otherRejected.filter(item=>item.event.event_id!==event.event_id).concat({event,reason});queue=queue.filter(e=>e.event_id!==event.event_id);persist();}});
     }
-    const acknowledged=new Set(result.data);
-    if(batch.some(event=>!acknowledged.has(event.event_id)))throw new Error('Incomplete acknowledgement.');
-    history=mergeEvents(history,batch);pending=pending.filter(event=>!acknowledged.has(event.event_id));publish();
   }
   async function pull() {
     const remote = [];
     for (let offset = 0;; offset += 500) {
-      const result = await client.from('learning_attempts').select('*').eq('student_id', owner.user_id).eq('subject_id',subject)
+      const result = await client.from(flashcards?'flashcard_attempts':'learning_attempts').select('*').eq('student_id', owner.user_id).eq('subject_id',subject)
         .order('received_at').order('event_id').range(offset, offset + 499);
       if (result.error) throw result.error;
       remote.push(...result.data); if (result.data.length < 500) break;
@@ -122,6 +132,7 @@ async function open(bank, onRecords = () => {}, {
       while (!closed && pending.length) {
         await upload(pending.slice(0,100));
       }
+      if (!closed) await flushOtherQueues();
       if (!closed) await pull();
       message = '';
     } catch (error) {
@@ -129,10 +140,10 @@ async function open(bank, onRecords = () => {}, {
       if(needsLogin){login.hidden=false;const main=document.querySelector('main');if(main)main.hidden=true;}
       message = needsLogin
         ? 'Sign in again with this account to save waiting attempts.'
-        : `Unable to sync · ${pending.length} attempts waiting. Check your connection or ask your teacher.`;
+        : `Unable to sync · ${connection.pendingCount()} attempts waiting. Check your connection or ask your teacher.`;
     } finally {running = false; publish();}
   }
-  const unload = event => {if (!closed && unsavedCount()) {event.preventDefault(); event.returnValue = '';}};
+  const unload = event => {if (!closed && Math.max(unsavedCount(),connection.pendingCount())) {event.preventDefault(); event.returnValue = '';}};
   window.addEventListener('beforeunload', unload);
   window.addEventListener('online', flush); window.addEventListener('offline', flush);
   retry.onclick = flush;

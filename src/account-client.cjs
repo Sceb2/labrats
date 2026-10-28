@@ -52,6 +52,7 @@ async function openAccountClient({audience = 'student'} = {}) {
     }
   }
   const pendingCount = () => {const base=prefix+read(profileKey)?.user_id;let total=0;for(const name of keys())if(name.startsWith(base)&&(name.endsWith(':pending')||name.endsWith(':rejected')))total+=(read(name)||[]).length;if(!read(base+':pending'))total+=(read(base)?.pending||[]).length;return total;};
-  return {client, url, key, sessionKey, prefix, read, storage: tabStorage, profile, cachedProfile: () => read(profileKey), signOut, pendingCount};
+  const pendingQueues=()=>{const owner=read(profileKey)?.user_id;if(!owner)return [];const base=prefix+owner;return keys().filter(name=>name.startsWith(base)&&name.endsWith(':pending')&&(read(name)||[]).length).map(name=>({cacheKey:name.slice(0,-8),flashcards:name.includes(':flashcards:')}));};
+  return {client, url, key, sessionKey, prefix, read, pendingQueues, storage: tabStorage, profile, cachedProfile: () => read(profileKey), signOut, pendingCount};
 }
 module.exports = {openAccountClient};

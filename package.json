@@ -4,16 +4,17 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs tests/adaptive-unit.cjs tests/mechanism-cards.cjs tests/subjects-unit.cjs tests/design-unit.cjs",
+    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs tests/adaptive-unit.cjs tests/mechanism-cards.cjs tests/subjects-unit.cjs tests/design-unit.cjs tests/flashcards-unit.cjs",
     "test:mechanism-preview": "node --test tests/mechanism-preview-browser.cjs",
     "build:mechanisms": "node scripts/build-mechanism-cards.cjs && node scripts/build-mechanism-preview.cjs",
     "build:auth": "node scripts/build-auth.cjs",
-    "build": "node scripts/build-subjects.cjs && npm run build:auth && node scripts/build-staff.cjs && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs && node scripts/build-mechanism-preview.cjs",
+    "build": "node scripts/build-subjects.cjs && node scripts/build-flashcards.cjs && npm run build:auth && node scripts/build-staff.cjs && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs && node scripts/build-mechanism-preview.cjs",
     "test:auth": "node --test tests/auth-integration.cjs",
     "test:auth-browser": "node --test tests/auth-browser.cjs",
     "test:auth-local": "node scripts/test-local-auth.cjs",
     "accounts": "node scripts/student-accounts.cjs",
-    "test:design": "node --test tests/design-browser.cjs"
+    "test:design": "node --test tests/design-browser.cjs",
+    "test:flashcards": "node --test tests/flashcards-unit.cjs tests/flashcards-browser.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.108.2"

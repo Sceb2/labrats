@@ -8,8 +8,8 @@ const descriptions={
  E:{label:'Priority practice',text:'Very little recent unaided recall is secure. Revisit the explanation and practise this more often.'}
 };
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function badgeHTML(grade){
- const info=descriptions[grade]||descriptions.N;
+function badgeHTML(grade,description){
+ const info=description||descriptions[grade]||descriptions.N;
  return `<button type="button" class="rating-badge" data-grade="${esc(grade)}" data-rating-tip="${esc(info.text)}" aria-label="Revision rating ${esc(grade)}: ${esc(info.label)}" aria-expanded="false">${esc(grade)}</button>`;
 }
 function installRatingTips(){

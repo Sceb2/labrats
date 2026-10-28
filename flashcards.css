@@ -1,0 +1,27 @@
+.study-modes{display:flex;gap:8px;margin:20px 0 12px;flex-wrap:wrap}.study-modes .btn{min-height:44px;text-decoration:none}.study-modes [aria-current=page]{font-weight:700}.flashcard-page .sidebar a{text-decoration:none}.flashcard-copy{white-space:pre-wrap;overflow-wrap:anywhere;font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.6}.flashcard-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.flashcard-actions .btn{flex:1;min-height:48px}.flashcard-actions .not-yet{background:#f2d5df;color:#5d2339}.flashcard-toolbar{display:flex;justify-content:space-between;align-items:start;gap:16px}.flashcard-toolbar h1{font-size:2rem}.flashcard-meta,.flashcard-progress-note{font-size:.9rem;color:#435b65}.flashcard-options{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}.flashcard-options label{display:flex;align-items:center;gap:8px;min-height:44px}.flashcard-progress-list{padding:0;list-style:none}.flashcard-progress-list li{padding:12px 0;border-bottom:1px solid #d1dcd5;display:flex;align-items:start;gap:12px}.flashcard-progress-list span{white-space:pre-wrap;overflow-wrap:anywhere}.pack-preview-list{max-height:450px;overflow:auto}.pack-preview-list td{white-space:pre-wrap;vertical-align:top;overflow-wrap:anywhere}.pack-controls{display:flex;gap:12px;flex-wrap:wrap}.pack-controls label{flex:1;min-width:150px}.flashcard-pack-editor textarea{min-height:170px;width:100%;font:inherit}.pack-item{padding:18px 0;border-bottom:1px solid #d1dcd5}.flashcard-page .notice{font-size:.95rem}.flashcard-page [data-account-actions]{display:flex;flex-wrap:wrap;gap:8px}#flashcard-status{min-height:1.5em}@media(max-width:480px){.flashcard-toolbar{flex-direction:column}.flashcard-toolbar [data-account-actions]{align-self:stretch}.flashcard-toolbar [data-account-actions]>*{flex:1}.flashcard-actions{gap:8px}.flashcard-options{gap:10px}}
+
+/* Practice: two faces of one card, with assessment controls outside it. */
+.flashcard-screen.card{background:transparent;border:0;box-shadow:none;padding:0;max-width:760px;margin-inline:auto}
+.flashcard-context{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
+.flashcard-topic{font-weight:600;margin:0;font-size:.95rem}
+.flashcard-screen .flashcard-meta{margin:6px 0 16px;font-size:.85rem}
+.flashcard-screen .notice{font-size:.8rem;color:#435b65;margin:0 0 16px;padding:0;border:0;background:transparent}
+.flashcard-stage{perspective:1400px;animation:flashcard-arrive 160ms ease-out}
+.flashcard-flip{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:inherit;border-radius:12px;-webkit-tap-highlight-color:transparent}
+.flashcard-flip:focus-visible{outline:3px solid #286484;outline-offset:5px}
+.flashcard-turner{display:grid;transform-style:preserve-3d;transition:transform 300ms ease-in-out;position:relative}
+.flashcard-flip.is-flipped .flashcard-turner{transform:rotateY(180deg)}
+.flashcard-side{grid-area:1 / 1;display:grid;grid-template-rows:auto 1fr;gap:28px;min-height:340px;box-sizing:border-box;padding:28px 32px;background:#fffdf7;border:1px solid #d9d7cb;border-radius:12px;box-shadow:0 4px 14px #17382d0a;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flashcard-answer{transform:rotateY(180deg)}
+.flashcard-side-label{text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;font-weight:700;color:#47235f;text-align:center}
+.flashcard-side .flashcard-copy{display:block;font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;line-height:1.5;text-align:center;align-self:center;font-weight:400;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.flashcard-answer .flashcard-side-label{color:#14563e}
+
+.flashcard-flip-hint{text-align:center;font-size:.75rem;color:#526560;min-height:1.5em;margin:14px 0 0}
+.flashcard-screen .flashcard-actions{flex-wrap:nowrap;margin-top:18px}
+.flashcard-screen .flashcard-actions .btn{border-radius:7px;min-height:50px;background:#d5eadb;color:#174c35;border:1px solid #a8cbb4}.flashcard-screen .flashcard-actions .not-yet{background:#f2d5df;color:#5d2339;border-color:#d9aabb}
+.flashcard-screen .flashcard-actions .btn:disabled{opacity:.45;cursor:default}
+.flashcard-screen .flashcard-progress-note{text-align:center;font-size:.78rem;margin:12px 0 0;min-height:2.5em}
+@keyframes flashcard-arrive{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.flashcard-screen .flashcard-toolbar{flex-direction:row;align-items:center}.flashcard-screen .flashcard-toolbar h1{font-size:1.65rem;margin:0}.flashcard-screen .flashcard-toolbar [data-account-actions]{align-self:auto}.flashcard-screen .flashcard-toolbar .btn{font-size:.8rem;padding:10px 12px}.flashcard-side{min-height:310px;padding:22px;gap:24px}.flashcard-context{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.flashcard-turner{transition:none}.flashcard-stage{animation:none}}

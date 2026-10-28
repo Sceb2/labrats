@@ -3,6 +3,8 @@
 Rewritten from the owner's original 34 pasted entries on 26 October 2026.
 This replaces the earlier draft rather than patching its wording. It is review
 material only: no pack has been published and no progress has been imported.
+The local flashcard prototype now uses this sample; see [the implementation guide](../FLASHCARDS.md). Hosted publication remains outstanding.
+
 The notation and formula definitions have now been checked against the supplied
 OCR specification, Version 3.1 (May 2026), and past papers. See
 [the source review](OCR_FORMULA_REVIEW.md).
