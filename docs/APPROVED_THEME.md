@@ -27,3 +27,7 @@ subject and topic selection. Desktop uses the supplied stacked logo in the
 sidebar, including a simple sidebar on the subject menu. The duplicate plain
 LabRats name above Choose subject is removed. Both SVG files are kept unchanged
 in assets/brand; standalone previews embed the SVG bytes.
+
+The student login and staff dashboard also use the centred horizontal logo on
+mobile and stacked desktop sidebar logo. Account forms and existing links remain
+in the content area; standalone account previews embed the same SVG assets.

@@ -26,7 +26,13 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
    assert(rects.length>1);assert.equal(rects[0].x,rects[1].x);assert(rects.every(r=>r.h>=44&&r.h<110));
    await page.locator(subject==='chemistry'?'#all':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());await overflow();if(width===390)await shot(subject+'-topics-mobile');
   }
-  await page.goto(base+'student-login.html');await page.waitForSelector('#login-form:not([hidden])');await overflow();
+  for(const account of ['student-login.html','staff.html']){
+   await page.goto(base+account);await page.waitForSelector(account==='staff.html'?'#staff-login-form':'#login-form:not([hidden])');
+   assert.equal(await page.locator('.account-mobile-brand').isVisible(),width<900);
+   assert.equal(await page.locator('.account-brand-sidebar').isVisible(),width>=900);
+   await page.evaluate(()=>Promise.all(Array.from(document.images).map(img=>img.decode())));
+   await overflow();if(width===390)await shot('account-'+account.replace('.html','')+'-mobile');
+  }
  }
  });
  await t.test('Chemistry partial/full/retry/reveal states keep original scores, readonly responses and accessible explanations',async()=>{

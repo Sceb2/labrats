@@ -86,3 +86,20 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
  .subject-hub .hub-sidebar{display:block;background:var(--nav);padding:30px 18px}
  .subject-hub .hub-main{width:100%;min-width:0;box-sizing:border-box;align-self:start}
 }
+
+/* Account pages share the responsive brand assets. */
+.account-mobile-brand,.account-brand-sidebar{display:none}
+.account-workspace{min-width:0}
+@media(max-width:899px){
+ .account-mobile-brand{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:95px;padding:8px;background:var(--nav)}
+ .account-mobile-brand img{display:block;width:190px;height:69px;object-fit:contain}
+}
+@media(min-width:900px){
+ .account-branded{display:grid;grid-template-columns:210px minmax(0,1fr);min-height:100dvh}
+ .account-brand-sidebar{display:block;background:var(--nav);padding:30px 18px}
+ .account-brand-sidebar img{display:block;width:128px;height:auto;margin:auto}
+}
+
+.login-page .account-workspace>header{max-width:1100px;margin:auto;padding:20px 24px}
+@media(max-width:600px){.login-page .account-workspace>header{padding:20px 19px}}
+@media(min-width:900px){#preview-login:not([hidden]){display:grid;grid-template-columns:210px minmax(0,1fr);min-height:100dvh}}
