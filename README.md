@@ -1,27 +1,33 @@
-# LabRats — combined subject prototype
+# LabRats — Chemistry and Applied Science
 
-This development branch combines Chemistry and Applied Science behind a shared
-subject selector, school login and platform services. Both existing live sites
-remain separate and unchanged.
+LabRats combines Chemistry and Applied Science behind a shared subject selector,
+school login and platform services. The combined site is published from `main`.
+The separate Applied Science repository remains available during the link transition.
+See [the combined release guide](docs/COMBINED_RELEASE.md) for hosted setup and checks.
 
 - **Chemistry:** 236 OCR A Level organic-chemistry questions at `chemistry.html`.
 - **Applied Science:** the existing 110 Pearson AAQ Unit 3 Waves questions at
   `applied-science.html`, with their original calculations and self-assessment.
 - **Shared:** visual base style, Auth, metadata sync/offline queues, N/A–E ratings,
-  accessible grade tooltips, adaptive ordering, celebrations and staff dashboard.
+  accessible grade tooltips, adaptive ordering, flashcard practice, celebrations
+  and staff dashboard.
 - **Separate:** banks, marking engines, progress, revision priorities, browser
   preferences, account caches and teacher authority by class/subject.
 
 Open `index.html` through a local static server, or download the [latest preview pack](downloads/labrats-unified-design-preview-2026-10-25.zip) and
 open `subject-hub-preview.html` after extracting all its files together.
 The standalone subject previews embed their banks and diagrams. Account features
-connect to the development Supabase project; guest practice needs no backend.
+use `auth-config.json`; guest Active Learning needs no backend. For a current
+guest-only flashcard sample, open `flashcards-preview.html` or download the
+[flip preview ZIP](downloads/labrats-flashcard-flip-preview-2026-10-26.zip).
 
-See [the subject-hub setup and review guide](docs/SUBJECT_HUB.md) for source
-provenance, tooltip wording, data handling and the exact database steps. Migrations
-008 and 009 are new and have not been applied to hosted Supabase. Apply 007 first
-if its Chemistry v7 catalogue is not yet installed. Existing projects must not
-rerun schema migrations 001–006.
+See [the subject-hub setup and review guide](docs/SUBJECT_HUB.md) and
+[flashcard implementation guide](docs/FLASHCARDS.md) for source provenance, data
+handling and database details. Hosted Supabase must have migrations 001–010
+installed in order. For an existing project with 001–009 installed, run only
+[010 — flashcards](supabase/migrations/202610260010_flashcards.sql), in a new SQL
+Editor query, including `begin;` and `commit;`. Do not rerun schema migrations.
+GitHub publication does not execute SQL or publish a flashcard pack.
 
 The staff dashboard grants teachers a subject before assigning them to its
 classes. Results for other subjects remain protected by server access policies,
@@ -45,7 +51,8 @@ Further details: [student accounts](docs/STUDENT_LOGINS.md),
 [adaptive practice](docs/ADAPTIVE_PRACTICE.md), and
 [mechanism-card review](docs/MECHANISM_CARD_PREVIEW.md).
 
-This is a review prototype. Passing software checks does not establish chemistry
-approval, a validated mastery score or readiness for real-student deployment.
+Publishing the combined site does not establish chemistry approval, a validated
+mastery score or school data-protection approval. Recorded limitations and school
+operating decisions remain documented in [the DPO review](docs/DPO_PROTOTYPE_REVIEW.md).
 
-The [unified design](docs/UNIFIED_DESIGN.md) applies A, B and C across both subjects, login and staff tools. The latest preview includes actual mobile renders. This visual update requires no new Supabase migrations.
+The [unified design](docs/UNIFIED_DESIGN.md) applies A, B and C across both subjects, login and staff tools. The latest preview includes actual mobile renders. The design layer needs no SQL changes; flashcard storage requires migration 010.
