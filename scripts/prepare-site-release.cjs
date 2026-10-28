@@ -44,4 +44,7 @@ fs.writeFileSync('staff.html',staff);
 let flashcards=read('flashcards.html').toString();
 flashcards=flashcards.replace(/((?:src|href)="(?:[a-z-]+\.css|flashcard-app\.js))(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('flashcards.html',flashcards);
+// The subject hub must request the same release's CSS as the practice pages.
+const hub=read('index.html').toString().replace(/(href="(?:hub|design|fonts)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
+fs.writeFileSync('index.html',hub);
 fs.writeFileSync('version.json',JSON.stringify(build,null,2)+'\n');
