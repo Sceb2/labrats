@@ -21,9 +21,9 @@ function buildProgressPilot(config = JSON.parse(read('auth-config.json')), outpu
     supported: {'template-literal': false}, legalComments: 'eof'}).outputFiles[0].text;
   // Local configuration only is intercepted; all actual Auth/API calls use fetch.
   const script = `(() => {\nconst originalFetch = window.fetch.bind(window);\nconst config = ${safeJSON({supabaseUrl: url, publishableKey: key})};\nwindow.fetch = (input, init) => input === 'auth-config.json'\n ? Promise.resolve(new Response(JSON.stringify(config), {headers: {'Content-Type': 'application/json'}}))\n : originalFetch(input, init);\nwindow.OCR_PROGRESS_PILOT_BANK = ${safeJSON(bank)};\n})();\n${bundle}`;
-  const css = read('styles.css') + '\n' + read('student-login.css')+'\n'+read('design.css');
+  const css = read('styles.css') + '\n' + read('student-login.css')+'\n'+(require('./font-css.cjs')()+'\n'+read('design.css'));
   if (/<\/script/i.test(script) || /<\/style/i.test(css)) throw new Error('Unsafe inline asset.');
-  const policy = `default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; connect-src ${url}; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'`;
+  const policy = `default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; connect-src ${url}; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'`;
   const controls = question.components.map(component => `<label class="control" for="test-${escape(component.id)}">${escape(component.label)}<select id="test-${escape(component.id)}" name="${escape(component.id)}" required><option value="">Choose an answer</option>${component.options.map(id => `<option value="${escape(id)}">${escape(vocabulary[id].label)}</option>`).join('')}</select></label>`).join('\n');
   const test = `<section id="progress-pilot" class="card" hidden>
     <h1 id="test-question-heading" tabindex="-1">Progress saving test</h1>
@@ -37,7 +37,7 @@ function buildProgressPilot(config = JSON.parse(read('auth-config.json')), outpu
     <p>Wait for “All progress saved to your account”, then sign out and sign back in. Open this test again: the submission count and first mark should return.</p>
     <p>These are account results. The first mark stays the same when you retry. This page checks saving; it does not replace the full practice website.</p>
   </section>`;
-  let html = read('student-login.html').replace(/<link rel="stylesheet" href="design\.css(?:\?v=[^"]*)?">/g,'')
+  let html = read('student-login.html').replace(/<link rel="stylesheet" href="(?:design|fonts)\.css(?:\?v=[^"]*)?">/g,'')
     .replace(/content="default-src[^\"]*"/, `content="${policy}"`)
     .replace('<title>Student sign in · Organic chemistry</title>', '<title>Fictional student progress test · Organic chemistry</title>')
     .replace(/<link rel="stylesheet" href="styles\.css(?:\?v=[^"]*)?">\s*<link rel="stylesheet" href="student-login\.css(?:\?v=[^"]*)?">/, () => `<style>${css}</style>`)

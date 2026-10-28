@@ -17,8 +17,8 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
  async function answerChem(response){for(const [id,value]of Object.entries(response))await page.locator('#'+id).selectOption(value);await page.locator('#submit').click();}
  await t.test('hub, both topic lists and account pages share type and compact rows at mobile and desktop sizes',async()=>{
  for(const width of [320,390,1280]){
-  await page.setViewportSize({width,height:900});await page.goto(base);await page.waitForSelector('.subject-card');assert.equal(await page.locator('.subject-card').count(),2);
-  assert.match(await page.locator('.subject-card h2').first().evaluate(e=>getComputedStyle(e).fontFamily),/Georgia/);
+  await page.setViewportSize({width,height:900});await page.goto(base);await page.waitForSelector('.subject-card');assert.equal(await page.locator('.subject-card').count(),2);await page.evaluate(()=>document.fonts.ready);assert.equal(await page.evaluate(()=>document.fonts.check('17px "LabRats Sans"')&&document.fonts.check('22px "LabRats Serif"')&&document.fonts.check('700 32px "LabRats Heading"')),true);
+  assert.match(await page.locator('.subject-card h2').first().evaluate(e=>getComputedStyle(e).fontFamily),/LabRats Serif/);
   assert.equal(await page.locator('.subject-card').first().evaluate(e=>getComputedStyle(e).borderRadius),'0px');await overflow();if(width===390)await shot('hub-mobile');
   for(const subject of ['chemistry','applied-science']){
    await page.goto(base+subject+'.html');await page.waitForSelector('.setup-page');const selector=subject==='chemistry'?'.module-section label.topic':'.lesson-row';

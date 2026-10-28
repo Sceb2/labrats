@@ -12,10 +12,10 @@ function buildLoginPilot(config = JSON.parse(read('auth-config.json')), output =
   // Only the public config request is supplied in memory. All Auth/API requests use real fetch.
   // This lets the same login bundle run from a downloaded file without a web server.
   const script = `(() => {\nconst originalFetch = window.fetch.bind(window);\nconst config = ${JSON.stringify({supabaseUrl: url, publishableKey: key})};\nwindow.fetch = (input, init) => input === 'auth-config.json'\n  ? Promise.resolve(new Response(JSON.stringify(config), {headers: {'Content-Type': 'application/json'}}))\n  : originalFetch(input, init);\n})();\n${read('student-login.js')}`;
-  const css = read('styles.css') + '\n' + read('student-login.css')+'\n'+read('design.css');
+  const css = read('styles.css') + '\n' + read('student-login.css')+'\n'+(require('./font-css.cjs')()+'\n'+read('design.css'));
   if (/<\/script/i.test(script) || /<\/style/i.test(css)) throw new Error('Cannot embed a closing HTML tag in a pilot asset.');
-  const policy = `default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; connect-src ${url}; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'`;
-  let html = read('student-login.html').replace(/<link rel="stylesheet" href="design\.css(?:\?v=[^"]*)?">/g,'');
+  const policy = `default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; connect-src ${url}; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'`;
+  let html = read('student-login.html').replace(/<link rel="stylesheet" href="(?:design|fonts)\.css(?:\?v=[^"]*)?">/g,'');
   html = html.replace(/content="default-src[^\"]*"/, `content="${policy}"`)
     .replace('<title>Student sign in · Organic chemistry</title>', '<title>Fictional student login test · Organic chemistry</title>')
     .replace(/<link rel="stylesheet" href="styles\.css(?:\?v=[^"]*)?">\s*<link rel="stylesheet" href="student-login\.css(?:\?v=[^"]*)?">/, () => `<style>${css}</style>`)

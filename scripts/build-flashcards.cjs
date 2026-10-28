@@ -13,9 +13,9 @@ function buildFlashcards(){
 }
 function buildFlashcardPreview(output=path.join(root,'flashcards-preview.html')){
  const script='window.LABRATS_FLASHCARD_DEMO='+read('flashcards/sample-pack.json').replace(/</g,'\\u003c')+';\n'+read('flashcard-app.js');
- const css=['styles.css','student-login.css','design.css','flashcards.css'].map(read).join('\n');
+ const css=require('./font-css.cjs')()+'\n'+['styles.css','student-login.css','design.css','flashcards.css'].map(read).join('\n');
  const hash=text=>createHash('sha256').update(text).digest('base64');
- const policy=`default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; style-src-attr 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'`;
+ const policy=`default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; style-src-attr 'unsafe-inline'; font-src data:; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'`;
  if(/<\/script/i.test(script)||/<\/style/i.test(css))throw Error('Unsafe inline preview asset.');
  const html=read('flashcards.html').replace(/<link rel="stylesheet"[^>]*>/g,'').replace('</head>',()=>`<meta http-equiv="Content-Security-Policy" content="${policy}"><style>${css}</style></head>`).replace(/<script src="flashcard-app\.js(?:\?v=[^"]*)?" defer><\/script>/,()=>`<script>${script}</script>`);
  fs.writeFileSync(output,'<!-- Generated guest-only sample preview: no hosted connection. -->\n'+html);

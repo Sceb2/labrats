@@ -11,15 +11,15 @@
 .flashcard-flip:focus-visible{outline:3px solid #286484;outline-offset:5px}
 .flashcard-turner{display:grid;transform-style:preserve-3d;transition:transform 300ms ease-in-out;position:relative}
 .flashcard-flip.is-flipped .flashcard-turner{transform:rotateY(180deg)}
-.flashcard-side{grid-area:1 / 1;display:grid;grid-template-rows:auto 1fr;gap:28px;min-height:340px;box-sizing:border-box;padding:28px 32px;background:#fffdf7;border:1px solid #d9d7cb;border-radius:12px;box-shadow:0 4px 14px #17382d0a;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flashcard-side{grid-area:1 / 1;display:grid;grid-template-rows:auto 1fr;gap:28px;min-height:340px;box-sizing:border-box;padding:28px 32px;background:#fffefa;border:1px solid #d1ded2;border-radius:12px;box-shadow:0 4px 14px #17382d0a;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .flashcard-answer{transform:rotateY(180deg)}
 .flashcard-side-label{text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;font-weight:700;color:#47235f;text-align:center}
-.flashcard-side .flashcard-copy{display:block;font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;line-height:1.5;text-align:center;align-self:center;font-weight:400;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.flashcard-side .flashcard-copy{display:block;font-family:var(--font-body);font-size:1.5rem;line-height:1.5;text-align:center;align-self:center;font-weight:400;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .flashcard-answer .flashcard-side-label{color:#14563e}
 
 .flashcard-flip-hint{text-align:center;font-size:.75rem;color:#526560;min-height:1.5em;margin:14px 0 0}
 .flashcard-screen .flashcard-actions{flex-wrap:nowrap;margin-top:18px}
-.flashcard-screen .flashcard-actions .btn{border-radius:7px;min-height:50px;background:#d5eadb;color:#174c35;border:1px solid #a8cbb4}.flashcard-screen .flashcard-actions .not-yet{background:#f2d5df;color:#5d2339;border-color:#d9aabb}
+.flashcard-screen .flashcard-actions .btn{border-radius:7px;min-height:50px;background:#105640;color:#fff;border:1px solid #105640}.flashcard-screen .flashcard-actions .not-yet{background:#f2d5df;color:#5d2339;border-color:#d9aabb}
 .flashcard-screen .flashcard-actions .btn:disabled{opacity:.45;cursor:default}
 .flashcard-screen .flashcard-progress-note{text-align:center;font-size:.78rem;margin:12px 0 0;min-height:2.5em}
 @keyframes flashcard-arrive{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}

@@ -2,7 +2,7 @@
 const fs=require('node:fs'),{createHash}=require('node:crypto');
 const read=name=>fs.readFileSync(name),sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const old=JSON.parse(read('version.json'));
-const files=['flashcards.html','flashcard-app.js','flashcards.css','flashcards/topics.json','flashcards/sample-pack.json','design.css','feedback.js','app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
+const files=['fonts.css',...fs.readdirSync('assets/fonts').sort().map(name=>'assets/fonts/'+name),'flashcards.html','flashcard-app.js','flashcards.css','flashcards/topics.json','flashcards/sample-pack.json','design.css','feedback.js','app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
   'updates.js','learning-resources.js','questions.json','assets.json','learning-resources.json',
   'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
   'index.html','assets/subjects/applied-science.png','assets/subjects/chemistry.png','staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];
@@ -21,7 +21,7 @@ let html=read('chemistry.html').toString();
 if(!html.includes('window.CHEM_BUILD=')||!old.id)throw Error('Missing release metadata.');
 html=html.replace(/window\.CHEM_BUILD=\{[^;]+\};/,()=>`window.CHEM_BUILD=${JSON.stringify(build)};`)
   .replaceAll('?v='+old.id,'?v='+id)
-  .replace(/((?:href|src)="(?:design\.css|flashcards\.css|feedback\.js))(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+  .replace(/((?:href|src)="(?:fonts\.css|design\.css|flashcards\.css|feedback\.js))(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
   .replace('src="progress-sync.js"',`src="progress-sync.js?v=${id}"`)
   .replace('href="student-login.css"',`href="student-login.css?v=${id}"`)
   .replace(/(<p class="side-footer">)[^<]+/,`$1v${label.match(/\d+\.\d+\.\d+/)[0]}`);
@@ -38,7 +38,7 @@ login=login.replace(/(href="(?:styles|student-login|design)\.css)(?:\?v=[^"]*)?"
   .replace(/(src="student-login\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('student-login.html',login);
 let staff=read('staff.html').toString();
-staff=staff.replace(/(href="(?:styles|student-login|staff|design|flashcards)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+staff=staff.replace(/(href="(?:styles|student-login|staff|fonts|design|flashcards)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
   .replace(/(src="staff\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('staff.html',staff);
 let flashcards=read('flashcards.html').toString();

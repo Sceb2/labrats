@@ -1,30 +1,30 @@
 /* LabRats design layer: shared by both subjects, accounts and standalone previews. */
 :root{--paper:#f7f8f5;--ink:#172d3a;--muted:#52635b;--accent:#14563e;--rule:#d5dfd8;--finish:#8c3655;--feedback-method:#405c7c}
-body{background:var(--paper);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-h1,h2{font-family:Georgia,"Times New Roman",serif}h1{font-weight:400}.page-heading h1,.setup-page .page-heading h1{font-weight:400}
+body{background:var(--paper);font-family:"LabRats Sans",-apple-system,"Segoe UI",sans-serif}
+h1,h2{font-family:"LabRats Serif","Times New Roman",serif}h1{font-weight:400}.page-heading h1,.setup-page .page-heading h1{font-weight:400}
 /* A: the subject selector uses the same paper, type, scale and rhythm as practice. */
-body.subject-hub{background:var(--paper);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+body.subject-hub{background:var(--paper);color:var(--ink);font:17px/1.55 "LabRats Sans",-apple-system,"Segoe UI",sans-serif}
 .hub-main{max-width:1000px;padding:36px 24px}.hub-brand{color:var(--ink);font-size:1.15rem;font-weight:750;letter-spacing:normal;margin:0 0 30px}
-.hub-main h1{font:400 clamp(2rem,5vw,3.1rem)/1.2 Georgia,serif;letter-spacing:-.02em}
+.hub-main h1{font:400 clamp(2rem,5vw,3.1rem)/1.2 "LabRats Serif",serif;letter-spacing:-.02em}
 .subject-grid{display:block;margin:30px 0 0;border-top:1px solid var(--rule)}
 .subject-card{display:flex;align-items:center;gap:18px;min-height:105px;padding:20px 4px;border:0;border-bottom:1px solid var(--rule);border-radius:0;background:transparent;box-shadow:none;transition:background .15s}
 .subject-card:hover{transform:none;box-shadow:none;background:#edf6ef}.subject-card img{width:64px;height:64px;object-fit:contain;flex:none}
-.subject-card h2{font:400 1.4rem/1.3 Georgia,serif;letter-spacing:normal;margin:0}.hub-links{margin-top:30px;gap:24px}
+.subject-card h2{font:400 1.4rem/1.3 "LabRats Serif",serif;letter-spacing:normal;margin:0}.hub-links{margin-top:30px;gap:24px}
 /* B: selectable topic rows; green denotes selection in either subject. */
 .setup-page .module-section .checks,.setup-page .wave-topic-list{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--rule)}
 .setup-page .module-section label.topic,.setup-page .lesson-row{position:relative;display:flex;align-items:center;justify-content:flex-start;gap:12px;text-align:left;min-height:60px;margin:0;padding:12px;border:0;border-bottom:1px solid var(--rule);border-left:3px solid transparent;border-radius:0;box-shadow:none;background:transparent;transition:background .15s}
 .setup-page .module-section label.topic:hover,.setup-page .lesson-row:hover{background:#f0f4f0}
 .setup-page .module-section label.topic:has(input:checked),.setup-page .lesson-row:has(input:checked),.setup-page .lesson-row:has(input:indeterminate){background:#edf6ef;border-left-color:var(--accent);box-shadow:none}
 .setup-page .module-section label.topic input,.setup-page .lesson-row>input{position:static;flex:none;width:21px;height:21px;margin:0;accent-color:var(--accent)}
-.setup-page .module-section .topic-text,.setup-page .lesson-row .topic-name{font:400 1.15rem/1.35 Georgia,serif;text-align:left;text-wrap:initial;flex:1;min-width:0;width:auto}
-.setup-page .lesson-row>span{flex:1;min-width:0;width:auto}.topic-meta{font:400 .85rem/1.4 system-ui,sans-serif;color:var(--muted);white-space:nowrap;flex:none;font-variant-numeric:tabular-nums}
+.setup-page .module-section .topic-text,.setup-page .lesson-row .topic-name{font:400 1.15rem/1.35 "LabRats Serif",serif;text-align:left;text-wrap:initial;flex:1;min-width:0;width:auto}
+.setup-page .lesson-row>span{flex:1;min-width:0;width:auto}.topic-meta{font:400 .85rem/1.4 "LabRats Sans",sans-serif;color:var(--muted);white-space:nowrap;flex:none;font-variant-numeric:tabular-nums}
 .setup-page .setup-actions{border:0;border-radius:0;background:transparent;padding:0;margin:24px 0;box-shadow:none}.setup-actions p{margin-bottom:12px}.setup-actions .btn{border-radius:7px}
 /* C: score first, then mark-level evidence and a specific correction. */
 .answer-review,.feedback-panel{border:0;border-top:2px solid var(--accent);border-radius:0;background:transparent;box-shadow:none;padding:20px 0 0;margin:0}
-.feedback-heading{display:block;margin:0 0 20px;padding:0;background:transparent;border:0}.feedback-heading h2,.question-screen .feedback-heading h2{font:400 1.8rem/1.2 Georgia,serif;margin:0 0 8px;letter-spacing:-.02em}
-.feedback-heading p,.question-screen .feedback-heading p{font:400 .94rem/1.5 system-ui,sans-serif;color:var(--muted);margin:0}
+.feedback-heading{display:block;margin:0 0 20px;padding:0;background:transparent;border:0}.feedback-heading h2,.question-screen .feedback-heading h2{font:400 1.8rem/1.2 "LabRats Serif",serif;margin:0 0 8px;letter-spacing:-.02em}
+.feedback-heading p,.question-screen .feedback-heading p{font:400 .94rem/1.5 "LabRats Sans",sans-serif;color:var(--muted);margin:0}
 .feedback-point.mark-row,.question-screen .feedback-point.mark-row{display:block;padding:16px 0;margin:0;border:0;border-top:1px solid var(--rule);background:transparent;border-radius:0;box-shadow:none}
-.point-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.point-heading h3{min-width:0;font:650 .95rem/1.5 system-ui,sans-serif;margin:0}.point-heading h3>span{margin-right:4px}
+.point-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.point-heading h3{min-width:0;font:650 .95rem/1.5 "LabRats Sans",sans-serif;margin:0}.point-heading h3>span{margin-right:4px}
 .point-marks{flex:none;white-space:nowrap;font-size:.85rem;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--ink)}
 .feedback-point.right h3{color:var(--accent)}.feedback-point.wrong h3{color:#795c17}.feedback-point.method h3{color:var(--feedback-method)}
 .point-body{margin:8px 0 0;font-size:.95rem;line-height:1.55;overflow-wrap:anywhere}.point-body p{margin:8px 0 0}.point-body .your-answer{color:var(--muted);margin-bottom:8px}.point-body .correction{margin-top:8px}.point-body .chem{margin:8px 0}
@@ -44,7 +44,7 @@ body.subject-hub{background:var(--paper);color:var(--ink);font:17px/1.55 system-
 .question-screen.card:has(.feedback-heading){background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
 .question-screen .answer-review,.question-screen .feedback-panel{border:0;border-top:2px solid var(--accent);padding:20px 0 0;background:transparent;border-radius:0}
 .question-screen .feedback-heading{display:block;padding:0;margin:0 0 20px}
-.question-screen .answer-review .feedback-heading p,.question-screen .feedback-panel .feedback-heading p{display:block;padding:0;margin:0;background:transparent;border:0;border-radius:0;color:var(--muted);font:400 .94rem/1.5 system-ui,sans-serif}
+.question-screen .answer-review .feedback-heading p,.question-screen .feedback-panel .feedback-heading p{display:block;padding:0;margin:0;background:transparent;border:0;border-radius:0;color:var(--muted);font:400 .94rem/1.5 "LabRats Sans",sans-serif}
 .question-screen .feedback-point .your-answer,.question-screen .feedback-point .correction{display:block;padding:0;background:transparent;border:0;border-radius:0;font-size:.95rem;font-weight:400;line-height:1.55}
 .question-screen .feedback-point .your-answer{color:var(--muted)}.question-screen .feedback-point .correction{color:var(--ink)}
 .question-screen .answer-actions:has(#retry){flex-direction:row}.question-screen .review-result{background:transparent;border:0;padding:0;font-size:.88rem;color:var(--muted)}
@@ -55,3 +55,18 @@ progress.session-progress::-webkit-progress-bar{background:var(--rule);border-ra
 .login-card input,.staff-page input{min-height:48px;border:1px solid #8b9e91;border-radius:7px;background:white;padding:12px}
 .question-screen:has(.feedback-heading) .answer-actions{display:flex;flex-direction:row;gap:12px;padding:20px 0 0;margin:0;background:transparent;border:0}
 .question-screen:has(.feedback-heading) .answer-actions>#next{flex:1;min-height:48px;font-size:.95rem;padding:12px 16px}
+
+/* Approved Crispin Gold palette and bundled font roles. */
+:root{--paper:#fff;--ink:#18251e;--muted:#48564d;--nav:#105640;--accent:#105640;--rule:#d2dad4;--finish:#795337;--font-body:"LabRats Sans",Arial,sans-serif;--font-serif:"LabRats Serif",Georgia,serif;--font-heading:"LabRats Heading",Arial,sans-serif}
+body,body.subject-hub{font-family:var(--font-body)}
+h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(--font-heading);font-weight:700}
+.subject-card h2,.setup-page .module-section .topic-text,.setup-page .lesson-row .topic-name{font-family:var(--font-serif)}
+.btn,.side-link,.session-control{font-family:var(--font-body);font-weight:600}
+.side-link.active,.side-link:hover{background:#286049;border-color:#e4b735}
+.side-link.active{border-bottom-color:#e4b735}
+.session-control:not(.finish-control){background:#286049;border-bottom-color:#e4b735}
+.question-screen .task-sentence,.question-screen.card h1,.point-heading h3,.question-screen .point-heading h3{font-family:var(--font-body)}
+.feedback-heading h2,.question-screen .feedback-heading h2,.summary-score{font-family:var(--font-serif)}
+.rating-badge,.rating-tooltip{font-family:var(--font-body)}
+.topic-meta,.flashcard-meta,.small-note{font-family:var(--font-serif)}
+.hub-links a{color:var(--accent)}
