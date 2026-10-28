@@ -18,7 +18,7 @@ function buildFlashcardPreview(output=path.join(root,'flashcards-preview.html'))
  const policy=`default-src 'none'; script-src 'sha256-${hash(script)}'; style-src 'sha256-${hash(css)}'; style-src-attr 'unsafe-inline'; font-src data:; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'`;
  if(/<\/script/i.test(script)||/<\/style/i.test(css))throw Error('Unsafe inline preview asset.');
  const html=read('flashcards.html').replace(/<link rel="stylesheet"[^>]*>/g,'').replace('</head>',()=>`<meta http-equiv="Content-Security-Policy" content="${policy}"><style>${css}</style></head>`).replace(/<script src="flashcard-app\.js(?:\?v=[^"]*)?" defer><\/script>/,()=>`<script>${script}</script>`);
- fs.writeFileSync(output,'<!-- Generated guest-only sample preview: no hosted connection. -->\n'+html);
+ fs.writeFileSync(output,'<!-- Generated guest-only sample preview: no hosted connection. -->\n'+require('./brand-assets.cjs')(html));
 }
 if(require.main===module)buildFlashcards();
 module.exports={buildFlashcards,buildFlashcardPreview};

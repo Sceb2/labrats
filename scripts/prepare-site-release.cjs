@@ -2,7 +2,7 @@
 const fs=require('node:fs'),{createHash}=require('node:crypto');
 const read=name=>fs.readFileSync(name),sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const old=JSON.parse(read('version.json'));
-const files=['fonts.css',...fs.readdirSync('assets/fonts').sort().map(name=>'assets/fonts/'+name),'flashcards.html','flashcard-app.js','flashcards.css','flashcards/topics.json','flashcards/sample-pack.json','design.css','feedback.js','app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
+const files=['assets/brand/horizontal.svg','assets/brand/stacked.svg','fonts.css',...fs.readdirSync('assets/fonts').sort().map(name=>'assets/fonts/'+name),'flashcards.html','flashcard-app.js','flashcards.css','flashcards/topics.json','flashcards/sample-pack.json','design.css','feedback.js','app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
   'updates.js','learning-resources.js','questions.json','assets.json','learning-resources.json',
   'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
   'index.html','assets/subjects/applied-science.png','assets/subjects/chemistry.png','staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];

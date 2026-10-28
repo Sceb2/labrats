@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-4mV+dxKW/oU/L1w8Zu9/2QCnrqm/qaFcjGr/p/AbgT8='; style-src 'sha256-7P3aDmM9I2NkWuTSEIfGVujDafosHSS/2MiKyFoL8ps='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-4mV+dxKW/oU/L1w8Zu9/2QCnrqm/qaFcjGr/p/AbgT8='; style-src 'sha256-PmLFGHzzkZvKs9wCs6GChJaDwZpiyfya/crlY15Cepo='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student Login · LabRats</title>
   <style>/* Design A: mobile-first, shared by the public site and offline previews. */
 :root{--ink:#172d3a;--muted:#52635b;--accent:#14563e;--nav:#172d3a;--paper:#fff;--soft:#eef5ef;--rule:#c2cec7;--mobile-nav-space:86px;--action-height:100px;color-scheme:light}
@@ -394,6 +394,22 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .rating-badge,.rating-tooltip{font-family:var(--font-body)}
 .topic-meta,.flashcard-meta,.small-note{font-family:var(--font-serif)}
 .hub-links a{color:var(--accent)}
+
+/* Approved responsive branding: mobile only on subject/topic selection. */
+.mobile-brand-banner,.desktop-brand,.hub-sidebar{display:none}.mobile-brand-banner{box-sizing:border-box}
+@media(max-width:899px){
+ .subject-hub>.mobile-brand-banner,.student-app[data-screen=setup] .mobile-brand-banner{display:flex;align-items:center;justify-content:center;min-height:95px;padding:8px;background:var(--nav)}
+ .mobile-brand-banner a{display:flex;align-items:center;justify-content:center}
+ .mobile-brand-banner img{display:block;width:190px;height:69px;object-fit:contain}
+ .subject-hub .hub-main{padding-top:24px}
+}
+@media(min-width:900px){
+ .desktop-brand{display:block;width:128px;margin:0 auto 28px}
+ .desktop-brand img{display:block;width:128px;height:auto}
+ .subject-hub{display:grid;grid-template-columns:210px minmax(0,1fr);min-height:100dvh}
+ .subject-hub .hub-sidebar{display:block;background:var(--nav);padding:30px 18px}
+ .subject-hub .hub-main{width:100%;min-width:0;box-sizing:border-box;align-self:start}
+}
 </style>
 </head>
 <body class="login-page">

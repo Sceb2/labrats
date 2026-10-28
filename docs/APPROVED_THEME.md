@@ -19,3 +19,11 @@ font bytes with a font-src data: policy, requiring no third-party font service.
 The release fingerprint includes the font files and stylesheet.
 
 This theme changes no database schema or account/marking/adaptive behaviour.
+
+## Approved logo placement
+
+The supplied horizontal logo is centred in the 95px mobile banner, only on
+subject and topic selection. Desktop uses the supplied stacked logo in the
+sidebar, including a simple sidebar on the subject menu. The duplicate plain
+LabRats name above Choose subject is removed. Both SVG files are kept unchanged
+in assets/brand; standalone previews embed the SVG bytes.
