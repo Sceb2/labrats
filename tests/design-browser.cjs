@@ -24,7 +24,16 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
    await page.goto(base+subject+'.html');await page.waitForSelector('.setup-page');assert.equal(await page.locator('.mobile-brand-banner').isVisible(),width<900);const selector=subject==='chemistry'?'.module-section label.topic':'.lesson-row';
    const rects=await page.locator(selector).evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().height).slice(0,3).map(e=>{const r=e.getBoundingClientRect(),i=e.querySelector('input').getBoundingClientRect();return {x:r.x,h:r.height,w:r.width,inputY:i.y};}));
    assert(rects.length>1);assert.equal(rects[0].x,rects[1].x);assert(rects.every(r=>r.h>=44&&r.h<110));
-   await page.locator(subject==='chemistry'?'#all':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());await overflow();if(width===390)await shot(subject+'-topics-mobile');
+   await page.locator(subject==='chemistry'?'#all':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());
+   assert((await page.locator('.study-modes').boundingBox()).y<(await page.locator(selector).first().boundingBox()).y);
+   if(width<900){
+    await page.waitForFunction(()=>parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--setup-dock-height'))>0);
+    const dock=await page.locator('.setup-actions').boundingBox(),nav=await page.locator('.side-nav').boundingBox(),start=await page.locator(subject==='chemistry'?'#practice':'#start-practice').boundingBox();
+    assert(dock.y>=0);assert(dock.y+dock.height<=nav.y+1);assert(start.y>=0&&start.y+start.height<=nav.y+1);
+    await page.locator(subject==='chemistry'?'#none':'#select-none').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isDisabled());const current=page.url();await page.locator('.study-modes a').click();assert.equal(page.url(),current);assert(await page.locator(subject==='chemistry'?'[data-topic]':'[data-lesson]').first().evaluate(e=>e===document.activeElement));
+    await page.locator(subject==='chemistry'?'#all':'#select-all').click();
+   }
+   await overflow();if(width===390)await shot(subject+'-topics-mobile');
   }
   for(const account of ['student-login.html','staff.html']){
    await page.goto(base+account);await page.waitForSelector(account==='staff.html'?'#staff-login-form':'#login-form:not([hidden])');

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Rh/USMpnDh8RsCfaswA1nwtwK0UxlNwU+yZIgkOAxac='; style-src 'sha256-+EYu01v9MIJyyjxFWfNhRCqpDDuvo8/NZraLKH68lSU='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Rh/USMpnDh8RsCfaswA1nwtwK0UxlNwU+yZIgkOAxac='; style-src 'sha256-abJddY20go42UrcCW7TI28zFfSsY/n9qx2NBu6b2XAA='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student Login · LabRats</title>
   <style>/* Design A: mobile-first, shared by the public site and offline previews. */
 :root{--ink:#172d3a;--muted:#52635b;--accent:#14563e;--nav:#172d3a;--paper:#fff;--soft:#eef5ef;--rule:#c2cec7;--mobile-nav-space:86px;--action-height:100px;color-scheme:light}
@@ -427,6 +427,20 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .login-page .account-workspace>header{max-width:1100px;margin:auto;padding:20px 24px}
 @media(max-width:600px){.login-page .account-workspace>header{padding:20px 19px}}
 @media(min-width:900px){#preview-login:not([hidden]){display:grid;grid-template-columns:210px minmax(0,1fr);min-height:100dvh}}
+
+/* Topic setup: learning mode first, persistent mobile start action. */
+.setup-page .study-modes{margin:14px 0 20px}
+.setup-session-size{display:block;font-size:.85rem;font-weight:400;margin:4px 0 0}
+.setup-page .setup-actions #eligible-count,.setup-page .setup-actions .session-plan{font-size:.9rem;line-height:1.4}
+@media(max-width:899px){
+ body[data-screen=setup] .setup-page{padding-bottom:calc(var(--setup-dock-height,160px) + 24px)}
+ body[data-screen=setup] .setup-page .setup-actions{position:fixed;left:0;right:0;bottom:var(--setup-nav-height,80px);z-index:35;margin:0;padding:12px 19px;background:var(--paper);border-top:1px solid var(--rule);border-radius:0;box-shadow:0 -3px 12px #18251e0a}
+ .setup-page .setup-actions p{margin-bottom:8px}
+ .setup-page .setup-actions .btn{width:100%;min-height:48px}
+ .setup-page .setup-actions:has(#resume-practice) .btn{margin-top:6px}
+ body.setup-keyboard-open[data-screen=setup] .setup-actions{visibility:hidden;pointer-events:none}
+ body[data-screen=setup] :is(input,select,summary,button,a){scroll-margin-bottom:calc(var(--setup-dock-height,160px) + var(--setup-nav-height,80px) + 16px)}
+}
 </style>
 </head>
 <body class="login-page account-branded">

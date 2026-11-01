@@ -62,9 +62,7 @@ function bindDisclosures(){
  $$('[data-disclosure]').forEach(el=>el.addEventListener('toggle',()=>{S.prefs.disclosures[el.dataset.disclosure]=el.open;save();}));
 }
 function lessonRow(l){
- const direct=S.bank.questions.filter(q=>l.ids.includes(q.primaryLessonId)&&S.prefs.types.includes(q.interaction));
- const count=direct.length;
- return `<label class="lesson-row"><input type="checkbox" data-lesson="${esc(l.id)}" data-lesson-ids="${esc(JSON.stringify(l.ids))}"><span class="topic-name">${esc(l.title)}</span><small class="topic-meta" title="Questions using this topic" aria-label="${count} questions using this topic">${count}</small></label>`;
+ return `<label class="lesson-row"><input type="checkbox" data-lesson="${esc(l.id)}" data-lesson-ids="${esc(JSON.stringify(l.ids))}"><span class="topic-name">${esc(l.title)}</span></label>`;
 }
 function resumeActions(){
  let html='';
@@ -80,7 +78,7 @@ function showSetup(){
  <div class="wave-topic-list">${wavesTopics().map(lessonRow).join('')}</div></details>
  <details class="module-section" ${disclosureAttrs('forces')}><summary><span>Forces</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
  <details class="module-section" ${disclosureAttrs('electricity-energy')}><summary><span>Electricity and Energy</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
- <div class="setup-actions"> <div class="session-plan" id="session-plan" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
+ <div class="setup-actions"> <div class="session-plan" id="session-plan" role="status" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
  <details class="practice-settings" ${disclosureAttrs('settings')}><summary>Practice settings</summary><label class="control">Practice mode<select id="practice-style"><option value="adaptive" ${S.prefs.practiceStyle!=='random'?'selected':''}>Adaptive practice (recommended)</option><option value="random" ${S.prefs.practiceStyle==='random'?'selected':''}>Random practice</option></select></label><p class="small-note">Prioritises new questions and those needing more practice.</p><details><summary>How adaptive practice works</summary><p>Selection also considers time since practice. N means no unaided scored attempt yet; A–E are revision guidance. Tap a rating to learn more.</p></details><h2>Question types</h2><div class="settings-options">${types.map(t=>`<label><input type="checkbox" data-type="${t}" ${S.prefs.types.includes(t)?'checked':''}>${labels[t]}</label>`).join('')}</div>
  <label class="topic"><input type="checkbox" id="effects-pref" ${S.prefs.celebrations?'checked':''}><span>Celebration effects<span class="topic-code">Reduced-motion preferences are respected.</span></span></label>
  <p class="small-note">Sessions target 20 available marks and an equal number of recall and application questions. Your selected lessons determine what is available.</p>
@@ -109,7 +107,7 @@ function updatePlan(){
  const topics=wavesTopics(),selectedCount=topics.filter(t=>t.ids.every(id=>S.prefs.lessons.includes(id))).length,partialCount=topics.filter(t=>t.ids.some(id=>S.prefs.lessons.includes(id))&&!t.ids.every(id=>S.prefs.lessons.includes(id))).length;
  $('#waves-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
  const message=!S.prefs.lessons.length?'Select lessons you have studied.':!S.prefs.types.length?'Select at least one question type in Practice settings.':!p.questionCount?'No questions are available yet for this selection. Check the required lessons below.':p.shortPool?`Only ${p.actualMarks} marks are available from these lessons. Start this shorter session or select more lessons.`:'';
- $('#session-plan').innerHTML=`<strong>${p.actualMarks} available marks</strong>${p.questionCount?`<p>${p.questionCount} questions · ${p.recallCount} recall · ${p.applicationCount} application</p>`:''}${message?`<p>${esc(message)}</p>`:''}${p.questionCount&&!p.exactRecallBalance?'<p class="small-note">This selection cannot provide an exact 50/50 recall split at this mark total.</p>':''}`;
+ $('#session-plan').innerHTML=`<strong>${eligibility(matchingBank(),S.prefs.lessons,{allowDrafts:true}).eligible.length} questions available from your selection</strong>${p.questionCount?`<p class="setup-session-size">${p.questionCount} questions · ${p.actualMarks} marks this session</p>`:''}${message?`<p>${esc(message)}</p>`:''}${p.questionCount&&!p.exactRecallBalance?'<p class="small-note">This selection cannot provide an exact 50/50 recall split at this mark total.</p>':''}`;
  $('#start-practice').disabled=!p.questionCount;
  const missing=new Set(p.blocked.filter(x=>{const q=S.bank.questions.find(q=>q.id===x.id);return S.prefs.lessons.includes(q.primaryLessonId);}).flatMap(x=>x.missingLessonIds));
  $('#missing-lessons').innerHTML=missing.size?`<aside class="prerequisite-note"><p>Some questions need other topics: ${[...new Set([...missing].map(titleFor))].map(esc).join(', ')}.</p>${button('Select these topics too','add-prerequisites','btn secondary')}</aside>`:'';
