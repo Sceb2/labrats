@@ -34,6 +34,9 @@ export function formatNumber(value){
  return String(n);
 }
 const near=(a,b,t)=>Math.abs(a-b)<=t+Number.EPSILON*Math.max(1,Math.abs(a),Math.abs(b))*8;
+function matchesAnswer(value,answer){
+ return near(value,answer.value,answer.absoluteTolerance)||(Array.isArray(answer.alternateValues)&&answer.alternateValues.some(alternative=>Number.isFinite(alternative)&&near(value,alternative,1e-9)));
+}
 function inDomain(value,domain={}){return Number.isFinite(value)&&(domain.minExclusive===undefined||value>domain.minExclusive)&&(domain.maxInclusive===undefined||value<=domain.maxInclusive);}
 function numericInput(part,raw){
  const valueRaw=raw&&typeof raw==='object'?raw.value:raw;
@@ -52,6 +55,7 @@ function expectedEcf(rule,inputs){
   case 'multiply-constant':return a*c;
   case 'divide-constant':return c!==0?a/c:NaN;
   case 'multiply':return a*b;
+  case 'divide':return b!==0?a/b:NaN;
   case 'asin-degrees':return Math.asin(a)*180/Math.PI;
   case 'sqrt-constant-divided-by':return a>0?Math.sqrt(c/a):NaN;
   default:return NaN;
@@ -63,7 +67,7 @@ export function markQuestion(q,responses={},mode='scaffold'){
   const route=q.unscaffoldedFinalAnswerRoute;
   if(!route?.enabled)throw Error('This question has no final-answer route.');
   const part=q.parts.find(p=>p.id===route.partId),input=numericInput(part,responses[part.id]);
-  const correct=input.valid&&near(input.value,part.answer.value,part.answer.absoluteTolerance);
+  const correct=input.valid&&matchesAnswer(input.value,part.answer);
   return {questionId:q.id,mode,maxMarks:q.maxMarks,directMarks:correct?q.maxMarks:0,ecfMarks:0,selfAssessedMarks:null,score:correct?q.maxMarks:0,parts:[],finalAnswerCorrect:correct,feedback:correct?'Correct final answer. Full credit awarded for this route.':'Check the value and units. You can use the scaffold before submitting your attempt.'};
  }
  const byId=Object.fromEntries(q.parts.map(p=>[p.id,p])),results={},parts=[];
@@ -83,12 +87,12 @@ export function markQuestion(q,responses={},mode='scaffold'){
    const input=numericInput(part,raw);
    if(!input.present)result={...result,status:'unanswered',feedback:'Enter a value or intentionally submit this part blank.'};
    else if(!input.valid)result={...result,status:'invalid',feedback:'Use a finite value in the stated range and an allowed unit. '+part.incorrectFeedback};
-   else if(near(input.value,part.answer.value,part.answer.absoluteTolerance))result={...result,status:'direct',marks:part.marks,credit:'direct',feedback:part.correctFeedback};
+   else if(matchesAnswer(input.value,part.answer))result={...result,status:'direct',marks:part.marks,credit:'direct',feedback:part.correctFeedback};
    else if(part.ecf){
     const rule=part.ecf,sourceParts=rule.inputs.map(id=>byId[id]);
     const sourceInputs=sourceParts.map(p=>numericInput(p,responses[p.id]));
     const canUse=sourceInputs.every(x=>x.valid&&inDomain(x.value,rule.inputDomain))&&(rule.requiresCorrectParts||[]).every(id=>results[id]?.status==='direct');
-    const originalError=sourceInputs.some((x,i)=>x.valid&&!near(x.value,sourceParts[i].answer.value,sourceParts[i].answer.absoluteTolerance));
+    const originalError=sourceInputs.some((x,i)=>x.valid&&!matchesAnswer(x.value,sourceParts[i].answer));
     const expected=canUse?expectedEcf(rule,sourceInputs.map(x=>x.value)):NaN;
     if(canUse&&originalError&&inDomain(expected,part.domain)&&near(input.value,expected,part.answer.absoluteTolerance)){
      result={...result,status:'ecf',marks:part.marks,credit:'error-carried-forward',basedOnParts:rule.inputs,methodValue:expected,feedback:`Method mark awarded (error carried forward). You used your earlier value${rule.inputs.length>1?'s':''} correctly for this step. The earlier error still needs correcting. ${part.incorrectFeedback}`};

@@ -1,6 +1,6 @@
 {
   "title": "Forces · draft question preview",
-  "version": 3,
+  "version": 4,
   "topics": [
     {
       "id": "F01",
@@ -53,11 +53,11 @@
               "ao": "AO1"
             }
           ],
-          "hint": "Use consistent units. Average speed uses the total distance and total time.",
+          "hint": "A vector has magnitude and direction.",
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Velocity has magnitude and direction."
         },
@@ -88,7 +88,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -117,7 +117,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -170,11 +170,11 @@
             }
           ],
           "answer": "m s⁻²",
-          "hint": "Use consistent units. Average speed uses the total distance and total time.",
+          "hint": "Acceleration is change in velocity per unit time.",
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. m s⁻²"
         },
@@ -219,11 +219,11 @@
             }
           ],
           "answer": "Distance",
-          "hint": "Use consistent units. Average speed uses the total distance and total time.",
+          "hint": "A scalar has magnitude but no direction.",
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Distance"
         },
@@ -317,11 +317,11 @@
             }
           ],
           "answer": "u",
-          "hint": "Use consistent units. Average speed uses the total distance and total time.",
+          "hint": "The standard symbols distinguish initial and final velocity.",
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. u"
         },
@@ -347,7 +347,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -369,7 +369,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -389,16 +389,16 @@
               "incorrectFeedback": "15 / 0.75 = 20 km h⁻¹.",
               "ao": "AO2",
               "ecf": {
-                "operation": "constant-divided-by",
+                "operation": "divide",
                 "inputs": [
+                  "s0",
                   "s1"
-                ],
-                "constant": 15
+                ]
               },
               "id": "s2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -411,7 +411,7 @@
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 6 + 9 = 15 km.\n2. (15 + 30) / 60 = 0.75 h.\n3. 15 / 0.75 = 20 km h⁻¹."
         },
@@ -437,7 +437,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -459,7 +459,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -501,11 +501,11 @@
           "interaction": "scaffolded-calculation",
           "marks": 3,
           "maxMarks": 3,
-          "hint": "Use consistent units. Average speed uses the total distance and total time.",
+          "hint": "Distance is the total path length; displacement accounts for direction.",
           "specRefs": [
             "B1.1–B1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 120 + 45 = 165 m.\n2. 120 − 45 = 75 m.\n3. North"
         },
@@ -531,7 +531,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -560,7 +560,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -599,7 +599,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -621,7 +621,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -759,7 +759,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -781,7 +781,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -803,7 +803,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -984,7 +984,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1059,8 +1059,8 @@
               "ao": "AO3",
               "id": "s0",
               "domain": {
-                "minExclusive": -1000000000.0,
-                "maxInclusive": 1000000000.0
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1196,6 +1196,240 @@
           "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. A greater magnitude of velocity.\n2. Velocity is constant, so acceleration is zero."
+        },
+        {
+          "id": "F02A5",
+          "kind": "scaffold",
+          "prompt": "Use the displacement–time graph for a trolley.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "Describe the motion from 4 to 8 s.",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "The trolley is stationary.",
+                  "feedback": "The trolley is stationary."
+                },
+                {
+                  "id": "1",
+                  "text": "It accelerates forwards.",
+                  "feedback": "The trolley is stationary."
+                },
+                {
+                  "id": "2",
+                  "text": "It moves backwards.",
+                  "feedback": "The trolley is stationary."
+                },
+                {
+                  "id": "3",
+                  "text": "It moves at 8 m s⁻¹.",
+                  "feedback": "The trolley is stationary."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "The trolley is stationary.",
+              "ao": "AO3",
+              "id": "s0"
+            },
+            {
+              "type": "numeric",
+              "prompt": "Find the velocity from 0 to 4 s.",
+              "marks": 1,
+              "answer": {
+                "value": 2,
+                "unit": "m s⁻¹",
+                "absoluteTolerance": 0.01,
+                "allowedUnits": {
+                  "m s⁻¹": 1
+                }
+              },
+              "modelAnswer": "Gradient = 8 ÷ 4 = 2 m s⁻¹.",
+              "correctFeedback": "Gradient = 8 ÷ 4 = 2 m s⁻¹.",
+              "incorrectFeedback": "Gradient = 8 ÷ 4 = 2 m s⁻¹.",
+              "ao": "AO3",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s1"
+            }
+          ],
+          "hint": "Read the vertical axis and compare displacement at the start and end of each interval.",
+          "specRefs": [
+            "B1.3.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. The trolley is stationary.\n2. Gradient = 8 ÷ 4 = 2 m s⁻¹.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 290\"><rect width=\"560\" height=\"290\" fill=\"white\"/><path d=\"M60 35V225H515\" fill=\"none\" stroke=\"#18251e\"/><polyline points=\"60,225.0 280,45.0 500,45.0\" fill=\"none\" stroke=\"#105640\" stroke-width=\"3\"/><g font-family=\"sans-serif\" font-size=\"14\" fill=\"#18251e\"><text x=\"60\" y=\"246\" text-anchor=\"middle\">0</text><text x=\"280\" y=\"246\" text-anchor=\"middle\">4</text><text x=\"500\" y=\"246\" text-anchor=\"middle\">8</text><text x=\"50\" y=\"230\" text-anchor=\"end\">0</text><text x=\"50\" y=\"140\" text-anchor=\"end\">4</text><text x=\"50\" y=\"50\" text-anchor=\"end\">8</text><text x=\"280\" y=\"278\" text-anchor=\"middle\">Time / s</text><text transform=\"translate(16 145) rotate(-90)\" text-anchor=\"middle\">Displacement / m</text></g></svg>",
+            "description": "Displacement–time graph: straight segments join (0 s, 0 m), (4 s, 8 m), and (8 s, 8 m)."
+          }
+        },
+        {
+          "id": "F02A6",
+          "kind": "scaffold",
+          "prompt": "A displacement–time graph is a straight upward-sloping line from 0 to 6 s.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "What does this tell you about velocity?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Velocity is constant and positive.",
+                  "feedback": "Velocity is constant and positive."
+                },
+                {
+                  "id": "1",
+                  "text": "Velocity is increasing.",
+                  "feedback": "Velocity is constant and positive."
+                },
+                {
+                  "id": "2",
+                  "text": "Velocity is zero.",
+                  "feedback": "Velocity is constant and positive."
+                },
+                {
+                  "id": "3",
+                  "text": "Velocity must be negative.",
+                  "feedback": "Velocity is constant and positive."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Velocity is constant and positive.",
+              "ao": "AO3",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "What is the resultant force during this interval?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Zero, because velocity is constant.",
+                  "feedback": "Zero, because velocity is constant."
+                },
+                {
+                  "id": "1",
+                  "text": "Forwards, because the object is moving.",
+                  "feedback": "Zero, because velocity is constant."
+                },
+                {
+                  "id": "2",
+                  "text": "Backwards, because displacement is increasing.",
+                  "feedback": "Zero, because velocity is constant."
+                },
+                {
+                  "id": "3",
+                  "text": "It must increase throughout.",
+                  "feedback": "Zero, because velocity is constant."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Zero, because velocity is constant.",
+              "ao": "AO3",
+              "id": "s1"
+            }
+          ],
+          "hint": "A straight displacement–time graph has constant gradient.",
+          "specRefs": [
+            "B1.3.3",
+            "B2.7"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. Velocity is constant and positive.\n2. Zero, because velocity is constant."
+        },
+        {
+          "id": "F02A7",
+          "kind": "scaffold",
+          "prompt": "On a displacement–time graph, displacement increases but the gradient becomes smaller while remaining positive.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "How does the object move?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It moves in the positive direction while slowing down.",
+                  "feedback": "It moves in the positive direction while slowing down."
+                },
+                {
+                  "id": "1",
+                  "text": "It moves in the positive direction and speeds up.",
+                  "feedback": "It moves in the positive direction while slowing down."
+                },
+                {
+                  "id": "2",
+                  "text": "It remains stationary throughout.",
+                  "feedback": "It moves in the positive direction while slowing down."
+                },
+                {
+                  "id": "3",
+                  "text": "It moves in the negative direction.",
+                  "feedback": "It moves in the positive direction while slowing down."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It moves in the positive direction while slowing down.",
+              "ao": "AO3",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which direction is its acceleration during this interval?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Negative, opposite to its positive velocity.",
+                  "feedback": "Negative, opposite to its positive velocity."
+                },
+                {
+                  "id": "1",
+                  "text": "Positive, in the direction of its velocity.",
+                  "feedback": "Negative, opposite to its positive velocity."
+                },
+                {
+                  "id": "2",
+                  "text": "Zero throughout.",
+                  "feedback": "Negative, opposite to its positive velocity."
+                },
+                {
+                  "id": "3",
+                  "text": "It cannot be determined whether speed is changing.",
+                  "feedback": "Negative, opposite to its positive velocity."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Negative, opposite to its positive velocity.",
+              "ao": "AO3",
+              "id": "s1"
+            }
+          ],
+          "hint": "Gradient is velocity; compare how that velocity changes.",
+          "specRefs": [
+            "B1.3.3",
+            "B1.3.6"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. It moves in the positive direction while slowing down.\n2. Negative, opposite to its positive velocity."
         }
       ]
     },
@@ -1285,7 +1519,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1293,7 +1527,7 @@
               "answer": {
                 "value": 100,
                 "unit": "m",
-                "absoluteTolerance": 1.0,
+                "absoluteTolerance": 1,
                 "allowedUnits": {
                   "m": 1
                 }
@@ -1307,7 +1541,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1315,7 +1549,7 @@
               "answer": {
                 "value": 300,
                 "unit": "m",
-                "absoluteTolerance": 3.0,
+                "absoluteTolerance": 3,
                 "allowedUnits": {
                   "m": 1
                 }
@@ -1329,7 +1563,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1337,7 +1571,7 @@
               "answer": {
                 "value": 400,
                 "unit": "m",
-                "absoluteTolerance": 4.0,
+                "absoluteTolerance": 4,
                 "allowedUnits": {
                   "m": 1
                 }
@@ -1351,7 +1585,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -1581,7 +1815,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1603,7 +1837,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1625,7 +1859,7 @@
               "id": "s2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -1667,8 +1901,8 @@
               "ao": "AO2",
               "id": "s0",
               "domain": {
-                "minExclusive": -1000000000.0,
-                "maxInclusive": 1000000000.0
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1690,7 +1924,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -1729,7 +1963,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1805,7 +2039,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1827,7 +2061,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -1847,6 +2081,104 @@
           "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Speed decreases by 10 m s⁻¹ in 5 s: 10 / 5 = 2 m s⁻².\n2. Triangle area = ½ × 5 × 10 = 25 m."
+        },
+        {
+          "id": "F03A6",
+          "kind": "scaffold",
+          "prompt": "Use the velocity–time graph for a trolley.",
+          "marks": 3,
+          "maxMarks": 3,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "numeric",
+              "prompt": "Calculate distance travelled from 0 to 4 s.",
+              "marks": 1,
+              "answer": {
+                "value": 8,
+                "unit": "m",
+                "absoluteTolerance": 0.04,
+                "allowedUnits": {
+                  "m": 1
+                }
+              },
+              "modelAnswer": "Triangle area = ½ × 4 × 4 = 8 m.",
+              "correctFeedback": "Triangle area = ½ × 4 × 4 = 8 m.",
+              "incorrectFeedback": "Triangle area = ½ × 4 × 4 = 8 m.",
+              "ao": "AO3",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s0"
+            },
+            {
+              "type": "numeric",
+              "prompt": "Calculate distance travelled from 4 to 8 s.",
+              "marks": 1,
+              "answer": {
+                "value": 16,
+                "unit": "m",
+                "absoluteTolerance": 0.08,
+                "allowedUnits": {
+                  "m": 1
+                }
+              },
+              "modelAnswer": "Rectangle area = 4 × 4 = 16 m.",
+              "correctFeedback": "Rectangle area = 4 × 4 = 16 m.",
+              "incorrectFeedback": "Rectangle area = 4 × 4 = 16 m.",
+              "ao": "AO3",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s1"
+            },
+            {
+              "type": "choice",
+              "prompt": "When is the acceleration non-zero?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "From 0 to 4 s.",
+                  "feedback": "From 0 to 4 s."
+                },
+                {
+                  "id": "1",
+                  "text": "From 4 to 8 s only.",
+                  "feedback": "From 0 to 4 s."
+                },
+                {
+                  "id": "2",
+                  "text": "Throughout both intervals.",
+                  "feedback": "From 0 to 4 s."
+                },
+                {
+                  "id": "3",
+                  "text": "During neither interval.",
+                  "feedback": "From 0 to 4 s."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "From 0 to 4 s.",
+              "ao": "AO3",
+              "id": "s2"
+            }
+          ],
+          "hint": "Use area for distance and gradient for acceleration.",
+          "specRefs": [
+            "B1.3.4",
+            "B1.3.5",
+            "B1.3.6"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. Triangle area = ½ × 4 × 4 = 8 m.\n2. Rectangle area = 4 × 4 = 16 m.\n3. From 0 to 4 s.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 290\"><rect width=\"560\" height=\"290\" fill=\"white\"/><path d=\"M60 35V225H515\" fill=\"none\" stroke=\"#18251e\"/><polyline points=\"60,225.0 280,135.0 500,135.0\" fill=\"none\" stroke=\"#105640\" stroke-width=\"3\"/><g font-family=\"sans-serif\" font-size=\"14\" fill=\"#18251e\"><text x=\"60\" y=\"246\" text-anchor=\"middle\">0</text><text x=\"280\" y=\"246\" text-anchor=\"middle\">4</text><text x=\"500\" y=\"246\" text-anchor=\"middle\">8</text><text x=\"50\" y=\"230\" text-anchor=\"end\">0</text><text x=\"50\" y=\"140\" text-anchor=\"end\">4</text><text x=\"50\" y=\"50\" text-anchor=\"end\">8</text><text x=\"280\" y=\"278\" text-anchor=\"middle\">Time / s</text><text transform=\"translate(16 145) rotate(-90)\" text-anchor=\"middle\">Velocity / m s⁻¹</text></g></svg>",
+            "description": "Velocity–time graph: straight segments join (0 s, 0 m s⁻¹), (4 s, 4 m s⁻¹), and (8 s, 4 m s⁻¹)."
+          }
         }
       ]
     },
@@ -1922,7 +2254,7 @@
               "answer": {
                 "value": 0,
                 "unit": "m s⁻¹",
-                "absoluteTolerance": 1e-05,
+                "absoluteTolerance": 0.00001,
                 "allowedUnits": {
                   "m s⁻¹": 1
                 }
@@ -1935,8 +2267,8 @@
               "incorrectFeedback": "0 m s⁻¹.",
               "ao": "AO2",
               "domain": {
-                "minExclusive": -1000000000.0,
-                "maxInclusive": 1000000000.0
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1957,8 +2289,8 @@
               "incorrectFeedback": "2as = 0² − 24² = −576 m² s⁻².",
               "ao": "AO2",
               "domain": {
-                "minExclusive": -1000000000.0,
-                "maxInclusive": 1000000000.0
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -1987,7 +2319,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -2168,7 +2500,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -2190,7 +2522,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -2229,7 +2561,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -2251,7 +2583,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -2323,7 +2655,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -2393,11 +2725,11 @@
               "ao": "AO1"
             }
           ],
-          "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
+          "hint": "Consider which device detects changes in velocity.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. An accelerometer measures acceleration."
         },
@@ -2405,9 +2737,9 @@
           "id": "F05A",
           "kind": "scaffold",
           "prompt": "A trolley travels down a slope through two light gates. Each gate measures its velocity and a timer records the time between the velocity measurements.",
-          "marks": 3,
+          "marks": 4,
           "interaction": "scaffolded-calculation",
-          "maxMarks": 3,
+          "maxMarks": 4,
           "parts": [
             {
               "type": "choice",
@@ -2461,7 +2793,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -2496,15 +2828,46 @@
               "correctFeedback": "To identify anomalous results, or calculate a mean to reduce the effect of random variation.",
               "incorrectFeedback": "To identify anomalous results, or calculate a mean to reduce the effect of random variation.",
               "ao": "AO2"
+            },
+            {
+              "id": "s3",
+              "type": "choice",
+              "prompt": "Which arrangement can record the time between the two velocity readings?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Connect both light gates to the same electronic timer or data logger.",
+                  "feedback": "Connect both light gates to the same electronic timer or data logger."
+                },
+                {
+                  "id": "1",
+                  "text": "Use only the time for the trolley’s card to block the first gate.",
+                  "feedback": "Connect both light gates to the same electronic timer or data logger."
+                },
+                {
+                  "id": "2",
+                  "text": "Use a balance without measuring time.",
+                  "feedback": "Connect both light gates to the same electronic timer or data logger."
+                },
+                {
+                  "id": "3",
+                  "text": "Measure the card length without recording a time.",
+                  "feedback": "Connect both light gates to the same electronic timer or data logger."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Connect both light gates to the same electronic timer or data logger.",
+              "ao": "AO2"
             }
           ],
           "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. a = (v − u) ÷ t.\n2. 0.40 m s⁻²: (0.80 − 0.20) ÷ 1.5.\n3. To identify anomalous results, or calculate a mean to reduce the effect of random variation."
+          "workedAnswer": "1. a = (v − u) ÷ t.\n2. 0.40 m s⁻²: (0.80 − 0.20) ÷ 1.5.\n3. To identify anomalous results, or calculate a mean to reduce the effect of random variation.\n4. Connect both light gates to the same electronic timer or data logger."
         },
         {
           "id": "F05R2",
@@ -2547,11 +2910,11 @@
             }
           ],
           "answer": "detect movement for step counting",
-          "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
+          "hint": "Consider how repeated changes in motion can indicate steps.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. detect movement for step counting"
         },
@@ -2645,11 +3008,11 @@
             }
           ],
           "answer": "changes in motion or orientation",
-          "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
+          "hint": "Consider what changes when a device moves or turns.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. changes in motion or orientation"
         },
@@ -2675,7 +3038,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -2717,11 +3080,11 @@
           "interaction": "scaffolded-calculation",
           "marks": 2,
           "maxMarks": 2,
-          "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
+          "hint": "Calculate the mean of the readings, then consider a timing method that avoids human reaction time.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. (1.20 + 1.18 + 1.22) / 3 = 1.20 s.\n2. Use light gates and electronic timing."
         },
@@ -2747,7 +3110,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -2776,7 +3139,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -2868,13 +3231,191 @@
           "interaction": "answer-completion",
           "marks": 2,
           "maxMarks": 2,
-          "hint": "Acceleration is change in velocity divided by time. Consider what each measurement tells you.",
+          "hint": "Consider how acceleration patterns reveal movement.",
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Identify repeated acceleration patterns caused by walking.\n2. It can flag a reading affected by movement for repetition."
+        },
+        {
+          "id": "F05A5",
+          "kind": "scaffold",
+          "prompt": "A student needs to measure a trolley’s acceleration down a ramp.",
+          "marks": 3,
+          "maxMarks": 3,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "Which equipment can measure its velocity at two positions?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Two light gates with a timer or data logger.",
+                  "feedback": "Two light gates with a timer or data logger."
+                },
+                {
+                  "id": "1",
+                  "text": "A balance only.",
+                  "feedback": "Two light gates with a timer or data logger."
+                },
+                {
+                  "id": "2",
+                  "text": "A thermometer only.",
+                  "feedback": "Two light gates with a timer or data logger."
+                },
+                {
+                  "id": "3",
+                  "text": "A force meter without any time measurement.",
+                  "feedback": "Two light gates with a timer or data logger."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Two light gates with a timer or data logger.",
+              "ao": "AO2",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which measurements are needed to calculate acceleration?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Two velocities and the time interval between them.",
+                  "feedback": "Two velocities and the time interval between them."
+                },
+                {
+                  "id": "1",
+                  "text": "Two masses and a distance.",
+                  "feedback": "Two velocities and the time interval between them."
+                },
+                {
+                  "id": "2",
+                  "text": "Two forces without time.",
+                  "feedback": "Two velocities and the time interval between them."
+                },
+                {
+                  "id": "3",
+                  "text": "A temperature and a mass.",
+                  "feedback": "Two velocities and the time interval between them."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Two velocities and the time interval between them.",
+              "ao": "AO2",
+              "id": "s1"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why repeat the measurements?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "To identify anomalies and calculate a mean.",
+                  "feedback": "To identify anomalies and calculate a mean."
+                },
+                {
+                  "id": "1",
+                  "text": "To guarantee zero systematic error.",
+                  "feedback": "To identify anomalies and calculate a mean."
+                },
+                {
+                  "id": "2",
+                  "text": "To change the trolley’s mass each time.",
+                  "feedback": "To identify anomalies and calculate a mean."
+                },
+                {
+                  "id": "3",
+                  "text": "To remove the need to record times.",
+                  "feedback": "To identify anomalies and calculate a mean."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "To identify anomalies and calculate a mean.",
+              "ao": "AO2",
+              "id": "s2"
+            }
+          ],
+          "hint": "Use change in velocity divided by the time between measurements.",
+          "specRefs": [
+            "B1.3.7"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. Two light gates with a timer or data logger.\n2. Two velocities and the time interval between them.\n3. To identify anomalies and calculate a mean."
+        },
+        {
+          "id": "F05A6",
+          "kind": "scaffold",
+          "prompt": "Two light gates measure velocities of 0.40 m s⁻¹ and 1.00 m s⁻¹, 2.0 s apart.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "numeric",
+              "prompt": "Calculate the change in velocity.",
+              "marks": 1,
+              "answer": {
+                "value": 0.6,
+                "unit": "m s⁻¹",
+                "absoluteTolerance": 0.003,
+                "allowedUnits": {
+                  "m s⁻¹": 1
+                }
+              },
+              "modelAnswer": "1.00 − 0.40 = 0.60 m s⁻¹.",
+              "correctFeedback": "1.00 − 0.40 = 0.60 m s⁻¹.",
+              "incorrectFeedback": "1.00 − 0.40 = 0.60 m s⁻¹.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s0"
+            },
+            {
+              "type": "numeric",
+              "prompt": "Calculate the acceleration.",
+              "marks": 1,
+              "answer": {
+                "value": 0.3,
+                "unit": "m s⁻²",
+                "absoluteTolerance": 0.0015,
+                "allowedUnits": {
+                  "m s⁻²": 1
+                }
+              },
+              "modelAnswer": "0.60 ÷ 2.0 = 0.30 m s⁻².",
+              "correctFeedback": "0.60 ÷ 2.0 = 0.30 m s⁻².",
+              "incorrectFeedback": "0.60 ÷ 2.0 = 0.30 m s⁻².",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s1",
+              "ecf": {
+                "operation": "divide-constant",
+                "inputs": [
+                  "s0"
+                ],
+                "constant": 2
+              }
+            }
+          ],
+          "hint": "Acceleration is change in velocity divided by time.",
+          "specRefs": [
+            "B1.3.7"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. 1.00 − 0.40 = 0.60 m s⁻¹.\n2. 0.60 ÷ 2.0 = 0.30 m s⁻²."
         }
       ]
     },
@@ -2950,7 +3491,7 @@
               "answer": {
                 "value": 600,
                 "unit": "N",
-                "absoluteTolerance": 6.0,
+                "absoluteTolerance": 6,
                 "allowedUnits": {
                   "N": 1
                 }
@@ -2964,7 +3505,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -3181,11 +3722,11 @@
             }
           ],
           "answer": "Motion remains unchanged unless a resultant force acts",
-          "hint": "Add forces in the same direction and subtract opposing forces.",
+          "hint": "Consider what happens when the resultant force is zero.",
           "specRefs": [
             "B2.1; B2.7"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Motion remains unchanged unless a resultant force acts"
         },
@@ -3199,7 +3740,7 @@
               "answer": {
                 "value": 0,
                 "unit": "N",
-                "absoluteTolerance": 1e-06,
+                "absoluteTolerance": 0.000001,
                 "allowedUnits": {
                   "N": 1
                 }
@@ -3210,8 +3751,8 @@
               "ao": "AO2",
               "id": "s0",
               "domain": {
-                "minExclusive": -1000000000.0,
-                "maxInclusive": 1000000000.0
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -3366,7 +3907,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -3556,10 +4097,14 @@
               "answer": {
                 "value": 176.4,
                 "unit": "N",
-                "absoluteTolerance": 4,
+                "absoluteTolerance": 0.05,
                 "allowedUnits": {
                   "N": 1
-                }
+                },
+                "alternateValues": [
+                  176,
+                  180
+                ]
               },
               "id": "s1",
               "prompt": "Calculate the suitcase’s weight.",
@@ -3570,7 +4115,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -3578,7 +4123,7 @@
           "specRefs": [
             "B2.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. W = mg.\n2. 176.4 N: 18 × 9.8. Accept 176 N or 180 N if appropriately rounded."
         },
@@ -3751,7 +4296,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -3823,7 +4368,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4044,7 +4589,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4066,7 +4611,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4313,7 +4858,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -4352,7 +4897,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4381,7 +4926,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -4480,6 +5025,77 @@
           "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 11 N\n2. The limiting static friction is greater than kinetic friction."
+        },
+        {
+          "id": "F08A5",
+          "kind": "scaffold",
+          "prompt": "A horizontal block needs 18 N to start moving and 12 N to keep moving at constant velocity. Its normal reaction is 60 N.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "Which reading is used for the coefficient of static friction?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "18 N.",
+                  "feedback": "18 N."
+                },
+                {
+                  "id": "1",
+                  "text": "12 N.",
+                  "feedback": "18 N."
+                },
+                {
+                  "id": "2",
+                  "text": "60 N.",
+                  "feedback": "18 N."
+                },
+                {
+                  "id": "3",
+                  "text": "The difference 6 N.",
+                  "feedback": "18 N."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "18 N.",
+              "ao": "AO2",
+              "id": "s0"
+            },
+            {
+              "type": "numeric",
+              "prompt": "Calculate the coefficient of kinetic friction.",
+              "marks": 1,
+              "answer": {
+                "value": 0.2,
+                "unit": "no unit",
+                "absoluteTolerance": 0.001,
+                "allowedUnits": {
+                  "no unit": 1
+                }
+              },
+              "modelAnswer": "12 ÷ 60 = 0.20; the coefficient has no unit.",
+              "correctFeedback": "12 ÷ 60 = 0.20; the coefficient has no unit.",
+              "incorrectFeedback": "12 ÷ 60 = 0.20; the coefficient has no unit.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s1"
+            }
+          ],
+          "hint": "The limiting static reading is taken just before motion; kinetic uses steady motion.",
+          "specRefs": [
+            "B2.3.1",
+            "B2.3.2"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. 18 N.\n2. 12 ÷ 60 = 0.20; the coefficient has no unit."
         }
       ]
     },
@@ -4555,7 +5171,7 @@
               "answer": {
                 "value": 1800,
                 "unit": "N",
-                "absoluteTolerance": 18.0,
+                "absoluteTolerance": 18,
                 "allowedUnits": {
                   "N": 1
                 }
@@ -4569,7 +5185,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4634,7 +5250,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -4815,7 +5431,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4837,7 +5453,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -4876,7 +5492,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4898,7 +5514,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -4970,7 +5586,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5094,13 +5710,13 @@
               "answer": {
                 "value": 24000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 240.0,
+                "absoluteTolerance": 240,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
               },
               "id": "s0",
-              "prompt": "Calculate the van’s momentum.",
+              "prompt": "Calculate the magnitude of the van’s momentum.",
               "marks": 1,
               "modelAnswer": "24 000 kg m s⁻¹: 2000 × 12.",
               "correctFeedback": "24 000 kg m s⁻¹: 2000 × 12.",
@@ -5108,7 +5724,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5116,13 +5732,13 @@
               "answer": {
                 "value": 30000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 300.0,
+                "absoluteTolerance": 300,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
               },
               "id": "s1",
-              "prompt": "Calculate the lorry’s momentum.",
+              "prompt": "Calculate the magnitude of the lorry’s momentum.",
               "marks": 1,
               "modelAnswer": "30 000 kg m s⁻¹: 6000 × 5.0.",
               "correctFeedback": "30 000 kg m s⁻¹: 6000 × 5.0.",
@@ -5130,7 +5746,7 @@
               "ao": "AO2",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5159,7 +5775,7 @@
               ],
               "correctOptionId": "0",
               "id": "s2",
-              "prompt": "Which vehicle has greater momentum?",
+              "prompt": "Which vehicle has the greater momentum magnitude?",
               "marks": 1,
               "modelAnswer": "The lorry, despite travelling more slowly.",
               "correctFeedback": "The lorry, despite travelling more slowly.",
@@ -5167,11 +5783,11 @@
               "ao": "AO2"
             }
           ],
-          "hint": "Use p = mv, including direction when comparing momenta.",
+          "hint": "Use p = mv to compare momentum magnitudes. Momentum is a vector.",
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 24 000 kg m s⁻¹: 2000 × 12.\n2. 30 000 kg m s⁻¹: 6000 × 5.0.\n3. The lorry, despite travelling more slowly."
         },
@@ -5344,7 +5960,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5399,12 +6015,12 @@
           "parts": [
             {
               "type": "numeric",
-              "prompt": "Calculate the car’s momentum.",
+              "prompt": "Calculate the magnitude of the car’s momentum.",
               "marks": 1,
               "answer": {
                 "value": 30000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 150.0,
+                "absoluteTolerance": 150,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
@@ -5416,17 +6032,17 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
               "type": "numeric",
-              "prompt": "Calculate the van’s momentum.",
+              "prompt": "Calculate the magnitude of the van’s momentum.",
               "marks": 1,
               "answer": {
                 "value": 30000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 150.0,
+                "absoluteTolerance": 150,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
@@ -5438,7 +6054,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5448,29 +6064,29 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "They are equal because equal momentum changes occur in equal times.",
-                  "feedback": "They are equal because equal momentum changes occur in equal times."
+                  "text": "They are equal because equal momentum-change magnitudes occur in equal times.",
+                  "feedback": "They are equal because equal momentum-change magnitudes occur in equal times."
                 },
                 {
                   "id": "1",
                   "text": "The faster car always needs the greater force.",
-                  "feedback": "They are equal because equal momentum changes occur in equal times."
+                  "feedback": "They are equal because equal momentum-change magnitudes occur in equal times."
                 },
                 {
                   "id": "2",
                   "text": "The heavier van always needs the greater force.",
-                  "feedback": "They are equal because equal momentum changes occur in equal times."
+                  "feedback": "They are equal because equal momentum-change magnitudes occur in equal times."
                 },
                 {
                   "id": "3",
                   "text": "No force is needed because their momenta are equal.",
-                  "feedback": "They are equal because equal momentum changes occur in equal times."
+                  "feedback": "They are equal because equal momentum-change magnitudes occur in equal times."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "They are equal because equal momentum changes occur in equal times.",
-              "correctFeedback": "They are equal because equal momentum changes occur in equal times.",
-              "incorrectFeedback": "They are equal because equal momentum changes occur in equal times.",
+              "modelAnswer": "They are equal because equal momentum-change magnitudes occur in equal times.",
+              "correctFeedback": "They are equal because equal momentum-change magnitudes occur in equal times.",
+              "incorrectFeedback": "They are equal because equal momentum-change magnitudes occur in equal times.",
               "ao": "AO3",
               "id": "s2"
             }
@@ -5480,25 +6096,25 @@
           "interaction": "scaffolded-calculation",
           "marks": 3,
           "maxMarks": 3,
-          "hint": "Use p = mv, including direction when comparing momenta.",
+          "hint": "Use p = mv to compare momentum magnitudes. Momentum is a vector.",
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. 1000 × 30 = 30 000 kg m s⁻¹.\n2. 3000 × 10 = 30 000 kg m s⁻¹.\n3. They are equal because equal momentum changes occur in equal times."
+          "workedAnswer": "1. 1000 × 30 = 30 000 kg m s⁻¹.\n2. 3000 × 10 = 30 000 kg m s⁻¹.\n3. They are equal because equal momentum-change magnitudes occur in equal times."
         },
         {
           "prompt": "A 20 000 kg goods vehicle travels at 4 m s⁻¹. A 2000 kg van travels at 20 m s⁻¹.",
           "parts": [
             {
               "type": "numeric",
-              "prompt": "Calculate the goods vehicle’s momentum.",
+              "prompt": "Calculate the magnitude of the goods vehicle’s momentum.",
               "marks": 1,
               "answer": {
                 "value": 80000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 400.0,
+                "absoluteTolerance": 400,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
@@ -5510,17 +6126,17 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
               "type": "numeric",
-              "prompt": "Calculate the van’s momentum.",
+              "prompt": "Calculate the magnitude of the van’s momentum.",
               "marks": 1,
               "answer": {
                 "value": 40000,
                 "unit": "kg m s⁻¹",
-                "absoluteTolerance": 200.0,
+                "absoluteTolerance": 200,
                 "allowedUnits": {
                   "kg m s⁻¹": 1
                 }
@@ -5532,7 +6148,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -5574,11 +6190,11 @@
           "interaction": "scaffolded-calculation",
           "marks": 3,
           "maxMarks": 3,
-          "hint": "Use p = mv, including direction when comparing momenta.",
+          "hint": "Use p = mv to compare momentum magnitudes. Momentum is a vector.",
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 20 000 × 4 = 80 000 kg m s⁻¹.\n2. 2000 × 20 = 40 000 kg m s⁻¹.\n3. The goods vehicle needs twice the average stopping force."
         }
@@ -5727,7 +6343,7 @@
                 },
                 {
                   "id": "2",
-                  "text": "The belt removes the passenger’s mass, reducing the force.",
+                  "text": "The average force falls because the passenger’s change in momentum is smaller.",
                   "feedback": "The average force decreases because the same momentum change occurs over a longer time."
                 },
                 {
@@ -5788,7 +6404,7 @@
           "specRefs": [
             "B2.5; B2.5.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. It decreases to zero.\n2. It increases the stopping time.\n3. The average force decreases because the same momentum change occurs over a longer time.\n4. A smaller force acts on the passenger’s body, reducing the risk of injury."
         },
@@ -5931,11 +6547,11 @@
             }
           ],
           "answer": "A motorcycle helmet",
-          "hint": "Use average force = change in momentum ÷ time.",
+          "hint": "Consider how protective equipment can spread a contact force.",
           "specRefs": [
             "B2.5; B2.5.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. A motorcycle helmet"
         },
@@ -5980,11 +6596,11 @@
             }
           ],
           "answer": "preserve survival space",
-          "hint": "Use average force = change in momentum ÷ time.",
+          "hint": "Think about the space around passengers after a collision.",
           "specRefs": [
             "B2.5; B2.5.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. preserve survival space"
         },
@@ -6010,7 +6626,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -6039,7 +6655,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             }
           ],
@@ -6066,7 +6682,7 @@
               "answer": {
                 "value": 9000,
                 "unit": "N",
-                "absoluteTolerance": 45.0,
+                "absoluteTolerance": 45,
                 "allowedUnits": {
                   "N": 1
                 }
@@ -6078,7 +6694,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -6088,7 +6704,7 @@
               "answer": {
                 "value": 3000,
                 "unit": "N",
-                "absoluteTolerance": 15.0,
+                "absoluteTolerance": 15,
                 "allowedUnits": {
                   "N": 1
                 }
@@ -6100,7 +6716,7 @@
               "id": "s1",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -6381,6 +6997,420 @@
           "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. They deform, increasing the stopping time of the vehicle.\n2. To preserve space around occupants.\n3. They restrain occupants and bring them to rest with the vehicle."
+        },
+        {
+          "id": "F11A6",
+          "kind": "scaffold",
+          "prompt": "An airbag cushions a passenger whose momentum changes by the same amount in a crash.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "How does an airbag affect the stopping time?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It increases the stopping time.",
+                  "feedback": "It increases the stopping time."
+                },
+                {
+                  "id": "1",
+                  "text": "It decreases the stopping time.",
+                  "feedback": "It increases the stopping time."
+                },
+                {
+                  "id": "2",
+                  "text": "It leaves the stopping time unchanged in every crash.",
+                  "feedback": "It increases the stopping time."
+                },
+                {
+                  "id": "3",
+                  "text": "It removes the passenger’s mass.",
+                  "feedback": "It increases the stopping time."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It increases the stopping time.",
+              "ao": "AO2",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "For the same momentum change, what happens to the average force?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It decreases.",
+                  "feedback": "It decreases."
+                },
+                {
+                  "id": "1",
+                  "text": "It increases.",
+                  "feedback": "It decreases."
+                },
+                {
+                  "id": "2",
+                  "text": "It must remain the same.",
+                  "feedback": "It decreases."
+                },
+                {
+                  "id": "3",
+                  "text": "It becomes infinite.",
+                  "feedback": "It decreases."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It decreases.",
+              "ao": "AO2",
+              "id": "s1"
+            }
+          ],
+          "hint": "Use average force = change in momentum ÷ time.",
+          "specRefs": [
+            "B2.5",
+            "B2.5.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. It increases the stopping time.\n2. It decreases."
+        },
+        {
+          "id": "F11A7",
+          "kind": "scaffold",
+          "prompt": "A passenger uses a seat belt and an airbag.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "What does the seat belt principally do?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It restrains the passenger and helps bring them to rest with the vehicle.",
+                  "feedback": "It restrains the passenger and helps bring them to rest with the vehicle."
+                },
+                {
+                  "id": "1",
+                  "text": "It guarantees no injury in every crash.",
+                  "feedback": "It restrains the passenger and helps bring them to rest with the vehicle."
+                },
+                {
+                  "id": "2",
+                  "text": "It removes the passenger’s momentum before a crash.",
+                  "feedback": "It restrains the passenger and helps bring them to rest with the vehicle."
+                },
+                {
+                  "id": "3",
+                  "text": "It makes the car unable to decelerate.",
+                  "feedback": "It restrains the passenger and helps bring them to rest with the vehicle."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It restrains the passenger and helps bring them to rest with the vehicle.",
+              "ao": "AO2",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "What is an additional role of the airbag?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It cushions contact with the interior and can extend stopping time.",
+                  "feedback": "It cushions contact with the interior and can extend stopping time."
+                },
+                {
+                  "id": "1",
+                  "text": "It replaces the need for a seat belt in all crashes.",
+                  "feedback": "It cushions contact with the interior and can extend stopping time."
+                },
+                {
+                  "id": "2",
+                  "text": "It stops the vehicle before impact.",
+                  "feedback": "It cushions contact with the interior and can extend stopping time."
+                },
+                {
+                  "id": "3",
+                  "text": "It prevents all forces acting on the passenger.",
+                  "feedback": "It cushions contact with the interior and can extend stopping time."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It cushions contact with the interior and can extend stopping time.",
+              "ao": "AO2",
+              "id": "s1"
+            }
+          ],
+          "hint": "Think about restraint and cushioning as separate roles.",
+          "specRefs": [
+            "B2.5.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. It restrains the passenger and helps bring them to rest with the vehicle.\n2. It cushions contact with the interior and can extend stopping time."
+        },
+        {
+          "id": "F11A8",
+          "kind": "scaffold",
+          "prompt": "Two identical passengers each experience a momentum-change magnitude of 600 kg m s⁻¹. A stops in 0.10 s and B in 0.20 s.",
+          "marks": 3,
+          "maxMarks": 3,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "numeric",
+              "prompt": "Calculate the average stopping-force magnitude for A.",
+              "marks": 1,
+              "answer": {
+                "value": 6000,
+                "unit": "N",
+                "absoluteTolerance": 30,
+                "allowedUnits": {
+                  "N": 1
+                }
+              },
+              "modelAnswer": "600 ÷ 0.10 = 6000 N.",
+              "correctFeedback": "600 ÷ 0.10 = 6000 N.",
+              "incorrectFeedback": "600 ÷ 0.10 = 6000 N.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s0"
+            },
+            {
+              "type": "numeric",
+              "prompt": "Calculate the average stopping-force magnitude for B.",
+              "marks": 1,
+              "answer": {
+                "value": 3000,
+                "unit": "N",
+                "absoluteTolerance": 15,
+                "allowedUnits": {
+                  "N": 1
+                }
+              },
+              "modelAnswer": "600 ÷ 0.20 = 3000 N.",
+              "correctFeedback": "600 ÷ 0.20 = 3000 N.",
+              "incorrectFeedback": "600 ÷ 0.20 = 3000 N.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s1"
+            },
+            {
+              "type": "choice",
+              "prompt": "Compare the forces.",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "B experiences half the average force of A.",
+                  "feedback": "B experiences half the average force of A."
+                },
+                {
+                  "id": "1",
+                  "text": "B experiences twice the average force.",
+                  "feedback": "B experiences half the average force of A."
+                },
+                {
+                  "id": "2",
+                  "text": "The forces are equal.",
+                  "feedback": "B experiences half the average force of A."
+                },
+                {
+                  "id": "3",
+                  "text": "The times do not affect average force.",
+                  "feedback": "B experiences half the average force of A."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "B experiences half the average force of A.",
+              "ao": "AO2",
+              "id": "s2"
+            }
+          ],
+          "hint": "Divide the same momentum change by each stopping time.",
+          "specRefs": [
+            "B2.5",
+            "B2.5.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. 600 ÷ 0.10 = 6000 N.\n2. 600 ÷ 0.20 = 3000 N.\n3. B experiences half the average force of A."
+        },
+        {
+          "id": "F11A9",
+          "kind": "scaffold",
+          "prompt": "A force–time graph shows two simplified impact-force traces. A has a peak of 8 kN over 0–40 ms; B has a peak of 4 kN over 0–80 ms.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "Which trace has the lower peak force?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Trace B.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "1",
+                  "text": "Trace A.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "2",
+                  "text": "Both peaks are equal.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "3",
+                  "text": "The graph does not show peak force.",
+                  "feedback": "Trace B."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Trace B.",
+              "ao": "AO3",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which impact lasts longer?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Trace B.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "1",
+                  "text": "Trace A.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "2",
+                  "text": "Both last the same time.",
+                  "feedback": "Trace B."
+                },
+                {
+                  "id": "3",
+                  "text": "Neither impact lasts any time.",
+                  "feedback": "Trace B."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Trace B.",
+              "ao": "AO3",
+              "id": "s1"
+            }
+          ],
+          "hint": "Read the peak height and the time at which each trace returns to zero.",
+          "specRefs": [
+            "B2.5.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. Trace B.\n2. Trace B.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 290\"><rect width=\"560\" height=\"290\" fill=\"white\"/><path d=\"M60 35V225H515\" fill=\"none\" stroke=\"#18251e\"/><path d=\"M60 225 L280 135 L500 225\" fill=\"none\" stroke=\"#105640\" stroke-width=\"3\"/><path d=\"M60 225 L170 45 L280 225\" fill=\"none\" stroke=\"#795337\" stroke-width=\"3\" stroke-dasharray=\"8 4\"/><g font-family=\"sans-serif\" font-size=\"14\" fill=\"#18251e\"><text x=\"60\" y=\"246\">0</text><text x=\"280\" y=\"246\">40</text><text x=\"500\" y=\"246\">80</text><text x=\"48\" y=\"230\">0</text><text x=\"48\" y=\"140\">4</text><text x=\"48\" y=\"50\">8</text><text x=\"280\" y=\"278\" text-anchor=\"middle\">Time / ms</text><text transform=\"translate(16 145) rotate(-90)\" text-anchor=\"middle\">Force / kN</text><text x=\"175\" y=\"38\">A</text><text x=\"285\" y=\"128\">B</text></g></svg>",
+            "description": "Trace A rises from zero to 8 kN at 20 ms, then returns to zero at 40 ms. Trace B rises to 4 kN at 40 ms, then returns to zero at 80 ms."
+          }
+        },
+        {
+          "id": "F11A10",
+          "kind": "scaffold",
+          "prompt": "A car has crumple zones and a rigid passenger cell.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "What is the function of a crumple zone?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It deforms and increases the time over which the car stops.",
+                  "feedback": "It deforms and increases the time over which the car stops."
+                },
+                {
+                  "id": "1",
+                  "text": "It keeps every part of the vehicle completely rigid.",
+                  "feedback": "It deforms and increases the time over which the car stops."
+                },
+                {
+                  "id": "2",
+                  "text": "It prevents any change in momentum.",
+                  "feedback": "It deforms and increases the time over which the car stops."
+                },
+                {
+                  "id": "3",
+                  "text": "It removes the need for seat belts.",
+                  "feedback": "It deforms and increases the time over which the car stops."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "It deforms and increases the time over which the car stops.",
+              "ao": "AO2",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why keep the passenger cell rigid?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "To help preserve survival space around occupants.",
+                  "feedback": "To help preserve survival space around occupants."
+                },
+                {
+                  "id": "1",
+                  "text": "To make the crumple zone rigid as well.",
+                  "feedback": "To help preserve survival space around occupants."
+                },
+                {
+                  "id": "2",
+                  "text": "To prevent gravity from acting.",
+                  "feedback": "To help preserve survival space around occupants."
+                },
+                {
+                  "id": "3",
+                  "text": "To guarantee zero force on occupants.",
+                  "feedback": "To help preserve survival space around occupants."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "To help preserve survival space around occupants.",
+              "ao": "AO2",
+              "id": "s1"
+            }
+          ],
+          "hint": "Consider the different roles of deformation and survival space.",
+          "specRefs": [
+            "B2.5.3"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. It deforms and increases the time over which the car stops.\n2. To help preserve survival space around occupants."
         }
       ]
     },
@@ -6728,7 +7758,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -7195,11 +8225,11 @@
             }
           ],
           "answer": "increases",
-          "hint": "Compare the upward drag with the downward weight.",
+          "hint": "Consider how resistive forces vary with speed.",
           "specRefs": [
             "B2.7.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. increases"
         },
@@ -7244,11 +8274,11 @@
             }
           ],
           "answer": "constant velocity with balanced forces",
-          "hint": "Compare the upward drag with the downward weight.",
+          "hint": "At terminal velocity the resultant force is zero.",
           "specRefs": [
             "B2.7.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. constant velocity with balanced forces"
         },
@@ -7293,11 +8323,11 @@
             }
           ],
           "answer": "the upward resistive forces balance its weight",
-          "hint": "Compare the upward drag with the downward weight.",
+          "hint": "Consider all upward forces, including drag and upthrust.",
           "specRefs": [
             "B2.7.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. the upward resistive forces balance its weight"
         },
@@ -7323,7 +8353,7 @@
               "id": "s0",
               "domain": {
                 "minExclusive": 0,
-                "maxInclusive": 1000000000.0
+                "maxInclusive": 1000000000
               }
             },
             {
@@ -7411,7 +8441,7 @@
             },
             {
               "type": "choice",
-              "prompt": "If the same driving force exceeds resistance at a lower speed, what happens?",
+              "prompt": "If the same driving force exceeds resistance at a lower speed, and resistance increases until it balances the drive, what happens?",
               "marks": 1,
               "options": [
                 {
@@ -7448,11 +8478,11 @@
           "interaction": "answer-completion",
           "marks": 2,
           "maxMarks": 2,
-          "hint": "Compare the upward drag with the downward weight.",
+          "hint": "Compare the forward driving force with the backward resistive forces.",
           "specRefs": [
             "B2.7.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. It is zero because the forces balance.\n2. The vehicle accelerates until increasing resistance balances the drive."
         },
@@ -7564,31 +8594,180 @@
           "interaction": "answer-completion",
           "marks": 3,
           "maxMarks": 3,
-          "hint": "Compare the upward drag with the downward weight.",
+          "hint": "At terminal velocity the total upward forces balance weight.",
           "specRefs": [
             "B2.7.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Ball B\n2. The total upward forces equal its weight.\n3. Its upward forces balance weight at a lower speed."
+        },
+        {
+          "id": "F13A5",
+          "kind": "scaffold",
+          "prompt": "At 40 km h⁻¹ a car uses 4.0 L per 100 km. At 60 km h⁻¹ it uses 5.5 L per 100 km.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "answer-completion",
+          "parts": [
+            {
+              "type": "choice",
+              "prompt": "What trend do these data show?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Fuel consumption per 100 km is greater at the higher speed.",
+                  "feedback": "Fuel consumption per 100 km is greater at the higher speed."
+                },
+                {
+                  "id": "1",
+                  "text": "Consumption falls as speed rises.",
+                  "feedback": "Fuel consumption per 100 km is greater at the higher speed."
+                },
+                {
+                  "id": "2",
+                  "text": "Consumption is unchanged.",
+                  "feedback": "Fuel consumption per 100 km is greater at the higher speed."
+                },
+                {
+                  "id": "3",
+                  "text": "The car must travel a shorter total distance.",
+                  "feedback": "Fuel consumption per 100 km is greater at the higher speed."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Fuel consumption per 100 km is greater at the higher speed.",
+              "ao": "AO3",
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which explanation is consistent with the trend?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Air resistance can increase at higher speed, increasing the energy needed to travel.",
+                  "feedback": "Air resistance can increase at higher speed, increasing the energy needed to travel."
+                },
+                {
+                  "id": "1",
+                  "text": "Air resistance must disappear at higher speed.",
+                  "feedback": "Air resistance can increase at higher speed, increasing the energy needed to travel."
+                },
+                {
+                  "id": "2",
+                  "text": "The car’s mass doubles at 60 km h⁻¹.",
+                  "feedback": "Air resistance can increase at higher speed, increasing the energy needed to travel."
+                },
+                {
+                  "id": "3",
+                  "text": "Higher speed guarantees zero energy transfer to the surroundings.",
+                  "feedback": "Air resistance can increase at higher speed, increasing the energy needed to travel."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Air resistance can increase at higher speed, increasing the energy needed to travel.",
+              "ao": "AO2",
+              "id": "s1"
+            }
+          ],
+          "hint": "Compare the table values, then consider air resistance.",
+          "specRefs": [
+            "B2.7.1"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. Fuel consumption per 100 km is greater at the higher speed.\n2. Air resistance can increase at higher speed, increasing the energy needed to travel."
+        },
+        {
+          "id": "F13A6",
+          "kind": "scaffold",
+          "prompt": "A ball moves downward through a liquid. Its weight is 10 N, drag is 4 N upward and upthrust is 2 N upward.",
+          "marks": 2,
+          "maxMarks": 2,
+          "interaction": "scaffolded-calculation",
+          "parts": [
+            {
+              "type": "numeric",
+              "prompt": "Calculate the downward resultant-force magnitude.",
+              "marks": 1,
+              "answer": {
+                "value": 4,
+                "unit": "N",
+                "absoluteTolerance": 0.02,
+                "allowedUnits": {
+                  "N": 1
+                }
+              },
+              "modelAnswer": "10 − 4 − 2 = 4 N.",
+              "correctFeedback": "10 − 4 − 2 = 4 N.",
+              "incorrectFeedback": "10 − 4 − 2 = 4 N.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1000000000,
+                "maxInclusive": 1000000000
+              },
+              "id": "s0"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which condition gives terminal velocity?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "Total upward forces equal the weight.",
+                  "feedback": "Total upward forces equal the weight."
+                },
+                {
+                  "id": "1",
+                  "text": "Drag must be zero.",
+                  "feedback": "Total upward forces equal the weight."
+                },
+                {
+                  "id": "2",
+                  "text": "Weight must be zero.",
+                  "feedback": "Total upward forces equal the weight."
+                },
+                {
+                  "id": "3",
+                  "text": "The downward resultant must increase.",
+                  "feedback": "Total upward forces equal the weight."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Total upward forces equal the weight.",
+              "ao": "AO2",
+              "id": "s1"
+            }
+          ],
+          "hint": "Add both upward forces before comparing them with weight.",
+          "specRefs": [
+            "B2.7.1"
+          ],
+          "contentVersion": 1,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. 10 − 4 − 2 = 4 N.\n2. Total upward forces equal the weight."
         }
       ]
     }
   ],
   "summary": {
-    "questionCount": 110,
+    "questionCount": 124,
     "recallQuestions": 55,
-    "applicationQuestions": 55,
-    "practiceMarks": 191,
+    "applicationQuestions": 69,
+    "practiceMarks": 223,
     "aoMarks": {
       "AO1": 59,
-      "AO2": 103,
-      "AO3": 29
+      "AO2": 123,
+      "AO3": 41
     },
     "aoPercentages": {
-      "AO1": 30.9,
-      "AO2": 53.9,
-      "AO3": 15.2
+      "AO1": 26.5,
+      "AO2": 55.2,
+      "AO3": 18.4
     }
   },
   "assessmentBasis": "Specification Issue 5 December 2025 pp 51, 53–55 defines AO1–AO3 but gives no numeric Unit 3 AO weighting. AO tags are author judgements for this scaffolded practice bank; distribution is by available marks, not question count. The sample paper informs practical/data interpretation and linked explanation styles. These practice tariffs are not official examination marks."
