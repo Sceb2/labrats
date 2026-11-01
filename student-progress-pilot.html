@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-F+tKKoappmrbTtLarw1wqBHcYObCsyCvPgBBbbyNK0k='; style-src 'sha256-abJddY20go42UrcCW7TI28zFfSsY/n9qx2NBu6b2XAA='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-F+tKKoappmrbTtLarw1wqBHcYObCsyCvPgBBbbyNK0k='; style-src 'sha256-OxcjQGeJE+z7H7wE0U/nDHeRoxW5KWkj2sejEr2ocS0='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student Login · LabRats</title>
   <style>/* Design A: mobile-first, shared by the public site and offline previews. */
 :root{--ink:#172d3a;--muted:#52635b;--accent:#14563e;--nav:#172d3a;--paper:#fff;--soft:#eef5ef;--rule:#c2cec7;--mobile-nav-space:86px;--action-height:100px;color-scheme:light}
@@ -441,6 +441,23 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
  body.setup-keyboard-open[data-screen=setup] .setup-actions{visibility:hidden;pointer-events:none}
  body[data-screen=setup] :is(input,select,summary,button,a){scroll-margin-bottom:calc(var(--setup-dock-height,160px) + var(--setup-nav-height,80px) + 16px)}
 }
+
+/* Feedback and completion: next action first, detailed scoring on request. */
+.summary-page .action-dock{position:static;margin:20px 0;padding:0;border:0;background:transparent}
+.summary-page .session-completion{margin:12px 0;font-weight:600}
+.summary-page .summary-outcomes{margin:12px 0 20px}
+.summary-page .summary-scoring{border-top:1px solid var(--rule);margin:16px 0}
+.summary-page .summary-scoring>summary{min-height:44px;padding:10px 0}
+.summary-page .row{margin:20px 0}
+.question-screen:has(.feedback-heading) #next,.feedback-panel #next-question{flex:1;min-height:48px}
+.question-screen:has(.feedback-heading) #retry,.feedback-panel #retry-question{flex:0 1 auto;background:transparent;border:1px solid var(--accent);color:var(--accent)}
+
+@media(max-width:600px){
+ .summary-page .row:has(#continue-session){flex-direction:column;align-items:stretch}
+ .summary-page .row #continue-session{order:-1;width:100%}
+ .summary-page .row:has(#continue-session) .account-actions,.summary-page .row:has(#continue-session) .account-actions .btn{width:100%}
+}
+.btn.finish-session:hover{background:#62432d;border-color:#62432d}
 </style>
 </head>
 <body class="login-page account-branded">
