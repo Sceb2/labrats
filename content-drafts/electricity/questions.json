@@ -1,6 +1,6 @@
 {
   "title": "Electrical circuits and the transfer of energy",
-  "version": 2,
+  "version": 3,
   "topics": [
     {
       "id": "C1",
@@ -650,30 +650,30 @@
               "marks": 1,
               "options": [
                 {
-                  "id": "2",
-                  "text": "Two unequal parallel lines",
-                  "feedback": "The arrow across a resistor indicates that its resistance can be adjusted."
-                },
-                {
-                  "id": "3",
-                  "text": "A circle containing a cross",
-                  "feedback": "The arrow across a resistor indicates that its resistance can be adjusted."
-                },
-                {
                   "id": "0",
-                  "text": "A resistor rectangle with a diagonal arrow",
-                  "feedback": "The arrow across a resistor indicates that its resistance can be adjusted."
+                  "text": "Variable resistor",
+                  "feedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow."
                 },
                 {
                   "id": "1",
-                  "text": "A circle containing V",
-                  "feedback": "The arrow across a resistor indicates that its resistance can be adjusted."
+                  "text": "Fixed resistor",
+                  "feedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow."
+                },
+                {
+                  "id": "2",
+                  "text": "Thermistor",
+                  "feedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow."
+                },
+                {
+                  "id": "3",
+                  "text": "Lamp",
+                  "feedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "The arrow across a resistor indicates that its resistance can be adjusted.",
-              "correctFeedback": "The arrow across a resistor indicates that its resistance can be adjusted.",
-              "incorrectFeedback": "The arrow across a resistor indicates that its resistance can be adjusted.",
+              "modelAnswer": "The middle symbol is a variable resistor: a resistor with a diagonal arrow.",
+              "correctFeedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow.",
+              "incorrectFeedback": "The middle symbol is a variable resistor: a resistor with a diagonal arrow.",
               "ao": "AO1",
               "id": "s0"
             },
@@ -683,30 +683,30 @@
               "marks": 1,
               "options": [
                 {
-                  "id": "2",
-                  "text": "A circle containing A",
-                  "feedback": "A lamp is represented by a circle containing a cross."
-                },
-                {
-                  "id": "3",
-                  "text": "A break with a raised switch lever",
-                  "feedback": "A lamp is represented by a circle containing a cross."
-                },
-                {
                   "id": "0",
-                  "text": "A circle containing a cross",
-                  "feedback": "A lamp is represented by a circle containing a cross."
+                  "text": "Lamp",
+                  "feedback": "The symbol on the right is a lamp: a circle containing a cross."
                 },
                 {
                   "id": "1",
-                  "text": "A plain rectangle",
-                  "feedback": "A lamp is represented by a circle containing a cross."
+                  "text": "Ammeter",
+                  "feedback": "The symbol on the right is a lamp: a circle containing a cross."
+                },
+                {
+                  "id": "2",
+                  "text": "Open switch",
+                  "feedback": "The symbol on the right is a lamp: a circle containing a cross."
+                },
+                {
+                  "id": "3",
+                  "text": "Fixed resistor",
+                  "feedback": "The symbol on the right is a lamp: a circle containing a cross."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "A lamp is represented by a circle containing a cross.",
-              "correctFeedback": "A lamp is represented by a circle containing a cross.",
-              "incorrectFeedback": "A lamp is represented by a circle containing a cross.",
+              "modelAnswer": "The symbol on the right is a lamp: a circle containing a cross.",
+              "correctFeedback": "The symbol on the right is a lamp: a circle containing a cross.",
+              "incorrectFeedback": "The symbol on the right is a lamp: a circle containing a cross.",
               "ao": "AO1",
               "id": "s1"
             }
@@ -718,9 +718,9 @@
           "specRefs": [
             "C1.1–C1.3; C4.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. The arrow across a resistor indicates that its resistance can be adjusted.\n2. A lamp is represented by a circle containing a cross.",
+          "workedAnswer": "1. The middle symbol is a variable resistor: a resistor with a diagonal arrow.\n2. The symbol on the right is a lamp: a circle containing a cross.",
           "diagram": {
             "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 250\"><rect width=\"480\" height=\"250\" fill=\"white\"/><g stroke=\"#172d3a\" stroke-width=\"2.5\" fill=\"none\"><path d=\"M20 65h25m60 0h30M45 45h60v40H45z M175 65h25m60 0h30M200 45h60v40h-60zM190 100l80-70m-14 3l14-3-5 14 M330 65h25m50 0h40\"/><circle cx=\"380\" cy=\"65\" r=\"25\"/><path d=\"M362 47l36 36m-36 0l36-36\"/></g></svg>",
             "description": "Three symbols, from left: a rectangle in a wire; a rectangle crossed by a diagonal arrow; a circle containing a cross."
@@ -1445,12 +1445,12 @@
       "questions": [
         {
           "id": "E023",
-          "prompt": "A learner needs to measure current through a lamp and potential difference across it.",
+          "prompt": "The circuit is shown. A learner wants to measure current through a lamp and potential difference across it.",
           "hint": "Meters must measure the intended component.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which arrangement is correct?",
+              "prompt": "Which statement describes the meter connections shown?",
               "marks": 1,
               "options": [
                 {
@@ -1489,12 +1489,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. The ammeter measures the current through the lamp; the voltmeter measures the potential difference between its terminals.",
           "diagram": {
             "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 250\"><rect width=\"480\" height=\"250\" fill=\"white\"/><g stroke=\"#172d3a\" stroke-width=\"2.5\" fill=\"none\"><path d=\"M50 45h150m20 0h190v70M50 45v70M200 25v40m20-30v20M50 115h60m50 0h60m60 0h130M205 115v65h23M272 180h23v-65\"/><circle cx=\"250\" cy=\"115\" r=\"30\"/><path d=\"M229 94l42 42m-42 0l42-42\"/><circle cx=\"135\" cy=\"115\" r=\"25\"/><circle cx=\"250\" cy=\"180\" r=\"22\"/><text x=\"128\" y=\"122\" fill=\"#172d3a\" stroke=\"none\" font-size=\"17\" font-family=\"sans-serif\">A</text><text x=\"243\" y=\"187\" fill=\"#172d3a\" stroke=\"none\" font-size=\"17\" font-family=\"sans-serif\">V</text></g></svg>",
-            "description": "Supply loop with ammeter A and a lamp in series; voltmeter V connects across the lamp."
+            "description": "A cell, a lamp and two meters labelled A and V connected by wires. Meter A is in the main loop and meter V connects to the two points either side of the lamp."
           }
         },
         {
@@ -1519,7 +1519,7 @@
                 },
                 {
                   "id": "2",
-                  "text": "A photodiode only",
+                  "text": "A diode only",
                   "feedback": "A switch makes or breaks the conducting path."
                 },
                 {
@@ -1543,7 +1543,7 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. A switch makes or breaks the conducting path."
         },
@@ -1699,12 +1699,12 @@
         },
         {
           "id": "E028",
-          "prompt": "A diagram shows three pairs of unequal parallel lines connected in series.",
+          "prompt": "The diagram shows a power supply.",
           "hint": "Look at how the supply symbol is drawn.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "What supply does this symbol represent?",
+              "prompt": "Identify the supply shown.",
               "marks": 1,
               "options": [
                 {
@@ -1743,12 +1743,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Three cell symbols connected together represent a battery of three cells.",
           "diagram": {
             "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M70 115h65m0-35v70m18-55v40m18-55v70m18-55v40m18-55v70m18-55v40m0-20h75\"/></g></svg>",
-            "description": "A supply symbol contains three long-short line pairs in series."
+            "description": "A supply symbol consists of three pairs of parallel lines; in each pair one line is longer than the other."
           }
         },
         {
@@ -1762,30 +1762,30 @@
               "marks": 1,
               "options": [
                 {
+                  "id": "0",
+                  "text": "X",
+                  "feedback": "X is in series with R, so an ammeter at X measures the current through R."
+                },
+                {
                   "id": "1",
-                  "text": "Across R",
-                  "feedback": "An ammeter is connected in series with the component whose current is measured."
+                  "text": "Y",
+                  "feedback": "X is in series with R, so an ammeter at X measures the current through R."
                 },
                 {
                   "id": "2",
-                  "text": "Across the supply without a load",
-                  "feedback": "An ammeter is connected in series with the component whose current is measured."
+                  "text": "Either X or Y",
+                  "feedback": "X is in series with R, so an ammeter at X measures the current through R."
                 },
                 {
                   "id": "3",
-                  "text": "In a disconnected branch",
-                  "feedback": "An ammeter is connected in series with the component whose current is measured."
-                },
-                {
-                  "id": "0",
-                  "text": "X, in series with R",
-                  "feedback": "An ammeter is connected in series with the component whose current is measured."
+                  "text": "Neither X nor Y",
+                  "feedback": "X is in series with R, so an ammeter at X measures the current through R."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "An ammeter is connected in series with the component whose current is measured.",
-              "correctFeedback": "An ammeter is connected in series with the component whose current is measured.",
-              "incorrectFeedback": "An ammeter is connected in series with the component whose current is measured.",
+              "modelAnswer": "X is in series with R, so an ammeter at X measures the current through R.",
+              "correctFeedback": "X is in series with R, so an ammeter at X measures the current through R.",
+              "incorrectFeedback": "X is in series with R, so an ammeter at X measures the current through R.",
               "ao": "AO2",
               "id": "s0"
             }
@@ -1797,12 +1797,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. An ammeter is connected in series with the component whose current is measured.",
+          "workedAnswer": "1. X is in series with R, so an ammeter at X measures the current through R.",
           "diagram": {
-            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125m20 0h205v120H65V65M190 42v46m20-35v22M65 185h53m44 0h58m60 0h135M220 165h60v40h-60zM205 185v65h23M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
-            "description": "Circuit with resistor R; meter position X is in the same branch as R and position Y is across R."
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell is connected by wires to a resistor R and a meter labelled X in the main loop. A second meter labelled Y connects across R."
           }
         },
         {
@@ -1816,30 +1816,30 @@
               "marks": 1,
               "options": [
                 {
-                  "id": "2",
-                  "text": "Across an open end of one wire only",
-                  "feedback": "A voltmeter connects in parallel across the component."
-                },
-                {
-                  "id": "3",
-                  "text": "In place of the supply",
-                  "feedback": "A voltmeter connects in parallel across the component."
-                },
-                {
                   "id": "0",
-                  "text": "Y, across the terminals of R",
-                  "feedback": "A voltmeter connects in parallel across the component."
+                  "text": "Y",
+                  "feedback": "Y is connected across R, so a voltmeter at Y measures its potential difference."
                 },
                 {
                   "id": "1",
-                  "text": "In series with R",
-                  "feedback": "A voltmeter connects in parallel across the component."
+                  "text": "X",
+                  "feedback": "Y is connected across R, so a voltmeter at Y measures its potential difference."
+                },
+                {
+                  "id": "2",
+                  "text": "Either X or Y",
+                  "feedback": "Y is connected across R, so a voltmeter at Y measures its potential difference."
+                },
+                {
+                  "id": "3",
+                  "text": "Neither X nor Y",
+                  "feedback": "Y is connected across R, so a voltmeter at Y measures its potential difference."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "A voltmeter connects in parallel across the component.",
-              "correctFeedback": "A voltmeter connects in parallel across the component.",
-              "incorrectFeedback": "A voltmeter connects in parallel across the component.",
+              "modelAnswer": "Y is connected across R, so a voltmeter at Y measures its potential difference.",
+              "correctFeedback": "Y is connected across R, so a voltmeter at Y measures its potential difference.",
+              "incorrectFeedback": "Y is connected across R, so a voltmeter at Y measures its potential difference.",
               "ao": "AO2",
               "id": "s0"
             }
@@ -1851,12 +1851,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. A voltmeter connects in parallel across the component.",
+          "workedAnswer": "1. Y is connected across R, so a voltmeter at Y measures its potential difference.",
           "diagram": {
-            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125m20 0h205v120H65V65M190 42v46m20-35v22M65 185h53m44 0h58m60 0h135M220 165h60v40h-60zM205 185v65h23M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
-            "description": "Circuit with resistor R; meter position X is in the same branch as R and position Y is across R."
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell is connected by wires to a resistor R and a meter labelled X in the main loop. A second meter labelled Y connects across R."
           }
         },
         {
@@ -1905,12 +1905,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. X is in series with R; Y is in parallel across R.",
           "diagram": {
-            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125m20 0h205v120H65V65M190 42v46m20-35v22M65 185h53m44 0h58m60 0h135M220 165h60v40h-60zM205 185v65h23M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
-            "description": "Circuit with resistor R; meter position X is in the same branch as R and position Y is across R."
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell is connected by wires to a resistor R and a meter labelled X in the main loop. A second meter labelled Y connects across R."
           }
         },
         {
@@ -1959,12 +1959,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Put the ammeter in series with R and the voltmeter across R.",
           "diagram": {
-            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125m20 0h205v120H65V65M190 42v46m20-35v22M65 185h53m44 0h58m60 0h135M220 165h60v40h-60zM205 185v65h23M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">A</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
-            "description": "Incorrect circuit: voltmeter in the series path and ammeter across resistor R."
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">A</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell is connected by wires to a resistor R and a meter labelled V in the main loop. A second meter labelled A connects across R."
           }
         },
         {
@@ -2013,12 +2013,12 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. An ammeter belongs in the series path; retain the voltmeter across R.",
           "diagram": {
-            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125m20 0h205v120H65V65M190 42v46m20-35v22M65 185h53m44 0h58m60 0h135M220 165h60v40h-60zM205 185v65h23M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
-            "description": "A voltmeter is in series with resistor R and a second voltmeter is across R."
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell is connected by wires to a resistor R and a meter labelled V in the main loop. A second meter labelled V connects across R."
           }
         },
         {
@@ -2123,63 +2123,24 @@
         },
         {
           "id": "E036",
-          "prompt": "A digital voltmeter displays 4.80 on its V range.",
-          "hint": "Include the displayed unit.",
+          "prompt": "An ammeter reads 480 mA while a learner tests a lamp.",
+          "hint": "There are 1000 milliamperes in one ampere.",
           "parts": [
             {
               "type": "numeric",
-              "prompt": "Record the potential difference.",
+              "prompt": "Convert the current to amperes.",
               "marks": 1,
               "answer": {
-                "value": 4.8,
-                "unit": "V",
-                "absoluteTolerance": 0.0096,
-                "allowedUnits": {
-                  "V": 1
-                }
-              },
-              "modelAnswer": "The reading is 4.80 V.",
-              "correctFeedback": "The reading is 4.80 V.",
-              "incorrectFeedback": "The reading is 4.80 V.",
-              "ao": "AO2",
-              "domain": {
-                "minExclusive": -1e-12,
-                "maxInclusive": 1000000000000
-              },
-              "id": "s0"
-            }
-          ],
-          "kind": "scaffold",
-          "interaction": "scaffolded-calculation",
-          "maxMarks": 1,
-          "marks": 1,
-          "specRefs": [
-            "C1.1–C1.3.2"
-          ],
-          "contentVersion": 1,
-          "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. The reading is 4.80 V."
-        },
-        {
-          "id": "E037",
-          "prompt": "An analogue ammeter has a 0–10 scale. The pointer is at 6.0 and the selected range is 0–0.50 A.",
-          "hint": "Use the fraction of full scale.",
-          "parts": [
-            {
-              "type": "numeric",
-              "prompt": "Calculate the current.",
-              "marks": 1,
-              "answer": {
-                "value": 0.3,
+                "value": 0.48,
                 "unit": "A",
-                "absoluteTolerance": 0.0006,
+                "absoluteTolerance": 0.00096,
                 "allowedUnits": {
                   "A": 1
                 }
               },
-              "modelAnswer": "6.0 ÷ 10 × 0.50 = 0.30 A.",
-              "correctFeedback": "6.0 ÷ 10 × 0.50 = 0.30 A.",
-              "incorrectFeedback": "6.0 ÷ 10 × 0.50 = 0.30 A.",
+              "modelAnswer": "480 ÷ 1000 = 0.480 A.",
+              "correctFeedback": "480 ÷ 1000 = 0.480 A.",
+              "incorrectFeedback": "480 ÷ 1000 = 0.480 A.",
               "ao": "AO2",
               "domain": {
                 "minExclusive": -1e-12,
@@ -2195,9 +2156,48 @@
           "specRefs": [
             "C1.1–C1.3.2"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. 6.0 ÷ 10 × 0.50 = 0.30 A."
+          "workedAnswer": "1. 480 ÷ 1000 = 0.480 A."
+        },
+        {
+          "id": "E037",
+          "prompt": "A learner measures a current of 0.30 A through a resistor.",
+          "hint": "One ampere equals 1000 milliamperes.",
+          "parts": [
+            {
+              "type": "numeric",
+              "prompt": "Convert the current to milliamperes.",
+              "marks": 1,
+              "answer": {
+                "value": 300,
+                "unit": "mA",
+                "absoluteTolerance": 0.6,
+                "allowedUnits": {
+                  "mA": 1
+                }
+              },
+              "modelAnswer": "0.30 × 1000 = 300 mA.",
+              "correctFeedback": "0.30 × 1000 = 300 mA.",
+              "incorrectFeedback": "0.30 × 1000 = 300 mA.",
+              "ao": "AO2",
+              "domain": {
+                "minExclusive": -1e-12,
+                "maxInclusive": 1000000000000
+              },
+              "id": "s0"
+            }
+          ],
+          "kind": "scaffold",
+          "interaction": "scaffolded-calculation",
+          "maxMarks": 1,
+          "marks": 1,
+          "specRefs": [
+            "C1.1–C1.3.2"
+          ],
+          "contentVersion": 2,
+          "reviewStatus": "draft-for-teacher-review",
+          "workedAnswer": "1. 0.30 × 1000 = 300 mA."
         },
         {
           "id": "E038",
@@ -3018,7 +3018,7 @@
                 },
                 {
                   "id": "1",
-                  "text": "Photodiode",
+                  "text": "diode",
                   "feedback": "A thermistor changes resistance with temperature."
                 },
                 {
@@ -3047,7 +3047,7 @@
           "specRefs": [
             "C1.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. A thermistor changes resistance with temperature."
         },
@@ -3314,39 +3314,39 @@
         },
         {
           "id": "E058",
-          "prompt": "A diode is needed to allow conventional current from point X to point Y and restrict it from Y to X.",
-          "hint": "Use the stated conducting direction.",
+          "prompt": "The diagram shows a diode connected between points X and Y. The triangle points towards the line.",
+          "hint": "For the diode shown, conventional current flows in the direction the triangle points.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which orientation is required?",
+              "prompt": "In which direction does the diode conduct conventional current readily?",
               "marks": 1,
               "options": [
                 {
-                  "id": "2",
-                  "text": "Either orientation",
-                  "feedback": "The diode must face so its conducting direction is from X to Y."
-                },
-                {
-                  "id": "3",
-                  "text": "Replace the diode with wire",
-                  "feedback": "The diode must face so its conducting direction is from X to Y."
-                },
-                {
                   "id": "0",
-                  "text": "Conducting direction X to Y",
-                  "feedback": "The diode must face so its conducting direction is from X to Y."
+                  "text": "X to Y",
+                  "feedback": "The diode points from X towards Y, so conventional current flows readily from X to Y."
                 },
                 {
                   "id": "1",
-                  "text": "Conducting direction Y to X",
-                  "feedback": "The diode must face so its conducting direction is from X to Y."
+                  "text": "Y to X",
+                  "feedback": "The diode points from X towards Y, so conventional current flows readily from X to Y."
+                },
+                {
+                  "id": "2",
+                  "text": "Equally in both directions",
+                  "feedback": "The diode points from X towards Y, so conventional current flows readily from X to Y."
+                },
+                {
+                  "id": "3",
+                  "text": "Neither direction",
+                  "feedback": "The diode points from X towards Y, so conventional current flows readily from X to Y."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "The diode must face so its conducting direction is from X to Y.",
-              "correctFeedback": "The diode must face so its conducting direction is from X to Y.",
-              "incorrectFeedback": "The diode must face so its conducting direction is from X to Y.",
+              "modelAnswer": "The diode points from X towards Y, so conventional current flows readily from X to Y.",
+              "correctFeedback": "The diode points from X towards Y, so conventional current flows readily from X to Y.",
+              "incorrectFeedback": "The diode points from X towards Y, so conventional current flows readily from X to Y.",
               "ao": "AO2",
               "id": "s0"
             }
@@ -3358,13 +3358,17 @@
           "specRefs": [
             "C1.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. The diode must face so its conducting direction is from X to Y."
+          "workedAnswer": "1. The diode points from X towards Y, so conventional current flows readily from X to Y.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M40 135h130m70 0h180 M170 110v50l70-25z M240 110v50\"/><text x=\"50\" y=\"105\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">X</text><text x=\"405\" y=\"105\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Y</text></g></svg>",
+            "description": "A diode is connected between X on the left and Y on the right. The triangle points right towards a vertical line."
+          }
         },
         {
           "id": "E059",
-          "prompt": "An LED and a suitable resistor are in a complete circuit. The LED is connected in its conducting direction.",
+          "prompt": "An LED and a suitable resistor are connected to a supply with a switch. The circuit becomes complete when the switch is closed. The LED is connected in its conducting direction.",
           "hint": "Check polarity and the complete path.",
           "parts": [
             {
@@ -3408,7 +3412,7 @@
           "specRefs": [
             "C1.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. With suitable current in its conducting direction, the LED emits light."
         },
@@ -3564,7 +3568,7 @@
         },
         {
           "id": "E063",
-          "prompt": "A variable resistor is in series with a lamp and a fixed-voltage supply. Its resistance is increased.",
+          "prompt": "A variable resistor is in series with a lamp and a fixed-voltage supply. The variable resistor setting is increased; no other setting changes.",
           "hint": "Consider the total resistance of the circuit.",
           "parts": [
             {
@@ -3608,7 +3612,7 @@
           "specRefs": [
             "C1.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Increasing series resistance reduces the current from the fixed-voltage supply."
         },
@@ -4898,7 +4902,7 @@
         },
         {
           "id": "E087",
-          "prompt": "A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses.",
+          "prompt": "A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses. Select the lowest available fuse rating above the normal operating current.",
           "hint": "Choose the smallest stated rating above the normal current.",
           "parts": [
             {
@@ -4959,7 +4963,7 @@
           "specRefs": [
             "C3.1–C3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. I = 460 ÷ 230 = 2.0 A.\n2. 3 A is the smallest available rating above the 2.0 A normal current."
         },
@@ -5015,7 +5019,7 @@
         },
         {
           "id": "E089",
-          "prompt": "A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A.",
+          "prompt": "A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A. Select the lowest available fuse rating above the normal operating current.",
           "hint": "Calculate current before choosing.",
           "parts": [
             {
@@ -5076,7 +5080,7 @@
           "specRefs": [
             "C3.1–C3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 2300 ÷ 230 = 10 A.\n2. Only 13 A is above the stated 10 A normal current."
         }
@@ -5174,7 +5178,7 @@
           "parts": [
             {
               "type": "numeric",
-              "prompt": "Calculate temperature change.",
+              "prompt": "Calculate the temperature change in K.",
               "marks": 1,
               "answer": {
                 "value": 45,
@@ -5202,7 +5206,7 @@
           "specRefs": [
             "C4.1–C4.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 63 − 18 = 45 °C, equivalent to a change of 45 K."
         },
@@ -5325,7 +5329,7 @@
         },
         {
           "id": "E096",
-          "prompt": "Equal masses of A and B are heated through the same temperature change. Their specific heat capacities are 900 and 450 J kg⁻¹ K⁻¹.",
+          "prompt": "Substances A and B have equal masses. Both are heated through the same temperature increase. Their specific heat capacities are 900 and 450 J kg⁻¹ K⁻¹ respectively.",
           "hint": "Compare c when m and ΔT are identical.",
           "parts": [
             {
@@ -5369,7 +5373,7 @@
           "specRefs": [
             "C4.1–C4.4"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Energy is proportional to specific heat capacity for equal mass and temperature change."
         },
@@ -5520,12 +5524,12 @@
       "questions": [
         {
           "id": "E099",
-          "prompt": "0.20 kg of ice melts at its melting point. Its specific latent heat of fusion is 334 000 J kg⁻¹.",
+          "prompt": "A 0.20 kg piece of ice is already at its melting point. The specific latent heat of fusion of ice is 334 000 J kg⁻¹.",
           "hint": "Use ΔQ = mL.",
           "parts": [
             {
               "type": "numeric",
-              "prompt": "Calculate energy required.",
+              "prompt": "Calculate the thermal energy needed to melt all the ice.",
               "marks": 1,
               "answer": {
                 "value": 66800,
@@ -5533,7 +5537,10 @@
                 "absoluteTolerance": 133.6,
                 "allowedUnits": {
                   "J": 1
-                }
+                },
+                "alternateValues": [
+                  67000
+                ]
               },
               "modelAnswer": "0.20 × 334 000 = 66 800 J.",
               "correctFeedback": "0.20 × 334 000 = 66 800 J.",
@@ -5553,13 +5560,13 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 0.20 × 334 000 = 66 800 J."
         },
         {
           "id": "E100",
-          "prompt": "During boiling, 0.010 kg of a liquid vaporises after gaining 23 000 J.",
+          "prompt": "During boiling, 0.010 kg of a liquid vaporises at its boiling point after absorbing 23 000 J during the change of state.",
           "hint": "Use L = ΔQ/m.",
           "parts": [
             {
@@ -5592,7 +5599,7 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 23 000 ÷ 0.010 = 2 300 000 J kg⁻¹."
         },
@@ -5637,12 +5644,12 @@
         },
         {
           "id": "E102",
-          "prompt": "Water has latent heat of fusion 334 000 J kg⁻¹ and latent heat of vaporisation 2 260 000 J kg⁻¹.",
+          "prompt": "Water has specific latent heat of fusion 334 000 J kg⁻¹ and specific latent heat of vaporisation 2 260 000 J kg⁻¹.",
           "hint": "Select the value matching the change of state.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which value applies when boiling water becomes steam?",
+              "prompt": "Which value applies when boiling water changes from liquid to steam?",
               "marks": 1,
               "options": [
                 {
@@ -5676,7 +5683,7 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Boiling changes liquid to gas, so use latent heat of vaporisation."
         },
@@ -5717,7 +5724,10 @@
                 "absoluteTolerance": 66.8,
                 "allowedUnits": {
                   "J": 1
-                }
+                },
+                "alternateValues": [
+                  33000
+                ]
               },
               "modelAnswer": "0.10 × 334 000 = 33 400 J.",
               "correctFeedback": "0.10 × 334 000 = 33 400 J.",
@@ -5739,7 +5749,10 @@
                 "absoluteTolerance": 71,
                 "allowedUnits": {
                   "J": 1
-                }
+                },
+                "alternateValues": [
+                  36000
+                ]
               },
               "modelAnswer": "2100 + 33 400 = 35 500 J.",
               "correctFeedback": "2100 + 33 400 = 35 500 J.",
@@ -5759,13 +5772,13 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 0.10 × 2100 × 10 = 2100 J.\n2. 0.10 × 334 000 = 33 400 J.\n3. 2100 + 33 400 = 35 500 J."
         },
         {
           "id": "E104",
-          "prompt": "A 200 W heater melts 0.10 kg of a substance already at its melting point. L = 300 000 J kg⁻¹. Assume no losses.",
+          "prompt": "A 200 W heater melts 0.10 kg of a substance already at its melting point. The specific latent heat of fusion is 300 000 J kg⁻¹. Assume no energy losses.",
           "hint": "Find mL, then divide by power.",
           "parts": [
             {
@@ -5827,7 +5840,7 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 0.10 × 300 000 = 30 000 J.\n2. 30 000 ÷ 200 = 150 s."
         },
@@ -5863,9 +5876,9 @@
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "Energy supplied during boiling changes the state rather than increasing temperature.",
-              "correctFeedback": "Energy supplied during boiling changes the state rather than increasing temperature.",
-              "incorrectFeedback": "Energy supplied during boiling changes the state rather than increasing temperature.",
+              "modelAnswer": "Energy is transferred to change the arrangement and separation of particles; the temperature remains constant during boiling at fixed pressure.",
+              "correctFeedback": "Energy is transferred to change the arrangement and separation of particles; the temperature remains constant during boiling at fixed pressure.",
+              "incorrectFeedback": "Energy is transferred to change the arrangement and separation of particles; the temperature remains constant during boiling at fixed pressure.",
               "ao": "AO2",
               "id": "s0"
             }
@@ -5877,9 +5890,9 @@
           "specRefs": [
             "C5.1–C5.2; C4.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. Energy supplied during boiling changes the state rather than increasing temperature."
+          "workedAnswer": "1. Energy is transferred to change the arrangement and separation of particles; the temperature remains constant during boiling at fixed pressure."
         },
         {
           "id": "E106",
@@ -6046,7 +6059,7 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "Resistance increases across these readings",
+                  "text": "The resistance is greater at the second setting",
                   "feedback": "The calculated resistance increases from 5.0 Ω to 10 Ω."
                 },
                 {
@@ -6080,13 +6093,13 @@
           "specRefs": [
             "C1.3–C1.4; C2.1.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 1.0 ÷ 0.20 = 5.0 Ω.\n2. 3.0 ÷ 0.30 = 10 Ω.\n3. The calculated resistance increases from 5.0 Ω to 10 Ω."
         },
         {
           "id": "E109",
-          "prompt": "At unchanged conditions, repeated voltage readings are 2.01, 2.00, 4.80 and 2.02 V.",
+          "prompt": "A learner repeats a voltmeter reading across a resistor. The supply and component settings remain unchanged. The readings are 2.01, 2.00, 4.80 and 2.02 V.",
           "hint": "Compare the readings before making a decision.",
           "parts": [
             {
@@ -6163,45 +6176,45 @@
           "specRefs": [
             "C1.3–C1.4; C2.1.2"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 4.80 V differs substantially from the other repeats.\n2. Investigate the cause and repeat before deciding whether to exclude the reading."
         },
         {
           "id": "E110",
-          "prompt": "Setup A has an ammeter in series with resistor R and a voltmeter across R. Setup B swaps the two meters.",
-          "hint": "Judge what each meter is intended to measure.",
+          "prompt": "A learner measures a resistor using an ammeter in series with it and a voltmeter across it. The readings are 6.0 V and 0.20 A.",
+          "hint": "Use the voltage across the resistor and the current through it.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which setup correctly measures current and potential difference for R?",
+              "prompt": "Which calculation gives the resistance of the resistor?",
               "marks": 1,
               "options": [
                 {
-                  "id": "2",
-                  "text": "Both",
-                  "feedback": "A places the ammeter in the current path and the voltmeter between R’s terminals."
-                },
-                {
-                  "id": "3",
-                  "text": "Neither",
-                  "feedback": "A places the ammeter in the current path and the voltmeter between R’s terminals."
-                },
-                {
                   "id": "0",
-                  "text": "A",
-                  "feedback": "A places the ammeter in the current path and the voltmeter between R’s terminals."
+                  "text": "6.0 ÷ 0.20",
+                  "feedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω."
                 },
                 {
                   "id": "1",
-                  "text": "B",
-                  "feedback": "A places the ammeter in the current path and the voltmeter between R’s terminals."
+                  "text": "6.0 × 0.20",
+                  "feedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω."
+                },
+                {
+                  "id": "2",
+                  "text": "0.20 ÷ 6.0",
+                  "feedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω."
+                },
+                {
+                  "id": "3",
+                  "text": "6.0 + 0.20",
+                  "feedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "A places the ammeter in the current path and the voltmeter between R’s terminals.",
-              "correctFeedback": "A places the ammeter in the current path and the voltmeter between R’s terminals.",
-              "incorrectFeedback": "A places the ammeter in the current path and the voltmeter between R’s terminals.",
+              "modelAnswer": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω.",
+              "correctFeedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω.",
+              "incorrectFeedback": "R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω.",
               "ao": "AO3",
               "id": "s0"
             }
@@ -6213,9 +6226,13 @@
           "specRefs": [
             "C1.3–C1.4; C2.1.2"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. A places the ammeter in the current path and the voltmeter between R’s terminals."
+          "workedAnswer": "1. R = V/I, so resistance is 6.0 ÷ 0.20 = 30 Ω.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 65h125 M210 65h205v120H280 M65 65v120h53 M162 185h58 M190 42v46 M210 53v24 M220 165h60v40h-60z M205 185v65h23 M272 250h23v-65\"/><circle cx=\"140\" cy=\"185\" r=\"22\"/><text x=\"134\" y=\"191\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">A</text><circle cx=\"250\" cy=\"250\" r=\"22\"/><text x=\"244\" y=\"256\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">V</text><text x=\"240\" y=\"153\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">R</text></g></svg>",
+            "description": "A cell, resistor R and ammeter A form the main loop; a voltmeter V is connected across R."
+          }
         },
         {
           "id": "E111",
@@ -6263,12 +6280,12 @@
           "specRefs": [
             "C1.3–C1.4; C2.1.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. V/I is 5 Ω, 10 Ω and 15 Ω, showing increasing resistance as the filament heats.",
           "diagram": {
             "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 280\"><rect width=\"480\" height=\"280\" fill=\"white\"/><g stroke=\"#172d3a\" fill=\"none\" stroke-width=\"2.5\"><path d=\"M65 25v180h360\"/><path d=\"M65 205v5\"/><text x=\"61\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0</text><path d=\"M105 205v5\"/><text x=\"101\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">1</text><path d=\"M145 205v5\"/><text x=\"141\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">2</text><path d=\"M185 205v5\"/><text x=\"181\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">3</text><path d=\"M225 205v5\"/><text x=\"221\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">4</text><path d=\"M265 205v5\"/><text x=\"261\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">5</text><path d=\"M305 205v5\"/><text x=\"301\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">6</text><path d=\"M345 205v5\"/><text x=\"341\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">7</text><path d=\"M385 205v5\"/><text x=\"381\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">8</text><path d=\"M425 205v5\"/><text x=\"421\" y=\"228\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">9</text><path d=\"M60 205h5\"/><text x=\"23\" y=\"210\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.0</text><path d=\"M60 180h5\"/><text x=\"23\" y=\"185\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.1</text><path d=\"M60 155h5\"/><text x=\"23\" y=\"160\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.2</text><path d=\"M60 130h5\"/><text x=\"23\" y=\"135\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.3</text><path d=\"M60 105h5\"/><text x=\"23\" y=\"110\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.4</text><path d=\"M60 80h5\"/><text x=\"23\" y=\"85\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.5</text><path d=\"M60 55h5\"/><text x=\"23\" y=\"60\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">0.6</text><path d=\"M65 205Q80 170 105 155Q150 120 225 105Q320 75 425 55\" stroke=\"#105942\"/><text x=\"160\" y=\"265\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Potential difference / V</text><text x=\"8\" y=\"18\" font-size=\"17\" font-family=\"sans-serif\" stroke=\"none\" fill=\"#172d3a\">Current / A</text></g></svg>",
-            "description": "Scaled current–potential difference graph: voltage axis 0–9 V in 1 V divisions, current axis 0–0.6 A in 0.1 A divisions. The lamp curve passes through 1 V, 0.20 A; 4 V, 0.40 A; 9 V, 0.60 A."
+            "description": "Current against potential difference: the horizontal axis runs from 0 to 9 V in 1 V steps, and the vertical axis from 0 to 0.6 A in 0.1 A steps. The curve rises from the origin through approximately (1 V, 0.2 A), (4 V, 0.4 A), and (9 V, 0.6 A)."
           }
         }
       ]
@@ -6282,7 +6299,7 @@
       "questions": [
         {
           "id": "E112",
-          "prompt": "A learner measures the specific heat capacity of a liquid using an electrical heater.",
+          "prompt": "A learner measures the specific heat capacity of a liquid using an electrical heater. The learner measures the heater potential difference and current and records the heating time to calculate electrical energy supplied.",
           "hint": "They need energy, mass and temperature change.",
           "parts": [
             {
@@ -6326,13 +6343,13 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Mass, temperature rise and electrical energy supplied must all be measured."
         },
         {
           "id": "E113",
-          "prompt": "A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The heater is operated for a measured time, and the initial and final block temperatures are recorded.",
+          "prompt": "A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The learner records the heating time and heater power to calculate the energy supplied, and records initial and final block temperatures.",
           "hint": "Use the energy supplied, block mass and temperature change to determine specific heat capacity.",
           "parts": [
             {
@@ -6409,13 +6426,13 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Specific heat capacity needs mass, temperature change and energy gained.\n2. Insulation reduces energy transferred from the block to its surroundings."
         },
         {
           "id": "E114",
-          "prompt": "A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30 K. For this calculation assume all supplied energy heats the solid.",
+          "prompt": "A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30 K. For this calculation assume all supplied energy heats the solid. The supplied electrical energy is calculated from the heater power and time.",
           "hint": "Calculate energy first.",
           "parts": [
             {
@@ -6477,7 +6494,7 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 50 × 120 = 6000 J.\n2. 6000 ÷ (0.20 × 30) = 1000 J kg⁻¹ K⁻¹."
         },
@@ -6533,39 +6550,39 @@
         },
         {
           "id": "E116",
-          "prompt": "Two identical liquids are heated with identical heaters. One container has insulation and a lid; the other has neither.",
-          "hint": "Consider energy transferred to the surroundings.",
+          "prompt": "A learner heats a known mass of liquid with an electrical heater and uses the electrical energy supplied and the temperature rise to estimate its specific heat capacity. The container is fitted with insulation and a lid.",
+          "hint": "Consider energy lost from the liquid to its surroundings and how that affects the calculation.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which arrangement better reduces unwanted transfers?",
+              "prompt": "Why can insulation and a lid improve the accuracy of the estimate?",
               "marks": 1,
               "options": [
                 {
                   "id": "0",
-                  "text": "Insulation and lid",
-                  "feedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings."
+                  "text": "They reduce energy transferred to the surroundings, so more of the measured energy heats the liquid.",
+                  "feedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid."
                 },
                 {
                   "id": "1",
-                  "text": "An uncovered container with insulation around its sides only",
-                  "feedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings."
+                  "text": "They prevent all energy transfer and make the liquid stay at its initial temperature.",
+                  "feedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid."
                 },
                 {
                   "id": "2",
-                  "text": "A lid on an otherwise uninsulated container only",
-                  "feedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings."
+                  "text": "They increase the mass of liquid without affecting the measurements.",
+                  "feedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid."
                 },
                 {
                   "id": "3",
-                  "text": "A fan blowing across the open liquid surface",
-                  "feedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings."
+                  "text": "They make the heater supply the same energy at any power and time.",
+                  "feedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings.",
-              "correctFeedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings.",
-              "incorrectFeedback": "Insulation and a lid reduce energy transfers from the heated liquid to its surroundings.",
+              "modelAnswer": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid.",
+              "correctFeedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid.",
+              "incorrectFeedback": "Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid.",
               "ao": "AO3",
               "id": "s0"
             }
@@ -6577,45 +6594,45 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. Insulation and a lid reduce energy transfers from the heated liquid to its surroundings."
+          "workedAnswer": "1. Reducing energy loss means the measured electrical energy is a better estimate of the energy gained by the liquid."
         },
         {
           "id": "E117",
-          "prompt": "A learner packs ice at its melting point into a funnel and collects meltwater in a weighed container. An electrical heater supplies a measured energy during a timed interval. A second equal-duration collection is made without the heater to estimate melting caused by the surroundings.",
+          "prompt": "A learner packs ice at its melting point into a funnel and collects meltwater in a weighed container. A heater supplies measured electrical energy during a timed interval. A second equal-duration collection is made without the heater, under similar surrounding conditions, to estimate melting caused by the surroundings.",
           "hint": "Compare meltwater collected over equal time intervals.",
           "parts": [
             {
               "type": "choice",
-              "prompt": "Which measurements are used to estimate the specific latent heat of fusion?",
+              "prompt": "Which measurements should be used to estimate the specific latent heat of fusion?",
               "marks": 1,
               "options": [
                 {
+                  "id": "0",
+                  "text": "The heater energy and the extra mass melted with the heater compared with the control",
+                  "feedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted."
+                },
+                {
                   "id": "1",
-                  "text": "Final water temperature only",
-                  "feedback": "L = E/m requires energy supplied during melting and the mass that melts."
+                  "text": "The heater energy and only the total mass collected without the heater",
+                  "feedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted."
                 },
                 {
                   "id": "2",
-                  "text": "Ice length and room brightness",
-                  "feedback": "L = E/m requires energy supplied during melting and the mass that melts."
+                  "text": "The supply voltage alone and the final temperature",
+                  "feedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted."
                 },
                 {
                   "id": "3",
-                  "text": "Supply voltage only",
-                  "feedback": "L = E/m requires energy supplied during melting and the mass that melts."
-                },
-                {
-                  "id": "0",
-                  "text": "Heater energy supplied and mass melted",
-                  "feedback": "L = E/m requires energy supplied during melting and the mass that melts."
+                  "text": "The mass of the empty container alone",
+                  "feedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "L = E/m requires energy supplied during melting and the mass that melts.",
-              "correctFeedback": "L = E/m requires energy supplied during melting and the mass that melts.",
-              "incorrectFeedback": "L = E/m requires energy supplied during melting and the mass that melts.",
+              "modelAnswer": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted.",
+              "correctFeedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted.",
+              "incorrectFeedback": "Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted.",
               "ao": "AO3",
               "id": "s0"
             },
@@ -6660,13 +6677,13 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. L = E/m requires energy supplied during melting and the mass that melts.\n2. A control measurement helps account for melting caused by the surroundings."
+          "workedAnswer": "1. Estimate the heater-caused mass by subtracting the control meltwater mass from the heated collection; then use L = energy supplied ÷ extra mass melted.\n2. A control measurement helps account for melting caused by the surroundings."
         },
         {
           "id": "E118",
-          "prompt": "A learner uses an immersion heater to boil a liquid in an open container on a balance. Once boiling is steady, the learner records the mass before and after a timed interval and measures the electrical energy supplied during that interval.",
+          "prompt": "A learner uses an immersion heater to boil a liquid in an open container on a balance. Once boiling is steady, the learner records the combined balance reading for the container and contents before and after a timed interval. Assume the mass lost is liquid that has vaporised. The learner also measures the electrical energy supplied during that interval.",
           "hint": "The loss in mass estimates the mass vaporised during the timed interval.",
           "parts": [
             {
@@ -6743,13 +6760,13 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. The estimate uses L = E/m for the mass vaporised during the energy-input interval.\n2. Before steady boiling, some input energy raises temperature rather than vaporising the liquid."
         },
         {
           "id": "E119",
-          "prompt": "A learner places a container of water and an immersion heater on a balance. Once the water boils steadily, the learner supplies 45 200 J during a timed interval. The balance reading falls from 0.850 kg to 0.830 kg. Assume all this supplied energy vaporises water for the estimate.",
+          "prompt": "A learner places a container of water and an immersion heater on a balance. Once the water boils steadily, the learner supplies 45 200 J during a timed interval. The combined balance reading for the container and contents falls from 0.850 kg to 0.830 kg. Assume the loss in mass is water that vaporises and that all the supplied energy vaporises the water.",
           "hint": "Calculate the mass lost, then use L = E/m.",
           "parts": [
             {
@@ -6762,7 +6779,10 @@
                 "absoluteTolerance": 4520,
                 "allowedUnits": {
                   "J kg⁻¹": 1
-                }
+                },
+                "alternateValues": [
+                  2300000
+                ]
               },
               "modelAnswer": "45 200 ÷ 0.020 = 2 260 000 J kg⁻¹.",
               "correctFeedback": "45 200 ÷ 0.020 = 2 260 000 J kg⁻¹.",
@@ -6782,13 +6802,13 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 45 200 ÷ 0.020 = 2 260 000 J kg⁻¹."
         },
         {
           "id": "E120",
-          "prompt": "Two learners boil the same liquid using immersion heaters. Each measures electrical energy supplied and the mass lost over a timed interval of steady boiling. One container has insulation around its sides; the other is uninsulated. The calculated specific latent heats are 2.3 MJ kg⁻¹ and 2.8 MJ kg⁻¹ respectively. Both calculations use heater energy divided by mass vaporised.",
+          "prompt": "Two learners boil the same liquid using immersion heaters. Each measures electrical energy supplied and the mass lost over a timed interval of steady boiling. Both calculate specific latent heat as heater energy divided by mass vaporised. The insulated setup gives 2.3 MJ kg⁻¹; the uninsulated setup gives 2.8 MJ kg⁻¹.",
           "hint": "Consider whether all measured heater energy vaporises the liquid.",
           "parts": [
             {
@@ -6865,7 +6885,7 @@
           "specRefs": [
             "C4.4.1; C5.1"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Larger energy losses can make heater energy divided by mass vaporised overestimate latent heat.\n2. The results support investigating losses, but do not establish an exact value without further evidence."
         }
