@@ -134,3 +134,8 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
  .summary-page .row:has(#continue-session) .account-actions,.summary-page .row:has(#continue-session) .account-actions .btn{width:100%}
 }
 .btn.finish-session:hover{background:#62432d;border-color:#62432d}
+
+/* Secondary setup controls share one expandable-section pattern. */
+.setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings){border:0;border-top:1px solid var(--rule);padding:0;margin:16px 0}
+.setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings)>summary{font-weight:600;min-height:48px;padding:12px 0}
+.setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings)[open]{padding-bottom:16px}

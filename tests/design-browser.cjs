@@ -34,6 +34,28 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
     await page.locator(subject==='chemistry'?'#all':'#select-all').click();
    }
    await overflow();if(width===390)await shot(subject+'-topics-mobile');
+   assert.equal(await page.locator('.practice-settings input[id*=effects]').count(),0);
+   assert.equal(await page.locator('.effects-settings').count(),1);
+   if(width===390){
+    await page.locator('.effects-settings>summary').click();
+    const effect=subject==='chemistry'?'#celebration-effects':'#effects-pref';
+    await page.locator(effect).uncheck();await page.reload();await page.waitForSelector('.setup-page');
+    if(!await page.locator('.effects-settings').evaluate(e=>e.open))await page.locator('.effects-settings>summary').click();assert(await page.locator(effect).isVisible());assert.equal(await page.locator(effect).isChecked(),false);
+    await page.locator(effect).check();
+    if(subject==='applied-science'){
+     await page.locator('#setup-sound-pref').check();await page.reload();await page.waitForSelector('.setup-page');
+     if(!await page.locator('.effects-settings').evaluate(e=>e.open))await page.locator('.effects-settings>summary').click();
+     assert(await page.locator('#setup-sound-pref').isChecked());await page.locator('#setup-sound-pref').uncheck();
+    }
+    await shot(subject+'-effects-mobile');await page.locator('.effects-settings>summary').click();
+    if(subject==='applied-science'){
+     assert.equal(await page.locator('.practice-settings #open-review').count(),0);
+     assert.equal(await page.locator('.question-browser-settings #play-celebration').count(),0);
+     await page.locator('.question-browser-settings>summary').click();assert(await page.locator('#open-review').isVisible());
+     await page.locator('.celebration-settings>summary').click();assert(await page.locator('#play-celebration').isVisible());
+    }
+   }
+
   }
   for(const account of ['student-login.html','staff.html']){
    await page.goto(base+account);await page.waitForSelector(account==='staff.html'?'#staff-login-form':'#login-form:not([hidden])');
