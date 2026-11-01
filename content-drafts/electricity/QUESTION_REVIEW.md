@@ -1,6 +1,6 @@
 # Electricity draft: complete question review
 
-120 questions; 164 automatically marked subparts. Answers are shown below for teacher review.
+120 automatically marked questions. Revised circuit and practical contexts.
 
 ## Quantities, units and symbols
 
@@ -34,8 +34,6 @@ Match each electrical quantity to its meaning.
 
 **Hint:** Distinguish an amount of energy from the rate of transfer.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E002 · 3 marks
 
 Choose the correct electrical units.
@@ -66,8 +64,6 @@ Choose the correct electrical units.
 
 **Hint:** Check whether each quantity is a rate or an amount.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E003 · 1 marks
 
 A meter displays 0.40 A.
@@ -81,8 +77,6 @@ A meter displays 0.40 A.
    **Marking point:** A is the symbol for ampere, the unit of current.
 
 **Hint:** Look at the unit.
-
-**Specification:** C1.1–C1.3; C4.1
 
 ### E004 · 1 marks
 
@@ -98,8 +92,6 @@ An appliance transfers 600 J in 3 s.
 
 **Hint:** Power describes how quickly energy is transferred.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E005 · 1 marks
 
 Prefixes change the size of a unit.
@@ -114,8 +106,6 @@ Prefixes change the size of a unit.
 
 **Hint:** Milli means one thousandth.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E006 · 1 marks
 
 An ammeter reading is 75 mA.
@@ -126,8 +116,6 @@ An ammeter reading is 75 mA.
 
 **Hint:** Divide milliamperes by 1000.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E007 · 1 marks
 
 A heater is rated at 1800 W.
@@ -137,8 +125,6 @@ A heater is rated at 1800 W.
    **Marking point:** 1800 ÷ 1000 = 1.8 kW.
 
 **Hint:** One kilowatt is 1000 W.
-
-**Specification:** C1.1–C1.3; C4.1
 
 ### E008 · 3 marks
 
@@ -158,13 +144,13 @@ Convert these energy values.
 
 **Hint:** 1 kJ = 1000 J and 1 MJ = 1 000 000 J.
 
-**Specification:** C1.1–C1.3; C4.1
-
 ### E009 · 2 marks
 
 Identify electrical supply symbols.
 
-1. What does one long and one short parallel line represent?
+Diagram: see the interactive preview.
+
+1. Identify the symbol on the left.
    - A resistor
    - An open switch
    - A lamp
@@ -172,7 +158,7 @@ Identify electrical supply symbols.
 
    **Marking point:** A cell is represented by one long and one short parallel line.
 
-2. What do repeated pairs of long and short parallel lines represent?
+2. Identify the symbol on the right.
    - A variable resistor
    - A voltmeter
    - A fuse
@@ -180,15 +166,15 @@ Identify electrical supply symbols.
 
    **Marking point:** Repeated cell symbols represent a battery.
 
-**Hint:** A cell symbol has two unequal parallel lines.
-
-**Specification:** C1.1–C1.3; C4.1
+**Hint:** Use the shapes and markings in the symbols.
 
 ### E010 · 2 marks
 
 Identify common component symbols.
 
-1. Which description represents a variable resistor?
+Diagram: see the interactive preview.
+
+1. Identify the middle symbol.
    - Two unequal parallel lines
    - A circle containing a cross
    - A resistor rectangle with a diagonal arrow
@@ -196,7 +182,7 @@ Identify common component symbols.
 
    **Marking point:** The arrow across a resistor indicates that its resistance can be adjusted.
 
-2. Which description represents a lamp?
+2. Identify the right-hand symbol.
    - A circle containing A
    - A break with a raised switch lever
    - A circle containing a cross
@@ -204,25 +190,21 @@ Identify common component symbols.
 
    **Marking point:** A lamp is represented by a circle containing a cross.
 
-**Hint:** A resistor is a rectangle in the circuit line.
-
-**Specification:** C1.1–C1.3; C4.1
+**Hint:** Use the shapes and markings in the symbols.
 
 ### E011 · 1 marks
 
-Two circuit symbols are circles, one containing A and one containing V.
+A learner measures the current through a lamp and the potential difference across it.
 
-1. What are the instruments?
-   - Battery and lamp
-   - Ammeter and voltmeter
-   - Ammeter and variable resistor
-   - Ohmmeter and voltmeter
+1. How should the meters be connected?
+   - Ammeter in series; voltmeter in parallel across the lamp
+   - Both in series with the lamp
+   - Both in parallel across the lamp
+   - Ammeter in parallel; voltmeter in series
 
-   **Marking point:** A identifies an ammeter; V identifies a voltmeter.
+   **Marking point:** An ammeter measures the current through a component in series; a voltmeter measures potential difference in parallel.
 
-**Hint:** The letters identify the measured quantities.
-
-**Specification:** C1.1–C1.3; C4.1
+**Hint:** Current passes through the ammeter; voltage is measured between two points.
 
 ### E012 · 2 marks
 
@@ -244,9 +226,7 @@ Select an instrument for each measurement.
 
    **Marking point:** An ohmmeter measures resistance.
 
-**Hint:** An ohmmeter measures resistance.
-
-**Specification:** C1.1–C1.3; C4.1
+**Hint:** Consider which quantity each instrument is designed to measure.
 
 ## Component behaviour and thermal ideas
 
@@ -264,8 +244,6 @@ An LDR is moved from darkness into bright light.
 
 **Hint:** LDR means light dependent resistor.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ### E014 · 1 marks
 
 A thermistor has resistance 800 Ω at 20 °C and 300 Ω at 50 °C.
@@ -279,8 +257,6 @@ A thermistor has resistance 800 Ω at 20 °C and 300 Ω at 50 °C.
    **Marking point:** The resistance falls from 800 Ω to 300 Ω as temperature increases.
 
 **Hint:** Use the behaviour stated in the question.
-
-**Specification:** C1.4; C3.2; C4.3–C5.2
 
 ### E015 · 1 marks
 
@@ -296,23 +272,19 @@ A diode is used in a circuit.
 
 **Hint:** Consider the direction of current.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ### E016 · 1 marks
 
-A sensor system contains an LED and a photodiode.
+An electronic device contains an LED and an ordinary diode.
 
-1. Which pair of roles is correct?
-   - LED emits light; photodiode detects light
-   - LED detects light; photodiode emits light
-   - Both only emit light
-   - Both are variable resistors
+1. Which statement correctly describes their uses?
+   - The LED can emit light; the ordinary diode is used to allow current readily in one direction
+   - Both are used to sense temperature
+   - The ordinary diode emits light and the LED measures resistance
+   - Both conduct equally readily in either direction
 
-   **Marking point:** An LED emits light; a photodiode is used to detect light.
+   **Marking point:** An LED emits light when suitable current flows; an ordinary diode is used for one-way conduction.
 
-**Hint:** Distinguish emitting light from detecting it.
-
-**Specification:** C1.4; C3.2; C4.3–C5.2
+**Hint:** Distinguish light emission from one-way current conduction.
 
 ### E017 · 1 marks
 
@@ -328,8 +300,6 @@ The filament in a lamp becomes hotter.
 
 **Hint:** Compare hot and cold metal filaments.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ### E018 · 1 marks
 
 A fuse is connected in an appliance circuit.
@@ -343,8 +313,6 @@ A fuse is connected in an appliance circuit.
    **Marking point:** An excessive current heats the fuse wire until it melts, breaking the circuit.
 
 **Hint:** A fuse responds to excessive current.
-
-**Specification:** C1.4; C3.2; C4.3–C5.2
 
 ### E019 · 2 marks
 
@@ -368,8 +336,6 @@ Choose the correct thermal quantities and units.
 
 **Hint:** Temperature change and energy transfer are different quantities.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ### E020 · 1 marks
 
 Compare specific heat capacity and specific latent heat.
@@ -383,8 +349,6 @@ Compare specific heat capacity and specific latent heat.
    **Marking point:** Specific heat capacity relates energy to a temperature change. Specific latent heat relates energy to a change of state.
 
 **Hint:** One concerns a temperature change; the other a change of state.
-
-**Specification:** C1.4; C3.2; C4.3–C5.2
 
 ### E021 · 2 marks
 
@@ -408,8 +372,6 @@ Identify changes of state.
 
 **Hint:** Track the starting and final states.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ### E022 · 1 marks
 
 A pure substance melts at a fixed pressure while energy is supplied.
@@ -424,13 +386,13 @@ A pure substance melts at a fixed pressure while energy is supplied.
 
 **Hint:** Consider the period during which both solid and liquid are present.
 
-**Specification:** C1.4; C3.2; C4.3–C5.2
-
 ## Circuit construction and meters
 
 ### E023 · 1 marks
 
 A learner needs to measure current through a lamp and potential difference across it.
+
+Diagram: see the interactive preview.
 
 1. Which arrangement is correct?
    - Voltmeter in series; ammeter across lamp
@@ -441,8 +403,6 @@ A learner needs to measure current through a lamp and potential difference acros
    **Marking point:** The ammeter measures the current through the lamp; the voltmeter measures the potential difference between its terminals.
 
 **Hint:** Meters must measure the intended component.
-
-**Specification:** C1.1–C1.3.2
 
 ### E024 · 1 marks
 
@@ -458,8 +418,6 @@ A cell, lamp and wires are connected in a loop with a gap.
 
 **Hint:** Current needs a complete conducting path.
 
-**Specification:** C1.1–C1.3.2
-
 ### E025 · 1 marks
 
 A cell, switch and lamp are in one series loop. The switch is open.
@@ -473,8 +431,6 @@ A cell, switch and lamp are in one series loop. The switch is open.
    **Marking point:** An open switch breaks the conducting path, so current does not flow through the lamp.
 
 **Hint:** Check the entire loop.
-
-**Specification:** C1.1–C1.3.2
 
 ### E026 · 1 marks
 
@@ -490,27 +446,25 @@ Two lamps are on separate parallel branches. Each branch has its own series swit
 
 **Hint:** Trace each branch separately.
 
-**Specification:** C1.1–C1.3.2
-
 ### E027 · 1 marks
 
-A wire is connected directly between the two terminals of a resistor.
+A learner wants to vary the current through a lamp connected to a low-voltage supply.
 
-1. Why is this a short circuit across the resistor?
-   - The resistor now stores current
-   - The wire provides a low-resistance path bypassing the resistor
-   - The wire increases the resistor’s resistance
-   - The wire acts as a second battery
+1. Which component should be added in series with the lamp?
+   - A variable resistor
+   - A voltmeter
+   - An ohmmeter
+   - A second switch only
 
-   **Marking point:** The added wire bypasses the resistor through a very low-resistance path.
+   **Marking point:** Adjusting a variable resistor changes the circuit resistance and hence the current.
 
-**Hint:** Compare the resistance of the wire path and resistor path.
-
-**Specification:** C1.1–C1.3.2
+**Hint:** Use a component whose resistance can be adjusted.
 
 ### E028 · 1 marks
 
 A diagram shows three pairs of unequal parallel lines connected in series.
+
+Diagram: see the interactive preview.
 
 1. What supply does this symbol represent?
    - A battery of three cells
@@ -520,89 +474,87 @@ A diagram shows three pairs of unequal parallel lines connected in series.
 
    **Marking point:** Three cell symbols connected together represent a battery of three cells.
 
-**Hint:** Each pair represents one cell.
-
-**Specification:** C1.1–C1.3.2
+**Hint:** Look at how the supply symbol is drawn.
 
 ### E029 · 1 marks
 
 A learner wants to measure the current through resistor R.
 
-1. Where should the ammeter be connected?
+Diagram: see the interactive preview.
+
+1. Which labelled meter position measures current through R?
    - Across R
    - Across the supply without a load
    - In a disconnected branch
-   - In series with R
+   - X, in series with R
 
    **Marking point:** An ammeter is connected in series with the component whose current is measured.
 
 **Hint:** The current being measured must pass through the meter.
 
-**Specification:** C1.1–C1.3.2
-
 ### E030 · 1 marks
 
 A learner wants to measure the potential difference across resistor R.
 
-1. Where should the voltmeter be connected?
+Diagram: see the interactive preview.
+
+1. Which labelled meter position measures potential difference across R?
    - Across an open end of one wire only
    - In place of the supply
-   - Across the two terminals of R
+   - Y, across the terminals of R
    - In series with R
 
    **Marking point:** A voltmeter connects in parallel across the component.
 
 **Hint:** Potential difference is measured between two points.
 
-**Specification:** C1.1–C1.3.2
-
 ### E031 · 1 marks
 
-A lamp is connected to a low-voltage supply.
+A resistor R is connected to a low-voltage supply. Positions X and Y are shown for two meters.
 
-1. Which complete measurement arrangement is correct?
-   - Lamp disconnected; meters in series with each other
-   - Supply, ammeter and lamp in series; voltmeter across lamp
-   - Supply, voltmeter and lamp in series; ammeter across lamp
-   - Both meters directly across supply terminals
+Diagram: see the interactive preview.
 
-   **Marking point:** The ammeter is in series and the voltmeter is across the lamp.
+1. Which instruments belong at X and Y?
+   - Ammeter at X; voltmeter at Y
+   - Voltmeter at X; ammeter at Y
+   - Ammeters at both X and Y
+   - Voltmeters at both X and Y
+
+   **Marking point:** X is in series with R; Y is in parallel across R.
 
 **Hint:** An ammeter belongs in the current path.
 
-**Specification:** C1.1–C1.3.2
-
 ### E032 · 1 marks
 
-An ammeter has been connected directly across a power supply.
+A learner connects the meters as shown. The ammeter is across resistor R and the voltmeter is in the series path.
 
-1. What correction is needed?
-   - Disconnect it and reconnect it in series with the load
-   - Add another ammeter in parallel
-   - Remove the load permanently
-   - Connect a voltmeter in series with it
+Diagram: see the interactive preview.
 
-   **Marking point:** An ammeter directly across a supply can draw a dangerously large current; it should be in series with the load.
+1. Which correction gives the intended measurements?
+   - Swap the ammeter and voltmeter positions
+   - Keep both meter positions unchanged
+   - Place both meters across R
+   - Place both meters in series with R
 
-**Hint:** Ammeters have very low resistance.
+   **Marking point:** Put the ammeter in series with R and the voltmeter across R.
 
-**Specification:** C1.1–C1.3.2
+**Hint:** Check the intended connection for each meter.
 
 ### E033 · 1 marks
 
-A voltmeter has been placed in series with a lamp. The lamp does not operate normally.
+In the circuit shown, a voltmeter has incorrectly been put in the series path with resistor R. Another voltmeter is correctly connected across R.
 
-1. Which correction is appropriate?
-   - Connect it directly in series with a second voltmeter
-   - Replace the supply with the voltmeter
-   - Short out the lamp
-   - Connect the voltmeter in parallel across the lamp
+Diagram: see the interactive preview.
 
-   **Marking point:** A voltmeter belongs across the component, rather than in its current path.
+1. Which change allows current through R to be measured correctly?
+   - Replace the series voltmeter with an ammeter
+   - Replace the parallel voltmeter with an ammeter
+   - Keep both voltmeters in place
+   - Replace the series voltmeter with an ohmmeter
+
+   **Marking point:** An ammeter belongs in the series path; retain the voltmeter across R.
 
 **Hint:** Voltmeters have high resistance.
-
-**Specification:** C1.1–C1.3.2
 
 ### E034 · 1 marks
 
@@ -618,8 +570,6 @@ A resistor is to be measured with an ohmmeter.
 
 **Hint:** Other conducting paths can affect the reading.
 
-**Specification:** C1.1–C1.3.2
-
 ### E035 · 1 marks
 
 An expected current is 0.18 A. A meter has 20 mA, 200 mA and 2 A ranges. Each range has the same number of display counts.
@@ -634,8 +584,6 @@ An expected current is 0.18 A. A meter has 20 mA, 200 mA and 2 A ranges. Each ra
 
 **Hint:** Choose a range above the reading with useful resolution.
 
-**Specification:** C1.1–C1.3.2
-
 ### E036 · 1 marks
 
 A digital voltmeter displays 4.80 on its V range.
@@ -646,8 +594,6 @@ A digital voltmeter displays 4.80 on its V range.
 
 **Hint:** Include the displayed unit.
 
-**Specification:** C1.1–C1.3.2
-
 ### E037 · 1 marks
 
 An analogue ammeter has a 0–10 scale. The pointer is at 6.0 and the selected range is 0–0.50 A.
@@ -657,8 +603,6 @@ An analogue ammeter has a 0–10 scale. The pointer is at 6.0 and the selected r
    **Marking point:** 6.0 ÷ 10 × 0.50 = 0.30 A.
 
 **Hint:** Use the fraction of full scale.
-
-**Specification:** C1.1–C1.3.2
 
 ### E038 · 1 marks
 
@@ -673,8 +617,6 @@ A voltmeter is connected between the two ends of resistor R2 in a circuit contai
    **Marking point:** The voltmeter measures the potential difference between the two ends of R2.
 
 **Hint:** Look at the meter’s connection points.
-
-**Specification:** C1.1–C1.3.2
 
 ## Current, potential difference and resistance
 
@@ -692,8 +634,6 @@ A resistor has a known resistance and a measured potential difference.
 
 **Hint:** Rearrange V = IR.
 
-**Specification:** C2.1.2
-
 ### E040 · 1 marks
 
 A current of 0.25 A flows through a 24 Ω resistor.
@@ -703,8 +643,6 @@ A current of 0.25 A flows through a 24 Ω resistor.
    **Marking point:** V = 0.25 × 24 = 6.0 V.
 
 **Hint:** Use V = IR.
-
-**Specification:** C2.1.2
 
 ### E041 · 1 marks
 
@@ -716,8 +654,6 @@ A 30 Ω resistor has a potential difference of 12 V across it.
 
 **Hint:** Use I = V/R.
 
-**Specification:** C2.1.2
-
 ### E042 · 1 marks
 
 A component has 6.0 V across it and a current of 0.30 A.
@@ -727,8 +663,6 @@ A component has 6.0 V across it and a current of 0.30 A.
    **Marking point:** R = 6.0 ÷ 0.30 = 20 Ω.
 
 **Hint:** Use R = V/I.
-
-**Specification:** C2.1.2
 
 ### E043 · 2 marks
 
@@ -740,27 +674,27 @@ A component has 9.0 V across it and carries 45 mA.
 
 2. Calculate resistance.
 
-   **Marking point:** R = 9.0 ÷ 0.045 = 200 Ω.
+   **Marking point:** R = 9.0 ÷ 0.045 = 200 Ω. Values from 199 to 201 Ω are accepted.
 
 **Hint:** Convert the current before dividing.
 
-**Specification:** C2.1.2
-
 ### E044 · 2 marks
 
-A 15 Ω resistor carries 0.20 A. A learner writes V = 0.20 × ____.
+A 15 Ω resistor carries a current of 0.20 A.
 
-1. Enter the missing resistance.
+1. Which substitution correctly calculates the potential difference?
+   - V = 0.20 × 15
+   - V = 15 ÷ 0.20
+   - V = 0.20 ÷ 15
+   - V = 15 + 0.20
 
-   **Marking point:** The resistance is 15 Ω.
+   **Marking point:** V = IR, so multiply 0.20 A by 15 Ω.
 
 2. Calculate V.
 
    **Marking point:** V = 0.20 × 15 = 3.0 V.
 
-**Hint:** Use V = IR.
-
-**Specification:** C2.1.2
+**Hint:** Choose the relationship linking current, resistance and potential difference.
 
 ### E045 · 2 marks
 
@@ -779,8 +713,6 @@ A learner calculates R = 5.0 × 0.25 for a component carrying 0.25 A at 5.0 V.
    **Marking point:** 5.0 ÷ 0.25 = 20 Ω.
 
 **Hint:** Resistance is potential difference divided by current.
-
-**Specification:** C2.1.2
 
 ### E046 · 3 marks
 
@@ -804,8 +736,6 @@ Component A carries 0.20 A at 4.0 V. Component B carries 0.10 A at 3.0 V.
 
 **Hint:** Calculate R = V/I for each.
 
-**Specification:** C2.1.2
-
 ### E047 · 1 marks
 
 Resistance increases while the potential difference stays constant.
@@ -819,8 +749,6 @@ Resistance increases while the potential difference stays constant.
    **Marking point:** For a fixed potential difference, increasing resistance decreases current.
 
 **Hint:** Use I = V/R.
-
-**Specification:** C2.1.2
 
 ### E048 · 1 marks
 
@@ -836,8 +764,6 @@ The potential difference across a resistor doubles. Its resistance stays constan
 
 **Hint:** Use I = V/R.
 
-**Specification:** C2.1.2
-
 ### E049 · 2 marks
 
 A 6.0 V supply is connected first to 20 Ω and then to 30 Ω.
@@ -852,8 +778,6 @@ A 6.0 V supply is connected first to 20 Ω and then to 30 Ω.
 
 **Hint:** Use the same supply potential difference in both calculations.
 
-**Specification:** C2.1.2
-
 ### E050 · 1 marks
 
 A 200 Ω resistor is connected across 10 V.
@@ -867,8 +791,6 @@ A 200 Ω resistor is connected across 10 V.
    **Marking point:** I = 10 ÷ 200 = 0.050 A, or 50 mA.
 
 **Hint:** Estimate the size of V/R.
-
-**Specification:** C2.1.2
 
 ## Components in use
 
@@ -886,8 +808,6 @@ A system needs a resistance that changes with light intensity.
 
 **Hint:** Choose the sensor rather than an output device.
 
-**Specification:** C1.4
-
 ### E052 · 1 marks
 
 A system needs a resistance that changes with temperature.
@@ -901,8 +821,6 @@ A system needs a resistance that changes with temperature.
    **Marking point:** A thermistor changes resistance with temperature.
 
 **Hint:** Choose a temperature-sensitive component.
-
-**Specification:** C1.4
 
 ### E053 · 1 marks
 
@@ -918,8 +836,6 @@ An LDR has resistance 20 kΩ in darkness and 1 kΩ in bright light.
 
 **Hint:** Use the supplied data.
 
-**Specification:** C1.4
-
 ### E054 · 1 marks
 
 A controller turns on a lamp when its LDR resistance exceeds 10 kΩ. The LDR is 2 kΩ in bright light and 25 kΩ in darkness.
@@ -933,8 +849,6 @@ A controller turns on a lamp when its LDR resistance exceeds 10 kΩ. The LDR is 
    **Marking point:** 25 kΩ exceeds the 10 kΩ threshold; 2 kΩ does not.
 
 **Hint:** Compare resistance with the stated threshold.
-
-**Specification:** C1.4
 
 ### E055 · 2 marks
 
@@ -950,8 +864,6 @@ A thermistor has resistance 600 Ω at 20 °C and 200 Ω at 60 °C. It is connect
 
 **Hint:** Use the stated resistance and I = V/R.
 
-**Specification:** C1.4
-
 ### E056 · 1 marks
 
 A warning controller sounds when a thermistor resistance falls below 250 Ω. Resistance is 500 Ω at 30 °C and 180 Ω at 70 °C.
@@ -965,8 +877,6 @@ A warning controller sounds when a thermistor resistance falls below 250 Ω. Res
    **Marking point:** 180 Ω is below 250 Ω; 500 Ω is not.
 
 **Hint:** Apply the stated switching rule.
-
-**Specification:** C1.4
 
 ### E057 · 1 marks
 
@@ -982,8 +892,6 @@ An ideal diode’s conducting direction is from left to right. Its left side is 
 
 **Hint:** Compare supply polarity with conducting direction.
 
-**Specification:** C1.4
-
 ### E058 · 1 marks
 
 A diode is needed to allow conventional current from point X to point Y and restrict it from Y to X.
@@ -997,8 +905,6 @@ A diode is needed to allow conventional current from point X to point Y and rest
    **Marking point:** The diode must face so its conducting direction is from X to Y.
 
 **Hint:** Use the stated conducting direction.
-
-**Specification:** C1.4
 
 ### E059 · 1 marks
 
@@ -1014,8 +920,6 @@ An LED and a suitable resistor are in a complete circuit. The LED is connected i
 
 **Hint:** Check polarity and the complete path.
 
-**Specification:** C1.4
-
 ### E060 · 1 marks
 
 An LED circuit includes a resistor in series.
@@ -1030,39 +934,33 @@ An LED circuit includes a resistor in series.
 
 **Hint:** Excessive current can damage an LED.
 
-**Specification:** C1.4
-
 ### E061 · 1 marks
 
-A photodiode detector produces a larger signal when more light reaches it. A flag moves into the beam.
+A low-voltage circuit contains a diode and resistor in series. With the diode in one orientation the current is 20 mA. Reversing only the diode reduces the current to almost zero.
 
-1. What happens to the signal?
-   - It increases
-   - It reverses the supply
-   - It is unaffected
-   - It decreases
+1. What explains the change?
+   - The reversed diode strongly restricts current
+   - The resistor becomes an open switch
+   - The supply loses its potential difference permanently
+   - Reversing a diode always doubles resistance of the resistor
 
-   **Marking point:** The flag reduces light reaching the photodiode, so the stated detector signal decreases.
+   **Marking point:** The diode conducts readily in one direction and strongly restricts current in the other.
 
-**Hint:** Use the detector behaviour supplied.
-
-**Specification:** C1.4
+**Hint:** Compare the diode’s conducting behaviour in the two orientations.
 
 ### E062 · 1 marks
 
-A light gate has an LED facing a photodiode.
+A learner tests an ordinary diode in a circuit with a low-voltage supply, a series resistor and an ammeter.
 
-1. Which detects an object interrupting the beam?
-   - The power supply alone
-   - The wire insulation
-   - The photodiode
-   - The LED alone
+1. Which test best checks whether the diode conducts mainly in one direction?
+   - Measure current, reverse only the diode, then measure current again
+   - Reverse both diode and supply together
+   - Remove the series resistor and increase voltage until current is large
+   - Measure temperature without changing the diode orientation
 
-   **Marking point:** The photodiode detects the reduction in received light.
+   **Marking point:** Reversing only the diode allows current in the two orientations to be compared under the same supply conditions.
 
-**Hint:** One produces the beam and the other senses it.
-
-**Specification:** C1.4
+**Hint:** The resistor limits current during the test.
 
 ### E063 · 1 marks
 
@@ -1078,8 +976,6 @@ A variable resistor is in series with a lamp and a fixed-voltage supply. Its res
 
 **Hint:** Consider the total resistance of the circuit.
 
-**Specification:** C1.4
-
 ### E064 · 1 marks
 
 A lamp carries 0.50 A when the potential difference is 3.0 V.
@@ -1089,8 +985,6 @@ A lamp carries 0.50 A when the potential difference is 3.0 V.
    **Marking point:** R = 3.0 ÷ 0.50 = 6.0 Ω.
 
 **Hint:** Calculate resistance at this operating point.
-
-**Specification:** C1.4
 
 ### E065 · 2 marks
 
@@ -1105,8 +999,6 @@ A filament lamp carries 0.20 A at 1.0 V and 0.40 A at 4.0 V.
    **Marking point:** 4.0 ÷ 0.40 = 10 Ω.
 
 **Hint:** Calculate V/I at each point.
-
-**Specification:** C1.4
 
 ### E066 · 2 marks
 
@@ -1130,8 +1022,6 @@ Increasing the supply potential difference makes a filament lamp hotter.
 
 **Hint:** Link temperature to resistance.
 
-**Specification:** C1.4
-
 ### E067 · 1 marks
 
 A resistor at constant temperature carries 0.10 A at 2.0 V and 0.20 A at 4.0 V. A lamp carries 0.10 A at 2.0 V and 0.15 A at 4.0 V.
@@ -1145,8 +1035,6 @@ A resistor at constant temperature carries 0.10 A at 2.0 V and 0.20 A at 4.0 V. 
    **Marking point:** The resistor stays at 20 Ω. The lamp rises from 20 Ω to about 26.7 Ω.
 
 **Hint:** Compare V/I at both points for each component.
-
-**Specification:** C1.4
 
 ## Electrical power and energy
 
@@ -1164,8 +1052,6 @@ Power and current are known for an appliance.
 
 **Hint:** Rearrange P = IV.
 
-**Specification:** C2.1
-
 ### E069 · 1 marks
 
 A lamp operates at 12 V and 0.50 A.
@@ -1175,8 +1061,6 @@ A lamp operates at 12 V and 0.50 A.
    **Marking point:** P = 0.50 × 12 = 6.0 W.
 
 **Hint:** Use P = IV.
-
-**Specification:** C2.1
 
 ### E070 · 1 marks
 
@@ -1188,8 +1072,6 @@ A 920 W appliance operates from a 230 V supply.
 
 **Hint:** Use I = P/V.
 
-**Specification:** C2.1
-
 ### E071 · 1 marks
 
 A device transfers energy at 24 W while carrying 2.0 A.
@@ -1200,8 +1082,6 @@ A device transfers energy at 24 W while carrying 2.0 A.
 
 **Hint:** Use V = P/I.
 
-**Specification:** C2.1
-
 ### E072 · 1 marks
 
 Three 8 W lamps and one 20 W lamp operate together.
@@ -1211,8 +1091,6 @@ Three 8 W lamps and one 20 W lamp operate together.
    **Marking point:** 3 × 8 + 20 = 44 W.
 
 **Hint:** Add the individual powers.
-
-**Specification:** C2.1
 
 ### E073 · 1 marks
 
@@ -1228,8 +1106,6 @@ Appliance A is rated at 600 W and B at 900 W.
 
 **Hint:** Power is the rate of energy transfer.
 
-**Specification:** C2.1
-
 ### E074 · 1 marks
 
 Energy transferred and operating time are known.
@@ -1244,8 +1120,6 @@ Energy transferred and operating time are known.
 
 **Hint:** Power is energy divided by time.
 
-**Specification:** C2.1
-
 ### E075 · 1 marks
 
 A 40 W device operates for 30 s.
@@ -1255,8 +1129,6 @@ A 40 W device operates for 30 s.
    **Marking point:** E = 40 × 30 = 1200 J.
 
 **Hint:** Use E = Pt.
-
-**Specification:** C2.1
 
 ### E076 · 1 marks
 
@@ -1268,8 +1140,6 @@ A 500 W heater transfers 15 000 J.
 
 **Hint:** Use t = E/P.
 
-**Specification:** C2.1
-
 ### E077 · 1 marks
 
 A 12 V heater carries 2.0 A for 50 s.
@@ -1279,8 +1149,6 @@ A 12 V heater carries 2.0 A for 50 s.
    **Marking point:** E = 12 × 2.0 × 50 = 1200 J.
 
 **Hint:** Use E = VIt.
-
-**Specification:** C2.1
 
 ### E078 · 2 marks
 
@@ -1296,8 +1164,6 @@ A 6.0 V motor carries 0.50 A for 40 s.
 
 **Hint:** Calculate power before energy.
 
-**Specification:** C2.1
-
 ### E079 · 2 marks
 
 A 200 W heater operates for 3.0 minutes.
@@ -1311,8 +1177,6 @@ A 200 W heater operates for 3.0 minutes.
    **Marking point:** 200 × 180 = 36 000 J.
 
 **Hint:** Use seconds when calculating joules from watts.
-
-**Specification:** C2.1
 
 ### E080 · 2 marks
 
@@ -1331,8 +1195,6 @@ A learner calculates E = 100 × 2 = 200 J for a 100 W heater operating for 2 min
    **Marking point:** E = 100 × 120 = 12 000 J.
 
 **Hint:** A watt is a joule per second.
-
-**Specification:** C2.1
 
 ### E081 · 3 marks
 
@@ -1356,8 +1218,6 @@ A 1.0 kW heater runs for 2 h. A 2.0 kW heater runs for 0.5 h.
 
 **Hint:** Compare power multiplied by time.
 
-**Specification:** C2.1
-
 ## Domestic energy and fuses
 
 ### E082 · 1 marks
@@ -1369,8 +1229,6 @@ A 1.5 kW heater operates for 2 h.
    **Marking point:** 1.5 × 2 = 3.0 kWh.
 
 **Hint:** Use kW × h.
-
-**Specification:** C3.1–C3.3
 
 ### E083 · 2 marks
 
@@ -1386,8 +1244,6 @@ An 800 W appliance operates for 3 h.
 
 **Hint:** Convert watts to kilowatts.
 
-**Specification:** C3.1–C3.3
-
 ### E084 · 2 marks
 
 A 2.0 kW kettle is used for a total of 6 minutes each day for 5 days.
@@ -1401,8 +1257,6 @@ A 2.0 kW kettle is used for a total of 6 minutes each day for 5 days.
    **Marking point:** 2.0 × 0.50 = 1.0 kWh.
 
 **Hint:** Find the total time in hours.
-
-**Specification:** C3.1–C3.3
 
 ### E085 · 3 marks
 
@@ -1422,8 +1276,6 @@ A 1.0 kW heater runs for 2 h and a 0.10 kW television runs for 4 h.
 
 **Hint:** Calculate each energy use before adding.
 
-**Specification:** C3.1–C3.3
-
 ### E086 · 1 marks
 
 Plan A uses a 2.0 kW heater for 1 h; plan B uses a 1.0 kW heater for 3 h.
@@ -1438,13 +1290,11 @@ Plan A uses a 2.0 kW heater for 1 h; plan B uses a 1.0 kW heater for 3 h.
 
 **Hint:** Compare total energy, not power alone.
 
-**Specification:** C3.1–C3.3
-
 ### E087 · 2 marks
 
-A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses. Assume no significant starting-current surge.
+A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses.
 
-1. Calculate normal current.
+1. For this device, calculate the current when normally in use.
 
    **Marking point:** I = 460 ÷ 230 = 2.0 A.
 
@@ -1456,8 +1306,6 @@ A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses. Assume
    **Marking point:** 3 A is the smallest available rating above the 2.0 A normal current.
 
 **Hint:** Choose the smallest stated rating above the normal current.
-
-**Specification:** C3.1–C3.3
 
 ### E088 · 1 marks
 
@@ -1473,13 +1321,11 @@ An appliance normally draws 4.0 A. A learner proposes a 3 A fuse.
 
 **Hint:** Compare normal current with fuse rating.
 
-**Specification:** C3.1–C3.3
-
 ### E089 · 2 marks
 
-A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A. Assume no significant starting-current surge.
+A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A.
 
-1. Calculate normal current.
+1. For this device, calculate the current when normally in use.
 
    **Marking point:** 2300 ÷ 230 = 10 A.
 
@@ -1491,8 +1337,6 @@ A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A. Ass
    **Marking point:** Only 13 A is above the stated 10 A normal current.
 
 **Hint:** Calculate current before choosing.
-
-**Specification:** C3.1–C3.3
 
 ## Temperature and heating calculations
 
@@ -1506,8 +1350,6 @@ A liquid is at 25 °C. Use K = °C + 273.
 
 **Hint:** Add 273 using the stated approximation.
 
-**Specification:** C4.1–C4.4
-
 ### E091 · 1 marks
 
 A solid is at 260 K. Use °C = K − 273.
@@ -1517,8 +1359,6 @@ A solid is at 260 K. Use °C = K − 273.
    **Marking point:** 260 − 273 = −13 °C.
 
 **Hint:** Subtract 273 using the stated approximation.
-
-**Specification:** C4.1–C4.4
 
 ### E092 · 1 marks
 
@@ -1530,8 +1370,6 @@ A liquid is heated from 18 °C to 63 °C.
 
 **Hint:** Temperature change is final minus initial.
 
-**Specification:** C4.1–C4.4
-
 ### E093 · 1 marks
 
 A 0.50 kg liquid has specific heat capacity 4000 J kg⁻¹ K⁻¹. Its temperature rises by 12 K.
@@ -1541,8 +1379,6 @@ A 0.50 kg liquid has specific heat capacity 4000 J kg⁻¹ K⁻¹. Its temperatu
    **Marking point:** 0.50 × 4000 × 12 = 24 000 J.
 
 **Hint:** Use ΔQ = mcΔT.
-
-**Specification:** C4.1–C4.4
 
 ### E094 · 1 marks
 
@@ -1554,8 +1390,6 @@ A 0.20 kg solid gains 1800 J and warms by 10 K.
 
 **Hint:** Use c = ΔQ/(mΔT).
 
-**Specification:** C4.1–C4.4
-
 ### E095 · 1 marks
 
 A 0.50 kg solid gains 4500 J. Its specific heat capacity is 900 J kg⁻¹ K⁻¹.
@@ -1565,8 +1399,6 @@ A 0.50 kg solid gains 4500 J. Its specific heat capacity is 900 J kg⁻¹ K⁻¹
    **Marking point:** 4500 ÷ (0.50 × 900) = 10 K.
 
 **Hint:** Rearrange ΔQ = mcΔT.
-
-**Specification:** C4.1–C4.4
 
 ### E096 · 1 marks
 
@@ -1582,8 +1414,6 @@ Equal masses of A and B are heated through the same temperature change. Their sp
 
 **Hint:** Compare c when m and ΔT are identical.
 
-**Specification:** C4.1–C4.4
-
 ### E097 · 2 marks
 
 A 12 V heater carries 2.0 A for 100 s in 0.10 kg of liquid. All supplied energy heats the liquid, which warms by 6.0 K.
@@ -1597,8 +1427,6 @@ A 12 V heater carries 2.0 A for 100 s in 0.10 kg of liquid. All supplied energy 
    **Marking point:** 2400 ÷ (0.10 × 6.0) = 4000 J kg⁻¹ K⁻¹.
 
 **Hint:** Find energy using E = VIt, then use c = E/(mΔT).
-
-**Specification:** C4.1–C4.4
 
 ### E098 · 2 marks
 
@@ -1614,8 +1442,6 @@ A 0.50 kg liquid with c = 4000 J kg⁻¹ K⁻¹ is heated through 20 K by a 200 
 
 **Hint:** Find energy before time.
 
-**Specification:** C4.1–C4.4
-
 ## Changes of state
 
 ### E099 · 1 marks
@@ -1628,8 +1454,6 @@ A 0.50 kg liquid with c = 4000 J kg⁻¹ K⁻¹ is heated through 20 K by a 200 
 
 **Hint:** Use ΔQ = mL.
 
-**Specification:** C5.1–C5.2; C4.3
-
 ### E100 · 1 marks
 
 During boiling, 0.010 kg of a liquid vaporises after gaining 23 000 J.
@@ -1640,8 +1464,6 @@ During boiling, 0.010 kg of a liquid vaporises after gaining 23 000 J.
 
 **Hint:** Use L = ΔQ/m.
 
-**Specification:** C5.1–C5.2; C4.3
-
 ### E101 · 1 marks
 
 A substance absorbs 16 000 J while melting. Its specific latent heat of fusion is 200 000 J kg⁻¹.
@@ -1651,8 +1473,6 @@ A substance absorbs 16 000 J while melting. Its specific latent heat of fusion i
    **Marking point:** 16 000 ÷ 200 000 = 0.080 kg.
 
 **Hint:** Use m = ΔQ/L.
-
-**Specification:** C5.1–C5.2; C4.3
 
 ### E102 · 1 marks
 
@@ -1666,8 +1486,6 @@ Water has latent heat of fusion 334 000 J kg⁻¹ and latent heat of vaporisatio
    **Marking point:** Boiling changes liquid to gas, so use latent heat of vaporisation.
 
 **Hint:** Select the value matching the change of state.
-
-**Specification:** C5.1–C5.2; C4.3
 
 ### E103 · 3 marks
 
@@ -1687,8 +1505,6 @@ Water has latent heat of fusion 334 000 J kg⁻¹ and latent heat of vaporisatio
 
 **Hint:** Calculate warming and melting separately.
 
-**Specification:** C5.1–C5.2; C4.3
-
 ### E104 · 2 marks
 
 A 200 W heater melts 0.10 kg of a substance already at its melting point. L = 300 000 J kg⁻¹. Assume no losses.
@@ -1702,8 +1518,6 @@ A 200 W heater melts 0.10 kg of a substance already at its melting point. L = 30
    **Marking point:** 30 000 ÷ 200 = 150 s.
 
 **Hint:** Find mL, then divide by power.
-
-**Specification:** C5.1–C5.2; C4.3
 
 ### E105 · 1 marks
 
@@ -1719,8 +1533,6 @@ A pure liquid boils at fixed pressure while a heater continues supplying energy.
 
 **Hint:** Distinguish changes in particle arrangement from increasing average kinetic energy.
 
-**Specification:** C5.1–C5.2; C4.3
-
 ### E106 · 1 marks
 
 For water, L of fusion = 334 kJ kg⁻¹ and L of vaporisation = 2260 kJ kg⁻¹.
@@ -1734,8 +1546,6 @@ For water, L of fusion = 334 kJ kg⁻¹ and L of vaporisation = 2260 kJ kg⁻¹.
    **Marking point:** For water, the supplied vaporisation value is greater than the fusion value.
 
 **Hint:** Compare equal masses using the supplied values.
-
-**Specification:** C5.1–C5.2; C4.3
 
 ## Electrical practicals and interpreting results
 
@@ -1753,11 +1563,9 @@ A learner investigates the resistance of a lamp at different potential differenc
 
 **Hint:** Measure current through the lamp and potential difference across it.
 
-**Specification:** C1.3–C1.4; C2.1.2
-
 ### E108 · 3 marks
 
-A lamp has these readings: 1.0 V, 0.20 A; 3.0 V, 0.30 A.
+A learner changes the potential difference across one filament lamp and waits for a steady reading at each setting. At the first setting, the potential difference is 1.0 V and current is 0.20 A. At the second setting, they are 3.0 V and 0.30 A.
 
 1. Calculate resistance at 1.0 V.
 
@@ -1767,7 +1575,7 @@ A lamp has these readings: 1.0 V, 0.20 A; 3.0 V, 0.30 A.
 
    **Marking point:** 3.0 ÷ 0.30 = 10 Ω.
 
-3. Which conclusion follows?
+3. How does the lamp’s resistance compare at these two settings?
    - Resistance increases across these readings
    - Resistance is constant
    - Resistance decreases
@@ -1775,9 +1583,7 @@ A lamp has these readings: 1.0 V, 0.20 A; 3.0 V, 0.30 A.
 
    **Marking point:** The calculated resistance increases from 5.0 Ω to 10 Ω.
 
-**Hint:** Calculate resistance at both operating points.
-
-**Specification:** C1.3–C1.4; C2.1.2
+**Hint:** Calculate V/I separately at each supply setting.
 
 ### E109 · 2 marks
 
@@ -1801,8 +1607,6 @@ At unchanged conditions, repeated voltage readings are 2.01, 2.00, 4.80 and 2.02
 
 **Hint:** Compare the readings before making a decision.
 
-**Specification:** C1.3–C1.4; C2.1.2
-
 ### E110 · 1 marks
 
 Setup A has an ammeter in series with resistor R and a voltmeter across R. Setup B swaps the two meters.
@@ -1817,11 +1621,11 @@ Setup A has an ammeter in series with resistor R and a voltmeter across R. Setup
 
 **Hint:** Judge what each meter is intended to measure.
 
-**Specification:** C1.3–C1.4; C2.1.2
-
 ### E111 · 1 marks
 
-A filament lamp characteristic includes points (1.0 V, 0.20 A), (4.0 V, 0.40 A) and (9.0 V, 0.60 A).
+The graph shows how current through a filament lamp changes as the potential difference across it is increased.
+
+Diagram: see the interactive preview.
 
 1. Which statement fits the characteristic?
    - Current is proportional to voltage throughout
@@ -1833,8 +1637,6 @@ A filament lamp characteristic includes points (1.0 V, 0.20 A), (4.0 V, 0.40 A) 
 
 **Hint:** Use V/I, rather than treating a curved graph as constant resistance.
 
-**Specification:** C1.3–C1.4; C2.1.2
-
 ## Thermal practicals and evaluating measurements
 
 ### E112 · 1 marks
@@ -1843,24 +1645,22 @@ A learner measures the specific heat capacity of a liquid using an electrical he
 
 1. Which set of apparatus is suitable?
    - Balance, thermometer, insulated container, heater, electrical meters and timer
-   - Ammeter and ruler only
-   - Ohmmeter and stopwatch only
-   - Balance and lamp only
+   - Balance, thermometer, insulated container and heater, but no energy or time measurements
+   - Heater, electrical meters and timer, but no mass or temperature measurements
+   - Balance, thermometer and timer, but no measurement of heater energy
 
    **Marking point:** Mass, temperature rise and electrical energy supplied must all be measured.
 
 **Hint:** They need energy, mass and temperature change.
 
-**Specification:** C4.4.1; C5.1
-
 ### E113 · 2 marks
 
-A solid block contains a heater and thermometer.
+A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The heater is operated for a measured time, and the initial and final block temperatures are recorded.
 
-1. Which measurements are required?
-   - Block length and colour only
-   - Final temperature only
-   - Current only
+1. Which complete set of measurements is needed to calculate the block’s specific heat capacity?
+   - Block mass and final temperature, but no initial temperature or heater energy
+   - Initial and final temperatures and heater power, but no mass or heating time
+   - Block mass and heater energy, but no temperature change
    - Block mass, initial and final temperature, heater energy supplied
 
    **Marking point:** Specific heat capacity needs mass, temperature change and energy gained.
@@ -1873,9 +1673,7 @@ A solid block contains a heater and thermometer.
 
    **Marking point:** Insulation reduces energy transferred from the block to its surroundings.
 
-**Hint:** Use c = E/(mΔT).
-
-**Specification:** C4.4.1; C5.1
+**Hint:** Use the energy supplied, block mass and temperature change to determine specific heat capacity.
 
 ### E114 · 2 marks
 
@@ -1891,23 +1689,19 @@ A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30
 
 **Hint:** Calculate energy first.
 
-**Specification:** C4.4.1; C5.1
-
 ### E115 · 1 marks
 
 A heater supplies 5000 J to a beaker and liquid, but the calculation assumes the liquid receives all 5000 J.
 
 1. Why might the calculated specific heat capacity be too high?
-   - The mass has no effect on the calculation
+   - The heater supplies less energy than the measured electrical energy because current is measured in amperes
    - Some energy heats the beaker or is transferred to the surroundings
-   - The liquid receives more energy than the heater supplies
-   - Temperature rise must be zero
+   - The liquid’s mass must increase as it warms
+   - The calculation should use the final temperature instead of the temperature rise
 
    **Marking point:** Using all supplied energy overestimates the energy gained by the liquid when other transfers occur.
 
 **Hint:** Consider other energy transfers.
-
-**Specification:** C4.4.1; C5.1
 
 ### E116 · 1 marks
 
@@ -1915,21 +1709,19 @@ Two identical liquids are heated with identical heaters. One container has insul
 
 1. Which arrangement better reduces unwanted transfers?
    - Insulation and lid
-   - The uncovered uninsulated container
-   - Both necessarily lose equal energy
-   - A fan blowing over either container
+   - An uncovered container with insulation around its sides only
+   - A lid on an otherwise uninsulated container only
+   - A fan blowing across the open liquid surface
 
    **Marking point:** Insulation and a lid reduce energy transfers from the heated liquid to its surroundings.
 
 **Hint:** Consider energy transferred to the surroundings.
 
-**Specification:** C4.4.1; C5.1
-
 ### E117 · 2 marks
 
-A heater melts ice already at 0 °C. The meltwater is collected.
+A learner packs ice at its melting point into a funnel and collects meltwater in a weighed container. An electrical heater supplies a measured energy during a timed interval. A second equal-duration collection is made without the heater to estimate melting caused by the surroundings.
 
-1. Which measurements allow an estimate of latent heat of fusion?
+1. Which measurements are used to estimate the specific latent heat of fusion?
    - Final water temperature only
    - Ice length and room brightness
    - Supply voltage only
@@ -1945,19 +1737,17 @@ A heater melts ice already at 0 °C. The meltwater is collected.
 
    **Marking point:** A control measurement helps account for melting caused by the surroundings.
 
-**Hint:** Determine the energy used and mass melted.
-
-**Specification:** C4.4.1; C5.1
+**Hint:** Compare meltwater collected over equal time intervals.
 
 ### E118 · 2 marks
 
-A liquid is boiling steadily while heated electrically.
+A learner uses an immersion heater to boil a liquid in an open container on a balance. Once boiling is steady, the learner records the mass before and after a timed interval and measures the electrical energy supplied during that interval.
 
 1. Which pair is needed to estimate latent heat of vaporisation?
-   - Liquid colour and supply voltage
-   - Initial temperature alone
+   - Electrical power and mass lost, without measuring heating time
+   - Energy supplied and the initial mass only
    - Electrical energy supplied and mass vaporised
-   - Final temperature and beaker diameter
+   - Final temperature and heating time, without measuring mass lost
 
    **Marking point:** The estimate uses L = E/m for the mass vaporised during the energy-input interval.
 
@@ -1969,25 +1759,21 @@ A liquid is boiling steadily while heated electrically.
 
    **Marking point:** Before steady boiling, some input energy raises temperature rather than vaporising the liquid.
 
-**Hint:** Measure mass lost during the timed boiling interval.
-
-**Specification:** C4.4.1; C5.1
+**Hint:** The loss in mass estimates the mass vaporised during the timed interval.
 
 ### E119 · 1 marks
 
-During steady boiling, a heater supplies 45 200 J while 0.020 kg of water vaporises. Assume all that energy vaporises water for this estimate.
+A learner places a container of water and an immersion heater on a balance. Once the water boils steadily, the learner supplies 45 200 J during a timed interval. The balance reading falls from 0.850 kg to 0.830 kg. Assume all this supplied energy vaporises water for the estimate.
 
-1. Calculate experimental latent heat.
+1. Calculate the specific latent heat of vaporisation from this experiment.
 
    **Marking point:** 45 200 ÷ 0.020 = 2 260 000 J kg⁻¹.
 
-**Hint:** Divide energy by mass.
-
-**Specification:** C4.4.1; C5.1
+**Hint:** Calculate the mass lost, then use L = E/m.
 
 ### E120 · 2 marks
 
-Two experiments estimate a liquid’s latent heat. An insulated setup gives 2.3 MJ kg⁻¹; an uninsulated setup gives 2.8 MJ kg⁻¹. Both use heater energy divided by mass vaporised.
+Two learners boil the same liquid using immersion heaters. Each measures electrical energy supplied and the mass lost over a timed interval of steady boiling. One container has insulation around its sides; the other is uninsulated. The calculated specific latent heats are 2.3 MJ kg⁻¹ and 2.8 MJ kg⁻¹ respectively. Both calculations use heater energy divided by mass vaporised.
 
 1. Which explanation is consistent with the higher uninsulated value?
    - More supplied energy is lost to the surroundings rather than vaporising liquid
@@ -2005,6 +1791,4 @@ Two experiments estimate a liquid’s latent heat. An insulated setup gives 2.3 
 
    **Marking point:** The results support investigating losses, but do not establish an exact value without further evidence.
 
-**Hint:** Energy lost to the surroundings is included in heater energy but does not vaporise the liquid.
-
-**Specification:** C4.4.1; C5.1
+**Hint:** Consider whether all measured heater energy vaporises the liquid.

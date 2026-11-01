@@ -13,3 +13,9 @@ Build: `node scripts/build-electricity-preview.cjs`
 Check: `node tests/electricity-preview-browser.cjs` (Chromium and localhost access required), plus `npm test`.
 
 Teacher review is required before the questions join the student bank. In particular, practical explanations are deliberately scaffolded for automatic scoring and do not reproduce every demand of a free-response examination question.
+
+## Review revision
+
+Unlabelled symbols replace answer-labelled illustrations in E009/E010. E011 now tests meter placement. New circuit illustrations support E028–E033, and E111 has numbered axes in V and A. E027/E032 assess specified variable-resistor/meter skills instead of explicit short-circuit identification; short circuits are not explicitly named in section C. Photodiode contexts were removed at the teacher's request, although photodiodes remain explicitly listed in C1.4; full coverage of that named component is therefore intentionally deferred.
+
+E043 accepts 199–201 Ω, not an unrestricted prefix-based acceptance rule. Other questions retain their existing tolerances. E085/E103 addition follow-through is deferred: this engine has no addition follow-through operation, and no shared-engine change was made for this review. No Supabase schema change is required for the current question amendments. E087/E089 keep direct fuse-choice marking. Practical contexts and selected distractors have been expanded; all questions remain automatically marked.
