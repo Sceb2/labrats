@@ -1,6 +1,6 @@
 {
   "title": "Forces · draft question preview",
-  "version": 4,
+  "version": 5,
   "topics": [
     {
       "id": "F01",
@@ -728,9 +728,13 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. The gradient represents velocity."
+          "workedAnswer": "1. The gradient represents velocity.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><polyline points=\"70,220 255,60\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Displacement / m</text></g></svg>",
+            "description": "Displacement rises linearly from 0 m at 0 s to 8 m at 4 s; time is on the horizontal axis."
+          }
         },
         {
           "id": "F02A",
@@ -860,9 +864,13 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. a stationary object"
+          "workedAnswer": "1. a stationary object",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><polyline points=\"70,140 440,140\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Displacement / m</text></g></svg>",
+            "description": "Displacement is constant at 4 m from 0 s to 8 s."
+          }
         },
         {
           "id": "F02R3",
@@ -916,7 +924,7 @@
         {
           "id": "F02R4",
           "kind": "recall",
-          "prompt": "What is the unit of a displacement–time gradient?",
+          "prompt": "What is the unit of the gradient of a line on a displacement (vertical axis) against time (horizontal axis) graph?",
           "interaction": "selected-answer",
           "marks": 1,
           "maxMarks": 1,
@@ -958,12 +966,12 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. m s⁻¹"
         },
         {
-          "prompt": "Use the displacement–time graph for a moving trolley.",
+          "prompt": "The graph shows displacement against time for a moving trolley. Use it to answer the questions.",
           "parts": [
             {
               "type": "numeric",
@@ -1034,12 +1042,12 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Gradient = (12 − 0) / 4 = 3 m s⁻¹.\n2. The trolley is stationary."
         },
         {
-          "prompt": "Use the displacement–time graph for a robot.",
+          "prompt": "The graph shows displacement against time for a moving robot. Use it to answer the questions.",
           "parts": [
             {
               "type": "numeric",
@@ -1110,7 +1118,7 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. (0 − 10) / 5 = −2 m s⁻¹.\n2. The robot moves in the negative direction."
         },
@@ -1200,7 +1208,7 @@
         {
           "id": "F02A5",
           "kind": "scaffold",
-          "prompt": "Use the displacement–time graph for a trolley.",
+          "prompt": "The graph shows displacement against time for a moving trolley. Use it to answer the questions.",
           "marks": 2,
           "maxMarks": 2,
           "interaction": "scaffolded-calculation",
@@ -1263,7 +1271,7 @@
           "specRefs": [
             "B1.3.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. The trolley is stationary.\n2. Gradient = 8 ÷ 4 = 2 m s⁻¹.",
           "diagram": {
@@ -1274,7 +1282,7 @@
         {
           "id": "F02A6",
           "kind": "scaffold",
-          "prompt": "A displacement–time graph is a straight upward-sloping line from 0 to 6 s.",
+          "prompt": "The graph shows displacement against time for an object. The line rises steadily from 0 to 6 s.",
           "marks": 2,
           "maxMarks": 2,
           "interaction": "answer-completion",
@@ -1347,9 +1355,13 @@
             "B1.3.3",
             "B2.7"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. Velocity is constant and positive.\n2. Zero, because velocity is constant."
+          "workedAnswer": "1. Velocity is constant and positive.\n2. Zero, because velocity is constant.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">3</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">3</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">6</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">6</text><polyline points=\"70,220 440,60\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Displacement / m</text></g></svg>",
+            "description": "A straight upward-sloping displacement–time line runs from (0 s, 0 m) to (6 s, 6 m)."
+          }
         },
         {
           "id": "F02A7",
@@ -1642,9 +1654,13 @@
           "specRefs": [
             "B1.3.4–B1.3.6"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. distance travelled"
+          "workedAnswer": "1. distance travelled",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M70 220L70 140L440 140L440 220Z\" fill=\"#DCECE3\" stroke=\"none\"/><polyline points=\"70,140 440,140\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Velocity / m s⁻¹</text></g></svg>",
+            "description": "Velocity stays at 4 m s⁻¹ from 0 to 8 s. The area between the line and the time axis is shaded."
+          }
         },
         {
           "id": "F03R3",
@@ -1691,9 +1707,13 @@
           "specRefs": [
             "B1.3.4–B1.3.6"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. constant positive velocity"
+          "workedAnswer": "1. constant positive velocity",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><polyline points=\"70,140 440,140\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Velocity / m s⁻¹</text></g></svg>",
+            "description": "A horizontal velocity–time line stays above zero at 4 m s⁻¹ from 0 to 8 s."
+          }
         },
         {
           "id": "F03R4",
@@ -1789,9 +1809,13 @@
           "specRefs": [
             "B1.3.4–B1.3.6"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. constant deceleration"
+          "workedAnswer": "1. constant deceleration",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M70 30v190h390\"/><path d=\"M70 220v5\"/><text x=\"66\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M65 220h5\"/><text x=\"42\" y=\"225\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">0</text><path d=\"M255 220v5\"/><text x=\"251\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M65 140h5\"/><text x=\"42\" y=\"145\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">4</text><path d=\"M440 220v5\"/><text x=\"436\" y=\"247\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><path d=\"M65 60h5\"/><text x=\"42\" y=\"65\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">8</text><polyline points=\"70,60 440,220\" stroke=\"#105640\" stroke-width=\"3\"/><text x=\"230\" y=\"276\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Time / s</text><text x=\"6\" y=\"19\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Velocity / m s⁻¹</text></g></svg>",
+            "description": "A straight velocity–time line slopes down from 8 m s⁻¹ at 0 s to zero at 8 s."
+          }
         },
         {
           "prompt": "Use the velocity–time graph for a vehicle.",
@@ -2189,7 +2213,7 @@
         {
           "id": "F04R",
           "kind": "recall",
-          "prompt": "The four equations of motion used in this topic apply when…",
+          "prompt": "The equations of motion, often called SUVAT equations, describe motion using displacement s, initial velocity u, final velocity v, acceleration a and time t. When can they be used?",
           "options": [
             "velocity is always zero",
             "acceleration is constant",
@@ -2237,7 +2261,7 @@
           "specRefs": [
             "B1.3.8"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. They apply to constant acceleration."
         },
@@ -2479,7 +2503,7 @@
           "workedAnswer": "1. displacement"
         },
         {
-          "prompt": "A train initially travels at 12 m s⁻¹ and accelerates uniformly at 0.8 m s⁻² for 15 s.",
+          "prompt": "A train initially travels at 12 m s⁻¹ and accelerates uniformly at 0.8 m s⁻² for 15 s. Use v = u + at for final velocity and s = ½(u + v)t for displacement.",
           "parts": [
             {
               "type": "numeric",
@@ -2535,12 +2559,12 @@
           "specRefs": [
             "B1.3.8"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. v = u + at = 12 + 0.8 × 15 = 24 m s⁻¹.\n2. s = (12 + 24) / 2 × 15 = 270 m."
         },
         {
-          "prompt": "A trolley starts from rest and accelerates uniformly at 1.5 m s⁻² for 4 s.",
+          "prompt": "A trolley starts from rest and accelerates uniformly at 1.5 m s⁻² for 4 s. Use v = u + at for final velocity and s = ut + ½at² for displacement.",
           "parts": [
             {
               "type": "numeric",
@@ -2596,7 +2620,7 @@
           "specRefs": [
             "B1.3.8"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. v = 0 + 1.5 × 4 = 6 m s⁻¹.\n2. s = 0 × 4 + ½ × 1.5 × 4² = 12 m."
         },
@@ -2702,7 +2726,7 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "A thermometer",
+                  "text": "A single light gate and timer",
                   "feedback": "An accelerometer measures acceleration."
                 },
                 {
@@ -2712,12 +2736,12 @@
                 },
                 {
                   "id": "2",
-                  "text": "An ammeter",
+                  "text": "A speedometer",
                   "feedback": "An accelerometer measures acceleration."
                 },
                 {
                   "id": "3",
-                  "text": "A balance",
+                  "text": "A force sensor",
                   "feedback": "An accelerometer measures acceleration."
                 }
               ],
@@ -2729,7 +2753,7 @@
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. An accelerometer measures acceleration."
         },
@@ -2936,17 +2960,17 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "Mass",
+                  "text": "Displacement travelled during the interval",
                   "feedback": "Time interval"
                 },
                 {
                   "id": "1",
-                  "text": "Weight",
+                  "text": "Average speed during the interval",
                   "feedback": "Time interval"
                 },
                 {
                   "id": "2",
-                  "text": "Temperature",
+                  "text": "Distance between two positions",
                   "feedback": "Time interval"
                 },
                 {
@@ -2963,7 +2987,7 @@
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Time interval"
         },
@@ -2985,12 +3009,12 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "the wavelength of incoming radio waves",
+                  "text": "the total distance the phone has travelled",
                   "feedback": "changes in motion or orientation"
                 },
                 {
                   "id": "1",
-                  "text": "the phone’s mass",
+                  "text": "the speed of sound reaching the microphone",
                   "feedback": "changes in motion or orientation"
                 },
                 {
@@ -3000,7 +3024,7 @@
                 },
                 {
                   "id": "3",
-                  "text": "the phone number being called",
+                  "text": "the force on the phone without knowing its mass",
                   "feedback": "changes in motion or orientation"
                 }
               ],
@@ -3012,7 +3036,7 @@
           "specRefs": [
             "B1.3.7; B1.4"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. changes in motion or orientation"
         },
@@ -3259,17 +3283,17 @@
                 },
                 {
                   "id": "1",
-                  "text": "A balance only.",
+                  "text": "A stopwatch timing the total journey only.",
                   "feedback": "Two light gates with a timer or data logger."
                 },
                 {
                   "id": "2",
-                  "text": "A thermometer only.",
+                  "text": "A metre rule and a stopwatch with no velocity measurement.",
                   "feedback": "Two light gates with a timer or data logger."
                 },
                 {
                   "id": "3",
-                  "text": "A force meter without any time measurement.",
+                  "text": "A single light gate with a timer but no second velocity reading.",
                   "feedback": "Two light gates with a timer or data logger."
                 }
               ],
@@ -3290,17 +3314,17 @@
                 },
                 {
                   "id": "1",
-                  "text": "Two masses and a distance.",
+                  "text": "The two positions and the trolley’s mass.",
                   "feedback": "Two velocities and the time interval between them."
                 },
                 {
                   "id": "2",
-                  "text": "Two forces without time.",
+                  "text": "The final speed and total distance only.",
                   "feedback": "Two velocities and the time interval between them."
                 },
                 {
                   "id": "3",
-                  "text": "A temperature and a mass.",
+                  "text": "The trolley’s mass and the travel time only.",
                   "feedback": "Two velocities and the time interval between them."
                 }
               ],
@@ -3321,17 +3345,17 @@
                 },
                 {
                   "id": "1",
-                  "text": "To guarantee zero systematic error.",
+                  "text": "To prove that the trolley’s acceleration is zero.",
                   "feedback": "To identify anomalies and calculate a mean."
                 },
                 {
                   "id": "2",
-                  "text": "To change the trolley’s mass each time.",
+                  "text": "To ensure that every reading is identical.",
                   "feedback": "To identify anomalies and calculate a mean."
                 },
                 {
                   "id": "3",
-                  "text": "To remove the need to record times.",
+                  "text": "To remove any calibration error in the timer automatically.",
                   "feedback": "To identify anomalies and calculate a mean."
                 }
               ],
@@ -3345,7 +3369,7 @@
           "specRefs": [
             "B1.3.7"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Two light gates with a timer or data logger.\n2. Two velocities and the time interval between them.\n3. To identify anomalies and calculate a mean."
         },
@@ -3699,7 +3723,7 @@
               "options": [
                 {
                   "id": "0",
-                  "text": "Force is the same as momentum",
+                  "text": "The resultant force equals mass times acceleration.",
                   "feedback": "Motion remains unchanged unless a resultant force acts"
                 },
                 {
@@ -3709,12 +3733,12 @@
                 },
                 {
                   "id": "2",
-                  "text": "Every object needs a forward resultant force to keep moving",
+                  "text": "Forces between two interacting objects are equal and opposite.",
                   "feedback": "Motion remains unchanged unless a resultant force acts"
                 },
                 {
                   "id": "3",
-                  "text": "Heavier objects always fall faster",
+                  "text": "Momentum equals mass multiplied by velocity.",
                   "feedback": "Motion remains unchanged unless a resultant force acts"
                 }
               ],
@@ -3726,7 +3750,7 @@
           "specRefs": [
             "B2.1; B2.7"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Motion remains unchanged unless a resultant force acts"
         },
@@ -4708,7 +4732,7 @@
         {
           "id": "F08R3",
           "kind": "recall",
-          "prompt": "Normal reaction acts…",
+          "prompt": "The normal reaction, or contact force, acts…",
           "interaction": "selected-answer",
           "marks": 1,
           "maxMarks": 1,
@@ -4746,11 +4770,11 @@
             }
           ],
           "answer": "perpendicular to the contact surface",
-          "hint": "Use F = μN. Think about whether the block is moving or just about to move.",
+          "hint": "Think about the direction in which the surface pushes on the object.",
           "specRefs": [
             "B2.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. perpendicular to the contact surface"
         },
@@ -5892,7 +5916,7 @@
         {
           "id": "F10R4",
           "kind": "recall",
-          "prompt": "For the same mass, doubling velocity…",
+          "prompt": "Using p = mv, for the same mass, doubling velocity…",
           "interaction": "selected-answer",
           "marks": 1,
           "maxMarks": 1,
@@ -5934,12 +5958,12 @@
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. doubles momentum"
         },
         {
-          "prompt": "A 0.20 kg ball travels at 15 m s⁻¹ to the right.",
+          "prompt": "A 0.20 kg ball travels at 15 m s⁻¹ to the right. Use p = mv to calculate momentum magnitude.",
           "parts": [
             {
               "type": "numeric",
@@ -6006,12 +6030,12 @@
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. p = 0.20 × 15 = 3.0 kg m s⁻¹.\n2. Right"
         },
         {
-          "prompt": "A 1000 kg car travels at 30 m s⁻¹. A 3000 kg van travels at 10 m s⁻¹.",
+          "prompt": "A 1000 kg car travels at 30 m s⁻¹. A 3000 kg van travels at 10 m s⁻¹. Use p = mv for momentum magnitude and average stopping force = change in momentum magnitude ÷ stopping time.",
           "parts": [
             {
               "type": "numeric",
@@ -6100,12 +6124,12 @@
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 1000 × 30 = 30 000 kg m s⁻¹.\n2. 3000 × 10 = 30 000 kg m s⁻¹.\n3. They are equal because equal momentum-change magnitudes occur in equal times."
         },
         {
-          "prompt": "A 20 000 kg goods vehicle travels at 4 m s⁻¹. A 2000 kg van travels at 20 m s⁻¹.",
+          "prompt": "A 20 000 kg goods vehicle travels at 4 m s⁻¹. A 2000 kg van travels at 20 m s⁻¹. Use p = mv for momentum magnitude and average stopping force = change in momentum magnitude ÷ stopping time.",
           "parts": [
             {
               "type": "numeric",
@@ -6194,7 +6218,7 @@
           "specRefs": [
             "B2.4; B2.5.2"
           ],
-          "contentVersion": 3,
+          "contentVersion": 4,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. 20 000 × 4 = 80 000 kg m s⁻¹.\n2. 2000 × 20 = 40 000 kg m s⁻¹.\n3. The goods vehicle needs twice the average stopping force."
         }
@@ -6207,7 +6231,7 @@
         {
           "id": "F11R",
           "kind": "recall",
-          "prompt": "For the same change in momentum, increasing the stopping time will…",
+          "prompt": "The magnitude of the average stopping force is change in momentum magnitude divided by stopping time. For the same change in momentum, increasing the stopping time will…",
           "options": [
             "increase the average force",
             "reduce the average force",
@@ -6255,7 +6279,7 @@
           "specRefs": [
             "B2.5; B2.5.3"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
           "workedAnswer": "1. Average force is change in momentum divided by time, so a longer time gives a smaller force."
         },
@@ -7336,81 +7360,85 @@
         {
           "id": "F11A10",
           "kind": "scaffold",
-          "prompt": "A car has crumple zones and a rigid passenger cell.",
+          "prompt": "A car has crumple zones that deform during a collision.",
           "marks": 2,
           "maxMarks": 2,
           "interaction": "answer-completion",
           "parts": [
             {
               "type": "choice",
-              "prompt": "What is the function of a crumple zone?",
+              "prompt": "Where are crumple zones usually located on a car?",
               "marks": 1,
               "options": [
                 {
                   "id": "0",
-                  "text": "It deforms and increases the time over which the car stops.",
-                  "feedback": "It deforms and increases the time over which the car stops."
+                  "text": "At the front and rear of the car.",
+                  "feedback": "Crumple zones are designed into the front and rear."
                 },
                 {
                   "id": "1",
-                  "text": "It keeps every part of the vehicle completely rigid.",
-                  "feedback": "It deforms and increases the time over which the car stops."
+                  "text": "Only in the passenger seating space.",
+                  "feedback": "Crumple zones are designed into the front and rear."
                 },
                 {
                   "id": "2",
-                  "text": "It prevents any change in momentum.",
-                  "feedback": "It deforms and increases the time over which the car stops."
+                  "text": "Only in the wheels and tyres.",
+                  "feedback": "Crumple zones are designed into the front and rear."
+                },
+                {
+                  "id": "3",
+                  "text": "Only on the roof above the driver.",
+                  "feedback": "Crumple zones are designed into the front and rear."
+                }
+              ],
+              "correctOptionId": "0",
+              "modelAnswer": "Crumple zones are designed into the front and rear of the car.",
+              "ao": "AO2",
+              "id": "s0",
+              "incorrectFeedback": "Crumple zones are designed into the front and rear of the car.",
+              "correctFeedback": "Crumple zones are designed into the front and rear of the car."
+            },
+            {
+              "type": "choice",
+              "prompt": "How does a crumple zone reduce the average force during a collision?",
+              "marks": 1,
+              "options": [
+                {
+                  "id": "0",
+                  "text": "It deforms, increasing the time taken to stop.",
+                  "feedback": "For the same momentum change, a longer stopping time reduces average force."
+                },
+                {
+                  "id": "1",
+                  "text": "It stops the car without any momentum change.",
+                  "feedback": "For the same momentum change, a longer stopping time reduces average force."
+                },
+                {
+                  "id": "2",
+                  "text": "It makes the whole car rigid.",
+                  "feedback": "For the same momentum change, a longer stopping time reduces average force."
                 },
                 {
                   "id": "3",
                   "text": "It removes the need for seat belts.",
-                  "feedback": "It deforms and increases the time over which the car stops."
+                  "feedback": "For the same momentum change, a longer stopping time reduces average force."
                 }
               ],
               "correctOptionId": "0",
-              "modelAnswer": "It deforms and increases the time over which the car stops.",
+              "modelAnswer": "For the same momentum change, a longer stopping time reduces average force.",
               "ao": "AO2",
-              "id": "s0"
-            },
-            {
-              "type": "choice",
-              "prompt": "Why keep the passenger cell rigid?",
-              "marks": 1,
-              "options": [
-                {
-                  "id": "0",
-                  "text": "To help preserve survival space around occupants.",
-                  "feedback": "To help preserve survival space around occupants."
-                },
-                {
-                  "id": "1",
-                  "text": "To make the crumple zone rigid as well.",
-                  "feedback": "To help preserve survival space around occupants."
-                },
-                {
-                  "id": "2",
-                  "text": "To prevent gravity from acting.",
-                  "feedback": "To help preserve survival space around occupants."
-                },
-                {
-                  "id": "3",
-                  "text": "To guarantee zero force on occupants.",
-                  "feedback": "To help preserve survival space around occupants."
-                }
-              ],
-              "correctOptionId": "0",
-              "modelAnswer": "To help preserve survival space around occupants.",
-              "ao": "AO2",
-              "id": "s1"
+              "id": "s1",
+              "incorrectFeedback": "For the same momentum change, a longer stopping time reduces average force.",
+              "correctFeedback": "For the same momentum change, a longer stopping time reduces average force."
             }
           ],
-          "hint": "Consider the different roles of deformation and survival space.",
+          "hint": "Look at the front and rear of the car. Deformation changes stopping time.",
           "specRefs": [
             "B2.5.3"
           ],
-          "contentVersion": 1,
+          "contentVersion": 2,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. It deforms and increases the time over which the car stops.\n2. To help preserve survival space around occupants."
+          "workedAnswer": "1. Crumple zones are designed into the front and rear of the car.\n2. For the same momentum change, a longer stopping time reduces average force."
         }
       ]
     },
@@ -7585,9 +7613,13 @@
           "specRefs": [
             "B2.6"
           ],
-          "contentVersion": 2,
+          "contentVersion": 3,
           "reviewStatus": "draft-for-teacher-review",
-          "workedAnswer": "1. Forwards.\n2. They are equal in magnitude.\n3. They act on different objects: one acts on the water and the other on the swimmer."
+          "workedAnswer": "1. Forwards.\n2. They are equal in magnitude.\n3. They act on different objects: one acts on the water and the other on the swimmer.",
+          "diagram": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 280\"><rect width=\"520\" height=\"280\" fill=\"white\"/><g fill=\"none\" stroke=\"#18251E\" stroke-width=\"2.2\"><path d=\"M75 150h95m35 0h80m35 0h110\"/><path d=\"M90 150l15-9m-15 9l15 9M425 150l-15-9m15 9l-15 9\"/><ellipse cx=\"245\" cy=\"150\" rx=\"45\" ry=\"22\"/><circle cx=\"299\" cy=\"150\" r=\"14\"/><text x=\"30\" y=\"108\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Force on water</text><text x=\"345\" y=\"108\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Force on swimmer</text><text x=\"217\" y=\"195\" fill=\"#18251E\" stroke=\"none\" font-family=\"sans-serif\" font-size=\"15\">Swimmer</text></g></svg>",
+            "description": "A swimmer pushes water backwards to the left; an arrow on the water points left. The water pushes the swimmer forwards to the right; an arrow on the swimmer points right."
+          }
         },
         {
           "id": "F12R2",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "bankVersion": "0.4.0",
+  "bankVersion": "0.4.1",
   "date": "2026-10-15",
   "title": "AAQ Physics Waves – reviewed 110-question bank",
   "qualification": "Pearson AAQ Applied Science Extended Certificate (first teaching 2025)",
@@ -1517,7 +1517,7 @@
     },
     {
       "id": "W13",
-      "contentVersion": 2,
+      "contentVersion": 3,
       "title": "Recall frequency and periodic time",
       "topic": "Waves",
       "primaryLessonId": "WA02",
@@ -1531,7 +1531,7 @@
       "commandWord": "State",
       "interaction": "selected-answer",
       "maxMarks": 2,
-      "prompt": "Complete the definitions of frequency and periodic time.",
+      "prompt": "Frequency and periodic time are two properties of waves. Complete their definitions.",
       "parts": [
         {
           "id": "frequency",

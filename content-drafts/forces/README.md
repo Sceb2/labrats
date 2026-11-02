@@ -44,8 +44,12 @@ npm test
 
 The browser check blocks supporting requests and checks full/blank scoring across all 124 questions; mobile and desktop flows; hints; fixed units; partial credit; invalid numbers; follow-through; and unscored reveal. Build the standalone HTML after any source change.
 
-Source content is in `questions.json`, presentation in `preview.js`, `preview.css` and `template.html`. Work is intended for `Combined-Drafts` only. The main Waves question bank is unchanged. The shared Applied Science marking engine and its generated bundle were updated to support this draft’s rounding and follow-through rules. Teacher review of the expanded draft is pending.
+Source content is in `questions.json`, presentation in `preview.js`, `preview.css` and `template.html`. Work is intended for `Combined-Drafts` only. The shared Applied Science marking engine and its generated bundle support this draft’s rounding and follow-through rules. Teacher review of the expanded draft is pending.
 
 ## November review amendments
 
 Airbag, crumple-zone, graph, trolley, friction and resistance questions were added. F13A3’s hint, F07A rounding, F01A2 follow-through, momentum magnitude wording, F05A practical choice and misleading shared hints were corrected. Counts and AO labels describe the draft, not Pearson exam proportions. All questions remain teacher-review drafts; the main site and hosted Supabase are unchanged.
+
+## 2 November teacher-feedback pass
+
+The marked Forces questions in `LabRats-Applied-Science-Question-Review.xlsx` were revised. Displacement–time and velocity–time diagrams now accompany the indicated graph questions, including a shaded area under the velocity–time line. SUVAT and momentum equations appear where requested. Distractors about measuring acceleration and Newton’s laws are more plausible, and the crumple-zone question uses familiar car-part language. A swimmer force diagram accompanies F12A. These changes keep all 124 question IDs, mark totals and scoring rules. The separate Waves bank received the requested W13 context sentence; its bank version is now 0.4.1. Electricity was left for a separate review.
