@@ -198,7 +198,7 @@
     },
     {
       "id": "EL06",
-      "label": "Photodiodes and LEDs",
+      "label": "LEDs",
       "module": "Electricity"
     },
     {
@@ -1609,6 +1609,2978 @@
       "enabled": true,
       "originalId": "W110",
       "contentVersion": 1
+    },
+    {
+      "id": "F01R@3",
+      "title": "F01R · Which quantity has both magnitude and direction?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F01R",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01A@2",
+      "title": "F01A · A van travels 18 km in 24 minutes.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F01A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F01R2@3",
+      "title": "F01R2 · Which is the SI unit of acceleration?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F01R2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01R3@3",
+      "title": "F01R3 · Which quantity is scalar?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F01R3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01R4@2",
+      "title": "F01R4 · Which expression gives average speed for a complete journey?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F01R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F01R5@3",
+      "title": "F01R5 · Which symbol represents initial velocity?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F01R5",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01A2@3",
+      "title": "F01A2 · A cyclist travels 6 km in 15 minutes, then 9 km in 30 minutes.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F01A2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01A3@3",
+      "title": "F01A3 · A student walks 120 m north, then 45 m south.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F01A3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F01A4@2",
+      "title": "F01A4 · A vehicle travels at 72 km h⁻¹.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F01A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F01A5@2",
+      "title": "F01A5 · Two delivery routes are compared. Route A: 30 km in 45 min. Route B: 24 km in 30 min.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO01",
+        "FO02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F01A5",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02R@3",
+      "title": "F02R · What does the gradient of a displacement–time graph represent?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F02R",
+      "contentVersion": 3
+    },
+    {
+      "id": "F02A@2",
+      "title": "F02A · A straight line on a displacement–time graph passes through (2 s, 10 m) and (8 s, 34 m).",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F02A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02R2@3",
+      "title": "F02R2 · A horizontal displacement–time line represents…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F02R2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F02R3@2",
+      "title": "F02R3 · A straight displacement–time line with a negative gradient represents…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F02R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02R4@3",
+      "title": "F02R4 · What is the unit of the gradient of a line on a displacement (vertical axis) against time (horizontal axis) graph?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F02R4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F02A2@3",
+      "title": "F02A2 · The graph shows displacement against time for a moving trolley. Use it to answer the questions.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F02A2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F02A3@3",
+      "title": "F02A3 · The graph shows displacement against time for a moving robot. Use it to answer the questions.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F02A3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F02A4@2",
+      "title": "F02A4 · A student says a steeper straight displacement–time line means greater acceleration.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F02A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02A5@2",
+      "title": "F02A5 · The graph shows displacement against time for a moving trolley. Use it to answer the questions.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F02A5",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02A6@2",
+      "title": "F02A6 · The graph shows displacement against time for an object. The line rises steadily from 0 to 6 s.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F02A6",
+      "contentVersion": 2
+    },
+    {
+      "id": "F02A7@1",
+      "title": "F02A7 · On a displacement–time graph, displacement increases but the gradient becomes smaller while remaining positive.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO03"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F02A7",
+      "contentVersion": 1
+    },
+    {
+      "id": "F03R@2",
+      "title": "F03R · What does the gradient of a velocity–time graph represent?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F03R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03A@2",
+      "title": "F03A · A car accelerates uniformly from rest to 20 m s⁻¹ in 10 s, then continues at 20 m s⁻¹ for 15 s.",
+      "maxMark": 4,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03R2@3",
+      "title": "F03R2 · The area beneath a positive velocity–time graph gives…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F03R2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F03R3@3",
+      "title": "F03R3 · A horizontal velocity–time line above zero represents…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F03R3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F03R4@2",
+      "title": "F03R4 · Which expression gives acceleration?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F03R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03R5@3",
+      "title": "F03R5 · A straight velocity–time line sloping down towards zero shows…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F03R5",
+      "contentVersion": 3
+    },
+    {
+      "id": "F03A2@2",
+      "title": "F03A2 · Use the velocity–time graph for a vehicle.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03A3@2",
+      "title": "F03A3 · A train slows uniformly from 18 m s⁻¹ to 6 m s⁻¹ in 8 s.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03A4@2",
+      "title": "F03A4 · Use the velocity–time graph for a trolley.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03A5@2",
+      "title": "F03A5 · Use the velocity–time graph for a braking vehicle.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A5",
+      "contentVersion": 2
+    },
+    {
+      "id": "F03A6@1",
+      "title": "F03A6 · Use the velocity–time graph for a trolley.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO04",
+        "FO05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F03A6",
+      "contentVersion": 1
+    },
+    {
+      "id": "F04R@3",
+      "title": "F04R · The equations of motion, often called SUVAT equations, describe motion using displacement s, initial velocity u, final velocity v, acceleration a and time t. When can they be used?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F04R",
+      "contentVersion": 3
+    },
+    {
+      "id": "F04A@2",
+      "title": "F04A · A car travelling at 24 m s⁻¹ brakes with a constant acceleration of −3.0 m s⁻² until it stops. Use v² = u² + 2as.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F04A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F04R2@2",
+      "title": "F04R2 · Which equation contains no time term?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F04R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F04R3@2",
+      "title": "F04R3 · An object starts from rest. What is u?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F04R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F04R4@2",
+      "title": "F04R4 · In these motion equations, s represents…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F04R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F04A2@3",
+      "title": "F04A2 · A train initially travels at 12 m s⁻¹ and accelerates uniformly at 0.8 m s⁻² for 15 s. Use v = u + at for final velocity and s = ½(u + v)t for displacement.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F04A2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F04A3@3",
+      "title": "F04A3 · A trolley starts from rest and accelerates uniformly at 1.5 m s⁻² for 4 s. Use v = u + at for final velocity and s = ut + ½at² for displacement.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F04A3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F04A4@2",
+      "title": "F04A4 · A cyclist accelerates uniformly from 4 m s⁻¹ to 10 m s⁻¹ over 42 m.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO06",
+        "FO07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F04A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F05R@4",
+      "title": "F05R · Which device measures acceleration?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F05R",
+      "contentVersion": 4
+    },
+    {
+      "id": "F05A@3",
+      "title": "F05A · A trolley travels down a slope through two light gates. Each gate measures its velocity and a timer records the time between the velocity measurements.",
+      "maxMark": 4,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F05A",
+      "contentVersion": 3
+    },
+    {
+      "id": "F05R2@3",
+      "title": "F05R2 · A fitness tracker can use an accelerometer to…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F05R2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F05R3@3",
+      "title": "F05R3 · Which measurement is needed alongside change in velocity to calculate acceleration?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F05R3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F05R4@4",
+      "title": "F05R4 · A phone uses an accelerometer to help detect…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F05R4",
+      "contentVersion": 4
+    },
+    {
+      "id": "F05A2@3",
+      "title": "F05A2 · A student times a trolley rolling down a ramp. Repeats give 1.20 s, 1.18 s and 1.22 s for the same distance.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F05A2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F05A3@2",
+      "title": "F05A3 · Two light gates measure trolley velocities of 0.30 and 0.90 m s⁻¹. The time between measurements is 1.2 s.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F05A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F05A4@3",
+      "title": "F05A4 · A fitness tracker uses an accelerometer. A blood-pressure monitor also uses an accelerometer to detect movement during a reading.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F05A4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F05A5@2",
+      "title": "F05A5 · A student needs to measure a trolley’s acceleration down a ramp.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F05A5",
+      "contentVersion": 2
+    },
+    {
+      "id": "F05A6@1",
+      "title": "F05A6 · Two light gates measure velocities of 0.40 m s⁻¹ and 1.00 m s⁻¹, 2.0 s apart.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F05A6",
+      "contentVersion": 1
+    },
+    {
+      "id": "F06R@2",
+      "title": "F06R · An object moves at constant velocity. What is its resultant force?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F06R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06A@2",
+      "title": "F06A · A boat experiences a driving force of 1800 N forwards and a resistive force of 1200 N backwards.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F06A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06R2@2",
+      "title": "F06R2 · Balanced forces on a stationary object mean it…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F06R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06R3@2",
+      "title": "F06R3 · A non-zero resultant force causes a change in…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F06R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06R4@4",
+      "title": "F06R4 · Which is Newton’s first law?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F06R4",
+      "contentVersion": 4
+    },
+    {
+      "id": "F06A2@2",
+      "title": "F06A2 · A stationary box is pushed right with 35 N and left with 35 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F06A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06A3@2",
+      "title": "F06A3 · A car travels along a straight level road at a constant velocity. A student says its engine must exert a forward resultant force.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F06A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F06A4@2",
+      "title": "F06A4 · A cargo trolley moves forwards. The pull is reduced from 80 N to 30 N while resistance remains 50 N.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F06A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07R@2",
+      "title": "F07R · What is inertia?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F07R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07A@3",
+      "title": "F07A · A suitcase has a mass of 18 kg. The gravitational field strength is 9.8 N kg⁻¹.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F07A",
+      "contentVersion": 3
+    },
+    {
+      "id": "F07R2@2",
+      "title": "F07R2 · Which unit is used for weight?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F07R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07R3@2",
+      "title": "F07R3 · Which equation calculates weight?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F07R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07R4@2",
+      "title": "F07R4 · Gravitational field strength is measured in…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F07R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07A2@2",
+      "title": "F07A2 · A package has a mass of 12 kg. Take g = 9.8 N kg⁻¹.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F07A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07A3@2",
+      "title": "F07A3 · A 50 kg rover operates where g = 1.6 N kg⁻¹.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F07A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F07A4@2",
+      "title": "F07A4 · Two empty trolleys have masses of 20 kg and 60 kg.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO10"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F07A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08R@2",
+      "title": "F08R · For kinetic friction, the force used in F = μN is measured while the object…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F08R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08A@2",
+      "title": "F08A · A block is pulled horizontally across a level bench. Its normal reaction is 40 N. A force meter reads 10 N while the block moves at constant velocity.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F08A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08R2@2",
+      "title": "F08R2 · The coefficient of friction has…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F08R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08R3@3",
+      "title": "F08R3 · The normal reaction, or contact force, acts…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F08R3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F08R4@2",
+      "title": "F08R4 · Static friction is measured at its limiting value when a block…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F08R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08A2@2",
+      "title": "F08A2 · A horizontal block is just about to move when the pulling force reaches 18 N. Its normal reaction is 60 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F08A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08A3@2",
+      "title": "F08A3 · A 5 kg block is pulled horizontally at constant velocity. Take g = 10 N kg⁻¹. The pull is 12 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F08A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08A4@2",
+      "title": "F08A4 · For the same block and surface, one trial needs 15 N just to start motion. A steady pull of 11 N then keeps it moving.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F08A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F08A5@1",
+      "title": "F08A5 · A horizontal block needs 18 N to start moving and 12 N to keep moving at constant velocity. Its normal reaction is 60 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F08A5",
+      "contentVersion": 1
+    },
+    {
+      "id": "F09R@2",
+      "title": "F09R · For a constant mass, doubling the resultant force will…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F09R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09A@2",
+      "title": "F09A · A vehicle of mass 900 kg has a driving force of 2400 N forwards and a resistive force of 600 N backwards.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F09A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09R2@2",
+      "title": "F09R2 · Which equation links resultant force and acceleration?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F09R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09R3@2",
+      "title": "F09R3 · For fixed resultant force, doubling the mass…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F09R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09R4@2",
+      "title": "F09R4 · Which unit is equivalent to a newton?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F09R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09A2@2",
+      "title": "F09A2 · A 40 kg trolley accelerates at 1.5 m s⁻². Resistance is 10 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F09A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09A3@2",
+      "title": "F09A3 · Two vehicles receive the same resultant force of 3000 N. Their masses are 1000 kg and 1500 kg.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F09A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F09A4@2",
+      "title": "F09A4 · A 200 kg load on a trolley accelerates at 0.4 m s⁻² when the resultant force is 80 N. The total moving mass is then increased to 400 kg while resultant force stays 80 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO12"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F09A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F10R@2",
+      "title": "F10R · Which is a unit of momentum?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F10R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F10A@3",
+      "title": "F10A · A van of mass 2000 kg travels at 12 m s⁻¹. A lorry of mass 6000 kg travels at 5.0 m s⁻¹.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F10A",
+      "contentVersion": 3
+    },
+    {
+      "id": "F10R2@2",
+      "title": "F10R2 · Which equation calculates momentum?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F10R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F10R3@2",
+      "title": "F10R3 · Momentum is…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F10R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F10R4@3",
+      "title": "F10R4 · Using p = mv, for the same mass, doubling velocity…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F10R4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F10A2@3",
+      "title": "F10A2 · A 0.20 kg ball travels at 15 m s⁻¹ to the right. Use p = mv to calculate momentum magnitude.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F10A2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F10A3@4",
+      "title": "F10A3 · A 1000 kg car travels at 30 m s⁻¹. A 3000 kg van travels at 10 m s⁻¹. Use p = mv for momentum magnitude and average stopping force = change in momentum magnitude ÷ stopping time.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F10A3",
+      "contentVersion": 4
+    },
+    {
+      "id": "F10A4@4",
+      "title": "F10A4 · A 20 000 kg goods vehicle travels at 4 m s⁻¹. A 2000 kg van travels at 20 m s⁻¹. Use p = mv for momentum magnitude and average stopping force = change in momentum magnitude ÷ stopping time.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F10A4",
+      "contentVersion": 4
+    },
+    {
+      "id": "F11R@3",
+      "title": "F11R · The magnitude of the average stopping force is change in momentum magnitude divided by stopping time. For the same change in momentum, increasing the stopping time will…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F11R",
+      "contentVersion": 3
+    },
+    {
+      "id": "F11A@3",
+      "title": "F11A · A belted passenger is brought to rest during a car crash. Compare a seat belt that stretches slightly with one that does not stretch, for the same passenger and initial velocity.",
+      "maxMark": 4,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A",
+      "contentVersion": 3
+    },
+    {
+      "id": "F11R2@2",
+      "title": "F11R2 · Which expression gives average impact force?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F11R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11R3@2",
+      "title": "F11R3 · A crumple zone helps by increasing…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F11R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11R4@3",
+      "title": "F11R4 · Which safety feature spreads contact force over a larger area around the head?",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F11R4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F11R5@3",
+      "title": "F11R5 · A rigid passenger cell is designed to…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F11R5",
+      "contentVersion": 3
+    },
+    {
+      "id": "F11A2@2",
+      "title": "F11A2 · A 0.15 kg ball moving at 20 m s⁻¹ is stopped in 0.050 s.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F11A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11A3@2",
+      "title": "F11A3 · In two crash tests, identical 75 kg dummy passengers stop from 12 m s⁻¹. System A stops a dummy in 0.10 s; system B takes 0.30 s.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F11A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11A4@2",
+      "title": "F11A4 · A motorcycle helmet has a crushable lining and a firm outer shell.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11A5@2",
+      "title": "F11A5 · A car has crumple zones around a rigid passenger cell.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A5",
+      "contentVersion": 2
+    },
+    {
+      "id": "F11A6@1",
+      "title": "F11A6 · An airbag cushions a passenger whose momentum changes by the same amount in a crash.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A6",
+      "contentVersion": 1
+    },
+    {
+      "id": "F11A7@1",
+      "title": "F11A7 · A passenger uses a seat belt and an airbag.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A7",
+      "contentVersion": 1
+    },
+    {
+      "id": "F11A8@1",
+      "title": "F11A8 · Two identical passengers each experience a momentum-change magnitude of 600 kg m s⁻¹. A stops in 0.10 s and B in 0.20 s.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F11A8",
+      "contentVersion": 1
+    },
+    {
+      "id": "F11A9@1",
+      "title": "F11A9 · A force–time graph shows two simplified impact-force traces. A has a peak of 8 kN over 0–40 ms; B has a peak of 4 kN over 0–80 ms.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A9",
+      "contentVersion": 1
+    },
+    {
+      "id": "F11A10@2",
+      "title": "F11A10 · A car has crumple zones that deform during a collision.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO14",
+        "FO15"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F11A10",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12R@2",
+      "title": "F12R · The two forces in a Newton’s third-law pair act on…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F12R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12A@3",
+      "title": "F12A · A swimmer pushes water backwards.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F12A",
+      "contentVersion": 3
+    },
+    {
+      "id": "F12R2@2",
+      "title": "F12R2 · Newton’s third-law forces are…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F12R2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12R3@2",
+      "title": "F12R3 · When a tyre pushes the road backwards, the road pushes the tyre…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F12R3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12R4@2",
+      "title": "F12R4 · A gravitational third-law partner to Earth pulling a stone down is…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F12R4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12A2@2",
+      "title": "F12A2 · A person pushes a wall with a horizontal force of 120 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F12A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12A3@2",
+      "title": "F12A3 · A book is stationary on a table. Its weight is 8 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F12A3",
+      "contentVersion": 2
+    },
+    {
+      "id": "F12A4@2",
+      "title": "F12A4 · A student says a boat cannot accelerate because the boat pushes water backwards and the water pushes the boat forwards equally.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO16"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F12A4",
+      "contentVersion": 2
+    },
+    {
+      "id": "F13R@2",
+      "title": "F13R · At terminal velocity, air resistance and weight are…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F13R",
+      "contentVersion": 2
+    },
+    {
+      "id": "F13A@2",
+      "title": "F13A · A parachutist falls at terminal velocity, then opens their parachute.",
+      "maxMark": 4,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F13A",
+      "contentVersion": 2
+    },
+    {
+      "id": "F13R2@3",
+      "title": "F13R2 · As speed through air increases, drag usually…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F13R2",
+      "contentVersion": 3
+    },
+    {
+      "id": "F13R3@3",
+      "title": "F13R3 · Terminal velocity means…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F13R3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F13R4@3",
+      "title": "F13R4 · An object falling through a liquid can reach terminal velocity when…",
+      "maxMark": 1,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "F13R4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F13A2@2",
+      "title": "F13A2 · A falling object has a weight of 12 N and an upward drag force of 8 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F13A2",
+      "contentVersion": 2
+    },
+    {
+      "id": "F13A3@3",
+      "title": "F13A3 · A road vehicle has a driving force of 900 N. At one instant drag and other resistance total 900 N.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F13A3",
+      "contentVersion": 3
+    },
+    {
+      "id": "F13A4@3",
+      "title": "F13A4 · Identical balls fall through two liquids. Ball A reaches a constant speed of 0.30 m s⁻¹; ball B reaches 0.12 m s⁻¹.",
+      "maxMark": 3,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F13A4",
+      "contentVersion": 3
+    },
+    {
+      "id": "F13A5@1",
+      "title": "F13A5 · At 40 km h⁻¹ a car uses 4.0 L per 100 km. At 60 km h⁻¹ it uses 5.5 L per 100 km.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "answer-completion",
+      "enabled": true,
+      "originalId": "F13A5",
+      "contentVersion": 1
+    },
+    {
+      "id": "F13A6@1",
+      "title": "F13A6 · A ball moves downward through a liquid. Its weight is 10 N, drag is 4 N upward and upthrust is 2 N upward.",
+      "maxMark": 2,
+      "prerequisites": [
+        "FO17"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "F13A6",
+      "contentVersion": 1
+    },
+    {
+      "id": "E001@1",
+      "title": "E001 · Match each electrical quantity to its meaning.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E001",
+      "contentVersion": 1
+    },
+    {
+      "id": "E002@1",
+      "title": "E002 · Choose the correct electrical units.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E002",
+      "contentVersion": 1
+    },
+    {
+      "id": "E003@1",
+      "title": "E003 · A meter displays 0.40 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E003",
+      "contentVersion": 1
+    },
+    {
+      "id": "E004@1",
+      "title": "E004 · An appliance transfers 600 J in 3 s.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E004",
+      "contentVersion": 1
+    },
+    {
+      "id": "E005@1",
+      "title": "E005 · Prefixes change the size of a unit.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E005",
+      "contentVersion": 1
+    },
+    {
+      "id": "E006@1",
+      "title": "E006 · An ammeter reading is 75 mA.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E006",
+      "contentVersion": 1
+    },
+    {
+      "id": "E007@1",
+      "title": "E007 · A heater is rated at 1800 W.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E007",
+      "contentVersion": 1
+    },
+    {
+      "id": "E008@1",
+      "title": "E008 · Convert these energy values.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E008",
+      "contentVersion": 1
+    },
+    {
+      "id": "E009@2",
+      "title": "E009 · Identify electrical supply symbols.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E009",
+      "contentVersion": 2
+    },
+    {
+      "id": "E010@3",
+      "title": "E010 · Identify common component symbols.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E010",
+      "contentVersion": 3
+    },
+    {
+      "id": "E011@2",
+      "title": "E011 · A learner measures the current through a lamp and the potential difference across it.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E011",
+      "contentVersion": 2
+    },
+    {
+      "id": "E012@2",
+      "title": "E012 · Select an instrument for each measurement.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E012",
+      "contentVersion": 2
+    },
+    {
+      "id": "E013@1",
+      "title": "E013 · An LDR is moved from darkness into bright light.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E013",
+      "contentVersion": 1
+    },
+    {
+      "id": "E014@1",
+      "title": "E014 · A thermistor has resistance 800 Ω at 20 °C and 300 Ω at 50 °C.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E014",
+      "contentVersion": 1
+    },
+    {
+      "id": "E015@1",
+      "title": "E015 · A diode is used in a circuit.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E015",
+      "contentVersion": 1
+    },
+    {
+      "id": "E016@2",
+      "title": "E016 · An electronic device contains an LED and an ordinary diode.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E016",
+      "contentVersion": 2
+    },
+    {
+      "id": "E017@1",
+      "title": "E017 · The filament in a lamp becomes hotter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E017",
+      "contentVersion": 1
+    },
+    {
+      "id": "E018@1",
+      "title": "E018 · A fuse is connected in an appliance circuit.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E018",
+      "contentVersion": 1
+    },
+    {
+      "id": "E019@1",
+      "title": "E019 · Choose the correct thermal quantities and units.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E019",
+      "contentVersion": 1
+    },
+    {
+      "id": "E020@1",
+      "title": "E020 · Compare specific heat capacity and specific latent heat.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E020",
+      "contentVersion": 1
+    },
+    {
+      "id": "E021@1",
+      "title": "E021 · Identify changes of state.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E021",
+      "contentVersion": 1
+    },
+    {
+      "id": "E022@1",
+      "title": "E022 · A pure substance melts at a fixed pressure while energy is supplied.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E022",
+      "contentVersion": 1
+    },
+    {
+      "id": "E023@2",
+      "title": "E023 · The circuit is shown. A learner wants to measure current through a lamp and potential difference across it.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E023",
+      "contentVersion": 2
+    },
+    {
+      "id": "E024@2",
+      "title": "E024 · A cell, lamp and wires are connected in a loop with a gap.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E024",
+      "contentVersion": 2
+    },
+    {
+      "id": "E025@1",
+      "title": "E025 · A cell, switch and lamp are in one series loop. The switch is open.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E025",
+      "contentVersion": 1
+    },
+    {
+      "id": "E026@1",
+      "title": "E026 · Two lamps are on separate parallel branches. Each branch has its own series switch. Only the switch in branch A is closed.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E026",
+      "contentVersion": 1
+    },
+    {
+      "id": "E027@2",
+      "title": "E027 · A learner wants to vary the current through a lamp connected to a low-voltage supply.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E027",
+      "contentVersion": 2
+    },
+    {
+      "id": "E028@3",
+      "title": "E028 · The diagram shows a power supply.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E028",
+      "contentVersion": 3
+    },
+    {
+      "id": "E029@3",
+      "title": "E029 · A learner wants to measure the current through resistor R.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E029",
+      "contentVersion": 3
+    },
+    {
+      "id": "E030@3",
+      "title": "E030 · A learner wants to measure the potential difference across resistor R.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E030",
+      "contentVersion": 3
+    },
+    {
+      "id": "E031@3",
+      "title": "E031 · A resistor R is connected to a low-voltage supply. Positions X and Y are shown for two meters.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E031",
+      "contentVersion": 3
+    },
+    {
+      "id": "E032@3",
+      "title": "E032 · A learner connects the meters as shown. The ammeter is across resistor R and the voltmeter is in the series path.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E032",
+      "contentVersion": 3
+    },
+    {
+      "id": "E033@3",
+      "title": "E033 · In the circuit shown, a voltmeter has incorrectly been put in the series path with resistor R. Another voltmeter is correctly connected across R.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E033",
+      "contentVersion": 3
+    },
+    {
+      "id": "E034@1",
+      "title": "E034 · A resistor is to be measured with an ohmmeter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E034",
+      "contentVersion": 1
+    },
+    {
+      "id": "E035@1",
+      "title": "E035 · An expected current is 0.18 A. A meter has 20 mA, 200 mA and 2 A ranges. Each range has the same number of display counts.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E035",
+      "contentVersion": 1
+    },
+    {
+      "id": "E036@2",
+      "title": "E036 · An ammeter reads 480 mA while a learner tests a lamp.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E036",
+      "contentVersion": 2
+    },
+    {
+      "id": "E037@2",
+      "title": "E037 · A learner measures a current of 0.30 A through a resistor.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E037",
+      "contentVersion": 2
+    },
+    {
+      "id": "E038@1",
+      "title": "E038 · A voltmeter is connected between the two ends of resistor R2 in a circuit containing R1 and R2.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E038",
+      "contentVersion": 1
+    },
+    {
+      "id": "E039@1",
+      "title": "E039 · A resistor has a known resistance and a measured potential difference.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E039",
+      "contentVersion": 1
+    },
+    {
+      "id": "E040@1",
+      "title": "E040 · A current of 0.25 A flows through a 24 Ω resistor.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E040",
+      "contentVersion": 1
+    },
+    {
+      "id": "E041@1",
+      "title": "E041 · A 30 Ω resistor has a potential difference of 12 V across it.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E041",
+      "contentVersion": 1
+    },
+    {
+      "id": "E042@1",
+      "title": "E042 · A component has 6.0 V across it and a current of 0.30 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E042",
+      "contentVersion": 1
+    },
+    {
+      "id": "E043@2",
+      "title": "E043 · A component has 9.0 V across it and carries 45 mA.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E043",
+      "contentVersion": 2
+    },
+    {
+      "id": "E044@2",
+      "title": "E044 · A 15 Ω resistor carries a current of 0.20 A.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E044",
+      "contentVersion": 2
+    },
+    {
+      "id": "E045@1",
+      "title": "E045 · A learner calculates R = 5.0 × 0.25 for a component carrying 0.25 A at 5.0 V.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E045",
+      "contentVersion": 1
+    },
+    {
+      "id": "E046@1",
+      "title": "E046 · Component A carries 0.20 A at 4.0 V. Component B carries 0.10 A at 3.0 V.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E046",
+      "contentVersion": 1
+    },
+    {
+      "id": "E047@1",
+      "title": "E047 · Resistance increases while the potential difference stays constant.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E047",
+      "contentVersion": 1
+    },
+    {
+      "id": "E048@1",
+      "title": "E048 · The potential difference across a resistor doubles. Its resistance stays constant.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E048",
+      "contentVersion": 1
+    },
+    {
+      "id": "E049@1",
+      "title": "E049 · A 6.0 V supply is connected first to 20 Ω and then to 30 Ω.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E049",
+      "contentVersion": 1
+    },
+    {
+      "id": "E050@1",
+      "title": "E050 · A 200 Ω resistor is connected across 10 V.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E050",
+      "contentVersion": 1
+    },
+    {
+      "id": "E051@1",
+      "title": "E051 · A system needs a resistance that changes with light intensity.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E051",
+      "contentVersion": 1
+    },
+    {
+      "id": "E052@2",
+      "title": "E052 · A system needs a resistance that changes with temperature.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E052",
+      "contentVersion": 2
+    },
+    {
+      "id": "E053@1",
+      "title": "E053 · An LDR has resistance 20 kΩ in darkness and 1 kΩ in bright light.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E053",
+      "contentVersion": 1
+    },
+    {
+      "id": "E054@1",
+      "title": "E054 · A controller turns on a lamp when its LDR resistance exceeds 10 kΩ. The LDR is 2 kΩ in bright light and 25 kΩ in darkness.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E054",
+      "contentVersion": 1
+    },
+    {
+      "id": "E055@1",
+      "title": "E055 · A thermistor has resistance 600 Ω at 20 °C and 200 Ω at 60 °C. It is connected alone across a constant 6.0 V supply.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E055",
+      "contentVersion": 1
+    },
+    {
+      "id": "E056@1",
+      "title": "E056 · A warning controller sounds when a thermistor resistance falls below 250 Ω. Resistance is 500 Ω at 30 °C and 180 Ω at 70 °C.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL05"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E056",
+      "contentVersion": 1
+    },
+    {
+      "id": "E057@1",
+      "title": "E057 · An ideal diode’s conducting direction is from left to right. Its left side is connected to the positive terminal of a supply through a resistor.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E057",
+      "contentVersion": 1
+    },
+    {
+      "id": "E058@2",
+      "title": "E058 · The diagram shows a diode connected between points X and Y. The triangle points towards the line.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E058",
+      "contentVersion": 2
+    },
+    {
+      "id": "E059@2",
+      "title": "E059 · An LED and a suitable resistor are connected to a supply with a switch. The circuit becomes complete when the switch is closed. The LED is connected in its conducting direction.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E059",
+      "contentVersion": 2
+    },
+    {
+      "id": "E060@1",
+      "title": "E060 · An LED circuit includes a resistor in series.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E060",
+      "contentVersion": 1
+    },
+    {
+      "id": "E061@2",
+      "title": "E061 · A low-voltage circuit contains a diode and resistor in series. With the diode in one orientation the current is 20 mA. Reversing only the diode reduces the current to almost zero.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E061",
+      "contentVersion": 2
+    },
+    {
+      "id": "E062@2",
+      "title": "E062 · A learner tests an ordinary diode in a circuit with a low-voltage supply, a series resistor and an ammeter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E062",
+      "contentVersion": 2
+    },
+    {
+      "id": "E063@2",
+      "title": "E063 · A variable resistor is in series with a lamp and a fixed-voltage supply. The variable resistor setting is increased; no other setting changes.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E063",
+      "contentVersion": 2
+    },
+    {
+      "id": "E064@1",
+      "title": "E064 · A lamp carries 0.50 A when the potential difference is 3.0 V.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E064",
+      "contentVersion": 1
+    },
+    {
+      "id": "E065@1",
+      "title": "E065 · A filament lamp carries 0.20 A at 1.0 V and 0.40 A at 4.0 V.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E065",
+      "contentVersion": 1
+    },
+    {
+      "id": "E066@1",
+      "title": "E066 · Increasing the supply potential difference makes a filament lamp hotter.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E066",
+      "contentVersion": 1
+    },
+    {
+      "id": "E067@1",
+      "title": "E067 · A resistor at constant temperature carries 0.10 A at 2.0 V and 0.20 A at 4.0 V. A lamp carries 0.10 A at 2.0 V and 0.15 A at 4.0 V.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E067",
+      "contentVersion": 1
+    },
+    {
+      "id": "E068@1",
+      "title": "E068 · Power and current are known for an appliance.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E068",
+      "contentVersion": 1
+    },
+    {
+      "id": "E069@1",
+      "title": "E069 · A lamp operates at 12 V and 0.50 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E069",
+      "contentVersion": 1
+    },
+    {
+      "id": "E070@1",
+      "title": "E070 · A 920 W appliance operates from a 230 V supply.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E070",
+      "contentVersion": 1
+    },
+    {
+      "id": "E071@1",
+      "title": "E071 · A device transfers energy at 24 W while carrying 2.0 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E071",
+      "contentVersion": 1
+    },
+    {
+      "id": "E072@1",
+      "title": "E072 · Three 8 W lamps and one 20 W lamp operate together.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E072",
+      "contentVersion": 1
+    },
+    {
+      "id": "E073@1",
+      "title": "E073 · Appliance A is rated at 600 W and B at 900 W.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL07"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E073",
+      "contentVersion": 1
+    },
+    {
+      "id": "E074@1",
+      "title": "E074 · Energy transferred and operating time are known.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E074",
+      "contentVersion": 1
+    },
+    {
+      "id": "E075@1",
+      "title": "E075 · A 40 W device operates for 30 s.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E075",
+      "contentVersion": 1
+    },
+    {
+      "id": "E076@1",
+      "title": "E076 · A 500 W heater transfers 15 000 J.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E076",
+      "contentVersion": 1
+    },
+    {
+      "id": "E077@1",
+      "title": "E077 · A 12 V heater carries 2.0 A for 50 s.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E077",
+      "contentVersion": 1
+    },
+    {
+      "id": "E078@1",
+      "title": "E078 · A 6.0 V motor carries 0.50 A for 40 s.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E078",
+      "contentVersion": 1
+    },
+    {
+      "id": "E079@1",
+      "title": "E079 · A 200 W heater operates for 3.0 minutes.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E079",
+      "contentVersion": 1
+    },
+    {
+      "id": "E080@1",
+      "title": "E080 · A learner calculates E = 100 × 2 = 200 J for a 100 W heater operating for 2 minutes.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E080",
+      "contentVersion": 1
+    },
+    {
+      "id": "E081@1",
+      "title": "E081 · A 1.0 kW heater runs for 2 h. A 2.0 kW heater runs for 0.5 h.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL08"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E081",
+      "contentVersion": 1
+    },
+    {
+      "id": "E082@1",
+      "title": "E082 · A 1.5 kW heater operates for 2 h.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E082",
+      "contentVersion": 1
+    },
+    {
+      "id": "E083@1",
+      "title": "E083 · An 800 W appliance operates for 3 h.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E083",
+      "contentVersion": 1
+    },
+    {
+      "id": "E084@1",
+      "title": "E084 · A 2.0 kW kettle is used for a total of 6 minutes each day for 5 days.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E084",
+      "contentVersion": 1
+    },
+    {
+      "id": "E085@1",
+      "title": "E085 · A 1.0 kW heater runs for 2 h and a 0.10 kW television runs for 4 h.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL09"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E085",
+      "contentVersion": 1
+    },
+    {
+      "id": "E086@1",
+      "title": "E086 · Plan A uses a 2.0 kW heater for 1 h; plan B uses a 1.0 kW heater for 3 h.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL09"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E086",
+      "contentVersion": 1
+    },
+    {
+      "id": "E087@3",
+      "title": "E087 · A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses. Select the lowest available fuse rating above the normal operating current.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E087",
+      "contentVersion": 3
+    },
+    {
+      "id": "E088@1",
+      "title": "E088 · An appliance normally draws 4.0 A. A learner proposes a 3 A fuse.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL10"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E088",
+      "contentVersion": 1
+    },
+    {
+      "id": "E089@3",
+      "title": "E089 · A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A. Select the lowest available fuse rating above the normal operating current.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL10"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E089",
+      "contentVersion": 3
+    },
+    {
+      "id": "E090@1",
+      "title": "E090 · A liquid is at 25 °C. Use K = °C + 273.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E090",
+      "contentVersion": 1
+    },
+    {
+      "id": "E091@1",
+      "title": "E091 · A solid is at 260 K. Use °C = K − 273.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E091",
+      "contentVersion": 1
+    },
+    {
+      "id": "E092@2",
+      "title": "E092 · A liquid is heated from 18 °C to 63 °C.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E092",
+      "contentVersion": 2
+    },
+    {
+      "id": "E093@1",
+      "title": "E093 · A 0.50 kg liquid has specific heat capacity 4000 J kg⁻¹ K⁻¹. Its temperature rises by 12 K.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E093",
+      "contentVersion": 1
+    },
+    {
+      "id": "E094@1",
+      "title": "E094 · A 0.20 kg solid gains 1800 J and warms by 10 K.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E094",
+      "contentVersion": 1
+    },
+    {
+      "id": "E095@1",
+      "title": "E095 · A 0.50 kg solid gains 4500 J. Its specific heat capacity is 900 J kg⁻¹ K⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E095",
+      "contentVersion": 1
+    },
+    {
+      "id": "E096@2",
+      "title": "E096 · Substances A and B have equal masses. Both are heated through the same temperature increase. Their specific heat capacities are 900 and 450 J kg⁻¹ K⁻¹ respectively.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E096",
+      "contentVersion": 2
+    },
+    {
+      "id": "E097@1",
+      "title": "E097 · A 12 V heater carries 2.0 A for 100 s in 0.10 kg of liquid. All supplied energy heats the liquid, which warms by 6.0 K.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E097",
+      "contentVersion": 1
+    },
+    {
+      "id": "E098@1",
+      "title": "E098 · A 0.50 kg liquid with c = 4000 J kg⁻¹ K⁻¹ is heated through 20 K by a 200 W heater. Assume no energy losses.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E098",
+      "contentVersion": 1
+    },
+    {
+      "id": "E099@2",
+      "title": "E099 · A 0.20 kg piece of ice is already at its melting point. The specific latent heat of fusion of ice is 334 000 J kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E099",
+      "contentVersion": 2
+    },
+    {
+      "id": "E100@2",
+      "title": "E100 · During boiling, 0.010 kg of a liquid vaporises at its boiling point after absorbing 23 000 J during the change of state.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E100",
+      "contentVersion": 2
+    },
+    {
+      "id": "E101@1",
+      "title": "E101 · A substance absorbs 16 000 J while melting. Its specific latent heat of fusion is 200 000 J kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E101",
+      "contentVersion": 1
+    },
+    {
+      "id": "E102@2",
+      "title": "E102 · Water has specific latent heat of fusion 334 000 J kg⁻¹ and specific latent heat of vaporisation 2 260 000 J kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E102",
+      "contentVersion": 2
+    },
+    {
+      "id": "E103@2",
+      "title": "E103 · 0.10 kg of ice warms from −10 °C to 0 °C, then melts. Use c of ice = 2100 J kg⁻¹ K⁻¹ and L of fusion = 334 000 J kg⁻¹.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E103",
+      "contentVersion": 2
+    },
+    {
+      "id": "E104@2",
+      "title": "E104 · A 200 W heater melts 0.10 kg of a substance already at its melting point. The specific latent heat of fusion is 300 000 J kg⁻¹. Assume no energy losses.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL15"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E104",
+      "contentVersion": 2
+    },
+    {
+      "id": "E105@2",
+      "title": "E105 · A pure liquid boils at fixed pressure while a heater continues supplying energy.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E105",
+      "contentVersion": 2
+    },
+    {
+      "id": "E106@1",
+      "title": "E106 · For water, L of fusion = 334 kJ kg⁻¹ and L of vaporisation = 2260 kJ kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E106",
+      "contentVersion": 1
+    },
+    {
+      "id": "E107@1",
+      "title": "E107 · A learner investigates the resistance of a lamp at different potential differences.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E107",
+      "contentVersion": 1
+    },
+    {
+      "id": "E108@3",
+      "title": "E108 · A learner changes the potential difference across one filament lamp and waits for a steady reading at each setting. At the first setting, the potential difference is 1.0 V and current is 0.20 A. At the second setting, they are 3.0 V and 0.30 A.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E108",
+      "contentVersion": 3
+    },
+    {
+      "id": "E109@2",
+      "title": "E109 · A learner repeats a voltmeter reading across a resistor. The supply and component settings remain unchanged. The readings are 2.01, 2.00, 4.80 and 2.02 V.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E109",
+      "contentVersion": 2
+    },
+    {
+      "id": "E110@2",
+      "title": "E110 · A learner measures a resistor using an ammeter in series with it and a voltmeter across it. The readings are 6.0 V and 0.20 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E110",
+      "contentVersion": 2
+    },
+    {
+      "id": "E111@3",
+      "title": "E111 · The graph shows how current through a filament lamp changes as the potential difference across it is increased.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL04"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E111",
+      "contentVersion": 3
+    },
+    {
+      "id": "E112@3",
+      "title": "E112 · A learner measures the specific heat capacity of a liquid using an electrical heater. The learner measures the heater potential difference and current and records the heating time to calculate electrical energy supplied.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E112",
+      "contentVersion": 3
+    },
+    {
+      "id": "E113@4",
+      "title": "E113 · A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The learner records the heating time and heater power to calculate the energy supplied, and records initial and final block temperatures.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E113",
+      "contentVersion": 4
+    },
+    {
+      "id": "E114@2",
+      "title": "E114 · A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30 K. For this calculation assume all supplied energy heats the solid. The supplied electrical energy is calculated from the heater power and time.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL14"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E114",
+      "contentVersion": 2
+    },
+    {
+      "id": "E115@2",
+      "title": "E115 · A heater supplies 5000 J to a beaker and liquid, but the calculation assumes the liquid receives all 5000 J.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E115",
+      "contentVersion": 2
+    },
+    {
+      "id": "E116@3",
+      "title": "E116 · A learner heats a known mass of liquid with an electrical heater and uses the electrical energy supplied and the temperature rise to estimate its specific heat capacity. The container is fitted with insulation and a lid.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL14"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E116",
+      "contentVersion": 3
+    },
+    {
+      "id": "E117@3",
+      "title": "E117 · A learner packs ice at its melting point into a funnel and collects meltwater in a weighed container. A heater supplies measured electrical energy during a timed interval. A second equal-duration collection is made without the heater, under similar surrounding conditions, to estimate melting caused by the surroundings.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E117",
+      "contentVersion": 3
+    },
+    {
+      "id": "E118@4",
+      "title": "E118 · A learner uses an immersion heater to boil a liquid in an open container on a balance. Once boiling is steady, the learner records the combined balance reading for the container and contents before and after a timed interval. Assume the mass lost is liquid that has vaporised. The learner also measures the electrical energy supplied during that interval.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E118",
+      "contentVersion": 4
+    },
+    {
+      "id": "E119@3",
+      "title": "E119 · A learner places a container of water and an immersion heater on a balance. Once the water boils steadily, the learner supplies 45 200 J during a timed interval. The combined balance reading for the container and contents falls from 0.850 kg to 0.830 kg. Assume the loss in mass is water that vaporises and that all the supplied energy vaporises the water.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL16"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E119",
+      "contentVersion": 3
+    },
+    {
+      "id": "E120@3",
+      "title": "E120 · Two learners boil the same liquid using immersion heaters. Each measures electrical energy supplied and the mass lost over a timed interval of steady boiling. Both calculate specific latent heat as heater energy divided by mass vaporised. The insulated setup gives 2.3 MJ kg⁻¹; the uninsulated setup gives 2.8 MJ kg⁻¹.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL16"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E120",
+      "contentVersion": 3
     }
   ]
 }

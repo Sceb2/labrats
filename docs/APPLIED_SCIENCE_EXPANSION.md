@@ -25,3 +25,14 @@ Expected count: **354**.
 `node scripts/build-applied-bank.cjs` adapts the approved draft sources to the production question schema and writes their SVG diagrams into `applied-science/assets/`. It is run by `npm run build`. Waves remains authored in `Pilot_Question_Bank.json`; its existing question objects are preserved. Forces and Electricity remain authored in their `content-drafts/` banks, which also supply the review previews. Do not edit their generated production copies independently. Future scoring changes need question versioning and a new catalogue migration.
 
 Existing lesson codes remain valid, including teacher flashcard pack assignments. The Forces picker groups related lessons to match the approved question-bank sections. Electricity uses the existing electrical and thermal lesson headings. Each section's Select all and Clear selection controls preserve selections in other sections.
+
+The publication builder checks hashes of the two approved source packs. Future draft edits must be reviewed and their publication hashes explicitly updated; simply rebuilding a new draft does not silently publish it. The question schema also describes the existing teacher metadata and numerical marking features (alternate rounded values and supported follow-through operations).
+
+## Verification for this release
+
+- All 354 question objects validate against the question schema.
+- Existing Waves objects match the published baseline exactly; all prior catalogue rows remain unchanged.
+- `npm test`: 308 software checks and 42 unit tests passed.
+- `node tests/applied-expansion-browser.cjs`: all 244 promoted cards fully scored through the production renderer; diagrams and topic controls checked at mobile and desktop widths; standalone preview checked.
+- `node --test tests/design-browser.cjs`: six workflow/design checks passed, including Chemistry, Waves follow-through/self-assessment and offline previews.
+- The hosted migration is a separate owner-operated step; local tests do not establish that it has been applied.

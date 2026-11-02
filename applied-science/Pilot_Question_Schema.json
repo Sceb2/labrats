@@ -282,6 +282,13 @@
                         "type": "number",
                         "exclusiveMinimum": 0
                       }
+                    },
+                    "alternateValues": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "number"
+                      }
                     }
                   },
                   "additionalProperties": false
@@ -315,7 +322,9 @@
                         "multiply-constant",
                         "divide-constant",
                         "multiply",
-                        "asin-degrees"
+                        "asin-degrees",
+                        "divide",
+                        "sqrt-constant-divided-by"
                       ]
                     },
                     "inputs": {
@@ -351,6 +360,17 @@
                     }
                   },
                   "additionalProperties": false
+                },
+                "ao": {
+                  "enum": [
+                    "AO1",
+                    "AO2",
+                    "AO3"
+                  ]
+                },
+                "modelAnswer": {
+                  "type": "string",
+                  "minLength": 1
                 }
               },
               "allOf": [
@@ -583,6 +603,14 @@
               }
             },
             "additionalProperties": false
+          },
+          "teacherLessonTitle": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewNotes": {
+            "type": "string",
+            "minLength": 1
           }
         },
         "additionalProperties": false,

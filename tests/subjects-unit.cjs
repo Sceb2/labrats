@@ -5,7 +5,7 @@ const A=require('../src/adaptive.cjs'),Badges=require('../src/rating-badges.cjs'
 const source=require('../applied-science/Pilot_Question_Bank.json'),map=require('../applied-science/Physics_Lesson_Map.json');
 const bank=appliedLearningBank(source,map),chemistry=require('../questions.json');
 test('two subjects have distinct routes and versioned question identities; unknown navigation cannot become an open redirect',()=>{
- assert.equal(subjects.length,2);assert.equal(bank.questions.length,110);assert.equal(new Set(bank.questions.map(q=>q.id)).size,110);
+ assert.equal(subjects.length,2);assert.equal(bank.questions.length,354);assert.equal(new Set(bank.questions.map(q=>q.id)).size,354);
  assert.notEqual(bank.meta.bankVersion,chemistry.meta.bankVersion);
  assert.equal(selectedSubject('?subject=applied-science').practiceUrl,'applied-science.html');
  assert.equal(selectedSubject('?subject=https://untrusted.invalid').practiceUrl,'chemistry.html');
@@ -53,4 +53,26 @@ test('Applied Science hints/retries and account projections never persist select
  assert(event.is_retry);assert(event.answer_revealed);assert.equal(Object.keys(event).length,13);assert(!JSON.stringify(event).includes('PRIVATE-WORK'));
  const projection=nativeProgress(source,bank,[event]);assert(!JSON.stringify(projection).includes('responses'));assert(!JSON.stringify(projection).includes('writtenText'));
  assert.equal(A.ratings(bank,[event])[mapped.id].grade,'N');
+});
+
+test('approved expansion preserves the published Waves questions and maps every new question and diagram without changing its marking rules',()=>{
+ const waves=source.questions.filter(q=>q.topic==='Waves');
+ assert.equal(createHash('sha256').update(JSON.stringify(waves)).digest('hex'),'e84a620bccf060c42b1e0939f27e5297af6ff96cac42705311888a3c96cab0fd');
+ assert.equal(bank.meta.bankVersion,'applied-science-0.4.0');
+ for(const [file,topic,count]of [['forces','Forces',124],['electricity','Electricity',120]]){
+  const original=require('../content-drafts/'+file+'/questions.json').topics.flatMap(t=>t.questions),promoted=source.questions.filter(q=>q.topic===topic);
+  assert.equal(promoted.length,count);
+  for(const draft of original){
+   const q=promoted.find(q=>q.id===draft.id);assert(q);assert.equal(q.reviewStatus,'teacher-approved');assert.equal(q.contentVersion,draft.contentVersion);assert.equal(q.prompt,draft.prompt);assert.equal(q.maxMarks,draft.maxMarks);
+   assert(q.requiredLessonIds.length);assert(q.requiredLessonIds.every(id=>map.lessons.some(l=>l.id===id&&l.topic===topic)));
+   for(let i=0;i<draft.parts.length;i++)for(const field of ['type','correctOptionId','answer','ecf','domain','marks'])assert.deepEqual(q.parts[i][field],draft.parts[i][field],q.id+' '+field);
+   if(draft.diagram){assert.equal(fs.readFileSync('applied-science/'+q.asset,'utf8').trim(),draft.diagram.svg.trim());assert.equal(q.accessibleDescription,draft.diagram.description);}
+   if(q.interaction==='answer-completion'){assert.equal(q.answerOpening,'Explanation:');assert.equal(q.openingEarnsMarks,false);assert(q.parts.every(p=>p.type==='choice'));}
+  }
+ }
+ for(const l of map.lessons)assert(source.questions.some(q=>q.requiredLessonIds.includes(l.id)),'empty topic '+l.id);
+ const previous=fs.readFileSync('supabase/migrations/202610240009_applied_science_catalog.sql','utf8'),expanded=fs.readFileSync('supabase/migrations/202611020011_applied_science_forces_electricity_catalog.sql','utf8');
+ const rows=sql=>sql.split('\n').filter(line=>line.startsWith("('applied-science',")).map(line=>line.replace(/,$/,''));
+ for(const row of rows(previous))assert(rows(expanded).includes(row),'existing catalogue row must not change');
+ assert.equal(rows(expanded).length,354);assert.match(expanded,/on conflict do nothing/);
 });

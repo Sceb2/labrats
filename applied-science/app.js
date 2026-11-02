@@ -17,7 +17,7 @@ let accountSync=null,learning=null;
 const appliedBase=new URL('applied-science/',location.href);
 const ratingMap=()=>window.RevisionAdaptive.ratings(learning,accountSync?accountSync.events():(S.progress.adaptiveEvents||[]));
 const gradeBadge=(q,ratings=ratingMap())=>window.RevisionAdaptive.badgeHTML(ratings[q.id+'@'+q.contentVersion].grade);
-const titleFor=id=>wavesTopics().find(t=>t.ids.includes(id))?.title||S.map.lessons.find(l=>l.id===id)?.title||id;
+const titleFor=id=>practiceTopics().find(t=>t.ids.includes(id))?.title||S.map.lessons.find(l=>l.id===id)?.title||id;
 const qRecord=q=>S.progress.records[questionKey(q)];
 const hasActive=()=>S.session&&!S.session.finished;
 const current=()=>S.session?.questions[S.session.index];
@@ -40,10 +40,10 @@ function renderShell(view){
  document.documentElement.style.setProperty('--session-bar-space','0px');
 }
 function button(text,id,cls='btn'){return `<button type="button" class="${cls}" id="${esc(id)}">${text}</button>`;}
-function wavesTopics(){
+function practiceTopics(topic=null){
  const grouped=new Map();
- for(const l of S.map.lessons.filter(l=>l.topic==='Waves'))(grouped.get(l.group)||grouped.set(l.group,[]).get(l.group)).push(l);
- return [...grouped].map(([group,ls])=>({id:group==='Total Internal Reflection'?'WA12':group==='Uses of Waves'?'WA16':ls[0].id,title:group==='Total Internal Reflection'?'Optical Fibres':group,ids:ls.map(l=>l.id),description:group==='Total Internal Reflection'?'Refraction, critical angle, total internal reflection and fibre applications.':group==='Uses of Waves'?'Electromagnetic spectrum, analogue and digital signals, and communication.':''}));
+ for(const l of S.map.lessons.filter(l=>!topic||l.topic===topic))(grouped.get(l.topic+'|'+l.group)||grouped.set(l.topic+'|'+l.group,[]).get(l.topic+'|'+l.group)).push(l);
+ return [...grouped].map(([,ls])=>{const group=ls[0].group;return {module:ls[0].topic,id:group==='Total Internal Reflection'?'WA12':group==='Uses of Waves'?'WA16':ls[0].id,title:group==='Total Internal Reflection'?'Optical Fibres':group,ids:ls.map(l=>l.id),description:group==='Total Internal Reflection'?'Refraction, critical angle, total internal reflection and fibre applications.':group==='Uses of Waves'?'Electromagnetic spectrum, analogue and digital signals, and communication.':''};});
 }
 function syncTopicRows(){
  $$('[data-lesson]').forEach(input=>{const ids=JSON.parse(input.dataset.lessonIds),count=ids.filter(id=>S.prefs.lessons.includes(id)).length;input.checked=count===ids.length;input.indeterminate=count>0&&count<ids.length;});
@@ -74,11 +74,7 @@ function resumeActions(){
 function showSetup(){
  renderShell('setup');
  app().innerHTML=`<section class="card setup-page"><header class="page-heading setup-heading"><h1>Choose your topics</h1><div class="account-actions" data-account-actions><a class="btn finish-session choose-subject" href="${window.OCR_SITE_PREVIEW?'subject-hub-preview.html':'index.html'}">Choose subject</a></div></header>
- <details class="module-section" ${disclosureAttrs('waves',true)}><summary><span>Waves</span><span class="module-selected" id="waves-selected"></span></summary>
- <div class="topic-tools">${button('Select all Waves','select-all','btn text-button')}${button('Clear selection','select-none','btn text-button')}</div>
- <div class="wave-topic-list">${wavesTopics().map(lessonRow).join('')}</div></details>
- <details class="module-section" ${disclosureAttrs('forces')}><summary><span>Forces</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
- <details class="module-section" ${disclosureAttrs('electricity-energy')}><summary><span>Electricity and Energy</span><span class="module-selected">Coming later</span></summary><p class="small-note">Questions for this unit are not available yet.</p></details>
+ ${['Waves','Forces','Electricity'].map(topic=>{const key=topic.toLowerCase(),isWaves=topic==='Waves';return `<details class="module-section" ${disclosureAttrs(key,isWaves)}><summary><span>${topic==='Electricity'?'Electricity and Energy':topic}</span><span class="module-selected" id="${key}-selected"></span></summary><div class="topic-tools">${button('Select all '+topic,isWaves?'select-all':'select-'+key,'btn text-button')}${button('Clear selection',isWaves?'select-none':'clear-'+key,'btn text-button')}</div><div class="wave-topic-list">${practiceTopics(topic).map(lessonRow).join('')}</div></details>`;}).join('')}
  <div class="setup-actions"> <div class="session-plan" id="session-plan" role="status" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
  <details class="practice-settings" ${disclosureAttrs('settings')}><summary>Practice settings</summary><label class="control">Practice mode<select id="practice-style"><option value="adaptive" ${S.prefs.practiceStyle!=='random'?'selected':''}>Adaptive practice (recommended)</option><option value="random" ${S.prefs.practiceStyle==='random'?'selected':''}>Random practice</option></select></label><p class="small-note">Prioritises new questions and those needing more practice.</p><details><summary>How adaptive practice works</summary><p>Selection also considers time since practice. N means no unaided scored attempt yet; A–E are revision guidance. Tap a rating to learn more.</p></details><h2>Question types</h2><div class="settings-options">${types.map(t=>`<label><input type="checkbox" data-type="${t}" ${S.prefs.types.includes(t)?'checked':''}>${labels[t]}</label>`).join('')}</div>
  <details ${disclosureAttrs('session-info')}><summary>About your session</summary> <p class="small-note">Sessions target 20 available marks and an equal number of recall and application questions. Your selected lessons determine what is available.</p>
@@ -92,7 +88,11 @@ function showSetup(){
  bindDisclosures();
  syncTopicRows();
  $$('[data-lesson]').forEach(el=>el.onchange=()=>{const ids=JSON.parse(el.dataset.lessonIds),selected=new Set(S.prefs.lessons);for(const id of ids)el.checked?selected.add(id):selected.delete(id);S.prefs.lessons=[...selected];syncTopicRows();S.seed=Date.now()>>>0;updatePlan();save();});
- $('#select-all').onclick=()=>setLessons(S.map.lessons.filter(l=>l.topic==='Waves').map(l=>l.id));$('#select-none').onclick=()=>setLessons([]);
+ for(const topic of ['Waves','Forces','Electricity']){
+  const key=topic.toLowerCase(),ids=S.map.lessons.filter(l=>l.topic===topic).map(l=>l.id);
+  $('#'+(topic==='Waves'?'select-all':'select-'+key)).onclick=()=>setLessons([...new Set([...S.prefs.lessons,...ids])]);
+  $('#'+(topic==='Waves'?'select-none':'clear-'+key)).onclick=()=>setLessons(S.prefs.lessons.filter(id=>!ids.includes(id)));
+ }
  $$('[data-type]').forEach(el=>el.onchange=()=>{S.prefs.types=$$('[data-type]:checked').map(x=>x.dataset.type);S.seed=Date.now()>>>0;updatePlan();save();});
  $('#setup-sound-pref').onchange=e=>{S.prefs.sound=e.target.checked;updateEffects();save();};
  $('#effects-pref').onchange=e=>{S.prefs.celebrations=e.target.checked;updateEffects();save();};
@@ -108,14 +108,16 @@ function setLessons(ids){S.prefs.lessons=ids;S.seed=Date.now()>>>0;syncTopicRows
 function updatePlan(){
  window.RevisionFlashcards?.mount('applied-science',S.prefs.lessons);
  S.plan=calculatePlan();const p=S.plan;
- const topics=wavesTopics(),selectedCount=topics.filter(t=>t.ids.every(id=>S.prefs.lessons.includes(id))).length,partialCount=topics.filter(t=>t.ids.some(id=>S.prefs.lessons.includes(id))&&!t.ids.every(id=>S.prefs.lessons.includes(id))).length;
- $('#waves-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
+ for(const topic of ['Waves','Forces','Electricity']){
+  const topics=practiceTopics(topic),selectedCount=topics.filter(t=>t.ids.every(id=>S.prefs.lessons.includes(id))).length,partialCount=topics.filter(t=>t.ids.some(id=>S.prefs.lessons.includes(id))&&!t.ids.every(id=>S.prefs.lessons.includes(id))).length;
+  $('#'+topic.toLowerCase()+'-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
+ }
  const message=!S.prefs.lessons.length?'Select lessons you have studied.':!S.prefs.types.length?'Select at least one question type in Practice settings.':!p.questionCount?'No questions are available yet for this selection. Check the required lessons below.':p.shortPool?`Only ${p.actualMarks} marks are available from these lessons. Start this shorter session or select more lessons.`:'';
  $('#session-plan').innerHTML=`<strong>${eligibility(matchingBank(),S.prefs.lessons,{allowDrafts:true}).eligible.length} questions available from your selection</strong>${p.questionCount?`<p class="setup-session-size">${p.questionCount} questions · ${p.actualMarks} marks this session</p>`:''}${message?`<p>${esc(message)}</p>`:''}${p.questionCount&&!p.exactRecallBalance?'<p class="small-note">This selection cannot provide an exact 50/50 recall split at this mark total.</p>':''}`;
  $('#start-practice').disabled=!p.questionCount;
  const missing=new Set(p.blocked.filter(x=>{const q=S.bank.questions.find(q=>q.id===x.id);return S.prefs.lessons.includes(q.primaryLessonId);}).flatMap(x=>x.missingLessonIds));
  $('#missing-lessons').innerHTML=missing.size?`<aside class="prerequisite-note"><p>Some questions need other topics: ${[...new Set([...missing].map(titleFor))].map(esc).join(', ')}.</p>${button('Select these topics too','add-prerequisites','btn secondary')}</aside>`:'';
- if($('#add-prerequisites'))$('#add-prerequisites').onclick=()=>setLessons([...new Set([...S.prefs.lessons,...wavesTopics().filter(t=>t.ids.some(id=>missing.has(id))).flatMap(t=>t.ids)])]);
+ if($('#add-prerequisites'))$('#add-prerequisites').onclick=()=>setLessons([...new Set([...S.prefs.lessons,...practiceTopics().filter(t=>t.ids.some(id=>missing.has(id))).flatMap(t=>t.ids)])]);
 }
 function bindResume(){if($('#resume-session'))$('#resume-session').onclick=()=>showQuestion();if($('#resume-parked'))$('#resume-parked').onclick=resumeParked;}
 function showDialog(title,content,onBind,returnFocus=document.activeElement){
@@ -325,7 +327,7 @@ function progressTotals(strand){
 function showProgress(){
  renderShell('progress');const ratings=ratingMap();
  app().innerHTML=`<section class="card progress-page"><header class="page-heading setup-heading"><h1>Your progress</h1><div class="account-actions" data-account-actions>${button('Choose topics','progress-topics','btn finish-session')}</div></header><p>First attempts are kept separately from retries and revealed answers.</p>${resumeActions()}<div class="progress-strands">${['recall','application'].map(strand=>{const t=progressTotals(strand);return `<section><h2>${strand==='recall'?'Recall':'Application'}</h2><p><strong>${t.max?`${t.direct+t.ecf}/${t.max} automatic marks`:'Not yet attempted'}</strong></p><p class="small-note">${t.attempted}/${t.total} questions attempted</p><p class="small-note">${accountSync?'Synced totals; detailed method marks stay in the current session.':t.direct+' direct · '+t.ecf+' method marks'}</p></section>`;}).join('')}</div>
- <h2>By topic</h2><table class="data-table progress-table"><thead><tr><th scope="col">Topic</th><th scope="col">Automatic marks</th><th scope="col">Attempted</th></tr></thead><tbody>${wavesTopics().map(l=>{const qs=S.bank.questions.filter(q=>l.ids.includes(q.primaryLessonId)&&q.interaction!=='written-self-assessment'),as=qs.map(q=>qRecord(q)?.first).filter(a=>a&&!a.revealed);return `<tr><th scope="row">${esc(l.title)}</th><td>${as.reduce((n,a)=>n+(a.result?.score||0),0)}/${as.reduce((n,a)=>n+a.maxMarks,0)}</td><td>${as.length}/${qs.length}</td></tr>`;}).join('')}</tbody></table>
+ <h2>By topic</h2><table class="data-table progress-table"><thead><tr><th scope="col">Topic</th><th scope="col">Automatic marks</th><th scope="col">Attempted</th></tr></thead><tbody>${practiceTopics().map(l=>{const qs=S.bank.questions.filter(q=>l.ids.includes(q.primaryLessonId)&&q.interaction!=='written-self-assessment'),as=qs.map(q=>qRecord(q)?.first).filter(a=>a&&!a.revealed);return `<tr><th scope="row">${esc(l.title)}</th><td>${as.reduce((n,a)=>n+(a.result?.score||0),0)}/${as.reduce((n,a)=>n+a.maxMarks,0)}</td><td>${as.length}/${qs.length}</td></tr>`;}).join('')}</tbody></table>
  <details><summary>Written self-assessment</summary>${S.bank.questions.filter(q=>q.interaction==='written-self-assessment').map(q=>{const r=qRecord(q);return `<p>${esc(q.title)}: ${r?.first?.revealed?'answer revealed':r?.first?`${r.first.result?.selfAssessedMarks}/${q.maxMarks} self-assessed`:'not yet self-assessed'}</p>`;}).join('')}</details>
  <details><summary>Question-by-question progress</summary>${S.bank.questions.map(q=>{const r=qRecord(q);return `<p class="small">${gradeBadge(q,ratings)} ${esc(q.title)}: ${!r?.first?'not attempted':r.first.revealed?'answer revealed':`${r.first.result?.score??0}/${q.maxMarks} first attempt`}${r?.corrected?' · corrected on retry':''}</p>`;}).join('')}</details>
  ${S.progress.sessions.length?`<h2>Saved session reviews</h2><div class="grid">${S.progress.sessions.slice().reverse().map(s=>`<button class="btn secondary" data-session-id="${s.id}">${new Date(s.startedAt).toLocaleDateString('en-GB')} · ${s.actualMarks} marks · ${s.mode==='practice'?'practice':'question review'}</button>`).join('')}</div>`:''}
@@ -380,7 +382,7 @@ async function boot(){
  S.reportEmail=reportRecipient(window.AAQ_REPORT_CONFIG?.email);
  if(!window.AAQ_EMBEDDED&&!S.reportEmail){try{const r=await fetch(new URL('./report-config.json',appliedBase.href),{cache:'no-store'});if(r.ok)S.reportEmail=reportRecipient((await r.json()).email);}catch{}}
  const rawPrefs=storage.get(KEYS.prefs,defaults,p=>p?.schema===1&&Array.isArray(p.lessons)&&Array.isArray(p.types));
- S.prefs={...copy(defaults),...rawPrefs,lessons:rawPrefs.lessons.filter(id=>map.lessons.some(l=>l.id===id&&l.topic==='Waves')),types:rawPrefs.types.filter(t=>types.includes(t)),disclosures:rawPrefs.disclosures&&typeof rawPrefs.disclosures==='object'?rawPrefs.disclosures:{}};
+ S.prefs={...copy(defaults),...rawPrefs,lessons:rawPrefs.lessons.filter(id=>map.lessons.some(l=>l.id===id)),types:rawPrefs.types.filter(t=>types.includes(t)),disclosures:rawPrefs.disclosures&&typeof rawPrefs.disclosures==='object'?rawPrefs.disclosures:{}};
  S.progress=storage.get(KEYS.progress,{schema:1,records:{},sessions:[]},p=>p?.schema===1&&p.records&&typeof p.records==='object'&&!Array.isArray(p.records)&&Object.values(p.records).every(r=>r&&typeof r==='object'&&Array.isArray(r.attempts))&&Array.isArray(p.sessions));
  S.progress.sessions=S.progress.sessions.filter(s=>!!s&&validateSession(s));
  const active=storage.get(KEYS.active,{schema:1,current:null,parked:null,view:'setup'},a=>a?.schema===1&&validateSession(a.current)&&validateSession(a.parked));S.session=active.current;S.parked=active.parked;

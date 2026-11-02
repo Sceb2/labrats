@@ -13,20 +13,20 @@
     {
       "id": "Waves",
       "label": "Waves",
-      "contentState": "pilot-sample",
+      "contentState": "available",
       "selectableInPilot": true
     },
     {
       "id": "Forces",
       "label": "Forces",
-      "contentState": "planned",
-      "selectableInPilot": false
+      "contentState": "available",
+      "selectableInPilot": true
     },
     {
       "id": "Electricity",
       "label": "Electricity",
-      "contentState": "planned",
-      "selectableInPilot": false
+      "contentState": "available",
+      "selectableInPilot": true
     }
   ],
   "lessons": [
@@ -60,11 +60,28 @@
       "scope": "Amplitude, wavelength, frequency, periodic time, oscillation and wave speed; definitions and units.",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
+        "W01",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
         "W13",
         "W14",
+        "W24",
         "W32",
         "W33",
         "W34",
+        "W35",
+        "W36",
+        "W37",
+        "W38",
+        "W39",
+        "W41",
+        "W42",
+        "W44",
+        "W46",
+        "W49",
+        "W56",
         "W81",
         "W82",
         "W83"
@@ -82,6 +99,7 @@
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
         "W01",
+        "W24",
         "W35",
         "W36",
         "W37",
@@ -101,11 +119,16 @@
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
         "W03",
+        "W07",
         "W15",
         "W24",
+        "W37",
         "W40",
         "W41",
         "W42",
+        "W61",
+        "W62",
+        "W72",
         "W76",
         "W77",
         "W78",
@@ -131,6 +154,9 @@
         "W44",
         "W45",
         "W46",
+        "W49",
+        "W50",
+        "W55",
         "W84",
         "W85",
         "W86",
@@ -188,11 +214,18 @@
       "scope": "Incident/reflected-wave superposition, resonance, displacement nodes and antinodes. Adjacent displacement nodes are half a wavelength apart.",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
+        "W06",
+        "W07",
         "W19",
         "W20",
         "W55",
         "W56",
         "W57",
+        "W58",
+        "W59",
+        "W60",
+        "W61",
+        "W62",
         "W90",
         "W91",
         "W92",
@@ -233,6 +266,8 @@
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
         "W08",
+        "W09",
+        "W27",
         "W28",
         "W63",
         "W64"
@@ -252,8 +287,10 @@
       "pilotQuestionIds": [
         "W09",
         "W21",
+        "W27",
         "W65",
-        "W66"
+        "W66",
+        "W68"
       ]
     },
     {
@@ -359,7 +396,7 @@
     {
       "id": "FO01",
       "topic": "Forces",
-      "group": "Motion Quantities and Units",
+      "group": "Describing motion and speed",
       "title": "Motion Quantities and Units",
       "specRefs": [
         "B1.1",
@@ -368,36 +405,70 @@
       ],
       "scope": "SI symbols and units; speed conversions; scalar/vector distinctions; distance, displacement, speed and velocity.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F01R",
+        "F01A",
+        "F01R2",
+        "F01R3",
+        "F01R4",
+        "F01R5",
+        "F01A2",
+        "F01A3",
+        "F01A4",
+        "F01A5"
+      ]
     },
     {
       "id": "FO02",
       "topic": "Forces",
-      "group": "Speed and Average Speed",
+      "group": "Describing motion and speed",
       "title": "Speed and Average Speed",
       "specRefs": [
         "B1.2"
       ],
       "scope": "Distance/time calculations; total distance divided by total time; journeys with several stages.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F01R",
+        "F01A",
+        "F01R2",
+        "F01R3",
+        "F01R4",
+        "F01R5",
+        "F01A2",
+        "F01A3",
+        "F01A4",
+        "F01A5"
+      ]
     },
     {
       "id": "FO03",
       "topic": "Forces",
-      "group": "Displacement-Time Graphs",
+      "group": "Displacement–time graphs",
       "title": "Displacement-Time Graphs",
       "specRefs": [
         "B1.3.3"
       ],
       "scope": "Interpret motion and calculate signed velocity from gradients.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F02R",
+        "F02A",
+        "F02R2",
+        "F02R3",
+        "F02R4",
+        "F02A2",
+        "F02A3",
+        "F02A4",
+        "F02A5",
+        "F02A6",
+        "F02A7"
+      ]
     },
     {
       "id": "FO04",
       "topic": "Forces",
-      "group": "Velocity-Time Graphs and Acceleration",
+      "group": "Velocity–time graphs and acceleration",
       "title": "Velocity-Time Graphs and Acceleration",
       "specRefs": [
         "B1.3.4",
@@ -405,48 +476,90 @@
       ],
       "scope": "Interpret velocity-time traces; acceleration from gradient; a = (v-u)/t.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F03R",
+        "F03A",
+        "F03R2",
+        "F03R3",
+        "F03R4",
+        "F03R5",
+        "F03A2",
+        "F03A3",
+        "F03A4",
+        "F03A5",
+        "F03A6"
+      ]
     },
     {
       "id": "FO05",
       "topic": "Forces",
-      "group": "Distance and Displacement from Graphs",
+      "group": "Velocity–time graphs and acceleration",
       "title": "Distance and Displacement from Graphs",
       "specRefs": [
         "B1.3.5"
       ],
       "scope": "Areas of rectangles/triangles; distinguish signed displacement from total distance when velocity changes sign.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F03R",
+        "F03A",
+        "F03R2",
+        "F03R3",
+        "F03R4",
+        "F03R5",
+        "F03A2",
+        "F03A3",
+        "F03A4",
+        "F03A5",
+        "F03A6"
+      ]
     },
     {
       "id": "FO06",
       "topic": "Forces",
-      "group": "Motion Equations: Velocity and Average Velocity",
+      "group": "Equations of motion",
       "title": "Motion Equations: Velocity and Average Velocity",
       "specRefs": [
         "B1.3.8"
       ],
       "scope": "Constant acceleration; select and rearrange v = u + at and s = (u+v)t/2.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F04R",
+        "F04A",
+        "F04R2",
+        "F04R3",
+        "F04R4",
+        "F04A2",
+        "F04A3",
+        "F04A4"
+      ]
     },
     {
       "id": "FO07",
       "topic": "Forces",
-      "group": "Motion Equations: Displacement",
+      "group": "Equations of motion",
       "title": "Motion Equations: Displacement",
       "specRefs": [
         "B1.3.8"
       ],
       "scope": "Select and rearrange s = ut + ½at² and v² = u² + 2as; units and signs.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F04R",
+        "F04A",
+        "F04R2",
+        "F04R3",
+        "F04R4",
+        "F04A2",
+        "F04A3",
+        "F04A4"
+      ]
     },
     {
       "id": "FO08",
       "topic": "Forces",
-      "group": "Measuring Acceleration and Accelerometers",
+      "group": "Measuring acceleration and accelerometers",
       "title": "Measuring Acceleration and Accelerometers",
       "specRefs": [
         "B1.3.7",
@@ -454,12 +567,23 @@
       ],
       "scope": "Trolley down a slope; measurements, graph evidence and uncertainty; fitness devices, phones and blood-pressure monitors.",
       "suggestedLessonSlots": 2,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F05R",
+        "F05A",
+        "F05R2",
+        "F05R3",
+        "F05R4",
+        "F05A2",
+        "F05A3",
+        "F05A4",
+        "F05A5",
+        "F05A6"
+      ]
     },
     {
       "id": "FO09",
       "topic": "Forces",
-      "group": "Resultant Forces and Newton’s First Law",
+      "group": "Resultant forces and Newton’s first law",
       "title": "Resultant Forces and Newton’s First Law",
       "specRefs": [
         "B2.1",
@@ -467,24 +591,42 @@
       ],
       "scope": "Force diagrams; balanced forces and constant velocity; a non-zero resultant changes velocity.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F06R",
+        "F06A",
+        "F06R2",
+        "F06R3",
+        "F06R4",
+        "F06A2",
+        "F06A3",
+        "F06A4"
+      ]
     },
     {
       "id": "FO10",
       "topic": "Forces",
-      "group": "Mass, Weight and Inertia",
+      "group": "Mass, weight and inertia",
       "title": "Mass, Weight and Inertia",
       "specRefs": [
         "B2.2"
       ],
       "scope": "Distinguish mass and weight; inertia; gravitational field strength and W = mg.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F07R",
+        "F07A",
+        "F07R2",
+        "F07R3",
+        "F07R4",
+        "F07A2",
+        "F07A3",
+        "F07A4"
+      ]
     },
     {
       "id": "FO11",
       "topic": "Forces",
-      "group": "Friction and Its Measurement",
+      "group": "Friction",
       "title": "Friction and Its Measurement",
       "specRefs": [
         "B2.3",
@@ -493,12 +635,22 @@
       ],
       "scope": "F = μN; normal reaction; static threshold and constant-velocity kinetic-friction methods. N = mg only in the stated horizontal case.",
       "suggestedLessonSlots": 2,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F08R",
+        "F08A",
+        "F08R2",
+        "F08R3",
+        "F08R4",
+        "F08A2",
+        "F08A3",
+        "F08A4",
+        "F08A5"
+      ]
     },
     {
       "id": "FO12",
       "topic": "Forces",
-      "group": "Newton’s Second Law",
+      "group": "Newton’s second law",
       "title": "Newton’s Second Law",
       "specRefs": [
         "B2.5",
@@ -506,7 +658,16 @@
       ],
       "scope": "F = ma with resultant force; how mass and acceleration affect the required force.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F09R",
+        "F09A",
+        "F09R2",
+        "F09R3",
+        "F09R4",
+        "F09A2",
+        "F09A3",
+        "F09A4"
+      ]
     },
     {
       "id": "FO13",
@@ -518,24 +679,49 @@
       ],
       "scope": "p = mv; units, direction and comparisons of mass/speed.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F10R",
+        "F10A",
+        "F10R2",
+        "F10R3",
+        "F10R4",
+        "F10A2",
+        "F10A3",
+        "F10A4"
+      ]
     },
     {
       "id": "FO14",
       "topic": "Forces",
-      "group": "Force and Change in Momentum",
+      "group": "Impact forces and safety",
       "title": "Force and Change in Momentum",
       "specRefs": [
         "B2.5"
       ],
       "scope": "F = (mv-mu)/t; stopping time, direction and average impact force.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F11R",
+        "F11A",
+        "F11R2",
+        "F11R3",
+        "F11R4",
+        "F11R5",
+        "F11A2",
+        "F11A3",
+        "F11A4",
+        "F11A5",
+        "F11A6",
+        "F11A7",
+        "F11A8",
+        "F11A9",
+        "F11A10"
+      ]
     },
     {
       "id": "FO15",
       "topic": "Forces",
-      "group": "Safety and Impact Protection",
+      "group": "Impact forces and safety",
       "title": "Safety and Impact Protection",
       "specRefs": [
         "B2.5.2",
@@ -543,31 +729,67 @@
       ],
       "scope": "Transport comparisons; air bags, seat belts, helmets, passenger cells and crumple zones; linked explanations.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F11R",
+        "F11A",
+        "F11R2",
+        "F11R3",
+        "F11R4",
+        "F11R5",
+        "F11A2",
+        "F11A3",
+        "F11A4",
+        "F11A5",
+        "F11A6",
+        "F11A7",
+        "F11A8",
+        "F11A9",
+        "F11A10"
+      ]
     },
     {
       "id": "FO16",
       "topic": "Forces",
-      "group": "Newton’s Third Law",
+      "group": "Newton’s third law",
       "title": "Newton’s Third Law",
       "specRefs": [
         "B2.6"
       ],
       "scope": "Interaction pairs act on different bodies; distinguish pairs from balanced forces on one body.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F12R",
+        "F12A",
+        "F12R2",
+        "F12R3",
+        "F12R4",
+        "F12A2",
+        "F12A3",
+        "F12A4"
+      ]
     },
     {
       "id": "FO17",
       "topic": "Forces",
-      "group": "Drag and Terminal Velocity",
+      "group": "Drag and terminal velocity",
       "title": "Drag and Terminal Velocity",
       "specRefs": [
         "B2.7.1"
       ],
       "scope": "Changing resistive forces and resultant force; road vehicles, parachutes and objects falling through liquids.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "F13R",
+        "F13A",
+        "F13R2",
+        "F13R3",
+        "F13R4",
+        "F13A2",
+        "F13A3",
+        "F13A4",
+        "F13A5",
+        "F13A6"
+      ]
     },
     {
       "id": "EL01",
@@ -581,7 +803,20 @@
       ],
       "scope": "Symbols and meanings of current, potential difference, energy, power and resistance; A, V, J, W and Ω.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012"
+      ]
     },
     {
       "id": "EL02",
@@ -594,7 +829,26 @@
       ],
       "scope": "Cells, supplies, lamps, resistors, variable resistors and switches; ammeters in series and voltmeters in parallel.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E023",
+        "E024",
+        "E025",
+        "E026",
+        "E027",
+        "E028",
+        "E029",
+        "E030",
+        "E031",
+        "E032",
+        "E033",
+        "E034",
+        "E035",
+        "E036",
+        "E037",
+        "E038",
+        "E107",
+        "E109"
+      ]
     },
     {
       "id": "EL03",
@@ -607,7 +861,22 @@
       ],
       "scope": "Ohmmeter use on isolated, unpowered components; calculate and rearrange V = IR.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E039",
+        "E040",
+        "E041",
+        "E042",
+        "E043",
+        "E044",
+        "E045",
+        "E046",
+        "E047",
+        "E048",
+        "E049",
+        "E050",
+        "E063",
+        "E110"
+      ]
     },
     {
       "id": "EL04",
@@ -619,7 +888,20 @@
       ],
       "scope": "Use lamps and diodes in circuit contexts; interpret supplied current/potential-difference evidence.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E015",
+        "E017",
+        "E057",
+        "E058",
+        "E061",
+        "E062",
+        "E064",
+        "E065",
+        "E066",
+        "E067",
+        "E108",
+        "E111"
+      ]
     },
     {
       "id": "EL05",
@@ -631,19 +913,32 @@
       ],
       "scope": "Temperature/light-dependent resistance; specify thermistor behaviour in the question; use in sensor circuits.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E013",
+        "E014",
+        "E051",
+        "E052",
+        "E053",
+        "E054",
+        "E055",
+        "E056"
+      ]
     },
     {
       "id": "EL06",
       "topic": "Electricity",
-      "group": "Photodiodes and LEDs",
-      "title": "Photodiodes and LEDs",
+      "group": "LEDs",
+      "title": "LEDs",
       "specRefs": [
         "C1.4"
       ],
       "scope": "Distinguish detecting light from emitting light; use component behaviour in simple circuits.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E016",
+        "E059",
+        "E060"
+      ]
     },
     {
       "id": "EL07",
@@ -656,7 +951,14 @@
       ],
       "scope": "P = IV and P = E/t; equation selection, rearrangement and units.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E068",
+        "E069",
+        "E070",
+        "E071",
+        "E072",
+        "E073"
+      ]
     },
     {
       "id": "EL08",
@@ -668,7 +970,16 @@
       ],
       "scope": "E = VIt; calculate energy transferred and convert time units.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E074",
+        "E075",
+        "E076",
+        "E077",
+        "E078",
+        "E079",
+        "E080",
+        "E081"
+      ]
     },
     {
       "id": "EL09",
@@ -681,7 +992,13 @@
       ],
       "scope": "Compare appliances; energy in kWh = power in kW × time in h. Cost calculations need supplied tariffs.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E082",
+        "E083",
+        "E084",
+        "E085",
+        "E086"
+      ]
     },
     {
       "id": "EL10",
@@ -693,7 +1010,12 @@
       ],
       "scope": "Use current/power evidence and supplied fuse ratings to select and justify a suitable fuse.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E018",
+        "E087",
+        "E088",
+        "E089"
+      ]
     },
     {
       "id": "EL11",
@@ -706,7 +1028,12 @@
       ],
       "scope": "J, kJ and MJ; Celsius/Kelvin conversion; temperature changes in K and °C have equal numerical size.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E019",
+        "E090",
+        "E091",
+        "E092"
+      ]
     },
     {
       "id": "EL12",
@@ -718,7 +1045,14 @@
       ],
       "scope": "Distinguish heating within a phase from melting/boiling; interpret heating/cooling evidence.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E020",
+        "E021",
+        "E022",
+        "E102",
+        "E105",
+        "E106"
+      ]
     },
     {
       "id": "EL13",
@@ -731,7 +1065,14 @@
       ],
       "scope": "ΔQ = mcΔT; rearrangements and J kg⁻¹ K⁻¹.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E093",
+        "E094",
+        "E095",
+        "E096",
+        "E097",
+        "E098"
+      ]
     },
     {
       "id": "EL14",
@@ -743,7 +1084,13 @@
       ],
       "scope": "Solids and liquids; electrical heating, measurements, energy losses and evaluation.",
       "suggestedLessonSlots": 2,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E112",
+        "E113",
+        "E114",
+        "E115",
+        "E116"
+      ]
     },
     {
       "id": "EL15",
@@ -755,7 +1102,13 @@
       ],
       "scope": "ΔQ = mL; fusion and vaporisation; mass changes and J kg⁻¹.",
       "suggestedLessonSlots": 1,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E099",
+        "E100",
+        "E101",
+        "E103",
+        "E104"
+      ]
     },
     {
       "id": "EL16",
@@ -767,7 +1120,12 @@
       ],
       "scope": "Fusion and vaporisation methods; measurements, energy losses and evaluation.",
       "suggestedLessonSlots": 2,
-      "pilotQuestionIds": []
+      "pilotQuestionIds": [
+        "E117",
+        "E118",
+        "E119",
+        "E120"
+      ]
     }
   ],
   "scopeNotes": [
