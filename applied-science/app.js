@@ -1,3 +1,4 @@
+import electricityTopics from './electricity-topics.json';
 import {equationSheetButton,bindEquationSheet} from './equation-sheet.mjs';
 import {learningBank,nativeProgress,prepareEncounter} from './account-bridge.mjs';
 import {selectSession,eligibility,seededRandom,markQuestion,beginSelfAssessment,recordSelfScore,formatNumber} from './pilot-core.mjs';
@@ -382,7 +383,7 @@ async function boot(){
  S.reportEmail=reportRecipient(window.AAQ_REPORT_CONFIG?.email);
  if(!window.AAQ_EMBEDDED&&!S.reportEmail){try{const r=await fetch(new URL('./report-config.json',appliedBase.href),{cache:'no-store'});if(r.ok)S.reportEmail=reportRecipient((await r.json()).email);}catch{}}
  const rawPrefs=storage.get(KEYS.prefs,defaults,p=>p?.schema===1&&Array.isArray(p.lessons)&&Array.isArray(p.types));
- S.prefs={...copy(defaults),...rawPrefs,lessons:rawPrefs.lessons.filter(id=>map.lessons.some(l=>l.id===id)),types:rawPrefs.types.filter(t=>types.includes(t)),disclosures:rawPrefs.disclosures&&typeof rawPrefs.disclosures==='object'?rawPrefs.disclosures:{}};
+ S.prefs={...copy(defaults),...rawPrefs,lessons:[...new Set(rawPrefs.lessons.map(id=>electricityTopics.legacyLessonAliases[id]||id))].filter(id=>map.lessons.some(l=>l.id===id)),types:rawPrefs.types.filter(t=>types.includes(t)),disclosures:rawPrefs.disclosures&&typeof rawPrefs.disclosures==='object'?rawPrefs.disclosures:{}};
  S.progress=storage.get(KEYS.progress,{schema:1,records:{},sessions:[]},p=>p?.schema===1&&p.records&&typeof p.records==='object'&&!Array.isArray(p.records)&&Object.values(p.records).every(r=>r&&typeof r==='object'&&Array.isArray(r.attempts))&&Array.isArray(p.sessions));
  S.progress.sessions=S.progress.sessions.filter(s=>!!s&&validateSession(s));
  const active=storage.get(KEYS.active,{schema:1,current:null,parked:null,view:'setup'},a=>a?.schema===1&&validateSession(a.current)&&validateSession(a.parked));S.session=active.current;S.parked=active.parked;

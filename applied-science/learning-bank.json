@@ -173,37 +173,32 @@
     },
     {
       "id": "EL01",
-      "label": "Circuit Symbols, Quantities and Units",
+      "label": "Circuit Components",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL11",
+      "label": "Electrical Quantities",
       "module": "Electricity"
     },
     {
       "id": "EL02",
-      "label": "Connecting Circuits and Meters",
+      "label": "Potential Difference and Current",
       "module": "Electricity"
     },
     {
       "id": "EL03",
-      "label": "Resistance and V = IR",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL04",
-      "label": "Filament Lamps and Diodes",
+      "label": "Resistance and Ohm's Law",
       "module": "Electricity"
     },
     {
       "id": "EL05",
-      "label": "Thermistors and LDRs",
+      "label": "Thermistors",
       "module": "Electricity"
     },
     {
       "id": "EL06",
-      "label": "LEDs",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL07",
-      "label": "Electrical Power",
+      "label": "LEDs and LDRs",
       "module": "Electricity"
     },
     {
@@ -212,43 +207,18 @@
       "module": "Electricity"
     },
     {
-      "id": "EL09",
-      "label": "Domestic Energy Use",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL10",
-      "label": "Fuses and Operating Current",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL11",
-      "label": "Energy Units and Temperature Scales",
-      "module": "Electricity"
-    },
-    {
       "id": "EL12",
-      "label": "Temperature Change and Change of State",
+      "label": "Changes of State",
       "module": "Electricity"
     },
     {
       "id": "EL13",
-      "label": "Specific Heat Capacity Calculations",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL14",
-      "label": "Measuring Specific Heat Capacity",
+      "label": "Specific Heat Capacity",
       "module": "Electricity"
     },
     {
       "id": "EL15",
-      "label": "Specific Latent Heat Calculations",
-      "module": "Electricity"
-    },
-    {
-      "id": "EL16",
-      "label": "Measuring Specific Latent Heat",
+      "label": "Specific Latent Heat",
       "module": "Electricity"
     }
   ],
@@ -3143,102 +3113,6 @@
       "contentVersion": 1
     },
     {
-      "id": "E001@1",
-      "title": "E001 · Match each electrical quantity to its meaning.",
-      "maxMark": 3,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E001",
-      "contentVersion": 1
-    },
-    {
-      "id": "E002@1",
-      "title": "E002 · Choose the correct electrical units.",
-      "maxMark": 3,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E002",
-      "contentVersion": 1
-    },
-    {
-      "id": "E003@1",
-      "title": "E003 · A meter displays 0.40 A.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E003",
-      "contentVersion": 1
-    },
-    {
-      "id": "E004@1",
-      "title": "E004 · An appliance transfers 600 J in 3 s.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E004",
-      "contentVersion": 1
-    },
-    {
-      "id": "E005@1",
-      "title": "E005 · Prefixes change the size of a unit.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E005",
-      "contentVersion": 1
-    },
-    {
-      "id": "E006@1",
-      "title": "E006 · An ammeter reading is 75 mA.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E006",
-      "contentVersion": 1
-    },
-    {
-      "id": "E007@1",
-      "title": "E007 · A heater is rated at 1800 W.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E007",
-      "contentVersion": 1
-    },
-    {
-      "id": "E008@1",
-      "title": "E008 · Convert these energy values.",
-      "maxMark": 3,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E008",
-      "contentVersion": 1
-    },
-    {
       "id": "E009@2",
       "title": "E009 · Identify electrical supply symbols.",
       "maxMark": 2,
@@ -3263,59 +3137,11 @@
       "contentVersion": 3
     },
     {
-      "id": "E011@2",
-      "title": "E011 · A learner measures the current through a lamp and the potential difference across it.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E011",
-      "contentVersion": 2
-    },
-    {
-      "id": "E012@2",
-      "title": "E012 · Select an instrument for each measurement.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL01"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E012",
-      "contentVersion": 2
-    },
-    {
-      "id": "E013@1",
-      "title": "E013 · An LDR is moved from darkness into bright light.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL05"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E013",
-      "contentVersion": 1
-    },
-    {
-      "id": "E014@1",
-      "title": "E014 · A thermistor has resistance 800 Ω at 20 °C and 300 Ω at 50 °C.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL05"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E014",
-      "contentVersion": 1
-    },
-    {
       "id": "E015@1",
       "title": "E015 · A diode is used in a circuit.",
       "maxMark": 1,
       "prerequisites": [
-        "EL04"
+        "EL01"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -3327,7 +3153,7 @@
       "title": "E016 · An electronic device contains an LED and an ordinary diode.",
       "maxMark": 1,
       "prerequisites": [
-        "EL06"
+        "EL01"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -3335,23 +3161,11 @@
       "contentVersion": 2
     },
     {
-      "id": "E017@1",
-      "title": "E017 · The filament in a lamp becomes hotter.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E017",
-      "contentVersion": 1
-    },
-    {
       "id": "E018@1",
       "title": "E018 · A fuse is connected in an appliance circuit.",
       "maxMark": 1,
       "prerequisites": [
-        "EL10"
+        "EL01"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -3359,52 +3173,232 @@
       "contentVersion": 1
     },
     {
-      "id": "E019@1",
-      "title": "E019 · Choose the correct thermal quantities and units.",
-      "maxMark": 2,
+      "id": "E024@2",
+      "title": "E024 · A cell, lamp and wires are connected in a loop with a gap.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E024",
+      "contentVersion": 2
+    },
+    {
+      "id": "E025@1",
+      "title": "E025 · A cell, switch and lamp are in one series loop. The switch is open.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E025",
+      "contentVersion": 1
+    },
+    {
+      "id": "E026@1",
+      "title": "E026 · Two lamps are on separate parallel branches. Each branch has its own series switch. Only the switch in branch A is closed.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E026",
+      "contentVersion": 1
+    },
+    {
+      "id": "E027@2",
+      "title": "E027 · A learner wants to vary the current through a lamp connected to a low-voltage supply.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E027",
+      "contentVersion": 2
+    },
+    {
+      "id": "E028@3",
+      "title": "E028 · The diagram shows a power supply.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E028",
+      "contentVersion": 3
+    },
+    {
+      "id": "E057@1",
+      "title": "E057 · An ideal diode’s conducting direction is from left to right. Its left side is connected to the positive terminal of a supply through a resistor.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E057",
+      "contentVersion": 1
+    },
+    {
+      "id": "E058@2",
+      "title": "E058 · The diagram shows a diode connected between points X and Y. The triangle points towards the line.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E058",
+      "contentVersion": 2
+    },
+    {
+      "id": "E061@2",
+      "title": "E061 · A low-voltage circuit contains a diode and resistor in series. With the diode in one orientation the current is 20 mA. Reversing only the diode reduces the current to almost zero.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E061",
+      "contentVersion": 2
+    },
+    {
+      "id": "E062@2",
+      "title": "E062 · A learner tests an ordinary diode in a circuit with a low-voltage supply, a series resistor and an ammeter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E062",
+      "contentVersion": 2
+    },
+    {
+      "id": "E088@1",
+      "title": "E088 · An appliance normally draws 4.0 A. A learner proposes a 3 A fuse.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL01"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E088",
+      "contentVersion": 1
+    },
+    {
+      "id": "E001@1",
+      "title": "E001 · Match each electrical quantity to its meaning.",
+      "maxMark": 3,
       "prerequisites": [
         "EL11"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E019",
+      "originalId": "E001",
       "contentVersion": 1
     },
     {
-      "id": "E020@1",
-      "title": "E020 · Compare specific heat capacity and specific latent heat.",
-      "maxMark": 1,
+      "id": "E002@1",
+      "title": "E002 · Choose the correct electrical units.",
+      "maxMark": 3,
       "prerequisites": [
-        "EL12"
+        "EL11"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E020",
+      "originalId": "E002",
       "contentVersion": 1
     },
     {
-      "id": "E021@1",
-      "title": "E021 · Identify changes of state.",
+      "id": "E003@1",
+      "title": "E003 · A meter displays 0.40 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E003",
+      "contentVersion": 1
+    },
+    {
+      "id": "E005@1",
+      "title": "E005 · Prefixes change the size of a unit.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E005",
+      "contentVersion": 1
+    },
+    {
+      "id": "E006@1",
+      "title": "E006 · An ammeter reading is 75 mA.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E006",
+      "contentVersion": 1
+    },
+    {
+      "id": "E007@1",
+      "title": "E007 · A heater is rated at 1800 W.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E007",
+      "contentVersion": 1
+    },
+    {
+      "id": "E008@1",
+      "title": "E008 · Convert these energy values.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL11"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E008",
+      "contentVersion": 1
+    },
+    {
+      "id": "E011@2",
+      "title": "E011 · A learner measures the current through a lamp and the potential difference across it.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E011",
+      "contentVersion": 2
+    },
+    {
+      "id": "E012@2",
+      "title": "E012 · Select an instrument for each measurement.",
       "maxMark": 2,
       "prerequisites": [
-        "EL12"
+        "EL02"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E021",
-      "contentVersion": 1
-    },
-    {
-      "id": "E022@1",
-      "title": "E022 · A pure substance melts at a fixed pressure while energy is supplied.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL12"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E022",
-      "contentVersion": 1
+      "originalId": "E012",
+      "contentVersion": 2
     },
     {
       "id": "E023@2",
@@ -3417,66 +3411,6 @@
       "enabled": true,
       "originalId": "E023",
       "contentVersion": 2
-    },
-    {
-      "id": "E024@2",
-      "title": "E024 · A cell, lamp and wires are connected in a loop with a gap.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E024",
-      "contentVersion": 2
-    },
-    {
-      "id": "E025@1",
-      "title": "E025 · A cell, switch and lamp are in one series loop. The switch is open.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E025",
-      "contentVersion": 1
-    },
-    {
-      "id": "E026@1",
-      "title": "E026 · Two lamps are on separate parallel branches. Each branch has its own series switch. Only the switch in branch A is closed.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E026",
-      "contentVersion": 1
-    },
-    {
-      "id": "E027@2",
-      "title": "E027 · A learner wants to vary the current through a lamp connected to a low-voltage supply.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E027",
-      "contentVersion": 2
-    },
-    {
-      "id": "E028@3",
-      "title": "E028 · The diagram shows a power supply.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E028",
-      "contentVersion": 3
     },
     {
       "id": "E029@3",
@@ -3539,18 +3473,6 @@
       "contentVersion": 3
     },
     {
-      "id": "E034@1",
-      "title": "E034 · A resistor is to be measured with an ohmmeter.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E034",
-      "contentVersion": 1
-    },
-    {
       "id": "E035@1",
       "title": "E035 · An expected current is 0.18 A. A meter has 20 mA, 200 mA and 2 A ranges. Each range has the same number of display counts.",
       "maxMark": 1,
@@ -3596,6 +3518,42 @@
       "type": "selected-answer",
       "enabled": true,
       "originalId": "E038",
+      "contentVersion": 1
+    },
+    {
+      "id": "E109@2",
+      "title": "E109 · A learner repeats a voltmeter reading across a resistor. The supply and component settings remain unchanged. The readings are 2.01, 2.00, 4.80 and 2.02 V.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL02"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E109",
+      "contentVersion": 2
+    },
+    {
+      "id": "E017@1",
+      "title": "E017 · The filament in a lamp becomes hotter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E017",
+      "contentVersion": 1
+    },
+    {
+      "id": "E034@1",
+      "title": "E034 · A resistor is to be measured with an ohmmeter.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E034",
       "contentVersion": 1
     },
     {
@@ -3743,15 +3701,123 @@
       "contentVersion": 1
     },
     {
-      "id": "E051@1",
-      "title": "E051 · A system needs a resistance that changes with light intensity.",
+      "id": "E063@2",
+      "title": "E063 · A variable resistor is in series with a lamp and a fixed-voltage supply. The variable resistor setting is increased; no other setting changes.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E063",
+      "contentVersion": 2
+    },
+    {
+      "id": "E064@1",
+      "title": "E064 · A lamp carries 0.50 A when the potential difference is 3.0 V.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E064",
+      "contentVersion": 1
+    },
+    {
+      "id": "E065@1",
+      "title": "E065 · A filament lamp carries 0.20 A at 1.0 V and 0.40 A at 4.0 V.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E065",
+      "contentVersion": 1
+    },
+    {
+      "id": "E066@1",
+      "title": "E066 · Increasing the supply potential difference makes a filament lamp hotter.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E066",
+      "contentVersion": 1
+    },
+    {
+      "id": "E067@1",
+      "title": "E067 · A resistor at constant temperature carries 0.10 A at 2.0 V and 0.20 A at 4.0 V. A lamp carries 0.10 A at 2.0 V and 0.15 A at 4.0 V.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E067",
+      "contentVersion": 1
+    },
+    {
+      "id": "E107@1",
+      "title": "E107 · A learner investigates the resistance of a lamp at different potential differences.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E107",
+      "contentVersion": 1
+    },
+    {
+      "id": "E108@3",
+      "title": "E108 · A learner changes the potential difference across one filament lamp and waits for a steady reading at each setting. At the first setting, the potential difference is 1.0 V and current is 0.20 A. At the second setting, they are 3.0 V and 0.30 A.",
+      "maxMark": 3,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E108",
+      "contentVersion": 3
+    },
+    {
+      "id": "E110@2",
+      "title": "E110 · A learner measures a resistor using an ammeter in series with it and a voltmeter across it. The readings are 6.0 V and 0.20 A.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E110",
+      "contentVersion": 2
+    },
+    {
+      "id": "E111@3",
+      "title": "E111 · The graph shows how current through a filament lamp changes as the potential difference across it is increased.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL03"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E111",
+      "contentVersion": 3
+    },
+    {
+      "id": "E014@1",
+      "title": "E014 · A thermistor has resistance 800 Ω at 20 °C and 300 Ω at 50 °C.",
       "maxMark": 1,
       "prerequisites": [
         "EL05"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E051",
+      "originalId": "E014",
       "contentVersion": 1
     },
     {
@@ -3765,30 +3831,6 @@
       "enabled": true,
       "originalId": "E052",
       "contentVersion": 2
-    },
-    {
-      "id": "E053@1",
-      "title": "E053 · An LDR has resistance 20 kΩ in darkness and 1 kΩ in bright light.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL05"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E053",
-      "contentVersion": 1
-    },
-    {
-      "id": "E054@1",
-      "title": "E054 · A controller turns on a lamp when its LDR resistance exceeds 10 kΩ. The LDR is 2 kΩ in bright light and 25 kΩ in darkness.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL05"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E054",
-      "contentVersion": 1
     },
     {
       "id": "E055@1",
@@ -3815,28 +3857,52 @@
       "contentVersion": 1
     },
     {
-      "id": "E057@1",
-      "title": "E057 · An ideal diode’s conducting direction is from left to right. Its left side is connected to the positive terminal of a supply through a resistor.",
+      "id": "E013@1",
+      "title": "E013 · An LDR is moved from darkness into bright light.",
       "maxMark": 1,
       "prerequisites": [
-        "EL04"
+        "EL06"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E057",
+      "originalId": "E013",
       "contentVersion": 1
     },
     {
-      "id": "E058@2",
-      "title": "E058 · The diagram shows a diode connected between points X and Y. The triangle points towards the line.",
+      "id": "E051@1",
+      "title": "E051 · A system needs a resistance that changes with light intensity.",
       "maxMark": 1,
       "prerequisites": [
-        "EL04"
+        "EL06"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E058",
-      "contentVersion": 2
+      "originalId": "E051",
+      "contentVersion": 1
+    },
+    {
+      "id": "E053@1",
+      "title": "E053 · An LDR has resistance 20 kΩ in darkness and 1 kΩ in bright light.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E053",
+      "contentVersion": 1
+    },
+    {
+      "id": "E054@1",
+      "title": "E054 · A controller turns on a lamp when its LDR resistance exceeds 10 kΩ. The LDR is 2 kΩ in bright light and 25 kΩ in darkness.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL06"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E054",
+      "contentVersion": 1
     },
     {
       "id": "E059@2",
@@ -3863,87 +3929,15 @@
       "contentVersion": 1
     },
     {
-      "id": "E061@2",
-      "title": "E061 · A low-voltage circuit contains a diode and resistor in series. With the diode in one orientation the current is 20 mA. Reversing only the diode reduces the current to almost zero.",
+      "id": "E004@1",
+      "title": "E004 · An appliance transfers 600 J in 3 s.",
       "maxMark": 1,
       "prerequisites": [
-        "EL04"
+        "EL08"
       ],
       "type": "selected-answer",
       "enabled": true,
-      "originalId": "E061",
-      "contentVersion": 2
-    },
-    {
-      "id": "E062@2",
-      "title": "E062 · A learner tests an ordinary diode in a circuit with a low-voltage supply, a series resistor and an ammeter.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E062",
-      "contentVersion": 2
-    },
-    {
-      "id": "E063@2",
-      "title": "E063 · A variable resistor is in series with a lamp and a fixed-voltage supply. The variable resistor setting is increased; no other setting changes.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL03"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E063",
-      "contentVersion": 2
-    },
-    {
-      "id": "E064@1",
-      "title": "E064 · A lamp carries 0.50 A when the potential difference is 3.0 V.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E064",
-      "contentVersion": 1
-    },
-    {
-      "id": "E065@1",
-      "title": "E065 · A filament lamp carries 0.20 A at 1.0 V and 0.40 A at 4.0 V.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E065",
-      "contentVersion": 1
-    },
-    {
-      "id": "E066@1",
-      "title": "E066 · Increasing the supply potential difference makes a filament lamp hotter.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E066",
-      "contentVersion": 1
-    },
-    {
-      "id": "E067@1",
-      "title": "E067 · A resistor at constant temperature carries 0.10 A at 2.0 V and 0.20 A at 4.0 V. A lamp carries 0.10 A at 2.0 V and 0.15 A at 4.0 V.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E067",
+      "originalId": "E004",
       "contentVersion": 1
     },
     {
@@ -3951,7 +3945,7 @@
       "title": "E068 · Power and current are known for an appliance.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -3963,7 +3957,7 @@
       "title": "E069 · A lamp operates at 12 V and 0.50 A.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -3975,7 +3969,7 @@
       "title": "E070 · A 920 W appliance operates from a 230 V supply.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -3987,7 +3981,7 @@
       "title": "E071 · A device transfers energy at 24 W while carrying 2.0 A.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -3999,7 +3993,7 @@
       "title": "E072 · Three 8 W lamps and one 20 W lamp operate together.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4011,7 +4005,7 @@
       "title": "E073 · Appliance A is rated at 600 W and B at 900 W.",
       "maxMark": 1,
       "prerequisites": [
-        "EL07"
+        "EL08"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -4119,7 +4113,7 @@
       "title": "E082 · A 1.5 kW heater operates for 2 h.",
       "maxMark": 1,
       "prerequisites": [
-        "EL09"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4131,7 +4125,7 @@
       "title": "E083 · An 800 W appliance operates for 3 h.",
       "maxMark": 2,
       "prerequisites": [
-        "EL09"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4143,7 +4137,7 @@
       "title": "E084 · A 2.0 kW kettle is used for a total of 6 minutes each day for 5 days.",
       "maxMark": 2,
       "prerequisites": [
-        "EL09"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4155,7 +4149,7 @@
       "title": "E085 · A 1.0 kW heater runs for 2 h and a 0.10 kW television runs for 4 h.",
       "maxMark": 3,
       "prerequisites": [
-        "EL09"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4167,7 +4161,7 @@
       "title": "E086 · Plan A uses a 2.0 kW heater for 1 h; plan B uses a 1.0 kW heater for 3 h.",
       "maxMark": 1,
       "prerequisites": [
-        "EL09"
+        "EL08"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -4179,7 +4173,7 @@
       "title": "E087 · A 460 W appliance operates at 230 V. Choose from 3 A, 5 A and 13 A fuses. Select the lowest available fuse rating above the normal operating current.",
       "maxMark": 2,
       "prerequisites": [
-        "EL10"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4187,23 +4181,11 @@
       "contentVersion": 3
     },
     {
-      "id": "E088@1",
-      "title": "E088 · An appliance normally draws 4.0 A. A learner proposes a 3 A fuse.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL10"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E088",
-      "contentVersion": 1
-    },
-    {
       "id": "E089@3",
       "title": "E089 · A 2300 W appliance operates at 230 V. Available fuses are 3 A, 5 A and 13 A. Select the lowest available fuse rating above the normal operating current.",
       "maxMark": 2,
       "prerequisites": [
-        "EL10"
+        "EL08"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4211,11 +4193,95 @@
       "contentVersion": 3
     },
     {
+      "id": "E020@1",
+      "title": "E020 · Compare specific heat capacity and specific latent heat.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E020",
+      "contentVersion": 1
+    },
+    {
+      "id": "E021@1",
+      "title": "E021 · Identify changes of state.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E021",
+      "contentVersion": 1
+    },
+    {
+      "id": "E022@1",
+      "title": "E022 · A pure substance melts at a fixed pressure while energy is supplied.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E022",
+      "contentVersion": 1
+    },
+    {
+      "id": "E102@2",
+      "title": "E102 · Water has specific latent heat of fusion 334 000 J kg⁻¹ and specific latent heat of vaporisation 2 260 000 J kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E102",
+      "contentVersion": 2
+    },
+    {
+      "id": "E105@2",
+      "title": "E105 · A pure liquid boils at fixed pressure while a heater continues supplying energy.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E105",
+      "contentVersion": 2
+    },
+    {
+      "id": "E106@1",
+      "title": "E106 · For water, L of fusion = 334 kJ kg⁻¹ and L of vaporisation = 2260 kJ kg⁻¹.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL12"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E106",
+      "contentVersion": 1
+    },
+    {
+      "id": "E019@1",
+      "title": "E019 · Choose the correct thermal quantities and units.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E019",
+      "contentVersion": 1
+    },
+    {
       "id": "E090@1",
       "title": "E090 · A liquid is at 25 °C. Use K = °C + 273.",
       "maxMark": 1,
       "prerequisites": [
-        "EL11"
+        "EL13"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4227,7 +4293,7 @@
       "title": "E091 · A solid is at 260 K. Use °C = K − 273.",
       "maxMark": 1,
       "prerequisites": [
-        "EL11"
+        "EL13"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4239,7 +4305,7 @@
       "title": "E092 · A liquid is heated from 18 °C to 63 °C.",
       "maxMark": 1,
       "prerequisites": [
-        "EL11"
+        "EL13"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4319,6 +4385,66 @@
       "contentVersion": 1
     },
     {
+      "id": "E112@3",
+      "title": "E112 · A learner measures the specific heat capacity of a liquid using an electrical heater. The learner measures the heater potential difference and current and records the heating time to calculate electrical energy supplied.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E112",
+      "contentVersion": 3
+    },
+    {
+      "id": "E113@4",
+      "title": "E113 · A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The learner records the heating time and heater power to calculate the energy supplied, and records initial and final block temperatures.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E113",
+      "contentVersion": 4
+    },
+    {
+      "id": "E114@2",
+      "title": "E114 · A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30 K. For this calculation assume all supplied energy heats the solid. The supplied electrical energy is calculated from the heater power and time.",
+      "maxMark": 2,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "scaffolded-calculation",
+      "enabled": true,
+      "originalId": "E114",
+      "contentVersion": 2
+    },
+    {
+      "id": "E115@2",
+      "title": "E115 · A heater supplies 5000 J to a beaker and liquid, but the calculation assumes the liquid receives all 5000 J.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E115",
+      "contentVersion": 2
+    },
+    {
+      "id": "E116@3",
+      "title": "E116 · A learner heats a known mass of liquid with an electrical heater and uses the electrical energy supplied and the temperature rise to estimate its specific heat capacity. The container is fitted with insulation and a lid.",
+      "maxMark": 1,
+      "prerequisites": [
+        "EL13"
+      ],
+      "type": "selected-answer",
+      "enabled": true,
+      "originalId": "E116",
+      "contentVersion": 3
+    },
+    {
       "id": "E099@2",
       "title": "E099 · A 0.20 kg piece of ice is already at its melting point. The specific latent heat of fusion of ice is 334 000 J kg⁻¹.",
       "maxMark": 1,
@@ -4355,18 +4481,6 @@
       "contentVersion": 1
     },
     {
-      "id": "E102@2",
-      "title": "E102 · Water has specific latent heat of fusion 334 000 J kg⁻¹ and specific latent heat of vaporisation 2 260 000 J kg⁻¹.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL12"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E102",
-      "contentVersion": 2
-    },
-    {
       "id": "E103@2",
       "title": "E103 · 0.10 kg of ice warms from −10 °C to 0 °C, then melts. Use c of ice = 2100 J kg⁻¹ K⁻¹ and L of fusion = 334 000 J kg⁻¹.",
       "maxMark": 3,
@@ -4391,155 +4505,11 @@
       "contentVersion": 2
     },
     {
-      "id": "E105@2",
-      "title": "E105 · A pure liquid boils at fixed pressure while a heater continues supplying energy.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL12"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E105",
-      "contentVersion": 2
-    },
-    {
-      "id": "E106@1",
-      "title": "E106 · For water, L of fusion = 334 kJ kg⁻¹ and L of vaporisation = 2260 kJ kg⁻¹.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL12"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E106",
-      "contentVersion": 1
-    },
-    {
-      "id": "E107@1",
-      "title": "E107 · A learner investigates the resistance of a lamp at different potential differences.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E107",
-      "contentVersion": 1
-    },
-    {
-      "id": "E108@3",
-      "title": "E108 · A learner changes the potential difference across one filament lamp and waits for a steady reading at each setting. At the first setting, the potential difference is 1.0 V and current is 0.20 A. At the second setting, they are 3.0 V and 0.30 A.",
-      "maxMark": 3,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E108",
-      "contentVersion": 3
-    },
-    {
-      "id": "E109@2",
-      "title": "E109 · A learner repeats a voltmeter reading across a resistor. The supply and component settings remain unchanged. The readings are 2.01, 2.00, 4.80 and 2.02 V.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL02"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E109",
-      "contentVersion": 2
-    },
-    {
-      "id": "E110@2",
-      "title": "E110 · A learner measures a resistor using an ammeter in series with it and a voltmeter across it. The readings are 6.0 V and 0.20 A.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL03"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E110",
-      "contentVersion": 2
-    },
-    {
-      "id": "E111@3",
-      "title": "E111 · The graph shows how current through a filament lamp changes as the potential difference across it is increased.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL04"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E111",
-      "contentVersion": 3
-    },
-    {
-      "id": "E112@3",
-      "title": "E112 · A learner measures the specific heat capacity of a liquid using an electrical heater. The learner measures the heater potential difference and current and records the heating time to calculate electrical energy supplied.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL14"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E112",
-      "contentVersion": 3
-    },
-    {
-      "id": "E113@4",
-      "title": "E113 · A learner measures the specific heat capacity of a metal block. An electrical heater and thermometer fit into holes in the block. The learner records the heating time and heater power to calculate the energy supplied, and records initial and final block temperatures.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL14"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E113",
-      "contentVersion": 4
-    },
-    {
-      "id": "E114@2",
-      "title": "E114 · A 50 W heater operates for 120 s in a 0.20 kg solid. Its temperature rises by 30 K. For this calculation assume all supplied energy heats the solid. The supplied electrical energy is calculated from the heater power and time.",
-      "maxMark": 2,
-      "prerequisites": [
-        "EL14"
-      ],
-      "type": "scaffolded-calculation",
-      "enabled": true,
-      "originalId": "E114",
-      "contentVersion": 2
-    },
-    {
-      "id": "E115@2",
-      "title": "E115 · A heater supplies 5000 J to a beaker and liquid, but the calculation assumes the liquid receives all 5000 J.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL14"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E115",
-      "contentVersion": 2
-    },
-    {
-      "id": "E116@3",
-      "title": "E116 · A learner heats a known mass of liquid with an electrical heater and uses the electrical energy supplied and the temperature rise to estimate its specific heat capacity. The container is fitted with insulation and a lid.",
-      "maxMark": 1,
-      "prerequisites": [
-        "EL14"
-      ],
-      "type": "selected-answer",
-      "enabled": true,
-      "originalId": "E116",
-      "contentVersion": 3
-    },
-    {
       "id": "E117@3",
       "title": "E117 · A learner packs ice at its melting point into a funnel and collects meltwater in a weighed container. A heater supplies measured electrical energy during a timed interval. A second equal-duration collection is made without the heater, under similar surrounding conditions, to estimate melting caused by the surroundings.",
       "maxMark": 2,
       "prerequisites": [
-        "EL16"
+        "EL15"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -4551,7 +4521,7 @@
       "title": "E118 · A learner uses an immersion heater to boil a liquid in an open container on a balance. Once boiling is steady, the learner records the combined balance reading for the container and contents before and after a timed interval. Assume the mass lost is liquid that has vaporised. The learner also measures the electrical energy supplied during that interval.",
       "maxMark": 2,
       "prerequisites": [
-        "EL16"
+        "EL15"
       ],
       "type": "selected-answer",
       "enabled": true,
@@ -4563,7 +4533,7 @@
       "title": "E119 · A learner places a container of water and an immersion heater on a balance. Once the water boils steadily, the learner supplies 45 200 J during a timed interval. The combined balance reading for the container and contents falls from 0.850 kg to 0.830 kg. Assume the loss in mass is water that vaporises and that all the supplied energy vaporises the water.",
       "maxMark": 1,
       "prerequisites": [
-        "EL16"
+        "EL15"
       ],
       "type": "scaffolded-calculation",
       "enabled": true,
@@ -4575,7 +4545,7 @@
       "title": "E120 · Two learners boil the same liquid using immersion heaters. Each measures electrical energy supplied and the mass lost over a timed interval of steady boiling. Both calculate specific latent heat as heater energy divided by mass vaporised. The insulated setup gives 2.3 MJ kg⁻¹; the uninsulated setup gives 2.8 MJ kg⁻¹.",
       "maxMark": 2,
       "prerequisites": [
-        "EL16"
+        "EL15"
       ],
       "type": "selected-answer",
       "enabled": true,

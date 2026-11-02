@@ -76,3 +76,14 @@ test('approved expansion preserves the published Waves questions and maps every 
  for(const row of rows(previous))assert(rows(expanded).includes(row),'existing catalogue row must not change');
  assert.equal(rows(expanded).length,354);assert.match(expanded,/on conflict do nothing/);
 });
+
+test('Electricity regrouping covers all 120 questions exactly once without changing their questions or marks',async()=>{
+ const config=require('../applied-science/electricity-topics.json'),draft=require('../content-drafts/electricity/questions.json');
+ assert.equal(config.topics.length,10);assert.deepEqual(map.lessons.filter(l=>l.topic==='Electricity').map(l=>l.title),config.topics.map(t=>t.label));
+ const ids=config.topics.flatMap(t=>t.questionIds);assert.equal(ids.length,120);assert.equal(new Set(ids).size,120);
+ const core=await import('../applied-science/pilot-core.mjs');
+ for(const t of config.topics){const eligible=core.eligibility(source,[t.id],{allowDrafts:true}).eligible;assert.deepEqual(eligible.map(q=>q.id).sort(),t.questionIds.slice().sort());assert(eligible.every(q=>q.primaryLessonId===t.id));}
+ const original=JSON.parse(fs.readFileSync('content-drafts/electricity/questions.json','utf8')).topics.flatMap(t=>t.questions).sort((a,b)=>a.id.localeCompare(b.id));
+ assert.equal(createHash('sha256').update(JSON.stringify(original)).digest('hex'),'cf250d7d90c5a83922a48ad7fb84694bd5a6f0b0e8a63b88cc3da8f9b0c97af9');
+ for(const t of draft.topics)assert.deepEqual(t.questions.map(q=>q.id),config.topics.find(x=>x.id===t.id).questionIds);
+});

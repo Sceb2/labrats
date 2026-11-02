@@ -12,6 +12,7 @@ const root=path.resolve(__dirname,'..'),bank=require('../applied-science/Pilot_Q
   for(const width of [390,1280]){
    if(page)await page.close();page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewportSize({width,height:900});await page.goto(base+'/applied-science.html?guest=1');await page.waitForSelector('.setup-page,.question-screen');await page.waitForSelector('.setup-page');
+   assert.deepEqual(await page.locator('[data-disclosure="electricity"] .topic-name').allTextContents(),require('../applied-science/electricity-topics.json').topics.map(t=>t.label));
    await page.locator('#select-all').click();const waves=await page.evaluate(()=>window.AppliedPrototype.state.prefs.lessons.slice());
    for(const topic of ['forces','electricity']){
     await page.locator(`[data-disclosure="${topic}"]>summary`).click();await page.locator('#select-'+topic).click();

@@ -794,74 +794,100 @@
     {
       "id": "EL01",
       "topic": "Electricity",
-      "group": "Circuit Symbols, Quantities and Units",
-      "title": "Circuit Symbols, Quantities and Units",
+      "group": "Circuit Components",
+      "title": "Circuit Components",
       "specRefs": [
-        "C1.1",
-        "C1.2",
-        "C1.2.1"
+        "C1.1–C1.3; C4.1",
+        "C1.4; C3.2; C4.3–C5.2",
+        "C1.1–C1.3.2",
+        "C1.4",
+        "C3.1–C3.3"
       ],
-      "scope": "Symbols and meanings of current, potential difference, energy, power and resistance; A, V, J, W and Ω.",
+      "scope": "Circuit Components",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
-        "E001",
-        "E002",
-        "E003",
-        "E004",
-        "E005",
-        "E006",
-        "E007",
-        "E008",
         "E009",
         "E010",
-        "E011",
-        "E012"
-      ]
-    },
-    {
-      "id": "EL02",
-      "topic": "Electricity",
-      "group": "Connecting Circuits and Meters",
-      "title": "Connecting Circuits and Meters",
-      "specRefs": [
-        "C1.3",
-        "C1.3.1"
-      ],
-      "scope": "Cells, supplies, lamps, resistors, variable resistors and switches; ammeters in series and voltmeters in parallel.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
-        "E023",
+        "E015",
+        "E016",
+        "E018",
         "E024",
         "E025",
         "E026",
         "E027",
         "E028",
+        "E057",
+        "E058",
+        "E061",
+        "E062",
+        "E088"
+      ]
+    },
+    {
+      "id": "EL11",
+      "topic": "Electricity",
+      "group": "Electrical Quantities",
+      "title": "Electrical Quantities",
+      "specRefs": [
+        "C1.1–C1.3; C4.1"
+      ],
+      "scope": "Electrical Quantities",
+      "suggestedLessonSlots": 1,
+      "pilotQuestionIds": [
+        "E001",
+        "E002",
+        "E003",
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ]
+    },
+    {
+      "id": "EL02",
+      "topic": "Electricity",
+      "group": "Potential Difference and Current",
+      "title": "Potential Difference and Current",
+      "specRefs": [
+        "C1.1–C1.3; C4.1",
+        "C1.1–C1.3.2",
+        "C1.3–C1.4; C2.1.2"
+      ],
+      "scope": "Potential Difference and Current",
+      "suggestedLessonSlots": 1,
+      "pilotQuestionIds": [
+        "E011",
+        "E012",
+        "E023",
         "E029",
         "E030",
         "E031",
         "E032",
         "E033",
-        "E034",
         "E035",
         "E036",
         "E037",
         "E038",
-        "E107",
         "E109"
       ]
     },
     {
       "id": "EL03",
       "topic": "Electricity",
-      "group": "Resistance and V = IR",
-      "title": "Resistance and V = IR",
+      "group": "Resistance and Ohm's Law",
+      "title": "Resistance and Ohm's Law",
       "specRefs": [
-        "C1.3.2",
-        "C2.1.2"
+        "C1.4; C3.2; C4.3–C5.2",
+        "C1.1–C1.3.2",
+        "C2.1.2",
+        "C1.4",
+        "C1.3–C1.4; C2.1.2"
       ],
-      "scope": "Ohmmeter use on isolated, unpowered components; calculate and rearrange V = IR.",
+      "scope": "Resistance and Ohm's Law",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
+        "E017",
+        "E034",
         "E039",
         "E040",
         "E041",
@@ -875,51 +901,30 @@
         "E049",
         "E050",
         "E063",
-        "E110"
-      ]
-    },
-    {
-      "id": "EL04",
-      "topic": "Electricity",
-      "group": "Filament Lamps and Diodes",
-      "title": "Filament Lamps and Diodes",
-      "specRefs": [
-        "C1.4"
-      ],
-      "scope": "Use lamps and diodes in circuit contexts; interpret supplied current/potential-difference evidence.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
-        "E015",
-        "E017",
-        "E057",
-        "E058",
-        "E061",
-        "E062",
         "E064",
         "E065",
         "E066",
         "E067",
+        "E107",
         "E108",
+        "E110",
         "E111"
       ]
     },
     {
       "id": "EL05",
       "topic": "Electricity",
-      "group": "Thermistors and LDRs",
-      "title": "Thermistors and LDRs",
+      "group": "Thermistors",
+      "title": "Thermistors",
       "specRefs": [
+        "C1.4; C3.2; C4.3–C5.2",
         "C1.4"
       ],
-      "scope": "Temperature/light-dependent resistance; specify thermistor behaviour in the question; use in sensor circuits.",
+      "scope": "Thermistors",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
-        "E013",
         "E014",
-        "E051",
         "E052",
-        "E053",
-        "E054",
         "E055",
         "E056"
       ]
@@ -927,37 +932,21 @@
     {
       "id": "EL06",
       "topic": "Electricity",
-      "group": "LEDs",
-      "title": "LEDs",
+      "group": "LEDs and LDRs",
+      "title": "LEDs and LDRs",
       "specRefs": [
+        "C1.4; C3.2; C4.3–C5.2",
         "C1.4"
       ],
-      "scope": "Distinguish detecting light from emitting light; use component behaviour in simple circuits.",
+      "scope": "LEDs and LDRs",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
-        "E016",
+        "E013",
+        "E051",
+        "E053",
+        "E054",
         "E059",
         "E060"
-      ]
-    },
-    {
-      "id": "EL07",
-      "topic": "Electricity",
-      "group": "Electrical Power",
-      "title": "Electrical Power",
-      "specRefs": [
-        "C2.1.1",
-        "C2.1.3"
-      ],
-      "scope": "P = IV and P = E/t; equation selection, rearrangement and units.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
-        "E068",
-        "E069",
-        "E070",
-        "E071",
-        "E072",
-        "E073"
       ]
     },
     {
@@ -966,11 +955,20 @@
       "group": "Electrical Energy",
       "title": "Electrical Energy",
       "specRefs": [
-        "C2.1.4"
+        "C1.1–C1.3; C4.1",
+        "C2.1",
+        "C3.1–C3.3"
       ],
-      "scope": "E = VIt; calculate energy transferred and convert time units.",
+      "scope": "Electrical Energy",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
+        "E004",
+        "E068",
+        "E069",
+        "E070",
+        "E071",
+        "E072",
+        "E073",
         "E074",
         "E075",
         "E076",
@@ -978,72 +976,26 @@
         "E078",
         "E079",
         "E080",
-        "E081"
-      ]
-    },
-    {
-      "id": "EL09",
-      "topic": "Electricity",
-      "group": "Domestic Energy Use",
-      "title": "Domestic Energy Use",
-      "specRefs": [
-        "C3.1",
-        "C3.3"
-      ],
-      "scope": "Compare appliances; energy in kWh = power in kW × time in h. Cost calculations need supplied tariffs.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
+        "E081",
         "E082",
         "E083",
         "E084",
         "E085",
-        "E086"
-      ]
-    },
-    {
-      "id": "EL10",
-      "topic": "Electricity",
-      "group": "Fuses and Operating Current",
-      "title": "Fuses and Operating Current",
-      "specRefs": [
-        "C3.2"
-      ],
-      "scope": "Use current/power evidence and supplied fuse ratings to select and justify a suitable fuse.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
-        "E018",
+        "E086",
         "E087",
-        "E088",
         "E089"
-      ]
-    },
-    {
-      "id": "EL11",
-      "topic": "Electricity",
-      "group": "Energy Units and Temperature Scales",
-      "title": "Energy Units and Temperature Scales",
-      "specRefs": [
-        "C4.1",
-        "C4.2"
-      ],
-      "scope": "J, kJ and MJ; Celsius/Kelvin conversion; temperature changes in K and °C have equal numerical size.",
-      "suggestedLessonSlots": 1,
-      "pilotQuestionIds": [
-        "E019",
-        "E090",
-        "E091",
-        "E092"
       ]
     },
     {
       "id": "EL12",
       "topic": "Electricity",
-      "group": "Temperature Change and Change of State",
-      "title": "Temperature Change and Change of State",
+      "group": "Changes of State",
+      "title": "Changes of State",
       "specRefs": [
-        "C4.3"
+        "C1.4; C3.2; C4.3–C5.2",
+        "C5.1–C5.2; C4.3"
       ],
-      "scope": "Distinguish heating within a phase from melting/boiling; interpret heating/cooling evidence.",
+      "scope": "Changes of State",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
         "E020",
@@ -1057,34 +1009,26 @@
     {
       "id": "EL13",
       "topic": "Electricity",
-      "group": "Specific Heat Capacity Calculations",
-      "title": "Specific Heat Capacity Calculations",
+      "group": "Specific Heat Capacity",
+      "title": "Specific Heat Capacity",
       "specRefs": [
-        "C4.4.2",
-        "C4.4.3"
+        "C1.4; C3.2; C4.3–C5.2",
+        "C4.1–C4.4",
+        "C4.4.1; C5.1"
       ],
-      "scope": "ΔQ = mcΔT; rearrangements and J kg⁻¹ K⁻¹.",
+      "scope": "Specific Heat Capacity",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
+        "E019",
+        "E090",
+        "E091",
+        "E092",
         "E093",
         "E094",
         "E095",
         "E096",
         "E097",
-        "E098"
-      ]
-    },
-    {
-      "id": "EL14",
-      "topic": "Electricity",
-      "group": "Measuring Specific Heat Capacity",
-      "title": "Measuring Specific Heat Capacity",
-      "specRefs": [
-        "C4.4.1"
-      ],
-      "scope": "Solids and liquids; electrical heating, measurements, energy losses and evaluation.",
-      "suggestedLessonSlots": 2,
-      "pilotQuestionIds": [
+        "E098",
         "E112",
         "E113",
         "E114",
@@ -1095,32 +1039,20 @@
     {
       "id": "EL15",
       "topic": "Electricity",
-      "group": "Specific Latent Heat Calculations",
-      "title": "Specific Latent Heat Calculations",
+      "group": "Specific Latent Heat",
+      "title": "Specific Latent Heat",
       "specRefs": [
-        "C5.2"
+        "C5.1–C5.2; C4.3",
+        "C4.4.1; C5.1"
       ],
-      "scope": "ΔQ = mL; fusion and vaporisation; mass changes and J kg⁻¹.",
+      "scope": "Specific Latent Heat",
       "suggestedLessonSlots": 1,
       "pilotQuestionIds": [
         "E099",
         "E100",
         "E101",
         "E103",
-        "E104"
-      ]
-    },
-    {
-      "id": "EL16",
-      "topic": "Electricity",
-      "group": "Measuring Specific Latent Heat",
-      "title": "Measuring Specific Latent Heat",
-      "specRefs": [
-        "C5.1"
-      ],
-      "scope": "Fusion and vaporisation methods; measurements, energy losses and evaluation.",
-      "suggestedLessonSlots": 2,
-      "pilotQuestionIds": [
+        "E104",
         "E117",
         "E118",
         "E119",
