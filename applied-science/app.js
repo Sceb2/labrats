@@ -1,3 +1,4 @@
+import {equationSheetButton,bindEquationSheet} from './equation-sheet.mjs';
 import {learningBank,nativeProgress,prepareEncounter} from './account-bridge.mjs';
 import {selectSession,eligibility,seededRandom,markQuestion,beginSelfAssessment,recordSelfScore,formatNumber} from './pilot-core.mjs';
 import {KEYS,copy,createStore,questionKey,addAttempt,sessionStats,validateSession} from './state.mjs';
@@ -195,11 +196,12 @@ function showQuestion(){
  renderShell(e.phase==='answering'?'question':'feedback');
  const number=S.session.index+1;
  app().innerHTML=`<div class="question-toolbar"><button type="button" class="progress-trigger" id="question-navigator" aria-label="Open question navigator"><span class="progress-topline"><strong>Question ${number} of ${S.session.questions.length}</strong><span aria-hidden="true">⌄</span></span><progress class="session-progress" max="${S.session.questions.length}" value="${number}" aria-label="Current question"></progress></button><div class="account-actions" data-account-actions>${button('Finish session','finish-session','btn finish-session')}</div></div>
- <p class="question-topic">${esc(titleFor(q.primaryLessonId))} ${gradeBadge(q)}</p><article class="card question-screen"><h1 id="question-heading"><span class="question-number">Q${number}</span><span>${esc(q.prompt)}</span></h1><p class="question-total">${q.maxMarks} ${q.maxMarks===1?'mark':'marks'}${S.session.mode==='review'?' · Question review':''}${S.session.mode==='retry'?' · Mistake review':''}</p>
+ <p class="question-topic">${esc(titleFor(q.primaryLessonId))} ${gradeBadge(q)}</p><article class="card question-screen"><h1 id="question-heading"><span class="question-number">Q${number}</span><span>${esc(q.prompt)}</span></h1>${equationSheetButton()}${S.session.mode==='review'?'<p class="question-mode">Question review</p>':S.session.mode==='retry'?'<p class="question-mode">Mistake review</p>':''}
  <div class="question-context">${q.dataTable?tableMarkup(q.dataTable):''}${q.asset?`<figure class="wave-figure"><img src="${esc(q.asset)}" alt="${esc(q.accessibleDescription)}"><div class="figure-actions">${button('Enlarge diagram','enlarge-diagram','btn text-button')}</div><details class="graph-data"><summary>Diagram description and data</summary><p>${esc(q.accessibleDescription)}</p></details></figure>`:''}</div>
  <div id="task">${q.interaction==='written-self-assessment'?`<label class="writing-label" for="written-response">Your answer</label><textarea class="written-response" id="written-response" maxlength="${q.selfAssessment.maxCharacters}" ${e.phase!=='answering'?'readonly':''}>${esc(e.writtenText)}</textarea>`:`${q.unscaffoldedFinalAnswerRoute?`<fieldset class="answer-part route-toggle"><legend>Answer method</legend><label><input type="radio" name="answer-mode" value="scaffold" ${e.mode==='scaffold'?'checked':''} ${e.phase!=='answering'?'disabled':''}>Use calculation steps</label><label><input type="radio" name="answer-mode" value="final-answer" ${e.mode==='final-answer'?'checked':''} ${e.phase!=='answering'?'disabled':''}>Enter a final answer</label></fieldset>`:''}${q.interaction==='answer-completion'?`<div class="answer-opening"><p class="small-note">Choose a sentence for each part to build your explanation.</p><p class="completed-answer" id="completion-preview">${completionPreview(q,e)}</p></div>`:''}${renderedParts(q,e).map(p=>partMarkup(q,p,e)).join('')}`}</div>
  ${e.phase==='answering'?`<details class="hint-panel" id="hint-panel" ${e.hintUsed?'open':''}><summary>Optional hint</summary><p>${esc(q.hint)}</p></details><div id="submission-warning"></div><div class="answer-actions">${button('Reveal answer','reveal-answer','btn text-button')}${button(q.interaction==='written-self-assessment'?'Show marking points':'Check answer','check-answer')}</div>`:''}
  <section id="feedback" tabindex="-1" aria-label="Answer feedback"></section>${reportControls()}</article>`;
+ bindEquationSheet($('.eq-open'));
  bindQuestionInputs(q,e);bindPreviewToolbar();bindQuestionReport(q,e);
  if($('#enlarge-diagram'))$('#enlarge-diagram').onclick=()=>showDialog(q.title,`<p class="small-note">Scroll horizontally if needed. ${esc(q.accessibleDescription)}</p><div class="dialog-image-scroll"><img src="${esc(q.asset)}" alt="${esc(q.accessibleDescription)}"></div>`,null,$('#enlarge-diagram'));
  if(e.phase==='answering'){
@@ -208,7 +210,7 @@ function showQuestion(){
  }else{
   showFeedback(q,e);
  }
- if(e.phase==='feedback')RevisionFeedback.foldQuestion(document.querySelector('.question-screen'),$('#feedback'),['#question-heading','.question-total','.question-context','#task']);
+ if(e.phase==='feedback')RevisionFeedback.foldQuestion(document.querySelector('.question-screen'),$('#feedback'),['#question-heading','.question-mode','.question-context','#task']);
  save();focusHeading(e.phase==='answering'?'#question-heading':'#feedback h2');if(e.phase==='self-assess')$('#feedback').scrollIntoView({block:'start'});
 }
 function bindQuestionInputs(q,e){

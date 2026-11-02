@@ -13,6 +13,7 @@
     "test:auth-browser": "node --test tests/auth-browser.cjs",
     "test:auth-local": "node scripts/test-local-auth.cjs",
     "accounts": "node scripts/student-accounts.cjs",
+    "test:equations": "node tests/equation-sheet-browser.cjs",
     "test:design": "node --test tests/design-browser.cjs",
     "test:flashcards": "node --test tests/flashcards-unit.cjs tests/flashcards-browser.cjs"
   },
