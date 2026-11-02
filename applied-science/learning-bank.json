@@ -1,7 +1,7 @@
 {
   "meta": {
     "subjectId": "applied-science",
-    "bankVersion": "applied-science-0.4.1",
+    "bankVersion": "applied-science-0.4.0",
     "scoringVersion": "applied-1",
     "compatibleBankVersions": []
   },
@@ -407,7 +407,7 @@
       "contentVersion": 2
     },
     {
-      "id": "W13@3",
+      "id": "W13@2",
       "title": "Recall frequency and periodic time",
       "maxMark": 2,
       "prerequisites": [
@@ -416,7 +416,7 @@
       "type": "selected-answer",
       "enabled": true,
       "originalId": "W13",
-      "contentVersion": 3
+      "contentVersion": 2
     },
     {
       "id": "W14@2",

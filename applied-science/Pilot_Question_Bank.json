@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "bankVersion": "0.4.1",
+  "bankVersion": "0.4.0",
   "date": "2026-10-15",
   "title": "AAQ Physics Waves – reviewed 110-question bank",
   "qualification": "Pearson AAQ Applied Science Extended Certificate (first teaching 2025)",
@@ -1517,7 +1517,7 @@
     },
     {
       "id": "W13",
-      "contentVersion": 3,
+      "contentVersion": 2,
       "title": "Recall frequency and periodic time",
       "topic": "Waves",
       "primaryLessonId": "WA02",
