@@ -144,7 +144,12 @@ search path. No browser service-role key or new administrative connection is
 required. No Edge Function redeployment is required for these RPCs.
 
 The subject/topic registry is `flashcards/topics.json`, checked against the
-existing UI's topics. Applied Science uses its existing grouped Waves topic IDs.
+existing UI's topics. Applied Science uses grouped topic IDs: 12 Waves groups,
+13 Forces groups and 10 Electricity groups. Migration
+`202611030013_forces_electricity_flashcard_topics.sql` adds Forces/Electricity
+to the database registry after migrations 001–012. This enables teacher imports;
+it does not supply published packs. No Edge Function redeployment is needed
+for this registry-only extension.
 Adding future topics requires a deliberate registry/database addition, rather
 than accepting arbitrary teacher-supplied subject/topic strings.
 

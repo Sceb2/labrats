@@ -42,6 +42,11 @@ test('flashcard publishing, private drafts, versioned recall and class/subject p
    const competitor=ok(await importPack(other.c));packs.push(competitor.id);assert((await op(other.c,'publish',competitor)).error);
    assert((await importPack(teacher.c,{subject_id:'applied-science',topic_id:'WA01',cards:[{id:'x',topic:'WA01',front:'x',back:'x'}]})).error);
   });
+  await t.test('every new Forces/Electricity topic permits authorised publication and public loading',async()=>{
+   ok(await admin.c.rpc('staff_manage',{action:'grant_subject',payload:{user_id:teacher.id,subject_id:'applied-science'}}));
+   const topics=require('../flashcards/topics.json')['applied-science'].filter(t=>t.module!=='Waves');
+   for(const topic of topics){const payload={title:'Fictional '+topic.label,subject_id:'applied-science',topic_id:topic.id,change_kind:'new_version',cards:[{id:'example',topic:topic.id,front:'Review question',back:'Review answer'}]};assert((await other.c.rpc('manage_flashcard_pack',{action:'import',payload})).error);let p=ok(await teacher.c.rpc('manage_flashcard_pack',{action:'import',payload}));packs.push(p.id);p=ok(await op(teacher.c,'publish',p));assert.equal(ok(await anon.from('flashcard_cards').select('*').eq('pack_id',p.id)).length,1);}
+  });
   const username=generateUsername(),password=generatePassword();studentId=await provisionStudent(root,{username,password:generatePassword()});users.push(studentId);ok(await root.auth.admin.updateUserById(studentId,{password}));student=createClient(url,key,options);clients.push(student);ok(await student.auth.signInWithPassword({email:username+'@students.invalid',password}));
   await t.test('self-assessments sync separately, duplicate safely and exclude retry credit',async()=>{
    const current=ok(await anon.from('flashcard_cards').select('*').eq('pack_id',pack.id));bank=F.learningBank('chemistry',current.map(c=>({...c,topic_id:'basic'})));

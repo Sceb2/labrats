@@ -69,7 +69,7 @@ test('full downloadable preview runs normal practice, offline sync and account i
     await page.locator('[data-topic="alcohols"]').check();
     await page.locator('.practice-settings > summary').click();
     for (const type of ['multistep', 'mechanism-id', 'mechanism-completion', 'sites', 'nomenclature', 'product']) await page.locator(`[data-type="${type}"]`).uncheck();
-    await page.locator('.effects-settings>summary').click();await page.locator('#celebration-effects').uncheck();
+    await page.locator('#celebration-effects').uncheck();
     await page.locator('#practice').click(); await page.waitForSelector('#submit');
     assert.equal(await page.evaluate(() => S.session.mode), 'practice');
     await page.waitForFunction(() => [...document.querySelectorAll('#app img')].length > 0 && [...document.querySelectorAll('#app img')].every(image => image.complete && image.naturalWidth > 0));

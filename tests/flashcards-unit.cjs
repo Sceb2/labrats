@@ -57,3 +57,12 @@ test('release builds are stable and detect a diagram-only correction',()=>{
   assert.notEqual(build(),first);
  }finally{fs.rmSync(dir,{recursive:true,force:true});}
 });
+
+test('Applied Science flashcard topics match every selectable Forces/Electricity group and accept their CSVs',()=>{
+ const map=require('../applied-science/Physics_Lesson_Map.json'),groups=new Map();
+ for(const l of map.lessons.filter(l=>l.topic!=='Waves'))if(!groups.has(l.topic+'|'+l.group))groups.set(l.topic+'|'+l.group,{id:l.id,label:l.group,module:l.topic});
+ const added=topics['applied-science'].filter(t=>t.module!=='Waves');assert.deepEqual(added,[...groups.values()]);assert.equal(added.filter(t=>t.module==='Forces').length,13);assert.equal(added.filter(t=>t.module==='Electricity').length,10);
+ const sql=fs.readFileSync('supabase/migrations/202611030013_forces_electricity_flashcard_topics.sql','utf8');
+ for(const t of added){const result=F.parseCSV('card_id,topic,front,back\ntest,'+t.id+',Question,Answer',topics['applied-science']);assert.deepEqual(result.errors,[]);assert(sql.includes("('applied-science','"+t.id+"','"+t.label.replaceAll("'","''")+"')"));}
+ assert.equal(new Set(topics['applied-science'].map(t=>t.id)).size,topics['applied-science'].length);
+});

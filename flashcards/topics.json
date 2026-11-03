@@ -53,7 +53,7 @@
     {
       "id": "ccbond",
       "module": "Module 6",
-      "label": "6.2.4 Carbon\u2013carbon bond formation"
+      "label": "6.2.4 Carbon–carbon bond formation"
     },
     {
       "id": "synthesis6",
@@ -121,6 +121,121 @@
       "id": "WA16",
       "label": "Uses of Waves",
       "module": "Waves"
+    },
+    {
+      "id": "FO01",
+      "label": "Describing motion and speed",
+      "module": "Forces"
+    },
+    {
+      "id": "FO03",
+      "label": "Displacement–time graphs",
+      "module": "Forces"
+    },
+    {
+      "id": "FO04",
+      "label": "Velocity–time graphs and acceleration",
+      "module": "Forces"
+    },
+    {
+      "id": "FO06",
+      "label": "Equations of motion",
+      "module": "Forces"
+    },
+    {
+      "id": "FO08",
+      "label": "Measuring acceleration and accelerometers",
+      "module": "Forces"
+    },
+    {
+      "id": "FO09",
+      "label": "Resultant forces and Newton’s first law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO10",
+      "label": "Mass, weight and inertia",
+      "module": "Forces"
+    },
+    {
+      "id": "FO11",
+      "label": "Friction",
+      "module": "Forces"
+    },
+    {
+      "id": "FO12",
+      "label": "Newton’s second law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO13",
+      "label": "Momentum",
+      "module": "Forces"
+    },
+    {
+      "id": "FO14",
+      "label": "Impact forces and safety",
+      "module": "Forces"
+    },
+    {
+      "id": "FO16",
+      "label": "Newton’s third law",
+      "module": "Forces"
+    },
+    {
+      "id": "FO17",
+      "label": "Drag and terminal velocity",
+      "module": "Forces"
+    },
+    {
+      "id": "EL01",
+      "label": "Circuit Components",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL11",
+      "label": "Electrical Quantities",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL02",
+      "label": "Potential Difference and Current",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL03",
+      "label": "Resistance and Ohm's Law",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL05",
+      "label": "Thermistors",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL06",
+      "label": "LEDs and LDRs",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL08",
+      "label": "Electrical Energy",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL12",
+      "label": "Changes of State",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL13",
+      "label": "Specific Heat Capacity",
+      "module": "Electricity"
+    },
+    {
+      "id": "EL15",
+      "label": "Specific Latent Heat",
+      "module": "Electricity"
     }
   ]
 }

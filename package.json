@@ -15,6 +15,7 @@
     "accounts": "node scripts/student-accounts.cjs",
     "test:applied-expansion": "node tests/applied-expansion-browser.cjs",
     "test:equations": "node tests/equation-sheet-browser.cjs",
+    "test:practice-preview": "node tests/practice-preview-browser.cjs",
     "test:settings": "node tests/settings-browser.cjs",
     "test:design": "node --test tests/design-browser.cjs",
     "test:flashcards": "node --test tests/flashcards-unit.cjs tests/flashcards-browser.cjs"

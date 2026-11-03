@@ -54,7 +54,7 @@ test('staff and learner previews complete the invitation, class, reporting and r
    const next=generatePassword().slice(0,10);await student.locator('#new-password').fill(next);await student.locator('#confirm-password').fill(next);await student.locator('#password-form button').click();await student.locator('#continue-practice').click();await student.waitForSelector('#practice');
    await student.locator('[data-topic="alcohols"]').check();await student.locator('.practice-settings > summary').click();assert.equal(await student.locator('#practice-style').inputValue(),'adaptive');
    for(const type of ['multistep','mechanism-id','mechanism-completion','sites','nomenclature','product'])await student.locator(`[data-type="${type}"]`).uncheck();
-   await student.locator('.effects-settings>summary').click();await student.locator('#celebration-effects').uncheck();await student.locator('#practice').click();await student.waitForSelector('#submit');assert.equal(await student.evaluate(()=>S.session.selection),'adaptive');
+   await student.locator('#celebration-effects').uncheck();await student.locator('#practice').click();await student.waitForSelector('#submit');assert.equal(await student.evaluate(()=>S.session.selection),'adaptive');
    // Compare both views at the same instant: a score on a grade threshold can
    // decay across it between the student's render and the teacher's request.
    const ratingAt=new Date();await student.clock.setFixedTime(ratingAt);await teacher.clock.setFixedTime(ratingAt);
