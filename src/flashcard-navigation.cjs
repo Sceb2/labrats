@@ -12,7 +12,8 @@ function mount(subject,topics){
  // Keep an empty selection on the topic page rather than opening an empty pack screen.
  flash.onclick=event=>{if(topics.length)return;event.preventDefault();document.querySelector('#app [data-topic],#app [data-lesson]')?.focus();};
  flash.title=topics.length?'Flashcards for your selected topics':'Choose a topic below first';
- nav.append(active,flash);const heading=document.querySelector('#app .setup-heading');if(heading)heading.after(nav);else host.before(nav);observeDock(host);
+ const label=document.createElement('span');label.className='mode-label';label.textContent='Select your mode';
+ nav.append(label,active,flash);const heading=document.querySelector('#app .setup-heading');if(heading)heading.after(nav);else host.before(nav);observeDock(host);
 }
 let dockObserver;
 function measureDock(){
