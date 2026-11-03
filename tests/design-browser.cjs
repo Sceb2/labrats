@@ -25,14 +25,14 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
    const rects=await page.locator(selector).evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().height).slice(0,3).map(e=>{const r=e.getBoundingClientRect(),i=e.querySelector('input').getBoundingClientRect();return {x:r.x,h:r.height,w:r.width,inputY:i.y};}));
    assert(rects.length>1);if(width<=600)assert.equal(rects[0].x,rects[1].x);else{assert(rects[1].x>rects[0].x);assert.equal(rects[2].x,rects[0].x);}
    assert.equal(await page.locator('.module-section').first().evaluate(e=>getComputedStyle(e).borderLeftWidth),'5px');assert(rects.every(r=>r.h>=44&&r.h<110));
-   await page.locator(subject==='chemistry'?'#all':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());
+   await page.locator(subject==='chemistry'?'[data-select-module="Module 4"]':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());
    assert((await page.locator('.study-modes').boundingBox()).y<(await page.locator(selector).first().boundingBox()).y);
    if(width<900){
     await page.waitForFunction(()=>parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--setup-dock-height'))>0);
     const dock=await page.locator('.setup-actions').boundingBox(),nav=await page.locator('.side-nav').boundingBox(),start=await page.locator(subject==='chemistry'?'#practice':'#start-practice').boundingBox();
     assert(dock.y>=0);assert(dock.y+dock.height<=nav.y+1);assert(start.y>=0&&start.y+start.height<=nav.y+1);
-    await page.locator(subject==='chemistry'?'#none':'#select-none').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isDisabled());const current=page.url();await page.locator('.study-modes a').click();assert.equal(page.url(),current);assert(await page.locator(subject==='chemistry'?'[data-topic]':'[data-lesson]').first().evaluate(e=>e===document.activeElement));
-    await page.locator(subject==='chemistry'?'#all':'#select-all').click();
+    await page.locator(subject==='chemistry'?'[data-clear-module="Module 4"]':'#select-none').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isDisabled());const current=page.url();await page.locator('.study-modes a').click();assert.equal(page.url(),current);assert(await page.locator(subject==='chemistry'?'[data-topic]':'[data-lesson]').first().evaluate(e=>e===document.activeElement));
+    await page.locator(subject==='chemistry'?'[data-select-module="Module 4"]':'#select-all').click();
    }
    await overflow();if(width===390)await shot(subject+'-topics-mobile');
    assert.equal(await page.locator('.practice-settings input[id*=effects]').count(),1);
