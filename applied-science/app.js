@@ -74,7 +74,7 @@ function resumeActions(){
 }
 function showSetup(){
  renderShell('setup');
- app().innerHTML=`<section class="card setup-page"><header class="page-heading setup-heading"><h1>Choose your topics</h1><div class="account-actions" data-account-actions><a class="btn finish-session choose-subject" href="${window.OCR_SITE_PREVIEW?'subject-hub-preview.html':'index.html'}">Choose subject</a></div></header>
+ app().innerHTML=`<section class="card setup-page"><header class="page-heading setup-heading"><h1>Choose your topics</h1><div class="account-actions" data-account-actions><a class="btn finish-session choose-subject" href="${window.OCR_SITE_PREVIEW?'subject-hub-preview.html':'index.html'}">Change subject</a></div></header>
  ${['Waves','Forces','Electricity'].map(topic=>{const key=topic.toLowerCase(),isWaves=topic==='Waves';return `<details class="module-section" ${disclosureAttrs(key,isWaves)}><summary><span>${topic==='Electricity'?'Electricity and Energy':topic}</span><span class="module-selected" id="${key}-selected"></span></summary><div class="topic-tools">${button('Select all '+topic,isWaves?'select-all':'select-'+key,'btn text-button')}${button('Clear selection',isWaves?'select-none':'clear-'+key,'btn text-button')}</div><div class="wave-topic-list">${practiceTopics(topic).map(lessonRow).join('')}</div></details>`;}).join('')}
  <div class="setup-actions"> <div class="session-plan" id="session-plan" role="status" aria-live="polite"></div><div>${resumeActions()}${button(hasActive()?'Start a new session':'Start practice','start-practice')}</div></div>
  <details class="practice-settings" ${disclosureAttrs('settings')}><summary>Practice settings</summary><label class="control">Practice mode<select id="practice-style"><option value="adaptive" ${S.prefs.practiceStyle!=='random'?'selected':''}>Adaptive practice (recommended)</option><option value="random" ${S.prefs.practiceStyle==='random'?'selected':''}>Random practice</option></select></label><h2>Question types</h2><div class="settings-options">${types.map(t=>`<label><input type="checkbox" data-type="${t}" ${S.prefs.types.includes(t)?'checked':''}>${labels[t]}</label>`).join('')}</div>
@@ -109,7 +109,7 @@ function updatePlan(){
   $('#'+topic.toLowerCase()+'-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
  }
  const message=S.prefs.lessons.length&&!p.questionCount?(!S.prefs.types.length?'Choose a question type in Practice settings.':'No questions match these topics and settings.'):'';
- $('#session-plan').innerHTML=`<p class="mode-explainer">Active Learning · ${S.prefs.practiceStyle==='random'?'Random':'Adaptive'} questions with instant feedback.</p>${message?`<p class="start-help">${esc(message)}</p>`:''}`;
+ $('#session-plan').innerHTML=`<p class="mode-explainer">A 20 mark quiz</p>${message?`<p class="start-help">${esc(message)}</p>`:''}`;
  $('#start-practice').disabled=!p.questionCount;
  const missing=new Set(p.blocked.filter(x=>{const q=S.bank.questions.find(q=>q.id===x.id);return S.prefs.lessons.includes(q.primaryLessonId);}).flatMap(x=>x.missingLessonIds));
  $('#missing-lessons').innerHTML=missing.size?`<aside class="prerequisite-note"><p>Some questions need other topics: ${[...new Set([...missing].map(titleFor))].map(esc).join(', ')}.</p>${button('Select these topics too','add-prerequisites','btn secondary')}</aside>`:'';

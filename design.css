@@ -162,3 +162,13 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .setup-page .practice-settings>summary span,.setup-page .challenge-settings>summary span{display:none}
 .setup-page :is(.practice-settings,.question-browser-settings,.challenge-settings)[open]{padding:0 16px 16px}.setup-page :is(.practice-settings,.question-browser-settings,.challenge-settings)[open]>summary{margin:0 -16px 12px}
 @media(max-width:600px){.setup-page .module-section>summary{font-size:18px;padding:15px 13px;gap:8px}.setup-page .module-section .module-selected{font-size:12px;padding:5px 8px}.setup-page .module-section .checks,.setup-page .module-section .wave-topic-list{grid-template-columns:minmax(0,1fr)}.setup-page .module-section label.topic,.setup-page .module-section .lesson-row{padding:12px;min-height:54px}.setup-page .module-section .topic-text,.setup-page .module-section .topic-name{font-size:1.05rem}}
+/* Compact mobile topic heading and session dock. */
+@media(max-width:600px){
+ .setup-page .setup-heading{flex-wrap:nowrap;align-items:flex-start;gap:8px}
+ .setup-page .setup-heading h1{font-size:clamp(1rem,5.3vw,1.3rem);line-height:44px;white-space:nowrap;flex:1;min-width:0;margin:0}
+ .setup-page .setup-heading>.account-actions{margin-left:auto;flex:none;flex-direction:column;align-items:flex-end;gap:6px}
+ .setup-page .setup-heading .choose-subject{font-size:12px;padding:10px 8px;min-height:44px;white-space:nowrap}
+ body[data-screen=setup] .setup-page .setup-actions{padding:8px 16px}
+ .setup-page .setup-actions .mode-explainer{white-space:nowrap;line-height:1.4;margin:0 0 6px}
+ .setup-page .setup-actions .session-plan{margin:0}
+}
