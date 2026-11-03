@@ -146,3 +146,19 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .setup-page .review-select option{padding:8px;background:#fff;color:#18251e;white-space:normal}
 .setup-page .review-select option:checked{background:#e3eee5;color:#18251e}
 .setup-page #question-search{display:block;width:100%;min-height:44px;padding:10px;border:1px solid var(--rule);border-radius:5px;background:#fff;color:#18251e;font:inherit}
+
+/* Approved topic panels (option C): green rail, white headers, quiet utility panels. */
+
+.setup-page .module-section{padding:0;margin:16px 0;border:1px solid #BED0C3;border-left:5px solid #14563E;border-radius:3px;background:#fff;overflow:hidden}
+.setup-page .module-section>summary{padding:17px 18px;margin:0;gap:12px;background:#FAFCF8;color:#143F2E;font:700 20px/1.3 "LabRats Heading",sans-serif;min-height:66px}
+.setup-page .module-section .module-selected{margin-left:auto;padding:5px 10px;border-radius:20px;background:#E6EFE5;color:#234B38;font:700 13px/1.3 "LabRats Sans",sans-serif;white-space:nowrap}
+.setup-page .module-section>summary::after{color:inherit;font-size:20px}.setup-page .module-section[open]>summary{border-bottom:1px solid #D8E2D6}
+.setup-page .module-section .checks,.setup-page .module-section .wave-topic-list{border-top:0;margin:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.setup-page .module-section label.topic,.setup-page .module-section .lesson-row{min-height:54px;padding:12px 16px;border-left:3px solid transparent;border-bottom:1px solid #E0E6DF}
+.setup-page .module-section label.topic:has(input:checked),.setup-page .module-section .lesson-row:has(input:checked){background:#EAF3E9;border-left-color:#14563e}
+.setup-page .module-section .topic-tools{padding:4px 12px;margin:0;background:#FAFBF8}.setup-page .module-section .topic-tools button{font-size:13px}
+.setup-page .practice-settings,.setup-page .question-browser-settings,.setup-page .challenge-settings{border:1px solid #D9DDD6;border-radius:5px;background:#F8F9F5;padding:0;margin:12px 0}
+.setup-page .practice-settings>summary,.setup-page .question-browser-settings>summary,.setup-page .challenge-settings>summary{padding:13px 16px;min-height:48px;font:600 15px/1.4 "LabRats Sans",sans-serif;color:#4B574E;margin:0}
+.setup-page .practice-settings>summary span,.setup-page .challenge-settings>summary span{display:none}
+.setup-page :is(.practice-settings,.question-browser-settings,.challenge-settings)[open]{padding:0 16px 16px}.setup-page :is(.practice-settings,.question-browser-settings,.challenge-settings)[open]>summary{margin:0 -16px 12px}
+@media(max-width:600px){.setup-page .module-section>summary{font-size:18px;padding:15px 13px;gap:8px}.setup-page .module-section .module-selected{font-size:12px;padding:5px 8px}.setup-page .module-section .checks,.setup-page .module-section .wave-topic-list{grid-template-columns:minmax(0,1fr)}.setup-page .module-section label.topic,.setup-page .module-section .lesson-row{padding:12px;min-height:54px}.setup-page .module-section .topic-text,.setup-page .module-section .topic-name{font-size:1.05rem}}

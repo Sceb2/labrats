@@ -23,7 +23,8 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
   for(const subject of ['chemistry','applied-science']){
    await page.goto(base+subject+'.html');await page.waitForSelector('.setup-page');assert.equal(await page.locator('.mobile-brand-banner').isVisible(),width<900);const selector=subject==='chemistry'?'.module-section label.topic':'.lesson-row';
    const rects=await page.locator(selector).evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().height).slice(0,3).map(e=>{const r=e.getBoundingClientRect(),i=e.querySelector('input').getBoundingClientRect();return {x:r.x,h:r.height,w:r.width,inputY:i.y};}));
-   assert(rects.length>1);assert.equal(rects[0].x,rects[1].x);assert(rects.every(r=>r.h>=44&&r.h<110));
+   assert(rects.length>1);if(width<=600)assert.equal(rects[0].x,rects[1].x);else{assert(rects[1].x>rects[0].x);assert.equal(rects[2].x,rects[0].x);}
+   assert.equal(await page.locator('.module-section').first().evaluate(e=>getComputedStyle(e).borderLeftWidth),'5px');assert(rects.every(r=>r.h>=44&&r.h<110));
    await page.locator(subject==='chemistry'?'#all':'#select-all').click();assert(await page.locator(subject==='chemistry'?'#practice':'#start-practice').isEnabled());
    assert((await page.locator('.study-modes').boundingBox()).y<(await page.locator(selector).first().boundingBox()).y);
    if(width<900){
