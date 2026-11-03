@@ -26,10 +26,10 @@
 @media(max-width:600px){.flashcard-screen .flashcard-toolbar{flex-direction:row;align-items:center}.flashcard-screen .flashcard-toolbar h1{font-size:1.65rem;margin:0}.flashcard-screen .flashcard-toolbar [data-account-actions]{align-self:auto}.flashcard-screen .flashcard-toolbar .btn{font-size:.8rem;padding:10px 12px}.flashcard-side{min-height:310px;padding:22px;gap:24px}.flashcard-context{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){.flashcard-turner{transition:none}.flashcard-stage{animation:none}}
 
-/* Mode selection is purple; the session's primary action stays green. */
+/* Green mode choices match navigation; purple starts a session. */
 .study-modes .mode-label{align-self:center;font:600 .94rem/1.4 "LabRats Sans",sans-serif;color:#435047;margin-right:8px}
-.study-modes .btn{background:#F0EAF2;border:1px solid #BDAAC5;color:#573362;box-shadow:none;min-width:126px;text-align:center}
-.study-modes .btn[aria-current=page]{background:#67416F;border-color:#67416F;color:#fff}
-.study-modes a.btn:hover{background:#E4D9E9;border-color:#82568F;color:#43274D}
+.study-modes .btn{background:#E6EFE5;border:1px solid #BCD0BF;color:#14563E;box-shadow:none;min-width:126px;text-align:center}
+.study-modes .btn[aria-current=page]{background:#105640;border-color:#105640;color:#fff}
+.study-modes a.btn:hover{background:#D6E6D6;border-color:#7EAA90;color:#105640}
 .setup-page .setup-actions .mode-explainer{font:400 .94rem/1.4 "LabRats Sans",sans-serif;color:#435047;margin:0 0 10px}
 @media(max-width:600px){.setup-page .study-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.study-modes .mode-label{grid-column:1/-1;margin:0 0 2px}.study-modes .btn{min-width:0}.setup-page .setup-actions .mode-explainer{font-size:.88rem}}

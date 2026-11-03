@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sMeWRxj6ytniNidsfgOai7HwEv62o97U9NOmb51KkxM='; style-src 'sha256-LigvZ/BQI8FRfYffrE9Yb2WgqXgsTGQyQHx9QgE7XOs='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sMeWRxj6ytniNidsfgOai7HwEv62o97U9NOmb51KkxM='; style-src 'sha256-3UCXntMVEHFB3kKwJcIVy2gm63uSwzDuvHTFGIKGMx0='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student Login · LabRats</title>
   <style>/* Design A: mobile-first, shared by the public site and offline previews. */
 :root{--ink:#172d3a;--muted:#52635b;--accent:#14563e;--nav:#172d3a;--paper:#fff;--soft:#eef5ef;--rule:#c2cec7;--mobile-nav-space:86px;--action-height:100px;color-scheme:light}
@@ -504,6 +504,12 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .setup-page .setup-actions .start-controls>.btn{width:100%}
 @media(max-width:600px){.setup-page .setup-actions{grid-template-columns:minmax(0,1fr);gap:8px}.setup-page .setup-actions .session-plan{margin:0}}
 .setup-page .module-section .topic-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+
+/* Start actions are distinct from green mode choices and navigation. */
+.setup-page #practice,.setup-page #start-practice,.setup-page #start-flashcards{background:#67416F;border-color:#67416F;color:#fff}
+.setup-page #practice:hover,.setup-page #start-practice:hover,.setup-page #start-flashcards:hover{background:#55345E;border-color:#55345E}
+.setup-page .setup-actions .session-plan:empty{display:none}
+.setup-page .setup-actions:not(:has(.session-plan:not(:empty))){grid-template-columns:minmax(0,1fr)}
 </style>
 </head>
 <body class="login-page account-branded">

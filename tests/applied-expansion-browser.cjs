@@ -19,7 +19,7 @@ const root=path.resolve(__dirname,'..'),bank=require('../applied-science/Pilot_Q
     const state=await page.evaluate(()=>({lessons:window.AppliedPrototype.state.prefs.lessons,plan:window.AppliedPrototype.state.plan}));assert(waves.every(id=>state.lessons.includes(id)));assert(state.plan.questionCount>0);
     await page.locator('#clear-'+topic).click();assert.deepEqual(await page.evaluate(()=>window.AppliedPrototype.state.prefs.lessons),waves);
    }
-   await page.locator('#select-none').click();await page.locator('#select-forces').click();assert(await page.evaluate(()=>window.AppliedPrototype.state.plan.questionCount>0));assert.match(await page.locator('#session-plan').innerText(),/A 20 mark quiz/);
+   await page.locator('#select-none').click();await page.locator('#select-forces').click();assert(await page.evaluate(()=>window.AppliedPrototype.state.plan.questionCount>0));assert.equal(await page.locator('#session-plan').innerText(),'');
    await page.locator('#start-practice').click();assert(await page.locator('.eq-open').isVisible());assert(await page.evaluate(()=>window.AppliedPrototype.state.session.questions.every(q=>q.topic==='Forces')));
    await page.goto(base+'/applied-science.html?guest=1');await page.waitForSelector('.setup-page,.question-screen');
    await open('E040');await answer(bank.questions.find(q=>q.id==='E040'));assert(!/undefined/.test(await page.locator('#app').innerText()));

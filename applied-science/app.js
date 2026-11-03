@@ -109,7 +109,7 @@ function updatePlan(){
   $('#'+topic.toLowerCase()+'-selected').textContent=`${selectedCount} selected${partialCount?` · ${partialCount} partly selected`:''}`;
  }
  const message=S.prefs.lessons.length&&!p.questionCount?(!S.prefs.types.length?'Choose a question type in Practice settings.':'No questions match these topics and settings.'):'';
- $('#session-plan').innerHTML=`<p class="mode-explainer">A 20 mark quiz</p>${message?`<p class="start-help">${esc(message)}</p>`:''}`;
+ $('#session-plan').innerHTML=`${message?`<p class="start-help">${esc(message)}</p>`:''}`;
  $('#start-practice').disabled=!p.questionCount;
  const missing=new Set(p.blocked.filter(x=>{const q=S.bank.questions.find(q=>q.id===x.id);return S.prefs.lessons.includes(q.primaryLessonId);}).flatMap(x=>x.missingLessonIds));
  $('#missing-lessons').innerHTML=missing.size?`<aside class="prerequisite-note"><p>Some questions need other topics: ${[...new Set([...missing].map(titleFor))].map(esc).join(', ')}.</p>${button('Select these topics too','add-prerequisites','btn secondary')}</aside>`:'';
