@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sMeWRxj6ytniNidsfgOai7HwEv62o97U9NOmb51KkxM='; style-src 'sha256-jRVmGwXm0AikwbJHagb0g9LYDdSss0W8fD3a/72GyB8='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sMeWRxj6ytniNidsfgOai7HwEv62o97U9NOmb51KkxM='; style-src 'sha256-2S3a5jG5VsKtPFyN78OJSKZKetDLzwhHynKsSZz1wcU='; connect-src https://ojhckvbekzudphkjeofw.supabase.co; font-src data:; img-src data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Student Login · LabRats</title>
   <style>/* Design A: mobile-first, shared by the public site and offline previews. */
 :root{--ink:#172d3a;--muted:#52635b;--accent:#14563e;--nav:#172d3a;--paper:#fff;--soft:#eef5ef;--rule:#c2cec7;--mobile-nav-space:86px;--action-height:100px;color-scheme:light}
@@ -463,6 +463,13 @@ h1,.page-heading h1,.hub-main h1,.login-card h1,.staff-page h1{font-family:var(-
 .setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings){border:0;border-top:1px solid var(--rule);padding:0;margin:16px 0}
 .setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings)>summary{font-weight:600;min-height:48px;padding:12px 0}
 .setup-page>:is(.effects-settings,.question-browser-settings,.celebration-settings)[open]{padding-bottom:16px}
+
+/* One settings section, with a question list that stays inside the page. */
+.setup-page .practice-settings>h2{font:700 1rem/1.4 "LabRats Sans",sans-serif;margin:22px 0 10px}
+.setup-page .review-select{display:block;width:100%;height:240px;min-height:240px;margin:10px 0 14px;padding:6px;border:1px solid var(--rule);border-radius:5px;background:#fff;color:#18251e;color-scheme:light;font:inherit}
+.setup-page .review-select option{padding:8px;background:#fff;color:#18251e;white-space:normal}
+.setup-page .review-select option:checked{background:#e3eee5;color:#18251e}
+.setup-page #question-search{display:block;width:100%;min-height:44px;padding:10px;border:1px solid var(--rule);border-radius:5px;background:#fff;color:#18251e;font:inherit}
 </style>
 </head>
 <body class="login-page account-branded">
