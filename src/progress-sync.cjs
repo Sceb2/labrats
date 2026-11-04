@@ -7,6 +7,7 @@ const Badges = require('./rating-badges.cjs');
 Badges.installRatingTips();
 const {descriptions} = require('./sync-rejections.cjs');
 const {uploadBatch}=require('./sync-batch.cjs');
+const {cachedCursor,pullHistory}=require('./sync-history.cjs');
 
 async function open(bank, onRecords = () => {}, {
   navigate = path => location.replace(new URL(path, location.href)),
@@ -38,6 +39,7 @@ async function open(bank, onRecords = () => {}, {
   const subject=bank.meta.subjectId||'chemistry';
   const cacheKey = connection.prefix + owner.user_id + (flashcards?':flashcards:'+subject:(subject==='chemistry'?'':':'+subject));
   const cached = connection.read(cacheKey) || {};
+  let pullCursor=cachedCursor(cached);
   let history = mergeEvents(cached.history), pending = mergeEvents(connection.read(cacheKey+':pending')||cached.pending), closed = false, running = false;
   let rejected = (connection.read(cacheKey+':rejected') || []).filter(item => item?.event && Object.hasOwn(descriptions,item.reason))
     .map(item => ({event:metadata(item.event),reason:item.reason}));
@@ -78,7 +80,7 @@ async function open(bank, onRecords = () => {}, {
       connection.storage.removeItem(cacheKey);
       connection.storage.setItem(cacheKey+':pending',JSON.stringify(pending));
     }
-    connection.storage.setItem(cacheKey, JSON.stringify({history}));
+    connection.storage.setItem(cacheKey, JSON.stringify({history,pullCursor}));
     onRecords(recordsFor(mergeEvents(history, pending), bank));
     const otherWaiting=Math.max(0,connection.pendingCount()-unsavedCount());
     const rejectedMessage=rejected.length?`${rejected.length} attempt${rejected.length===1?' needs':'s need'} attention.${login.hidden?' Open Review unsaved attempts.':' They are kept for this account.'}`:'';
@@ -97,12 +99,14 @@ async function open(bank, onRecords = () => {}, {
     for(const channel of connection.pendingQueues()){
       if(closed||channel.cacheKey===cacheKey)continue;
       let queue=mergeEvents(connection.read(channel.cacheKey+':pending')||[]);
-      let otherHistory=mergeEvents(connection.read(channel.cacheKey)?.history||[]);
+      const otherCache=connection.read(channel.cacheKey);
+      let otherHistory=mergeEvents(otherCache?.history||[]);
+      const otherCursor=cachedCursor(otherCache);
       let otherRejected=connection.read(channel.cacheKey+':rejected')||[];
       const persist=()=>{
         connection.storage.setItem(channel.cacheKey+':rejected',JSON.stringify(otherRejected));
         connection.storage.setItem(channel.cacheKey+':pending',JSON.stringify(queue));
-        connection.storage.setItem(channel.cacheKey,JSON.stringify({history:otherHistory}));publish();
+        connection.storage.setItem(channel.cacheKey,JSON.stringify({history:otherHistory,pullCursor:otherCursor}));publish();
       };
       while(!closed&&queue.length)await uploadBatch({client,rpc:channel.flashcards?'sync_flashcard_attempts':'sync_learning_attempts',owner:owner.user_id,batch:queue.slice(0,100),closed:()=>closed,
         accepted:(saved,ids)=>{otherHistory=mergeEvents(otherHistory,saved);queue=queue.filter(e=>!ids.has(e.event_id));persist();},
@@ -110,14 +114,16 @@ async function open(bank, onRecords = () => {}, {
     }
   }
   async function pull() {
-    const remote = [];
-    for (let offset = 0;; offset += 500) {
-      const result = await client.from(flashcards?'flashcard_attempts':'learning_attempts').select('*').eq('student_id', owner.user_id).eq('subject_id',subject)
-        .order('received_at').order('event_id').range(offset, offset + 499);
-      if (result.error) throw result.error;
-      remote.push(...result.data); if (result.data.length < 500) break;
-    }
-    if (!closed) history = mergeEvents(history, remote);
+    await pullHistory({client,table:flashcards?'flashcard_attempts':'learning_attempts',student:owner.user_id,
+      subject,history,cursor:pullCursor,closed:()=>closed,commit(nextHistory,nextCursor){
+        history=nextHistory;
+        const snapshot=JSON.stringify({history,pullCursor:nextCursor});
+        // tabStorage keeps an atomic in-memory copy when sessionStorage is blocked.
+        // A new page without that copy will bootstrap rather than reuse its cursor.
+        if(!connection.storage.setItem(cacheKey,snapshot)&&JSON.stringify(connection.read(cacheKey))!==snapshot)
+          throw Error('History checkpoint could not be saved.');
+        pullCursor=nextCursor;
+      }});
   }
   async function flush() {
     if (closed || running) return;

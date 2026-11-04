@@ -58,6 +58,14 @@ resume syncing. Each event keeps its UUID across retries, including when the
 server accepted an upload but the acknowledgement was lost. The server returns
 acknowledged IDs; the client removes only those events from the queue.
 
+History downloads are incremental after migration 014: a fresh account/subject/mode
+cache first loads all history in 500-row pages; later checks fetch only receipts
+after its saved timestamp/UUID checkpoint. A reload in the same tab reuses the
+checkpoint with its history. New tabs or a missing cache bootstrap again. Upload
+acknowledgements do not advance this checkpoint, so unseen work from another
+device cannot be skipped. The 15-second interval is unchanged. See
+[Incremental sync](INCREMENTAL_SYNC.md) for deployment order and verification.
+
 Keep the tab open until attempts are saved: closing a tab, clearing its storage,
 or browser/device failure can lose unsaved events. Navigation with pending work
 shows the browser's unsaved-work warning. Sign-out specifically warns before

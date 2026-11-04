@@ -99,6 +99,23 @@ test('account practice queues metadata, converges across devices and isolates sh
       assert.equal(studied.length,2);assert.equal(studied.find(row=>row.kind==='submit').answer_revealed,true);
       assert.equal(await page.evaluate(()=>S.progress.records.RC01.first.score),1);
     });
+    await check('idle checks and reloads fetch no old rows; a second device adds only its new receipt',async()=>{
+      const isHistory=r=>r.url().includes('/rest/v1/learning_attempts?')&&r.request().method()==='GET';
+      let responsePromise=page.waitForResponse(isHistory);
+      await page.evaluate(()=>accountSync.flush());
+      let response=await responsePromise;assert.deepEqual(await response.json(),[]);
+      assert(new URL(response.url()).searchParams.has('or'));
+      responsePromise=page.waitForResponse(isHistory);
+      await page.reload();response=await responsePromise;assert.deepEqual(await response.json(),[]);
+      await status(page,'All progress saved');
+      await question(second);await answer(second,'distil');await status(second,'All progress saved');
+      responsePromise=page.waitForResponse(isHistory);await page.evaluate(()=>accountSync.flush());
+      response=await responsePromise;assert.equal((await response.json()).length,1);
+      const expected=require('../src/learning-events.cjs').recordsFor(await rows(ids[0]),bank);
+      assert.deepEqual(await page.evaluate(()=>accountSync.records()),expected);
+      const caches=await page.evaluate(()=>Object.entries(sessionStorage).filter(([k])=>k.startsWith('ocr-learning-')&&!k.endsWith(':pending')&&!k.endsWith(':rejected')).map(([,v])=>JSON.parse(v)).filter(v=>v.pullCursor));
+      assert.equal(caches.length,1);assert.equal(caches[0].pullCursor.version,1);
+    });
     await check('revoking an account session hides cached account results until sign-in',async()=>{
       const reset=await admin.rpc('operator_prepare_student_reset',{target:ids[0],operation:randomUUID()});assert.equal(reset.error,null);
       await page.evaluate(()=>window.dispatchEvent(new Event('online')));await status(page,'Sign in again');
