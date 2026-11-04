@@ -106,10 +106,10 @@ test('staff prototype enforces invitations, class scope, private provisioning an
    ok(await root.rpc('staff_finish_reset',{...scope,operation}));
    const complete=ok(await root.from('account_profiles').select('active,must_change_password').eq('user_id',studentId).single());assert.equal(complete.active,true);assert.equal(complete.must_change_password,true);
   });
-  await t.test('draft retention is administrator-only and disabled staff sessions fail immediately',async()=>{
+  await t.test('retention policy is administrator-only and disabled staff sessions fail immediately',async()=>{
    assert.equal(ok(await admin.from('school_policy').select('*').single()).retention_days,null);
    assert.ok((await teacher.rpc('staff_manage',{action:'set_retention',payload:{days:180}})).error);
-   ok(await admin.rpc('staff_manage',{action:'set_retention',payload:{days:180}}));assert.equal(ok(await admin.from('school_policy').select('*').single()).retention_days,180);
+   assert.ok((await admin.rpc('staff_manage',{action:'set_retention',payload:{days:180}})).error);assert.equal(ok(await admin.rpc('retention_status')).enabled,false);assert.ok((await teacher.rpc('retention_status')).error);
    assert.ok((await admin.rpc('staff_manage',{action:'set_retention',payload:{days:0}})).error);
    ok(await admin.rpc('staff_manage',{action:'set_active',payload:{user_id:teacherId,active:false}}));
    assert.equal((await api(teacher,'create_students',{class_id:firstClass,count:1})).status,403);

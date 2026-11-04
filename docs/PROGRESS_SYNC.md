@@ -86,9 +86,10 @@ Question-level marks, retry/reveal history and mistakes follow the account acros
 devices. Full session playback, unfinished answer drafts and challenge personal
 bests remain local to the current page visit. A–E scheduling and staff reports
 are now included; see [ADAPTIVE_PRACTICE.md](ADAPTIVE_PRACTICE.md) and
-[STAFF_PROTOTYPE.md](STAFF_PROTOTYPE.md). Importing old browser history and
-automated retention remain deferred. Use fictional data until the school's
-retention policy and production arrangements are configured.
+[STAFF_PROTOTYPE.md](STAFF_PROTOTYPE.md). Importing old browser history remains deferred. Automated account retention is
+implemented on development; see [RETENTION.md](RETENTION.md) for migration,
+scheduler and activation requirements. Use fictional data until those hosted
+arrangements and school approval are complete.
 
 ## Rejected attempts and reporting fixes
 

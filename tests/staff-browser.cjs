@@ -92,10 +92,29 @@ test('staff and learner previews complete the invitation, class, reporting and r
    await student.evaluate(()=>window.dispatchEvent(new Event('online')));await student.waitForFunction(()=>document.querySelector('#account-sync-status').textContent.includes('Sign in again'));assert.equal(await student.locator('main').isVisible(),false);
    assert.equal(ok(await root.from('account_profiles').select('must_change_password').eq('user_id',studentId).single()).must_change_password,true);
   });
-  await check('disabling a teacher removes their displayed student data and sign-out clears private details',async()=>{
+  await check('disabling a teacher removes their displayed student data',async()=>{
    await admin.locator(`[data-active="${teacherId}"]`).click();await ready(admin);
    await teacher.locator('#staff-refresh').click();await teacher.waitForSelector('#staff-login:not([hidden])');
    assert.equal(await teacher.locator('#staff-tools').innerText(),'');assert.equal(await teacher.locator('#private-output').isVisible(),false);
+  });
+  await check('administrator retention controls record extensions and staff handovers',async()=>{
+   await admin.waitForSelector('#retention-controls #retention-health');
+   assert.match(await admin.locator('#retention-health').innerText(),/Policy not enabled/);
+   await admin.locator('#retention-student').selectOption(studentId);
+   await admin.locator('#retention-until').fill('2035-07-31');
+   await admin.locator('#retention-reason').fill('Fictional repeat-year test');
+   await admin.locator('#extend-retention button').click();
+   await admin.waitForFunction(()=>document.querySelector('#retention-controls')?.textContent.includes('Fictional repeat-year test'));
+   await admin.locator('#retention-staff').selectOption(teacherId);
+   await admin.locator('#retirement-reason').fill('Fictional departure');
+   await admin.locator('#retirement-handover').check();
+   admin.once('dialog',d=>d.accept());await admin.locator('#retire-staff button').click();await ready(admin);
+   await admin.waitForSelector('#retention-staff');
+   assert.equal(await admin.locator('#retention-staff option[value="'+teacherId+'"]').count(),0);
+   assert.equal(await teacher.locator('#retention-controls').count(),0);
+   await admin.screenshot({path:'/tmp/labrats-retention-admin.png',fullPage:true});
+  });
+  await check('sign-out clears private staff details',async()=>{
    await admin.locator('#staff-sign-out').click();await admin.waitForSelector('#staff-login:not([hidden])');
    assert.equal(await admin.locator('#private-output-content').innerText(),'');assert.equal(await admin.locator('#staff-tools').innerText(),'');
    assert.deepEqual(errors,[]);assert.deepEqual(violations,[]);

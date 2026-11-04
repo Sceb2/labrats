@@ -30,8 +30,10 @@ remaining school decisions. Production hosting/origin validation remains separat
   sessions and require a new password. Disabled staff cannot continue reading.
 - Administrators can disable/enable accounts and explicitly delete a student
   account, its memberships and its results after exact username confirmation.
-- Retention has a nullable, administrator-only **draft** setting. It does not run
-  automatic deletion. Leave it blank until agreed with the school/DPO.
+- Retention now uses the agreed policy and administrator controls in
+  [RETENTION.md](RETENTION.md). Migration 015 starts disabled; weekly scheduling
+  and explicit activation remain separate hosted steps. The former draft-days
+  setting is no longer editable.
 
 Email/password sign-in is the school's selected staff method. It still collects
 staff email addresses and provider operational metadata; it does not establish
@@ -239,9 +241,9 @@ automated preview checks serve the same HTML over HTTP. Direct file opening and
 the hosted Edge Function must still be verified manually in the development
 project. Local success does not certify the hosted deployment.
 
-Before real-student rollout: complete hosted/hosting-origin validation; agree and
-implement retention/deletion for application data, Auth accounts, audit records,
+Before real-student rollout: complete hosted/hosting-origin validation; deploy and activate
+[account retention](RETENTION.md), and agree separate procedures for provider
 logs, backups and exports; review staff invitation delivery/recovery, staff MFA,
 support/incident arrangements and processor terms; review chemistry and scheduling
-with teachers. The policy field alone does not implement retention. Keep the
+with teachers. The new scheduler and alerts must be configured and checked before launch. Keep the
 publishing branch unchanged until a deliberate release decision.

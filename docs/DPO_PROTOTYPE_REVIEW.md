@@ -1,5 +1,11 @@
 # School revision tool: prototype review for the DPO
 
+**Historical prototype assessment:** this document predates the combined subjects,
+flashcards and agreed retention implementation. For the current one-page summary
+see [LabRats DPO summary](dpo/LabRats-DPO-Summary.md); implementation and activation
+requirements are in [RETENTION.md](RETENTION.md). Older statuses and test counts
+below describe their original review, not today's hosted deployment.
+
 Status: fictional-data prototype on `feature/student-logins`. The live publishing
 branch has not been updated. This describes the prototype including migration
 006 and the fixes following the review of `d9edfc0`. Development-project checks
