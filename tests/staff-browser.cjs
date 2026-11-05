@@ -26,12 +26,13 @@ test('staff and learner previews complete the invitation, class, reporting and r
   teacher.on('dialog',d=>d.accept());
   let teacherId,credential,studentId,question,invitation;
   let failed;const check=async(name,fn)=>{await t.test(name,async()=>{try{await fn();}catch(error){failed=error;throw error;}});if(failed)throw Error('Staff flow stopped after failed check.');};
+  const navigate=async(p,id)=>{let target=p.locator('.staff-page-nav [data-staff-page="'+id+'"]:visible');if(!await target.count())await p.locator('.staff-more summary').click();await target.click();};
   const ready=p=>p.waitForFunction(()=>document.querySelector('#staff-status').textContent.startsWith('Staff tools ready'));
   const savePassword=async p=>{const next=generatePassword().slice(0,10);await p.locator('#staff-new-password').fill(next);await p.locator('#staff-confirm-password').fill(next);await p.locator('#staff-password-form button').click();await p.waitForFunction(()=>document.querySelector('#staff-status').textContent.includes('Password saved'));};
   await check('administrator finishes password setup and creates a class and student accounts',async()=>{
-   await admin.goto(base+'/staff.html');await admin.locator('#staff-email').fill(email);await admin.locator('#staff-password').fill(password);await admin.locator('#staff-login-form button').click();await admin.waitForSelector('#staff-password-panel:not([hidden])');await savePassword(admin);
-   await admin.locator('#new-class-label').fill('Fictional prototype class');await admin.locator('#create-class-form button').click();await admin.waitForSelector('#class-picker');await ready(admin);
-   classes.push(await admin.locator('#class-picker').inputValue());await admin.locator('#batch-count').fill('1');
+   await admin.goto(base+'/staff.html');await admin.locator('#staff-email').fill(email);await admin.locator('#staff-password').fill(password);await admin.locator('#staff-login-form button').click();await admin.waitForSelector('#staff-password-panel:not([hidden])');await savePassword(admin);await navigate(admin,'classes');await admin.locator('#create-class-panel > summary').click();
+   await admin.locator('#new-class-label').fill('Fictional prototype class');await admin.locator('#create-class-form button').click();await admin.locator('[data-class][aria-pressed="true"]').waitFor();await ready(admin);
+   classes.push(await admin.locator('[data-class][aria-pressed="true"]').getAttribute('data-class'));await admin.locator('#show-batch-form').click();await admin.locator('#batch-count').fill('1');
    const response=admin.waitForResponse(r=>r.url().endsWith('/functions/v1/staff-management')&&r.request().postDataJSON()?.action==='create_students');
    await admin.locator('#batch-students-form button').click();const data=await(await response).json();assert.equal(data.complete,true);credential=data.credentials[0];await ready(admin);
    studentId=ok(await root.from('account_profiles').select('user_id').eq('username',credential.username).single()).user_id;users.push(studentId);
@@ -39,13 +40,13 @@ test('staff and learner previews complete the invitation, class, reporting and r
    const stored=await admin.evaluate(()=>Object.values(sessionStorage).join('')+Object.values(localStorage).join(''));assert.equal(stored.includes(credential.temporary_password),false);
   });
   await check('invited teacher chooses a password and sees only assigned classes',async()=>{
-   await admin.locator('#invite-email').fill(teacherEmail);await admin.locator('#invite-teacher-form button').click();await admin.waitForSelector('#invitation-code');invitation=await admin.locator('#invitation-code').innerText();await ready(admin);
+   await navigate(admin,'staff');await admin.locator('#invite-teacher-panel > summary').click();await admin.locator('#invite-email').fill(teacherEmail);await admin.locator('#invite-teacher-form button').click();await admin.waitForSelector('#invitation-code');invitation=await admin.locator('#invitation-code').innerText();await ready(admin);
    await teacher.goto(base+'/staff.html');await teacher.locator('#staff-login details > summary').click();await teacher.locator('#staff-invite-code').fill(invitation);await teacher.locator('#staff-invite-form button').click();await teacher.waitForSelector('#staff-password-panel:not([hidden])');await savePassword(teacher);
    assert.equal(await teacher.locator('#class-picker').count(),0);assert.equal(await teacher.locator('#invite-teacher-form').count(),0);
    const directory=ok(await root.auth.admin.listUsers());teacherId=directory.users.find(u=>u.email===teacherEmail).id;users.push(teacherId);
    await admin.locator('#subject-teacher').selectOption(teacherId);await admin.locator('#subject-access-form button').click();await ready(admin);
-   await admin.locator('#assign-user').selectOption(teacherId);await admin.locator('#assign-member-form button').click();await ready(admin);
-   await teacher.locator('#staff-refresh').click();await ready(teacher);assert.equal(await teacher.locator('#class-picker option').count(),1);
+   await navigate(admin,'classes');await admin.locator('#assign-user').selectOption(teacherId);await admin.locator('#assign-member-form button').click();await ready(admin);
+   await teacher.locator('#staff-refresh').click();await ready(teacher);assert.equal(await teacher.locator('[data-class]').count(),1);
    assert.ok((await teacher.locator('#staff-tools').innerText()).includes(credential.username));
    const stored=await teacher.evaluate(()=>Object.values(sessionStorage).join('')+Object.values(localStorage).join(''));assert.equal(stored.includes(invitation),false);assert.equal(stored.includes(credential.username),false);
   });
@@ -93,19 +94,19 @@ test('staff and learner previews complete the invitation, class, reporting and r
    assert.equal(ok(await root.from('account_profiles').select('must_change_password').eq('user_id',studentId).single()).must_change_password,true);
   });
   await check('disabling a teacher removes their displayed student data',async()=>{
-   await admin.locator(`[data-active="${teacherId}"]`).click();await ready(admin);
+   await navigate(admin,'staff');await admin.locator(`[data-active="${teacherId}"]`).click();await ready(admin);
    await teacher.locator('#staff-refresh').click();await teacher.waitForSelector('#staff-login:not([hidden])');
    assert.equal(await teacher.locator('#staff-tools').innerText(),'');assert.equal(await teacher.locator('#private-output').isVisible(),false);
   });
   await check('administrator retention controls record extensions and staff handovers',async()=>{
-   await admin.waitForSelector('#retention-controls #retention-health');
+   await navigate(admin,'retention');await admin.waitForSelector('#retention-controls #retention-health');
    assert.match(await admin.locator('#retention-health').innerText(),/Policy not enabled/);
    await admin.locator('#retention-student').selectOption(studentId);
    await admin.locator('#retention-until').fill('2035-07-31');
    await admin.locator('#retention-reason').fill('Fictional repeat-year test');
    await admin.locator('#extend-retention button').click();
    await admin.waitForFunction(()=>document.querySelector('#retention-controls')?.textContent.includes('Fictional repeat-year test'));
-   await admin.locator('#retention-staff').selectOption(teacherId);
+   await navigate(admin,'staff');await admin.waitForSelector('#retention-staff');await admin.locator('#retention-staff').selectOption(teacherId);
    await admin.locator('#retirement-reason').fill('Fictional departure');
    await admin.locator('#retirement-handover').check();
    admin.once('dialog',d=>d.accept());await admin.locator('#retire-staff button').click();await ready(admin);

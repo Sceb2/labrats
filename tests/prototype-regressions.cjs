@@ -93,7 +93,7 @@ test('online class removal clears reports and rejected clock events do not block
   await staffPage.waitForFunction(()=>document.querySelector('#staff-status').textContent.startsWith('Class access updated'));
   assert.equal(ok(await teacherClient.from('learning_attempts').select('*')).length,0);
   assert.equal(await staffPage.locator('#class-picker').count(),0);assert.equal(await staffPage.locator('#staff-tools').innerText().then(text=>text.includes(username)),false);
-  assert.equal(await staffPage.locator('#student-report').innerText(),'');assert.equal(await staffPage.locator('#student-report').isVisible(),false);
+  assert.equal(await staffPage.locator('#student-report').count(),0);
   const page=await studentContext.newPage();page.setDefaultTimeout(15000);
   await page.goto(base+'/student-login.html');await page.locator('#username').fill(username);await page.locator('#password').fill(studentPassword);await page.locator('#login-form button').click();await page.waitForSelector('#continue-practice:not([hidden])');
   await page.goto(base+'/chemistry.html?preview=RC01');await page.waitForSelector('#submit');

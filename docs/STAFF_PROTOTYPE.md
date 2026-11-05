@@ -1,5 +1,10 @@
 # School staff and adaptive-practice prototype
 
+The development dashboard now uses task-led pages; see
+[STAFF_TASK_LAYOUT.md](STAFF_TASK_LAYOUT.md) for navigation and the isolated
+fictional HTML showcase. Existing account operations and permission rules below
+remain applicable, but forms now sit on their relevant page.
+
 For the combined development branch, see [the subject-hub guide](SUBJECT_HUB.md)
 for migrations 008–009, teacher subject grants, separate reports and the preview
 pack. The existing setup below remains the Chemistry baseline.

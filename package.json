@@ -8,7 +8,7 @@
     "test:mechanism-preview": "node --test tests/mechanism-preview-browser.cjs",
     "build:mechanisms": "node scripts/build-mechanism-cards.cjs && node scripts/build-mechanism-preview.cjs",
     "build:auth": "node scripts/build-auth.cjs",
-    "build": "node scripts/build-subjects.cjs && node scripts/build-flashcards.cjs && npm run build:auth && node scripts/build-staff.cjs && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs && node scripts/build-mechanism-preview.cjs",
+    "build": "node scripts/build-subjects.cjs && node scripts/build-flashcards.cjs && npm run build:auth && node scripts/build-staff.cjs && node scripts/prepare-site-release.cjs && node scripts/build-site-preview.cjs && node scripts/build-mechanism-preview.cjs && node scripts/build-staff-demo.cjs",
     "test:auth": "node --test tests/auth-integration.cjs",
     "test:auth-browser": "node --test tests/auth-browser.cjs",
     "test:auth-local": "node scripts/test-local-auth.cjs",
@@ -16,6 +16,7 @@
     "test:applied-expansion": "node tests/applied-expansion-browser.cjs",
     "test:equations": "node tests/equation-sheet-browser.cjs",
     "test:practice-preview": "node tests/practice-preview-browser.cjs",
+    "test:staff-layout": "node --test tests/staff-layout-browser.cjs",
     "test:settings": "node tests/settings-browser.cjs",
     "test:design": "node --test tests/design-browser.cjs",
     "test:flashcards": "node --test tests/flashcards-unit.cjs tests/flashcards-browser.cjs"

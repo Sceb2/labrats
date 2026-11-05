@@ -60,8 +60,8 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
   }
   for(const account of ['student-login.html','staff.html']){
    await page.goto(base+account);await page.waitForSelector(account==='staff.html'?'#staff-login-form':'#login-form:not([hidden])');
-   assert.equal(await page.locator('.account-mobile-brand').isVisible(),width<900);
-   assert.equal(await page.locator('.account-brand-sidebar').isVisible(),width>=900);
+   if(account==='staff.html'){assert.equal(await page.locator('.staff-brand-header img').isVisible(),true);assert.equal(await page.locator('.account-brand-sidebar').count(),0);}
+   else{assert.equal(await page.locator('.account-mobile-brand').isVisible(),width<900);assert.equal(await page.locator('.account-brand-sidebar').isVisible(),width>=900);}
    await page.evaluate(()=>Promise.all(Array.from(document.images).map(img=>img.decode())));
    await overflow();if(width===390)await shot('account-'+account.replace('.html','')+'-mobile');
   }
