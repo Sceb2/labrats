@@ -62,12 +62,12 @@ const U={
  async load(){
   await window.ChemUpdates?.beforeBankLoad();
   const build=window.CHEM_BUILD||{};
-  async function read(name,hash){
+  async function read(name,hash,fresh=false){
    const url=new URL(name,location.href);if(build.id)url.searchParams.set('v',build.id);
-   let response;try{response=await fetch(url,{cache:'no-store'})}catch{response=await fetch(url,{cache:'force-cache'})}
-   if(!response.ok)throw Error('Could not load '+name+' (HTTP '+response.status+').');
+   let response;try{response=await fetch(url,{cache:fresh?'reload':build.id?'force-cache':'default'})}catch{response=await fetch(url,{cache:'force-cache'})}
+   if(!response.ok){if(!fresh)return read(name,hash,true);throw Error('Could not load '+name+' (HTTP '+response.status+').');}
    const text=await response.text();
-   if(hash&&window.crypto?.subtle){const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));const actual=[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');if(actual!==hash){if(window.ChemUpdates)return window.ChemUpdates.blockForMismatch();throw Error('Page and question data are from different releases. Open a fresh copy.')}}
+   if(hash&&window.crypto?.subtle){const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));const actual=[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');if(actual!==hash){if(!fresh)return read(name,hash,true);if(window.ChemUpdates)return window.ChemUpdates.blockForMismatch();throw Error('Page and question data are from different releases. Open a fresh copy.')}}
    return JSON.parse(text);
   }
   const [b,a]=await Promise.all([read('questions.json',build.questionsSha256),read('assets.json',build.assetsSha256)]);

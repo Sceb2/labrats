@@ -19,6 +19,7 @@
     "test:practice-preview": "node tests/practice-preview-browser.cjs",
     "test:staff-layout": "node --test tests/staff-layout-browser.cjs",
     "test:privacy": "npm run build:previews && node --test tests/privacy-browser.cjs",
+    "test:loading": "npm run build && node --test tests/loading-browser.cjs",
     "test:settings": "node tests/settings-browser.cjs",
     "test:design": "npm run build:previews && node --test tests/design-browser.cjs",
     "test:flashcards": "npm run build:previews && node --test tests/flashcards-unit.cjs tests/flashcards-browser.cjs"

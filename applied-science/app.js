@@ -14,8 +14,41 @@ const defaults={schema:1,practiceStyle:'adaptive',lessons:[],types:[...types],ce
 const S={bank:null,map:null,prefs:null,progress:null,session:null,parked:null,view:'setup',seed:Date.now()>>>0,plan:null,assetCache:{},dialogFocus:null,archiveView:null,reportEmail:''};
 let native;try{native=window.localStorage;}catch{}
 let storage=createStore(native,message=>{if($('#storage-note'))$('#storage-note').textContent=message;});
-let accountSync=null,learning=null;
+let accountSync=null,learning=null,reportSettings=Promise.resolve();
 const appliedBase=new URL('applied-science/',location.href);
+const diagramRequests=new Map();
+function diagramURL(asset){
+ const url=new URL(asset,appliedBase.href);
+ if(url.protocol!=='data:'&&window.AAQ_BUILD?.id)url.searchParams.set('v',window.AAQ_BUILD.id);
+ return url.href;
+}
+async function loadDiagram(asset,fresh=false){
+ if(!asset||asset.startsWith('data:')||S.assetCache[asset])return;
+ if(diagramRequests.has(asset))return diagramRequests.get(asset);
+ const request=(async()=>{
+  const response=await fetch(diagramURL(asset),{cache:fresh?'reload':window.AAQ_BUILD?.id?'force-cache':'default',signal:AbortSignal.timeout(15000)});
+  if(!response.ok)throw Error('Diagram unavailable.');
+  S.assetCache[asset]='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(await response.text());
+ })();
+ diagramRequests.set(asset,request);
+ try{await request;}finally{diagramRequests.delete(asset);}
+}
+async function withDiagrams(ids,launch,fresh=false){
+ const assets=[...new Set(ids.map(id=>S.bank.questions.find(q=>q.id===id)?.asset).filter(a=>a&&!a.startsWith('data:')&&!S.assetCache[a]))];
+ if(!assets.length){launch();return;}
+ showDialog('Loading diagrams…','<p role="status">Preparing the diagrams for these questions.</p>');
+ const heading=$('#dialog-heading');
+ const results=await Promise.allSettled(assets.map(asset=>loadDiagram(asset,fresh)));
+ if(!heading.isConnected||!$('#app-dialog').open)return;
+ if(results.some(r=>r.status==='rejected')){
+  showDialog('Diagram unavailable',`<p>The diagrams could not load. Check your connection and try again before starting these questions. Your current work is kept.</p>${button('Try again','retry-diagrams')}`,()=>{$('#retry-diagrams').onclick=()=>withDiagrams(ids,launch,true);});return;
+ }
+ closeDialog();launch();
+}
+async function preloadDiagrams(){
+ const assets=[...new Set(S.bank.questions.map(q=>q.asset).filter(Boolean))];
+ await Promise.all(Array.from({length:4},async()=>{while(assets.length){try{await loadDiagram(assets.shift());}catch{}}}));
+}
 const ratingMap=()=>window.RevisionAdaptive.ratings(learning,accountSync?accountSync.events():(S.progress.adaptiveEvents||[]));
 const gradeBadge=(q,ratings=ratingMap())=>window.RevisionAdaptive.badgeHTML(ratings[q.id+'@'+q.contentVersion].grade);
 const titleFor=id=>practiceTopics().find(t=>t.ids.includes(id))?.title||S.map.lessons.find(l=>l.id===id)?.title||id;
@@ -115,7 +148,7 @@ function updatePlan(){
  $('#missing-lessons').innerHTML=missing.size?`<aside class="prerequisite-note"><p>Some questions need other topics: ${[...new Set([...missing].map(titleFor))].map(esc).join(', ')}.</p>${button('Select these topics too','add-prerequisites','btn secondary')}</aside>`:'';
  if($('#add-prerequisites'))$('#add-prerequisites').onclick=()=>setLessons([...new Set([...S.prefs.lessons,...practiceTopics().filter(t=>t.ids.some(id=>missing.has(id))).flatMap(t=>t.ids)])]);
 }
-function bindResume(){if($('#resume-session'))$('#resume-session').onclick=()=>showQuestion();if($('#resume-parked'))$('#resume-parked').onclick=resumeParked;}
+function bindResume(){if($('#resume-session'))$('#resume-session').onclick=()=>withDiagrams(S.session.questions.map(q=>q.id),showQuestion);if($('#resume-parked'))$('#resume-parked').onclick=resumeParked;}
 function showDialog(title,content,onBind,returnFocus=document.activeElement){
  const dialog=$('#app-dialog');S.dialogFocus=returnFocus;
  dialog.innerHTML=`<div class="dialog-header"><h2 id="dialog-heading">${esc(title)}</h2>${button('Close','dialog-close','btn secondary')}</div>${content}`;
@@ -126,7 +159,7 @@ function showDialog(title,content,onBind,returnFocus=document.activeElement){
 function closeDialog(){const d=$('#app-dialog');try{d.close();}catch{d.removeAttribute('open');}if(S.dialogFocus?.isConnected)S.dialogFocus.focus();}
 function startPlan(plan,mode){
  if(!plan?.questionCount)return;
- const launch=()=>{if(hasActive()){archive(S.session);S.session.finished=true;}S.parked=null;createSession(plan.questionIds,mode,plan);};
+ const launch=()=>withDiagrams(plan.questionIds,()=>{if(hasActive()){archive(S.session);S.session.finished=true;}S.parked=null;createSession(plan.questionIds,mode,plan);});
  if(hasActive())showDialog('Start a new session?',`<p>Your submitted attempts and current answers will stay in the previous session’s review.</p><div class="dialog-actions">${button('Start new session','confirm-new')}${button('Keep current session','cancel-new','btn secondary')}</div>`,()=>{$('#confirm-new').onclick=()=>{closeDialog();launch();};$('#cancel-new').onclick=closeDialog;});else launch();
 }
 function shuffledIds(part,rng){const a=part.options.map(o=>o.id);for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
@@ -138,9 +171,11 @@ function createSession(ids,mode,plan){
 }
 function openSingle(id,mode='review'){
  const q=S.bank.questions.find(q=>q.id===id);if(!q)return;
+ return withDiagrams([id],()=>{
  if(hasActive()&&!S.parked)S.parked=S.session;
  else if(hasActive())archive(S.session);
  createSession([id],mode,{seed:Date.now()>>>0});
+ });
 }
 function resumeParked(){if(!S.parked)return;S.session=S.parked;S.parked=null;showQuestion();save();}
 function sessionMenu(){
@@ -183,6 +218,7 @@ function bindQuestionReport(q,e){
   };
   $('#close-report').onclick=()=>{panel.hidden=true;trigger.setAttribute('aria-expanded','false');trigger.focus();};
   update();$('#report-issue').focus();
+  void reportSettings.then(()=>{if(trigger.isConnected&&!panel.hidden)update();});
  };
  // Keep an open draft up to date when an answer changes, without opening it.
  $('#task').addEventListener('input',()=>{if(!panel.hidden)update();});
@@ -356,11 +392,11 @@ async function loadContent(){
  if(window.AAQ_EMBEDDED)return copy(window.AAQ_EMBEDDED);
  await window.RevisionUpdates?.beforeBankLoad();
  const build=window.AAQ_BUILD||{};
- const read=async(file,hash)=>{
+ const read=async(file,hash,fresh=false)=>{
   const url=new URL(file,appliedBase.href);if(build.id)url.searchParams.set('v',build.id);
-  const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error(`Could not load ${file} (HTTP ${response.status}).`);
+  const response=await fetch(url,{cache:fresh?'reload':build.id?'force-cache':'default'});if(!response.ok){if(!fresh)return read(file,hash,true);throw Error(`Could not load ${file} (HTTP ${response.status}).`);}
   const text=await response.text();
-  if(hash&&window.crypto?.subtle){const digest=await window.crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));const actual=[...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('');if(actual!==hash){if(window.RevisionUpdates)return window.RevisionUpdates.blockForMismatch();throw Error('Page and question data are from different releases. Open a fresh copy.');}}
+  if(hash&&window.crypto?.subtle){const digest=await window.crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));const actual=[...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('');if(actual!==hash){if(!fresh)return read(file,hash,true);if(window.RevisionUpdates)return window.RevisionUpdates.blockForMismatch();throw Error('Page and question data are from different releases. Open a fresh copy.');}}
   return JSON.parse(text);
  };
  const [bank,map]=await Promise.all([read('Pilot_Question_Bank.json',build.questionsSha256),read('Physics_Lesson_Map.json',build.mapSha256)]);return {bank,map};
@@ -376,19 +412,18 @@ async function boot(){
  if(accountSync){const scoped=accountSync.storage;storage={get:(key,fallback)=>key===KEYS.progress?nativeProgress(bank,learning,accountSync.events()):key===KEYS.prefs?scoped.get('ocrOrgPrefsV2',fallback):fallback,set:(key,value)=>key===KEYS.prefs?scoped.set('ocrOrgPrefsV2',value):true,raw:()=>({}),resetProgress:()=>{}};}
  S.assetCache={...window.APPLIED_ASSETS};
  S.reportEmail=reportRecipient(window.AAQ_REPORT_CONFIG?.email);
- if(!window.AAQ_EMBEDDED&&!S.reportEmail){try{const r=await fetch(new URL('./report-config.json',appliedBase.href),{cache:'no-store'});if(r.ok)S.reportEmail=reportRecipient((await r.json()).email);}catch{}}
+ if(!window.AAQ_EMBEDDED&&!S.reportEmail)reportSettings=fetch(new URL('report-config.json',location.href),{cache:'no-store',signal:AbortSignal.timeout(5000)}).then(async r=>{if(r.ok)S.reportEmail=reportRecipient((await r.json()).email);}).catch(()=>{});
  const rawPrefs=storage.get(KEYS.prefs,defaults,p=>p?.schema===1&&Array.isArray(p.lessons)&&Array.isArray(p.types));
  S.prefs={...copy(defaults),...rawPrefs,lessons:[...new Set(rawPrefs.lessons.map(id=>electricityTopics.legacyLessonAliases[id]||id))].filter(id=>map.lessons.some(l=>l.id===id)),types:rawPrefs.types.filter(t=>types.includes(t)),disclosures:rawPrefs.disclosures&&typeof rawPrefs.disclosures==='object'?rawPrefs.disclosures:{}};
  S.progress=storage.get(KEYS.progress,{schema:1,records:{},sessions:[]},p=>p?.schema===1&&p.records&&typeof p.records==='object'&&!Array.isArray(p.records)&&Object.values(p.records).every(r=>r&&typeof r==='object'&&Array.isArray(r.attempts))&&Array.isArray(p.sessions));
  S.progress.sessions=S.progress.sessions.filter(s=>!!s&&validateSession(s));
  const active=storage.get(KEYS.active,{schema:1,current:null,parked:null,view:'setup'},a=>a?.schema===1&&validateSession(a.current)&&validateSession(a.parked));S.session=active.current;S.parked=active.parked;
  updateEffects();
- const assets=[...new Set(bank.questions.map(q=>q.asset).filter(Boolean))];
- await Promise.allSettled(assets.filter(a=>!a.startsWith('data:')&&!S.assetCache[a]).map(async a=>{try{const response=await fetch(new URL(a+(window.AAQ_BUILD?.id?'?v='+encodeURIComponent(window.AAQ_BUILD.id):''),appliedBase.href),{cache:'no-store'});if(response.ok)S.assetCache[a]='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(await response.text());}catch{}}));
+ setTimeout(()=>void preloadDiagrams(),0);
  $$('button.side-link').forEach(b=>b.onclick=()=>{if(b.dataset.nav==='practice')hasActive()?showQuestion():showSetup();else if(b.dataset.nav==='mistakes')showMistakes();else showProgress();});
  const preview=new URLSearchParams(location.search).get('preview');
- if(preview&&bank.questions.some(q=>q.id===preview)&&!(hasActive()&&S.session.questions.length===1&&current().id===preview)){openSingle(preview,'review');return;}
- if(hasActive()&&['question','feedback','self-assess'].includes(active.view))showQuestion();else if(active.view==='progress')showProgress();else if(active.view==='mistakes')showMistakes();else showSetup();
+ if(preview&&bank.questions.some(q=>q.id===preview)&&!(hasActive()&&S.session.questions.length===1&&current().id===preview)){showSetup();return openSingle(preview,'review');}
+ if(hasActive()&&['question','feedback','self-assess'].includes(active.view)){showSetup();await withDiagrams(S.session.questions.map(q=>q.id),showQuestion);}else if(active.view==='progress')showProgress();else if(active.view==='mistakes')showMistakes();else showSetup();
 }
 window.addEventListener('resize',measureBars);window.visualViewport?.addEventListener('resize',measureBars);window.visualViewport?.addEventListener('scroll',measureBars);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){window.AAQEffects?.clear();if(S.bank)save();}});
