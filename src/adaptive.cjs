@@ -34,9 +34,13 @@ function ratings(bank, events = [], now = Date.now()) {
       const weight = Math.pow(.5,(now-bucket.time)/(30*DAY));
       weighted += bucket.total/bucket.count*weight; total += weight;
     }
-    const accuracy = weighted/total, lastAt = attempts[attempts.length-1].time;
+    return [q.id,ratingFromEvidence({accuracy:weighted/total,lastAt:attempts[attempts.length-1].time,evidenceDays:days.size},now)];
+  }));
+}
+// Shared with compact class reports; preserves the student rating calculation.
+function ratingFromEvidence({accuracy,lastAt,evidenceDays},now=Date.now()) {
     let base = gradeFor(accuracy);
-    const cap = days.size >= 3 ? 'A' : days.size >= 2 ? 'B' : 'C';
+    const cap = evidenceDays >= 3 ? 'A' : evidenceDays >= 2 ? 'B' : 'C';
     if (grades.indexOf(base) < grades.indexOf(cap)) base = cap;
     const retained = accuracy * Math.pow(.5,Math.max(0,now-lastAt)/(intervals[base]*4*DAY));
     let grade = gradeFor(retained);
@@ -45,8 +49,7 @@ function ratings(bank, events = [], now = Date.now()) {
     const overdue = Math.max(0,Math.min(3,(now-dueAt)/(intervals[grade]*DAY)));
     const rank=grades.indexOf(grade);
     const weight = (1+rank*2)*(now >= dueAt ? 1+overdue : [.05,.1,.15,.6,.8][rank]);
-    return [q.id,{grade,isNew:false,accuracy,lastAt,dueAt,weight,evidenceDays:days.size}];
-  }));
+    return {grade,isNew:false,accuracy,lastAt,dueAt,weight,evidenceDays};
 }
 function weightedOrder(questions, ratingMap, random = Math.random) {
   return questions.map(q => ({q,key:-Math.log(Math.max(Number.MIN_VALUE,Math.min(1,random())))/(ratingMap[q.id]?.weight||4)}))
@@ -60,4 +63,4 @@ function select(questions, ratingMap, random = Math.random) {
 function priority(questions, ratingMap) {
   return [...questions].sort((a,b)=>(ratingMap[b.id]?.weight||4)-(ratingMap[a.id]?.weight||4)||a.id.localeCompare(b.id));
 }
-module.exports = {ratings,select,weightedOrder,priority,intervals,DAY};
+module.exports = {ratings,ratingFromEvidence,select,weightedOrder,priority,intervals,DAY};

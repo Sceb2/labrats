@@ -4,6 +4,16 @@ Work in `Combined-Drafts`; do not issue real accounts yet. The hosted database i
 shared by any site configured to use it: these SQL writes are not isolated by a
 Git branch. Preparing these files has not changed hosted Supabase or main.
 
+**Latest operator confirmation, 6 November:** the two-student cleanup, both test
+logins and the active weekly Cron schedule passed. A manual cleanup returned
+`disabled`. Retention is staying off until main is published and checked. Do not
+repeat the completed test cleanup or earlier migrations.
+
+**New class-progress feature:** apply migration **016** before connected cohort
+reports. See [Class progress](CLASS_PROGRESS.md) for the one new SQL step,
+calculations, permissions and previews. The guest/privacy/dashboard-only alert
+changes themselves did not require a new migration.
+
 ## Confirmed decisions, 6 November 2026
 
 - Student retention remains **two calendar years from first successful login**,

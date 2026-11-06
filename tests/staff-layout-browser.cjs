@@ -11,7 +11,7 @@ test('implemented task-led staff pages work offline at desktop and mobile sizes'
    const page=await browser.newPage({viewport:{width,height:1000}}),errors=[],external=[];page.on('pageerror',e=>errors.push(e.message));
    await page.route('**/*',r=>{if(r.request().url().startsWith(base))return r.continue();external.push(r.request().url());return r.abort()});
    await page.goto(base+'/?role='+role);await page.waitForFunction(()=>document.querySelector('#staff-status')?.textContent.startsWith('Staff tools ready'));
-   const nav=async name=>{const target=page.locator('.staff-page-nav [data-staff-page="'+name+'"]:visible');if(width<761&&['staff','retention','account'].includes(name))await page.locator('.staff-more summary').click();await target.click();};
+   const nav=async name=>{const target=page.locator('.staff-page-nav [data-staff-page="'+name+'"]:visible');if(width<761&&['staff','retention','account',...(role==='admin'?['packs']:[])].includes(name))await page.locator('.staff-more summary').click();await target.click();};
    if(role==='admin'){assert.equal(await page.locator('#staff-page-title').innerText(),'School overview');await page.waitForSelector('#staff-overview-status button');await nav('classes');}
    else assert.equal(await page.locator('[data-staff-page="retention"]').count(),0);
    assert.equal(await page.locator('[data-class]').count(),2);
@@ -23,6 +23,21 @@ test('implemented task-led staff pages work offline at desktop and mobile sizes'
    await page.locator('#report-tab-flashcards').press('ArrowLeft');assert.equal(await page.locator('#question-report-pane').isVisible(),true);
    page.once('dialog',d=>d.accept());await page.locator('[data-reset]').first().click();await page.waitForSelector('#private-output:not([hidden])');
    await nav('classes');assert.equal(await page.locator('#private-output').isVisible(),false);
+   await nav('cohort');await page.waitForSelector('.cohort-topics');
+   assert.match(await page.locator('.cohort-stats').innerText(),/Students contributing\s+4\s*\/\s*6/);
+   assert.equal(await page.locator('.cohort-topics [data-grade=N]').count(),0);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   const participation=await page.locator('.cohort-topics tbody tr td:nth-child(3)').first().boundingBox();assert(participation.x>=0&&participation.x+participation.width<=width,'topic participation must be visible without horizontal scrolling');
+   if(role==='admin'&&width!==320)await page.screenshot({path:'/tmp/labrats-class-progress-chemistry-'+width+'.png',fullPage:true});
+   await page.locator('[data-cohort-topic]').first().click();assert.equal(await page.locator('#cohort-question-detail').getAttribute('open'),'');
+   await page.locator('#cohort-question-search').fill('this will not match any question');assert.match(await page.locator('#cohort-question-list').innerText(),/No matching questions/);
+   await page.locator('#cohort-tab-flashcards').click();await page.waitForFunction(()=>document.querySelector('#cohort-results')?.textContent.includes('Self-reported flashcard recall'));
+   assert.match(await page.locator('#cohort-results').innerText(),/Cards often marked Not yet/);
+   await page.locator('#staff-subject').selectOption('applied-science');await page.waitForSelector('.cohort-topics');
+   assert.match(await page.locator('.cohort-stats').innerText(),/Students contributing\s+4\s*\/\s*6/);
+   if(role==='admin'&&width!==320)await page.screenshot({path:'/tmp/labrats-class-progress-applied-'+width+'.png',fullPage:true});
+   await page.locator('#cohort-tab-flashcards').click();await page.waitForFunction(()=>document.querySelector('#cohort-results')?.textContent.includes('No published cards in this subject yet.'));
+   await page.locator('#staff-subject').selectOption('chemistry');await page.waitForSelector('.cohort-topics');
    if(role==='admin'){await nav('retention');await page.waitForSelector('#retention-health');assert.equal(await page.locator('#retire-staff').count(),0);await nav('staff');await page.waitForSelector('#retire-staff');assert.equal(await page.locator('#extend-retention').count(),0);}
    await nav('packs');await page.waitForSelector('#new-pack');await page.locator('#new-pack').click();await page.locator('#sample-pack').click();await page.waitForSelector('#pack-preview tbody tr');
    page.once('dialog',d=>d.accept());await nav('account');await page.locator('#show-password-change').click();assert.equal(await page.locator('#staff-password-panel').isVisible(),true);

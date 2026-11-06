@@ -1,5 +1,8 @@
 # School staff and adaptive-practice prototype
 
+Class-level topic averages and question priorities are available on development;
+see [CLASS_PROGRESS.md](CLASS_PROGRESS.md), including new Supabase migration 016.
+
 The development dashboard now uses task-led pages; see
 [STAFF_TASK_LAYOUT.md](STAFF_TASK_LAYOUT.md) for navigation and the isolated
 fictional HTML showcase. Existing account operations and permission rules below

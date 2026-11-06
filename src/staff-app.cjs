@@ -9,6 +9,7 @@ const Flashcards=require('./flashcard-staff.cjs');
 const Retention=require('./retention-admin.cjs');
 const {dashboardHealth}=require('./retention-health.cjs');
 const Views=require('./staff-views.cjs');
+const Cohort=require('./cohort-staff.cjs');
 Badges.installRatingTips();
 let selectedSubject='chemistry',subjectAssignments=[],currentPage=null,selectedStudent=null;
 const $ = selector => document.querySelector(selector);
@@ -46,8 +47,9 @@ async function load(){
   status('Loading your classes…');
   try{if(!await account(generation))return;}catch(error){if(generation===scopeGeneration)loggedOut();throw error;}
   const scope=await readScope();if(generation!==scopeGeneration)return;applyScope(scope);
-  bank=await fetch(subjects.find(s=>s.id===selectedSubject).learningBankUrl).then(r=>{if(!r.ok)throw Error('Question catalogue unavailable.');return r.json();});
+  const loadedBank=await fetch(subjects.find(s=>s.id===selectedSubject).learningBankUrl).then(r=>{if(!r.ok)throw Error('Question catalogue unavailable.');return r.json();});
   if(generation!==scopeGeneration)return;
+  bank=loadedBank;
   staff=profile.role==='admin'?checked(await connection.client.rpc('staff_directory')):[];
   if(generation!==scopeGeneration)return;
   if(currentPage==='student'){currentPage='classes';selectedStudent=null;}
@@ -86,6 +88,7 @@ function render(){
  if(currentPage==='retention')void Retention.mount({connection,profile,container:$('#staff-retention-page'),work,reload:load,section:'policy'});
  if(currentPage==='staff')void Retention.mount({connection,profile,container:$('#staff-leavers'),work,reload:load,section:'leavers'});
  if(currentPage==='overview')void overviewStatus();
+ if(currentPage==='cohort'&&selectedClass)void Cohort.mount({connection,subject:selectedSubject,classId:selectedClass,studentIds:roster.map(s=>s.user_id),bank,container:$('#staff-cohort-page')});
  document.querySelectorAll('[data-class]').forEach(button=>button.onclick=()=>{if(busy)return;selectedClass=button.dataset.class;clearPrivate();render();});
  $('#show-batch-form')?.addEventListener('click',()=>{const form=$('#batch-students-form');form.hidden=!form.hidden;if(!form.hidden)$('#batch-count').focus();});
  $('#class-search')?.addEventListener('input',e=>{const text=e.target.value.toLowerCase(),matches=classes.filter(c=>c.label.toLowerCase().includes(text));$('#class-picker').innerHTML=matches.map(c=>`<option value="${esc(c.id)}" ${c.id===selectedClass?'selected':''}>${esc(c.label)}</option>`).join('');if(matches.length&&!matches.some(c=>c.id===selectedClass))$('#class-picker').selectedIndex=-1;});

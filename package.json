@@ -4,7 +4,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs tests/sync-history-unit.cjs tests/retention-unit.cjs tests/adaptive-unit.cjs tests/mechanism-cards.cjs tests/subjects-unit.cjs tests/design-unit.cjs tests/flashcards-unit.cjs",
+    "test": "node tests/run.cjs && node --test tests/auth-unit.cjs tests/progress-unit.cjs tests/sync-history-unit.cjs tests/retention-unit.cjs tests/adaptive-unit.cjs tests/cohort-unit.cjs tests/mechanism-cards.cjs tests/subjects-unit.cjs tests/design-unit.cjs tests/flashcards-unit.cjs",
     "test:mechanism-preview": "node --test tests/mechanism-preview-browser.cjs",
     "build:mechanisms": "node scripts/build-mechanism-cards.cjs && node scripts/build-mechanism-preview.cjs",
     "build:auth": "node scripts/build-auth.cjs",

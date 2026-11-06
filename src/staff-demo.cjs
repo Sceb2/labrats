@@ -1,6 +1,7 @@
 'use strict';
 // Build-only fictional adapter. This entry is never included in staff.js.
 const {start}=require('./staff-app.cjs'),{makeEvent}=require('./learning-events.cjs');
+const Adaptive=require('./adaptive.cjs');
 const chemistry=require('../questions.json'),applied=require('../applied-science/learning-bank.json'),F=require('./flashcards.cjs');
 const role=new URLSearchParams(location.search).get('role')==='teacher'?'teacher':'admin';
 const id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0');
@@ -14,9 +15,31 @@ const members=classes.flatMap(c=>profiles.map(p=>({class_id:c.id,student_id:p.us
 const packs=[{id:id(200),subject_id:'chemistry',topic_id:'basic',owner_id:id(2),title:'Organic names & formulae',status:'published',revision:1}];
 const cards=[{pack_id:id(200),card_id:'functional-group',content_version:1,is_current:true,question_id:id(200)+'/functional-group@1',front:'Name the –COOH functional group.',back:'Carboxylic acid'}];
 const fb=F.learningBank('chemistry',cards.map(c=>({...c,topic_id:'basic'})));
-const events=[];for(const p of profiles)for(const b of [chemistry,applied,fb])for(let i=0;i<Math.min(8,b.questions.length);i++){
- const q=b.questions[i],e=makeEvent(b,q,{mode:'practice'},'submit',{score:i%3===0?0:q.maxMark});events.push({...e,student_id:p.user_id,subject_id:b.meta.subjectId||'chemistry',attempted_at:new Date(now-(i+1)*86400000).toISOString(),received_at:new Date(now).toISOString()});
+const events=[];for(const [index,p]of profiles.entries()){
+ if(index===3||index===5)continue;
+ for(const b of [chemistry,applied,fb])for(let i=0;i<Math.min(8-index,b.questions.length);i++)for(let day=0;day<3;day++){
+  const q=b.questions[i],fraction=index===0?1:index===1?(i%3===0?0:1):index===2?(i%2===0?0:.5):(i%3===0?1:0);
+  const e=makeEvent(b,q,{mode:'practice'},'submit',{score:Math.round(q.maxMark*fraction)});
+  events.push({...e,student_id:p.user_id,subject_id:b.meta.subjectId||'chemistry',attempted_at:new Date(now-(day+.1)*86400000).toISOString(),received_at:new Date(now).toISOString()});
+ }
 }
+function cohortSummary(args){
+ const cls=classes.find(c=>c.id===args.target_class);if(!cls)throw Error('Fictional class unavailable');
+ const rows=members.filter(m=>m.class_id===cls.id),channel=args.channel;
+ const source=channel==='flashcards'?fb:cls.subject_id==='chemistry'?chemistry:applied;
+ const evidence=[];
+ for(const {student_id}of rows){
+  const history=events.filter(e=>e.student_id===student_id&&e.subject_id===cls.subject_id&&args.compatible_versions.includes(e.bank_version));
+  const ratings=Adaptive.ratings(source,history,now);
+  for(const q of source.questions){const rating=ratings[q.id];if(rating.grade==='N')continue;
+   const latest=history.filter(e=>e.question_id===q.id&&!e.is_retry&&!e.answer_revealed).sort((a,b)=>Date.parse(b.attempted_at)-Date.parse(a.attempted_at))[0];
+   evidence.push({student_id,question_id:q.id,maximum_marks:q.maxMark,accuracy:rating.accuracy,evidence_days:rating.evidenceDays,last_at:new Date(rating.lastAt).toISOString(),latest_fraction:latest.earned_marks/q.maxMark});
+  }
+ }
+ return {class_id:cls.id,subject_id:cls.subject_id,channel,as_of:new Date(now).toISOString(),student_count:rows.length,evidence,
+  cards:channel==='flashcards'&&cls.subject_id==='chemistry'?cards.map(c=>({id:c.question_id,title:c.front,topic_id:'basic'})):[]};
+}
+
 let enabled=false,signedIn=true;
 const cleanupScenario=new URLSearchParams(location.search).get('cleanup');
 const extensions=new Map();
@@ -32,7 +55,8 @@ function query(table){
 const profile=()=>({...staff.find(s=>s.user_id===owner),active:signedIn,username:null});
 const client={from:query,auth:{getUser:async()=>({data:{user:{id:owner,email:profile().email}},error:null}),getSession:async()=>({data:{session:signedIn?{access_token:'fictional-preview'}:null},error:null}),signInWithPassword:async()=>{signedIn=true;return {error:null}},verifyOtp:async()=>({error:{message:'Use the fictional role controls above.'}}),updateUser:async()=>({error:null})},async rpc(name,args={}){
  let data;
- if(name==='staff_context')data={user_id:owner,role,session_id:id(500)};
+ if(name==='class_progress_summary')data=cohortSummary(args);
+ else if(name==='staff_context')data={user_id:owner,role,session_id:id(500)};
  else if(name==='staff_directory')data=staff;
  else if(name==='retention_status'){if(cleanupScenario==='unavailable')return {error:{message:'Fictional unavailable status check'}};data={enabled,overdue:0,unmanaged:2,last_run:tables.retention_runs[0]||null};}
  else if(name==='retention_accounts')data=[...profiles.map(p=>({user_id:p.user_id,label:p.username,role:'student',managed:true,first_login_at:p.last_login_at,due_at:new Date(now+600*86400000).toISOString(),...extensions.get(p.user_id)})),...staff.map(p=>({user_id:p.user_id,label:p.email,role:p.role,managed:true}))];
