@@ -81,6 +81,35 @@ if(url)test('real staff sample import/publication, student offline sync, guest i
   packId=await staff.locator('#pack-picker').inputValue();await staff.locator('#publish-pack').click();await staff.waitForFunction(()=>document.querySelector('#pack-status').textContent==='Pack published.');
   await guest.goto(base+'flashcards.html?subject=chemistry&topics=basic');await guest.waitForSelector('#start-flashcards');assert.match(await guest.locator('#flashcard-available').innerText(),/33 cards/);assert.equal(await guest.locator('#account-sync-bar').count(),0);
   await student.goto(base+'student-login.html?subject=chemistry');await student.locator('#username').fill(username);await student.locator('#password').fill(studentPassword);await student.locator('#login-form button').click();await student.waitForSelector('#account-panel:not([hidden])');
+  // Explicit guest practice must remain guest even when this tab has a valid
+  // signed-in session. Exercise the actual links, both learning modes and hub.
+  const guestWrites=[];student.on('request',r=>{if(/\/rpc\/sync_(learning|flashcard)_attempts/.test(r.url()))guestWrites.push(r.url());});
+  for(const subject of ['chemistry','applied-science']){
+   const before=guestWrites.length;
+   await student.goto(base+'student-login.html?subject='+subject);await student.waitForSelector('#account-panel:not([hidden])');
+   await student.locator('header a').click();await student.waitForSelector('.study-modes');assert.equal(new URL(student.url()).searchParams.get('guest'),'1');
+   if(subject==='chemistry')await student.locator('[data-topic=basic]').check();else await student.locator('#select-all').click();
+   assert.equal(await student.locator('#account-sync-bar').count(),0);
+   await student.locator('.study-modes a').click();await student.waitForSelector('#start-flashcards');assert.equal(new URL(student.url()).searchParams.get('guest'),'1');
+   assert.equal(await student.locator('#account-sync-bar').count(),0);
+   if(subject==='chemistry'){
+    await student.locator('#start-flashcards').click();await student.locator('#reveal-flashcard').click();await student.locator('#flashcard-got-it').click();
+    student.once('dialog',d=>d.accept());await student.locator('#finish-flashcards').click();
+   }
+   await student.locator('.flashcard-toolbar a').click();await student.waitForSelector('.study-modes');assert.equal(new URL(student.url()).searchParams.get('guest'),'1');
+   assert.equal(await student.locator('#account-sync-bar').count(),0);
+   if(subject==='chemistry'){
+    await student.goto(base+'chemistry.html?guest=1&preview=RC01');await student.waitForSelector('#submit');
+    await student.locator('#reagent').selectOption('dichromate-acid');await student.locator('#heating').selectOption('distil');await student.locator('#submit').click();
+    await student.locator('#exit').click();await student.locator('#confirm-finish').click();await student.locator('#choose').click();await student.waitForSelector('.study-modes');
+   }
+   await student.locator('.choose-subject').click();await student.waitForSelector('.subject-card');assert.equal(new URL(student.url()).searchParams.get('guest'),'1');
+   await student.locator('.subject-card').filter({hasText:subject==='chemistry'?'Applied Science':'Chemistry'}).click();await student.waitForSelector('.study-modes');
+   assert.equal(new URL(student.url()).searchParams.get('guest'),'1');assert.equal(await student.locator('#account-sync-bar').count(),0);
+   assert.equal(guestWrites.length,before,'guest navigation or marking must not call the account sync API');
+  }
+  assert.equal(ok(await admin.from('learning_attempts').select('event_id').eq('student_id',studentId)).length,0);
+  assert.equal(ok(await admin.from('flashcard_attempts').select('event_id').eq('student_id',studentId)).length,0);
   await student.goto(base+'flashcards.html?subject=chemistry&topics=basic');await student.waitForSelector('#start-flashcards');await student.waitForFunction(()=>document.querySelector('#account-sync-status')?.textContent==='All progress saved to your account.');
   await student.locator('#start-flashcards').click();await context.setOffline(true);await student.locator('#reveal-flashcard').click();await student.locator('#flashcard-not-yet').click();await student.waitForFunction(()=>document.querySelector('#account-sync-status').textContent.includes('waiting'));
   const storage=await student.evaluate(()=>Object.values(sessionStorage).join(''));assert(!storage.includes('front"'));assert(!storage.includes('back"'));assert(!storage.includes('RCOOR'));

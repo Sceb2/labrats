@@ -1,5 +1,7 @@
 'use strict';
+const {preserveGuestLinks}=require('./subjects.cjs');
 function mount(subject,topics){
+ preserveGuestLinks();
  const host=document.querySelector('#app .setup-actions');if(!host)return;
  document.querySelector('#app .study-modes')?.remove();
  const nav=document.createElement('nav');nav.className='study-modes';nav.setAttribute('aria-label','Learning mode');

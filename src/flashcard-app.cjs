@@ -3,12 +3,12 @@ require('./progress-sync.cjs');
 const {openAccountClient}=require('./account-client.cjs');
 const {createClient}=require('@supabase/supabase-js');
 const F=require('./flashcards.cjs'),A=require('./adaptive.cjs'),Events=require('./learning-events.cjs'),Badges=require('./rating-badges.cjs');
-const {selectedSubject}=require('./subjects.cjs'),topics=require('../flashcards/topics.json');
+const {selectedSubject,withGuestMode,preserveGuestLinks}=require('./subjects.cjs'),topics=require('../flashcards/topics.json');
 const params=new URLSearchParams(location.search),subject=selectedSubject(),demo=!!window.LABRATS_FLASHCARD_DEMO;
 const selected=(params.get('topics')||(demo&&subject.id==='chemistry'?'basic':'')).split(',').filter(id=>topics[subject.id].some(t=>t.id===id));
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const state={cards:[],bank:null,events:[],sync:null,session:null,mode:'twenty'};
-const activeURL=demo?(subject.id==='chemistry'?'student-site-preview.html':'applied-science-preview.html'):subject.practiceUrl;
+const activeURL=withGuestMode(demo?(subject.id==='chemistry'?'student-site-preview.html':'applied-science-preview.html'):subject.practiceUrl);
 function events(){return state.sync?state.sync.events():state.events;}
 function ratings(){return A.ratings(state.bank,events());}
 function focus(selector='#app h1, #app h2'){const h=$(selector);if(h){h.tabIndex=-1;h.focus({preventScroll:true});}window.scrollTo(0,0);}
@@ -64,6 +64,7 @@ function progress(){
 }
 async function rows(client,table,filter){let all=[];for(let offset=0;;offset+=500){const r=await filter(client.from(table).select(table==='flashcard_packs'?'id,subject_id,topic_id,title,status,revision,updated_at':'*')).order(table==='flashcard_packs'?'id':'question_id').range(offset,offset+499);if(r.error)throw r.error;all.push(...r.data);if(r.data.length<500)return all;}}
 async function boot(){
+ preserveGuestLinks();
  $('#active-learning-link').href=activeURL;
  let connection;
  if(demo){state.cards=window.LABRATS_FLASHCARD_DEMO.subject_id===subject.id?window.LABRATS_FLASHCARD_DEMO.cards.filter(c=>selected.includes(c.topic_id)):[];}

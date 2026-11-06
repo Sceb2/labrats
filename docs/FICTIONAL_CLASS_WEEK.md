@@ -1,5 +1,10 @@
 # Fictional class week — connected development database
 
+**Superseded for launch:** the current decision is two retained fictional
+students in separate subject test classes. Follow
+`docs/REAL_STUDENT_LAUNCH_PREPARATION.md` instead. Do not rerun these full-class
+fixtures during or after the real-student rollout.
+
 These are operator-run database fixtures, not changes to the isolated HTML
 preview and not an automatically applied migration. No hosted accounts have been
 modified by preparing/testing these files. Staff accounts are never renamed.

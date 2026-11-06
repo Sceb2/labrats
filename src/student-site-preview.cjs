@@ -11,6 +11,10 @@ function practice(event) {
   event?.preventDefault();
   if (started) return;
   started = true;
+  const address=new URL(location.href);
+  if(event?.currentTarget?.matches('#preview-login header a'))address.searchParams.set('guest','1');
+  else address.searchParams.delete('guest');
+  history.replaceState(null,'',address.href);
   document.getElementById('preview-login').hidden = true;
   document.getElementById('preview-practice').hidden = false;
   document.body.className = 'student-app';

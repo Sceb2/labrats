@@ -1,9 +1,18 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),{createHash}=require('node:crypto'),fs=require('node:fs');
-const {appliedLearningBank,subjects,selectedSubject}=require('../src/subjects.cjs');
+const {appliedLearningBank,subjects,selectedSubject,withGuestMode}=require('../src/subjects.cjs');
 const A=require('../src/adaptive.cjs'),Badges=require('../src/rating-badges.cjs'),Events=require('../src/learning-events.cjs');
 const source=require('../applied-science/Pilot_Question_Bank.json'),map=require('../applied-science/Physics_Lesson_Map.json');
 const bank=appliedLearningBank(source,map),chemistry=require('../questions.json');
+test('explicit guest navigation preserves parameters and fragments; ordinary account links stay unchanged',()=>{
+ for(const target of ['chemistry.html','applied-science.html','index.html','student-site-preview.html']){
+  assert.equal(withGuestMode(target,'?guest=1'),target+'?guest=1');
+  assert.equal(withGuestMode(target,''),target);
+  assert.equal(withGuestMode(target,'?guest=0'),target);
+ }
+ assert.equal(withGuestMode('chemistry.html?preview=RC01#main','?guest=1'),'chemistry.html?preview=RC01&guest=1#main');
+ assert.equal(withGuestMode('flashcards.html?guest=1&subject=chemistry','?guest=1'),'flashcards.html?guest=1&subject=chemistry');
+});
 test('two subjects have distinct routes and versioned question identities; unknown navigation cannot become an open redirect',()=>{
  assert.equal(subjects.length,2);assert.equal(bank.questions.length,354);assert.equal(new Set(bank.questions.map(q=>q.id)).size,354);
  assert.notEqual(bank.meta.bankVersion,chemistry.meta.bankVersion);

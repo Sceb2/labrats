@@ -5,7 +5,7 @@ const old=JSON.parse(read('version.json'));
 const files=['assets/brand/horizontal.svg','assets/brand/stacked.svg','fonts.css',...fs.readdirSync('assets/fonts').sort().map(name=>'assets/fonts/'+name),'flashcards.html','flashcard-app.js','flashcards.css','flashcards/topics.json','flashcards/sample-pack.json','design.css','feedback.js','app.js','core.js','ui.js','styles.css','experience.js','effects.js','review.js',
   'updates.js','learning-resources.js','questions.json','assets.json','learning-resources.json',
   'student-login.js','student-login.html','student-login.css','progress-sync.js','auth-config.json',
-  'index.html','assets/subjects/applied-science.png','assets/subjects/chemistry.png','staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];
+  'index.html','subject-hub.js','assets/subjects/applied-science.png','assets/subjects/chemistry.png','staff.js','staff.html','staff.css','chemistry.html','applied-science.html','subjects.json','hub.css','applied-app.js','applied-science/Pilot_Question_Bank.json','applied-science/Physics_Lesson_Map.json','applied-science/learning-bank.json','applied-science/physics.css'];
 // Diagram-only corrections must invalidate the same release as their questions.
 const diagramPaths=[...Object.values(JSON.parse(read('assets.json'))).map(a=>a.path),
  ...JSON.parse(read('applied-science/Pilot_Question_Bank.json')).questions.map(q=>q.asset).filter(Boolean).map(asset=>'applied-science/'+asset)];
@@ -45,6 +45,7 @@ let flashcards=read('flashcards.html').toString();
 flashcards=flashcards.replace(/((?:src|href)="(?:[a-z-]+\.css|flashcard-app\.js))(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('flashcards.html',flashcards);
 // The subject hub must request the same release's CSS as the practice pages.
-const hub=read('index.html').toString().replace(/(href="(?:hub|design|fonts)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
+const hub=read('index.html').toString().replace(/(href="(?:hub|design|fonts)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+ .replace(/(src="subject-hub\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('index.html',hub);
 fs.writeFileSync('version.json',JSON.stringify(build,null,2)+'\n');
