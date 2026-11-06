@@ -31,10 +31,11 @@ let applied=read('applied-science.html').toString();
 const ab=JSON.parse(read('applied-science/Pilot_Question_Bank.json'));
 const am={schema:1,id,label,bankVersion:ab.bankVersion,questionsSha256:sha(read('applied-science/Pilot_Question_Bank.json')),mapSha256:sha(read('applied-science/Physics_Lesson_Map.json'))};
 applied=applied.replace(/window\.CHEM_BUILD=\{[^;]+\};/g,'').replace(/window\.AAQ_BUILD=\{[^;]+\};/,()=>`window.CHEM_BUILD=${JSON.stringify(build)};window.AAQ_BUILD=${JSON.stringify(am)};`).replace(/\?v=r-[a-zA-Z0-9-]+/g,'?v='+id).replace(/((?:src|href)="(?:applied-app\.js|feedback\.js|design\.css|progress-sync\.js|student-login\.css|hub\.css|flashcards\.css))(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
-applied=applied.replace(/(<p class="side-footer">)[^<]+/,`$1v${label.match(/\d+\.\d+\.\d+/)[0]}`);
+applied=applied.replace(/(href="fonts\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+ .replace(/(<p class="side-footer">)[^<]+/,`$1v${label.match(/\d+\.\d+\.\d+/)[0]}`);
 fs.writeFileSync('applied-science.html',applied);
 let login=read('student-login.html').toString();
-login=login.replace(/(href="(?:styles|student-login|design)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
+login=login.replace(/(href="(?:styles|student-login|design|fonts)\.css)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`)
   .replace(/(src="student-login\.js)(?:\?v=[^"]*)?"/g,`$1?v=${id}"`);
 fs.writeFileSync('student-login.html',login);
 let staff=read('staff.html').toString();

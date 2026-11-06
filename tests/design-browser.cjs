@@ -13,15 +13,24 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
  await context.route('**/*',route=>{const url=route.request().url();if(url.startsWith(base)||/^(data|blob):/.test(url))return route.continue();external.push(url);return route.abort();});
  const overflow=async()=>assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'horizontal overflow');
  const shot=async name=>{await page.evaluate(()=>scrollTo(0,0));await page.mouse.move(0,0);await page.screenshot({path:'/tmp/labrats-abc-'+name+'.png',fullPage:true});};
+ async function bundledFonts(){
+  const loaded=await page.evaluate(()=>Promise.all([
+   '400 20px "LabRats Sans"','700 20px "LabRats Sans"','400 20px "LabRats Serif"',
+   '700 20px "LabRats Serif"','700 20px "LabRats Heading"'
+  ].map(async font=>(await document.fonts.load(font,'CH₃COOH H₂SO₄ ⇌ Δ μ Ω λ θ × ± ² ³ °')).map(face=>face.status))));
+  assert(loaded.every(faces=>faces.length&&faces.every(status=>status==='loaded')),'all bundled font faces must load rather than fall back');
+ }
  async function chemistry(id){await page.goto(base+'chemistry.html');await page.waitForSelector('#app .setup-page, #app .question-screen');await page.evaluate(id=>start('preview',[S.bank.questions.find(q=>q.id===id)]),id);}
  async function answerChem(response){for(const [id,value]of Object.entries(response))await page.locator('#'+id).selectOption(value);await page.locator('#submit').click();}
  await t.test('hub, both topic lists and account pages share type and compact rows at mobile and desktop sizes',async()=>{
  for(const width of [320,390,1280]){
   await page.setViewportSize({width,height:900});await page.goto(base);await page.waitForSelector('.subject-card');assert.equal(await page.locator('.hub-brand').count(),0);assert.match(await page.locator('link[href*="design.css"]').getAttribute('href'),/\?v=r-/);if(width<900){assert.equal(await page.locator('.hub-sidebar').isVisible(),false);assert.equal(await page.locator('.mobile-brand-banner').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(16, 86, 64)');}assert.equal(await page.locator('.mobile-brand-banner').isVisible(),width<900);assert.equal(await page.locator('.desktop-brand').isVisible(),width>=900);assert.equal(await page.locator('.subject-card').count(),2);await page.evaluate(()=>document.fonts.ready);assert.equal(await page.evaluate(()=>document.fonts.check('17px "LabRats Sans"')&&document.fonts.check('22px "LabRats Serif"')&&document.fonts.check('700 32px "LabRats Heading"')),true);
   assert.match(await page.locator('.subject-card h2').first().evaluate(e=>getComputedStyle(e).fontFamily),/LabRats Serif/);
+  await bundledFonts();
   assert.equal(await page.locator('.subject-card').first().evaluate(e=>getComputedStyle(e).borderRadius),'0px');await overflow();if(width===390)await shot('hub-mobile');
   for(const subject of ['chemistry','applied-science']){
    await page.goto(base+subject+'.html');await page.waitForSelector('.setup-page');assert.equal(await page.locator('.mobile-brand-banner').isVisible(),width<900);const selector=subject==='chemistry'?'.module-section label.topic':'.lesson-row';
+   await bundledFonts();
    const rects=await page.locator(selector).evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().height).slice(0,3).map(e=>{const r=e.getBoundingClientRect(),i=e.querySelector('input').getBoundingClientRect();return {x:r.x,h:r.height,w:r.width,inputY:i.y};}));
    assert(rects.length>1);if(width<=600)assert.equal(rects[0].x,rects[1].x);else{assert(rects[1].x>rects[0].x);assert.equal(rects[2].x,rects[0].x);}
    assert.equal(await page.locator('.module-section').first().evaluate(e=>getComputedStyle(e).borderLeftWidth),'5px');assert(rects.every(r=>r.h>=44&&r.h<110));
@@ -60,6 +69,7 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
   }
   for(const account of ['student-login.html','staff.html']){
    await page.goto(base+account);await page.waitForSelector(account==='staff.html'?'#staff-login-form':'#login-form:not([hidden])');
+   await bundledFonts();
    if(account==='staff.html'){assert.equal(await page.locator('.staff-brand-header img').isVisible(),true);assert.equal(await page.locator('.account-brand-sidebar').count(),0);}
    else{assert.equal(await page.locator('.account-mobile-brand').isVisible(),width<900);assert.equal(await page.locator('.account-brand-sidebar').isVisible(),width>=900);}
    await page.evaluate(()=>Promise.all(Array.from(document.images).map(img=>img.decode())));
@@ -100,6 +110,7 @@ test('unified subject/topic layouts and score-first feedback preserve both marki
  await t.test('both standalone previews contain the complete shared renderer and styles with no external asset requests',async()=>{
  for(const [file,subject]of [['student-site-preview.html','chemistry'],['applied-science-preview.html','applied-science']]){
  await page.goto(base+file);await page.waitForSelector('#login-form:not([hidden])');await page.evaluate(()=>localStorage.clear());await page.locator('#preview-login header a').click();await page.waitForSelector('.setup-page');
+ await bundledFonts();
  if(subject==='chemistry'){await page.evaluate(()=>start('preview',[S.bank.questions.find(q=>q.id==='RC01')]));await answerChem({reagent:'dichromate-acid',heating:'distil'});assert.equal(await page.locator('#retry').count(),0);await shot('chemistry-full-mobile');}else{await page.evaluate(()=>window.AppliedPrototype.openQuestion('W02','practice'));await page.locator('#reveal-answer').click();}
  assert(await page.locator('.feedback-heading h2').isVisible());await overflow();
  }
