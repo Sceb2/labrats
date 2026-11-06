@@ -1,5 +1,8 @@
 # LabRats unified design — A, B and C implemented
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 Implemented on `LabRats-Online`. Both subjects now use the approved visual direction. The live `main` branch and hosted Supabase are unchanged.
 
 ## What changed
@@ -27,6 +30,6 @@ Auth tests use disposable local PostgreSQL/Auth services and fictional accounts,
 
 ## Review
 
-[Download the updated working preview](../downloads/labrats-unified-design-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. The pack includes both subjects, shared staff tools, the mechanism preview, actual mobile screenshots and `mobile-previews.html`.
+[Download the updated working preview](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/downloads/labrats-unified-design-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. The pack includes both subjects, shared staff tools, the mechanism preview, actual mobile screenshots and `mobile-previews.html`.
 
 No new Supabase migration or Edge Function deployment is needed for this visual update. Existing account features still depend on the previously supplied subject setup. Earlier A/B/C mockups and ZIPs are historical review snapshots.

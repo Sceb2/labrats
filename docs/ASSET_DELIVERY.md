@@ -28,8 +28,8 @@ weights, colours and layout are unchanged. No backend or database change is need
 
 These are file sizes, not production bandwidth measurements. The browser requests
 only the font faces it uses, and HTTP compression/caching affects transferred bytes.
-Other regenerated standalone previews save about 1.53 MB each. Historical ZIPs
-and design-review snapshots were not rebuilt.
+Other optional standalone previews save about 1.53 MB each. Historical ZIPs and
+design-review snapshots are no longer kept in the current tree.
 
 ## Reproducing conversions
 
@@ -45,7 +45,8 @@ For each TTF, use `fontTools.ttLib.TTFont(input, recalcTimestamp=False)`, set
 `font.flavor = 'woff2'`, and save it under the corresponding name in `assets/fonts/`.
 Keep full glyph coverage and licence notices. Check character maps, glyph order,
 outlines/instructions, horizontal metrics, and layout tables against the original.
-Rebuild generated pages/previews using `npm run build`.
+Build the website with `npm run build`. Generate ignored standalone copies only
+when needed with `npm run build:previews`; see [preview guidance](PREVIEWS.md).
 
 ## Verification
 

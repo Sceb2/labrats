@@ -1,5 +1,8 @@
 # LabRats UI review — 25 October 2026
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 **Current status:** A, B and C have now been implemented. See [the unified design guide](UNIFIED_DESIGN.md) for the current tool; the mockups and recommendations below record the earlier review.
 
 The strongest risk is an inconsistent, assembled appearance. The green selected states, pink exit controls and chemistry diagrams already serve the product well. Keep those recognisable choices. A colour, font or border radius cannot establish AI authorship, and no student-perception study has been run. The recommendations below are a design review, not an “AI detector” result.
@@ -37,7 +40,7 @@ Direct access to some editorial websites/search pages was unavailable in this en
 
 ## Compare before changing the whole theme
 
-Open [the self-contained visual options](design/labrats-ui-options.html). A is the recommended first change; B and C are alternatives for review, not a commitment to remove the current card layout or celebrations. The mockups use fictional illustrative counts and do not connect to Supabase. They are included in the downloadable review pack.
+Open [the self-contained visual options](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/labrats-ui-options.html). A is the recommended first change; B and C are alternatives for review, not a commitment to remove the current card layout or celebrations. The mockups use fictional illustrative counts and do not connect to Supabase. They are included in the downloadable review pack.
 
 Show the current hub and option A to a few students in alternating order. Ask which feels like the same tool as the question page, where they would tap next, and what looks unfinished. Do not lead with “which one looks AI-generated?” Record task success and concrete comments. Use that evidence to choose the next design pass.
 

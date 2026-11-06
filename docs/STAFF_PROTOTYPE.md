@@ -69,7 +69,8 @@ If migrations 001–004 and the staff service are already installed:
    `supabase/functions/staff-management/index.ts` and deploy the update. Keep the
    function name and Verify JWT setting described below. No new file or function
    is required.
-3. Download fresh copies of `student-site-preview.html` and `staff-preview.html`.
+3. Run `npm run build:previews` to generate fresh local copies of
+   `student-site-preview.html` and `staff-preview.html` (ignored by Git).
    Previously downloaded student previews only recognise the old username format.
 4. Generate two fictional students in a test class. Confirm the names look like
    `adjective-animal`, then sign in through the refreshed student preview, choose
@@ -90,7 +91,8 @@ Existing pending reset leases are preserved; interrupted resets can be retried
 after their two-minute lease expires. The updated operator tool must be used
 with this migration; old unleased reset calls fail clearly.
 
-Download fresh `staff-preview.html` and `student-site-preview.html` files. No
+Generate fresh `staff-preview.html` and `student-site-preview.html` files with
+`npm run build:previews`. No
 Edge Function redeployment is required for these review fixes: the existing
 staff RPC signatures are preserved and its generated server bundle is unchanged.
 The refreshed frontend and SQL provide the changes.
@@ -152,7 +154,7 @@ prototype. Administrators copy one-time invitation codes for private delivery.
 
    Exactly one row should return. Do not rerun it to promote additional users
    casually; existing profiles are intentionally not overwritten.
-3. Download `staff-preview.html` using GitHub's **Download raw file** arrow. Open
+3. Run `npm run build:previews` and open the generated `staff-preview.html`. Open
    it in Chrome/Edge, sign in and choose a new private password. This is separate
    from the Supabase dashboard account; no Supabase administrator keys are entered.
 

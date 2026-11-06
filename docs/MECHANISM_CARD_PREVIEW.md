@@ -1,14 +1,19 @@
 # Automatically scored mechanism cards — review preview
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 The review branch adds **20 cards (MC25–MC44)** and **64 original SVG diagrams** to the prototype. Four combined cards and sixteen focused cards assess the sixteen source marking groups from the [original question pack](MECHANISM_MARKPOINT_PACK.md). The prototype bank now contains 236 questions. The live site and hosted Supabase project have not been updated.
 
 ## Try the questions
 
-Download [mechanism-cards-preview.html](../mechanism-cards-preview.html), save the raw file and open it in a normal browser. GitHub's source viewer shows HTML code rather than running it; use **Download raw file**. No neighbouring files or login are required.
+Run `npm run build:previews`, then open the generated `mechanism-cards-preview.html`
+in a normal browser. The optional file is ignored by Git. No neighbouring files
+or login are required.
 
-Screenshots of the actual preview: [desktop](previews/mechanism-cards-desktop.png) and [mobile](previews/mechanism-cards-mobile.png). They show the bromine first-stage focused card; the interactive preview contains all twenty cards.
+Screenshots of the actual preview: [desktop](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/mechanism-cards-desktop.png) and [mobile](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/mechanism-cards-mobile.png). They show the bromine first-stage focused card; the interactive preview contains all twenty cards.
 
-Updated examples after chemistry review: [cyanide attack](previews/mechanism-cyanide-corrected.png), [restoring the aromatic ring](previews/aromatic-restoration-corrected.png), and [displayed organic products](previews/displayed-products.png).
+Updated examples after chemistry review: [cyanide attack](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/mechanism-cyanide-corrected.png), [restoring the aromatic ring](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/aromatic-restoration-corrected.png), and [displayed organic products](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/displayed-products.png).
 
 1. Choose a card from **Question to preview**, or use **Previous card / Next card**.
 2. Select a diagram for each part, and a mechanism name when requested.
@@ -61,7 +66,7 @@ npm run test:mechanism-preview
 node scripts/build-question-catalog.cjs --output supabase/migrations/202610240007_mechanism_recognition_catalog.sql --check
 ```
 
-`build:mechanisms` regenerates the new card records, SVGs, coverage map and dedicated preview. It preserves the original records and requires their expected IDs/count. Normal `npm run build` also refreshes the dedicated preview alongside the existing prototype bundles. The checked-in mapping is [mechanism-card-map.json](../content-drafts/mechanism-card-map.json).
+`build:mechanisms` regenerates the new card records, SVGs, coverage map and dedicated preview. It preserves the original records and requires their expected IDs/count. Normal `npm run build` generates website assets only; `npm run build:previews` creates the ignored standalone copies. The checked-in mapping is [mechanism-card-map.json](../content-drafts/mechanism-card-map.json).
 
 Validation on 24 October 2026:
 

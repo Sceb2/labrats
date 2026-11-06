@@ -1,10 +1,13 @@
 # Feedback design C — expanded previews
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 **Historical preview:** C has now been implemented alongside A and B. See [the unified design guide](UNIFIED_DESIGN.md) for the working update.
 
 A and B are recorded as the preferred design direction. This change expands C for review; it does not apply any of the proposed redesigns to the student tool.
 
-Open [the interactive feedback preview](design/labrats-feedback-options.html). Choose one example, switch between Mobile and Desktop, or show all six. The preview is self-contained and never contacts Supabase or stores answers. The screenshots show proposed UI, not the current student feedback renderer.
+Open [the interactive feedback preview](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/labrats-feedback-options.html). Choose one example, switch between Mobile and Desktop, or show all six. The preview is self-contained and never contacts Supabase or stores answers. The screenshots show proposed UI, not the current student feedback renderer.
 
 | Example | Proposed display | Behaviour preserved |
 |---|---|---|
@@ -25,10 +28,10 @@ Selected answers already available during the live session can be shown in feedb
 
 ## Review artifacts
 
-- [Mobile comparison](previews/feedback-c-mobile-overview.png)
-- [Desktop partial-mark layout](previews/feedback-c-partial-desktop.png)
-- [Applied Science method marks](previews/feedback-c-method-mobile.png)
-- [Download the standalone preview ZIP](../downloads/labrats-feedback-c-preview-2026-10-25.zip)
+- [Mobile comparison](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/feedback-c-mobile-overview.png)
+- [Desktop partial-mark layout](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/feedback-c-partial-desktop.png)
+- [Applied Science method marks](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/feedback-c-method-mobile.png)
+- [Download the standalone preview ZIP](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/downloads/labrats-feedback-c-preview-2026-10-25.zip)
 
 Rebuild the HTML and verified example-score manifest with:
 

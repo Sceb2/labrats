@@ -146,8 +146,8 @@ Tests cover permissions, password/session gates, rejected extra fields,
 idempotent retry, teacher scope, offline queues, separate browser contexts,
 account switching, sign-out warnings and keeping guest history untouched.
 
-`progress-sync.js` and the auth/pilot files are generated. Commit them with their
-sources and lockfile. The release script fingerprints served code/data and
+`progress-sync.js` and the runtime Auth files are generated. Commit them with their
+sources and lockfile. Optional pilot HTML is ignored by Git. The release script fingerprints served code/data and
 refreshes asset query strings and `CHEM_BUILD`/`version.json`, retaining actual
 SHA-256 digests of the bank/assets/resources. This prevents old cached app code
 from silently missing the new account-saving hooks.
@@ -157,8 +157,8 @@ The initial question catalogue was generated with
 catalogue migration retaining old versions; do not rewrite an applied migration.
 ### Downloadable hosted-backend check
 
-After applying the two queries, download `student-progress-pilot.html` from the
-development branch using GitHub's **Download raw file** button. Open it in a
+After checking the required migrations, run `npm run build:previews` and open the
+generated, Git-ignored `student-progress-pilot.html` file in a
 normal Chrome/Edge window and sign in with a fictional student account. Choose
 **Open progress test**, answer the single RC01 question, and wait for **All
 progress saved to your account**. Sign out, sign back in and open the test again:
@@ -177,9 +177,9 @@ also test blocked storage. Direct downloaded-file opening remains a manual check
 
 ### Full practice preview
 
-`npm run build` also produces `student-site-preview.html`, a single download of
+`npm run build:previews` produces `student-site-preview.html`, a single local file of
 the full development practice website, sign-in, question bank, diagrams and
-sound. Download it with GitHub's **Download raw file** button, open in Chrome or
+sound. This optional generated file is ignored by Git. Open it in Chrome or
 Edge, sign in with a fictional account and choose **Open practice preview**.
 Use normal topic selection and practice; question-level marks, mistakes and
 reveal/retry metadata save through the same sync module as the publishing site.

@@ -1,8 +1,11 @@
 # Shared Chemistry and Applied Science prototype
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 Development branch: `LabRats-Online` (renamed from `feature/subject-hub`). The original Chemistry `main`, Applied Science `main`, and `feature/student-logins` branches are not changed by this work. No hosted Supabase migrations have been run.
 
-Screenshots: [subject selector](previews/subject-hub.png), [Applied Science question](previews/applied-science.png), and [mobile grade tooltip](previews/grade-tooltip-mobile.png).
+Screenshots: [subject selector](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/subject-hub.png), [Applied Science question](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/applied-science.png), and [mobile grade tooltip](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/grade-tooltip-mobile.png).
 
 ## What is shared
 
@@ -100,16 +103,16 @@ Catalogue generation is shared too. For a future bank update, generate a **new**
 
 Topic tiles are shorter, with checkboxes beside their labels and the existing green selected state. Select all / Clear topics are directly available without a disclosure. The setup-only pink Choose subject button is in the topic heading; it is absent during questions, reviews and progress. The session count and Start practice controls precede Practice settings in both subjects. Foundation behaviour and eligibility rules are unchanged; explanatory preview/setup text has been removed. Student Login uses the LabRats brand and retains operational errors and password-replacement help.
 
-[Download the current review ZIP](../downloads/labrats-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. This is a fixed snapshot; subsequent source builds do not update the ZIP automatically. This interface update changes no question content, grading, database schema or hosted Supabase settings.
+[Download the current review ZIP](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/downloads/labrats-preview-2026-10-25.zip), extract it and open `subject-hub-preview.html`. This is a fixed snapshot; subsequent source builds do not update the ZIP automatically. This interface update changes no question content, grading, database schema or hosted Supabase settings.
 
 ## Account controls and design review — 25 October 2026
 
 Sign Out now shares the main action group in each subject, beside Finish session, Choose subject or Choose topics. The single existing sign-out control is moved between rendered screens; its sync/discard safeguards are retained. It stays in the account bar if a sign-in error hides the main content. Guest sessions have no Sign Out button. The subject menu now contains only Practice, Mistakes and Progress. Student Login is available on the subject hub. Sidebar version metadata is reduced to `v1.13.0`; automatic footer chatter is removed while update checking, storage failures and pending-attempt warnings remain.
 
-The [design review](UI_DESIGN_REVIEW.md) records the online sources, findings and alternatives. [Mobile previews](design/labrats-mobile-previews.html) show actual fictional-account renders and the current subject page. [Visual options](design/labrats-ui-options.html) provide three separate mockups. No broader redesign or scoring changes have been applied.
+The [design review](UI_DESIGN_REVIEW.md) records the online sources, findings and alternatives. [Mobile previews](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/labrats-mobile-previews.html) show actual fictional-account renders and the current subject page. [Visual options](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/labrats-ui-options.html) provide three separate mockups. No broader redesign or scoring changes have been applied.
 
-[Download the current working preview and review pack](../downloads/labrats-ui-review-2026-10-25.zip). No new database setup is needed for this UI update.
+[Download the current working preview and review pack](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/downloads/labrats-ui-review-2026-10-25.zip). No new database setup is needed for this UI update.
 
 ## Unified visual design
 
-A, B and C are now applied across both subjects and shared account/staff pages. See [the implementation and validation guide](UNIFIED_DESIGN.md) and [current mobile screens](design/labrats-unified-mobile.html). This update needs no Supabase changes.
+A, B and C are now applied across both subjects and shared account/staff pages. See [the implementation and validation guide](UNIFIED_DESIGN.md) and [current mobile screens](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/labrats-unified-mobile.html). This update needs no Supabase changes.

@@ -1,8 +1,11 @@
 # Rat illustration placement previews
 
+> Historical mockups, screenshots and download snapshots are archived in Git history.
+> For current optional preview generation, see [preview guidance](PREVIEWS.md).
+
 These are preview-only page snapshots on `LabRats-Online`. The normal student pages, working subject previews, logo and Supabase setup are unchanged.
 
-[Download the gallery](../downloads/labrats-rat-placement-previews-2026-10-25.zip), extract it and open `index.html`. Choose a placement, switch Mobile/Desktop and toggle Illustrations on to compare. Native question/explanation disclosures remain available; page buttons do not start sessions, sign out or save progress.
+[Download the gallery](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/downloads/labrats-rat-placement-previews-2026-10-25.zip), extract it and open `index.html`. Choose a placement, switch Mobile/Desktop and toggle Illustrations on to compare. Native question/explanation disclosures remain available; page buttons do not start sessions, sign out or save progress.
 
 | Original picture | Suggested location | Context shown | Mobile display box |
 |---|---|---|---|
@@ -17,14 +20,14 @@ Desktop boxes are 56 × 67 px for the first three and 72 × 86 px for Celebratio
 
 ## Assets and provenance
 
-The four original pictures from the user-uploaded `Rat_Assets.zip` are stored under `docs/design/rat-assets/`. `Logo.png` is deliberately unused while the wordmark is being developed. SHA-256 checksums are recorded in [the placement manifest](design/rat-placement/placements.json).
+The four original pictures from the user-uploaded `Rat_Assets.zip` are stored under `docs/design/rat-assets/`. `Logo.png` is deliberately unused while the wordmark is being developed. SHA-256 checksums are recorded in [the placement manifest](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/rat-placement/placements.json).
 
 The context pages were produced from the actual current standalone subject renderer using fictional guest attempts. Chemistry uses RC01 (2/2 marks); the Applied Science example uses W03 (3/4, including method marks). The summary is an actual completed one-question perfect-session example. Snapshots include the existing question diagrams and current readonly selections where relevant. No additional marking logic or production feature has been introduced.
 
 ## Files and verification
 
-- [Gallery](design/rat-placement/index.html)
-- [Mobile comparison](previews/rat-mobile-overview.png)
+- [Gallery](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/design/rat-placement/index.html)
+- [Mobile comparison](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/previews/rat-mobile-overview.png)
 - Full mobile/desktop screenshots: `docs/previews/rat-*.png`
 - Rebuild snapshots and screenshots: `node scripts/build-mascot-previews.cjs`
 

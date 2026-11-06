@@ -1,6 +1,9 @@
-# Forces draft question set
+# Forces question sources
 
-Open or download `forces-draft.html`. It embeds all questions, scripts, styles, fonts and branding, so it needs no supporting requests. If an attachment viewer blocks scripts, download and open it in a browser.
+`questions.json` is an approved production input despite the `content-drafts`
+directory name. Keep it. To generate the optional self-contained `forces-draft.html`
+review fixture, run `npm run build:previews`. Generated HTML is not tracked in Git.
+The assessment/review notes below record the original development work.
 
 124 original practice questions across the agreed 13 topics: 55 one-mark recall questions and 69 scaffolded applications. All are automatically marked with the existing Waves marking engine. Numerical steps have fixed unit labels; explanation and equation steps use selected answers. Each question has an optional hint, a worked answer shown after submission, an overall mark total and per-step marks. Revealing an answer locks it without awarding a score. Configured calculation steps support error carried forward. Responses stay in memory; reloading clears them. This preview does not use school accounts or saved Waves progress.
 

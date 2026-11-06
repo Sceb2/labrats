@@ -2,6 +2,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
+const os=require('node:os'),path=require('node:path');
 const {createHash}=require('node:crypto');
 const {execFileSync,spawnSync}=require('node:child_process');
 const C=require('../core.js');
@@ -102,7 +103,12 @@ test('new catalogue includes all 236 versioned rows and refuses to overwrite an 
   assert.notEqual(result.status,0);assert.deepEqual(fs.readFileSync(original),before);
 });
 
-test('generated cards, diagrams and standalone preview are current',()=>{
+test('generated cards and diagrams are current; the standalone fixture builds reproducibly in a temporary folder',()=>{
   execFileSync(process.execPath,['scripts/build-mechanism-cards.cjs','--check']);
-  execFileSync(process.execPath,['scripts/build-mechanism-preview.cjs','--check']);
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'labrats-mechanism-fixture-'));
+  try{
+    const output=path.join(dir,'preview.html'),{buildMechanismPreview}=require('../scripts/build-mechanism-preview.cjs');
+    buildMechanismPreview(output);const before=fs.readFileSync(output);
+    buildMechanismPreview(output);assert.deepEqual(fs.readFileSync(output),before);
+  }finally{fs.rmSync(dir,{recursive:true,force:true});}
 });

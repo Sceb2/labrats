@@ -6,3 +6,18 @@ supabase/.temp/
 supabase/.branches/
 playwright-report/
 test-results/
+
+# Optional generated previews, historical downloads and visual review output.
+/*-preview.html
+/student-*-pilot.html
+/*-draft.html
+/downloads/
+/docs/previews/
+/docs/design/*.html
+/docs/design/labrats-feedback-example-scores.json
+/docs/design/rat-placement/
+/docs/reviews/**/*.png
+/docs/reviews/**/*.jpg
+/docs/reviews/**/*.jpeg
+/docs/reviews/**/*.webp
+/docs/reviews/job-1/index.html

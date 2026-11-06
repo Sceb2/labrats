@@ -159,8 +159,9 @@ existing unresolved policy; this feature does not add automated deletion.
 
 ## Build and preview
 
-`npm run build` generates the flashcard bundle and a guest-only standalone
-`flashcards-preview.html`, along with the normal subject/staff previews. The
+`npm run build` generates the production flashcard bundle. The optional
+`npm run build:previews` command generates a Git-ignored, guest-only standalone
+`flashcards-preview.html` and the subject/staff fixtures. The
 standalone sample makes no backend connection and can be opened from a file.
 The sample JSON is generated from the reviewed CSV, not independently authored.
 Only Chemistry has test content; Applied Science supports the same feature but

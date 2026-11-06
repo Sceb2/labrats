@@ -9,7 +9,6 @@ function buildFlashcards(){
  const sample={subject_id:'chemistry',topic_id:'basic',title:'Organic names and formulae',cards:parsed.cards.map(c=>({card_id:c.id,topic_id:c.topic,front:c.front,back:c.back,content_version:1,pack_id:'11111111-2222-4333-8444-555555555555'}))};
  fs.writeFileSync(path.join(root,'flashcards/sample-pack.json'),JSON.stringify(sample,null,2)+'\n');
  esbuild.buildSync({absWorkingDir:root,entryPoints:['src/flashcard-app.cjs'],outfile:'flashcard-app.js',bundle:true,platform:'browser',target:['es2022'],minify:true,supported:{'template-literal':false},legalComments:'eof'});
- buildFlashcardPreview();
 }
 function buildFlashcardPreview(output=path.join(root,'flashcards-preview.html')){
  const script='window.LABRATS_FLASHCARD_DEMO='+read('flashcards/sample-pack.json').replace(/</g,'\\u003c')+';\n'+read('flashcard-app.js');

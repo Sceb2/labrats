@@ -1,5 +1,9 @@
 # Electrical circuits and the transfer of energy: teacher-review draft
 
+`questions.json` is now an approved production input despite the directory name;
+keep it. The notes below record its earlier teacher-review stages. Generate the
+optional, Git-ignored `electricity-draft.html` fixture with `npm run build:previews`.
+
 120 original questions, 164 automatically marked one-mark subparts. Coverage follows the agreed 120-item outline and Pearson AAQ Applied Science Unit 3 section C, Certificate specification Issue 5 (May 2026), printed pp52–53. The uploaded Extended Certificate Physics sample assessment (Issue 1, 2024) and 6 May 2026 Unit 3 paper informed language and difficulty; questions are newly authored and not reproduced from those papers.
 
 Source: questions.json. Each question has stable E001–E120 identifiers, specification references, feedback, an optional hint and worked answers. Calculations use fixed units and explicit numerical tolerances. Selected answers scaffold explanations and practical evaluations. Selected linked calculations support error carried forward using the existing marking engine. Practice marks and provisional AO tags are not official examination tariffs or proportions.

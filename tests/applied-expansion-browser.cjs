@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,'..'),bank=require('../applied-science/Pilot_Q
   browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});let page;const errors=[];const base='http://127.0.0.1:'+server.address().port;
   async function open(id){await page.evaluate(id=>window.AppliedPrototype.openQuestion(id,'practice'),id);}
   async function answer(q){for(const p of q.parts){if(p.type==='choice')await page.locator(`[data-part="${p.id}"][value="${p.correctOptionId}"]`).check();else{await page.locator(`[data-number="${p.id}"]`).fill(String(p.answer.value));const unit=page.locator(`[data-unit="${p.id}"]`);if(await unit.count())await unit.selectOption(p.answer.unit);}}await page.locator('#check-answer').click();assert.match(await page.locator('#feedback .feedback-heading h2').innerText(),new RegExp(`${q.maxMarks} of ${q.maxMarks}`),q.id);}
-  const out=path.join(root,'docs/reviews/applied-expansion');fs.mkdirSync(out,{recursive:true});
+  const out=path.join(root,'test-results/applied-expansion');fs.mkdirSync(out,{recursive:true});
   for(const width of [390,1280]){
    if(page)await page.close();page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewportSize({width,height:900});await page.goto(base+'/applied-science.html?guest=1');await page.waitForSelector('.setup-page,.question-screen');await page.waitForSelector('.setup-page');

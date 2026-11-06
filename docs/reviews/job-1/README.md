@@ -14,6 +14,8 @@ Development-only change based on Combined-Drafts fa920c6. The Forces draft is re
 No scoring, saving, selection, account, schema or navigation changes. Jobs 2 and 3
 (selection layout, action hierarchy and session-summary redesign) are deferred.
 
-Open index.html for paired screenshots: six affected states at 390×844 and
-1280×900. Screenshots are local Chromium guest renders, not hosted-site checks.
+The paired screenshot gallery recorded six affected states at 390×844 and
+1280×900. It was removed with the historical screenshots during the repository
+cleanup; see the [archived gallery](https://github.com/Sceb2/labrats/blob/b2243c97400d17a99eaa3ea4822bb4d5b45fea60/docs/reviews/job-1/index.html).
+Those were local Chromium guest renders, not hosted-site checks.
 The flashcard screenshots use the standalone sample and deterministic card order.
