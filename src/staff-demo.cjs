@@ -67,7 +67,7 @@ const client={from:query,auth:{getUser:async()=>({data:{user:{id:owner,email:pro
  else return {error:{message:'Fictional preview: publication and server changes are not performed.'}};
  return {data,error:null};
 }};
-const factory=async()=>({client,url:'https://preview.invalid',key:'sb_publishable_fictional_preview',prefix:'preview-',profile:async()=>profile(),signOut:async()=>{signedIn=false},async staffOperation(action,fields){
+const factory=async()=>({client,url:'https://preview.invalid',key:'sb_publishable_fictional_preview',prefix:'preview-',profile:async({withUser=false}={})=>withUser?{profile:profile(),user:{id:owner,email:profile().email}}:profile(),signOut:async()=>{signedIn=false},async staffOperation(action,fields){
  if(action==='create_students'){const credentials=[];for(let n=0;n<fields.count;n++){const user_id=crypto.randomUUID(),username='preview-'+['otter','robin','panda','fox','goat','chicken'][n%6]+'-'+(n+1);profiles.push({user_id,username,role:'student',active:true,must_change_password:true,last_login_at:null});members.push({class_id:fields.class_id,student_id:user_id});credentials.push({username,temporary_password:'DEMO-not-a-real-password'})}return {credentials,complete:true};}
  if(action==='invite_teacher')return {email:fields.email,invitation_code:'DEMONSTRATION-CODE-NOT-VALID'};
  if(action==='reset_student'||action==='reset_staff')return {username:profiles.find(p=>p.user_id===fields.user_id)?.username||null,temporary_password:'DEMO-not-a-real-password'};

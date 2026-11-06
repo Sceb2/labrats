@@ -38,12 +38,12 @@ async function openAccountClient({audience = 'student'} = {}) {
     if (previous && previous.user_id !== profile.user_id) clearLearning();
     tabStorage.setItem(profileKey, JSON.stringify(profile));
   }
-  async function profile() {
+  async function profile({withUser=false}={}) {
     const {data: {user}, error} = await client.auth.getUser();
     if (error || !user) throw error || new Error('No signed-in user.');
     const result = await client.from('account_profiles').select('user_id,username,role,active,must_change_password').eq('user_id', user.id).single();
     if (result.error) throw result.error;
-    rememberProfile(result.data); return result.data;
+    rememberProfile(result.data); return withUser?{profile:result.data,user}:result.data;
   }
   async function signOut({discardLearning = true} = {}) {
     try {return await client.auth.signOut({scope: 'local'});} finally {

@@ -27,9 +27,8 @@ function lockButtons(){document.querySelectorAll('button').forEach(button=>{if(!
 async function work(action){if(busy)return;scopeGeneration++;busy=true;status('Working…');lockButtons();try{await action();}catch(error){status(error.message||'The operation could not finish.',true);}finally{busy=false;document.querySelectorAll('[data-busy-disabled]').forEach(button=>{button.disabled=button.dataset.busyDisabled==='true';delete button.dataset.busyDisabled;});}}
 function checked(result){if(result.error)throw new Error(result.error.code==='42501'?'Your staff session cannot perform this action.':result.error.message);return result.data;}
 async function account(generation=scopeGeneration){
- const next=await connection.profile();
+ const {profile:next,user}=await connection.profile({withUser:true});
  if(!next.active||!['teacher','admin'].includes(next.role))throw Error('An active invited staff account is required.');
- const {data:{user},error}=await connection.client.auth.getUser();if(error)throw error;
  if(!next.must_change_password)checked(await connection.client.rpc('staff_context'));
  if(generation!==scopeGeneration)return false;
  profile=next;$('#staff-identity').textContent=`${user.email} · ${profile.role==='admin'?'School administrator':'Teacher'}`;
@@ -160,11 +159,13 @@ async function boot(openConnection=openAccountClient){
   window.addEventListener('pagehide',clearPrivate);
   window.addEventListener('beforeunload',event=>{if(unsavedPack()){event.preventDefault();event.returnValue='';}});
   document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.staff-more[open],.student-actions[open]').forEach(menu=>menu.open=false);});
+  let verifyOnReturn=false;
   const verify=async()=>{
-    if(!profile||busy||verifying)return;
+    if(!profile||busy||verifying||document.hidden)return;
     verifying=true;const generation=scopeGeneration;
     try{
       if(!await account(generation)){if(generation===scopeGeneration)clearPrivate();return;}
+      if(document.hidden||verifyOnReturn)return;
       const scope=await readScope();
       if(busy||generation!==scopeGeneration)return;
       if(signature(scope)!==scopeSignature){
@@ -177,9 +178,12 @@ async function boot(openConnection=openAccountClient){
         });
       }
     }catch{if(generation===scopeGeneration){loggedOut();status('Your staff session could not be checked. Sign in again.',true);}}
-    finally{verifying=false;}
+    finally{verifying=false;if(verifyOnReturn){verifyOnReturn=false;void verify();}}
   };
-  setInterval(verify,30000);window.addEventListener('focus',verify);window.addEventListener('online',verify);
+  let lastReturn=-Infinity;
+  const resume=()=>{if(document.hidden){lastReturn=-Infinity;return;}if(Date.now()-lastReturn<1000)return;lastReturn=Date.now();if(verifying){verifyOnReturn=true;return;}return verify();};
+  setInterval(verify,30000);window.addEventListener('focus',resume);window.addEventListener('online',verify);
+  document.addEventListener('visibilitychange',resume);
   const {data:{session}}=await connection.client.auth.getSession();
   if(session){try{await load();}catch{await connection.signOut();loggedOut();status('Sign in again to use staff tools.');}}else status('Ready for invited staff sign-in.');
 }

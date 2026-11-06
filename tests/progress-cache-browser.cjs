@@ -26,6 +26,7 @@ test('unchanged sync keeps progress cached while new, offline and rejected attem
      const cacheKey='fixture-'+owner.user_id,values=new Map(),memory=new Map();
      const f=window.fixture={cacheKey,values,memory,writes:[],notices:[],remote:[],profileChecks:0,uploads:[],online:true,limited:false,blocked:false,deny:false,navigations:[]};
      Object.defineProperty(navigator,'onLine',{get:()=>f.online});
+     Object.defineProperty(document,'hidden',{get:()=>!!f.hidden});
      window.setInterval=fn=>{f.tick=fn;return 1;};
      values.set(cacheKey,JSON.stringify({history:[initial],pullCursor:{version:1,received_at:initial.received_at,event_id:initial.event_id}}));
      const storage={
@@ -40,12 +41,12 @@ test('unchanged sync keeps progress cached while new, offline and rejected attem
      };
      const read=key=>JSON.parse(storage.getItem(key));
      const connection={prefix:'fixture-',sessionKey:'session',storage,read,cachedProfile:()=>owner,
-      async profile(){f.profileChecks++;return {...owner,...(f.deny?{active:false}:{})};},
+      async profile(){f.profileChecks++;const result={...owner,...(f.deny?{active:false}:{})};if(f.profileWait)await f.profileWait;return result;},
       pendingQueues:()=>[],pendingCount:()=>[':pending',':rejected'].reduce((n,s)=>n+(read(cacheKey+s)||[]).length,0),
       async signOut(){values.clear();memory.clear();},
       client:{auth:{async getSession(){return {data:{session:{access_token:'fictional'}}};}},
        from(){const query={select(){return query;},eq(){return query;},or(){return query;},order(){return query;},
-        async limit(){return {data:f.remote.splice(0)};}};return query;},
+        async limit(){f.historyRequests=(f.historyRequests||0)+1;return {data:f.remote.splice(0)};}};return query;},
        async rpc(name,payload){f.uploads.push(payload);return f.reject?{error:{code:'23514'}}:{data:payload.events.map(e=>e.event_id)};}}
      };
      f.sync=await window.RevisionSync.open(bank,records=>f.notices.push(records),{connection,navigate:path=>f.navigations.push(path)});
@@ -59,6 +60,30 @@ test('unchanged sync keeps progress cached while new, offline and rejected attem
    await page.evaluate(async()=>{for(let i=0;i<5;i++)await fixture.tick();});
    const after=await page.evaluate(()=>({writes:fixture.writes.length,notices:fixture.notices.length,checks:fixture.profileChecks}));
    assert.equal(after.writes,before.writes);assert.equal(after.notices,before.notices);assert.equal(after.checks,before.checks+5);
+  }));
+  await t.test('hidden idle tabs make no requests; returning rechecks once despite focus and visibility events',()=>fixture(async page=>{
+   const before=await page.evaluate(()=>[fixture.profileChecks,fixture.historyRequests]);
+   await page.evaluate(async()=>{fixture.hidden=true;for(let i=0;i<4;i++)await fixture.tick();});
+   assert.deepEqual(await page.evaluate(()=>[fixture.profileChecks,fixture.historyRequests]),before);
+   await page.evaluate(()=>{fixture.hidden=false;document.dispatchEvent(new Event('visibilitychange'));window.dispatchEvent(new Event('focus'));});
+   await page.waitForFunction(n=>fixture.historyRequests===n,before[1]+1);
+   assert.equal(await page.evaluate(()=>fixture.profileChecks),before[0]+1);
+  }));
+  await t.test('hidden pending work uploads without downloading history',()=>fixture(async page=>{
+   await page.evaluate(bank=>{fixture.hidden=true;fixture.online=false;fixture.sync.record(bank.questions[0],{mode:'practice'},'submit',{score:1});},bank);
+   const reads=await page.evaluate(()=>fixture.historyRequests);
+   await page.evaluate(async()=>{fixture.online=true;await fixture.tick();});
+   assert.deepEqual(await page.evaluate(()=>[fixture.uploads.length,JSON.parse(fixture.values.get(fixture.cacheKey+':pending')).length,fixture.historyRequests]),[1,0,reads]);
+  }));
+  await t.test('returning during an upload triggers a fresh access check before history resumes',()=>fixture(async page=>{
+   await page.evaluate(bank=>{fixture.hidden=true;fixture.online=false;fixture.sync.record(bank.questions[0],{mode:'practice'},'submit',{score:1});},bank);
+   const before=await page.evaluate(()=>fixture.profileChecks);
+   await page.evaluate(()=>{fixture.online=true;fixture.profileWait=new Promise(r=>fixture.releaseProfile=r);void fixture.tick();});
+   await page.waitForFunction(n=>fixture.profileChecks>n,before);
+   await page.evaluate(()=>{fixture.deny=true;fixture.hidden=false;document.dispatchEvent(new Event('visibilitychange'));fixture.profileWait=null;fixture.releaseProfile();});
+   await page.waitForFunction(()=>document.querySelector('#account-sync-status').textContent.includes('Sign in again'));
+   assert.equal(await page.locator('main').isVisible(),false);
+   assert.equal(await page.evaluate(()=>fixture.profileChecks),before+2);
   }));
   await t.test('a new remote event updates progress and its checkpoint once',()=>fixture(async page=>{
    const fresh={...makeEvent(bank,bank.questions[0],{mode:'practice'},'submit',{score:bank.questions[0].maxMark}),received_at:'2026-11-06T12:00:00.000002+00:00'};

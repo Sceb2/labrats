@@ -46,7 +46,7 @@ async function open(bank, onRecords = () => {}, {
   const rejectedIds=new Set(rejected.map(item=>item.event.event_id));
   pending=pending.filter(event=>!rejectedIds.has(event.event_id));
   const unsavedCount=()=>pending.length+rejected.length;
-  let message = '', timer;
+  let message = '', timer, revalidateOnReturn=false;
   const bar = document.createElement('aside'); bar.id = 'account-sync-bar'; bar.className = 'account-sync-bar';
   const identity = document.createElement('strong'); identity.textContent = owner.username;
   const state = document.createElement('span'); state.id = 'account-sync-status'; state.setAttribute('role','status');
@@ -151,12 +151,13 @@ async function open(bank, onRecords = () => {}, {
       const checked = await connection.profile();
       if (checked.user_id !== owner.user_id) {closed = true; clearInterval(timer); navigate('index.html'); return;}
       if (!checked.active || checked.must_change_password || checked.role !== 'student') throw new Error('account');
+      if(revalidateOnReturn)return;
       stage='sync';login.hidden=true;const main=document.querySelector('main');if(main)main.hidden=false;
       while (!closed && pending.length) {
         await upload(pending.slice(0,100));
       }
       if (!closed) await flushOtherQueues();
-      if (!closed) await pull();
+      if (!closed&&!document.hidden&&!revalidateOnReturn) await pull();
       message = '';
     } catch (error) {
       const needsLogin=(stage==='account'&&([401,403,404,406].includes(error.status)||error.name==='AuthSessionMissingError'))||error.message==='account'||error.code==='42501';
@@ -164,11 +165,15 @@ async function open(bank, onRecords = () => {}, {
       message = needsLogin
         ? 'Sign in again with this account to save waiting attempts.'
         : `Unable to sync · ${connection.pendingCount()} attempts waiting. Check your connection or ask your teacher.`;
-    } finally {running = false; publish();}
+    } finally {running = false; publish();if(revalidateOnReturn){revalidateOnReturn=false;void flush();}}
   }
   const unload = event => {if (!closed && Math.max(unsavedCount(),connection.pendingCount())) {event.preventDefault(); event.returnValue = '';}};
+  const backgroundFlush=()=>{if(!document.hidden||pending.length||connection.pendingQueues().length)return flush();};
+  let lastReturn=-Infinity;
+  const resume=()=>{if(closed)return;if(document.hidden){lastReturn=-Infinity;return;}if(Date.now()-lastReturn<1000)return;lastReturn=Date.now();if(running){revalidateOnReturn=true;return;}return flush();};
   window.addEventListener('beforeunload', unload);
-  window.addEventListener('online', flush); window.addEventListener('offline', flush);
+  window.addEventListener('online', backgroundFlush); window.addEventListener('offline', flush);
+  document.addEventListener('visibilitychange',resume);window.addEventListener('focus',resume);
   retry.onclick = flush;
   retryRejected.onclick=()=>{
     if(running||closed)return;
@@ -185,7 +190,8 @@ async function open(bank, onRecords = () => {}, {
     closed = true; clearInterval(timer); actionObserver.disconnect(); window.removeEventListener('beforeunload', unload);
     logout.disabled=true;retry.disabled=true;state.textContent='Signing out…';
     const main=document.querySelector('main');if(main)main.hidden=true;
-    window.removeEventListener('online', flush); window.removeEventListener('offline', flush);
+    window.removeEventListener('online', backgroundFlush); window.removeEventListener('offline', flush);
+    document.removeEventListener('visibilitychange',resume);window.removeEventListener('focus',resume);
     try {await connection.signOut();} finally {navigate('index.html');}
   };
   const scopedStorage = {
@@ -200,7 +206,7 @@ async function open(bank, onRecords = () => {}, {
     },
     remove(key) {connection.storage.removeItem(cacheKey + ':' + key); return true;}
   };
-  publish(); timer = setInterval(flush, 15000);
+  publish(); timer = setInterval(backgroundFlush, 15000);
   // Start requests after the app has installed its account-scoped progress state.
   setTimeout(flush, 0);
   return {storage: scopedStorage, records: () => recordsFor(mergeEvents(history,pending), bank),
