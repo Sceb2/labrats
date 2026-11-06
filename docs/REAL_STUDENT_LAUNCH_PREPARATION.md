@@ -13,12 +13,14 @@ Git branch. Preparing these files has not changed hosted Supabase or main.
   changes. Signing in deliberately enables account progress again. Question
   guest history stays local; guest flashcard history stays in page memory.
 - Student recovery is in person: **Mr Wormstone**, not an email-password flow.
-- School contact and proposed cleanup-alert recipient: **sceb2@crispins.co.uk**.
+- School contact: **sceb2@crispins.co.uk**. Cleanup alerts stay in the admin
+  dashboard for now; email configuration is deferred.
 - Keep two fictional students, each in its own subject's test class. Remove the
   other explicitly reviewed fictional students and test classes before launch.
-- Review and publish the short student privacy notice before real accounts are
-  distributed. Draft: `docs/STUDENT_PRIVACY_NOTICE_DRAFT.md`. Publication is still
-  an outstanding launch task; the signed DPIA should use the same retention rule.
+- The school approved `docs/STUDENT_PRIVACY_NOTICE.md`. It is generated as
+  `privacy.html` with links on student sign-in and subject choice in development.
+  Publishing these development changes to main remains a launch task. The signed
+  DPIA should use the same first-login retention rule.
 
 ## Two test students and classes — operator steps
 
@@ -62,31 +64,37 @@ students' results are preserved. Old class memberships and teacher assignments
 to deleted test classes are removed. Historical retention-exclusion flags are
 preserved; this cleanup does not enrol accounts in retention or enable deletion.
 
-## Cleanup alerts — proposal only, not configured by this work
+## Supabase updates now — replacing the earlier 12-student demonstration
 
-Use the school's IT-managed Power Automate flow or equivalent HTTPS receiver to
-send an email to sceb2@crispins.co.uk (plus an approved backup recipient). Keep
-the monitor outside Supabase so it can detect a stopped database scheduler.
+The operator previously confirmed migrations 013–015 and the Sunday Cron job
+were installed. Do not rerun them. The guest fix, privacy notice and dashboard
+alerts require **no new SQL migration, API keys or Edge Function deployment**.
 
-The existing monitor checks daily for failed or missing cleanup runs, cleanup
-being disabled and a last successful run more than eight days old. It sends
-status/timestamps/counts, not student details. The receiver must accept its JSON
-payload (`title`, `reason`, `checked_at`, `last_finished_at`, `failures`).
+Do not create 12 students, run the old all-student rename, or seed the fictional
+week. Use the two-account review/cleanup steps above instead. In SQL Editor,
+run the plan's student SELECT and class SELECT separately and keep both results;
+some editors show only the last result if both are submitted at once. If at least
+two students already exist, no additional test accounts need to be created.
 
-Before configuration, agree the school-managed receiver, its access controls,
-owner and backup recipient with IT. The supplied GitHub monitor currently uses
-a broad server-only Supabase credential: ask IT to approve that credential
-placement or choose a narrower monitoring design before enabling it. Put any
-approved credentials and endpoint only in private GitHub Actions secrets, never
-in chat, browser code or committed files. Scheduled Actions require the workflow
-on the default branch. Trigger a controlled failure, check delivery, then a
-successful recovery; enable the monitor and retention only after those checks
-and the reviewed test cleanup. GitHub schedules are best-effort: IT must also
-know how to notice a monitor that itself stops running.
+After cleanup and checking both logins on connected development, check the
+installed Sunday schedule. Enable retention in **Retention & health** only after
+the reviewed account cleanup and schedule checks. This enables real deletion of
+managed expired accounts. Verify the first successful run; the operator can run
+`select public.run_retention_cleanup();` for that acceptance check when ready.
 
-No alert provider, webhook, secret, repository variable or retention-enable
-setting has been changed here. Database backup/restore planning is a separate
-launch task from student password recovery.
+## Cleanup alerts — dashboard now, email later
+
+School overview and Retention & health display failed, missing or overdue cleanup
+runs, the disabled setup state, deletion/failure counts and recent run history.
+Status loads on opening/refreshing the dashboard. Check it after each Sunday
+run; there is no notification while the dashboard is closed. An unavailable
+status check is reported rather than treated as success.
+
+Leave `LABRATS_RETENTION_MONITOR_ENABLED` unset/false and do not configure webhook
+or service-key secrets for email monitoring now. The optional external monitor
+remains available for a later school-owned email setup. No email/webhook or
+hosted retention-enable setting has been changed by this work. Database
+backup/restore planning remains separate from student password recovery.
 
 ## Verification of these development changes
 
@@ -103,5 +111,18 @@ targets are rejected; an error after deletion rolls the transaction back;
 the two retained passwords, dates and history survive; staff/content survive;
 the two new usernames can sign in; and ordinary student-identity protection is
 restored. The same operator test passed on its own as well. No native Deno
-runtime or hosted configuration was validated in this pass. Alerts, privacy
-publication, and the hosted cleanup remain operator launch actions.
+runtime or hosted configuration was validated in this pass. Those original checks preceded the dashboard-only alert decision. Main
+publication, enabling/checking hosted retention and the hosted test cleanup remain
+operator launch actions; email alerts are deferred.
+
+The approved notice is now generated from `docs/STUDENT_PRIVACY_NOTICE.md` into
+`privacy.html`, with links on subject choice and student sign-in. Standalone
+downloads embed the same notice. It is available on development; main remains
+unchanged. Desktop/mobile browser checks passed at 320, 390 and 1280 pixels,
+including guest-mode preservation and reading the notice without sign-in.
+Dashboard checks at 390 and 1440 pixels verified failed, missing, stale,
+healthy and unavailable states, in addition to the existing staff workflow.
+`npm test` passed 308 software checks and 56 unit tests. No SQL migration,
+Edge Function update, hosted cleanup or email setup accompanies these UI changes.
+The complete disposable `npm run test:auth-local` suite also passed after these
+changes; hosted Supabase, native Deno and the actual hosted Cron job were not tested.

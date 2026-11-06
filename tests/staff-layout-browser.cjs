@@ -31,6 +31,22 @@ test('implemented task-led staff pages work offline at desktop and mobile sizes'
    await page.close();
    assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   }
+  for(const width of [390,1440])for(const [scenario,reason] of [['failed','failed_run'],['missing','missing_run'],['overdue','overdue_run'],['healthy','healthy'],['unavailable','status_unavailable']]){
+   const page=await browser.newPage({viewport:{width,height:1000}});
+   await page.goto(base+'/?role=admin&cleanup='+scenario);
+   await page.waitForSelector('#staff-overview-status[data-health="'+reason+'"]');
+   assert.equal(await page.locator('#staff-overview-status').getAttribute('role'),scenario==='healthy'?'status':'alert');
+   if(scenario==='unavailable'){
+    if(width<761)await page.locator('.staff-more summary').click();
+    await page.locator('.staff-page-nav [data-staff-page="retention"]:visible').click();
+    await page.waitForSelector('#retention-controls[role=alert]');
+   }else{
+    await page.locator('#staff-overview-status button').click();await page.waitForSelector('#retention-alert[data-health="'+reason+'"]');
+    assert.equal(await page.locator('#retention-alert').getAttribute('role'),scenario==='healthy'?'status':'alert');
+    assert.match(await page.locator('#retention-controls').innerText(),/Email alerts are not enabled/);
+   }
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.close();
+  }
   const page=await browser.newPage({viewport:{width:390,height:844}});await page.goto(base+'/?role=teacher&many=1');await page.waitForSelector('#class-search');await page.locator('#class-search').fill('Extra class 8');assert.equal(await page.locator('#class-picker option').count(),1);await page.locator('#class-picker').selectOption({label:'Extra class 8'});await page.waitForFunction(()=>document.querySelector('.staff-section-header h2')?.textContent==='Extra class 8');await page.close();
  }finally{await browser?.close();await new Promise(r=>server.close(r));fs.rmSync(dir,{recursive:true,force:true})}
 });

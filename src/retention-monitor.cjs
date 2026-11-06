@@ -1,11 +1,5 @@
 'use strict';
-function health(policy,last,now=Date.now()){
- if(!policy?.retention_enabled)return {ok:false,reason:'disabled'};
- if(!last)return {ok:false,reason:'missing_run'};
- if(!last.finished_at||!Number.isFinite(Date.parse(last.finished_at))||now-Date.parse(last.finished_at)>8*86400000)return {ok:false,reason:'overdue_run'};
- if(last.status!=='success'||last.failures>0)return {ok:false,reason:'failed_run'};
- return {ok:true,reason:'healthy'};
-}
+const {health}=require('./retention-health.cjs');
 async function monitor({url,key,webhook,fetchImpl=fetch,now=Date.now()}){
  const base=new URL(url);if(base.protocol!=='https:')throw Error('HTTPS Supabase URL required.');
  let last,policy,result;

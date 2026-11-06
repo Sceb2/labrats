@@ -250,5 +250,7 @@ Before real-student rollout: complete hosted/hosting-origin validation; deploy a
 [account retention](RETENTION.md), and agree separate procedures for provider
 logs, backups and exports; review staff invitation delivery/recovery, staff MFA,
 support/incident arrangements and processor terms; review chemistry and scheduling
-with teachers. The new scheduler and alerts must be configured and checked before launch. Keep the
+with teachers. Check the scheduler and dashboard failure states before launch.
+As agreed on 6 November, administrators will check the dashboard after Sunday
+cleanup runs; email alerts are deferred. Keep the
 publishing branch unchanged until a deliberate release decision.

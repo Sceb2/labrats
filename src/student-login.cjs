@@ -1,7 +1,7 @@
 'use strict';
 const {openAccountClient} = require('./account-client.cjs');
 const {studentEmail, validatePassword} = require('./student-identity.cjs');
-const {selectedSubject,withGuestMode}=require('./subjects.cjs');
+const {selectedSubject,withGuestMode,preserveGuestLinks}=require('./subjects.cjs');
 const selected=selectedSubject(window.OCR_PREVIEW_SUBJECT_ID?'?subject='+window.OCR_PREVIEW_SUBJECT_ID:undefined);
 const $ = selector => document.querySelector(selector);
 let client, accountConnection;
@@ -52,6 +52,7 @@ function authError(error) {
   return 'Sign-in was unsuccessful. Check your username and password, or speak to Mr Wormstone in person.';
 }
 async function boot() {
+  preserveGuestLinks();
   const practiceTarget=window.OCR_PREVIEW_SUBJECT_URL||selected.practiceUrl;
   const guestLink=document.querySelector('header a');if(guestLink)guestLink.href=withGuestMode(practiceTarget,'?guest=1');
   $('#continue-practice').href=practiceTarget;

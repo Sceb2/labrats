@@ -7,6 +7,7 @@ const Badges=require('./rating-badges.cjs');
 const {subjects}=require('./subjects.cjs');
 const Flashcards=require('./flashcard-staff.cjs');
 const Retention=require('./retention-admin.cjs');
+const {dashboardHealth}=require('./retention-health.cjs');
 const Views=require('./staff-views.cjs');
 Badges.installRatingTips();
 let selectedSubject='chemistry',subjectAssignments=[],currentPage=null,selectedStudent=null;
@@ -107,11 +108,12 @@ function render(){
 }
 async function overviewStatus(){
  const host=$('#staff-overview-status');
- try{const state=checked(await connection.client.rpc('retention_status'));if(!host.isConnected)return;const last=state.last_run;
-  const title=document.createElement('strong');title.textContent=state.enabled?'Automatic retention is enabled':'Finish retention setup before rollout';
-  const detail=document.createElement('p');detail.textContent=`${state.overdue} accounts due · ${state.unmanaged} historical accounts excluded. ${last?'Last cleanup: '+last.status+' on '+date(last.finished_at):'No cleanup has run.'} Verify the scheduler and school alert delivery separately.`;
+ try{const state=checked(await connection.client.rpc('retention_status'));if(!host.isConnected)return;const last=state.last_run,status=dashboardHealth(state);
+  host.dataset.health=status.reason;host.setAttribute('role',status.attention?'alert':'status');
+  const title=document.createElement('strong');title.textContent=status.title;
+  const detail=document.createElement('p');detail.textContent=`${status.message} ${state.overdue} accounts due · ${state.unmanaged} historical accounts excluded. ${last?'Last cleanup: '+last.status+' on '+date(last.finished_at):'No cleanup has run.'} Alerts are dashboard-only; email is not enabled.`;
   const link=document.createElement('button');link.className='btn secondary';link.textContent='Review retention →';link.onclick=()=>void go('retention');host.replaceChildren(title,detail,link);
- }catch{if(host.isConnected)host.textContent='Retention status could not be checked. Open Retention & health to retry.';}
+ }catch{if(host.isConnected){host.dataset.health='status_unavailable';host.setAttribute('role','alert');host.textContent='Retention status could not be checked. Open Retention & health to retry.';}}
 }
 async function reset(user_id,staffAccount){
   if(!window.confirm('Reset this account? Existing sessions will end and the person must choose a new password.'))return;

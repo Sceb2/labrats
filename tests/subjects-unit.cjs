@@ -12,6 +12,7 @@ test('explicit guest navigation preserves parameters and fragments; ordinary acc
  }
  assert.equal(withGuestMode('chemistry.html?preview=RC01#main','?guest=1'),'chemistry.html?preview=RC01&guest=1#main');
  assert.equal(withGuestMode('flashcards.html?guest=1&subject=chemistry','?guest=1'),'flashcards.html?guest=1&subject=chemistry');
+ assert.equal(withGuestMode('#privacy-notice','?guest=1&subject=applied-science'),'#privacy-notice');
 });
 test('two subjects have distinct routes and versioned question identities; unknown navigation cannot become an open redirect',()=>{
  assert.equal(subjects.length,2);assert.equal(bank.questions.length,354);assert.equal(new Set(bank.questions.map(q=>q.id)).size,354);

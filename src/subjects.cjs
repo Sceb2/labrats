@@ -7,13 +7,13 @@ function selectedSubject(search=typeof location==='undefined'?'':location.search
 // Only an explicit guest choice bypasses a saved account session. Carry it
 // through learning-mode/subject navigation without changing sign-in links.
 function withGuestMode(target,search=typeof location==='undefined'?'':location.search){
-  if(new URLSearchParams(search).get('guest')!=='1')return target;
+  if(new URLSearchParams(search).get('guest')!=='1'||target.startsWith('#'))return target;
   const url=new URL(target,'https://labrats.invalid/');
   url.searchParams.set('guest','1');
   return target.split(/[?#]/)[0]+url.search+url.hash;
 }
 function preserveGuestLinks(){
-  document.querySelectorAll('.choose-subject,.subject-card,.desktop-brand,.mobile-brand-banner a').forEach(link=>{
+  document.querySelectorAll('.choose-subject,.subject-card,.desktop-brand,.mobile-brand-banner a,.privacy-link,.privacy-return').forEach(link=>{
     link.setAttribute('href',withGuestMode(link.getAttribute('href')));
   });
 }

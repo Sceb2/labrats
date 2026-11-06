@@ -1,7 +1,18 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {health,monitor}=require('../src/retention-monitor.cjs');
+const {dashboardHealth}=require('../src/retention-health.cjs');
 const now=Date.parse('2026-11-04T12:00:00Z');
+test('dashboard distinguishes setup from failures and never describes a failed enabled policy as healthy',()=>{
+ const last={status:'success',failures:0,finished_at:'2026-11-01T03:00:00Z'};
+ assert.equal(dashboardHealth({enabled:false,last_run:last},now).attention,false);
+ assert.equal(dashboardHealth({enabled:true,last_run:last},now).ok,true);
+ for(const run of [null,{...last,status:'failed',failures:1},{...last,finished_at:'2026-10-01T00:00:00Z'}]){
+  const result=dashboardHealth({enabled:true,last_run:run},now);
+  assert.equal(result.attention,true);assert.equal(result.ok,false);assert.notEqual(result.reason,'healthy');
+ }
+ assert.match(dashboardHealth({enabled:true,last_run:{...last,status:'failed',failures:1}},now).title,/Cleanup failed/);
+});
 test('monitor distinguishes disabled, missing, failed and overdue weekly cleanups',()=>{
  assert.equal(health({retention_enabled:false},null,now).ok,false);
  assert.equal(health({retention_enabled:true},null,now).reason,'missing_run');

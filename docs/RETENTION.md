@@ -81,9 +81,15 @@ that aborts before committing may have no log; stale/missing-run monitoring is
 therefore necessary. Normal deadlines assume the database and scheduler operate;
 alerts and manual recovery are needed when they do not.
 
-## Failure alerts (inactive until configured)
+## Failure alerts — admin dashboard now; email deferred
 
-`src/retention-monitor.cjs` / `scripts/check-retention.cjs` independently detect
+As agreed on 6 November 2026, alerts stay in **School overview** and **Retention
+& health** for now. Open/refresh the dashboard after each Sunday run. Failed,
+missing, stale and unavailable status checks need attention; no notification is
+sent while the dashboard is closed. Email delivery is not a current setup step.
+
+For a future external alert setup, `src/retention-monitor.cjs` /
+`scripts/check-retention.cjs` independently detect
 missing runs, a policy unexpectedly disabled, runs over eight days old, failed
 runs and inability to read status. Tests use fake endpoints; no real alerts were
 sent. The admin dashboard also shows status, backlog and stale-run guidance.
