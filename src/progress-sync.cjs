@@ -68,20 +68,35 @@ async function open(bank, onRecords = () => {}, {
   }
   const actionObserver=new MutationObserver(placeAccountAction);
   actionObserver.observe(document.querySelector('.workspace')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
+  // History/queue changes replace their arrays. Remember successful writes only,
+  // so full or blocked tab storage is retried without rebuilding idle progress.
+  const savedQueues=new Map();
+  let savedHistory,savedCursor,projectedHistory,projectedPending;
+  function persistQueue(suffix,queue){
+    if(savedQueues.get(suffix)===queue)return;
+    const json=JSON.stringify(queue);
+    let saved=connection.storage.setItem(cacheKey+suffix,json);
+    if(!saved){
+      connection.storage.removeItem(cacheKey);savedHistory=undefined;
+      saved=connection.storage.setItem(cacheKey+suffix,json);
+    }
+    if(saved)savedQueues.set(suffix,queue);
+  }
   function publish() {
     if (closed) return;
     // Prioritize durable pending metadata over the replaceable remote-history cache.
     // Store rejected metadata before removing it from the pending queue.
-    if(!connection.storage.setItem(cacheKey+':rejected',JSON.stringify(rejected))){
-      connection.storage.removeItem(cacheKey);
-      connection.storage.setItem(cacheKey+':rejected',JSON.stringify(rejected));
+    persistQueue(':rejected',rejected);
+    persistQueue(':pending',pending);
+    if(savedHistory!==history||savedCursor!==pullCursor){
+      if(connection.storage.setItem(cacheKey,JSON.stringify({history,pullCursor}))){
+        savedHistory=history;savedCursor=pullCursor;
+      }
     }
-    if(!connection.storage.setItem(cacheKey+':pending',JSON.stringify(pending))){
-      connection.storage.removeItem(cacheKey);
-      connection.storage.setItem(cacheKey+':pending',JSON.stringify(pending));
+    if(projectedHistory!==history||projectedPending!==pending){
+      projectedHistory=history;projectedPending=pending;
+      onRecords(recordsFor(mergeEvents(history,pending),bank));
     }
-    connection.storage.setItem(cacheKey, JSON.stringify({history,pullCursor}));
-    onRecords(recordsFor(mergeEvents(history, pending), bank));
     const otherWaiting=Math.max(0,connection.pendingCount()-unsavedCount());
     const rejectedMessage=rejected.length?`${rejected.length} attempt${rejected.length===1?' needs':'s need'} attention.${login.hidden?' Open Review unsaved attempts.':' They are kept for this account.'}`:'';
     state.textContent = [message || (pending.length ? `${pending.length} attempt${pending.length === 1 ? '' : 's'} waiting to save. Keep this tab open.` : rejected.length?'':otherWaiting?'This subject/mode is saved.':'All progress saved to your account.'),rejectedMessage,otherWaiting?`${otherWaiting} other attempts are waiting or need attention. Reopen their subject/mode to review.`:''].filter(Boolean).join(' ');
@@ -120,9 +135,11 @@ async function open(bank, onRecords = () => {}, {
         const snapshot=JSON.stringify({history,pullCursor:nextCursor});
         // tabStorage keeps an atomic in-memory copy when sessionStorage is blocked.
         // A new page without that copy will bootstrap rather than reuse its cursor.
-        if(!connection.storage.setItem(cacheKey,snapshot)&&JSON.stringify(connection.read(cacheKey))!==snapshot)
+        const saved=connection.storage.setItem(cacheKey,snapshot);
+        if(!saved&&JSON.stringify(connection.read(cacheKey))!==snapshot)
           throw Error('History checkpoint could not be saved.');
         pullCursor=nextCursor;
+        if(saved){savedHistory=history;savedCursor=pullCursor;}
       }});
   }
   async function flush() {

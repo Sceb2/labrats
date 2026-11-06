@@ -3,10 +3,15 @@ import Events from '../src/learning-events.cjs';
 const {appliedLearningBank}=Subjects;
 export function learningBank(source,map){return appliedLearningBank(source,map);}
 export function nativeProgress(source,bank,events){
- const records={};
- for(const [id,record]of Object.entries(Events.recordsFor(events,bank))){
-  const q=source.questions.find(q=>q.id+'@'+q.contentVersion===id);if(!q)continue;
-  const history=Events.mergeEvents(events).filter(e=>e.question_id===id&&e.bank_version===bank.meta.bankVersion&&e.scoring_version===bank.meta.scoringVersion);
+ const records={},merged=Events.mergeEvents(events),histories=new Map();
+ const questions=new Map(source.questions.map(q=>[q.id+'@'+q.contentVersion,q]));
+ for(const event of merged){
+  if(event.bank_version!==bank.meta.bankVersion||event.scoring_version!==bank.meta.scoringVersion)continue;
+  const history=histories.get(event.question_id)||[];history.push(event);histories.set(event.question_id,history);
+ }
+ for(const [id,record]of Object.entries(Events.recordsFromMerged(merged,bank))){
+  const q=questions.get(id);if(!q)continue;
+  const history=histories.get(id)||[];
   const attempt=event=>({questionId:q.id,contentVersion:q.contentVersion,maxMarks:q.maxMarks,submittedAt:event.attempted_at,
     revealed:event.kind==='reveal'||event.answer_revealed,result:{score:event.earned_marks||0,directMarks:event.earned_marks||0,ecfMarks:0,
       selfAssessedMarks:q.interaction==='written-self-assessment'?event.earned_marks:null}});

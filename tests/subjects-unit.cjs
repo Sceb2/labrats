@@ -65,6 +65,44 @@ test('Applied Science hints/retries and account projections never persist select
  assert.equal(A.ratings(bank,[event])[mapped.id].grade,'N');
 });
 
+test('Applied Science account progress preserves unaided marks, assisted attempts and versions in unordered duplicate history',async()=>{
+ const {nativeProgress}=await import('../applied-science/account-bridge.mjs');
+ const automatic=source.questions.find(q=>q.maxMarks>1&&q.interaction!=='written-self-assessment');
+ const written=source.questions.find(q=>q.interaction==='written-self-assessment');
+ const event=(q,n,extra={})=>({event_id:'event-'+n,encounter_id:'encounter-'+n,sequence:1,
+  question_id:q.id+'@'+q.contentVersion,bank_version:bank.meta.bankVersion,scoring_version:bank.meta.scoringVersion,
+  kind:'submit',earned_marks:1,maximum_marks:q.maxMarks,is_retry:false,answer_revealed:false,
+  attempted_at:new Date(Date.UTC(2026,10,6,12,0,n)).toISOString(),session_mode:'practice',...extra});
+ const first=event(automatic,1),retry=event(automatic,2,{encounter_id:first.encounter_id,sequence:2,is_retry:true,earned_marks:automatic.maxMarks});
+ const reveal=event(written,3,{kind:'reveal',earned_marks:null,answer_revealed:true});
+ const assisted=event(written,4,{encounter_id:reveal.encounter_id,sequence:2,answer_revealed:true,earned_marks:written.maxMarks});
+ const fresh=event(written,5);
+ const history=[fresh,retry,assisted,reveal,first,{...first,response:'PRIVATE-ANSWER',selected:'PRIVATE-CHOICE'},
+  event(automatic,6,{bank_version:'unsupported'}),event(automatic,7,{scoring_version:'unsupported'}),
+  event(automatic,8,{question_id:automatic.id+'@obsolete'})];
+ const progress=nativeProgress(source,bank,history),a=progress.records[first.question_id],w=progress.records[fresh.question_id];
+ assert.deepEqual(Object.keys(progress.records).sort(),[first.question_id,fresh.question_id].sort());
+ assert.equal(a.first.result.score,1);assert.equal(a.first.submittedAt,first.attempted_at);
+ assert.equal(a.latest.result.score,automatic.maxMarks);assert.equal(a.attemptCount,2);assert(a.corrected);
+ assert.deepEqual(a.attempts.map(x=>x.result.score),[1,automatic.maxMarks]);
+ assert.equal(w.first.submittedAt,fresh.attempted_at);assert.equal(w.first.result.selfAssessedMarks,1);
+ assert.equal(w.latest.submittedAt,fresh.attempted_at);assert.equal(w.attemptCount,2);
+ assert.equal(w.attempts[0].revealed,true);assert.equal(w.attempts[1].revealed,true);
+ assert.equal(w.attempts[2].revealed,false);assert.equal(a.first.result.selfAssessedMarks,null);
+ assert(!JSON.stringify(progress).includes('PRIVATE-'));assert.deepEqual(progress.sessions,[]);
+});
+
+test('Applied Science keeps the original first result and total count while bounding displayed recent attempts',async()=>{
+ const {nativeProgress}=await import('../applied-science/account-bridge.mjs'),q=source.questions[0];
+ const history=Array.from({length:15},(_,i)=>({...Events.makeEvent(bank,bank.questions[0],{mode:'practice'},'submit',{score:i?q.maxMarks:0}),
+  attempted_at:new Date(Date.UTC(2026,10,6,12,0,i)).toISOString()}));
+ const record=nativeProgress(source,bank,[...history].reverse()).records[bank.questions[0].id];
+ assert.equal(record.first.result.score,0);assert.equal(record.first.submittedAt,history[0].attempted_at);
+ assert.equal(record.latest.submittedAt,history[14].attempted_at);assert.equal(record.attemptCount,15);
+ assert.equal(record.attempts.length,10);assert.equal(record.attempts[0].submittedAt,history[5].attempted_at);
+ assert.deepEqual(nativeProgress(source,bank,[]),{schema:1,records:{},sessions:[]});
+});
+
 test('approved expansion preserves the published Waves questions and maps every new question and diagram without changing its marking rules',()=>{
  const waves=source.questions.filter(q=>q.topic==='Waves');
  assert.equal(createHash('sha256').update(JSON.stringify(waves)).digest('hex'),'e84a620bccf060c42b1e0939f27e5297af6ff96cac42705311888a3c96cab0fd');

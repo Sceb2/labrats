@@ -8,8 +8,12 @@ function mergeEvents(...groups) {
   return [...byId.values()].sort((a,b) => Date.parse(a.attempted_at) - Date.parse(b.attempted_at) || a.encounter_id.localeCompare(b.encounter_id) || a.sequence - b.sequence || a.event_id.localeCompare(b.event_id));
 }
 function recordsFor(events, bank) {
+  return recordsFromMerged(mergeEvents(events), bank);
+}
+// Use only with metadata already deduplicated and ordered by mergeEvents.
+function recordsFromMerged(events, bank) {
   const records = {}, ids = new Set(bank.questions.map(q => q.id)), encounters = new Map();
-  for (const event of mergeEvents(events)) {
+  for (const event of events) {
     if (!ids.has(event.question_id) || !C.compatibleBankVersion(event.bank_version, bank) || event.scoring_version !== bank.meta.scoringVersion) continue;
     const result = event.kind === 'submit' ? {score: event.earned_marks, max: event.maximum_marks} : null;
     const record = records[event.question_id] ??= {first:null,correctAfterRetry:false,revealed:false,attempts:0};
@@ -43,4 +47,4 @@ function makeEvent(bank, question, session, kind, result, uuid = () => crypto.ra
   if (kind === 'reveal') encounter.revealed = true;
   return event;
 }
-module.exports = {metadata, mergeEvents, recordsFor, makeEvent};
+module.exports = {metadata, mergeEvents, recordsFor, recordsFromMerged, makeEvent};

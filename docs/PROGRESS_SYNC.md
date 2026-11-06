@@ -66,6 +66,25 @@ acknowledgements do not advance this checkpoint, so unseen work from another
 device cannot be skipped. The 15-second interval is unchanged. See
 [Incremental sync](INCREMENTAL_SYNC.md) for deployment order and verification.
 
+Sync status updates do not recalculate progress or rewrite unchanged history and
+queues. History and queue updates replace their arrays; failed durable writes
+remain eligible for retry. Pending/rejected metadata keeps priority over the
+replaceable history cache, and downloaded pages still save their history and
+checkpoint together. Account validation and the 15-second interval are unchanged.
+Applied Science groups one ordered metadata history by question instead of
+sorting the complete history separately for every attempted question. This
+client optimisation needs no migration and does not change scoring or ratings.
+`node --test tests/progress-cache-browser.cjs` checks idle updates, new receipts,
+offline/rejected attempts, storage pressure and account revocation using local
+fictional fixtures with external requests blocked.
+
+In a local Node benchmark on 6 November 2026, the Applied Science adapter at
+`8925595` took about 5,073 ms to project 10,000 synthetic events spanning all 354
+questions; the grouped implementation took 21 ms. At 20,000 events the comparison
+was 11,037 ms versus 47 ms. Outputs matched for each measured history and 12
+additional mixed, duplicated and version-mismatched histories. These timings
+measure the projection function, not hosted page loads or phone performance.
+
 Keep the tab open until attempts are saved: closing a tab, clearing its storage,
 or browser/device failure can lose unsaved events. Navigation with pending work
 shows the browser's unsaved-work warning. Sign-out specifically warns before
