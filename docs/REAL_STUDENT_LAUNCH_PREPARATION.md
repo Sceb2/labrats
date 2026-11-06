@@ -1,5 +1,12 @@
 # Real-student launch preparation — development
 
+**Main release authorised, 6 November 2026:** migration 016 is confirmed
+installed. Use [PILOT_ACCEPTANCE_TESTS.md](PILOT_ACCEPTANCE_TESTS.md) for the
+published-site checks before issuing pupil accounts. Retention stays disabled
+until those checks reach the explicit activation step. Earlier preparation notes
+below describe the development stage; the completed fictional cleanup need not
+be repeated.
+
 Work in `Combined-Drafts`; do not issue real accounts yet. The hosted database is
 shared by any site configured to use it: these SQL writes are not isolated by a
 Git branch. Preparing these files has not changed hosted Supabase or main.
@@ -86,9 +93,9 @@ run the plan's student SELECT and class SELECT separately and keep both results;
 some editors show only the last result if both are submitted at once. If at least
 two students already exist, no additional test accounts need to be created.
 
-After cleanup and checking both logins on connected development, check the
-installed Sunday schedule. Enable retention in **Retention & health** only after
-the reviewed account cleanup and schedule checks. This enables real deletion of
+After cleanup and checking both logins, confirm the installed Sunday schedule.
+Enable retention in **Retention & health** only after main is published and the
+live-site checks in the pilot checklist pass. This enables real deletion of
 managed expired accounts. Verify the first successful run; the operator can run
 `select public.run_retention_cleanup();` for that acceptance check when ready.
 
