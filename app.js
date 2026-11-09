@@ -200,7 +200,7 @@ function submit(allowUnanswered=false){
  if(S.marked||S.locked)return;if(S.session.mode==='challenge'&&C.remaining(S.session.end)===0)return finish();
  const missing=unansweredParts(current());if(S.session.mode!=='challenge'&&allowUnanswered!==true&&missing.length){warnUnanswered(current(),missing);return}clearSubmissionWarning();
  const q=current(),previous=C.clone(S.progress.records[q.id]||{}),result=C.mark(q,S.response,S.bank);S.marked=true;S.result=result;record(q,result,'submit');disableTask();updateQuestionHeader();
- if(S.session.mode==='challenge')challengeFeedback();else displayFeedback(q,result,false,{animate:true,category:ChemExperience.category(result,previous)});
+ if(S.session.mode==='challenge')next();else displayFeedback(q,result,false,{animate:true,category:ChemExperience.category(result,previous)});
 }
 
 function displayFeedback(q,result,revealed=false,options={}){
