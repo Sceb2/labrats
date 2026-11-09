@@ -37,10 +37,13 @@ test('guest flashcard sample, both topic routes, mobile layout and bounded sessi
    const after=await page.locator('#flashcard-got-it').boundingBox();
    assert.equal(before.y,after.y);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   }
-  await page.setViewportSize({width:390,height:844});
+  await page.setViewportSize({width:390,height:600});
   await page.locator('#flashcard-not-yet').click();
   assert(await page.locator('#flashcard-got-it').isDisabled());
   assert.equal(await page.locator('#reveal-flashcard').getAttribute('class'),'flashcard-flip');
+  assert.equal(await page.evaluate(()=>document.activeElement.id),'reveal-flashcard');
+  const nextCard=await page.locator('#reveal-flashcard').boundingBox();assert(nextCard.y>=0&&nextCard.y+nextCard.height<=600,'next card is visible on mobile');
+  await page.setViewportSize({width:390,height:844});
   let presented=1;
   while(await page.locator('#reveal-flashcard').count()){await page.locator('#reveal-flashcard').click();await page.locator('#flashcard-got-it').click();presented++;assert(presented<=21);}
   assert.equal(presented,21);assert.match(await page.locator('.summary-score').innerText(),/19 \/ 20/);

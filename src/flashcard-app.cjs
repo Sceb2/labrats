@@ -22,7 +22,7 @@ function setup(){
  $('#start-flashcards').onclick=()=>{state.session=F.createSession(state.cards,ratings(),state.mode);state.session.learning={mode:'practice'};F.next(state.session);render();};
  $('#see-flashcard-progress').onclick=progress;focus();
 }
-function render(){
+function render(positionNext=false){
  const s=state.session,item=s?.current;if(!item){summary();return;}
  document.body.classList.add('flashcard-session-active');
  const card=item.card,map=ratings(),grade=map[F.identity(card)].grade;
@@ -45,14 +45,17 @@ function render(){
  flip.onclick=()=>{showingAnswer=!showingAnswer;if(showingAnswer)s.revealed=true;updateFace();};
  if(s.revealed){showingAnswer=true;updateFace();}
  $('#flashcard-not-yet').onclick=()=>answer(false);$('#flashcard-got-it').onclick=()=>answer(true);
- focus('#reveal-flashcard');
+ if(positionNext&&window.matchMedia('(max-width: 899px)').matches){
+  flip.focus({preventScroll:true});
+  flip.scrollIntoView({block:flip.getBoundingClientRect().height>window.innerHeight?'start':'center',behavior:'instant'});
+ }else focus('#reveal-flashcard');
 }
 function answer(gotIt){
  const s=state.session;if(!s?.current||!s.revealed)return;
  const item=F.assess(s,gotIt),q=state.bank.questions.find(q=>q.id===F.identity(item.card));
  if(state.sync)state.sync.record(q,s.learning,'submit',{score:Number(gotIt)});
  else state.events=Events.mergeEvents(state.events,[Events.makeEvent(state.bank,q,s.learning,'submit',{score:Number(gotIt)})]);
- state.lastMessage=gotIt?'Previous card marked Got it.':'Previous card marked Not yet.';F.next(s);render();
+ state.lastMessage=gotIt?'Previous card marked Got it.':'Previous card marked Not yet.';F.next(s);render(true);
 }
 function summary(){
  const s=state.session;if(!s){setup();return;}
