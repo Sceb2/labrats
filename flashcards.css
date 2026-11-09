@@ -2,6 +2,7 @@
 
 /* Practice: two faces of one card, with assessment controls outside it. */
 .flashcard-screen.card{background:transparent;border:0;box-shadow:none;padding:0;max-width:760px;margin-inline:auto}
+@media(max-width:899px){body.flashcard-session-active .side-nav{display:none}body.flashcard-session-active .workspace{padding-bottom:30px!important}}
 .flashcard-context{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
 .flashcard-topic{font-weight:600;margin:0;font-size:.95rem}
 .flashcard-screen .flashcard-meta{margin:6px 0 16px;font-size:.85rem}

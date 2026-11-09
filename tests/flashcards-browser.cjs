@@ -15,7 +15,9 @@ test('guest flashcard sample, both topic routes, mobile layout and bounded sessi
   await page.locator('.study-modes a').click();await page.waitForSelector('#start-flashcards');assert.match(await page.locator('#flashcard-available').innerText(),/33/);assert.match(await page.locator('.notice').innerText(),/Log in to remember/);
   for(const width of [320,390,1280]){await page.setViewportSize({width,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:'/tmp/labrats-flashcards-setup-mobile.png',fullPage:true});
+  assert(await page.locator('.side-nav').isVisible());
   await page.locator('#start-flashcards').click();assert.equal(await page.locator('.notice').count(),0);assert(await page.locator('#flashcard-recall-prompt').isHidden());assert(await page.locator('#flashcard-got-it').isDisabled());assert.equal(await page.locator('.flashcard-answer').getAttribute('aria-hidden'),'true');
+  assert(await page.locator('.side-nav').isHidden());assert(await page.locator('#finish-flashcards').isVisible());
   await page.screenshot({path:'/tmp/labrats-flashcards-front-mobile.png',fullPage:true});await page.locator('#reveal-flashcard').click();assert.equal(await page.locator('.flashcard-answer').getAttribute('aria-hidden'),'false');assert(await page.locator('#flashcard-recall-prompt').isVisible());await page.locator('.flashcard-turner').evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));await page.screenshot({path:'/tmp/labrats-flashcards-back-mobile.png',fullPage:true});
   // Keyboard flip-back keeps assessment available; card faces never both enter the accessibility tree.
   await page.locator('#reveal-flashcard').focus();await page.keyboard.press('Enter');
@@ -29,6 +31,7 @@ test('guest flashcard sample, both topic routes, mobile layout and bounded sessi
   await page.emulateMedia({reducedMotion:'no-preference'});
   for(const width of [320,390,1280]){
    await page.setViewportSize({width,height:844});
+   assert.equal(await page.locator('.side-nav').isVisible(),width>=900);
    const before=await page.locator('#flashcard-got-it').boundingBox();
    await page.locator('#reveal-flashcard').click();
    const after=await page.locator('#flashcard-got-it').boundingBox();
@@ -41,6 +44,7 @@ test('guest flashcard sample, both topic routes, mobile layout and bounded sessi
   let presented=1;
   while(await page.locator('#reveal-flashcard').count()){await page.locator('#reveal-flashcard').click();await page.locator('#flashcard-got-it').click();presented++;assert(presented<=21);}
   assert.equal(presented,21);assert.match(await page.locator('.summary-score').innerText(),/19 \/ 20/);
+  assert(await page.locator('.side-nav').isVisible());
   assert.equal(await page.evaluate(()=>Object.values(localStorage).join('').includes('organic-basics-')||Object.values(sessionStorage).join('').includes('organic-basics-')),false);
   await page.reload();await page.waitForSelector('#start-flashcards');await page.locator('#see-flashcard-progress').click();assert.match(await page.locator('#app').innerText(),/0 cards attempted/);
   await page.locator('#back-to-flashcards').click();await page.locator('[name=flash-length][value=open]').check();await page.locator('#start-flashcards').click();let total=0;

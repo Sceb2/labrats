@@ -16,6 +16,7 @@ function header(title,finish=false){return `<header class="flashcard-toolbar"><h
 function guestNote(){return state.sync?'':`<p class="notice">Log in to remember your progress. Guest results are not saved.${demo?'':` <a href="student-login.html?subject=${subject.id}">Student Login</a>`}</p>`;}
 function setup(){
  if(state.session?.current||state.session?.queue.length){render();return;}
+ document.body.classList.remove('flashcard-session-active');
  $('#app').innerHTML=`<section class="card setup-page">${header('Flashcards')}<p>${esc(subject.label)} · ${selected.map(id=>esc(topics[subject.id].find(t=>t.id===id).label)).join(', ')||'No topics selected'}</p><nav class="study-modes" aria-label="Learning mode"><span class="mode-label">Select your mode</span><a class="btn secondary" href="${activeURL}">Active Learning</a><span class="btn" aria-current="page">Flashcards</span></nav>${guestNote()}<p id="flashcard-available">${state.cards.length} cards available</p><fieldset class="flashcard-options"><legend>Session length</legend><label><input type="radio" name="flash-length" value="twenty" ${state.mode==='twenty'?'checked':''}>20 cards</label><label><input type="radio" name="flash-length" value="open" ${state.mode==='open'?'checked':''}>Open Mode</label></fieldset><details><summary>How flashcards work</summary><p>Reveal the answer, then choose Got it or Not yet based on what you recalled before revealing. Missed cards return after other cards where possible.</p><p>Use Enter or Space to flip a focused card. You can flip back before assessing it.</p></details><button class="btn" id="start-flashcards" ${state.cards.length?'':'disabled'}>Start flashcards</button>${!state.cards.length?'<p>No published cards match these topics yet. Choose another topic or ask your teacher.</p>':''}<p><button class="btn text-button" id="see-flashcard-progress">Flashcard progress</button></p></section>`;
  document.querySelectorAll('[name=flash-length]').forEach(el=>el.onchange=()=>{state.mode=el.value;});
  $('#start-flashcards').onclick=()=>{state.session=F.createSession(state.cards,ratings(),state.mode);state.session.learning={mode:'practice'};F.next(state.session);render();};
@@ -23,6 +24,7 @@ function setup(){
 }
 function render(){
  const s=state.session,item=s?.current;if(!item){summary();return;}
+ document.body.classList.add('flashcard-session-active');
  const card=item.card,map=ratings(),grade=map[F.identity(card)].grade;
  const topic=topics[subject.id].find(t=>t.id===card.topic_id)?.label||subject.label;
  const copy=(text,id)=>`<span class="flashcard-copy" id="${id}">${esc(text)}</span>`;
@@ -54,10 +56,12 @@ function answer(gotIt){
 }
 function summary(){
  const s=state.session;if(!s){setup();return;}
+ document.body.classList.remove('flashcard-session-active');
  $('#app').innerHTML=`<section class="card summary-page">${header('Flashcard session complete')}${guestNote()}<p class="summary-score">${s.gotIt} / ${s.initials}<span>Self-reported recall on first attempts</span></p><p>${s.retries} retries assessed · ${s.planned-s.initials} cards left unassessed</p><p>Retries do not increase your first-attempt recall or long-term rating.</p><button class="btn" id="another-flashcard-session">Choose a new session</button> <button class="btn secondary" id="summary-flashcard-progress">Flashcard progress</button></section>`;
  $('#another-flashcard-session').onclick=()=>{state.session=null;state.lastMessage='';setup();};$('#summary-flashcard-progress').onclick=progress;focus();
 }
 function progress(){
+ document.body.classList.remove('flashcard-session-active');
  const map=ratings(),valid=new Set(state.bank.questions.map(q=>q.id)),all=events().filter(e=>valid.has(e.question_id)),first=all.filter(e=>!e.is_retry),ordered=A.priority(state.bank.questions,map);
  $('#app').innerHTML=`<section class="card progress-page">${header('Flashcard progress')}${guestNote()}<p>Selected topics · self-assessed recall, separate from Active Learning results.</p><p>${new Set(first.map(e=>e.question_id)).size} card${new Set(first.map(e=>e.question_id)).size===1?'':'s'} attempted · ${first.filter(e=>e.earned_marks===1).length} initial attempts marked Got it</p><p>N means not attempted. A–E is revision guidance based on your first self-assessment and time since practice.</p><ul class="flashcard-progress-list">${ordered.map(q=>`<li>${Badges.badgeHTML(map[q.id].grade,F.ratingDescriptions[map[q.id].grade])}<span>${esc(q.title)}</span></li>`).join('')}</ul><button class="btn" id="back-to-flashcards">${state.session?.current?'Resume flashcards':'Flashcard sessions'}</button></section>`;
  $('#back-to-flashcards').onclick=setup;focus();
